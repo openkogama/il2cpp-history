@@ -5,26 +5,21 @@ void MVWorldObject.dll::TargetAssasinated::TargetAssasinated_GameCountersQuery_O
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (e == (OnCounterTypeChangedArgs *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+  if (e != (OnCounterTypeChangedArgs *)0x0) {
+    if (((e->fields).actorNumber == (this->fields).assassinatorActorNumber) && ((e->fields).otherID == (this->fields).assassineeActorNumber)) {
+      eventArgs = (EventArgs *)FUN_?(TypeInfo__System__EventArgs);
+      WinningCondition::WinningCondition_SendWinningConditionChangedEvent((WinningCondition *)this,eventArgs,e,(MethodInfo *)0x0);
+    }
     return;
   }
-  if (((e->fields).actorNumber == (this->fields).assassinatorActorNumber) && ((e->fields).otherID == (this->fields).assassineeActorNumber)) {
-    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__System__EventArgs);
-    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-    (this->fields)._.forfilled = 1;
-    (this->fields)._.instigatorCounterTypeChangedEvent = e;
-    func_?(&(this->fields)._.instigatorCounterTypeChangedEvent,e);
-    if ((this->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
-      pEVar2 = (this->fields)._.OnWinningConditionChanged;
-      (*(pEVar2->fields)._._.invoke_impl)((pEVar2->fields)._._.method_code,this,this_00,(pEVar2->fields)._._.method);
-    }
-  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -34,7 +29,7 @@ void MVWorldObject.dll::TargetAssasinated::TargetAssasinated_GameCountersQuery_O
 void MVWorldObject.dll::TargetAssasinated::TargetAssasinated__ctor(TargetAssasinated *this,WinningCondition *parent,int32_t id,GameStatCounterManager *gameCounterManager,int32_t assassinatorActorNumber,int32_t assassineeActorNumber,MethodInfo *method)
 
 {
-  WinningCondition::WinningCondition__ctor((WinningCondition *)this,parent,id,gameCounterManager,1,0,GameStatCounterType__Enum_Kill,WinningConditionPresentStyle__Enum_OneWinner,(MethodInfo *)0x0);
+  WinningCondition::WinningCondition__ctor((WinningCondition *)this,parent,id,gameCounterManager,1,0,CONCAT31((int3)((uint)in_stack_1 >> 8),1),CONCAT31((int3)((uint)in_stack_2 >> 8),1),(MethodInfo *)0x0);
   (this->fields).assassinatorActorNumber = assassinatorActorNumber;
   (this->fields).assassineeActorNumber = assassineeActorNumber;
   return;

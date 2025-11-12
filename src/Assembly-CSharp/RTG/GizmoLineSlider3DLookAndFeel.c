@@ -5,8 +5,12 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DLookAndFeel::GizmoLineSlider3DLo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GizmoCap3DLookAndFeel);
-    func_?(&TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
+    FUN_?(&TypeInfo__RTG__GizmoCap3DLookAndFeel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields)._length = 5.0;
@@ -16,45 +20,85 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DLookAndFeel::GizmoLineSlider3DLo
   (this->fields)._boxDepth = 0.18;
   (this->fields)._cylinderRadius = 0.15;
   (this->fields)._isRotationArcVisible = 1;
-  this_00 = (GizmoRotationArc3DLookAndFeel *)func_?(TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
-  GizmoRotationArc3DLookAndFeel::GizmoRotationArc3DLookAndFeel__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields)._rotationArcLookAndFeel = this_00;
-  func_?(&(this->fields)._rotationArcLookAndFeel,this_00);
-  pCVar1 = RTSystemValues::RTSystemValues_get_XAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._color.r = pCVar1->r;
-  (this->fields)._color.g = fVar3;
-  (this->fields)._color.b = fVar4;
-  (this->fields)._color.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._hoveredColor.r = pCVar1->r;
-  (this->fields)._hoveredColor.g = fVar3;
-  (this->fields)._hoveredColor.b = fVar4;
-  (this->fields)._hoveredColor.a = fVar5;
-  this_01 = (GizmoCap3DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap3DLookAndFeel);
-  GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(this_01,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&(this->fields)._capLookAndFeel;
-  (this->fields)._capLookAndFeel = this_01;
-  func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  return;
-}
-
-
-/* Void set_Color(Color) */
-
-void Assembly-CSharp.dll::RTG::GizmoLineSlider3DLookAndFeel::GizmoLineSlider3DLookAndFeel_set_Color(GizmoLineSlider3DLookAndFeel *this,Color value,MethodInfo *method)
-
-{
-  (this->fields)._color.r = value.r;
-  (this->fields)._color.g = value.g;
-  (this->fields)._color.b = value.b;
-  (this->fields)._color.a = value.a;
+  pGVar1 = (GizmoRotationArc3DLookAndFeel *)FUN_?(TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
+  bVar2 = iRam_? != 0;
+  (pGVar1->fields)._useShortestRotation = 1;
+  (pGVar1->fields)._fillFlags = 3;
+  (pGVar1->fields)._color.r = 0.5;
+  (pGVar1->fields)._color.g = 0.5;
+  (pGVar1->fields)._color.b = 0.5;
+  (pGVar1->fields)._color.a = 0.1;
+  (pGVar1->fields)._borderColor.r = 0.8;
+  (pGVar1->fields)._borderColor.g = 0.8;
+  (pGVar1->fields)._borderColor.b = 0.8;
+  (pGVar1->fields)._borderColor.a = 0.8;
+  (this->fields)._rotationArcLookAndFeel = pGVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._rotationArcLookAndFeel >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  (this->fields)._color.r = 0.8588236;
+  (this->fields)._color.g = 0.24313727;
+  (this->fields)._color.b = 0.1137255;
+  (this->fields)._color.a = 1.0;
+  (this->fields)._hoveredColor.r = 0.96470594;
+  (this->fields)._hoveredColor.g = 0.9490197;
+  (this->fields)._hoveredColor.b = 0.19607845;
+  (this->fields)._hoveredColor.a = 1.0;
+  pGVar7 = (GizmoCap3DLookAndFeel *)FUN_?(TypeInfo__RTG__GizmoCap3DLookAndFeel);
+  bVar2 = iRam_? != 0;
+  (pGVar7->fields)._sphereBorderColor.r = 1.0;
+  (pGVar7->fields)._sphereBorderColor.g = 1.0;
+  (pGVar7->fields)._sphereBorderColor.b = 1.0;
+  (pGVar7->fields)._sphereBorderColor.a = 1.0;
+  (pGVar7->fields)._scale = 1.0;
+  (pGVar7->fields)._hoveredColor.r = 0.96470594;
+  (pGVar7->fields)._hoveredColor.g = 0.9490197;
+  (pGVar7->fields)._hoveredColor.b = 0.19607845;
+  (pGVar7->fields)._hoveredColor.a = 1.0;
+  (pGVar7->fields)._useZoomFactor = 1;
+  (pGVar7->fields)._coneHeight = 1.65;
+  (pGVar7->fields)._coneRadius = 0.5;
+  (pGVar7->fields)._pyramidHeight = 1.65;
+  (pGVar7->fields)._pyramidWidth = 0.8;
+  (pGVar7->fields)._pyramidDepth = 0.8;
+  (pGVar7->fields)._boxWidth = 0.7;
+  (pGVar7->fields)._boxHeight = 0.7;
+  (pGVar7->fields)._boxDepth = 0.7;
+  (pGVar7->fields)._sphereRadius = 0.45;
+  (pGVar7->fields)._trPrismWidth = 1.0;
+  (pGVar7->fields)._trPrismHeight = 1.0;
+  (pGVar7->fields)._trPrismDepth = 1.0;
+  (pGVar7->fields)._numSphereBorderPoints = 100;
+  (pGVar7->fields)._color.r = 0.8588236;
+  (pGVar7->fields)._color.g = 0.24313727;
+  (pGVar7->fields)._color.b = 0.1137255;
+  (pGVar7->fields)._color.a = 1.0;
+  (this->fields)._capLookAndFeel = pGVar7;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._capLookAndFeel >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   return;
 }
 

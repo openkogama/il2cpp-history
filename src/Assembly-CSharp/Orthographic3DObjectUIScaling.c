@@ -5,33 +5,122 @@ void Assembly-CSharp.dll::Orthographic3DObjectUIScaling::Orthographic3DObjectUIS
 
 {
   (this->fields).storedDPI = 0.0;
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-  if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
-    bVar2 = cRam_? == '\0';
-    fVar3 = pVVar1->y;
-    fVar4 = pVVar1->z;
-    (this->fields).originalScale.x = pVVar1->x;
-    (this->fields).originalScale.y = fVar3;
-    (this->fields).originalScale.z = fVar4;
-    (this->fields).storedScreen.x = 0.0;
-    (this->fields).storedScreen.y = 0.0;
-    if (bVar2) {
-      func_?();
-      cRam_? = '\x01';
-    }
-    method_00 = TypeInfo__Orthographic3DObjectUIScaling___SetObjectScaleCoroutine_d__7;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_2 = 0;
+  fStack_3 = 0.0;
+  pvVar4 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar4 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar4,&uStack_2);
+  (this->fields).originalScale.x = (float)(undefined4)uStack_2;
+  (this->fields).originalScale.y = (float)uStack_2._4_4_;
+  (this->fields).originalScale.z = fStack_3;
+  bVar6 = cRam_? == '\0';
+  (this->fields).storedScreen.x = 0.0;
+  (this->fields).storedScreen.y = 0.0;
+  if (bVar6) {
+    FUN_?(&TypeInfo__Orthographic3DObjectUIScaling___SetObjectScaleCoroutine_d__7);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  lVar7 = FUN_?(TypeInfo__Orthographic3DObjectUIScaling___SetObjectScaleCoroutine_d__7);
+  bVar6 = iRam_? != 0;
+  *(undefined4 *)(lVar7 + 0x10) = 0;
+  *(Orthographic3DObjectUIScaling **)(lVar7 + 0x20) = this;
+  if (bVar6) {
+    uVar8 = (uint)(lVar7 + 0x20U >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar10 == *puVar11;
+      if (bVar6) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  if (lVar7 == 0) {
+    uVar5 = func_?(&TypeInfo__System__NullReferenceException);
+    this_00 = (NullReferenceException *)func_?(uVar5);
+    pSVar12 = (String *)func_?(&StringLiteral_routine_is_null);
+    mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1(this_00,pSVar12,(MethodInfo *)0x0);
+    uVar5 = func_?(&MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_);
+    FUN_?(this_00,uVar5);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  bVar13 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_IsObjectMonoBehaviour((Object_1 *)this,(MethodInfo *)0x0);
+  if (bVar13 == 0) {
+    uVar5 = func_?(&TypeInfo__System__ArgumentException);
+    this_01 = (InvalidEnumArgumentException *)func_?(uVar5);
+    pSVar12 = (String *)func_?(&StringLiteral_Coroutines_can_only_be_stopped_o);
+    System.dll::System::ComponentModel::InvalidEnumArgumentException::InvalidEnumArgumentException__ctor_1(this_01,pSVar12,(MethodInfo *)0x0);
+    uVar5 = func_?(&MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_);
+    FUN_?(this_01,uVar5);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this == (Orthographic3DObjectUIScaling *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar4 = (this->fields)._._._._.m_CachedPtr;
+  if (pvVar4 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar4,lVar7);
   return;
 }
 
@@ -41,55 +130,82 @@ void Assembly-CSharp.dll::Orthographic3DObjectUIScaling::Orthographic3DObjectUIS
 void Assembly-CSharp.dll::Orthographic3DObjectUIScaling::Orthographic3DObjectUIScaling_SetObjectScale(Orthographic3DObjectUIScaling *this,float dpi,Vector2 screen,MethodInfo *method)
 
 {
-  this_00 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ScreenSizeOptimizer);
+    FUN_?(&TypeInfo__ScreenSizeOptimizer);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fStack_1 = 1.0;
+  fVar1 = 1.0;
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    fStack_2 = 1.0;
+    fVar2 = 1.0;
   }
   else {
-    fStack_2 = 1.5;
+    fVar2 = 1.5;
   }
   if (TypeInfo__ScreenSizeOptimizer->static_fields->IsInHalfResolution != 0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
       dpi = dpi * 0.5;
     }
   }
-  fVar3 = (this->fields).baseInchThresholds.x * fStack_2;
-  fVar4 = (this->fields).baseInchThresholds.y * fStack_2;
-  pOVar5 = &this->fields;
-  this = (Orthographic3DObjectUIScaling *)0x3f800000;
-  if ((pOVar5->isScalingWithX != 0) && (screen.x / dpi < fVar3)) {
-    this = (Orthographic3DObjectUIScaling *)((screen.x / dpi) / fVar3);
+  fStackX_8 = screen.x;
+  fStackX_c = screen.y;
+  fVar3 = fVar2 * (this->fields).baseInchThresholds.x;
+  fVar4 = fVar2 * (this->fields).baseInchThresholds.y;
+  fVar5 = 1.0;
+  if (((this->fields).isScalingWithX != 0) && (fStackX_8 / dpi < fVar3)) {
+    fVar5 = (fStackX_8 / dpi) / fVar3;
   }
-  if (((this_00->fields).isScalingWithY != 0) && (fVar4 < screen.y / dpi)) {
-    fStack_1 = fVar4 / (screen.y / dpi);
+  if (((this->fields).isScalingWithY != 0) && (fVar4 < fStackX_c / dpi)) {
+    fVar1 = fVar4 / (fStackX_c / dpi);
   }
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-  uVar6 = (this_00->fields).originalScale.x;
-  uVar7 = (this_00->fields).originalScale.y;
-  fStack_2 = fStack_1 * (float)this * fStack_2;
-  if (this_01 == (Transform *)0x0) {
-    func_?();
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+  uStack_6._0_4_ = (this->fields).originalScale.x;
+  uStack_6._4_4_ = (this->fields).originalScale.y;
+  fVar2 = fVar1 * fVar5 * fVar2;
+  fStack_7 = fVar2 * (this->fields).originalScale.z;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
     pcVar8 = (code *)swi(3);
     (*pcVar8)();
     return;
   }
-  value.y = (float)uVar7 * fStack_2;
-  value.x = (float)uVar6 * fStack_2;
-  value.z = (this_00->fields).originalScale.z * fStack_2;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(this_01,value,(MethodInfo *)0x0);
+  uStack_6 = CONCAT44(fVar2 * (float)uStack_6._4_4_,fVar2 * (float)(undefined4)uStack_6);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar9 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar9 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pcVar8 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar10 = func_?(&UNK_?);
+    FUN_?(uVar10,0);
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pcRam_? = pcVar8;
+  (*pcRam_?)(pvVar9,&uStack_6);
   return;
 }
 
@@ -100,16 +216,29 @@ IEnumerator * Assembly-CSharp.dll::Orthographic3DObjectUIScaling::Orthographic3D
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Orthographic3DObjectUIScaling___SetObjectScaleCoroutine_d__7);
+    FUN_?(&TypeInfo__Orthographic3DObjectUIScaling___SetObjectScaleCoroutine_d__7);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__Orthographic3DObjectUIScaling___SetObjectScaleCoroutine_d__7;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__Orthographic3DObjectUIScaling___SetObjectScaleCoroutine_d__7);
+  bVar2 = iRam_? != 0;
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].klass = (IEnumerator__Class *)this;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)(pIVar1 + 2) >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  return pIVar1;
 }
 
 
@@ -118,17 +247,267 @@ IEnumerator * Assembly-CSharp.dll::Orthographic3DObjectUIScaling::Orthographic3D
 void Assembly-CSharp.dll::Orthographic3DObjectUIScaling::Orthographic3DObjectUIScaling__ctor(Orthographic3DObjectUIScaling *this,MethodInfo *method)
 
 {
+  bVar1 = cRam_? == '\0';
   (this->fields).baseInchThresholds.x = 5.0;
   (this->fields).baseInchThresholds.y = 3.0;
   (this->fields).isScalingWithX = 1;
   (this->fields).isScalingWithY = 1;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pOVar2 = TypeInfo__UnityEngine__Object;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
   }
+  ppMVar3 = (MethodInfo **)0x0;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  lVar4 = _Baselib_Thread_GetCurrentThreadId_il2cpp_baselib__YA_JXZ();
+  ppMVar5 = ppMVar3;
+  if (lVar4 == lRam_?) {
+    iRam_? = iRam_? + 1;
+    lVar4 = lRam_?;
+  }
+  else {
+    do {
+      uVar6 = (uint)ppMVar5;
+      LOCK();
+      bVar1 = uVar6 != uRam_?;
+      uVar7 = uVar6;
+      uVar8 = uVar6 + 1;
+      if (bVar1) {
+        uVar7 = uRam_?;
+        uVar8 = uRam_?;
+      }
+      uRam_? = uVar8;
+      UNLOCK();
+    } while ((bVar1) && (ppMVar5 = (MethodInfo **)(ulonglong)uVar7, uVar6 = uVar7, uVar7 != 2));
+    while (uVar6 != 0) {
+      _Baselib_SystemFutex_Wait_il2cpp_baselib__YAXPEAHHI_Z(0xADDR,2,0xffffffff);
+      uVar6 = uRam_?;
+      LOCK();
+      uRam_? = 2;
+      UNLOCK();
+    }
+  }
+  lRam_? = lVar4;
+  puVar9 = &(pOVar2->_1).field_0x1c;
+  LOCK();
+  bVar1 = *(int *)puVar9 == 1;
+  if (bVar1) {
+    *(undefined4 *)puVar9 = 1;
+  }
+  uVar6 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? != 0) {
+      iRam_? = iRam_? + -1;
+      return;
+    }
+    lRam_? = 0;
+    LOCK();
+    uRam_? = 0;
+    UNLOCK();
+    if (uVar6 != 2) {
+      uRam_? = 0;
+      lRam_? = 0;
+      return;
+    }
+    _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z(0xADDR,1,0);
+    return;
+  }
+  puVar10 = &(pOVar2->_1).cctor_finished_or_no_cctor;
+  LOCK();
+  bVar1 = *puVar10 == 1;
+  if (bVar1) {
+    *puVar10 = 1;
+  }
+  uVar6 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar6 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z(0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    uVar6 = GetCurrentThreadId();
+    psVar11 = &(pOVar2->_1).cctor_thread;
+    LOCK();
+    bVar1 = (ulonglong)uVar6 == *psVar11;
+    if (bVar1) {
+      *psVar11 = (ulonglong)uVar6;
+    }
+    UNLOCK();
+    if (bVar1) {
+      return;
+    }
+    while( true ) {
+      puVar9 = &(pOVar2->_1).field_0x1c;
+      LOCK();
+      bVar1 = *(int *)puVar9 == 1;
+      if (bVar1) {
+        *(undefined4 *)puVar9 = 1;
+      }
+      UNLOCK();
+      if (bVar1) break;
+      LOCK();
+      lVar4._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+      lVar4._4_4_ = (pOVar2->_1).cctor_started;
+      if (lVar4 == 0) {
+        (pOVar2->_1).initializationExceptionGCHandle = 0;
+        (pOVar2->_1).cctor_started = 0;
+      }
+      UNLOCK();
+      if (lVar4 != 0) break;
+      FUN_?(*puRam_?);
+    }
+code_?:
+    lVar12._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+    lVar12._4_4_ = (pOVar2->_1).cctor_started;
+    if (lVar12 == 0) {
+      return;
+    }
+  }
+  else {
+    uVar6 = GetCurrentThreadId();
+    LOCK();
+    (pOVar2->_1).cctor_thread = (ulonglong)uVar6;
+    UNLOCK();
+    LOCK();
+    (pOVar2->_1).cctor_finished_or_no_cctor = 1;
+    uVar6 = uRam_?;
+    UNLOCK();
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar6 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z(0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    lStackX_10 = 0;
+    if (((pOVar2->_1).field_0x6e & 4) != 0) {
+      FUN_?(pOVar2);
+      ppMVar5 = ppMVar3;
+      pIVar13 = (Il2CppClass *)pOVar2;
+code_?:
+      do {
+        if (ppMVar5 == (MethodInfo **)0x0) {
+          FUN_?(pIVar13);
+          if (pIVar13->field_count != 0) {
+            ppMVar5 = pIVar13->methods;
+            pMVar14 = *ppMVar5;
+code_?:
+            if (pMVar14 != (MethodInfo *)0x0) {
+              if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
+                ppMVar15 = ppMVar3;
+                while (ppMVar16 = ppMVar15 + 0x30528cee, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                  if (ppMVar15 == (MethodInfo **)0x7) {
+                    FUN_?(pMVar14,0,0,&lStackX_10);
+                    goto code_?;
+                  }
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+        else {
+          ppMVar5 = ppMVar5 + 1;
+          if (ppMVar5 < pIVar13->methods + pIVar13->field_count) {
+            pMVar14 = *ppMVar5;
+            goto code_?;
+          }
+        }
+        pIVar13 = pIVar13->parent;
+        ppMVar5 = ppMVar3;
+      } while (pIVar13 != (Il2CppClass *)0x0);
+    }
+code_?:
+    LOCK();
+    (pOVar2->_1).cctor_thread = 0;
+    UNLOCK();
+    if (lStackX_10 == 0) {
+      LOCK();
+      *(undefined4 *)&(pOVar2->_1).field_0x1c = 1;
+      UNLOCK();
+      goto code_?;
+    }
+    uStack_17 = 0;
+    uStack_18 = 0;
+    uStack_19 = 0xf;
+    pppppppuStack_78 = (undefined8 *******)0x0;
+    FUN_?(&pppppppuStack_78,&(pOVar2->_0).byval_arg,0,0);
+    pppppppuVar17 = &pppppppuStack_78;
+    if (0xf < uStack_19) {
+      pppppppuVar17 = pppppppuStack_78;
+    }
+    FUN_?(apppppppuStack_58,&UNK_?,pppppppuVar17);
+    if (uStack_19 < 0x10) {
+code_?:
+      lVar4 = lStackX_10;
+      uStack_18 = 0;
+      uStack_19 = 0xf;
+      pppppppuStack_78 = (undefined8 *******)((ulonglong)pppppppuStack_78 & 0xffffffffffffff00);
+      pppppppuVar17 = apppppppuStack_58;
+      if (0xf < uStack_20) {
+        pppppppuVar17 = apppppppuStack_58[0];
+      }
+      lVar12 = FUN_?(uRam_?,&UNK_?,&UNK_?,pppppppuVar17);
+      if (lVar4 != 0) {
+        *(longlong *)(lVar12 + 0x28U) = lVar4;
+        if (iRam_? != 0) {
+          uVar6 = (uint)(lVar12 + 0x28U >> 0xc);
+          puVar21 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar22 = *puVar21;
+            LOCK();
+            uVar23 = *puVar21;
+            if (uVar22 == uVar23) {
+              *puVar21 = uVar22 | 1L << (uVar6 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar22 != uVar23);
+        }
+      }
+      FUN_?(pOVar2,lVar12);
+      if (0xf < uStack_20) {
+        pppppppuVar17 = apppppppuStack_58[0];
+        if ((0xfff < uStack_20 + 1) && (pppppppuVar17 = (undefined8 *******)apppppppuStack_58[0][-1], 0x1f < (ulonglong)((longlong)apppppppuStack_58[0] + (-8 - (longlong)pppppppuVar17)))) goto code_?;
+        func_?(pppppppuVar17);
+      }
+      goto code_?;
+    }
+    pppppppuVar17 = pppppppuStack_78;
+    if ((uStack_19 + 1 < 0x1000) || (pppppppuVar17 = (undefined8 *******)pppppppuStack_78[-1], (ulonglong)((longlong)pppppppuStack_78 + (-8 - (longlong)pppppppuVar17)) < 0x20)) {
+      func_?(pppppppuVar17);
+      goto code_?;
+    }
+    FUN_?(0,0,0,0,0);
+  }
+  uVar24._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+  uVar24._4_4_ = (pOVar2->_1).cctor_started;
+  uVar24 = FUN_?(uVar24);
+  FUN_?(uVar24,0);
+code_?:
+  FUN_?(0,0,0,0,0);
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

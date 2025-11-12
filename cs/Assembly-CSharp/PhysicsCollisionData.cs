@@ -23,7 +23,7 @@ public class PhysicsCollisionData
 	public PhysicsCollisionData();
 
 	// Methods
-	public void Set(RaycastHit hit);
+	public void Set(UnityEngine.RaycastHit hit);
 	public void Set(Collider collider, Vector3 origin);
 	public void Clear();
 }

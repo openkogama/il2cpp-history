@@ -65,58 +65,30 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSet
 }
 
 
-/* Void set_OffsetSensitivity(Single) */
+/* Void set_BorderTorusHoverEps(Single) */
 
-void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSensitivity(GizmoPlaneSlider3DSettings *this,float value,MethodInfo *method)
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderTorusHoverEps(GizmoPlaneSlider3DSettings *this,float value,MethodInfo *method)
 
 {
-  fVar1 = 0.0001;
-  if (0.0001 <= value) {
+  fVar1 = 0.0;
+  if (0.0 <= value) {
     fVar1 = value;
   }
-  (this->fields)._offsetSensitivity = fVar1;
+  (this->fields)._borderTorusHoverEps = fVar1;
   return;
 }
 
 
-/* Void set_OffsetSnapStepRight(Single) */
+/* Void set_ExtrudeHoverEps(Single) */
 
-void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight(GizmoPlaneSlider3DSettings *this,float value,MethodInfo *method)
-
-{
-  fVar1 = 0.0001;
-  if (0.0001 <= value) {
-    fVar1 = value;
-  }
-  (this->fields)._offsetSnapStepRight = fVar1;
-  return;
-}
-
-
-/* Void set_ProportionalScaleSnapStep(Single) */
-
-void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ProportionalScaleSnapStep(GizmoPlaneSlider3DSettings *this,float value,MethodInfo *method)
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ExtrudeHoverEps(GizmoPlaneSlider3DSettings *this,float value,MethodInfo *method)
 
 {
-  fVar1 = 0.0001;
-  if (0.0001 <= value) {
+  fVar1 = 0.0;
+  if (0.0 <= value) {
     fVar1 = value;
   }
-  (this->fields)._proportionalScaleSnapStep = fVar1;
-  return;
-}
-
-
-/* Void set_RotationSensitivity(Single) */
-
-void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_RotationSensitivity(GizmoPlaneSlider3DSettings *this,float value,MethodInfo *method)
-
-{
-  fVar1 = 0.0001;
-  if (0.0001 <= value) {
-    fVar1 = value;
-  }
-  (this->fields)._rotationSensitivity = fVar1;
+  (this->fields)._extrudeHoverEps = fVar1;
   return;
 }
 
@@ -131,6 +103,20 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSet
     fVar1 = value;
   }
   (this->fields)._scaleSensitivity = fVar1;
+  return;
+}
+
+
+/* Void set_ScaleSnapStepRight(Single) */
+
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepRight(GizmoPlaneSlider3DSettings *this,float value,MethodInfo *method)
+
+{
+  fVar1 = 0.0001;
+  if (0.0001 <= value) {
+    fVar1 = value;
+  }
+  (this->fields)._scaleSnapStepRight = fVar1;
   return;
 }
 

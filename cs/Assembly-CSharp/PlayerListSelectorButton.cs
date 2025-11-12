@@ -17,7 +17,7 @@ public class PlayerListSelectorButton : MonoBehaviour
 	[SerializeField]
 	private Image buttonImage;
 	[SerializeField]
-	public Button button;
+	public UnityEngine.UI.Button button;
 	[SerializeField]
 	private UnityEngine.UI.Text playerCount;
 	[SerializeField]

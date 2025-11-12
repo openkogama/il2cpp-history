@@ -17,7 +17,7 @@ namespace MV.WorldObject.Accessories
 	{
 		// Fields
 		public int timeLimit;
-		public DateTime timeLimitStartTime;
+		public System.DateTime timeLimitStartTime;
 	
 		// Properties
 		public bool IsTimeLimited { get; }

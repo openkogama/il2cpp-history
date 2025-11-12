@@ -1,19 +1,24 @@
 
 /* Void SetColor(Material, Color) */
 
-void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetColor(Material *material,Color color,MethodInfo *method)
+void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetColor(Material *material,Color *color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__Color);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(material,StringLiteral__Color,(Vector4)color,(MethodInfo *)0x0);
+    CStack_1.r = color->r;
+    CStack_1.g = color->g;
+    CStack_1.b = color->b;
+    CStack_1.a = color->a;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor(material,StringLiteral__Color,&CStack_1,(MethodInfo *)0x0);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -26,17 +31,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetCullModeBack(Material *
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__CullMode);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__CullMode,2,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__CullMode,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_,iVar2,0x40000000,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2,0x40000000);
   return;
 }
 
@@ -47,17 +90,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetCullModeFront(Material 
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__CullMode);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__CullMode,1,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__CullMode,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_,iVar2,0x3f800000,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2,0x3f800000);
   return;
 }
 
@@ -68,17 +149,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetCullModeOff(Material *m
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__CullMode);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__CullMode,0,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__CullMode,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_,iVar2,0,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2,0);
   return;
 }
 
@@ -89,17 +208,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetStencilCmpAlways(Materi
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__StencilComp);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__StencilComp,8,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__StencilComp,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_,iVar2,0x41000000,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2,0x41000000);
   return;
 }
 
@@ -110,17 +267,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetStencilCmpNotEqual(Mate
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__StencilComp);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__StencilComp,6,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__StencilComp,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_,iVar2,0x40c00000,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2,0x40c00000);
   return;
 }
 
@@ -131,17 +326,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetZTestAlways(Material *m
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__ZTest);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__ZTest,8,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__ZTest,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_,iVar2,0x41000000,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2,0x41000000);
   return;
 }
 
@@ -152,17 +385,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetZTestEnabled(Material *
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__ZTest);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__ZTest,(enabled ^ 1) * 4 + 4,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__ZTest,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2);
   return;
 }
 
@@ -173,17 +444,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetZTestLess(Material *mat
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__ZTest);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__ZTest,2,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__ZTest,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_,iVar2,0x40000000,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2,0x40000000);
   return;
 }
 
@@ -194,17 +503,55 @@ void Assembly-CSharp.dll::RTG::MaterialEx::MaterialEx_SetZWriteEnabled(Material 
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral__ZWrite);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (material != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(material,StringLiteral__ZWrite,(uint)enabled,(MethodInfo *)0x0);
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID(StringLiteral__ZWrite,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (material == (Material *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar3 = (material->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)material,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar3,iVar2);
   return;
 }
 

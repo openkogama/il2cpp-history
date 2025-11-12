@@ -8,67 +8,89 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothPan>d__129::RTFocusCamera_
   this_00 = (this->fields).__4__this;
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
-    if (this_00 == (RTFocusCamera *)0x0) goto code_?;
+    if (this_00 == (RTFocusCamera *)0x0) goto DAT_?;
     VVar2 = RTFocusCamera::RTFocusCamera_CalculatePanAmount(this_00,(this->fields).deviceAxisX,(this->fields).deviceAxisY,(MethodInfo *)0x0);
-    (this->fields)._panAmount_5__2.x = in_stack_3;
-    (this->fields)._panAmount_5__2.y = VVar2.y;
+    fStackX_8 = VVar2.x;
+    fStackX_c = VVar2.y;
+    (this->fields)._panAmount_5__2.x = fStackX_8;
+    (this->fields)._panAmount_5__2.y = fStackX_c;
   }
   else {
     if (iVar1 != 1) {
       return 0;
     }
     (this->fields).__1__state = -1;
-    if (this_00 == (RTFocusCamera *)0x0) goto code_?;
+    fStackX_8 = (this->fields)._panAmount_5__2.x;
+    fStackX_c = (this->fields)._panAmount_5__2.y;
+    if (this_00 == (RTFocusCamera *)0x0) goto DAT_?;
   }
-  RTFocusCamera::RTFocusCamera_Pan(this_00,(Vector2)0x0,(MethodInfo *)0x0);
-  fVar4 = (this->fields)._panAmount_5__2.x;
-  fVar5 = (this->fields)._panAmount_5__2.y;
+  VVar2.y = fStackX_c;
+  VVar2.x = fStackX_8;
+  RTFocusCamera::RTFocusCamera_Pan(this_00,VVar2,(MethodInfo *)0x0);
+  fVar3 = (this->fields)._panAmount_5__2.x;
+  fVar4 = (this->fields)._panAmount_5__2.y;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  fVar5 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
   fVar6 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   pCVar7 = (this_00->fields)._panSettings;
   if (pCVar7 != (CameraPanSettings *)0x0) {
     fVar8 = (pCVar7->fields)._smoothValue;
-    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar9 = fVar9 * fVar8;
-    if (fVar9 < 0.0) {
-      fVar9 = 0.0;
+    pcVar9 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) && (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+      uVar10 = func_?(&UNK_?);
+      FUN_?(uVar10,0);
+      pcVar9 = (code *)swi(3);
+      bVar11 = (*pcVar9)();
+      return bVar11;
     }
-    else if (1.0 < fVar9) {
-      fVar9 = 1.0;
+    pcRam_? = pcVar9;
+    fVar12 = (float)(*pcRam_?)();
+    fVar12 = fVar12 * fVar8;
+    if (fVar12 < 0.0) {
+      fVar12 = 0.0;
     }
-    fVar4 = (4.3650128e-29 - fVar4) * fVar9 + fVar4;
-    fVar5 = (fVar6 - fVar5) * fVar9 + fVar5;
-    (this->fields)._panAmount_5__2.x = fVar4;
-    (this->fields)._panAmount_5__2.y = fVar5;
-    fVar4 = fVar4 * fVar4 + fVar5 * fVar5;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
+    else if (1.0 < fVar12) {
+      fVar12 = 1.0;
     }
-    fVar5 = ABS(fVar4);
-    if (fVar5 <= 0.0) {
-      fVar5 = 0.0;
+    fVar3 = (fVar5 - fVar3) * fVar12 + fVar3;
+    fVar4 = (fVar6 - fVar4) * fVar12 + fVar4;
+    (this->fields)._panAmount_5__2.y = fVar4;
+    (this->fields)._panAmount_5__2.x = fVar3;
+    cVar13 = FUN_?(fVar4 * fVar4 + fVar3 * fVar3,0);
+    if (cVar13 == '\0') {
+      bVar14 = iRam_? != 0;
+      (this->fields).__2__current = (Object *)0x0;
+      if (bVar14) {
+        uVar15 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+        uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+        do {
+          uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+          puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+          LOCK();
+          bVar14 = uVar17 == *puVar18;
+          if (bVar14) {
+            *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar14);
+      }
+      (this->fields).__1__state = 1;
+      bVar11 = 1;
     }
-    fVar8 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
-    fVar6 = fVar5 * 1e-06;
-    if (fVar5 * 1e-06 <= fVar8) {
-      fVar6 = fVar8;
+    else {
+      bVar11 = 0;
     }
-    if (ABS(0.0 - fVar4) < fVar6) {
-      return 0;
-    }
-    (this->fields).__2__current = (Object *)0x0;
-    func_?(&(this->fields).__2__current);
-    (this->fields).__1__state = 1;
-    return 1;
+    return bVar11;
   }
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
+DAT_?:
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  bVar11 = (*pcVar9)();
   return bVar11;
 }
 
@@ -81,8 +103,8 @@ void Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothPan>d__129::RTFocusCamera_
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__RTG__RTFocusCamera___DoSmoothPan_d__129__System_Collections_IEnumerator_Reset__);
-  func_?(this_00);
+  uVar1 = func_?(&MethodInfo__RTG__RTFocusCamera___DoSmoothPan_d__129__System_Collections_IEnumerator_Reset__);
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

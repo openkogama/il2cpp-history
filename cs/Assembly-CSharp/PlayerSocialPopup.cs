@@ -33,7 +33,7 @@ public class PlayerSocialPopup : MonoBehaviour
 	[SerializeField]
 	private GameObject isFriendTextObject;
 	[SerializeField]
-	private Button manageUserButton;
+	private UnityEngine.UI.Button manageUserButton;
 	[SerializeField]
 	private AdminToolController adminToolsPrefab;
 	[SerializeField]

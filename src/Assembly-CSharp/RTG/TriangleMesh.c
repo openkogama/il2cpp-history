@@ -1,373 +1,536 @@
 
 /* Mesh CreateEqXY(Vector3, Single, Color) */
 
-Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateEqXY(Vector3 centroid,float sideLength,Color color,MethodInfo *method)
+Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateEqXY(Vector3 *centroid,float sideLength,Color *color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Color);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__ToArray__);
-    func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&TypeInfo__RTG__TriangleMath);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Color);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__ToArray__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Mesh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__TriangleMath);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  uVar2 = (pQVar1->identityQuaternion).x;
-  uVar3 = (pQVar1->identityQuaternion).y;
-  rotation.y = (float)uVar3;
-  rotation.x = (float)uVar2;
-  fVar4 = (pQVar1->identityQuaternion).z;
-  fVar5 = (pQVar1->identityQuaternion).w;
-  if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__TriangleMath);
+  uVar2._0_4_ = (pQVar1->identityQuaternion).x;
+  uVar2._4_4_ = (pQVar1->identityQuaternion).y;
+  uVar3._0_4_ = (pQVar1->identityQuaternion).z;
+  uVar3._4_4_ = (pQVar1->identityQuaternion).w;
+  if (*(int *)&(TypeInfo__RTG__TriangleMath->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  rotation.z = fVar4;
-  rotation.w = fVar5;
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)TriangleMath::TriangleMath_CalcEqTriangle3DPoints(centroid,sideLength,rotation,(MethodInfo *)0x0);
-  if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
-    value = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__ToArray__);
-    value_00 = (Vector3__Array *)func_?();
+  VStack_4.x = centroid->x;
+  VStack_4.y = centroid->y;
+  VStack_4.z = centroid->z;
+  aQStack_5[0]._0_8_ = uVar2;
+  aQStack_5[0]._8_8_ = uVar3;
+  pLVar6 = TriangleMath::TriangleMath_CalcEqTriangle3DPoints(&VStack_4,sideLength,aQStack_5,(MethodInfo *)0x0);
+  if (pLVar6 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    pAVar7 = (Array *)FUN_?(pLVar6);
+    this = (Array *)FUN_?(TypeInfo__UnityEngine__Vector3,3);
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar7._0_4_ = (pVVar6->forwardVector).x;
-    uVar7._4_4_ = (pVVar6->forwardVector).y;
-    fVar4 = (pVVar6->forwardVector).z;
-    if (value_00 != (Vector3__Array *)0x0) {
-      if (value_00->max_length == 0) goto code_?;
-      value_00->vector[0].x = (float)(int)(uVar7 ^ 0x8000000080000000);
-      value_00->vector[0].y = (float)(int)((uVar7 ^ 0x8000000080000000) >> 0x20);
-      value_00->vector[0].z = -fVar4;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar8._0_4_ = (pVVar6->forwardVector).x;
-      uVar8._4_4_ = (pVVar6->forwardVector).y;
-      fVar4 = (pVVar6->forwardVector).z;
-      if (value_00->max_length < 2) goto code_?;
-      value_00->vector[1].x = (float)(int)(uVar8 ^ 0x8000000080000000);
-      value_00->vector[1].y = (float)(int)((uVar8 ^ 0x8000000080000000) >> 0x20);
-      value_00->vector[1].z = -fVar4;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar9._0_4_ = (pVVar6->forwardVector).x;
-      uVar9._4_4_ = (pVVar6->forwardVector).y;
-      fVar4 = (pVVar6->forwardVector).z;
-      if (value_00->max_length < 3) goto code_?;
-      value_00->vector[2].x = (float)(int)(uVar9 ^ 0x8000000080000000);
-      value_00->vector[2].y = (float)(int)((uVar9 ^ 0x8000000080000000) >> 0x20);
-      value_00->vector[2].z = -fVar4;
-      pMVar10 = (Mesh *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar10,(MethodInfo *)0x0);
-      if (pMVar10 != (Mesh *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar10,(Vector3__Array *)value,(MethodInfo *)0x0);
-        value_01 = (Color__Array *)func_?();
-        if (value_01 != (Color__Array *)0x0) {
-          if (value_01->max_length == 0) goto code_?;
-          value_01->vector[0].r = color.r;
-          value_01->vector[0].g = color.g;
-          value_01->vector[0].b = color.b;
-          value_01->vector[0].a = color.a;
-          if (value_01->max_length < 2) goto code_?;
-          value_01->vector[1].r = color.r;
-          value_01->vector[1].g = color.g;
-          value_01->vector[1].b = color.b;
-          value_01->vector[1].a = color.a;
-          if (value_01->max_length < 3) goto code_?;
-          value_01->vector[2].r = color.r;
-          value_01->vector[2].g = color.g;
-          value_01->vector[2].b = color.b;
-          value_01->vector[2].a = color.a;
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar10,value_01,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_normals(pMVar10,value_00,(MethodInfo *)0x0);
-          indices = (Int32__Array *)func_?();
-          if (indices != (Int32__Array *)0x0) {
-            if ((1 < indices->max_length) && (indices->vector[1] = 1, 2 < indices->max_length)) {
-              indices->vector[2] = 2;
-              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar10,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar10,0,(MethodInfo *)0x0);
-              return pMVar10;
+    cVar8 = cRam_?;
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar10 = (pVVar9->forwardVector).x;
+    fVar11 = (pVVar9->forwardVector).z;
+    if (this != (Array *)0x0) {
+      if (*(int *)&this[1].monitor != 0) {
+        this[2].klass = (Array__Class *)(CONCAT44((pVVar9->forwardVector).y,uVar10) ^ 0x8000000080000000);
+        *(float *)&this[2].monitor = -fVar11;
+        if (cVar8 == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cVar8 = '\x01';
+          cRam_? = '\x01';
+        }
+        pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar12 = (pVVar9->forwardVector).x;
+        fVar11 = (pVVar9->forwardVector).z;
+        if (1 < *(uint *)&this[1].monitor) {
+          *(ulonglong *)((longlong)&this[2].monitor + 4) = CONCAT44((pVVar9->forwardVector).y,uVar12) ^ 0x8000000080000000;
+          *(float *)((longlong)&this[3].klass + 4) = -fVar11;
+          if (cVar8 == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector3);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+          uVar13 = (pVVar9->forwardVector).x;
+          fVar11 = (pVVar9->forwardVector).z;
+          if (2 < *(uint *)&this[1].monitor) {
+            this[3].monitor = (MonitorData *)(CONCAT44((pVVar9->forwardVector).y,uVar13) ^ 0x8000000080000000);
+            *(float *)&this[4].klass = -fVar11;
+            pMVar14 = (Mesh *)FUN_?(TypeInfo__UnityEngine__Mesh);
+            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar14,(MethodInfo *)0x0);
+            if (pMVar14 != (Mesh *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              iVar15 = 0;
+              if (pAVar7 != (Array *)0x0) {
+                iVar15 = mscorlib.dll::System::Array::Array_get_Length(pAVar7,(MethodInfo *)0x0);
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel(pMVar14,VertexAttribute__Enum_Position,VertexAttributeFormat__Enum_Float32,3,pAVar7,iVar15,0,iVar15,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+              pAVar7 = (Array *)FUN_?(TypeInfo__UnityEngine__Color);
+              if (pAVar7 != (Array *)0x0) {
+                if (*(int *)&pAVar7[1].monitor != 0) {
+                  fVar11 = color->r;
+                  fVar16 = color->g;
+                  fVar17 = color->b;
+                  fVar18 = color->a;
+                  *(float *)&pAVar7[2].klass = fVar11;
+                  *(float *)((longlong)&pAVar7[2].klass + 4) = fVar16;
+                  *(float *)&pAVar7[2].monitor = fVar17;
+                  *(float *)((longlong)&pAVar7[2].monitor + 4) = fVar18;
+                  if (1 < *(uint *)&pAVar7[1].monitor) {
+                    *(float *)&pAVar7[3].klass = fVar11;
+                    *(float *)((longlong)&pAVar7[3].klass + 4) = fVar16;
+                    *(float *)&pAVar7[3].monitor = fVar17;
+                    *(float *)((longlong)&pAVar7[3].monitor + 4) = fVar18;
+                    if (2 < *(uint *)&pAVar7[1].monitor) {
+                      bVar19 = cRam_? == '\0';
+                      *(float *)&pAVar7[4].klass = fVar11;
+                      *(float *)((longlong)&pAVar7[4].klass + 4) = fVar16;
+                      *(float *)&pAVar7[4].monitor = fVar17;
+                      *(float *)((longlong)&pAVar7[4].monitor + 4) = fVar18;
+                      if (bVar19) {
+                        FUN_?(&void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Color>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Color_____UnityEngine__Rendering__MeshUpdateFlags_);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      iVar15 = mscorlib.dll::System::Array::Array_get_Length(pAVar7,(MethodInfo *)0x0);
+                      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel(pMVar14,VertexAttribute__Enum_Color,VertexAttributeFormat__Enum_Float32,4,pAVar7,iVar15,0,iVar15,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+                      if (cRam_? == '\0') {
+                        FUN_?(&void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      iVar15 = mscorlib.dll::System::Array::Array_get_Length(this,(MethodInfo *)0x0);
+                      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel(pMVar14,VertexAttribute__Enum_Normal,VertexAttributeFormat__Enum_Float32,3,this,iVar15,0,iVar15,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+                      indices = (Int32__Array *)FUN_?(TypeInfo__System__Int32,3);
+                      if (indices == (Int32__Array *)0x0) goto code_?;
+                      if ((1 < (uint)indices->max_length) && (indices->vector[1] = 1, 2 < (uint)indices->max_length)) {
+                        indices->vector[2] = 2;
+                        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar14,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
+                        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar14,0,(MethodInfo *)0x0);
+                        return pMVar14;
+                      }
+                    }
+                  }
+                }
+                goto code_?;
+              }
             }
             goto code_?;
           }
         }
       }
+code_?:
+      FUN_?();
+      pcVar20 = (code *)swi(3);
+      pMVar14 = (Mesh *)(*pcVar20)();
+      return pMVar14;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  pMVar10 = (Mesh *)(*pcVar11)();
-  return pMVar10;
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  pMVar14 = (Mesh *)(*pcVar20)();
+  return pMVar14;
 }
 
 
 /* Mesh CreateRightAngledTriangleXY(Vector3, Single, Single, Color) */
 
-Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateRightAngledTriangleXY(Vector3 cornerPosition,float xLength,float yLength,Color color,MethodInfo *method)
+Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateRightAngledTriangleXY(Vector3 *cornerPosition,float xLength,float yLength,Color *color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Color);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Color);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Mesh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((xLength < 0.0001) || (yLength < 0.0001)) {
     return (Mesh *)0x0;
   }
-  value = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
-  if (value == (Vector3__Array *)0x0) goto code_?;
-  if (value->max_length != 0) {
-    value->vector[0].x = (float)(int)cornerPosition._0_8_;
-    value->vector[0].y = (float)(int)((ulonglong)cornerPosition._0_8_ >> 0x20);
-    value->vector[0].z = cornerPosition.z;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+  this = (Array *)FUN_?(TypeInfo__UnityEngine__Vector3);
+  if (this == (Array *)0x0) goto code_?;
+  if (*(int *)&this[1].monitor != 0) {
+    bVar1 = cRam_? == '\0';
+    fVar2 = cornerPosition->z;
+    this[2].klass = *(Array__Class **)cornerPosition;
+    *(float *)&this[2].monitor = fVar2;
+    if (bVar1) {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar2 = (pVVar1->upVector).x;
-    uVar3 = (pVVar1->upVector).y;
-    fVar4 = (pVVar1->upVector).z;
-    if (1 < value->max_length) {
-      value->vector[1].x = cornerPosition.x + (float)uVar2 * xLength;
-      value->vector[1].y = cornerPosition.y + (float)uVar3 * xLength;
-      value->vector[1].z = cornerPosition.z + fVar4 * xLength;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar4 = cornerPosition->x;
+    uVar5 = cornerPosition->y;
+    uVar6 = (pVVar3->upVector).x;
+    fVar2 = (pVVar3->upVector).z;
+    fVar7 = cornerPosition->z;
+    if (1 < *(uint *)&this[1].monitor) {
+      bVar1 = cRam_? == '\0';
+      *(ulonglong *)((longlong)&this[2].monitor + 4) = CONCAT44((pVVar3->upVector).y * xLength + (float)uVar5,(float)uVar6 * xLength + (float)uVar4);
+      *(float *)((longlong)&this[3].klass + 4) = fVar2 * xLength + fVar7;
+      if (bVar1) {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar5 = (pVVar1->rightVector).x;
-      uVar6 = (pVVar1->rightVector).y;
-      fVar4 = (pVVar1->rightVector).z;
-      if (2 < value->max_length) {
-        value->vector[2].x = cornerPosition.x + (float)uVar5 * yLength;
-        value->vector[2].y = cornerPosition.y + (float)uVar6 * yLength;
-        value->vector[2].z = cornerPosition.z + fVar4 * yLength;
-        pMVar7 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar7,(MethodInfo *)0x0);
-        if (pMVar7 == (Mesh *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar7,value,(MethodInfo *)0x0);
-        value_00 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,3);
-        if (value_00 == (Color__Array *)0x0) goto code_?;
-        if (value_00->max_length != 0) {
-          value_00->vector[0].r = color.r;
-          value_00->vector[0].g = color.g;
-          value_00->vector[0].b = color.b;
-          value_00->vector[0].a = color.a;
-          if (1 < value_00->max_length) {
-            value_00->vector[1].r = color.r;
-            value_00->vector[1].g = color.g;
-            value_00->vector[1].b = color.b;
-            value_00->vector[1].a = color.a;
-            if (2 < value_00->max_length) {
-              value_00->vector[2].r = color.r;
-              value_00->vector[2].g = color.g;
-              value_00->vector[2].b = color.b;
-              value_00->vector[2].a = color.a;
-              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar7,value_00,(MethodInfo *)0x0);
-              indices = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-              if (indices == (Int32__Array *)0x0) goto code_?;
-              if ((1 < indices->max_length) && (indices->vector[1] = 1, 2 < indices->max_length)) {
-                indices->vector[2] = 2;
-                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar7,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar7,0,(MethodInfo *)0x0);
-                return pMVar7;
+      pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar8 = cornerPosition->x;
+      uVar9 = cornerPosition->y;
+      uVar10 = (pVVar3->rightVector).x;
+      fVar2 = (pVVar3->rightVector).z;
+      fVar7 = cornerPosition->z;
+      if (2 < *(uint *)&this[1].monitor) {
+        this[3].monitor = (MonitorData *)CONCAT44((pVVar3->rightVector).y * yLength + (float)uVar9,(float)uVar10 * yLength + (float)uVar8);
+        *(float *)&this[4].klass = fVar2 * yLength + fVar7;
+        pMVar11 = (Mesh *)FUN_?(TypeInfo__UnityEngine__Mesh);
+        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar11,(MethodInfo *)0x0);
+        if (pMVar11 != (Mesh *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          valuesArrayLength = mscorlib.dll::System::Array::Array_get_Length(this,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel(pMVar11,VertexAttribute__Enum_Position,VertexAttributeFormat__Enum_Float32,3,this,valuesArrayLength,0,valuesArrayLength,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+          value = (Color__Array *)FUN_?(TypeInfo__UnityEngine__Color,3);
+          if (value != (Color__Array *)0x0) {
+            if ((int)value->max_length != 0) {
+              fVar2 = color->r;
+              fVar7 = color->g;
+              fVar12 = color->b;
+              fVar13 = color->a;
+              value->vector[0].r = fVar2;
+              value->vector[0].g = fVar7;
+              value->vector[0].b = fVar12;
+              value->vector[0].a = fVar13;
+              if (1 < (uint)value->max_length) {
+                value->vector[1].r = fVar2;
+                value->vector[1].g = fVar7;
+                value->vector[1].b = fVar12;
+                value->vector[1].a = fVar13;
+                if (2 < (uint)value->max_length) {
+                  value->vector[2].r = fVar2;
+                  value->vector[2].g = fVar7;
+                  value->vector[2].b = fVar12;
+                  value->vector[2].a = fVar13;
+                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar11,value,(MethodInfo *)0x0);
+                  indices = (Int32__Array *)FUN_?(TypeInfo__System__Int32,3);
+                  if (indices == (Int32__Array *)0x0) goto code_?;
+                  if ((1 < (uint)indices->max_length) && (indices->vector[1] = 1, 2 < (uint)indices->max_length)) {
+                    indices->vector[2] = 2;
+                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar11,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
+                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar11,0,(MethodInfo *)0x0);
+                    return pMVar11;
+                  }
+                }
               }
             }
+            goto DAT_?;
           }
         }
+code_?:
+        FUN_?();
+        pcVar14 = (code *)swi(3);
+        pMVar11 = (Mesh *)(*pcVar14)();
+        return pMVar11;
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pMVar7 = (Mesh *)(*pcVar8)();
-  return pMVar7;
+DAT_?:
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  pMVar11 = (Mesh *)(*pcVar14)();
+  return pMVar11;
 }
 
 
 /* Mesh CreateWireEqXY(Vector3, Single, Color) */
 
-Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateWireEqXY(Vector3 centroid,float sideLength,Color color,MethodInfo *method)
+Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateWireEqXY(Vector3 *centroid,float sideLength,Color *color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Color);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__ToArray__);
-    func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&TypeInfo__RTG__TriangleMath);
+    FUN_?(&TypeInfo__UnityEngine__Color);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__ToArray__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Mesh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__TriangleMath);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).x;
-  fVar3 = (pQVar1->identityQuaternion).y;
-  fVar4 = (pQVar1->identityQuaternion).z;
-  fVar5 = (pQVar1->identityQuaternion).w;
-  if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__TriangleMath);
+  uVar2._0_4_ = (pQVar1->identityQuaternion).x;
+  uVar2._4_4_ = (pQVar1->identityQuaternion).y;
+  uVar3._0_4_ = (pQVar1->identityQuaternion).z;
+  uVar3._4_4_ = (pQVar1->identityQuaternion).w;
+  if (*(int *)&(TypeInfo__RTG__TriangleMath->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  rotation.y = fVar3;
-  rotation.x = fVar2;
-  rotation.z = fVar4;
-  rotation.w = fVar5;
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)TriangleMath::TriangleMath_CalcEqTriangle3DPoints(centroid,sideLength,rotation,(MethodInfo *)0x0);
-  if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
-    value = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__ToArray__);
-    pMVar6 = (Mesh *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar6,(MethodInfo *)0x0);
-    if (pMVar6 != (Mesh *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar6,(Vector3__Array *)value,(MethodInfo *)0x0);
-      value_00 = (Color__Array *)func_?();
-      if (value_00 != (Color__Array *)0x0) {
-        if (value_00->max_length == 0) goto code_?;
-        value_00->vector[0].r = color.r;
-        value_00->vector[0].g = color.g;
-        value_00->vector[0].b = color.b;
-        value_00->vector[0].a = color.a;
-        if (value_00->max_length < 2) goto code_?;
-        value_00->vector[1].r = color.r;
-        value_00->vector[1].g = color.g;
-        value_00->vector[1].b = color.b;
-        value_00->vector[1].a = color.a;
-        if (value_00->max_length < 3) goto code_?;
-        value_00->vector[2].r = color.r;
-        value_00->vector[2].g = color.g;
-        value_00->vector[2].b = color.b;
-        value_00->vector[2].a = color.a;
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar6,value_00,(MethodInfo *)0x0);
-        indices = (Int32__Array *)func_?();
-        if (indices != (Int32__Array *)0x0) {
-          if ((1 < indices->max_length) && (indices->vector[1] = 1, 2 < indices->max_length)) {
-            indices->vector[2] = 2;
-            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar6,indices,MeshTopology__Enum_LineStrip,0,(MethodInfo *)0x0);
-            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar6,0,(MethodInfo *)0x0);
-            return pMVar6;
+  VStack_4.x = centroid->x;
+  VStack_4.y = centroid->y;
+  VStack_4.z = centroid->z;
+  aQStack_5[0]._0_8_ = uVar2;
+  aQStack_5[0]._8_8_ = uVar3;
+  pLVar6 = TriangleMath::TriangleMath_CalcEqTriangle3DPoints(&VStack_4,sideLength,aQStack_5,(MethodInfo *)0x0);
+  if (pLVar6 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    pAVar7 = (Array *)FUN_?(pLVar6);
+    pMVar8 = (Mesh *)FUN_?(TypeInfo__UnityEngine__Mesh);
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar8,(MethodInfo *)0x0);
+    if (pMVar8 != (Mesh *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar9 = 0;
+      if (pAVar7 != (Array *)0x0) {
+        iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar7,(MethodInfo *)0x0);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel(pMVar8,VertexAttribute__Enum_Position,VertexAttributeFormat__Enum_Float32,3,pAVar7,iVar9,0,iVar9,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+      pAVar7 = (Array *)FUN_?(TypeInfo__UnityEngine__Color);
+      if (pAVar7 != (Array *)0x0) {
+        if (*(int *)&pAVar7[1].monitor != 0) {
+          fVar10 = color->r;
+          fVar11 = color->g;
+          fVar12 = color->b;
+          fVar13 = color->a;
+          *(float *)&pAVar7[2].klass = fVar10;
+          *(float *)((longlong)&pAVar7[2].klass + 4) = fVar11;
+          *(float *)&pAVar7[2].monitor = fVar12;
+          *(float *)((longlong)&pAVar7[2].monitor + 4) = fVar13;
+          if (1 < *(uint *)&pAVar7[1].monitor) {
+            *(float *)&pAVar7[3].klass = fVar10;
+            *(float *)((longlong)&pAVar7[3].klass + 4) = fVar11;
+            *(float *)&pAVar7[3].monitor = fVar12;
+            *(float *)((longlong)&pAVar7[3].monitor + 4) = fVar13;
+            if (2 < *(uint *)&pAVar7[1].monitor) {
+              bVar14 = cRam_? == '\0';
+              *(float *)&pAVar7[4].klass = fVar10;
+              *(float *)((longlong)&pAVar7[4].klass + 4) = fVar11;
+              *(float *)&pAVar7[4].monitor = fVar12;
+              *(float *)((longlong)&pAVar7[4].monitor + 4) = fVar13;
+              if (bVar14) {
+                FUN_?(&void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Color>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Color_____UnityEngine__Rendering__MeshUpdateFlags_);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar7,(MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel(pMVar8,VertexAttribute__Enum_Color,VertexAttributeFormat__Enum_Float32,4,pAVar7,iVar9,0,iVar9,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+              indices = (Int32__Array *)FUN_?(TypeInfo__System__Int32,4);
+              if (indices == (Int32__Array *)0x0) goto DAT_?;
+              if ((1 < (uint)indices->max_length) && (indices->vector[1] = 1, 2 < (uint)indices->max_length)) {
+                indices->vector[2] = 2;
+                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar8,indices,MeshTopology__Enum_LineStrip,0,(MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar8,0,(MethodInfo *)0x0);
+                return pMVar8;
+              }
+            }
           }
-          goto code_?;
         }
+        FUN_?();
+        pcVar15 = (code *)swi(3);
+        pMVar8 = (Mesh *)(*pcVar15)();
+        return pMVar8;
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pMVar6 = (Mesh *)(*pcVar7)();
-  return pMVar6;
+DAT_?:
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  pMVar8 = (Mesh *)(*pcVar15)();
+  return pMVar8;
 }
 
 
 /* Mesh CreateWireRightAngledTriangleXY(Vector3, Single, Single, Color) */
 
-Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateWireRightAngledTriangleXY(Vector3 cornerPosition,float xLength,float yLength,Color color,MethodInfo *method)
+Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateWireRightAngledTriangleXY(Vector3 *cornerPosition,float xLength,float yLength,Color *color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Color);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Color);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Mesh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((xLength < 0.0001) || (yLength < 0.0001)) {
     return (Mesh *)0x0;
   }
-  value = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
-  if (value == (Vector3__Array *)0x0) goto code_?;
-  if (value->max_length != 0) {
-    value->vector[0].x = (float)(int)cornerPosition._0_8_;
-    value->vector[0].y = (float)(int)((ulonglong)cornerPosition._0_8_ >> 0x20);
-    value->vector[0].z = cornerPosition.z;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+  this = (Array *)FUN_?(TypeInfo__UnityEngine__Vector3);
+  if (this == (Array *)0x0) goto code_?;
+  if (*(int *)&this[1].monitor != 0) {
+    bVar1 = cRam_? == '\0';
+    fVar2 = cornerPosition->z;
+    this[2].klass = *(Array__Class **)cornerPosition;
+    *(float *)&this[2].monitor = fVar2;
+    if (bVar1) {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar2 = (pVVar1->upVector).x;
-    uVar3 = (pVVar1->upVector).y;
-    fVar4 = (pVVar1->upVector).z;
-    if (1 < value->max_length) {
-      value->vector[1].x = cornerPosition.x + (float)uVar2 * xLength;
-      value->vector[1].y = cornerPosition.y + (float)uVar3 * xLength;
-      value->vector[1].z = cornerPosition.z + fVar4 * xLength;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar4 = cornerPosition->x;
+    uVar5 = cornerPosition->y;
+    uVar6 = (pVVar3->upVector).x;
+    fVar2 = (pVVar3->upVector).z;
+    fVar7 = cornerPosition->z;
+    if (1 < *(uint *)&this[1].monitor) {
+      bVar1 = cRam_? == '\0';
+      *(ulonglong *)((longlong)&this[2].monitor + 4) = CONCAT44((pVVar3->upVector).y * xLength + (float)uVar5,(float)uVar6 * xLength + (float)uVar4);
+      *(float *)((longlong)&this[3].klass + 4) = fVar2 * xLength + fVar7;
+      if (bVar1) {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar5 = (pVVar1->rightVector).x;
-      uVar6 = (pVVar1->rightVector).y;
-      fVar4 = (pVVar1->rightVector).z;
-      if (2 < value->max_length) {
-        value->vector[2].x = cornerPosition.x + (float)uVar5 * yLength;
-        value->vector[2].y = cornerPosition.y + (float)uVar6 * yLength;
-        value->vector[2].z = cornerPosition.z + fVar4 * yLength;
-        pMVar7 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar7,(MethodInfo *)0x0);
-        if (pMVar7 == (Mesh *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar7,value,(MethodInfo *)0x0);
-        value_00 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,3);
-        if (value_00 == (Color__Array *)0x0) goto code_?;
-        if (value_00->max_length != 0) {
-          value_00->vector[0].r = color.r;
-          value_00->vector[0].g = color.g;
-          value_00->vector[0].b = color.b;
-          value_00->vector[0].a = color.a;
-          if (1 < value_00->max_length) {
-            value_00->vector[1].r = color.r;
-            value_00->vector[1].g = color.g;
-            value_00->vector[1].b = color.b;
-            value_00->vector[1].a = color.a;
-            if (2 < value_00->max_length) {
-              value_00->vector[2].r = color.r;
-              value_00->vector[2].g = color.g;
-              value_00->vector[2].b = color.b;
-              value_00->vector[2].a = color.a;
-              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar7,value_00,(MethodInfo *)0x0);
-              indices = (Int32__Array *)func_?(TypeInfo__System__Int32,4);
-              if (indices == (Int32__Array *)0x0) goto code_?;
-              if ((1 < indices->max_length) && (indices->vector[1] = 1, 2 < indices->max_length)) {
-                indices->vector[2] = 2;
-                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar7,indices,MeshTopology__Enum_LineStrip,0,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar7,0,(MethodInfo *)0x0);
-                return pMVar7;
+      pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar8 = cornerPosition->x;
+      uVar9 = cornerPosition->y;
+      uVar10 = (pVVar3->rightVector).x;
+      fVar2 = (pVVar3->rightVector).z;
+      fVar7 = cornerPosition->z;
+      if (2 < *(uint *)&this[1].monitor) {
+        this[3].monitor = (MonitorData *)CONCAT44((pVVar3->rightVector).y * yLength + (float)uVar9,(float)uVar10 * yLength + (float)uVar8);
+        *(float *)&this[4].klass = fVar2 * yLength + fVar7;
+        pMVar11 = (Mesh *)FUN_?(TypeInfo__UnityEngine__Mesh);
+        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar11,(MethodInfo *)0x0);
+        if (pMVar11 != (Mesh *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          valuesArrayLength = mscorlib.dll::System::Array::Array_get_Length(this,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel(pMVar11,VertexAttribute__Enum_Position,VertexAttributeFormat__Enum_Float32,3,this,valuesArrayLength,0,valuesArrayLength,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+          value = (Color__Array *)FUN_?(TypeInfo__UnityEngine__Color,3);
+          if (value != (Color__Array *)0x0) {
+            if ((int)value->max_length != 0) {
+              fVar2 = color->r;
+              fVar7 = color->g;
+              fVar12 = color->b;
+              fVar13 = color->a;
+              value->vector[0].r = fVar2;
+              value->vector[0].g = fVar7;
+              value->vector[0].b = fVar12;
+              value->vector[0].a = fVar13;
+              if (1 < (uint)value->max_length) {
+                value->vector[1].r = fVar2;
+                value->vector[1].g = fVar7;
+                value->vector[1].b = fVar12;
+                value->vector[1].a = fVar13;
+                if (2 < (uint)value->max_length) {
+                  value->vector[2].r = fVar2;
+                  value->vector[2].g = fVar7;
+                  value->vector[2].b = fVar12;
+                  value->vector[2].a = fVar13;
+                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar11,value,(MethodInfo *)0x0);
+                  indices = (Int32__Array *)FUN_?(TypeInfo__System__Int32,4);
+                  if (indices == (Int32__Array *)0x0) goto code_?;
+                  if ((1 < (uint)indices->max_length) && (indices->vector[1] = 1, 2 < (uint)indices->max_length)) {
+                    indices->vector[2] = 2;
+                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar11,indices,MeshTopology__Enum_LineStrip,0,(MethodInfo *)0x0);
+                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar11,0,(MethodInfo *)0x0);
+                    return pMVar11;
+                  }
+                }
               }
             }
+            goto DAT_?;
           }
         }
+code_?:
+        FUN_?();
+        pcVar14 = (code *)swi(3);
+        pMVar11 = (Mesh *)(*pcVar14)();
+        return pMVar11;
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pMVar7 = (Mesh *)(*pcVar8)();
-  return pMVar7;
+DAT_?:
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  pMVar11 = (Mesh *)(*pcVar14)();
+  return pMVar11;
 }
 

@@ -1,7 +1,7 @@
 
 /* InteractionData Create(Vector3) */
 
-InteractionData * Assembly-CSharp.dll::VehicleHitPackage::VehicleHitPackage_Create(InteractionData *__return_storage_ptr__,Vector3 impulse,MethodInfo *method)
+InteractionData * Assembly-CSharp.dll::VehicleHitPackage::VehicleHitPackage_Create(InteractionData *__return_storage_ptr__,Vector3 *impulse,MethodInfo *method)
 
 {
   __return_storage_ptr__->damage = 0.0;
@@ -11,24 +11,46 @@ InteractionData * Assembly-CSharp.dll::VehicleHitPackage::VehicleHitPackage_Crea
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_1(__return_storage_ptr__,InteractionPackageType__Enum_VehicleHit,impulse,(MethodInfo *)0x0);
+  IStack_1.damage = 0.0;
+  IStack_1.impulse.x = 0.0;
+  IStack_1.impulse.y = 0.0;
+  IStack_1.impulse.z = 0.0;
+  IStack_1.interactionType = 0;
+  IStack_1.playerKilledByType = 0;
+  IStack_1._18_2_ = 0;
+  VStack_2.x = impulse->x;
+  VStack_2.y = impulse->y;
+  VStack_2.z = impulse->z;
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5(&IStack_1,CONCAT31((int3)((ulonglong)impulse >> 8),0x1c),0.0,&VStack_2,in_stack_3 & 0xffffff00,(MethodInfo *)0x0);
+  __return_storage_ptr__->damage = IStack_1.damage;
+  (__return_storage_ptr__->impulse).x = IStack_1.impulse.x;
+  (__return_storage_ptr__->impulse).y = IStack_1.impulse.y;
+  (__return_storage_ptr__->impulse).z = IStack_1.impulse.z;
+  __return_storage_ptr__->interactionType = IStack_1.interactionType;
+  __return_storage_ptr__->playerKilledByType = IStack_1.playerKilledByType;
+  *(undefined2 *)&__return_storage_ptr__->field_0x12 = IStack_1._18_2_;
   return __return_storage_ptr__;
 }
 
 
 /* Void ParseAndHandlePackage(MVWorldObjectClient, MVPlayer, InteractionData) */
 
-void Assembly-CSharp.dll::VehicleHitPackage::VehicleHitPackage_ParseAndHandlePackage(VehicleHitPackage *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
+void Assembly-CSharp.dll::VehicleHitPackage::VehicleHitPackage_ParseAndHandlePackage(VehicleHitPackage *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,InteractionData *interactionStruct,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__InteractionData);
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__InteractionData);
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  InteractionPackage::InteractionPackage_HandlePackage_3((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.impulse,AvatarModifierPackageType__Enum_NoFriction,(MethodInfo *)0x0);
+  VStack_1.x = (interactionStruct->impulse).x;
+  VStack_1.y = (interactionStruct->impulse).y;
+  VStack_1.z = (interactionStruct->impulse).z;
+  InteractionPackage::InteractionPackage_HandlePackage_3((InteractionPackage *)this,worldObjectClient,shooter,&VStack_1,AvatarModifierPackageType__Enum_NoFriction,(MethodInfo *)0x0);
   return;
 }
 

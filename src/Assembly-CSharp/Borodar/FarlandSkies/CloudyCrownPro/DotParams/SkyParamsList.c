@@ -5,123 +5,132 @@ SkyParam * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__FindIndexPerTime_float_);
-    func_?(&TypeInfo__System__Collections__Generic__IList<float>);
-    func_?(&TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>);
-    func_?(&TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam);
-    func_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam_);
-    func_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
-    in_stack_1 = &MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__;
-    func_?();
-    func_?(&StringLiteral_Sky_params_list_is_empty);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__FindIndexPerTime_float_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IList<float>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sky_params_list_is_empty);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar2 = (this->fields)._.SortedParams;
-  if (pDVar2 != (DotParamsList_1_SkyParam_ *)0x0) {
-    if ((pDVar2->fields)._._size < 1) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+  pDVar1 = (this->fields)._.SortedParams;
+  if (pDVar1 != (DotParamsList_1_SkyParam_ *)0x0) {
+    if ((pDVar1->fields)._._size < 1) {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Sky_params_list_is_empty,(MethodInfo *)0x0);
-      pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-      value = (Object *)func_?(TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam);
-      value[1].monitor = (MonitorData *)0x3f000000;
-      value[2].klass = (Object__Class *)0x3f000000;
-      value[2].monitor = (MonitorData *)0x3f000000;
-      value[3].klass = (Object__Class *)0x3f800000;
-      value[3].monitor = (MonitorData *)0x3f000000;
-      value[4].klass = (Object__Class *)0x3f000000;
-      value[4].monitor = (MonitorData *)0x3f000000;
-      value[5].klass = (Object__Class *)0x3f800000;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1);
-      if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
-      System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__Add(pSVar3,0.0,value,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam_);
+      this_00 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+      value = (Object *)FUN_?(TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam);
+      value[1].monitor = (MonitorData *)0x3f0000003f000000;
+      value[2].klass = (Object__Class *)0x3f8000003f000000;
+      value[2].monitor = (MonitorData *)0x3f0000003f000000;
+      value[3].klass = (Object__Class *)0x3f8000003f000000;
+      if (this_00 == (SortedList_2_System_Single_System_Object_ *)0x0) goto DAT_?;
+      System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__Add(this_00,0.0,value,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam_);
     }
-    pDVar2 = (this->fields)._.SortedParams;
-    if (pDVar2 != (DotParamsList_1_SkyParam_ *)0x0) {
-      iVar4 = DotParamsList`1[System::Object]::DotParamsList_1_System_Object__FindIndexPerTime((DotParamsList_1_System_Object_ *)pDVar2,currentTime,MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__FindIndexPerTime_float_);
-      pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-      if (iVar4 < 1) {
-        if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
-        iVar4 = (pSVar3->fields)._size;
+    pMVar2 = MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__FindIndexPerTime_float_;
+    pDVar1 = (this->fields)._.SortedParams;
+    if (pDVar1 != (DotParamsList_1_SkyParam_ *)0x0) {
+      list = (IList_1_System_Single_ *)FUN_?(pDVar1,(MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__FindIndexPerTime_float_->klass->rgctx_data[2].method)->klass->rgctx_data[0x1c].rgctxDataDummy);
+      iVar3 = DotParamsList`1[System::Object]::DotParamsList_1_System_Object__BinarySearch(list,currentTime,pMVar2->klass->rgctx_data[3].method);
+      pDVar1 = (this->fields)._.SortedParams;
+      if (iVar3 < 1) {
+        if (pDVar1 == (DotParamsList_1_SkyParam_ *)0x0) goto DAT_?;
+        iVar3 = (pDVar1->fields)._._size;
       }
-      else if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
-      pIVar5 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
-      if (pIVar5 != (IList_1_System_Single_ *)0x0) {
-        fVar6 = (float10)func_?(0,TypeInfo__System__Collections__Generic__IList<float>,pIVar5,iVar4 + -1);
-        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-        fVar7 = (float)fVar6;
-        if (((pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) && (pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Values(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__), pIVar8 != (IList_1_System_Object_ *)0x0)) && (iVar9 = func_?(0,TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>,pIVar8,iVar4 + -1), iVar9 != 0)) {
-          fVar10 = *(float *)(iVar9 + 0xc);
-          fVar11 = *(float *)(iVar9 + 0x10);
-          fVar12 = *(float *)(iVar9 + 0x14);
-          fVar13 = *(float *)(iVar9 + 0x18);
-          fVar14 = *(float *)(iVar9 + 0x1c);
-          fVar15 = *(float *)(iVar9 + 0x20);
-          fVar16 = *(float *)(iVar9 + 0x24);
-          fVar17 = *(float *)(iVar9 + 0x28);
-          pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-          if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
-            iVar9 = 0;
-            if (iVar4 < (pSVar3->fields)._size) {
-              iVar9 = iVar4;
+      else if (pDVar1 == (DotParamsList_1_SkyParam_ *)0x0) goto DAT_?;
+      lVar4 = FUN_?(pDVar1,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__->klass->rgctx_data[0x1c].rgctxDataDummy);
+      if (lVar4 != 0) {
+        fVar5 = (float)FUN_?(extraout_XMM0_Qa,TypeInfo__System__Collections__Generic__IList<float>,lVar4,iVar3 + -1);
+        pDVar1 = (this->fields)._.SortedParams;
+        if (((pDVar1 != (DotParamsList_1_SkyParam_ *)0x0) && (lVar4 = FUN_?(pDVar1,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__->klass->rgctx_data[0x21].rgctxDataDummy), lVar4 != 0)) && (lVar4 = FUN_?(extraout_XMM0_Qa_00,TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>,lVar4,iVar3 + -1), lVar4 != 0)) {
+          fVar6 = *(float *)(lVar4 + 0x18);
+          fVar7 = *(float *)(lVar4 + 0x1c);
+          fVar8 = *(float *)(lVar4 + 0x20);
+          fVar9 = *(float *)(lVar4 + 0x24);
+          fVar10 = *(float *)(lVar4 + 0x28);
+          fVar11 = *(float *)(lVar4 + 0x2c);
+          fVar12 = *(float *)(lVar4 + 0x30);
+          fVar13 = *(float *)(lVar4 + 0x34);
+          pDVar1 = (this->fields)._.SortedParams;
+          if (pDVar1 != (DotParamsList_1_SkyParam_ *)0x0) {
+            iVar14 = 0;
+            if (iVar3 < (pDVar1->fields)._._size) {
+              iVar14 = iVar3;
             }
-            pIVar5 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
-            if (pIVar5 != (IList_1_System_Single_ *)0x0) {
-              fVar6 = (float10)func_?(0,TypeInfo__System__Collections__Generic__IList<float>,pIVar5,iVar9);
-              pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-              fVar18 = (float)fVar6;
-              if (((pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) && (pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Values(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__), pIVar8 != (IList_1_System_Object_ *)0x0)) && (iVar9 = func_?(0,TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>,pIVar8,iVar9), iVar9 != 0)) {
-                fVar19 = *(float *)(iVar9 + 0xc);
-                fVar20 = *(float *)(iVar9 + 0x10);
-                fVar21 = *(float *)(iVar9 + 0x14);
-                fVar22 = *(float *)(iVar9 + 0x18);
-                fVar23 = *(float *)(iVar9 + 0x1c);
-                fVar24 = *(float *)(iVar9 + 0x20);
-                fVar25 = *(float *)(iVar9 + 0x24);
-                fVar26 = *(float *)(iVar9 + 0x28);
-                if (currentTime <= fVar7) {
-                  fVar27 = currentTime + (100.0 - fVar7);
+            lVar4 = FUN_?((this->fields)._.SortedParams,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__->klass->rgctx_data[0x1c].rgctxDataDummy);
+            if (lVar4 != 0) {
+              fVar15 = (float)FUN_?(extraout_XMM0_Qa_01,TypeInfo__System__Collections__Generic__IList<float>,lVar4,iVar14);
+              pDVar1 = (this->fields)._.SortedParams;
+              if (((pDVar1 != (DotParamsList_1_SkyParam_ *)0x0) && (lVar4 = FUN_?(pDVar1,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Values__->klass->rgctx_data[0x21].rgctxDataDummy), lVar4 != 0)) && (lVar4 = FUN_?(extraout_XMM0_Qa_02,TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>,lVar4,iVar14), lVar4 != 0)) {
+                fVar16 = *(float *)(lVar4 + 0x28);
+                fVar17 = *(float *)(lVar4 + 0x2c);
+                fVar18 = *(float *)(lVar4 + 0x30);
+                fVar19 = *(float *)(lVar4 + 0x34);
+                fVar20 = *(float *)(lVar4 + 0x18);
+                fVar21 = *(float *)(lVar4 + 0x1c);
+                fVar22 = *(float *)(lVar4 + 0x20);
+                fVar23 = *(float *)(lVar4 + 0x24);
+                if (currentTime <= fVar5) {
+                  fVar24 = (100.0 - fVar5) + currentTime;
                 }
                 else {
-                  fVar27 = currentTime - fVar7;
+                  fVar24 = currentTime - fVar5;
                 }
-                if (fVar18 <= fVar7) {
-                  fVar18 = fVar18 + 100.0;
+                if (fVar15 <= fVar5) {
+                  fVar15 = fVar15 + 100.0;
                 }
-                fVar27 = fVar27 / (fVar18 - fVar7);
-                method_00 = TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam;
-                pSVar28 = (SkyParam *)func_?();
-                (pSVar28->fields).TopColor.r = 0.5;
-                (pSVar28->fields).TopColor.g = 0.5;
-                (pSVar28->fields).TopColor.b = 0.5;
-                (pSVar28->fields).TopColor.a = 1.0;
-                (pSVar28->fields).BottomColor.r = 0.5;
-                (pSVar28->fields).BottomColor.g = 0.5;
-                (pSVar28->fields).BottomColor.b = 0.5;
-                (pSVar28->fields).BottomColor.a = 1.0;
-                mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pSVar28,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-                fVar7 = 0.0;
-                if ((0.0 <= fVar27) && (fVar7 = fVar27, 1.0 < fVar27)) {
-                  fVar7 = 1.0;
+                fVar24 = fVar24 / (fVar15 - fVar5);
+                pSVar25 = (SkyParam *)FUN_?(TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SkyParam);
+                if (fVar24 < 0.0) {
+                  fVar5 = 0.0;
                 }
-                (pSVar28->fields).TopColor.r = (fVar19 - fVar10) * fVar7 + fVar10;
-                (pSVar28->fields).TopColor.g = (fVar20 - fVar11) * fVar7 + fVar11;
-                (pSVar28->fields).TopColor.b = (fVar21 - fVar12) * fVar7 + fVar12;
-                (pSVar28->fields).TopColor.a = (fVar22 - fVar13) * fVar7 + fVar13;
-                if (fVar27 < 0.0) {
-                  fVar27 = 0.0;
+                else {
+                  fVar5 = fVar24;
+                  if (1.0 < fVar24) {
+                    fVar5 = 1.0;
+                  }
                 }
-                else if (1.0 < fVar27) {
-                  fVar27 = 1.0;
+                (pSVar25->fields).TopColor.g = (fVar20 - fVar6) * fVar5 + fVar6;
+                (pSVar25->fields).TopColor.b = (fVar21 - fVar7) * fVar5 + fVar7;
+                (pSVar25->fields).TopColor.a = (fVar22 - fVar8) * fVar5 + fVar8;
+                (pSVar25->fields).BottomColor.r = (fVar23 - fVar9) * fVar5 + fVar9;
+                if (fVar24 < 0.0) {
+                  fVar24 = 0.0;
                 }
-                (pSVar28->fields).BottomColor.r = (fVar23 - fVar14) * fVar27 + fVar14;
-                (pSVar28->fields).BottomColor.g = (fVar24 - fVar15) * fVar27 + fVar15;
-                (pSVar28->fields).BottomColor.b = (fVar25 - fVar16) * fVar27 + fVar16;
-                (pSVar28->fields).BottomColor.a = (fVar26 - fVar17) * fVar27 + fVar17;
-                return pSVar28;
+                else if (1.0 < fVar24) {
+                  fVar24 = 1.0;
+                }
+                (pSVar25->fields).BottomColor.g = (fVar16 - fVar10) * fVar24 + fVar10;
+                (pSVar25->fields).BottomColor.b = (fVar17 - fVar11) * fVar24 + fVar11;
+                (pSVar25->fields).BottomColor.a = (fVar18 - fVar12) * fVar24 + fVar12;
+                *(float *)&pSVar25->field_0x34 = (fVar19 - fVar13) * fVar24 + fVar13;
+                return pSVar25;
               }
             }
           }
@@ -129,11 +138,11 @@ SkyParam * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams
       }
     }
   }
-code_?:
-  func_?();
-  pcVar29 = (code *)swi(3);
-  pSVar28 = (SkyParam *)(*pcVar29)();
-  return pSVar28;
+DAT_?:
+  FUN_?();
+  pcVar26 = (code *)swi(3);
+  pSVar25 = (SkyParam *)(*pcVar26)();
+  return pSVar25;
 }
 
 
@@ -143,10 +152,31 @@ void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyP
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__SortedParamsList__);
+    FUN_?(&MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__SortedParamsList__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  SortedParamsList`1[System::Object]::SortedParamsList_1_System_Object___ctor((SortedParamsList_1_System_Object_ *)this,MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__SortedParamsList__);
+  pvVar1 = MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__SortedParamsList__->klass->rgctx_data[8].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar1 + 0x135) & 1) == 0) {
+    pvVar1 = (void *)FUN_?(pvVar1);
+  }
+  pSVar2 = (SkyParam__Array *)FUN_?(pvVar1,0);
+  bVar3 = iRam_? != 0;
+  (this->fields)._.Params = pSVar2;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 

@@ -5,7 +5,9 @@ void MVCommon.dll::MV::Common::CommonValues::CommonValues__cctor(MethodInfo *met
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__CommonValues);
+    FUN_?(&TypeInfo__MV__Common__CommonValues);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__MV__Common__CommonValues->static_fields->GameCoinBoostTime = 720000;

@@ -26,7 +26,7 @@ public class AdminToolController : MonoBehaviour
 	[SerializeField]
 	private InputField reason;
 	[SerializeField]
-	private Button ownerKickButton;
+	private UnityEngine.UI.Button ownerKickButton;
 	private static readonly Dictionary<string, int> durationMultiplier;
 	private static readonly Dictionary<string, DefaultBan> defaultBanLookup;
 

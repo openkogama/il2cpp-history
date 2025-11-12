@@ -1,7 +1,7 @@
 
 /* InteractionData Create(Single, Vector3) */
 
-InteractionData * Assembly-CSharp.dll::CustomGunHitPackage::CustomGunHitPackage_Create(InteractionData *__return_storage_ptr__,float damage,Vector3 impulse,MethodInfo *method)
+InteractionData * Assembly-CSharp.dll::CustomGunHitPackage::CustomGunHitPackage_Create(InteractionData *__return_storage_ptr__,float damage,Vector3 *impulse,MethodInfo *method)
 
 {
   __return_storage_ptr__->damage = 0.0;
@@ -11,24 +11,32 @@ InteractionData * Assembly-CSharp.dll::CustomGunHitPackage::CustomGunHitPackage_
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5(__return_storage_ptr__,InteractionPackageType__Enum_CustomGunHit,damage,impulse,PlayerKilledByType__Enum_CustomGun,(MethodInfo *)0x0);
+  VStack_1.x = impulse->x;
+  VStack_1.y = impulse->y;
+  VStack_1.z = impulse->z;
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5(__return_storage_ptr__,CONCAT31((int3)((uint)in_EDX >> 8),0x13),damage,&VStack_1,CONCAT31((int3)((uint)in_stack_2 >> 8),0x17),(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
 
 /* Void ParseAndHandlePackage(MVWorldObjectClient, MVPlayer, InteractionData) */
 
-void Assembly-CSharp.dll::CustomGunHitPackage::CustomGunHitPackage_ParseAndHandlePackage(CustomGunHitPackage *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
+void Assembly-CSharp.dll::CustomGunHitPackage::CustomGunHitPackage_ParseAndHandlePackage(CustomGunHitPackage *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,InteractionData *interactionStruct,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  InteractionPackage::InteractionPackage_HandlePackage_1((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,PlayerKilledByType__Enum_CustomGun,interactionStruct.impulse,(MethodInfo *)0x0);
+  VStack_1.z = (interactionStruct->impulse).z;
+  VStack_1.x = (interactionStruct->impulse).x;
+  VStack_1.y = (interactionStruct->impulse).y;
+  InteractionPackage::InteractionPackage_HandlePackage_1((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct->damage,CONCAT31((int3)((uint)in_stack_2 >> 8),0x17),&VStack_1,(MethodInfo *)0x0);
   return;
 }
 

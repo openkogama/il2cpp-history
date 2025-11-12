@@ -69,8 +69,8 @@ public abstract class StreamingAsset : MonoBehaviour
 	[IteratorStateMachine(typeof(_DelayedUnload_d__13))]
 	protected static IEnumerator DelayedUnload(UnityWebRequest www);
 	public static string DBUrlToServerUrl(string url);
-	protected void Download_Cached(string url, UnityAction onAssetSetAction);
-	protected void Download_NonCached(string url, UnityAction onAssetSetAction);
+	protected void Download_Cached(string url, UnityAction onAssetSetAction, WWWRequestPriority requestPriority);
+	protected void Download_NonCached(string url, UnityAction onAssetSetAction, WWWRequestPriority requestPriority);
 	protected virtual void OnDestroy();
 }
 

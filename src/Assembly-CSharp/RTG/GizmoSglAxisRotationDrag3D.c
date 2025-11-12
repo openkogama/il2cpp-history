@@ -5,124 +5,167 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&TypeInfo__RTG__IInputDevice);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-  if (pOVar1 == (Object *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if ((pOVar1 == (Object *)0x0) || (uVar2 = (this->fields)._screenDragCircleTangent.x, uVar3 = (this->fields)._screenDragCircleTangent.y, pOVar1[2].klass == (Object__Class *)0x0)) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  NStack_3.IntNumSteps = (int32_t)(this->fields)._screenDragCircleTangent.x;
-  NStack_3.AbsIntNumSteps = (int32_t)(this->fields)._screenDragCircleTangent.y;
-  NStack_3.AbsFracSteps = (this->fields)._screenDragCircleTangent.z;
-  if (pOVar1[2].klass == (Object__Class *)0x0) goto code_?;
-  puVar4 = (undefined8 *)func_?();
-  uStack_5._4_4_ = *(float *)(puVar4 + 1);
-  fStack_6 = (float)*puVar4;
-  uStack_5._0_4_ = (float)((ulonglong)*puVar4 >> 0x20);
-  fStack_7 = ((float)uStack_5 * (float)NStack_3.AbsIntNumSteps + fStack_6 * (float)NStack_3.IntNumSteps) * (this->fields)._._sensitivity;
-  (this->fields)._relativeRotation = fStack_7;
-  if (fStack_7 == 0.0) {
+  puVar5 = (undefined8 *)FUN_?(auStack_6,0x10,TypeInfo__RTG__IInputDevice);
+  fVar7 = ((float)((ulonglong)*puVar5 >> 0x20) * (float)uVar3 + (float)*puVar5 * (float)uVar2) * (this->fields)._._sensitivity;
+  (this->fields)._relativeRotation = fVar7;
+  if (fVar7 == 0.0) {
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__UnityEngine__Quaternion);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar9 = (pQVar8->identityQuaternion).y;
-    fVar10 = (pQVar8->identityQuaternion).z;
-    fVar11 = (pQVar8->identityQuaternion).w;
+    fVar7 = (pQVar8->identityQuaternion).y;
+    fVar9 = (pQVar8->identityQuaternion).z;
+    fVar10 = (pQVar8->identityQuaternion).w;
     (this->fields)._._._relativeDragRotation.x = (pQVar8->identityQuaternion).x;
-    (this->fields)._._._relativeDragRotation.y = fVar9;
-    (this->fields)._._._relativeDragRotation.z = fVar10;
-    (this->fields)._._._relativeDragRotation.w = fVar11;
+    (this->fields)._._._relativeDragRotation.y = fVar7;
+    (this->fields)._._._relativeDragRotation.z = fVar9;
+    (this->fields)._._._relativeDragRotation.w = fVar10;
     return;
   }
+  fVar7 = (this->fields)._relativeRotation;
   if ((this->fields)._._isSnapEnabled == 0) {
-    (this->fields)._accumSnapDrag = 0.0;
     (this->fields)._adjustRotationForAbsSnap = 1;
-    uStack_5 = (double)(fStack_7 + (this->fields)._totalRotation);
-    fVar12 = (float10)func_?();
-    (this->fields)._totalRotation = (float)fVar12;
-    uVar13 = (this->fields)._workData.Axis.x;
-    uVar14 = (this->fields)._workData.Axis.y;
+    (this->fields)._accumSnapDrag = 0.0;
+    fVar7 = (float)FUN_?(fVar7 + (this->fields)._totalRotation,0x43b40000);
+    (this->fields)._totalRotation = fVar7;
+    uStack_11 = 0;
+    uStack_12 = 0;
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) && (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
   }
   else {
-    uStack_5 = (double)(fStack_7 + (this->fields)._accumSnapDrag);
-    fVar12 = (float10)func_?();
-    fStack_7 = (float)fVar12;
-    (this->fields)._accumSnapDrag = fStack_7;
+    fVar7 = (float)FUN_?(fVar7 + (this->fields)._accumSnapDrag,0x43b40000);
+    (this->fields)._accumSnapDrag = fVar7;
     if (((this->fields)._workData.SnapMode == 1) && ((this->fields)._adjustRotationForAbsSnap != 0)) {
-      pNVar15 = SnapMath::SnapMath_CalculateNumSnapSteps(&NStack_3,(this->fields)._workData.SnapStep,(this->fields)._totalRotation,(MethodInfo *)0x0);
-      uStack_5._4_4_ = (this->fields)._totalRotation;
-      fVar9 = (this->fields)._totalRotation;
-      if (pNVar15->AbsFracSteps < 0.5) {
-        fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Sign(fVar9,(MethodInfo *)0x0);
-        fStack_7 = fStack_7 * (float)pNVar15->AbsIntNumSteps * (this->fields)._workData.SnapStep;
+      pNVar14 = SnapMath::SnapMath_CalculateNumSnapSteps(aNStack_15,(this->fields)._workData.SnapStep,(this->fields)._totalRotation,(MethodInfo *)0x0);
+      fVar7 = (this->fields)._totalRotation;
+      iVar16 = pNVar14->AbsIntNumSteps;
+      fStack_17 = pNVar14->AbsFracSteps;
+      if (pNVar14->AbsFracSteps <= 0.5 && pNVar14->AbsFracSteps != 0.5) {
+        if (fVar7 < 0.0) {
+          fVar9 = -1.0;
+        }
+        else {
+          fVar9 = 1.0;
+        }
+      }
+      else if (fVar7 < 0.0) {
+        fVar9 = -1.0;
+        iVar16 = iVar16 + 1;
       }
       else {
-        fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Sign(fVar9,(MethodInfo *)0x0);
-        fStack_7 = fStack_7 * (float)(pNVar15->AbsIntNumSteps + 1) * (this->fields)._workData.SnapStep;
+        fVar9 = 1.0;
+        iVar16 = iVar16 + 1;
       }
-      (this->fields)._totalRotation = fStack_7;
+      fVar9 = (float)iVar16 * (this->fields)._workData.SnapStep * fVar9;
+      (this->fields)._totalRotation = fVar9;
       (this->fields)._accumSnapDrag = 0.0;
-      (this->fields)._relativeRotation = fStack_7 - uStack_5._4_4_;
-      pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffc8,fStack_7 - uStack_5._4_4_,(this->fields)._workData.Axis,(MethodInfo *)0x0);
-      fVar9 = pQVar16->x;
-      fVar10 = pQVar16->y;
-      fVar11 = pQVar16->z;
-      fVar17 = pQVar16->w;
+      (this->fields)._relativeRotation = fVar9 - fVar7;
+      uStack_11 = 0;
+      uStack_12 = 0;
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) && (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar13 = func_?(&UNK_?);
+        FUN_?(uVar13,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)();
       (this->fields)._adjustRotationForAbsSnap = 0;
+      uVar13 = uStack_11;
+      uVar18 = uStack_12;
       goto code_?;
     }
-    bVar18 = SnapMath::SnapMath_CanExtractSnap((this->fields)._workData.SnapStep,fStack_7,(MethodInfo *)0x0);
-    if (bVar18 == 0) {
-      pQVar16 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation((Quaternion *)&stack0xffffffc8,(MVWorldObject *)0x0,in_stack_19);
-      fVar9 = pQVar16->x;
-      fVar10 = pQVar16->y;
-      fVar11 = pQVar16->z;
-      fVar17 = pQVar16->w;
+    if (ABS(fVar7) < (this->fields)._workData.SnapStep) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Quaternion);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+      uVar13._0_4_ = (pQVar8->identityQuaternion).x;
+      uVar13._4_4_ = (pQVar8->identityQuaternion).y;
+      uVar18._0_4_ = (pQVar8->identityQuaternion).z;
+      uVar18._4_4_ = (pQVar8->identityQuaternion).w;
       goto code_?;
     }
-    fStack_7 = SnapMath::SnapMath_ExtractSnap((this->fields)._workData.SnapStep,&(this->fields)._accumSnapDrag,(MethodInfo *)0x0);
-    (this->fields)._relativeRotation = fStack_7;
-    uStack_5 = (double)(fStack_7 + (this->fields)._totalRotation);
-    fVar12 = (float10)func_?();
-    (this->fields)._totalRotation = (float)fVar12;
-    uVar20 = (this->fields)._workData.Axis.x;
-    uVar21 = (this->fields)._workData.Axis.y;
-    uVar13 = uVar20;
-    uVar14 = uVar21;
+    fVar7 = (this->fields)._workData.SnapStep;
+    fVar7 = (float)(int)((this->fields)._accumSnapDrag / fVar7) * fVar7;
+    (this->fields)._accumSnapDrag = (this->fields)._accumSnapDrag - fVar7;
+    (this->fields)._relativeRotation = fVar7;
+    fVar7 = (float)FUN_?(fVar7 + (this->fields)._totalRotation,0x43b40000);
+    (this->fields)._totalRotation = fVar7;
+    uStack_11 = 0;
+    uStack_12 = 0;
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) && (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
   }
-  axis.y = (float)uVar14;
-  axis.x = (float)uVar13;
-  axis.z = (this->fields)._workData.Axis.z;
-  pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffc8,fStack_7,axis,(MethodInfo *)0x0);
-  fVar9 = pQVar16->x;
-  fVar10 = pQVar16->y;
-  fVar11 = pQVar16->z;
-  fVar17 = pQVar16->w;
+  pcRam_? = pcVar4;
+  (*pcRam_?)();
+  uVar13 = uStack_11;
+  uVar18 = uStack_12;
 code_?:
-  (this->fields)._._._relativeDragRotation.x = fVar9;
-  (this->fields)._._._relativeDragRotation.y = fVar10;
-  (this->fields)._._._relativeDragRotation.z = fVar11;
-  (this->fields)._._._relativeDragRotation.w = fVar17;
-  pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffc8,(this->fields)._totalRotation,(this->fields)._workData.Axis,(MethodInfo *)0x0);
-  fVar9 = pQVar16->y;
-  fVar10 = pQVar16->z;
-  fVar11 = pQVar16->w;
-  (this->fields)._._._totalDragRotation.x = pQVar16->x;
-  (this->fields)._._._totalDragRotation.y = fVar9;
-  (this->fields)._._._totalDragRotation.z = fVar10;
-  (this->fields)._._._totalDragRotation.w = fVar11;
+  (this->fields)._._._relativeDragRotation.x = (float)(int)uVar13;
+  (this->fields)._._._relativeDragRotation.y = (float)(int)((ulonglong)uVar13 >> 0x20);
+  (this->fields)._._._relativeDragRotation.z = (float)(int)uVar18;
+  (this->fields)._._._relativeDragRotation.w = (float)(int)((ulonglong)uVar18 >> 0x20);
+  aNStack_15[0].FltNumSteps = 0.0;
+  aNStack_15[0].AbsFltNumSteps = 0.0;
+  aNStack_15[0].IntNumSteps = 0;
+  aNStack_15[0].AbsIntNumSteps = 0;
+  pcVar4 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  pcRam_? = pcVar4;
+  (*pcRam_?)();
+  (this->fields)._._._totalDragRotation.x = aNStack_15[0].FltNumSteps;
+  (this->fields)._._._totalDragRotation.y = aNStack_15[0].AbsFltNumSteps;
+  (this->fields)._._._totalDragRotation.z = (float)aNStack_15[0].IntNumSteps;
+  (this->fields)._._._totalDragRotation.w = (float)aNStack_15[0].AbsIntNumSteps;
   return;
 }
 
@@ -133,182 +176,280 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IInputDevice);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+    FUN_?(&TypeInfo__RTG__IInputDevice);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+  VStackX_18 = (Vector2)((ulonglong)(uint)VStackX_18.y << 0x20);
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
   if (pOVar1 != (Object *)0x0) {
-    this_00 = (Camera *)pOVar1[4].monitor;
+    pOVar1 = (Object *)pOVar1[4].monitor;
     (this->fields)._adjustRotationForAbsSnap = 0;
-    if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
+    if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-    if ((pOVar1 != (Object *)0x0) && (pOVar1[5].klass != (Object__Class *)0x0)) {
-      if (((pOVar1[5].klass)->_1).unity_user_data == (void *)0x2) {
-        if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+    if ((pOVar2 != (Object *)0x0) && (pOVar3 = pOVar2[5].klass, pOVar3 != (Object__Class *)0x0)) {
+      auStack_4._16_8_ = (pOVar3->_1).unity_user_data;
+      if (*(int *)&(pOVar3->_1).typeHierarchy == 2) {
+        if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-        if ((pOVar1 != (Object *)0x0) && (pOVar1[2].klass != (Object__Class *)0x0)) {
-          pfVar2 = (float *)func_?(&stack0xffffff80,6,TypeInfo__RTG__IInputDevice,pOVar1[2].klass,this_00);
-          fVar3 = pfVar2[1];
-          uVar4 = (this->fields)._rotationPlane.m_Normal.x;
-          uVar5 = (this->fields)._rotationPlane.m_Normal.y;
-          VStack_6.z = (this->fields)._rotationPlane.m_Normal.z;
-          fStack_7 = (float)*(undefined8 *)(pfVar2 + 4);
-          fStack_8 = (float)((ulonglong)*(undefined8 *)(pfVar2 + 4) >> 0x20);
-          fStack_9 = fStack_7 * (float)uVar5 + pfVar2[3] * (float)uVar4 + fStack_8 * VStack_6.z;
-          uVar10 = (this->fields)._rotationPlane.m_Normal.x;
-          uVar11 = (this->fields)._rotationPlane.m_Normal.y;
-          VStack_12.y = -fVar3;
-          VStack_12.z = -fVar3;
-          fStack_13 = -fVar3;
-          VStack_12.x = -(fVar3 * (float)uVar11 + *pfVar2 * (float)uVar10 + pfVar2[2] * VStack_6.z) - (this->fields)._rotationPlane.m_Distance;
-          VStack_6.x = (float)uVar10;
-          VStack_6.y = (float)uVar11;
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__UnityEngine__Mathf);
-            cRam_? = '\x01';
-          }
-          fVar3 = ABS(fStack_9);
-          if (ABS(fStack_9) <= 0.0) {
-            fVar3 = 0.0;
-          }
-          fVar14 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
-          fVar15 = fVar3 * 1e-06;
-          if (fVar3 * 1e-06 <= fVar14) {
-            fVar15 = fVar14;
-          }
-          if ((ABS(0.0 - fStack_9) < fVar15) || (VStack_12.x / fStack_9 <= 0.0)) {
-            if (this_00 != (Camera *)0x0) {
-              pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1(&VStack_12,this_00,(this->fields)._workData.RotationPlanePos,(MethodInfo *)0x0);
-              uVar17 = pVVar16->x;
-              uVar18 = pVVar16->y;
-              VStack_6.z = pVVar16->z;
-              uStack_19._0_4_ = (this->fields)._workData.RotationPlanePos.x;
-              uStack_19._4_4_ = (this->fields)._workData.RotationPlanePos.y;
-              fStack_20 = (this->fields)._workData.RotationPlanePos.z;
-              uStack_21._0_4_ = (this->fields)._workData.Axis.x;
-              uStack_21._4_4_ = (this->fields)._workData.Axis.y;
-              fStack_22 = (this->fields)._workData.Axis.z + fStack_20;
-              position.y = uStack_21._4_4_ + uStack_19._4_4_;
-              position.x = (float)uStack_21 + (float)uStack_19;
-              position.z = fStack_22;
-              VStack_6.x = (float)uVar17;
-              VStack_6.y = (float)uVar18;
-              pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1(&VStack_12,this_00,position,(MethodInfo *)0x0);
-              uStack_21._0_4_ = pVVar16->x;
-              uStack_21._4_4_ = pVVar16->y;
-              fStack_22 = pVVar16->z;
-              VStack_6.z = uStack_21._4_4_ - VStack_6.y;
-              VStack_6.y = (float)uStack_21 - VStack_6.x;
-              uVar23 = func_?();
-              VStack_6.y = (float)uVar23;
-              (this->fields)._screenDragCircleTangent.x = (float)(int)uVar23;
-              (this->fields)._screenDragCircleTangent.y = (float)(int)((ulonglong)uVar23 >> 0x20);
-              (this->fields)._screenDragCircleTangent.z = 0.0;
-              fVar3 = (this->fields)._screenDragCircleTangent.y;
-              fStack_9 = (this->fields)._screenDragCircleTangent.x;
-              VStack_6.z = -fVar3;
-              fStack_22 = 0.0;
-              uVar24 = CONCAT44(fStack_9,fVar3) ^ 0x80000000;
-              (this->fields)._screenDragCircleTangent.x = (float)(int)uVar24;
-              (this->fields)._screenDragCircleTangent.y = (float)(int)(uVar24 >> 0x20);
-              (this->fields)._screenDragCircleTangent.z = 0.0;
+        pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+        if ((pOVar2 != (Object *)0x0) && (pOVar3 = pOVar2[2].klass, pOVar3 != (Object__Class *)0x0)) {
+          pOVar2 = pOVar1;
+          pfVar5 = (float *)FUN_?(&uStack_6);
+          uStack_7 = *(void **)(pfVar5 + 4);
+          fVar8 = *pfVar5;
+          fVar9 = pfVar5[1];
+          auStack_4._0_4_ = pfVar5[0];
+          auStack_4._4_4_ = pfVar5[1];
+          fVar10 = pfVar5[2];
+          fVar11 = pfVar5[3];
+          auStack_4._8_4_ = fVar10;
+          auStack_4._12_4_ = fVar11;
+          auStack_4._16_8_ = uStack_7;
+          bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast(&(this->fields)._rotationPlane,(Ray *)auStack_4,&VStackX_18.x,(MethodInfo *)pOVar3);
+          if (bVar12 == 0) {
+            if (pOVar1 != (Object *)0x0) {
+              uStack_13._0_4_ = (this->fields)._workData.RotationPlanePos.x;
+              uStack_13._4_4_ = (this->fields)._workData.RotationPlanePos.y;
+              fStack_14 = (this->fields)._workData.RotationPlanePos.z;
               if (cRam_? == '\0') {
-                func_?();
+                FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_);
+                LOCK();
+                UNLOCK();
                 cRam_? = '\x01';
               }
-              fStack_22 = (this->fields)._screenDragCircleTangent.z;
-              uStack_21._0_4_ = (this->fields)._screenDragCircleTangent.x;
-              uStack_21._4_4_ = (this->fields)._screenDragCircleTangent.y;
-              if (-1e-05 <= VStack_6.z * (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x + fStack_9 * (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y) {
-                if (cRam_? == '\0') {
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                if (-1e-05 <= uStack_21._4_4_ * (TypeInfo__UnityEngine__Vector2->static_fields->upVector).y + (float)uStack_21 * (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x) {
+              uStack_6 = 0;
+              uStack_15 = 0;
+              pOVar3 = pOVar1[1].klass;
+              if (pOVar3 == (Object__Class *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException(pOVar1,(MethodInfo *)0x0);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+              pcVar16 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) && (pcVar16 = (code *)FUN_?(&UNK_?), pcVar16 == (code *)0x0)) {
+                uVar17 = func_?(&UNK_?);
+                FUN_?(uVar17,0);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+              pcRam_? = pcVar16;
+              (*pcRam_?)(pOVar3,&uStack_13,2,&uStack_6);
+              uVar18 = (this->fields)._workData.Axis.x;
+              uVar19 = (this->fields)._workData.Axis.y;
+              uVar20 = (this->fields)._workData.RotationPlanePos.x;
+              uVar21 = (this->fields)._workData.RotationPlanePos.y;
+              auStack_4._8_4_ = (this->fields)._workData.Axis.z + (this->fields)._workData.RotationPlanePos.z;
+              auStack_4._4_4_ = (float)uVar19 + (float)uVar21;
+              auStack_4._0_4_ = (float)uVar18 + (float)uVar20;
+              if (cRam_? == '\0') {
+                FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              uStack_22 = 0;
+              uStack_23 = 0;
+              pOVar3 = pOVar1[1].klass;
+              if (pOVar3 != (Object__Class *)0x0) {
+                pcVar16 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) && (pcVar16 = (code *)FUN_?(&UNK_?), pcVar16 == (code *)0x0)) {
+                  uVar17 = func_?(&UNK_?);
+                  FUN_?(uVar17,0);
+                  pcVar16 = (code *)swi(3);
+                  (*pcVar16)();
                   return;
                 }
-                uStack_21._0_4_ = (this->fields)._screenDragCircleTangent.x;
-                uStack_21._4_4_ = (this->fields)._screenDragCircleTangent.y;
-                fStack_22 = (this->fields)._screenDragCircleTangent.z;
+                pcRam_? = pcVar16;
+                (*pcRam_?)(pOVar3,auStack_4,2,&uStack_22);
+                VStackX_18.x = (float)uStack_22 - (float)uStack_6;
+                VStackX_18.y = uStack_22._4_4_ - uStack_6._4_4_;
+                method_00 = (MethodInfo *)&VStackX_18;
+                VStackX_18 = (Vector2)FUN_?();
+                (this->fields)._screenDragCircleTangent.x = VStackX_18.x;
+                (this->fields)._screenDragCircleTangent.y = VStackX_18.y;
+                (this->fields)._screenDragCircleTangent.z = 0.0;
+                fVar8 = (this->fields)._screenDragCircleTangent.y;
+                fVar9 = (this->fields)._screenDragCircleTangent.x;
+                uVar24 = CONCAT44(fVar9,fVar8) ^ 0x80000000;
+                (this->fields)._screenDragCircleTangent.x = (float)(int)uVar24;
+                (this->fields)._screenDragCircleTangent.y = (float)(int)(uVar24 >> 0x20);
+                (this->fields)._screenDragCircleTangent.z = 0.0;
+                VStackX_18 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRight(method_00);
+                if (-1e-05 <= fVar9 * VStackX_18.y + -fVar8 * VStackX_18.x) {
+                  uVar25 = (this->fields)._screenDragCircleTangent.x;
+                  uVar26 = (this->fields)._screenDragCircleTangent.y;
+                  VVar27 = RightAngTriangle2D::RightAngTriangle2D_get_ModelUp(method_00);
+                  VStackX_18.y = VVar27.y;
+                  VStackX_18.x = VVar27.x;
+                  if (-1e-05 <= VStackX_18.y * (float)uVar26 + VStackX_18.x * (float)uVar25) {
+                    return;
+                  }
+                }
+                uVar24._0_4_ = (this->fields)._screenDragCircleTangent.x;
+                uVar24._4_4_ = (this->fields)._screenDragCircleTangent.y;
+                fVar8 = (this->fields)._screenDragCircleTangent.z;
+                (this->fields)._screenDragCircleTangent.x = (float)(int)(uVar24 ^ 0x8000000080000000);
+                (this->fields)._screenDragCircleTangent.y = (float)(int)((uVar24 ^ 0x8000000080000000) >> 0x20);
+                (this->fields)._screenDragCircleTangent.z = -fVar8;
+                return;
               }
-              (this->fields)._screenDragCircleTangent.x = (float)(int)(uStack_21 ^ 0x8000000080000000);
-              (this->fields)._screenDragCircleTangent.y = (float)(int)((uStack_21 ^ 0x8000000080000000) >> 0x20);
-              (this->fields)._screenDragCircleTangent.z = -fStack_22;
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException(pOVar1,(MethodInfo *)0x0);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
               return;
             }
           }
           else {
-            pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint(&VStack_12,(Ray *)&stack0xffffff68,VStack_12.x / fStack_9,(MethodInfo *)0x0);
-            uStack_21._0_4_ = pVVar16->x;
-            uStack_21._4_4_ = pVVar16->y;
-            fStack_22 = pVVar16->z;
-            uVar25 = (this->fields)._workData.RotationPlanePos.x;
-            uVar26 = (this->fields)._workData.RotationPlanePos.y;
-            fVar3 = fStack_22 - (this->fields)._workData.RotationPlanePos.z;
-            uStack_19._0_4_ = (this->fields)._workData.Axis.x;
-            uStack_19._4_4_ = (this->fields)._workData.Axis.y;
-            fStack_20 = (this->fields)._workData.Axis.z;
-            fVar15 = fVar3 * uStack_19._4_4_ - (uStack_21._4_4_ - (float)uVar26) * fStack_20;
-            VStack_6.z = (uStack_21._4_4_ - (float)uVar26) * (float)uStack_19 - ((float)uStack_21 - (float)uVar25) * uStack_19._4_4_;
-            fStack_9 = ((float)uStack_21 - (float)uVar25) * fStack_20 - fVar3 * (float)uStack_19;
-            VStack_6.x = (float)uStack_21;
-            VStack_6.y = uStack_21._4_4_;
-            if (this_00 != (Camera *)0x0) {
-              pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1(&VStack_12,this_00,*pVVar16,(MethodInfo *)0x0);
-              uStack_19._0_4_ = pVVar16->x;
-              uStack_19._4_4_ = pVVar16->y;
-              fStack_22 = VStack_6.z + fStack_22;
-              position_00.y = fStack_9 + uStack_21._4_4_;
-              position_00.x = fVar15 + (float)uStack_21;
-              position_00.z = fStack_22;
-              pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1(&VStack_12,this_00,position_00,(MethodInfo *)0x0);
-              uStack_21._0_4_ = pVVar16->x;
-              uStack_21._4_4_ = pVVar16->y;
-              fStack_22 = pVVar16->z;
-              VStack_6.y = (float)uStack_21 - (float)uStack_19;
-              VStack_6.z = uStack_21._4_4_ - uStack_19._4_4_;
-              func_?();
-              fVar3 = extraout_EDX;
+            fVar8 = fVar11 * VStackX_18.x + fVar8;
+            fVar9 = (float)uStack_7 * VStackX_18.x + fVar9;
+            fVar10 = uStack_7._4_4_ * VStackX_18.x + fVar10;
+            uVar28 = (this->fields)._workData.RotationPlanePos.x;
+            uVar29 = (this->fields)._workData.RotationPlanePos.y;
+            fVar30 = fVar10 - (this->fields)._workData.RotationPlanePos.z;
+            auStack_4._0_4_ = (this->fields)._workData.Axis.x;
+            auStack_4._4_4_ = (this->fields)._workData.Axis.y;
+            fVar11 = (this->fields)._workData.Axis.z;
+            fVar31 = fVar30 * auStack_4._0_4_;
+            fVar32 = (fVar9 - (float)uVar29) * auStack_4._0_4_;
+            fVar30 = fVar30 * auStack_4._4_4_;
+            fVar33 = (fVar8 - (float)uVar28) * auStack_4._4_4_;
+            if (pOVar1 != (Object *)0x0) {
+              auStack_4._4_4_ = fVar9;
+              auStack_4._0_4_ = fVar8;
+              auStack_4._8_4_ = fVar10;
+              if (cRam_? == '\0') {
+                FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              uStack_22 = 0;
+              uStack_23 = 0;
+              pOVar3 = pOVar1[1].klass;
+              if (pOVar3 == (Object__Class *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException(pOVar1,(MethodInfo *)0x0);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+              pcVar16 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) && (pcVar16 = (code *)FUN_?(&UNK_?), pcVar16 == (code *)0x0)) {
+                uVar17 = func_?(&UNK_?);
+                FUN_?(uVar17,0);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+              pcRam_? = pcVar16;
+              (*pcRam_?)(pOVar3,auStack_4,2,&uStack_22,pOVar2);
+              fStack_14 = (fVar32 - fVar33) + fVar10;
+              uStack_13 = CONCAT44(((fVar8 - (float)uVar28) * fVar11 - fVar31) + fVar9,(fVar30 - (fVar9 - (float)uVar29) * fVar11) + fVar8);
+              if (cRam_? == '\0') {
+                FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              uStack_6 = 0;
+              uStack_15 = 0;
+              pOVar3 = pOVar1[1].klass;
+              if (pOVar3 == (Object__Class *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException(pOVar1,(MethodInfo *)0x0);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+              pcVar16 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) && (pcVar16 = (code *)FUN_?(&UNK_?), pcVar16 == (code *)0x0)) {
+                uVar17 = func_?(&UNK_?);
+                FUN_?(uVar17,0);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+              pcRam_? = pcVar16;
+              (*pcRam_?)(pOVar3,&uStack_13,2,&uStack_6);
+              fVar8 = (float)uStack_6 - (float)uStack_22;
+              fVar9 = uStack_6._4_4_ - uStack_22._4_4_;
               goto code_?;
             }
           }
         }
       }
       else {
-        if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+        if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-        if ((pOVar1 != (Object *)0x0) && (pOVar1[2].klass != (Object__Class *)0x0)) {
-          puVar27 = (undefined8 *)func_?(&uStack_19,7,TypeInfo__RTG__IInputDevice,pOVar1[2].klass);
-          uStack_21 = *puVar27;
-          fStack_22 = *(float *)(puVar27 + 1);
-          if (this_00 != (Camera *)0x0) {
-            pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1(&VStack_6,this_00,(this->fields)._workData.RotationPlanePos,(MethodInfo *)0x0);
-            uStack_19._0_4_ = pVVar16->x;
-            uStack_19._4_4_ = pVVar16->y;
-            VStack_6.y = (float)uStack_21 - (float)uStack_19;
-            VStack_6.z = uStack_21._4_4_ - uStack_19._4_4_;
-            VVar28.y = VStack_6.z;
-            VVar28.x = VStack_6.y;
-            VVar28 = Vector2Ex::Vector2Ex_GetNormal(VVar28,(MethodInfo *)0x0);
-            fVar3 = VVar28.y;
+        pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get(MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+        if ((pOVar2 != (Object *)0x0) && (pOVar2[2].klass != (Object__Class *)0x0)) {
+          puVar34 = (undefined8 *)FUN_?(auStack_4,7,TypeInfo__RTG__IInputDevice);
+          uStack_6 = *puVar34;
+          uStack_15 = *(undefined4 *)(puVar34 + 1);
+          if (pOVar1 != (Object *)0x0) {
+            uStack_13._0_4_ = (this->fields)._workData.RotationPlanePos.x;
+            uStack_13._4_4_ = (this->fields)._workData.RotationPlanePos.y;
+            fStack_14 = (this->fields)._workData.RotationPlanePos.z;
+            if (cRam_? == '\0') {
+              FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            uStack_22 = 0;
+            uStack_23 = 0;
+            pOVar3 = pOVar1[1].klass;
+            if (pOVar3 == (Object__Class *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException(pOVar1,(MethodInfo *)0x0);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+            pcVar16 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) && (pcVar16 = (code *)FUN_?(&UNK_?), pcVar16 == (code *)0x0)) {
+              uVar17 = func_?(&UNK_?);
+              FUN_?(uVar17,0);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+            pcRam_? = pcVar16;
+            (*pcRam_?)(pOVar3,&uStack_13,2,&uStack_22);
+            fVar9 = (float)uStack_6 - (float)uStack_22;
+            fVar8 = -(uStack_6._4_4_ - uStack_22._4_4_);
 code_?:
-            (this->fields)._screenDragCircleTangent.x = VStack_6.y;
-            (this->fields)._screenDragCircleTangent.y = fVar3;
+            VStackX_18.y = fVar9;
+            VStackX_18.x = fVar8;
+            uVar17 = FUN_?(&VStackX_18);
+            (this->fields)._screenDragCircleTangent.x = (float)(int)uVar17;
+            (this->fields)._screenDragCircleTangent.y = (float)(int)((ulonglong)uVar17 >> 0x20);
             (this->fields)._screenDragCircleTangent.z = 0.0;
             return;
           }
@@ -316,9 +457,9 @@ code_?:
       }
     }
   }
-  func_?();
-  pcVar29 = (code *)swi(3);
-  (*pcVar29)();
+  FUN_?();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -328,48 +469,75 @@ code_?:
 void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationDrag3D_OnSessionEnd(GizmoSglAxisRotationDrag3D *this,MethodInfo *method)
 
 {
+  bVar1 = cRam_? == '\0';
   (this->fields)._accumSnapDrag = 0.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._screenDragCircleTangent.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._screenDragCircleTangent.y = fVar1;
+  (this->fields)._screenDragCircleTangent.y = fVar2;
   (this->fields)._screenDragCircleTangent.z = 0.0;
   (this->fields)._adjustRotationForAbsSnap = 0;
-  (this->fields)._totalRotation = 0.0;
   (this->fields)._relativeRotation = 0.0;
+  (this->fields)._totalRotation = 0.0;
   return;
 }
 
 
 /* Void SetWorkData(GizmoSglAxisRotationDrag3D+WorkData) */
 
-void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationDrag3D_SetWorkData(GizmoSglAxisRotationDrag3D *this,GizmoSglAxisRotationDrag3D_WorkData workData,MethodInfo *method)
+void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationDrag3D_SetWorkData(GizmoSglAxisRotationDrag3D *this,GizmoSglAxisRotationDrag3D_WorkData *workData,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).get_IsActive_1.method)(this,(this->klass->vtable).get_DragChannel_1.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_IsActive_1.methodPtr)(this,(this->klass->vtable).get_IsActive_1.method);
   if (cVar1 == '\0') {
-    (this->fields)._workData.RotationPlanePos.x = workData.RotationPlanePos.x;
-    (this->fields)._workData.RotationPlanePos.y = workData.RotationPlanePos.y;
-    (this->fields)._workData.RotationPlanePos.z = workData.RotationPlanePos.z;
-    (this->fields)._workData.Axis.x = workData.Axis.x;
-    (this->fields)._workData.Axis.y = workData.Axis.y;
-    (this->fields)._workData.Axis.z = workData.Axis.z;
-    (this->fields)._workData.SnapMode = workData.SnapMode;
-    (this->fields)._workData.SnapStep = workData.SnapStep;
-    fStack_2 = (this->fields)._workData.RotationPlanePos.z;
-    uStack_3._0_4_ = (this->fields)._workData.RotationPlanePos.x;
-    uStack_3._4_4_ = (this->fields)._workData.RotationPlanePos.y;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_5,(this->fields)._workData.Axis,(MethodInfo *)0x0);
-    uVar6 = pVVar4->x;
-    uVar7 = pVVar4->y;
-    fVar8 = pVVar4->z;
-    (this->fields)._rotationPlane.m_Normal.x = (float)uVar6;
-    (this->fields)._rotationPlane.m_Normal.y = (float)uVar7;
-    (this->fields)._rotationPlane.m_Normal.z = fVar8;
-    (this->fields)._rotationPlane.m_Distance = -(uStack_3._4_4_ * (float)uVar7 + (float)uStack_3 * (float)uVar6 + fStack_2 * fVar8);
+    fVar2 = (workData->RotationPlanePos).y;
+    uVar3 = *(undefined8 *)&(workData->RotationPlanePos).z;
+    fVar4 = (workData->Axis).y;
+    fVar5 = (workData->Axis).z;
+    iVar6 = workData->SnapMode;
+    fVar7 = workData->SnapStep;
+    (this->fields)._workData.RotationPlanePos.x = (workData->RotationPlanePos).x;
+    (this->fields)._workData.RotationPlanePos.y = fVar2;
+    *(undefined8 *)&(this->fields)._workData.RotationPlanePos.z = uVar3;
+    (this->fields)._workData.Axis.y = fVar4;
+    (this->fields)._workData.Axis.z = fVar5;
+    (this->fields)._workData.SnapMode = iVar6;
+    (this->fields)._workData.SnapStep = fVar7;
+    fVar4 = (this->fields)._workData.Axis.z;
+    uStack_8._0_4_ = (this->fields)._workData.RotationPlanePos.x;
+    uStack_8._4_4_ = (this->fields)._workData.RotationPlanePos.y;
+    fVar2 = (this->fields)._workData.RotationPlanePos.z;
+    uStack_9._0_4_ = (this->fields)._workData.Axis.x;
+    uStack_9._4_4_ = (this->fields)._workData.Axis.y;
+    fStack_10 = fVar4;
+    uStack_11 = uStack_9;
+    fVar5 = (float)FUN_?(&uStack_9);
+    if (1e-05 < fVar5) {
+      uStack_11._0_4_ = (float)uStack_11 / fVar5;
+      uStack_11._4_4_ = uStack_11._4_4_ / fVar5;
+      fVar4 = fVar4 / fVar5;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uStack_11._0_4_ = (pVVar12->zeroVector).x;
+      uStack_11._4_4_ = (pVVar12->zeroVector).y;
+      fVar4 = (pVVar12->zeroVector).z;
+    }
+    (this->fields)._rotationPlane.m_Normal.x = (float)uStack_11;
+    (this->fields)._rotationPlane.m_Normal.y = uStack_11._4_4_;
+    (this->fields)._rotationPlane.m_Normal.z = fVar4;
+    (this->fields)._rotationPlane.m_Distance = -(uStack_8._4_4_ * uStack_11._4_4_ + (float)uStack_8 * (float)uStack_11 + fVar2 * fVar4);
   }
   return;
 }
@@ -382,75 +550,88 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
 {
   (this->fields)._._sensitivity = 1.0;
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_RTG_GizmoTransform_ *)func_?(TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+  this_00 = (List_1_RTG_GizmoTransform_ *)FUN_?(TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields)._._._targetTransforms = this_00;
-  func_?(&this->fields,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).y;
-  fVar3 = (pQVar1->identityQuaternion).z;
-  fVar4 = (pQVar1->identityQuaternion).w;
-  (this->fields)._._._totalDragRotation.x = (pQVar1->identityQuaternion).x;
-  (this->fields)._._._totalDragRotation.y = fVar2;
-  (this->fields)._._._totalDragRotation.z = fVar3;
-  (this->fields)._._._totalDragRotation.w = fVar4;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  cVar6 = cRam_?;
+  cVar7 = cRam_?;
+  pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar9 = (pQVar8->identityQuaternion).y;
+  fVar10 = (pQVar8->identityQuaternion).z;
+  fVar11 = (pQVar8->identityQuaternion).w;
+  (this->fields)._._._totalDragRotation.x = (pQVar8->identityQuaternion).x;
+  (this->fields)._._._totalDragRotation.y = fVar9;
+  (this->fields)._._._totalDragRotation.z = fVar10;
+  (this->fields)._._._totalDragRotation.w = fVar11;
+  if (cVar6 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cVar6 = '\x01';
+    cRam_? = '\x01';
+    cVar7 = cRam_?;
+  }
+  pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar10 = (pVVar12->oneVector).y;
+  fVar9 = (pVVar12->oneVector).z;
+  (this->fields)._._._totalDragScale.x = (pVVar12->oneVector).x;
+  (this->fields)._._._totalDragScale.y = fVar10;
+  (this->fields)._._._totalDragScale.z = fVar9;
+  if (cVar7 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+    cVar6 = cRam_?;
+  }
+  pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar9 = (pQVar8->identityQuaternion).y;
+  fVar10 = (pQVar8->identityQuaternion).z;
+  fVar11 = (pQVar8->identityQuaternion).w;
+  (this->fields)._._._relativeDragRotation.x = (pQVar8->identityQuaternion).x;
+  (this->fields)._._._relativeDragRotation.y = fVar9;
+  (this->fields)._._._relativeDragRotation.z = fVar10;
+  (this->fields)._._._relativeDragRotation.w = fVar11;
+  if (cVar6 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar5->oneVector).y;
-  fVar2 = (pVVar5->oneVector).z;
-  (this->fields)._._._totalDragScale.x = (pVVar5->oneVector).x;
-  (this->fields)._._._totalDragScale.y = fVar3;
-  (this->fields)._._._totalDragScale.z = fVar2;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
-    cRam_? = '\x01';
-  }
-  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).y;
-  fVar3 = (pQVar1->identityQuaternion).z;
-  fVar4 = (pQVar1->identityQuaternion).w;
-  (this->fields)._._._relativeDragRotation.x = (pQVar1->identityQuaternion).x;
-  (this->fields)._._._relativeDragRotation.y = fVar2;
-  (this->fields)._._._relativeDragRotation.z = fVar3;
-  (this->fields)._._._relativeDragRotation.w = fVar4;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
-    cRam_? = '\x01';
-  }
-  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar5->oneVector).y;
-  fVar2 = (pVVar5->oneVector).z;
-  (this->fields)._._._relativeDragScale.x = (pVVar5->oneVector).x;
-  (this->fields)._._._relativeDragScale.y = fVar3;
-  (this->fields)._._._relativeDragScale.z = fVar2;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
+  pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar10 = (pVVar12->oneVector).y;
+  fVar9 = (pVVar12->oneVector).z;
+  (this->fields)._._._relativeDragScale.x = (pVVar12->oneVector).x;
+  (this->fields)._._._relativeDragScale.y = fVar10;
+  (this->fields)._._._relativeDragScale.z = fVar9;
   return;
-}
-
-
-/* Plane get_RotationPlane() */
-
-Plane * Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationDrag3D_get_RotationPlane(Plane *__return_storage_ptr__,GizmoSglAxisRotationDrag3D *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._rotationPlane.m_Normal.y;
-  fVar2 = (this->fields)._rotationPlane.m_Normal.z;
-  fVar3 = (this->fields)._rotationPlane.m_Distance;
-  (__return_storage_ptr__->m_Normal).x = (this->fields)._rotationPlane.m_Normal.x;
-  (__return_storage_ptr__->m_Normal).y = fVar1;
-  (__return_storage_ptr__->m_Normal).z = fVar2;
-  __return_storage_ptr__->m_Distance = fVar3;
-  return __return_storage_ptr__;
 }
 

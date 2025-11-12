@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -50,7 +50,7 @@ namespace Newtonsoft.Json.Serialization
 		public override decimal? ReadAsDecimal();
 		public override double? ReadAsDouble();
 		public override bool? ReadAsBoolean();
-		public override DateTime? ReadAsDateTime();
+		public override System.DateTime? ReadAsDateTime();
 		public override DateTimeOffset? ReadAsDateTimeOffset();
 		public void WriteCurrentToken();
 		public override void Close();

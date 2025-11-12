@@ -27,14 +27,15 @@ public class RegionConfigManager : ScriptableObject
 	private RegionConfig www;
 	[SerializeField]
 	private RegionConfig ut;
-	[SerializeField]
-	private TextAsset regionTag;
+	private string region;
 
 	// Properties
-	private string RegionTag { get; }
 	public RegionConfig RegionConfig { get; }
 
 	// Constructors
 	public RegionConfigManager();
+
+	// Methods
+	private string DetectRegionFromEnvironment();
 }
 

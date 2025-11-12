@@ -55,7 +55,6 @@ namespace RTG
 		[CompilerGenerated]
 		private GizmoOffsetDragAxisModifyHandler OffsetDragAxisModify;
 		private bool _isEnabled;
-		private bool _forceRefresh;
 		private GizmoHandleCollection _handles;
 		private GizmoBehaviourCollection _behaviours;
 		private GizmoHoverInfo _hoverInfo;
@@ -76,15 +75,12 @@ namespace RTG
 		private UniversalGizmo _universalGizmo;
 		[NonSerialized]
 		private ObjectTransformGizmo _objectTransformGizmo;
-		[NonSerialized]
-		private SceneGizmo _sceneGizmo;
 	
 		// Properties
 		public static int InputDeviceDragButtonIndex { get; }
 		public int NumHandles { get; }
 		public Camera FocusCamera { get; }
 		public bool IsEnabled { get; }
-		public bool ForceRefresh { get; }
 		public Priority GenericHoverPriority { get; }
 		public Priority HoverPriority3D { get; }
 		public Priority HoverPriority2D { get; }
@@ -111,7 +107,6 @@ namespace RTG
 		public ScaleGizmo ScaleGizmo { get; }
 		public UniversalGizmo UniversalGizmo { get; }
 		public ObjectTransformGizmo ObjectTransformGizmo { get; }
-		public SceneGizmo SceneGizmo { get; }
 	
 		// Events
 		public event GizmoPostEnabledHandler PostEnabled {
@@ -198,7 +193,6 @@ namespace RTG
 		public Camera GetWorkCamera();
 		public GizmoHandle CreateHandle(int id);
 		public void SetEnabled(bool enabled);
-		public void SetForceRefresh(bool forceRefresh);
 		public BehaviourType AddBehaviour<BehaviourType>()
 			where BehaviourType : class, IGizmoBehaviour, new();
 		public bool AddBehaviour(IGizmoBehaviour behaviour);

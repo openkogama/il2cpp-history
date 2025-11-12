@@ -9,10 +9,9 @@ void Assembly-CSharp.dll::WorldNetwork+<>c__DisplayClass8_0::WorldNetwork_c_Disp
     WorldNetwork::WorldNetwork_OnGameDataDeserialized(this_00,(this->fields).queryData,(this->fields).instigatorActorNumber,rootId,(MethodInfo *)0x0);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

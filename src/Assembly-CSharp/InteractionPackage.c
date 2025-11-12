@@ -1,56 +1,90 @@
 
 /* Void HandlePackage(MVWorldObjectClient, MVPlayer, Single, PlayerKilledByType, Vector3, AvatarModifierPackageType) */
 
-void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,float damage,PlayerKilledByType__Enum killedByType,Vector3 impulse,AvatarModifierPackageType__Enum modType,MethodInfo *method)
+void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,float damage,PlayerKilledByType__Enum killedByType,Vector3 *impulse,AvatarModifierPackageType__Enum modType,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) && (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
-    x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.typeMetadataHandle)(x,0x11,x->klass[1]._0.interopData);
-      if (cVar3 != '\0') {
-        return;
+    targetInteractable = (MVInteractableBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    bVar2 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if ((x == (Object_1 *)0x0) || ((*(code *)x->klass[1]._0.namespaze)(x,damage,shooter,killedByType,x->klass[1]._0.byval_arg.data.dummy), shooter == (MVPlayer *)0x0)) goto code_?;
-      (*(code *)x->klass[1]._0.parent)(x,modType,(shooter->fields)._ActorNr_k__BackingField,0,x->klass[1]._0.generic_class);
-    }
-    pGVar1 = (target->fields).gameObject;
-    if (pGVar1 != (GameObject *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (targetInteractable != (MVInteractableBase *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          (*(targetInteractable->klass->vtable).__unknown.methodPtr)(targetInteractable,damage,shooter,(ulonglong)(byte)(undefined1)killedByType,(targetInteractable->klass->vtable).__unknown.method);
+          if (shooter == (MVPlayer *)0x0) goto code_?;
+          (*(targetInteractable->klass->vtable).__unknown_4.methodPtr)(targetInteractable,(ulonglong)modType,(ulonglong)(uint)(shooter->fields)._ActorNr_k__BackingField,0,(targetInteractable->klass->vtable).__unknown_4.method);
+        }
+      }
+      pGVar1 = (target->fields).gameObject;
+      if (pGVar1 == (GameObject *)0x0) goto code_?;
       this_00 = (MVRigidBody *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        if (this_00 == (MVRigidBody *)0x0) goto code_?;
-        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      return;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this_00 != (MVRigidBody *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((this_00->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          aVStack_3[0].x = impulse->x;
+          aVStack_3[0].y = impulse->y;
+          aVStack_3[0].z = impulse->z;
+          MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,aVStack_3,1,(MethodInfo *)0x0);
+        }
+      }
     }
+    return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -59,56 +93,88 @@ code_?:
 
 /* Void HandlePackage(MVWorldObjectClient, MVPlayer, Single, PlayerKilledByType, Vector3) */
 
-void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_1(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,float damage,PlayerKilledByType__Enum killedByType,Vector3 impulse,MethodInfo *method)
+void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_1(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,float damage,PlayerKilledByType__Enum killedByType,Vector3 *impulse,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) && (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
-    x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.typeMetadataHandle)(x,0x11,x->klass[1]._0.interopData);
-      if (cVar3 != '\0') {
-        return;
+    targetInteractable = (MVInteractableBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    bVar2 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.namespaze)(x,damage,shooter,killedByType,x->klass[1]._0.byval_arg.data.dummy);
-    }
-    pGVar1 = (target->fields).gameObject;
-    if (pGVar1 != (GameObject *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (targetInteractable != (MVInteractableBase *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          (*(targetInteractable->klass->vtable).__unknown.methodPtr)(targetInteractable,damage,shooter,(ulonglong)(byte)(undefined1)killedByType,(targetInteractable->klass->vtable).__unknown.method);
+        }
+      }
+      pGVar1 = (target->fields).gameObject;
+      if (pGVar1 == (GameObject *)0x0) goto code_?;
       this_00 = (MVRigidBody *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        if (this_00 == (MVRigidBody *)0x0) goto code_?;
-        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      return;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this_00 != (MVRigidBody *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((this_00->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          aVStack_3[0].x = impulse->x;
+          aVStack_3[0].y = impulse->y;
+          aVStack_3[0].z = impulse->z;
+          MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,aVStack_3,1,(MethodInfo *)0x0);
+        }
+      }
     }
+    return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -121,97 +187,139 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_2
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) && (this_00 = (target->fields).gameObject, this_00 != (GameObject *)0x0)) {
-    x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(this_00,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      cVar2 = (*(code *)x->klass[1]._0.typeMetadataHandle)(x,0x11,x->klass[1]._0.interopData);
-      if (cVar2 != '\0') {
-        return;
+    targetInteractable = (MVInteractableBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(this_00,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    bVar1 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.namespaze)(x,damage,shooter,killedByType,x->klass[1]._0.byval_arg.data.dummy);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (targetInteractable != (MVInteractableBase *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          (*(targetInteractable->klass->vtable).__unknown.methodPtr)(targetInteractable,damage,shooter,(ulonglong)(byte)(undefined1)killedByType,(targetInteractable->klass->vtable).__unknown.method);
+        }
+      }
     }
     return;
   }
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
 
 /* Void HandlePackage(MVWorldObjectClient, MVPlayer, Vector3, AvatarModifierPackageType) */
 
-void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_3(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,Vector3 impulse,AvatarModifierPackageType__Enum modifierType,MethodInfo *method)
+void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_3(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,Vector3 *impulse,AvatarModifierPackageType__Enum modifierType,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) && (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
-    x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.typeMetadataHandle)(x,0x11,x->klass[1]._0.interopData);
-      if (cVar3 != '\0') {
-        return;
+    targetInteractable = (MVInteractableBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    bVar2 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if ((shooter == (MVPlayer *)0x0) || (x == (Object_1 *)0x0)) goto code_?;
-      (*(code *)x->klass[1]._0.parent)(x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,x->klass[1]._0.generic_class);
-    }
-    pGVar1 = (target->fields).gameObject;
-    if (pGVar1 != (GameObject *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (targetInteractable != (MVInteractableBase *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          if (shooter == (MVPlayer *)0x0) goto code_?;
+          (*(targetInteractable->klass->vtable).__unknown_4.methodPtr)(targetInteractable,(ulonglong)modifierType,(ulonglong)(uint)(shooter->fields)._ActorNr_k__BackingField,0,(targetInteractable->klass->vtable).__unknown_4.method);
+        }
+      }
+      pGVar1 = (target->fields).gameObject;
+      if (pGVar1 == (GameObject *)0x0) goto code_?;
       this_00 = (MVRigidBody *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        if (this_00 == (MVRigidBody *)0x0) goto code_?;
-        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      return;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this_00 != (MVRigidBody *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((this_00->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          VStack_3.x = impulse->x;
+          VStack_3.y = impulse->y;
+          VStack_3.z = impulse->z;
+          MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,&VStack_3,1,(MethodInfo *)0x0);
+        }
+      }
     }
+    return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -220,120 +328,152 @@ code_?:
 
 /* Void HandlePackage(MVWorldObjectClient, Vector3, AvatarModifierPackageType) */
 
-void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_4(InteractionPackage *this,MVWorldObjectClient *target,Vector3 impulse,AvatarModifierPackageType__Enum modifierType,MethodInfo *method)
+void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_4(InteractionPackage *this,MVWorldObjectClient *target,Vector3 *impulse,AvatarModifierPackageType__Enum modifierType,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-    func_?();
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) && (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
-    pOVar2 = (Object_1 *)&UNK_?;
-    pMVar3 = MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__;
-    x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      pMVar3 = (MethodInfo *)x->klass[1]._0.interopData;
-      pGVar1 = (GameObject *)0x11;
-      pOVar2 = x;
-      cVar5 = (*(code *)x->klass[1]._0.typeMetadataHandle)();
-      if (cVar5 != '\0') {
-        return;
+    targetInteractable = (MVInteractableBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    bVar2 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object,pOVar2,pGVar1,pMVar3);
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.parent)(x,modifierType,0xffffffff,0,x->klass[1]._0.generic_class);
-    }
-    pGVar1 = (target->fields).gameObject;
-    if (pGVar1 != (GameObject *)0x0) {
-      this_00 = (Behaviour *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        if (this_00 == (Behaviour *)0x0) goto code_?;
-        if (cRam_? == '\0') {
-          func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_);
-          cRam_? = '\x01';
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (targetInteractable != (MVInteractableBase *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled(this_00,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          if (this_00[3].monitor == (MonitorData *)0x0) goto code_?;
-          func_?(this_00[3].monitor,impulse._0_8_,impulse.z,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_);
-          (*(code *)this_00->klass[1]._0.typeMetadataHandle)(this_00,this_00->klass[1]._0.interopData);
+        if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          (*(targetInteractable->klass->vtable).__unknown_4.methodPtr)(targetInteractable,(ulonglong)modifierType,0xffffffff,0,(targetInteractable->klass->vtable).__unknown_4.method);
         }
       }
-      return;
+      pGVar1 = (target->fields).gameObject;
+      if (pGVar1 == (GameObject *)0x0) goto code_?;
+      this_00 = (MVRigidBody *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this_00 != (MVRigidBody *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((this_00->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          VStack_3.x = impulse->x;
+          VStack_3.y = impulse->y;
+          VStack_3.z = impulse->z;
+          MVRigidBody::MVRigidBody_AddImpulse_1(this_00,&VStack_3,1,(MethodInfo *)0x0);
+        }
+      }
     }
+    return;
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
 
 /* Void HandlePackage(MVWorldObjectClient, MVPlayer, Vector3) */
 
-void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_5(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,Vector3 impulse,MethodInfo *method)
+void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_5(InteractionPackage *this,MVWorldObjectClient *target,MVPlayer *shooter,Vector3 *impulse,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) && (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
-    x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.typeMetadataHandle)(x,0x11,x->klass[1]._0.interopData);
-      if (cVar3 != '\0') {
-        return;
-      }
-    }
-    pGVar1 = (target->fields).gameObject;
-    if (pGVar1 != (GameObject *)0x0) {
+    targetInteractable = (MVInteractableBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    bVar2 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      pGVar1 = (target->fields).gameObject;
+      if (pGVar1 == (GameObject *)0x0) goto code_?;
       this_00 = (MVRigidBody *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar1,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        if (this_00 == (MVRigidBody *)0x0) goto code_?;
-        MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,impulse,1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      return;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this_00 != (MVRigidBody *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((this_00->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          VStack_3.x = impulse->x;
+          VStack_3.y = impulse->y;
+          VStack_3.z = impulse->z;
+          MVRigidBody::MVRigidBody_AddImpulse(this_00,shooter,&VStack_3,1,(MethodInfo *)0x0);
+        }
+      }
     }
+    return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -346,41 +486,52 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_6
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) && (this_00 = (target->fields).gameObject, this_00 != (GameObject *)0x0)) {
-    x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(this_00,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      cVar2 = (*(code *)x->klass[1]._0.typeMetadataHandle)(x,0x11,x->klass[1]._0.interopData);
-      if (cVar2 != '\0') {
-        return;
+    targetInteractable = (MVInteractableBase *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(this_00,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    bVar1 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((shooter == (MVPlayer *)0x0) || (x == (Object_1 *)0x0)) goto code_?;
-      (*(code *)x->klass[1]._0.parent)(x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,x->klass[1]._0.generic_class);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (targetInteractable != (MVInteractableBase *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          if (shooter == (MVPlayer *)0x0) goto code_?;
+          (*(targetInteractable->klass->vtable).__unknown_4.methodPtr)(targetInteractable,modifierType,(ulonglong)(uint)(shooter->fields)._ActorNr_k__BackingField,0,(targetInteractable->klass->vtable).__unknown_4.method);
+        }
+      }
     }
     return;
   }
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -391,24 +542,41 @@ bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsSpawnProtecte
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return 0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
   if (targetInteractable != (MVInteractableBase *)0x0) {
-    bVar1 = (*(code *)(targetInteractable->klass->vtable).__unknown_5.method)(targetInteractable,0x11);
-    return bVar1;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      bVar1 = (*(targetInteractable->klass->vtable).__unknown_5.methodPtr)(targetInteractable,0x11,(targetInteractable->klass->vtable).__unknown_5.method);
+      return bVar1;
+    }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  return 0;
 }
 
 
@@ -417,24 +585,7 @@ bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsSpawnProtecte
 bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsValidTarget(InteractionPackage *this,MVPlayer *shooter,MVWorldObjectClient *target,MVInteractableBase *targetInteractable,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)targetInteractable,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return 1;
-  }
-  if (targetInteractable != (MVInteractableBase *)0x0) {
-    cVar2 = (*(code *)(targetInteractable->klass->vtable).__unknown_5.method)(targetInteractable,0x11);
-    return cVar2 == '\0';
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  bVar1 = InteractionPackage_IsSpawnProtected(this,targetInteractable,(MethodInfo *)0x0);
+  return bVar1 ^ 1;
 }
 

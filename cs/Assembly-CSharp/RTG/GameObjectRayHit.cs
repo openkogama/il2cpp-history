@@ -48,13 +48,13 @@ namespace RTG
 		}
 	
 		// Constructors
-		public GameObjectRayHit(Ray hitRay, RaycastHit hit3D);
+		public GameObjectRayHit(Ray hitRay, UnityEngine.RaycastHit hit3D);
 		public GameObjectRayHit(Ray hitRay, RaycastHit2D hit2D);
 		public GameObjectRayHit(Ray hitRay, GameObject hitObject, Vector3 hitNormal, float hitEnter);
 		public GameObjectRayHit(Ray ray, GameObject hitObject, MeshRayHit meshRayHit);
 	
 		// Methods
 		public static void SortByHitDistance(List<GameObjectRayHit> hits);
-		public static void Store(Ray hitRay, IEnumerable<RaycastHit2D> hits2D, IEnumerable<RaycastHit> hits3D, List<GameObjectRayHit> hits);
+		public static void Store(Ray hitRay, IEnumerable<RaycastHit2D> hits2D, IEnumerable<UnityEngine.RaycastHit> hits3D, List<GameObjectRayHit> hits);
 	}
 }

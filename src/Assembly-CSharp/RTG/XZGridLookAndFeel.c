@@ -4,16 +4,34 @@
 void Assembly-CSharp.dll::RTG::XZGridLookAndFeel::XZGridLookAndFeel__ctor(XZGridLookAndFeel *this,MethodInfo *method)
 
 {
-  pCVar1 = RTSystemValues::RTSystemValues_get_GridLineColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._lineColor.r = pCVar1->r;
-  (this->fields)._lineColor.g = fVar3;
-  (this->fields)._lineColor.b = fVar4;
-  (this->fields)._lineColor.a = fVar5;
+  (this->fields)._lineColor.r = 0.5019608;
+  (this->fields)._lineColor.g = 0.5019608;
+  (this->fields)._lineColor.b = 0.5019608;
+  (this->fields)._lineColor.a = 0.40000004;
   (this->fields)._useCellFading = 1;
-  Settings::Settings__ctor((Settings *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral_Settings,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar1 = iRam_? != 0;
+  (this->fields)._._canBeDisplayed = 1;
+  (this->fields)._._isExpanded = 1;
+  (this->fields)._._foldoutLabel = StringLiteral_Settings;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._foldoutLabel >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

@@ -5,7 +5,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_IsFlagSet(ClientSet
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (TypeInfo__MVClientSettings->static_fields->flags & flag) == flag;
@@ -17,19 +19,35 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_IsFlagSet(ClientSet
 bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_IsReviveFlagEnabledForSessionType(MethodInfo *method)
 
 {
-  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    return (byte)((uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 4) & 1;
-  }
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  return (byte)((uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 5) & 1;
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 != (GameSessionData *)0x0) {
+    if (0 < (pGVar1->fields).profileID) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVClientSettings);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      return (byte)((uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 4) & 1;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVClientSettings);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    return (byte)((uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 5) & 1;
+  }
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -39,7 +57,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_BoostersEnabled
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x19) & 1;
@@ -52,7 +72,9 @@ ClientSettingFlags__Enum Assembly-CSharp.dll::MVClientSettings::MVClientSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__MVClientSettings->static_fields->flags;
@@ -65,10 +87,12 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_CrazyAdsEnabled
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  return *(byte *)((int)&TypeInfo__MVClientSettings->static_fields->flags + 3) & 1;
+  return *(byte *)((longlong)&TypeInfo__MVClientSettings->static_fields->flags + 3) & 1;
 }
 
 
@@ -78,7 +102,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_EnableSentry(Me
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 1) & 1;
@@ -91,11 +117,15 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_EnableStathat(M
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   bVar1 = (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 5) & 1;
@@ -112,7 +142,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_FirstPreviewTie
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x16) & 1;
@@ -125,7 +157,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_GameDistributio
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x12) & 1;
@@ -138,35 +172,33 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_InterstitialsAd
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) == 0) {
-    return 0;
-  }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((((pMVar1 == (MVNetworkGame *)0x0) || (this = (pMVar1->fields).playerContainer, this == (MVPlayerContainer *)0x0)) || (pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0), pMVar2 == (MVLocalPlayer *)0x0)) || (pSVar3 = (pMVar2->fields)._._SubscriptionRules_k__BackingField, pSVar3 == (SubscriptionRulesWrapper *)0x0)) {
-    uVar4 = func_?(&stack0x00000000);
-    func_?(uVar4);
-    pcVar5 = (code *)swi(3);
-    bVar6 = (*pcVar5)();
-    return bVar6;
-  }
-  if ((pSVar3->fields).SubscriptionType != 0) {
-    return 0;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession != 0) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) != 0) {
+    bVar1 = MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__PlayerPrefsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession == 0) {
+        return 1;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVClientSettings);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x17) & 1;
     }
-    return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x17) & 1;
   }
-  return 1;
+  return 0;
 }
 
 
@@ -175,15 +207,20 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_InterstitialsAd
 bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_IsSubscriber(MethodInfo *method)
 
 {
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) && (this = (pMVar1->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0);
-    if ((pMVar2 != (MVLocalPlayer *)0x0) && (pSVar3 = (pMVar2->fields)._._SubscriptionRules_k__BackingField, pSVar3 != (SubscriptionRulesWrapper *)0x0)) {
-      return (pSVar3->fields).SubscriptionType != 0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) && (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) && (this = (pMVar2->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
+    pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0);
+    if ((pMVar3 != (MVLocalPlayer *)0x0) && (pSVar4 = (pMVar3->fields)._._SubscriptionRules_k__BackingField, pSVar4 != (SubscriptionRulesWrapper *)0x0)) {
+      return (pSVar4->fields).SubscriptionType != 0;
     }
   }
-  uVar4 = func_?(&stack0x00000000);
-  func_?(uVar4);
+  FUN_?();
   pcVar5 = (code *)swi(3);
   bVar6 = (*pcVar5)();
   return bVar6;
@@ -196,38 +233,39 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_JoinFlowAdsEnab
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x2000U) != 0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVClientSettings);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) != 0) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((((pMVar1 == (MVNetworkGame *)0x0) || (this = (pMVar1->fields).playerContainer, this == (MVPlayerContainer *)0x0)) || (pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0), pMVar2 == (MVLocalPlayer *)0x0)) || (pSVar3 = (pMVar2->fields)._._SubscriptionRules_k__BackingField, pSVar3 == (SubscriptionRulesWrapper *)0x0)) {
-        uVar4 = func_?(&stack0x00000000);
-        func_?(uVar4);
-        pcVar5 = (code *)swi(3);
-        bVar6 = (*pcVar5)();
-        return bVar6;
-      }
-      if ((pSVar3->fields).SubscriptionType != 0) {
-        return 0;
-      }
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x2000U) == 0) {
+    return 0;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) != 0) {
+    bVar1 = MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
+    if (bVar1 == 0) {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__PlayerPrefsManager);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      if (TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession != 0) {
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x17) & 1;
+      if (TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession == 0) {
+        return 1;
       }
-      return 1;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVClientSettings);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x17) & 1;
     }
   }
   return 0;
@@ -239,7 +277,73 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_JoinFlowAdsEnab
 bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled(MethodInfo *method)
 
 {
-  MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 == (GameSessionData *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
+  }
+  if ((pGVar1->fields).profileID < 1) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVClientSettings);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uVar4 = TypeInfo__MVClientSettings->static_fields->flags;
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVClientSettings);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MVClientSettings->static_fields->flags & 0x20000U) == 0) {
+      return 0;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVClientSettings);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uVar4 = TypeInfo__MVClientSettings->static_fields->flags;
+  }
+  if ((uVar4 & 0x10000000) == 0) {
+    return 0;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) != 0) && (bVar3 = MVClientSettings_get_IsSubscriber((MethodInfo *)0x0), bVar3 == 0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__PlayerPrefsManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession == 0) {
+      return 1;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVClientSettings);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x17) & 1;
+  }
   return 0;
 }
 
@@ -250,7 +354,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_PlayButtonAdsRe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x11) & 1;
@@ -263,7 +369,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_PokiAdsEnabled(
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x13) & 1;
@@ -276,7 +384,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_PostGameInterst
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 9) & 1;
@@ -289,7 +399,9 @@ int32_t Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_PostGameInte
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__MVClientSettings->static_fields->_PostGameInterstitialIntervalInSeconds_k__BackingField;
@@ -302,57 +414,72 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_ReviveEnabled(M
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GameSetupOptions);
+    FUN_?(&TypeInfo__GameSetupOptions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    uVar2 = (uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 4;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  else {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    uVar2 = (uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 5;
-  }
-  if ((uVar2 & 1) != 0) {
-    if ((TypeInfo__GameSetupOptions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar1 = GameSetupOptions::GameSetupOptions_get_IsReviveEnabled((MethodInfo *)0x0);
-    if (bVar1 != 0) {
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 != (GameSessionData *)0x0) {
+    if ((pGVar1->fields).profileID < 1) {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__MVClientSettings);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      if ((TypeInfo__MVClientSettings->static_fields->flags & 0x4000000U) != 0) {
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar3 != (MVNetworkGame *)0x0) && (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-          pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0);
-          if ((pMVar4 != (MVLocalPlayer *)0x0) && (pSVar5 = (pMVar4->fields)._._SubscriptionRules_k__BackingField, pSVar5 != (SubscriptionRulesWrapper *)0x0)) {
-            if ((pSVar5->fields).SubscriptionType == 0) {
-              return 1;
-            }
-            goto code_?;
+      uVar2 = (uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 5;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVClientSettings);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uVar2 = (uint)TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField >> 4;
+    }
+    if ((uVar2 & 1) != 0) {
+      if (*(int *)&(TypeInfo__GameSetupOptions->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar3 = GameSetupOptions::GameSetupOptions_get_IsReviveEnabled((MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        bVar3 = MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          return 1;
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar4 != (MVGameControllerBase *)0x0) && (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) && (this = (pMVar5->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
+          pMVar6 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0);
+          if ((pMVar6 != (MVLocalPlayer *)0x0) && (pSVar7 = (pMVar6->fields)._._SubscriptionRules_k__BackingField, pSVar7 != (SubscriptionRulesWrapper *)0x0)) {
+            return (pSVar7->fields).SubscriptionType != 0;
           }
         }
-        func_?();
-        func_?();
-        pcVar6 = (code *)swi(3);
-        bVar1 = (*pcVar6)();
-        return bVar1;
+        FUN_?();
+        pcVar8 = (code *)swi(3);
+        bVar3 = (*pcVar8)();
+        return bVar3;
       }
-code_?:
-      bVar1 = MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
-      return bVar1;
     }
+    return 0;
   }
-  return 0;
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  bVar3 = (*pcVar8)();
+  return bVar3;
 }
 
 
@@ -362,7 +489,9 @@ int32_t Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_ReviveFlags(
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField;
@@ -375,24 +504,16 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_RewardedAdsEnab
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((TypeInfo__MVClientSettings->static_fields->flags & 0x4000000U) == 0) {
     return 0;
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) && (this = (pMVar1->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0);
-    if ((pMVar2 != (MVLocalPlayer *)0x0) && (pSVar3 = (pMVar2->fields)._._SubscriptionRules_k__BackingField, pSVar3 != (SubscriptionRulesWrapper *)0x0)) {
-      return (pSVar3->fields).SubscriptionType == 0;
-    }
-  }
-  uVar4 = func_?(&stack0x00000000);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  bVar1 = MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
+  return bVar1 ^ 1;
 }
 
 
@@ -402,7 +523,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_SeekAdConsent(M
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0xc) & 1;
@@ -415,7 +538,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_ShowTouristProm
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 2) & 1;
@@ -428,7 +553,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_SpinEnabled(Met
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 4) & 1;
@@ -441,7 +568,9 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_TouristChatAllo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return (byte)TypeInfo__MVClientSettings->static_fields->flags & 1;
@@ -454,10 +583,12 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_WebAdSDKsEnable
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  return *(byte *)((int)&TypeInfo__MVClientSettings->static_fields->flags + 2) & 1;
+  return *(byte *)((longlong)&TypeInfo__MVClientSettings->static_fields->flags + 2) & 1;
 }
 
 
@@ -467,7 +598,9 @@ void Assembly-CSharp.dll::MVClientSettings::MVClientSettings_set_ClientSettingFl
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__MVClientSettings->static_fields->flags = value;
@@ -482,7 +615,9 @@ void Assembly-CSharp.dll::MVClientSettings::MVClientSettings_set_PostGameInterst
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__MVClientSettings->static_fields->_PostGameInterstitialIntervalInSeconds_k__BackingField = value;
@@ -496,7 +631,9 @@ void Assembly-CSharp.dll::MVClientSettings::MVClientSettings_set_ReviveFlags(int
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVClientSettings);
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__MVClientSettings->static_fields->_ReviveFlags_k__BackingField = value;

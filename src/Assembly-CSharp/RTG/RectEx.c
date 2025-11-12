@@ -1,71 +1,78 @@
 
 /* Boolean ContainsAllPoints(Rect, IEnumerable`1[UnityEngine.Vector2]) */
 
-bool Assembly-CSharp.dll::RTG::RectEx::RectEx_ContainsAllPoints(Rect rect,IEnumerable_1_UnityEngine_Vector2_ *points,MethodInfo *method)
+bool Assembly-CSharp.dll::RTG::RectEx::RectEx_ContainsAllPoints(Rect *rect,IEnumerable_1_UnityEngine_Vector2_ *points,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (points != (IEnumerable_1_UnityEngine_Vector2_ *)0x0) {
-    iVar4 = func_?(0,TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>,points);
-    uStack_1 = 1;
-    while (iVar4 != 0) {
-      cVar5 = func_?(0,TypeInfo__System__Collections__IEnumerator,iVar4);
-      if (cVar5 == '\0') {
-        uStack_1 = 0xffffffff;
-        if (iVar4 != 0) {
-          func_?(0,TypeInfo__System__IDisposable,iVar4);
+  if (points == (IEnumerable_1_UnityEngine_Vector2_ *)0x0) {
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    lVar1 = FUN_?(0,TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>,points);
+    while (lVar1 != 0) {
+      cVar2 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+      if (cVar2 == '\0') {
+        if (lVar1 != 0) {
+          FUN_?(0,TypeInfo__System__IDisposable,lVar1);
         }
-        *unaff_FS_OFFSET = uStack_3;
         return 1;
       }
-      if (iVar4 == 0) break;
-      uVar6 = func_?(0,TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>,iVar4);
-      fVar7 = (float)((ulonglong)uVar6 >> 0x20);
-      fVar8 = (float)uVar6;
-      if (((0.0 <= rect.m_Width) || (rect.m_XMin < fVar8)) || (fVar8 <= rect.m_Width + rect.m_XMin)) {
-        if ((rect.m_Width < 0.0) || (fVar8 < rect.m_XMin)) {
-          bVar9 = false;
+      if (lVar1 == 0) goto code_?;
+      uVar3 = FUN_?(0,TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>);
+      fStackX_10 = (float)uVar3;
+      if (((0.0 < rect->m_Width || rect->m_Width == 0.0) || (rect->m_XMin < fStackX_10)) || (fStackX_10 <= rect->m_Width + rect->m_XMin)) {
+        if ((rect->m_Width < 0.0) || (fStackX_10 < rect->m_XMin)) {
+          bVar4 = false;
         }
         else {
-          bVar9 = fVar8 < rect.m_Width + rect.m_XMin;
+          bVar4 = fStackX_10 < rect->m_Width + rect->m_XMin;
         }
       }
       else {
-        bVar9 = true;
+        bVar4 = true;
       }
-      if (((0.0 <= rect.m_Height) || (rect.m_YMin < fVar7)) || (fVar7 <= rect.m_Height + rect.m_YMin)) {
-        if ((rect.m_Height < 0.0) || (fVar7 < rect.m_YMin)) {
-          bVar10 = false;
+      fStackX_14 = (float)((ulonglong)uVar3 >> 0x20);
+      if (((0.0 < rect->m_Height || rect->m_Height == 0.0) || (rect->m_YMin < fStackX_14)) || (fStackX_14 <= rect->m_Height + rect->m_YMin)) {
+        if ((rect->m_Height < 0.0) || (fStackX_14 < rect->m_YMin)) {
+          bVar5 = false;
         }
         else {
-          bVar10 = fVar7 < rect.m_Height + rect.m_YMin;
+          bVar5 = fStackX_14 < rect->m_Height + rect->m_YMin;
         }
       }
       else {
-        bVar10 = true;
+        bVar5 = true;
       }
-      if (!(bool)(bVar10 & bVar9)) {
-        uStack_1 = 0xffffffff;
-        func_?();
-        *unaff_FS_OFFSET = uStack_3;
+      if (!(bool)(bVar5 & bVar4)) {
+        if (lVar1 != 0) {
+          FUN_?(0,TypeInfo__System__IDisposable,lVar1);
+        }
         return 0;
       }
     }
   }
-  func_?();
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  FUN_?();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -74,10 +81,14 @@ bool Assembly-CSharp.dll::RTG::RectEx::RectEx_ContainsAllPoints(Rect rect,IEnume
 Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_FromCenterAndSize(Rect *__return_storage_ptr__,Vector2 center,Vector2 size,MethodInfo *method)
 
 {
-  __return_storage_ptr__->m_Width = size.x;
-  __return_storage_ptr__->m_Height = size.y;
-  __return_storage_ptr__->m_XMin = center.x - size.x * 0.5;
-  __return_storage_ptr__->m_YMin = center.y - size.y * 0.5;
+  fStackX_8 = size.x;
+  fStackX_c = size.y;
+  fStack_1 = center.x;
+  __return_storage_ptr__->m_Width = fStackX_8;
+  __return_storage_ptr__->m_Height = fStackX_c;
+  __return_storage_ptr__->m_XMin = fStack_1 - fStackX_8 * 0.5;
+  fStack_2 = center.y;
+  __return_storage_ptr__->m_YMin = fStack_2 - fStackX_c * 0.5;
   return __return_storage_ptr__;
 }
 
@@ -87,78 +98,90 @@ Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_FromCenterAndSize(Rect *__return
 Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_FromPoints(Rect *__return_storage_ptr__,IEnumerable_1_UnityEngine_Vector2_ *points,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fStack_4 = 3.4028235e+38;
   __return_storage_ptr__->m_XMin = 0.0;
   __return_storage_ptr__->m_YMin = 0.0;
   __return_storage_ptr__->m_Width = 0.0;
   __return_storage_ptr__->m_Height = 0.0;
-  fStack_5 = 3.4028235e+38;
-  fStack_6 = -3.4028235e+38;
-  fStack_7 = -3.4028235e+38;
-  if (points != (IEnumerable_1_UnityEngine_Vector2_ *)0x0) {
-    piVar8 = (int *)func_?(0,TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>,points);
-    uStack_1 = 1;
-    while (piVar8 != (int *)0x0) {
-      cVar9 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar8);
-      if (cVar9 == '\0') {
-        uStack_1 = 0xffffffff;
-        if (piVar8 != (int *)0x0) {
-          func_?(0,TypeInfo__System__IDisposable,piVar8);
+  fVar1 = 3.4028235e+38;
+  fVar2 = 3.4028235e+38;
+  fVar3 = -3.4028235e+38;
+  fVar4 = -3.4028235e+38;
+  if (points == (IEnumerable_1_UnityEngine_Vector2_ *)0x0) {
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    plStack_5 = (longlong *)FUN_?(0,TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>,points);
+    uStack_6 = 0;
+    pplStack_7 = &plStack_5;
+    fVar8 = -3.4028235e+38;
+    uVar9 = uStack_10;
+    while (uStack_10 = uVar9, plStack_5 != (longlong *)0x0) {
+      cVar11 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+      plVar12 = plStack_5;
+      if (cVar11 == '\0') {
+        if (plStack_5 != (longlong *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,plStack_5);
         }
-        __return_storage_ptr__->m_XMin = fStack_4;
-        __return_storage_ptr__->m_YMin = fStack_5;
-        __return_storage_ptr__->m_Width = fStack_6 - fStack_4;
-        __return_storage_ptr__->m_Height = fStack_7 - fStack_5;
-        *unaff_FS_OFFSET = uStack_3;
+        __return_storage_ptr__->m_XMin = fVar1;
+        __return_storage_ptr__->m_YMin = fVar2;
+        __return_storage_ptr__->m_Width = fVar3 - fVar1;
+        __return_storage_ptr__->m_Height = fVar8 - fVar2;
         return __return_storage_ptr__;
       }
-      if (piVar8 == (int *)0x0) break;
-      iVar10 = *piVar8;
-      uVar11 = 0;
-      if (*(ushort *)(iVar10 + 0xb6) != 0) {
+      if (plStack_5 == (longlong *)0x0) goto code_?;
+      lVar13 = *plStack_5;
+      uVar14 = 0;
+      if (*(ushort *)(lVar13 + 0x12e) != 0) {
         do {
-          if (*(IEnumerator_1_UnityEngine_Vector2___Class **)(*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>) {
-            puVar12 = (undefined4 *)(iVar10 + (*(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) + 0x18) * 8);
+          if (*(IEnumerator_1_UnityEngine_Vector2___Class **)(*(longlong *)(lVar13 + 0xb0) + (ulonglong)uVar14 * 0x10) == TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>) {
+            puVar15 = (undefined8 *)((longlong)*(int *)(*(longlong *)(lVar13 + 0xb0) + 8 + (ulonglong)uVar14 * 0x10) * 0x10 + 0x138 + lVar13);
             goto code_?;
           }
-          uVar11 = uVar11 + 1;
-        } while (uVar11 < *(ushort *)(iVar10 + 0xb6));
+          uVar14 = uVar14 + 1;
+        } while (uVar14 < *(ushort *)(lVar13 + 0x12e));
       }
-      puVar12 = (undefined4 *)func_?(piVar8,TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>,0);
+      puVar15 = (undefined8 *)FUN_?(plStack_5,TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>,0,TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>,fVar4);
 code_?:
-      uVar13 = (*(code *)*puVar12)(piVar8,puVar12[1]);
-      fVar14 = (float)((ulonglong)uVar13 >> 0x20);
-      fVar15 = (float)uVar13;
-      if (fVar15 < fStack_4) {
-        fStack_4 = fVar15;
+      uVar9 = (*(code *)*puVar15)(plVar12,puVar15[1]);
+      uStack_10._0_4_ = (float)uVar9;
+      if ((float)uStack_10 < fVar1) {
+        fVar1 = (float)uStack_10;
       }
-      if (fVar14 < fStack_5) {
-        fStack_5 = fVar14;
+      uStack_10._4_4_ = (float)((ulonglong)uVar9 >> 0x20);
+      if (uStack_10._4_4_ < fVar2) {
+        fVar2 = uStack_10._4_4_;
       }
-      if (fStack_6 < fVar15) {
-        fStack_6 = fVar15;
+      if (fVar3 < (float)uStack_10) {
+        fVar3 = (float)uStack_10;
       }
-      if (fStack_7 < fVar14) {
-        fStack_7 = fVar14;
+      fVar4 = fVar3;
+      if (fVar8 < uStack_10._4_4_) {
+        fVar8 = uStack_10._4_4_;
       }
     }
   }
-  uVar16 = func_?();
-  func_?(uVar16);
-  pcVar17 = (code *)swi(3);
-  pRVar18 = (Rect *)(*pcVar17)();
-  return pRVar18;
+  FUN_?();
+  FUN_?();
+  pcVar16 = (code *)swi(3);
+  pRVar17 = (Rect *)(*pcVar16)();
+  return pRVar17;
 }
 
 
@@ -168,15 +191,15 @@ Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_FromTexture2D(Rect *__return_sto
 
 {
   if (texture2D != (Texture2D *)0x0) {
-    iVar1 = (*(code *)(texture2D->klass->vtable).get_width.method)(texture2D,(texture2D->klass->vtable).set_width.methodPtr);
-    iVar2 = (*(code *)(texture2D->klass->vtable).get_height.method)(texture2D,(texture2D->klass->vtable).set_height.methodPtr);
+    iVar1 = (*(texture2D->klass->vtable).get_width.methodPtr)(texture2D,(texture2D->klass->vtable).get_width.method);
+    iVar2 = (*(texture2D->klass->vtable).get_height.methodPtr)(texture2D,(texture2D->klass->vtable).get_height.method);
     __return_storage_ptr__->m_XMin = 0.0;
     __return_storage_ptr__->m_YMin = 0.0;
     __return_storage_ptr__->m_Width = (float)iVar1;
     __return_storage_ptr__->m_Height = (float)iVar2;
     return __return_storage_ptr__;
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   pRVar4 = (Rect *)(*pcVar3)();
   return pRVar4;
@@ -185,148 +208,111 @@ Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_FromTexture2D(Rect *__return_sto
 
 /* List`1[UnityEngine.Vector2] GetCornerPoints(Rect) */
 
-List_1_UnityEngine_Vector2_ * Assembly-CSharp.dll::RTG::RectEx::RectEx_GetCornerPoints(Rect rect,MethodInfo *method)
+List_1_UnityEngine_Vector2_ * Assembly-CSharp.dll::RTG::RectEx::RectEx_GetCornerPoints(Rect *rect,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_UnityEngine_Vector2_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
+  pLVar1 = (List_1_UnityEngine_Vector2_ *)FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+  FUN_?(pLVar1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   if (pLVar1 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar3 = &(pLVar1->fields)._version;
-    *piVar3 = *piVar3 + 1;
-    pVVar4 = (pLVar1->fields)._items;
-    if (pVVar4 != (Vector2__Array *)0x0) {
-      uVar5 = (pLVar1->fields)._size;
-      if (uVar5 < pVVar4->max_length) {
-        (pLVar1->fields)._size = uVar5 + 1;
-        if (pVVar4->max_length <= uVar5) goto code_?;
-        pVVar4->vector[uVar5].x = rect.m_XMin;
-        pVVar4->vector[uVar5].y = rect.m_YMin + rect.m_Height;
-      }
-      else {
-        item.y = rect.m_YMin + rect.m_Height;
-        item.x = rect.m_XMin;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item,pMVar2->klass->rgctx_data[0xe].method);
-      }
-      pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-      piVar3 = &(pLVar1->fields)._version;
-      *piVar3 = *piVar3 + 1;
-      pVVar4 = (pLVar1->fields)._items;
-      if (pVVar4 != (Vector2__Array *)0x0) {
-        uVar5 = (pLVar1->fields)._size;
-        if (uVar5 < pVVar4->max_length) {
-          (pLVar1->fields)._size = uVar5 + 1;
-          if (pVVar4->max_length <= uVar5) goto code_?;
-          pVVar4->vector[uVar5].x = rect.m_Width + rect.m_XMin;
-          pVVar4->vector[uVar5].y = rect.m_YMin + rect.m_Height;
-        }
-        else {
-          item_00.y = rect.m_YMin + rect.m_Height;
-          item_00.x = rect.m_Width + rect.m_XMin;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item_00,pMVar2->klass->rgctx_data[0xe].method);
-        }
-        pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-        piVar3 = &(pLVar1->fields)._version;
-        *piVar3 = *piVar3 + 1;
-        pVVar4 = (pLVar1->fields)._items;
-        if (pVVar4 != (Vector2__Array *)0x0) {
-          uVar5 = (pLVar1->fields)._size;
-          if (uVar5 < pVVar4->max_length) {
-            (pLVar1->fields)._size = uVar5 + 1;
-            if (pVVar4->max_length <= uVar5) goto code_?;
-            pVVar4->vector[uVar5].x = rect.m_Width + rect.m_XMin;
-            pVVar4->vector[uVar5].y = rect.m_YMin;
-          }
-          else {
-            item_01.y = rect.m_YMin;
-            item_01.x = rect.m_Width + rect.m_XMin;
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item_01,pMVar2->klass->rgctx_data[0xe].method);
-          }
-          pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-          piVar3 = &(pLVar1->fields)._version;
-          *piVar3 = *piVar3 + 1;
-          pVVar4 = (pLVar1->fields)._items;
-          if (pVVar4 != (Vector2__Array *)0x0) {
-            uVar5 = (pLVar1->fields)._size;
-            if (pVVar4->max_length <= uVar5) {
-              mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,rect._0_8_,pMVar2->klass->rgctx_data[0xe].method);
-              return pLVar1;
-            }
-            (pLVar1->fields)._size = uVar5 + 1;
-            if (uVar5 < pVVar4->max_length) {
-              pVVar4->vector[uVar5].x = rect.m_XMin;
-              pVVar4->vector[uVar5].y = rect.m_YMin;
-              return pLVar1;
-            }
-            goto code_?;
-          }
-        }
-      }
-    }
+    FUN_?(pLVar1,CONCAT44(rect->m_Height + rect->m_YMin,rect->m_XMin),MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
+    FUN_?(pLVar1,CONCAT44(rect->m_Height + rect->m_YMin,rect->m_Width + rect->m_XMin),MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
+    FUN_?(pLVar1,CONCAT44(rect->m_YMin,rect->m_Width + rect->m_XMin),MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
+    uVar2._0_4_ = rect->m_XMin;
+    uVar2._4_4_ = rect->m_YMin;
+    FUN_?(pLVar1,uVar2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
+    return pLVar1;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pLVar1 = (List_1_UnityEngine_Vector2_ *)(*pcVar6)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pLVar1 = (List_1_UnityEngine_Vector2_ *)(*pcVar3)();
   return pLVar1;
 }
 
 
 /* Rect Inflate(Rect, Single) */
 
-Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_Inflate(Rect *__return_storage_ptr__,Rect rect,float inflateAmount,MethodInfo *method)
+Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_Inflate(Rect *__return_storage_ptr__,Rect *rect,float inflateAmount,MethodInfo *method)
 
 {
-  if (rect.m_Width < 0.0) {
-    fVar1 = rect.m_Width - inflateAmount;
+  fVar1 = rect->m_Width;
+  if (fVar1 < 0.0) {
+    fVar2 = fVar1 - inflateAmount;
   }
   else {
-    fVar1 = rect.m_Width + inflateAmount;
+    fVar2 = fVar1 + inflateAmount;
   }
-  if (rect.m_Height < 0.0) {
-    fVar2 = rect.m_Height - inflateAmount;
+  fVar3 = rect->m_Height;
+  if (fVar3 < 0.0) {
+    fVar3 = fVar3 - inflateAmount;
   }
   else {
-    fVar2 = rect.m_Height + inflateAmount;
+    fVar3 = fVar3 + inflateAmount;
   }
-  __return_storage_ptr__->m_XMin = (rect.m_Width * 0.5 + rect.m_XMin) - fVar1 * 0.5;
-  __return_storage_ptr__->m_YMin = (rect.m_Height * 0.5 + rect.m_YMin) - fVar2 * 0.5;
-  __return_storage_ptr__->m_Width = fVar1;
-  __return_storage_ptr__->m_Height = fVar2;
+  fVar4 = rect->m_Height;
+  fVar5 = rect->m_YMin;
+  __return_storage_ptr__->m_XMin = (fVar1 * 0.5 + rect->m_XMin) - fVar2 * 0.5;
+  __return_storage_ptr__->m_YMin = (fVar4 * 0.5 + fVar5) - fVar3 * 0.5;
+  __return_storage_ptr__->m_Width = fVar2;
+  __return_storage_ptr__->m_Height = fVar3;
   return __return_storage_ptr__;
 }
 
 
 /* Rect InvertScreenY(Rect) */
 
-Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_InvertScreenY(Rect *__return_storage_ptr__,Rect rect,MethodInfo *method)
+Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_InvertScreenY(Rect *__return_storage_ptr__,Rect *rect,MethodInfo *method)
 
 {
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-  __return_storage_ptr__->m_XMin = (rect.m_Width * 0.5 + rect.m_XMin) - rect.m_Width * 0.5;
-  __return_storage_ptr__->m_YMin = ((float)(iVar1 + -1) - (rect.m_Height * 0.5 + rect.m_YMin)) - rect.m_Height * 0.5;
-  __return_storage_ptr__->m_Width = rect.m_Width;
-  __return_storage_ptr__->m_Height = rect.m_Height;
+  fVar1 = rect->m_Width;
+  fVar2 = rect->m_Height;
+  fVar3 = rect->m_XMin;
+  fVar4 = rect->m_YMin;
+  pcVar5 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar5 = (code *)swi(3);
+    pRVar7 = (Rect *)(*pcVar5)();
+    return pRVar7;
+  }
+  pcRam_? = pcVar5;
+  fVar8 = rect->m_Width;
+  fVar9 = rect->m_Height;
+  iVar10 = (*pcRam_?)();
+  __return_storage_ptr__->m_XMin = (fVar1 * 0.5 + fVar3) - fVar8 * 0.5;
+  __return_storage_ptr__->m_YMin = ((float)(iVar10 + -1) - (fVar2 * 0.5 + fVar4)) - fVar9 * 0.5;
+  __return_storage_ptr__->m_Width = fVar8;
+  __return_storage_ptr__->m_Height = fVar9;
   return __return_storage_ptr__;
 }
 
 
 /* Rect PlaceBelowCenterHrz(Rect, Rect) */
 
-Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_PlaceBelowCenterHrz(Rect *__return_storage_ptr__,Rect rect,Rect other,MethodInfo *method)
+Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_PlaceBelowCenterHrz(Rect *__return_storage_ptr__,Rect *rect,Rect *other,MethodInfo *method)
 
 {
-  __return_storage_ptr__->m_XMin = (other.m_Width * 0.5 + other.m_XMin) - rect.m_Width * 0.5;
-  __return_storage_ptr__->m_YMin = (((other.m_Height * 0.5 + other.m_YMin) - other.m_Height * 0.5) - rect.m_Height * 0.5) - rect.m_Height * 0.5;
-  __return_storage_ptr__->m_Width = rect.m_Width;
-  __return_storage_ptr__->m_Height = rect.m_Height;
+  fVar1 = rect->m_Width;
+  fVar2 = rect->m_Height;
+  fVar3 = other->m_Height;
+  fVar4 = other->m_YMin;
+  fVar5 = other->m_Height;
+  __return_storage_ptr__->m_XMin = (other->m_Width * 0.5 + other->m_XMin) - fVar1 * 0.5;
+  __return_storage_ptr__->m_YMin = (((fVar3 * 0.5 + fVar4) - fVar5 * 0.5) - fVar2 * 0.5) - fVar2 * 0.5;
+  __return_storage_ptr__->m_Width = fVar1;
+  __return_storage_ptr__->m_Height = fVar2;
   return __return_storage_ptr__;
 }
 

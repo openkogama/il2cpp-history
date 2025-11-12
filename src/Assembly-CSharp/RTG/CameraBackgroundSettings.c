@@ -4,33 +4,37 @@
 void Assembly-CSharp.dll::RTG::CameraBackgroundSettings::CameraBackgroundSettings__ctor(CameraBackgroundSettings *this,MethodInfo *method)
 
 {
-  pCVar1 = RTSystemValues::RTSystemValues_get_CameraBkGradientFirstColor((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-  fVar2 = pCVar1->g;
-  fVar3 = pCVar1->b;
-  fVar4 = pCVar1->a;
-  (this->fields)._firstColor.r = pCVar1->r;
-  (this->fields)._firstColor.g = fVar2;
-  (this->fields)._firstColor.b = fVar3;
-  (this->fields)._firstColor.a = fVar4;
-  pCVar1 = RTSystemValues::RTSystemValues_get_CameraBkGradientSecondColor((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-  bVar5 = cRam_? == '\0';
-  fVar2 = pCVar1->g;
-  fVar3 = pCVar1->b;
-  fVar4 = pCVar1->a;
-  (this->fields)._secondColor.r = pCVar1->r;
-  (this->fields)._secondColor.g = fVar2;
-  (this->fields)._secondColor.b = fVar3;
-  (this->fields)._secondColor.a = fVar4;
-  if (bVar5) {
-    func_?();
+  (this->fields)._firstColor.r = 0.2784314;
+  (this->fields)._firstColor.g = 0.2784314;
+  (this->fields)._firstColor.b = 0.2784314;
+  (this->fields)._firstColor.a = 1.0;
+  (this->fields)._secondColor.r = 0.0;
+  (this->fields)._secondColor.g = 0.0;
+  (this->fields)._secondColor.b = 0.0;
+  (this->fields)._secondColor.a = 1.0;
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral_Settings,0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields)._._canBeDisplayed = 1;
   (this->fields)._._isExpanded = 1;
   (this->fields)._._foldoutLabel = StringLiteral_Settings;
-  method_00 = (MethodInfo *)&(this->fields)._._foldoutLabel;
-  func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._foldoutLabel >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
@@ -46,6 +50,16 @@ void Assembly-CSharp.dll::RTG::CameraBackgroundSettings::CameraBackgroundSetting
     return;
   }
   (this->fields)._gradientOffset = fVar1;
+  return;
+}
+
+
+/* Void set_IsVisible(Boolean) */
+
+void Assembly-CSharp.dll::RTG::CameraBackgroundSettings::CameraBackgroundSettings_set_IsVisible(CameraBackgroundSettings *this,bool value,MethodInfo *method)
+
+{
+  (this->fields)._isVisible = value;
   return;
 }
 

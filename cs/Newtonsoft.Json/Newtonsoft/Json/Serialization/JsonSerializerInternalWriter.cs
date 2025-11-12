@@ -15,7 +15,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -52,12 +52,12 @@ namespace Newtonsoft.Json.Serialization
 		private bool CheckForCircularReference([Nullable(1)] JsonWriter writer, object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty);
 		private void WriteReference(JsonWriter writer, object value);
 		private string GetReference(JsonWriter writer, object value);
-		internal static bool TryConvertToString(object value, System.Type type, [NotNullWhen(true)] [Nullable(2)] out string s);
+		internal static bool TryConvertToString(object value, System.Type type, [Nullable(2)] [NotNullWhen(true)] out string s);
 		private void SerializeString(JsonWriter writer, object value, JsonStringContract contract);
 		private void OnSerializing(JsonWriter writer, JsonContract contract, object value);
 		private void OnSerialized(JsonWriter writer, JsonContract contract, object value);
 		private void SerializeObject(JsonWriter writer, object value, JsonObjectContract contract, [Nullable(2)] JsonProperty member, [Nullable(2)] JsonContainerContract collectionContract, [Nullable(2)] JsonProperty containerProperty);
-		private bool CalculatePropertyValues(JsonWriter writer, object value, JsonContainerContract contract, [Nullable(2)] JsonProperty member, JsonProperty property, [NotNullWhen(true)] [Nullable(2)] out JsonContract memberContract, [Nullable(2)] out object memberValue);
+		private bool CalculatePropertyValues(JsonWriter writer, object value, JsonContainerContract contract, [Nullable(2)] JsonProperty member, JsonProperty property, [Nullable(2)] [NotNullWhen(true)] out JsonContract memberContract, [Nullable(2)] out object memberValue);
 		private void WriteObjectStart(JsonWriter writer, object value, JsonContract contract, [Nullable(2)] JsonProperty member, [Nullable(2)] JsonContainerContract collectionContract, [Nullable(2)] JsonProperty containerProperty);
 		private bool HasCreatorParameter([Nullable(2)] JsonContainerContract contract, JsonProperty property);
 		private void WriteReferenceIdProperty(JsonWriter writer, System.Type type, object value);

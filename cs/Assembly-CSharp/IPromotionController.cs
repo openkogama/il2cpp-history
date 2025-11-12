@@ -12,11 +12,10 @@ using UnityEngine.Events;
 public interface IPromotionController
 {
 	// Properties
-	bool ReadyForAd { get; }
-	bool IsPromotionAvailable { get; }
+	bool IsPromotionOrAdWithoutPromotionAvailable { get; }
 
 	// Methods
 	void Initialize();
-	void ShowPromotion(UnityAction<bool, bool> onPop);
+	void ShowPromotionOrAd(UnityAction<bool, bool> onPop);
 }
 

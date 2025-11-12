@@ -4,34 +4,36 @@
 void Assembly-CSharp.dll::RTG::GizmoScaleGuideLookAndFeel::GizmoScaleGuideLookAndFeel__ctor(GizmoScaleGuideLookAndFeel *this,MethodInfo *method)
 
 {
+  (this->fields)._xAxisColor.r = 0.8588236;
+  (this->fields)._xAxisColor.g = 0.24313727;
+  (this->fields)._xAxisColor.b = 0.1137255;
+  (this->fields)._xAxisColor.a = 1.0;
   (this->fields)._useZoomFactor = 1;
-  pCVar1 = RTSystemValues::RTSystemValues_get_XAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._xAxisColor.r = pCVar1->r;
-  (this->fields)._xAxisColor.g = fVar3;
-  (this->fields)._xAxisColor.b = fVar4;
-  (this->fields)._xAxisColor.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_YAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._yAxisColor.r = pCVar1->r;
-  (this->fields)._yAxisColor.g = fVar3;
-  (this->fields)._yAxisColor.b = fVar4;
-  (this->fields)._yAxisColor.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_ZAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->r;
-  fVar4 = pCVar1->g;
-  fVar5 = pCVar1->b;
-  fVar6 = pCVar1->a;
+  (this->fields)._zAxisColor.r = 0.227451;
+  (this->fields)._zAxisColor.g = 0.4784314;
+  (this->fields)._zAxisColor.b = 0.9725491;
+  (this->fields)._zAxisColor.a = 1.0;
   (this->fields)._axisLength = 2.0;
-  (this->fields)._zAxisColor.r = fVar3;
-  (this->fields)._zAxisColor.g = fVar4;
-  (this->fields)._zAxisColor.b = fVar5;
-  (this->fields)._zAxisColor.a = fVar6;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields)._yAxisColor.r = 0.6039216;
+  (this->fields)._yAxisColor.g = 0.95294124;
+  (this->fields)._yAxisColor.b = 0.28235295;
+  (this->fields)._yAxisColor.a = 1.0;
+  return;
+}
+
+
+/* Void set_ZAxisColor(Color) */
+
+void Assembly-CSharp.dll::RTG::GizmoScaleGuideLookAndFeel::GizmoScaleGuideLookAndFeel_set_ZAxisColor(GizmoScaleGuideLookAndFeel *this,Color *value,MethodInfo *method)
+
+{
+  fVar1 = value->g;
+  fVar2 = value->b;
+  fVar3 = value->a;
+  (this->fields)._zAxisColor.r = value->r;
+  (this->fields)._zAxisColor.g = fVar1;
+  (this->fields)._zAxisColor.b = fVar2;
+  (this->fields)._zAxisColor.a = fVar3;
   return;
 }
 

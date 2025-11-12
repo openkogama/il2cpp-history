@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json.Utilities;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json
 {
@@ -41,7 +41,7 @@ namespace Newtonsoft.Json
 	
 		// Properties
 		[Nullable(2)]
-		public JsonNameTable PropertyNameTable { [CompilerGenerated] [NullableContext(2)] get; [NullableContext(2)] [CompilerGenerated] set; }
+		public JsonNameTable PropertyNameTable { [NullableContext(2)] [CompilerGenerated] get; [NullableContext(2)] [CompilerGenerated] set; }
 		public int LineNumber { get; }
 		public int LinePosition { get; }
 	
@@ -63,7 +63,7 @@ namespace Newtonsoft.Json
 		private bool ReadChars(int relativePosition, bool append);
 		public override bool Read();
 		public override int? ReadAsInt32();
-		public override DateTime? ReadAsDateTime();
+		public override System.DateTime? ReadAsDateTime();
 		[NullableContext(2)]
 		public override string ReadAsString();
 		[NullableContext(2)]

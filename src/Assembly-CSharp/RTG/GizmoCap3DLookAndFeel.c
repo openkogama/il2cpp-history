@@ -4,7 +4,15 @@
 void Assembly-CSharp.dll::RTG::GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(GizmoCap3DLookAndFeel *this,MethodInfo *method)
 
 {
+  (this->fields)._sphereBorderColor.r = 1.0;
+  (this->fields)._sphereBorderColor.g = 1.0;
+  (this->fields)._sphereBorderColor.b = 1.0;
+  (this->fields)._sphereBorderColor.a = 1.0;
   (this->fields)._scale = 1.0;
+  (this->fields)._hoveredColor.r = 0.96470594;
+  (this->fields)._hoveredColor.g = 0.9490197;
+  (this->fields)._hoveredColor.b = 0.19607845;
+  (this->fields)._hoveredColor.a = 1.0;
   (this->fields)._useZoomFactor = 1;
   (this->fields)._coneHeight = 1.65;
   (this->fields)._coneRadius = 0.5;
@@ -19,27 +27,10 @@ void Assembly-CSharp.dll::RTG::GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__cto
   (this->fields)._trPrismHeight = 1.0;
   (this->fields)._trPrismDepth = 1.0;
   (this->fields)._numSphereBorderPoints = 100;
-  (this->fields)._sphereBorderColor.r = 1.0;
-  (this->fields)._sphereBorderColor.g = 1.0;
-  (this->fields)._sphereBorderColor.b = 1.0;
-  (this->fields)._sphereBorderColor.a = 1.0;
-  pCVar1 = RTSystemValues::RTSystemValues_get_XAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._color.r = pCVar1->r;
-  (this->fields)._color.g = fVar3;
-  (this->fields)._color.b = fVar4;
-  (this->fields)._color.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._hoveredColor.r = pCVar1->r;
-  (this->fields)._hoveredColor.g = fVar3;
-  (this->fields)._hoveredColor.b = fVar4;
-  (this->fields)._hoveredColor.a = fVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields)._color.r = 0.8588236;
+  (this->fields)._color.g = 0.24313727;
+  (this->fields)._color.b = 0.1137255;
+  (this->fields)._color.a = 1.0;
   return;
 }
 
@@ -137,6 +128,16 @@ void Assembly-CSharp.dll::RTG::GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_
     fVar1 = value;
   }
   (this->fields)._coneRadius = fVar1;
+  return;
+}
+
+
+/* Void set_IsSphereBorderVisible(Boolean) */
+
+void Assembly-CSharp.dll::RTG::GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_IsSphereBorderVisible(GizmoCap3DLookAndFeel *this,bool value,MethodInfo *method)
+
+{
+  (this->fields)._isSphereBorderVisible = value;
   return;
 }
 

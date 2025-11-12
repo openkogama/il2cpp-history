@@ -5,16 +5,20 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyMesh(G
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::UIVertex>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::UIVertex>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).IsActive.method)(this,(this->klass->vtable).OnRectTransformDimensionsChange.methodPtr);
+  cVar1 = (*(this->klass->vtable).IsActive.methodPtr)(this,(this->klass->vtable).IsActive.method);
   if (cVar1 != '\0') {
-    stream = (List_1_UnityEngine_UIVertex_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::UIVertex>);
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)stream,MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__List__);
+    stream = (List_1_UnityEngine_UIVertex_ *)FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::UIVertex>);
+    FUN_?(stream,MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__List__);
     if (vh == (VertexHelper *)0x0) {
-      func_?();
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
@@ -34,142 +38,185 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyVertic
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).IsActive.method)();
+  cVar1 = (*(this->klass->vtable).IsActive.methodPtr)(this,(this->klass->vtable).IsActive.method);
   if (cVar1 != '\0') {
-    if (vertexList == (List_1_UnityEngine_UIVertex_ *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
+    if (vertexList == (List_1_UnityEngine_UIVertex_ *)0x0) goto DAT_?;
     if (3 < (vertexList->fields)._size) {
-      if ((vertexList->fields)._size == 6) {
-        GradientEffect_SetVertexColor(this,vertexList,0,(this->fields).bottom,(MethodInfo *)0x0);
-        GradientEffect_SetVertexColor(this,vertexList,1,(this->fields).top,(MethodInfo *)0x0);
-        GradientEffect_SetVertexColor(this,vertexList,2,(this->fields).top,(MethodInfo *)0x0);
-        GradientEffect_SetVertexColor(this,vertexList,3,(this->fields).top,(MethodInfo *)0x0);
-        GradientEffect_SetVertexColor(this,vertexList,4,(this->fields).bottom,(MethodInfo *)0x0);
-        GradientEffect_SetVertexColor(this,vertexList,5,(this->fields).bottom,(MethodInfo *)0x0);
+      if ((vertexList->fields)._size != 6) {
+        uVar2 = (vertexList->fields)._size;
+        if (uVar2 - 1 < (uint)(vertexList->fields)._size) {
+          pUVar3 = (vertexList->fields)._items;
+          if (pUVar3 == (UIVertex__Array *)0x0) {
+DAT_?:
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          if ((uint)pUVar3->max_length <= uVar2 - 1) {
+code_?:
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          if ((vertexList->fields)._size != 0) {
+            if (pUVar3 == (UIVertex__Array *)0x0) goto DAT_?;
+            if ((int)pUVar3->max_length == 0) goto code_?;
+            fVar5 = pUVar3->vector[0].position.y;
+            uVar6 = 0;
+            fVar7 = *(float *)((longlong)pUVar3->vector + (ulonglong)uVar2 * 0x6c + -0x68);
+            lVar8 = 0;
+            while( true ) {
+              if ((vertexList->fields)._size <= (int)uVar6) {
+                return;
+              }
+              if ((uint)(vertexList->fields)._size <= uVar6) break;
+              pUVar3 = (vertexList->fields)._items;
+              if (pUVar3 == (UIVertex__Array *)0x0) goto DAT_?;
+              if ((uint)pUVar3->max_length <= uVar6) goto code_?;
+              uVar2 = *(uint *)((longlong)&pUVar3->vector[0].color.rgba + lVar8);
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].position.x + lVar8);
+              uStack_10 = *puVar9;
+              uStack_11 = puVar9[1];
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].tangent.z + lVar8);
+              uStack_12 = *puVar9;
+              uStack_13 = puVar9[1];
+              uVar14 = *(undefined4 *)((longlong)&pUVar3->vector[0].uv3.z + lVar8);
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].normal.y + lVar8);
+              uStack_15 = *puVar9;
+              uStack_16 = puVar9[1];
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].uv0.x + lVar8);
+              uStack_17 = *puVar9;
+              uStack_18 = puVar9[1];
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].uv1.x + lVar8);
+              uStack_19 = *puVar9;
+              uStack_20 = puVar9[1];
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].uv2.x + lVar8);
+              aCStack_21[0]._0_8_ = *puVar9;
+              aCStack_21[0]._8_8_ = puVar9[1];
+              uVar22 = *(undefined8 *)((longlong)&pUVar3->vector[0].uv3.x + lVar8);
+              fVar23 = (this->fields).top.r;
+              fVar24 = (this->fields).top.g;
+              fVar25 = (this->fields).top.b;
+              fVar26 = (this->fields).top.a;
+              fVar27 = (*(float *)((longlong)&pUVar3->vector[0].position.y + lVar8) - fVar7) / (fVar5 - fVar7);
+              if (fVar27 < 0.0) {
+                fVar27 = 0.0;
+              }
+              else if (1.0 < fVar27) {
+                fVar27 = 1.0;
+              }
+              fVar23 = (((this->fields).bottom.r - fVar23) * fVar27 + fVar23) * ((float)(*(uint *)((longlong)&pUVar3->vector[0].color.rgba + lVar8) & 0xff) / 255.0);
+              fVar28 = (((this->fields).bottom.g - fVar24) * fVar27 + fVar24) * ((float)(uVar2 >> 8 & 0xff) / 255.0);
+              fVar25 = (((this->fields).bottom.b - fVar25) * fVar27 + fVar25) * ((float)(uVar2 >> 0x10 & 0xff) / 255.0);
+              fVar24 = (((this->fields).bottom.a - fVar26) * fVar27 + fVar26) * ((float)(uVar2 >> 0x18) / 255.0);
+              if (fVar23 < 0.0) {
+                fVar23 = 0.0;
+              }
+              else if (1.0 < fVar23) {
+                fVar23 = 1.0;
+              }
+              fVar23 = (float)FUN_?(fVar23 * 255.0);
+              if (fVar28 < 0.0) {
+                fVar28 = 0.0;
+              }
+              else if (1.0 < fVar28) {
+                fVar28 = 1.0;
+              }
+              fVar26 = (float)FUN_?(fVar28 * 255.0);
+              if (fVar25 < 0.0) {
+                fVar25 = 0.0;
+              }
+              else if (1.0 < fVar25) {
+                fVar25 = 1.0;
+              }
+              fVar25 = (float)FUN_?(fVar25 * 255.0);
+              if (fVar24 < 0.0) {
+                fVar24 = 0.0;
+              }
+              else if (1.0 < fVar24) {
+                fVar24 = 1.0;
+              }
+              fVar24 = (float)FUN_?(fVar24 * 255.0);
+              uStack_13 = CONCAT44(uStack_13._4_4_,CONCAT31(CONCAT21(CONCAT11((char)(int)fVar24,(char)(int)fVar25),(char)(int)fVar26),(char)(int)fVar23));
+              if ((uint)(vertexList->fields)._size <= uVar6) break;
+              pUVar3 = (vertexList->fields)._items;
+              if (pUVar3 == (UIVertex__Array *)0x0) goto DAT_?;
+              if ((uint)pUVar3->max_length <= uVar6) goto code_?;
+              uVar6 = uVar6 + 1;
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].position.x + lVar8);
+              *puVar9 = uStack_10;
+              puVar9[1] = uStack_11;
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].normal.y + lVar8);
+              *puVar9 = uStack_15;
+              puVar9[1] = uStack_16;
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].tangent.z + lVar8);
+              *puVar9 = uStack_12;
+              puVar9[1] = uStack_13;
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].uv0.x + lVar8);
+              *puVar9 = uStack_17;
+              puVar9[1] = uStack_18;
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].uv1.x + lVar8);
+              *puVar9 = uStack_19;
+              puVar9[1] = uStack_20;
+              puVar9 = (undefined8 *)((longlong)&pUVar3->vector[0].uv2.x + lVar8);
+              *puVar9 = aCStack_21[0]._0_8_;
+              puVar9[1] = aCStack_21[0]._8_8_;
+              *(undefined8 *)((longlong)&pUVar3->vector[0].uv3.x + lVar8) = uVar22;
+              *(undefined4 *)((longlong)&pUVar3->vector[0].uv3.z + lVar8) = uVar14;
+              piVar29 = &(vertexList->fields)._version;
+              *piVar29 = *piVar29 + 1;
+              lVar8 = lVar8 + 0x6c;
+            }
+          }
+        }
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
-      else {
-        pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__get_Item(&UStack_4,vertexList,(vertexList->fields)._size + -1,MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_);
-        pfVar5 = (float *)&stack0xfffffe7c;
-        for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *pfVar5 = (pUVar3->position).x;
-          pUVar3 = (UIVertex *)&(pUVar3->position).y;
-          pfVar5 = pfVar5 + 1;
-        }
-        pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__get_Item(&UStack_4,vertexList,0,MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_);
-        pfVar5 = &UStack_4.uv3.w;
-        for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *pfVar5 = (pUVar3->position).x;
-          pUVar3 = (UIVertex *)&(pUVar3->position).y;
-          pfVar5 = pfVar5 + 1;
-        }
-        fStack_7 = fStack_8 - in_stack_9;
-        iStack_10 = 0;
-        while (iStack_10 < (vertexList->fields)._size) {
-          pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__get_Item((UIVertex *)&stack0xfffffe10,vertexList,iStack_10,MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_);
-          pUVar11 = pUVar3;
-          pfVar5 = &UStack_4.uv3.w;
-          for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *pfVar5 = (pUVar11->position).x;
-            pUVar11 = (UIVertex *)&(pUVar11->position).y;
-            pfVar5 = pfVar5 + 1;
-          }
-          fStack_12 = (float)(uStack_13 & 0xff) / 255.0;
-          fStack_14 = (float)(uStack_13 >> 8 & 0xff) / 255.0;
-          fStack_15 = (float)(uStack_13 >> 0x10 & 0xff) / 255.0;
-          fStack_16 = (float)(uStack_13 >> 0x18) / 255.0;
-          pUVar11 = &UStack_4;
-          for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-            (pUVar11->position).x = (pUVar3->position).x;
-            pUVar3 = (UIVertex *)&(pUVar3->position).y;
-            pUVar11 = (UIVertex *)&(pUVar11->position).y;
-          }
-          fStack_17 = (this->fields).top.r;
-          fStack_18 = (this->fields).top.g;
-          fStack_19 = (this->fields).top.b;
-          fStack_20 = (this->fields).top.a;
-          fStack_21 = (this->fields).bottom.r;
-          fStack_22 = (this->fields).bottom.g;
-          fStack_23 = (this->fields).bottom.b;
-          fStack_24 = (this->fields).bottom.a;
-          fVar25 = (UStack_4.position.y - in_stack_9) / fStack_7;
-          if (fVar25 < 0.0) {
-            fVar25 = 0.0;
-          }
-          else if (1.0 < fVar25) {
-            fVar25 = 1.0;
-          }
-          fStack_14 = ((fStack_22 - fStack_18) * fVar25 + fStack_18) * fStack_14;
-          fStack_15 = ((fStack_23 - fStack_19) * fVar25 + fStack_19) * fStack_15;
-          fStack_16 = ((fStack_24 - fStack_20) * fVar25 + fStack_20) * fStack_16;
-          fVar26 = (float10)func_?();
-          fStack_12 = (float)fVar26;
-          fVar26 = (float10)func_?();
-          fStack_14 = (float)fVar26;
-          fVar26 = (float10)func_?();
-          fStack_15 = (float)fVar26;
-          fVar26 = (float10)func_?();
-          fStack_16 = (float)fVar26;
-          uStack_27 = CONCAT31(CONCAT21(CONCAT11((char)(int)fVar26,(char)(int)fStack_15),(char)(int)fStack_14),(char)(int)fStack_12);
-          uStack_13 = uStack_27;
-          pfVar5 = &UStack_4.uv3.w;
-          pfVar28 = (float *)&stack0xfffffd38;
-          pMVar29 = MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_;
-          for (iVar6 = 0x1b; iVar30 = iStack_10, iVar6 != 0; iVar6 = iVar6 + -1) {
-            *pfVar28 = *pfVar5;
-            pfVar5 = pfVar5 + 1;
-            pfVar28 = pfVar28 + 1;
-          }
-          value.uv3.w = (float)pMVar29;
-          auVar31 = in_stack_32._0_12_;
-          auVar33 = in_stack_32._12_12_;
-          auVar34 = in_stack_32._24_16_;
-          uVar35 = in_stack_32._40_8_;
-          auVar36 = in_stack_32._48_16_;
-          auVar37 = in_stack_32._64_16_;
-          auVar38 = in_stack_32._80_16_;
-          value.position.x = (float)auVar31._0_4_;
-          value.position.y = (float)auVar31._4_4_;
-          value.position.z = (float)auVar31._8_4_;
-          value.normal.x = (float)auVar33._0_4_;
-          value.normal.y = (float)auVar33._4_4_;
-          value.normal.z = (float)auVar33._8_4_;
-          value.tangent.x = (float)auVar34._0_4_;
-          value.tangent.y = (float)auVar34._4_4_;
-          value.tangent.z = (float)auVar34._8_4_;
-          value.tangent.w = (float)auVar34._12_4_;
-          value.color.rgba = (int)uVar35;
-          value.color.r = (char)((ulonglong)uVar35 >> 0x20);
-          value.color.g = (char)((ulonglong)uVar35 >> 0x28);
-          value.color.b = (char)((ulonglong)uVar35 >> 0x30);
-          value.color.a = (char)((ulonglong)uVar35 >> 0x38);
-          value.uv0.x = (float)auVar36._0_4_;
-          value.uv0.y = (float)auVar36._4_4_;
-          value.uv0.z = (float)auVar36._8_4_;
-          value.uv0.w = (float)auVar36._12_4_;
-          value.uv1.x = (float)auVar37._0_4_;
-          value.uv1.y = (float)auVar37._4_4_;
-          value.uv1.z = (float)auVar37._8_4_;
-          value.uv1.w = (float)auVar37._12_4_;
-          value.uv2.x = (float)auVar38._0_4_;
-          value.uv2.y = (float)auVar38._4_4_;
-          value.uv2.z = (float)auVar38._8_4_;
-          value.uv2.w = (float)auVar38._12_4_;
-          value.uv3.x = (float)in_stack_32._96_4_;
-          value.uv3.y = (float)in_stack_32._100_4_;
-          value.uv3.z = (float)in_stack_32._104_4_;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__set_Item(vertexList,iStack_10,value,in_stack_39);
-          iStack_10 = iVar30 + 1;
-        }
-      }
+      aCStack_21[0].r = (this->fields).bottom.r;
+      aCStack_21[0].g = (this->fields).bottom.g;
+      aCStack_21[0].b = (this->fields).bottom.b;
+      aCStack_21[0].a = (this->fields).bottom.a;
+      GradientEffect_SetVertexColor(this,vertexList,0,aCStack_21,(MethodInfo *)0x0);
+      aCStack_21[0].r = (this->fields).top.r;
+      aCStack_21[0].g = (this->fields).top.g;
+      aCStack_21[0].b = (this->fields).top.b;
+      aCStack_21[0].a = (this->fields).top.a;
+      GradientEffect_SetVertexColor(this,vertexList,1,aCStack_21,(MethodInfo *)0x0);
+      aCStack_21[0].r = (this->fields).top.r;
+      aCStack_21[0].g = (this->fields).top.g;
+      aCStack_21[0].b = (this->fields).top.b;
+      aCStack_21[0].a = (this->fields).top.a;
+      GradientEffect_SetVertexColor(this,vertexList,2,aCStack_21,(MethodInfo *)0x0);
+      aCStack_21[0].r = (this->fields).top.r;
+      aCStack_21[0].g = (this->fields).top.g;
+      aCStack_21[0].b = (this->fields).top.b;
+      aCStack_21[0].a = (this->fields).top.a;
+      GradientEffect_SetVertexColor(this,vertexList,3,aCStack_21,(MethodInfo *)0x0);
+      aCStack_21[0].r = (this->fields).bottom.r;
+      aCStack_21[0].g = (this->fields).bottom.g;
+      aCStack_21[0].b = (this->fields).bottom.b;
+      aCStack_21[0].a = (this->fields).bottom.a;
+      GradientEffect_SetVertexColor(this,vertexList,4,aCStack_21,(MethodInfo *)0x0);
+      aCStack_21[0].r = (this->fields).bottom.r;
+      aCStack_21[0].g = (this->fields).bottom.g;
+      aCStack_21[0].b = (this->fields).bottom.b;
+      aCStack_21[0].a = (this->fields).bottom.a;
+      GradientEffect_SetVertexColor(this,vertexList,5,aCStack_21,(MethodInfo *)0x0);
     }
   }
   return;
@@ -178,78 +225,97 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyVertic
 
 /* Void SetVertexColor(List`1[UnityEngine.UIVertex], Int32, Color) */
 
-void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_SetVertexColor(GradientEffect *this,List_1_UnityEngine_UIVertex_ *vertexList,int32_t index,Color color,MethodInfo *method)
+void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_SetVertexColor(GradientEffect *this,List_1_UnityEngine_UIVertex_ *vertexList,int32_t index,Color *color,MethodInfo *method)
 
 {
+  lVar1 = (longlong)index;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (vertexList != (List_1_UnityEngine_UIVertex_ *)0x0) {
-    __return_storage_ptr__ = (UIVertex *)&stack0xffffff24;
-    puVar1 = &UNK_?;
-    pLVar2 = vertexList;
-    pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__get_Item(__return_storage_ptr__,vertexList,index,MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_);
-    pfVar4 = afStack_5;
-    for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *pfVar4 = (pUVar3->position).x;
-      pUVar3 = (UIVertex *)&(pUVar3->position).y;
-      pfVar4 = pfVar4 + 1;
+    if ((uint)(vertexList->fields)._size <= (uint)index) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    fVar7 = 0.0;
-    puVar8 = &UNK_?;
-    CVar9 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit(color,(MethodInfo *)0x0);
-    iStack_10 = CVar9.rgba;
-    pfVar4 = afStack_5;
-    pfVar11 = (float *)&stack0xfffffed0;
-    pMVar12 = MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_;
-    for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *pfVar11 = *pfVar4;
-      pfVar4 = pfVar4 + 1;
-      pfVar11 = pfVar11 + 1;
+    pUVar3 = (vertexList->fields)._items;
+    if (pUVar3 != (UIVertex__Array *)0x0) {
+      if ((uint)index < (uint)pUVar3->max_length) {
+        lVar4 = lVar1 * 0x6c;
+        pVVar5 = &pUVar3->vector[0].position + lVar1 * 9;
+        fVar6 = pVVar5->x;
+        fVar7 = pVVar5->y;
+        uVar8 = *(undefined8 *)&pVVar5->z;
+        uVar9 = *(undefined4 *)((longlong)&pUVar3->vector[0].uv3 + lVar4 + 8);
+        pVVar5 = &pUVar3->vector[0].normal + lVar1 * 9;
+        fVar10 = pVVar5->y;
+        fVar11 = pVVar5->z;
+        uVar12 = *(undefined8 *)(&pVVar5->y + 2);
+        puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].tangent + lVar4 + 8);
+        uVar14 = *puVar13;
+        uVar15 = puVar13[1];
+        puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].uv0 + lVar4);
+        uVar16 = *puVar13;
+        uVar17 = puVar13[1];
+        puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].uv1 + lVar4);
+        uVar18 = *puVar13;
+        uVar19 = puVar13[1];
+        puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].uv2 + lVar4);
+        uVar20 = *puVar13;
+        uVar21 = puVar13[1];
+        uVar22 = *(undefined8 *)((longlong)&pUVar3->vector[0].uv3 + lVar4);
+        uVar23 = FUN_?();
+        uStack_24 = CONCAT44((int)((ulonglong)uVar15 >> 0x20),uVar23);
+        if ((uint)(vertexList->fields)._size <= (uint)index) goto code_?;
+        pUVar3 = (vertexList->fields)._items;
+        if (pUVar3 == (UIVertex__Array *)0x0) goto code_?;
+        if ((uint)index < (uint)pUVar3->max_length) {
+          lVar4 = lVar1 * 0x6c;
+          pVVar5 = &pUVar3->vector[0].position + lVar1 * 9;
+          pVVar5->x = fVar6;
+          pVVar5->y = fVar7;
+          *(undefined8 *)&pVVar5->z = uVar8;
+          pVVar5 = &pUVar3->vector[0].normal + lVar1 * 9;
+          pVVar5->y = fVar10;
+          pVVar5->z = fVar11;
+          *(undefined8 *)(&pVVar5->y + 2) = uVar12;
+          puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].tangent + lVar4 + 8);
+          *puVar13 = uVar14;
+          puVar13[1] = uStack_24;
+          puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].uv0 + lVar4);
+          *puVar13 = uVar16;
+          puVar13[1] = uVar17;
+          puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].uv1 + lVar4);
+          *puVar13 = uVar18;
+          puVar13[1] = uVar19;
+          puVar13 = (undefined8 *)((longlong)&pUVar3->vector[0].uv2 + lVar4);
+          *puVar13 = uVar20;
+          puVar13[1] = uVar21;
+          *(undefined8 *)((longlong)&pUVar3->vector[0].uv3 + lVar4) = uVar22;
+          *(undefined4 *)((longlong)&pUVar3->vector[0].uv3 + lVar4 + 8) = uVar9;
+          piVar25 = &(vertexList->fields)._version;
+          *piVar25 = *piVar25 + 1;
+          return;
+        }
+      }
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    value.uv0.z = (float)puVar1;
-    auVar13 = in_stack_14._0_12_;
-    auVar15 = in_stack_14._12_12_;
-    auVar16 = in_stack_14._24_16_;
-    uVar17 = in_stack_14._40_8_;
-    value.position.x = (float)auVar13._0_4_;
-    value.position.y = (float)auVar13._4_4_;
-    value.position.z = (float)auVar13._8_4_;
-    value.normal.x = (float)auVar15._0_4_;
-    value.normal.y = (float)auVar15._4_4_;
-    value.normal.z = (float)auVar15._8_4_;
-    value.tangent.x = (float)auVar16._0_4_;
-    value.tangent.y = (float)auVar16._4_4_;
-    value.tangent.z = (float)auVar16._8_4_;
-    value.tangent.w = (float)auVar16._12_4_;
-    value.color.rgba = (int)uVar17;
-    value.color.r = (char)((ulonglong)uVar17 >> 0x20);
-    value.color.g = (char)((ulonglong)uVar17 >> 0x28);
-    value.color.b = (char)((ulonglong)uVar17 >> 0x30);
-    value.color.a = (char)((ulonglong)uVar17 >> 0x38);
-    value.uv0.x = (float)in_stack_14._48_4_;
-    value.uv0.y = (float)in_stack_14._52_4_;
-    value.uv0.w = (float)__return_storage_ptr__;
-    value.uv1.x = (float)pLVar2;
-    value.uv1.y = (float)puVar8;
-    value.uv1.z = color.r;
-    value.uv1.w = color.g;
-    value.uv2.x = color.b;
-    value.uv2.y = color.a;
-    value.uv2.z = fVar7;
-    value.uv2.w = (float)in_stack_18._0_4_;
-    value.uv3.x = (float)in_stack_18._4_4_;
-    value.uv3.y = (float)in_stack_18._8_4_;
-    value.uv3.z = (float)in_stack_18._12_4_;
-    value.uv3.w = (float)pMVar12;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::List_1_UnityEngine_UIVertex__set_Item(vertexList,index,value,in_stack_19);
-    return;
   }
-  func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -5,12 +5,16 @@ void Assembly-CSharp.dll::CEEditCubeTutorial+ResettingBookkeeping::CEEditCubeTut
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_InitializeResetting);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_InitializeResetting);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_InitializeResetting,(MethodInfo *)0x0);
   (this->fields).doReset = 1;
@@ -29,7 +33,7 @@ void Assembly-CSharp.dll::CEEditCubeTutorial+ResettingBookkeeping::CEEditCubeTut
 {
   (this->fields).doReset = 0;
   (this->fields).isResetting = 1;
-  iVar1 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
+  iVar1 = FUN_?();
   (this->fields).resettingBeginTime = iVar1;
   return;
 }
@@ -40,7 +44,8 @@ void Assembly-CSharp.dll::CEEditCubeTutorial+ResettingBookkeeping::CEEditCubeTut
 bool Assembly-CSharp.dll::CEEditCubeTutorial+ResettingBookkeeping::CEEditCubeTutorial_ResettingBookkeeping_get_ReadyToReset(CEEditCubeTutorial_ResettingBookkeeping *this,MethodInfo *method)
 
 {
-  iVar1 = WaitForTicksLocal::WaitForTicksLocal_Diff((this->fields).resettingBeginTime,(MethodInfo *)0x0);
-  return (this->fields).resettingDelay < iVar1;
+  iVar1 = (this->fields).resettingBeginTime;
+  iVar2 = FUN_?();
+  return (this->fields).resettingDelay < iVar2 - iVar1;
 }
 

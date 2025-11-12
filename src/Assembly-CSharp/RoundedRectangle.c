@@ -1,60 +1,115 @@
 
-/* IEnumerator GetMaterialFromPrefabPool() */
-
-IEnumerator * Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_GetMaterialFromPrefabPool(RoundedRectangle *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
-}
-
-
 /* Void OnDestroy() */
 
 void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_OnDestroy(RoundedRectangle *this,MethodInfo *method)
 
 {
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines((MonoBehaviour *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
-    func_?(&TypeInfo__UnityEngine__UI__GraphicRegistry);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  c = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_canvas(in_stack_1,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__UI__GraphicRegistry->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (this == (RoundedRectangle *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  UnityEngine.UI.dll::UnityEngine::UI::GraphicRegistry::GraphicRegistry_UnregisterGraphicForCanvas(c,in_stack_1,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__UI__CanvasUpdateRegistry->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  BVar2._._.m_CachedPtr = (this->fields)._._._._._._._;
+  if (BVar2._._.m_CachedPtr == (Object_1__Fields)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  UnityEngine.UI.dll::UnityEngine::UI::CanvasUpdateRegistry::CanvasUpdateRegistry_UnRegisterCanvasElementForRebuild((ICanvasElement *)in_stack_1,(MethodInfo *)0x0);
-  pMVar2 = (in_stack_1->fields).m_CachedMesh;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit((Object_1 *)pMVar2,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pMVar2 = (in_stack_1->fields).m_CachedMesh;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  pcRam_? = pcVar1;
+  (*pcRam_?)(BVar2._._.m_CachedPtr);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__UI__CanvasUpdateRegistry);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__UI__GraphicRegistry);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  c = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_canvas((Graphic *)this,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__UI__GraphicRegistry->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::UI::GraphicRegistry::GraphicRegistry_UnregisterGraphicForCanvas(c,(Graphic *)this,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__UI__CanvasUpdateRegistry->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::UI::CanvasUpdateRegistry::CanvasUpdateRegistry_UnRegisterCanvasElementForRebuild((ICanvasElement *)this,(MethodInfo *)0x0);
+  pMVar4 = (this->fields)._._._.m_CachedMesh;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar4 != (Mesh *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pMVar2,(MethodInfo *)0x0);
+    if ((pMVar4->fields)._.m_CachedPtr != (void *)0x0) {
+      pMVar4 = (this->fields)._._._.m_CachedMesh;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy((Object_1 *)pMVar4,0.0,(MethodInfo *)0x0);
+    }
   }
-  method_00 = (MethodInfo *)&(in_stack_1->fields).m_CachedMesh;
-  (in_stack_1->fields).m_CachedMesh = (Mesh *)0x0;
-  func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)in_stack_1,ExceptionArgument__Enum_obj,method_00);
+  bVar5 = iRam_? != 0;
+  (this->fields)._._._.m_CachedMesh = (Mesh *)0x0;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields)._._._.m_CachedMesh >> 0xc);
+    uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+    do {
+      uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+      puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   return;
 }
 
@@ -64,315 +119,303 @@ void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_OnDestroy(RoundedRe
 void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_OnPopulateMesh(RoundedRectangle *this,VertexHelper *vh,MethodInfo *method)
 
 {
-  pRVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&TypeInfo__System__Single);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (vh != (VertexHelper *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_Clear(vh,(MethodInfo *)0x0);
-    pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_GetPixelAdjustedRect((Rect *)&stack0xffffffb0,(Graphic *)this,(MethodInfo *)0x0);
-    method_01 = (MethodInfo *)pRVar2->m_XMin;
-    pMVar3 = (MethodInfo *)pRVar2->m_YMin;
-    fVar4 = pRVar2->m_Width;
-    fVar5 = pRVar2->m_Height;
-    fVar6 = fVar5 + (float)pMVar3;
-    method_00 = pMVar3;
-    pMVar7 = pMVar3;
-    pMVar8 = pMVar3;
-    pMVar9 = pMVar3;
-    fVar10 = fVar5;
-    fVar11 = fVar5;
-    fVar12 = fVar5;
-    fVar13 = fVar5;
-    fVar14 = fVar4;
-    fVar15 = fVar4;
-    fVar16 = fVar4;
-    fVar17 = fVar4;
-    iVar18 = func_?(TypeInfo__System__Single,3);
-    if (iVar18 != 0) {
-      if ((*(int *)(iVar18 + 0xc) != 0) && (*(float *)(iVar18 + 0x10) = fVar14 * 0.5, 1 < *(uint *)(iVar18 + 0xc))) {
-        *(float *)(iVar18 + 0x14) = fVar10 * 0.5;
-        if (2 < *(uint *)(iVar18 + 0xc)) {
-          *(float *)(iVar18 + 0x18) = (this->fields).radius;
-          uVar19 = *(uint *)(iVar18 + 0xc);
-          fStack_20 = 0.0;
-          if (uVar19 != 0) {
-            fVar21 = *(float *)(iVar18 + 0x10);
-            uVar22 = 1;
-            fStack_20 = fVar21;
-            if (1 < (int)uVar19) {
-              pfVar23 = (float *)(iVar18 + 0x14);
+    pRVar1 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_GetPixelAdjustedRect(aRStack_2,(Graphic *)this,(MethodInfo *)0x0);
+    fVar3 = pRVar1->m_XMin;
+    fVar4 = pRVar1->m_YMin;
+    uVar5._0_4_ = pRVar1->m_XMin;
+    uVar5._4_4_ = pRVar1->m_YMin;
+    fVar6 = pRVar1->m_Width;
+    fVar7 = pRVar1->m_Height;
+    uVar8._0_4_ = pRVar1->m_Width;
+    uVar8._4_4_ = pRVar1->m_Height;
+    uVar9._0_4_ = pRVar1->m_Width;
+    uVar9._4_4_ = pRVar1->m_Height;
+    uVar10._0_4_ = pRVar1->m_Width;
+    uVar10._4_4_ = pRVar1->m_Height;
+    uVar11._0_4_ = pRVar1->m_Width;
+    uVar11._4_4_ = pRVar1->m_Height;
+    fVar12 = fVar7 + fVar4;
+    fVar13 = fVar6 + fVar3;
+    lVar14 = FUN_?(TypeInfo__System__Single,3);
+    if (lVar14 != 0) {
+      if ((*(int *)(lVar14 + 0x18) != 0) && (*(float *)(lVar14 + 0x20) = fVar6 * 0.5, 1 < *(uint *)(lVar14 + 0x18))) {
+        *(float *)(lVar14 + 0x24) = fVar7 * 0.5;
+        if (2 < *(uint *)(lVar14 + 0x18)) {
+          *(float *)(lVar14 + 0x28) = (this->fields).radius;
+          iVar15 = *(int *)(lVar14 + 0x18);
+          if (iVar15 == 0) {
+            fVar6 = 0.0;
+          }
+          else {
+            if (*(int *)(lVar14 + 0x18) == 0) goto DAT_?;
+            fVar6 = *(float *)(lVar14 + 0x20);
+            uVar16 = 1;
+            if (1 < iVar15) {
+              lVar17 = 1;
+              pfVar18 = (float *)(lVar14 + 0x24);
               do {
-                if (uVar19 <= uVar22) goto code_?;
-                if (*pfVar23 <= fVar21 && fVar21 != *pfVar23) {
-                  fVar21 = *pfVar23;
-                  fStack_20 = fVar21;
+                if (*(uint *)(lVar14 + 0x18) <= uVar16) goto DAT_?;
+                if (*pfVar18 <= fVar6 && fVar6 != *pfVar18) {
+                  fVar6 = *pfVar18;
                 }
-                uVar22 = uVar22 + 1;
-                pfVar23 = pfVar23 + 1;
-              } while ((int)uVar22 < (int)uVar19);
+                uVar16 = uVar16 + 1;
+                lVar17 = lVar17 + 1;
+                pfVar18 = pfVar18 + 1;
+              } while (lVar17 < iVar15);
             }
           }
-          fVar24 = (float)(this->fields)._.m_FillMethod;
-          uVar25 = 0;
-          fVar26 = 0.0;
-          fVar21 = (this->fields)._.m_FillAmount;
-          fVar27 = (float)(this->fields)._.m_FillOrigin;
-          pMVar28 = method_01;
-          pCVar29 = (Color *)(*(code *)(this->klass->vtable).get_color.method)(&stack0xffffffb0,this,(this->klass->vtable).set_color.methodPtr);
-          CVar30 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit(*pCVar29,(MethodInfo *)0x0);
-          uVar31 = 0;
-          fVar32 = fVar14;
-          fVar33 = fVar10;
-          fVar34 = fStack_20;
+          fVar7 = (this->fields)._.m_FillAmount;
+          fVar19 = (float)(this->fields)._.m_FillOrigin;
+          fVar20 = (float)(this->fields)._.m_FillMethod;
+          puVar21 = (undefined8 *)(*(this->klass->vtable).get_color.methodPtr)(aRStack_2,this,(this->klass->vtable).get_color.method);
+          VStack_22._0_8_ = *puVar21;
+          VStack_22._8_8_ = puVar21[1];
+          uVar16 = FUN_?(&VStack_22);
+          VStack_23.y = fVar7;
+          VStack_23.x = fVar20;
+          VStack_22.w = 0.0;
+          VStack_22.z = fVar6;
+          VStack_23.w = 0.0;
+          VStack_23.z = fVar19;
+          VStack_22._0_8_ = uVar11;
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__UnityEngine__Vector4,method_00,pMVar7,pMVar8,method_01,pMVar9,fVar4,fVar5,fVar10,fVar11,fVar12,fVar13,fVar14,fVar15,fVar16,fVar17);
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          fVar35 = 1.0;
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          fVar37 = (pVVar36->zeroVector).x;
-          fVar38 = (pVVar36->zeroVector).y;
-          fVar39 = (pVVar36->zeroVector).z;
-          fVar40 = (pVVar36->zeroVector).w;
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          VStack_25.x = (pVVar24->zeroVector).x;
+          VStack_25.y = (pVVar24->zeroVector).y;
+          VStack_25.z = (pVVar24->zeroVector).z;
+          VStack_25.w = (pVVar24->zeroVector).w;
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__UnityEngine__Vector4,method_00,pMVar7,pMVar8,method_01,pMVar9,fVar4,fVar5,fVar10,fVar11,fVar12,fVar13,fVar14,fVar15,fVar16,fVar17);
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          uVar41 = (pVVar36->zeroVector).y;
-          uVar42 = (pVVar36->zeroVector).z;
-          uVar43 = (pVVar36->zeroVector).w;
-          tangent_01.z = (float)uVar43;
-          tangent_01.y = (float)uVar42;
-          tangent_01.x = (float)uVar41;
-          position_00.y = (float)pMVar3;
-          position_00.x = (float)pMVar28;
-          position_00.z = fVar26;
-          uv0_01.w = fVar32;
-          uv0_01.x = 0.0;
-          uv0_01.y = 0.0;
-          uv0_01.z = 0.0;
-          uv1_01.y = fVar34;
-          uv1_01.x = fVar33;
-          uv1_01.z = (float)uVar31;
-          uv1_01.w = fVar24;
-          uv2_01.y = fVar27;
-          uv2_01.x = fVar21;
-          uv2_01.z = (float)uVar25;
-          uv2_01.w = fVar37;
-          uv3_01.y = fVar39;
-          uv3_01.x = fVar38;
-          uv3_01.z = fVar40;
-          uv3_01.w = fVar35;
-          auVar44._4_8_ = 0;
-          auVar44._0_4_ = (pVVar36->zeroVector).x;
-          tangent_01.w = 0.0;
-          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(vh,position_00,(Color32)((ulonglong)CVar30 & 0xffffffff),uv0_01,uv1_01,uv2_01,uv3_01,(Vector3)(auVar44 << 0x40),tangent_01,method_00);
-          pRVar45 = this;
-          pCVar29 = (Color *)(*(code *)(this->klass->vtable).get_color.method)(&stack0xffffffb0,this,(this->klass->vtable).set_color.methodPtr);
-          CVar30 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit(*pCVar29,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          fVar4 = (pVVar36->zeroVector).x;
-          fVar5 = (pVVar36->zeroVector).y;
-          fVar10 = (pVVar36->zeroVector).z;
-          fVar11 = (pVVar36->zeroVector).w;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          fVar12 = (pVVar36->zeroVector).x;
-          fVar13 = (pVVar36->zeroVector).z;
-          fVar14 = (pVVar36->zeroVector).w;
-          uVar46 = (pVVar36->zeroVector).y;
-          uVar47 = (pVVar36->zeroVector).z;
-          uVar48 = (pVVar36->zeroVector).w;
-          tangent_02.z = (float)uVar48;
-          tangent_02.y = (float)uVar47;
-          tangent_02.x = (float)uVar46;
-          fVar16 = 0.0;
-          fVar15 = 0.0;
-          position_01.y = fVar6;
-          position_01.x = (float)method_01;
-          position_01.z = 0.0;
-          uv0_02.w = fVar13;
-          uv0_02.x = 1.0;
-          uv0_02.y = 0.0;
-          uv0_02.z = 0.0;
-          uv1_02.y = 0.0;
-          uv1_02.x = fVar14;
-          uv1_02.z = fVar12;
-          uv1_02.w = fVar24;
-          uv2_02.y = fVar27;
-          uv2_02.x = fVar21;
-          uv2_02.z = (float)uVar25;
-          uv2_02.w = fVar4;
-          uv3_02.y = fVar10;
-          uv3_02.x = fVar5;
-          uv3_02.z = fVar11;
-          uv3_02.w = fVar13;
-          normal_01.y = 0.0;
-          normal_01.x = fVar14;
-          normal_01.z = fVar12;
-          tangent_02.w = 0.0;
-          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(vh,position_01,(Color32)((ulonglong)CVar30 & 0xffffffff),uv0_02,uv1_02,uv2_02,uv3_02,normal_01,tangent_02,method_01);
-          pIVar49 = (this->klass->vtable).set_color.methodPtr;
-          pCVar29 = (Color *)(*(code *)(this->klass->vtable).get_color.method)();
-          CVar30 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit(*pCVar29,(MethodInfo *)0x0);
-          this_00 = (VertexHelper *)CVar30.rgba;
-          uVar31 = 0;
-          fVar4 = fVar15;
-          pMVar3 = method_01;
-          fVar5 = fStack_20;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          fVar17 = 0.0;
-          uVar50 = 0x3f800000;
-          uVar51 = 0x3f800000;
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          fVar10 = (pVVar36->zeroVector).x;
-          fVar11 = (pVVar36->zeroVector).y;
-          fVar13 = (pVVar36->zeroVector).z;
-          fVar14 = (pVVar36->zeroVector).w;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          uVar52 = (pVVar36->zeroVector).y;
-          uVar53 = (pVVar36->zeroVector).z;
-          uVar54 = (pVVar36->zeroVector).w;
-          tangent.z = (float)uVar54;
-          tangent.y = (float)uVar53;
-          tangent.x = (float)uVar52;
-          uVar55._4_4_ = (float)uVar25;
-          uVar55._0_4_ = (float)pIVar49;
-          uVar55 = CONCAT44(uVar55._4_4_,(float)uVar55);
-          this = (RoundedRectangle *)0x0;
-          CVar30.r = 0;
-          CVar30.g = 0;
-          CVar30.b = 0x80;
-          CVar30.a = 0x3f;
-          CVar30.rgba = (int32_t)this_00;
-          uv0.w = fVar4;
-          uv0.x = 1.0;
-          uv0.y = 0.0;
-          uv0.z = 0.0;
-          uv1.y = fVar5;
-          uv1.x = (float)pMVar3;
-          uv1.z = (float)uVar31;
-          uv1.w = fVar16;
-          uv2.y = fVar24;
-          uv2.x = fVar12;
-          uv2.z = fVar21;
-          uv2.w = fVar10;
-          uv3.y = fVar13;
-          uv3.x = fVar11;
-          uv3.z = fVar14;
-          uv3.w = fVar17;
-          normal.y = (float)uVar51;
-          normal.x = (float)uVar50;
-          normal.z = (pVVar36->zeroVector).x;
-          tangent.w = 0.0;
-          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(this_00,(Vector3)CONCAT48(this,uVar55),CVar30,uv0,uv1,uv2,uv3,normal,tangent,in_stack_56);
-          pCVar29 = (Color *)(*(code *)(pRVar1->klass->vtable).get_color.method)();
-          CVar30 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit(*pCVar29,(MethodInfo *)0x0);
-          uVar25 = 0;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          fVar13 = 0.0;
-          uVar31 = 0;
-          uVar50 = 0x3f800000;
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          fVar4 = (pVVar36->zeroVector).x;
-          fVar5 = (pVVar36->zeroVector).y;
-          fVar10 = (pVVar36->zeroVector).z;
-          fVar11 = (pVVar36->zeroVector).w;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pVVar36 = TypeInfo__UnityEngine__Vector4->static_fields;
-          uVar57 = (pVVar36->zeroVector).y;
-          uVar58 = (pVVar36->zeroVector).z;
-          uVar59 = (pVVar36->zeroVector).w;
-          tangent_00.z = (float)uVar59;
-          tangent_00.y = (float)uVar58;
-          tangent_00.x = (float)uVar57;
-          position.y = (float)pRVar45;
-          position.x = fVar27;
-          position.z = 0.0;
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          VStack_26.z = 0.0;
+          VStack_26.x = 1.0;
+          VStack_26.y = 0.0;
+          VStack_27.x = (pVVar24->zeroVector).x;
+          VStack_27.y = (pVVar24->zeroVector).y;
+          VStack_27.z = (pVVar24->zeroVector).z;
+          VStack_27.w = (pVVar24->zeroVector).w;
           color.r = 0;
           color.g = 0;
-          color.b = 0x80;
-          color.a = 0x3f;
-          color.rgba = CVar30.rgba;
-          uv0_00.w = fVar15;
-          uv0_00.x = 0.0;
-          uv0_00.y = 0.0;
-          uv0_00.z = 0.0;
-          uv1_00.y = fStack_20;
-          uv1_00.x = (float)method_01;
-          uv1_00.z = (float)uVar25;
-          uv1_00.w = fVar16;
-          uv2_00.y = fVar24;
-          uv2_00.x = fVar12;
-          uv2_00.z = fVar21;
-          uv2_00.w = fVar4;
-          uv3_00.y = fVar10;
-          uv3_00.x = fVar5;
-          uv3_00.z = fVar11;
-          uv3_00.w = fVar13;
-          normal_00.y = (float)uVar50;
-          normal_00.x = (float)uVar31;
-          normal_00.z = (pVVar36->zeroVector).x;
-          tangent_00.w = 0.0;
-          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(this_00,position,color,uv0_00,uv1_00,uv2_00,uv3_00,normal_00,tangent_00,in_stack_60);
-          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddTriangle(this_00,0,1,2,(MethodInfo *)0x0);
-          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddTriangle(this_00,2,3,0,(MethodInfo *)0x0);
+          color.b = 0;
+          color.a = 0;
+          color.rgba = uVar16;
+          VStack_28.w = VStack_23.w;
+          VStack_28.z = VStack_23.z;
+          VStack_28.x = VStack_23.x;
+          VStack_28.y = VStack_23.y;
+          aRStack_2[0].m_XMin = 0.0;
+          aRStack_2[0].m_YMin = 0.0;
+          aRStack_2[0].m_Width = 0.0;
+          aRStack_2[0].m_Height = 0.0;
+          VStack_23.z = 0.0;
+          VStack_23._0_8_ = uVar5;
+          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(vh,(Vector3 *)&VStack_23,color,(Vector4 *)aRStack_2,&VStack_22,&VStack_28,&VStack_25,(Vector3 *)&VStack_26,&VStack_27,(MethodInfo *)0x0);
+          puVar21 = (undefined8 *)(*(this->klass->vtable).get_color.methodPtr)(aRStack_2,this,(this->klass->vtable).get_color.method);
+          aRStack_2[0]._0_8_ = *puVar21;
+          aRStack_2[0]._8_8_ = puVar21[1];
+          uVar16 = FUN_?(aRStack_2);
+          VStack_22.y = fVar7;
+          VStack_22.x = fVar20;
+          VStack_26.w = 0.0;
+          VStack_22.w = 0.0;
+          VStack_22.z = fVar19;
+          VStack_26._0_8_ = uVar10;
+          VStack_26.z = fVar6;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          aRStack_2[0].m_XMin = (pVVar24->zeroVector).x;
+          aRStack_2[0].m_YMin = (pVVar24->zeroVector).y;
+          aRStack_2[0].m_Width = (pVVar24->zeroVector).z;
+          aRStack_2[0].m_Height = (pVVar24->zeroVector).w;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          VStack_23.z = 0.0;
+          color_00.r = 0;
+          color_00.g = 0;
+          color_00.b = 0;
+          color_00.a = 0;
+          color_00.rgba = uVar16;
+          VStack_28.x = (pVVar24->zeroVector).x;
+          VStack_28.y = (pVVar24->zeroVector).y;
+          VStack_28.z = (pVVar24->zeroVector).z;
+          VStack_28.w = (pVVar24->zeroVector).w;
+          VStack_23.x = 0.0;
+          VStack_23.y = 1.0;
+          VStack_25.w = VStack_26.w;
+          VStack_25.z = VStack_26.z;
+          VStack_25.x = VStack_26.x;
+          VStack_25.y = VStack_26.y;
+          VStack_27.x = VStack_22.x;
+          VStack_27.y = VStack_22.y;
+          VStack_27.z = VStack_22.z;
+          VStack_27.w = VStack_22.w;
+          VStack_22.x = 0.0;
+          VStack_22.y = 1.0;
+          VStack_22.z = 0.0;
+          VStack_22.w = 0.0;
+          VStack_26.y = fVar12;
+          VStack_26.x = fVar3;
+          VStack_26.z = 0.0;
+          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(vh,(Vector3 *)&VStack_26,color_00,&VStack_22,&VStack_25,&VStack_27,(Vector4 *)aRStack_2,(Vector3 *)&VStack_23,&VStack_28,(MethodInfo *)0x0);
+          puVar21 = (undefined8 *)(*(this->klass->vtable).get_color.methodPtr)(aRStack_2,this,(this->klass->vtable).get_color.method);
+          aRStack_2[0]._0_8_ = *puVar21;
+          aRStack_2[0]._8_8_ = puVar21[1];
+          uVar16 = FUN_?(aRStack_2);
+          VStack_22.y = fVar7;
+          VStack_22.x = fVar20;
+          VStack_26.w = 0.0;
+          VStack_22.w = 0.0;
+          VStack_22.z = fVar19;
+          VStack_26._0_8_ = uVar9;
+          VStack_26.z = fVar6;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          aRStack_2[0].m_XMin = (pVVar24->zeroVector).x;
+          aRStack_2[0].m_YMin = (pVVar24->zeroVector).y;
+          aRStack_2[0].m_Width = (pVVar24->zeroVector).z;
+          aRStack_2[0].m_Height = (pVVar24->zeroVector).w;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          VStack_23.z = 1.0;
+          color_01.r = 0;
+          color_01.g = 0;
+          color_01.b = 0;
+          color_01.a = 0;
+          color_01.rgba = uVar16;
+          VStack_28.x = (pVVar24->zeroVector).x;
+          VStack_28.y = (pVVar24->zeroVector).y;
+          VStack_28.z = (pVVar24->zeroVector).z;
+          VStack_28.w = (pVVar24->zeroVector).w;
+          VStack_23.x = 0.0;
+          VStack_23.y = 1.0;
+          VStack_25.w = VStack_26.w;
+          VStack_25.z = VStack_26.z;
+          VStack_25.x = VStack_26.x;
+          VStack_25.y = VStack_26.y;
+          VStack_27.x = VStack_22.x;
+          VStack_27.y = VStack_22.y;
+          VStack_27.z = VStack_22.z;
+          VStack_27.w = VStack_22.w;
+          VStack_22.x = 1.0;
+          VStack_22.y = 1.0;
+          VStack_22.z = 0.0;
+          VStack_22.w = 0.0;
+          VStack_26.y = fVar12;
+          VStack_26.x = fVar13;
+          VStack_26.z = 0.0;
+          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(vh,(Vector3 *)&VStack_26,color_01,&VStack_22,&VStack_25,&VStack_27,(Vector4 *)aRStack_2,(Vector3 *)&VStack_23,&VStack_28,(MethodInfo *)0x0);
+          puVar21 = (undefined8 *)(*(this->klass->vtable).get_color.methodPtr)(aRStack_2,this,(this->klass->vtable).get_color.method);
+          aRStack_2[0]._0_8_ = *puVar21;
+          aRStack_2[0]._8_8_ = puVar21[1];
+          uVar16 = FUN_?(aRStack_2);
+          VStack_22.y = fVar7;
+          VStack_22.x = fVar20;
+          VStack_26.w = 0.0;
+          VStack_22.w = 0.0;
+          VStack_22.z = fVar19;
+          VStack_26._0_8_ = uVar8;
+          VStack_26.z = fVar6;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          uVar29._0_4_ = (pVVar24->zeroVector).x;
+          uVar29._4_4_ = (pVVar24->zeroVector).y;
+          uVar30._0_4_ = (pVVar24->zeroVector).z;
+          uVar30._4_4_ = (pVVar24->zeroVector).w;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector4);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar24 = TypeInfo__UnityEngine__Vector4->static_fields;
+          VStack_23.z = 1.0;
+          color_02.r = 0;
+          color_02.g = 0;
+          color_02.b = 0;
+          color_02.a = 0;
+          color_02.rgba = uVar16;
+          aRStack_2[0].m_XMin = (pVVar24->zeroVector).x;
+          aRStack_2[0].m_YMin = (pVVar24->zeroVector).y;
+          aRStack_2[0].m_Width = (pVVar24->zeroVector).z;
+          aRStack_2[0].m_Height = (pVVar24->zeroVector).w;
+          VStack_23.x = 0.0;
+          VStack_23.y = 0.0;
+          VStack_25.w = VStack_26.w;
+          VStack_25.z = VStack_26.z;
+          VStack_27.x = VStack_22.x;
+          VStack_27.y = VStack_22.y;
+          VStack_27.z = VStack_22.z;
+          VStack_27.w = VStack_22.w;
+          VStack_22.x = 1.0;
+          VStack_22.y = 0.0;
+          VStack_22.z = 0.0;
+          VStack_22.w = 0.0;
+          uVar31._4_4_ = fVar4;
+          uVar31._0_4_ = fVar13;
+          VStack_26.z = 0.0;
+          VStack_25.x = VStack_26.x;
+          VStack_25.y = VStack_26.y;
+          VStack_26._0_8_ = uVar31;
+          VStack_28._0_8_ = uVar29;
+          VStack_28._8_8_ = uVar30;
+          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddVert(vh,(Vector3 *)&VStack_26,color_02,&VStack_22,&VStack_25,&VStack_27,&VStack_28,(Vector3 *)&VStack_23,(Vector4 *)aRStack_2,(MethodInfo *)0x0);
+          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddTriangle(vh,0,1,2,(MethodInfo *)0x0);
+          UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddTriangle(vh,2,3,0,(MethodInfo *)0x0);
           return;
         }
       }
-      goto code_?;
+DAT_?:
+      FUN_?();
+      pcVar32 = (code *)swi(3);
+      (*pcVar32)();
+      return;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar61 = (code *)swi(3);
-  (*pcVar61)();
-  return;
-}
-
-
-/* Void Start() */
-
-void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_Start(RoundedRectangle *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2);
-    cRam_? = '\x01';
-  }
-  method_01 = TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  method_00 = (MethodInfo *)(value + 2);
-  value[1].klass = (Object__Class *)0x0;
-  value[2].klass = (Object__Class *)this;
-  func_?(method_00,this);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  FUN_?();
+  pcVar32 = (code *)swi(3);
+  (*pcVar32)();
   return;
 }
 
@@ -383,14 +426,23 @@ void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle__ctor(RoundedRectan
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__UI__Image);
+    FUN_?(&TypeInfo__UnityEngine__UI__Image);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).radius = 50.0;
-  if ((TypeInfo__UnityEngine__UI__Image->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__UI__Image);
+  if (*(int *)&(TypeInfo__UnityEngine__UI__Image->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UI.dll::UnityEngine::UI::Image::Image__ctor((Image *)this,(MethodInfo *)0x0);
+  (this->fields)._.m_FillCenter = 1;
+  (this->fields)._.m_FillMethod = 4;
+  (this->fields)._.m_FillAmount = 1.0;
+  (this->fields)._.m_FillClockwise = 1;
+  (this->fields)._.m_PixelsPerUnitMultiplier = 1.0;
+  (this->fields)._.m_CachedReferencePixelsPerUnit = 100.0;
+  UnityEngine.UI.dll::UnityEngine::UI::MaskableGraphic::MaskableGraphic__ctor((MaskableGraphic *)this,(MethodInfo *)0x0);
+  (this->fields)._._._._useLegacyMeshGeneration_k__BackingField = 0;
   return;
 }
 

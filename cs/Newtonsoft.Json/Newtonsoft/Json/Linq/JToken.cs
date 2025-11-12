@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Linq
 {
@@ -47,7 +47,7 @@ namespace Newtonsoft.Json.Linq
 	
 		// Properties
 		[Nullable(2)]
-		public JContainer Parent { [DebuggerStepThrough] [NullableContext(2)] get; [NullableContext(2)] internal set; }
+		public JContainer Parent { [NullableContext(2)] [DebuggerStepThrough] get; [NullableContext(2)] internal set; }
 		public JToken Root { get; }
 		public abstract JTokenType Type { get; }
 		public abstract bool HasValues { get; }
@@ -96,7 +96,7 @@ namespace Newtonsoft.Json.Linq
 		public static explicit operator bool?(JToken value);
 		public static explicit operator long(JToken value);
 		[NullableContext(2)]
-		public static explicit operator DateTime?(JToken value);
+		public static explicit operator System.DateTime?(JToken value);
 		[NullableContext(2)]
 		public static explicit operator DateTimeOffset?(JToken value);
 		[NullableContext(2)]
@@ -126,7 +126,7 @@ namespace Newtonsoft.Json.Linq
 		[CLSCompliant(false)]
 		[NullableContext(2)]
 		public static explicit operator sbyte?(JToken value);
-		public static explicit operator DateTime(JToken value);
+		public static explicit operator System.DateTime(JToken value);
 		[NullableContext(2)]
 		public static explicit operator long?(JToken value);
 		[NullableContext(2)]
@@ -153,7 +153,7 @@ namespace Newtonsoft.Json.Linq
 		[NullableContext(2)]
 		public static explicit operator TimeSpan?(JToken value);
 		[NullableContext(2)]
-		public static explicit operator Uri(JToken value);
+		public static explicit operator System.Uri(JToken value);
 		private static BigInteger ToBigInteger(JToken value);
 		private static BigInteger? ToBigIntegerNullable(JToken value);
 		IEnumerator IEnumerable.GetEnumerator();

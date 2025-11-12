@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(UnityEngine.UI.Button))]
 public class ToggleStateHandler : ToggleStatHandlerBase
 {
 	// Fields

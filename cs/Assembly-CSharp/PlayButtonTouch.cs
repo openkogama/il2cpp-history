@@ -21,7 +21,7 @@ public class PlayButtonTouch : MonoBehaviour
 	[SerializeField]
 	protected bool shouldPop;
 	[SerializeField]
-	protected Button button;
+	protected UnityEngine.UI.Button button;
 	public Action OnPlayButtonPressed;
 
 	// Nested types

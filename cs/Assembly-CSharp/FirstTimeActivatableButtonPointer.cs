@@ -17,7 +17,7 @@ public class FirstTimeActivatableButtonPointer : FirstTimeActivatableElementBase
 	// Fields
 	protected int bubbleId;
 	[SerializeField]
-	protected Button button;
+	protected UnityEngine.UI.Button button;
 	[SerializeField]
 	protected RectTransform pointToTransform;
 	[SerializeField]
@@ -27,7 +27,7 @@ public class FirstTimeActivatableButtonPointer : FirstTimeActivatableElementBase
 	[SerializeField]
 	protected float bubbleLifetimeWhileShown;
 	[SerializeField]
-	protected Button skipElement;
+	protected UnityEngine.UI.Button skipElement;
 	[SerializeField]
 	protected bool skipAllowed;
 

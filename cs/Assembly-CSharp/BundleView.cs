@@ -40,7 +40,7 @@ public class BundleView : MonoBehaviour
 	[SerializeField]
 	private GameObject claimText;
 	[SerializeField]
-	private Button purchaseButton;
+	private UnityEngine.UI.Button purchaseButton;
 	[SerializeField]
 	private AccessoryShinyButton shineEffect;
 	private AccessoryBundleClient bundleData;

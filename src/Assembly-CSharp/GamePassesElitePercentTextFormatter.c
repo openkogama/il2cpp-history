@@ -5,47 +5,61 @@ void Assembly-CSharp.dll::GamePassesElitePercentTextFormatter::GamePassesElitePe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    func_?(&TypeInfo__SubscriberRewardDataManager);
+    FUN_?(&TypeInfo__SubscriberRewardDataManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).textElement;
   if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)(*(code *)(pTVar1->klass->vtable).get_text.method)(pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-    if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SubscriberRewardDataManager);
+    pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)(pTVar1,(pTVar1->klass->vtable).get_text.method);
+    if (*(int *)&(TypeInfo__SubscriberRewardDataManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__SubscriberRewardDataManager);
+      FUN_?(&TypeInfo__SubscriberRewardDataManager);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SubscriberRewardDataManager);
+    if (*(int *)&(TypeInfo__SubscriberRewardDataManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
     pKVar3 = TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField;
     if (pKVar3 != (KogamaVatValues *)0x0) {
-      this = (GamePassesElitePercentTextFormatter *)((1.0 - (pKVar3->fields).regularUserVat) * 100.0);
-      arg0 = (Object *)func_?(TypeInfo__System__Single,&this);
+      afStackX_8[0] = (1.0 - (pKVar3->fields).regularUserVat) * 100.0;
+      arg0 = (Object *)FUN_?(uRam_?,afStackX_8);
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__SubscriberRewardDataManager);
+        FUN_?(&TypeInfo__SubscriberRewardDataManager);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__SubscriberRewardDataManager);
+      if (*(int *)&(TypeInfo__SubscriberRewardDataManager->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__SubscriberRewardDataManager);
       }
       pKVar3 = TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField;
       if (pKVar3 != (KogamaVatValues *)0x0) {
-        fStack_4 = (1.0 - (pKVar3->fields).subscribedUserVat) * 100.0;
-        arg1 = (Object *)func_?(TypeInfo__System__Single,&fStack_4);
-        pSVar2 = mscorlib.dll::System::String::String_Format_1(pSVar2,arg0,arg1,(MethodInfo *)0x0);
-        (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+        afStackX_8[0] = (1.0 - (pKVar3->fields).subscribedUserVat) * 100.0;
+        arg1 = (Object *)FUN_?(uRam_?,afStackX_8);
+        PStack_4._arg0 = (Object *)0x0;
+        PStack_4._arg1 = (Object *)0x0;
+        PStack_4._arg2 = (Object *)0x0;
+        PStack_4._args = (Object__Array *)0x0;
+        mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1(&PStack_4,arg0,arg1,(MethodInfo *)0x0);
+        PStack_5._arg0 = PStack_4._arg0;
+        PStack_5._arg1 = PStack_4._arg1;
+        PStack_5._arg2 = PStack_4._arg2;
+        PStack_5._args = PStack_4._args;
+        pSVar2 = mscorlib.dll::System::String::String_FormatHelper((IFormatProvider *)0x0,pSVar2,&PStack_5,(MethodInfo *)0x0);
+        (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

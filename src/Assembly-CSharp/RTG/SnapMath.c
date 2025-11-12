@@ -10,19 +10,32 @@ NumSnapSteps * Assembly-CSharp.dll::RTG::SnapMath::SnapMath_CalculateNumSnapStep
   __return_storage_ptr__->AbsFracSteps = 0.0;
   bVar1 = cRam_? == '\0';
   __return_storage_ptr__->FltNumSteps = total / snapStep;
-  __return_storage_ptr__->AbsFltNumSteps = ABS(__return_storage_ptr__->FltNumSteps);
-  __return_storage_ptr__->IntNumSteps = (int)__return_storage_ptr__->FltNumSteps;
-  uVar2 = __return_storage_ptr__->IntNumSteps;
+  __return_storage_ptr__->AbsFltNumSteps = __return_storage_ptr__->AbsFltNumSteps;
+  __return_storage_ptr__->IntNumSteps = __return_storage_ptr__->IntNumSteps;
+  __return_storage_ptr__->AbsIntNumSteps = __return_storage_ptr__->AbsIntNumSteps;
+  fVar2 = __return_storage_ptr__->FltNumSteps;
+  __return_storage_ptr__->FltNumSteps = fVar2;
+  __return_storage_ptr__->AbsFltNumSteps = ABS(total / snapStep);
+  __return_storage_ptr__->IntNumSteps = __return_storage_ptr__->IntNumSteps;
+  __return_storage_ptr__->AbsIntNumSteps = __return_storage_ptr__->AbsIntNumSteps;
+  __return_storage_ptr__->IntNumSteps = (int)fVar2;
+  iVar3 = __return_storage_ptr__->IntNumSteps;
   if (bVar1) {
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  uVar3 = (int)uVar2 >> 0x1f;
-  __return_storage_ptr__->AbsIntNumSteps = (uVar2 ^ uVar3) - uVar3;
-  __return_storage_ptr__->AbsFracSteps = __return_storage_ptr__->AbsFltNumSteps - (float)__return_storage_ptr__->AbsIntNumSteps;
+  iVar4 = -iVar3;
+  if (iVar4 < 0) {
+    iVar4 = iVar3;
+  }
+  __return_storage_ptr__->AbsIntNumSteps = iVar4;
+  uVar5 = __return_storage_ptr__->AbsIntNumSteps;
+  __return_storage_ptr__->AbsFracSteps = __return_storage_ptr__->AbsFltNumSteps - (float)(int)uVar5;
   return __return_storage_ptr__;
 }
 

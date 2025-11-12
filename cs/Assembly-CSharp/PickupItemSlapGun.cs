@@ -15,8 +15,6 @@ public class PickupItemSlapGun : PickupItemWithDelay
 	// Fields
 	[SerializeField]
 	private AudioSource audioSource;
-	[SerializeField]
-	private AudioClip[] slapSounds;
 	public ParticleSystem hitParticles;
 	public float maxRange;
 	public float slapStrength;

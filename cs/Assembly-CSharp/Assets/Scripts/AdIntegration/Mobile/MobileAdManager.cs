@@ -60,7 +60,7 @@ namespace Assets.Scripts.AdIntegration.Mobile
 		public class InternalStateInterstitial
 		{
 			// Fields
-			private DateTime prevInterstitialTime;
+			private System.DateTime prevInterstitialTime;
 			private readonly AdLoadState adLoadState;
 			private InterstitialAdResult interstitialAdResult;
 			private InterstitialAd interstitial;
@@ -98,7 +98,7 @@ namespace Assets.Scripts.AdIntegration.Mobile
 		private class InternalStateRewardedAd
 		{
 			// Fields
-			private DateTime prevInterstitialTime;
+			private System.DateTime prevInterstitialTime;
 			private readonly AdLoadState adLoadState;
 			private RewardedAdResult rewardAdResult;
 			private Action<RewardedAdResult> rewardedAdCallback;

@@ -1,59 +1,91 @@
 
 /* Void VisualizeBulletImpact(VoxelHit, Ray, Int32, Single) */
 
-void Assembly-CSharp.dll::AvatarBulletImpactVisualizer::AvatarBulletImpactVisualizer_VisualizeBulletImpact(AvatarBulletImpactVisualizer *this,VoxelHit voxelHit,Ray lineOfFire,int32_t shooterActorNumber,float damage,MethodInfo *method)
+void Assembly-CSharp.dll::AvatarBulletImpactVisualizer::AvatarBulletImpactVisualizer_VisualizeBulletImpact(AvatarBulletImpactVisualizer *this,VoxelHit *voxelHit,Ray *lineOfFire,int32_t shooterActorNumber,float damage,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__ParticleSystem__Burst);
+    FUN_?(&TypeInfo__UnityEngine__ParticleSystem__Burst,voxelHit,lineOfFire,CONCAT44(in_register_0000008c,shooterActorNumber));
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  lineOfFire.m_Direction.y = -lineOfFire.m_Direction.y;
-  uVar1 = CONCAT44(lineOfFire.m_Direction.x,lineOfFire.m_Origin.z) ^ 0x8000000080000000;
-  forward.z = lineOfFire.m_Direction.y;
-  forward.x = (float)(int)uVar1;
-  forward.y = (float)(int)(uVar1 >> 0x20);
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1((Quaternion *)&lineOfFire.m_Origin.y,forward,(MethodInfo *)0x0);
-  lineOfFire.m_Direction.x = 0.0;
-  lineOfFire.m_Direction.y = 0.0;
-  position.y = voxelHit.point.x;
-  position.x = (float)in_stack_3;
-  position.z = voxelHit.point.y;
-  lineOfFire.m_Direction.y = (float)OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1(PoolEnums__Enum_AvatarBulletImpact,position,*pQVar2,(Nullable_1_Single_)0x0,(Nullable_1_UnityEngine_Color_)ZEXT820(0),(MethodInfo *)0x0);
-  if ((ParticleSystem *)lineOfFire.m_Direction.y != (ParticleSystem *)0x0) {
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision((ParticleSystem *)lineOfFire.m_Direction.y,(MethodInfo *)0x0);
-    bursts = (ParticleSystem_Burst__Array *)func_?();
-    if (bursts != (ParticleSystem_Burst__Array *)0x0) {
-      if (bursts->max_length != 0) {
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_time(bursts->vector,0.0,(MethodInfo *)0x0);
-        if (bursts->max_length != 0) {
-          voxelHit._60_2_ = SUB42((int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage),0);
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_minCount(bursts->vector,voxelHit._60_2_,(MethodInfo *)0x0);
-          if (bursts->max_length != 0) {
-            lineOfFire.m_Origin.y = 0.0;
-            lineOfFire.m_Origin.x._0_2_ = (int16_t)(int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage);
-            lineOfFire.m_Origin.x._2_2_ = 0;
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::ParticleSystem_Burst_set_maxCount(bursts->vector,lineOfFire.m_Origin.x._0_2_,(MethodInfo *)0x0);
-            lineOfFire.m_Origin.y = 0.0;
-            lineOfFire.m_Origin.x._0_2_ = (int16_t)bursts;
-            lineOfFire.m_Origin.x._2_2_ = (undefined2)((uint)bursts >> 0x10);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_SetBursts((ParticleSystem_EmissionModule *)&stack0xfffffff8,bursts,(MethodInfo *)0x0);
-            lineOfFire.m_Origin.y = 0.0;
-            lineOfFire.m_Origin.x._0_2_ = SUB42(lineOfFire.m_Direction.y,0);
-            lineOfFire.m_Origin.x._2_2_ = (undefined2)((uint)lineOfFire.m_Direction.y >> 0x10);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1((ParticleSystem *)lineOfFire.m_Direction.y,(MethodInfo *)0x0);
-            return;
-          }
+  uVar1._0_4_ = (voxelHit->point).x;
+  uVar1._4_4_ = (voxelHit->point).y;
+  fVar2 = (voxelHit->point).z;
+  uVar3._0_4_ = (lineOfFire->m_Direction).x;
+  uVar3._4_4_ = (lineOfFire->m_Direction).y;
+  fVar4 = -(lineOfFire->m_Direction).z;
+  if (cRam_? == '\0') {
+    VStack_5._0_8_ = uVar3;
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aNStack_6[0]._0_8_ = *(undefined8 *)&TypeInfo__UnityEngine__Vector3->static_fields->upVector;
+  VStack_5._0_8_ = uVar3 ^ 0x8000000080000000;
+  aNStack_6[0].value.g = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
+  QStack_7.x = 0.0;
+  QStack_7.y = 0.0;
+  QStack_7.z = 0.0;
+  QStack_7.w = 0.0;
+  pcVar8 = pcRam_?;
+  VStack_5.z = fVar4;
+  if ((pcRam_? == (code *)0x0) && (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar1 = func_?(&UNK_?);
+    FUN_?(uVar1,0);
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pcRam_? = pcVar8;
+  (*pcRam_?)(&VStack_5,aNStack_6,&QStack_7);
+  aNStack_6[0].hasValue = 0;
+  aNStack_6[0]._1_3_ = 0;
+  aNStack_6[0].value.r = 0.0;
+  aNStack_6[0].value.g = 0.0;
+  aNStack_6[0].value.b = 0.0;
+  aNStack_6[0].value.a = 0.0;
+  VStack_5._0_8_ = uVar1;
+  VStack_5.z = fVar2;
+  this_00 = OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1(PoolEnums__Enum_AvatarBulletImpact,&VStack_5,&QStack_7,(Nullable_1_Single_)0x0,aNStack_6,(MethodInfo *)0x0);
+  if (this_00 != (ParticleSystem *)0x0) {
+    if (iRam_? != 0) {
+      uVar9 = (uint)((ulonglong)&pPStackX_10 >> 0xc);
+      uVar3 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar12 = uVar10 == *puVar11;
+        if (bVar12) {
+          *puVar11 = uVar10 | 1L << (uVar9 & 0x3f);
         }
+        UNLOCK();
+      } while (!bVar12);
+    }
+    pPStackX_10 = this_00;
+    aPStackX_18[0].m_ParticleSystem = this_00;
+    bursts = (ParticleSystem_Burst__Array *)FUN_?(TypeInfo__UnityEngine__ParticleSystem__Burst,1);
+    if (bursts != (ParticleSystem_Burst__Array *)0x0) {
+      if ((int)bursts->max_length == 0) {
+        FUN_?();
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
       }
-      goto code_?;
+      bursts->vector[0].m_Time = 0.0;
+      bursts->vector[0].m_Count.m_ConstantMin = (float)(int)(short)(int)(damage * (this->fields).particlesPerPointOfDamage);
+      bursts->vector[0].m_Count.m_ConstantMax = (float)(int)(short)(int)(damage * (this->fields).particlesPerPointOfDamage);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_SetBursts_1(aPStackX_18,bursts,(int32_t)bursts->max_length,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play(this_00,1,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

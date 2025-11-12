@@ -15,15 +15,15 @@ public class PlayerElementState : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Button requestFriendship;
+	private UnityEngine.UI.Button requestFriendship;
 	[SerializeField]
-	private Button pendingFriendship;
+	private UnityEngine.UI.Button pendingFriendship;
 	[SerializeField]
-	private Button acceptFriendRequest;
+	private UnityEngine.UI.Button acceptFriendRequest;
 	[SerializeField]
-	private Button cancel;
+	private UnityEngine.UI.Button cancel;
 	[SerializeField]
-	private Button manageUserButton;
+	private UnityEngine.UI.Button manageUserButton;
 	[SerializeField]
 	private AdminToolController adminToolsPrefab;
 	[SerializeField]

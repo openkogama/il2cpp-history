@@ -16,7 +16,7 @@ public abstract class AsyncWebRequest
 	protected readonly string path;
 	protected int retries;
 	protected TimeSpan currentTimeout;
-	protected DateTime retryTime;
+	protected System.DateTime retryTime;
 	protected State state;
 	protected UnityWebRequest request;
 	protected bool isDone;

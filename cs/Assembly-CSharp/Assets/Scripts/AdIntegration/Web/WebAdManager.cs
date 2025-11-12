@@ -19,7 +19,7 @@ namespace Assets.Scripts.AdIntegration.Web
 		private bool webReturnedAvailabilityRewardedAd;
 		private const float RefreshTimer = 60f;
 		private float updateTime;
-		private readonly DateTime prevInterstitialTime;
+		private readonly System.DateTime prevInterstitialTime;
 		private IAdUIManager adUIManager;
 		private IAdManager sdkManager;
 		private IAdManager inHouseAdManager;

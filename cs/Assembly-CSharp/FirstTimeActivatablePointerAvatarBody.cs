@@ -25,7 +25,7 @@ public class FirstTimeActivatablePointerAvatarBody : FirstTimeActivatableElement
 	[SerializeField]
 	private Vector3 bubbleWorldSpaceOffset;
 	[SerializeField]
-	private Button skipElement;
+	private UnityEngine.UI.Button skipElement;
 	[SerializeField]
 	protected bool skipAllowed;
 	[SerializeField]

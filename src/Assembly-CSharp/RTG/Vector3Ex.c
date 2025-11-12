@@ -1,53 +1,114 @@
 
 /* Vector3 Abs(Vector3) */
 
-Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_Abs(Vector3 *__return_storage_ptr__,Vector3 v,MethodInfo *method)
+Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_Abs(Vector3 *__return_storage_ptr__,Vector3 *v,MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = ABS(v.x);
-  __return_storage_ptr__->y = ABS(v.y);
-  __return_storage_ptr__->z = ABS(v.z);
+  fVar1 = v->z;
+  __return_storage_ptr__->x = ABS(v->x);
+  fVar2 = v->y;
+  __return_storage_ptr__->z = ABS(fVar1);
+  __return_storage_ptr__->y = ABS(fVar2);
   return __return_storage_ptr__;
 }
 
 
 /* Single AbsDot(Vector3, Vector3) */
 
-float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_AbsDot(Vector3 v1,Vector3 v2,MethodInfo *method)
+float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_AbsDot(Vector3 *v1,Vector3 *v2,MethodInfo *method)
 
 {
-  return ABS(v1.x * v2.x + v1.y * v2.y + v1.z * v2.z);
+  uVar1 = v2->x;
+  uVar2 = v2->y;
+  uVar3 = v1->x;
+  uVar4 = v1->y;
+  return ABS((float)uVar2 * (float)uVar4 + (float)uVar1 * (float)uVar3 + v2->z * v1->z);
 }
 
 
 /* Vector2 ConvertDirTo2D(Vector3, Vector3, Camera) */
 
-Vector2 Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_ConvertDirTo2D(Vector3 start,Vector3 end,Camera *camera,MethodInfo *method)
+Vector2 Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_ConvertDirTo2D(Vector3 *start,Vector3 *end,Camera *camera,MethodInfo *method)
 
 {
-  if (camera != (Camera *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1(&start,camera,start,(MethodInfo *)0x0);
-    fVar1 = 0.0;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1((Vector3 *)&stack0xffffffe4,camera,end,(MethodInfo *)0x0);
-    uVar3 = pVVar2->x;
-    uVar4 = pVVar2->y;
-    VVar5.y = (float)uVar4 - fVar1;
-    VVar5.x = (float)uVar3 - end.z;
-    return VVar5;
+  if (camera == (Camera *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  VVar5 = (Vector2)(*pcVar6)();
-  return VVar5;
+  uStack_3._0_4_ = start->x;
+  uStack_3._4_4_ = start->y;
+  fStack_4 = start->z;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_5 = 0;
+  uStack_6 = 0;
+  pvVar7 = (camera->fields)._._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar7,&uStack_3,2,&uStack_5);
+  uStack_9._0_4_ = end->x;
+  uStack_9._4_4_ = end->y;
+  fStack_10 = end->z;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_11 = 0;
+  uStack_12 = 0;
+  pvVar7 = (camera->fields)._._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar7,&uStack_9,2,&uStack_11);
+  VVar2.y = uStack_11._4_4_ - uStack_5._4_4_;
+  VVar2.x = (float)uStack_11 - (float)uStack_5;
+  return VVar2;
 }
 
 
 /* Single Dot(Vector3, Vector3) */
 
-float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_Dot(Vector3 v1,Vector3 v2,MethodInfo *method)
+float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_Dot(Vector3 *v1,Vector3 *v2,MethodInfo *method)
 
 {
-  return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
+  uVar1 = v2->x;
+  uVar2 = v2->y;
+  uVar3 = v1->x;
+  uVar4 = v1->y;
+  return (float)uVar2 * (float)uVar4 + (float)uVar1 * (float)uVar3 + v2->z * v1->z;
 }
 
 
@@ -65,61 +126,98 @@ Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_FromValue(Vector3 *__re
 
 /* Single GetDistanceToSegment(Vector3, Vector3, Vector3) */
 
-float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetDistanceToSegment(Vector3 point,Vector3 point0,Vector3 point1,MethodInfo *method)
+float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetDistanceToSegment(Vector3 *point,Vector3 *point0,Vector3 *point1,MethodInfo *method)
 
 {
-  VStack_1.y = point1.y - point0.y;
-  VStack_1.x = point1.x - point0.x;
-  fStack_2 = point1.z - point0.z;
-  VStack_1.z = fStack_2;
-  fVar3 = (float10)func_?(&VStack_1,0,point1.x,0,0,0,point0.x,0,0,0);
-  fStack_4 = (float)fVar3;
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&VStack_1,(MethodInfo *)0x0);
-  fStack_2 = point.z - point0.z;
-  uStack_5 = CONCAT44(point.y - point0.y,point.x - point0.x);
-  fVar6 = (point.y - point0.y) * VStack_1.y + (point.x - point0.x) * VStack_1.x + fStack_2 * VStack_1.z;
-  if ((0.0 <= fVar6) && (fVar6 <= fStack_4)) {
-    VStack_1.z = (point0.z + VStack_1.z * fVar6) - point.z;
-    VStack_1.y = (point0.y + VStack_1.y * fVar6) - point.y;
-    VStack_1.x = (point0.x + VStack_1.x * fVar6) - point.x;
-    fVar3 = (float10)func_?(&VStack_1,0);
-    return (float)fVar3;
+  uVar1 = point1->x;
+  uVar2 = point1->y;
+  uStack_3._0_4_ = point0->x;
+  uStack_3._4_4_ = point0->y;
+  fVar4 = (float)uVar1 - (float)(undefined4)uStack_3;
+  fVar5 = point1->z - point0->z;
+  fVar6 = (float)uVar2 - (float)uStack_3._4_4_;
+  uVar7 = CONCAT44(fVar6,fVar4);
+  uStack_8 = uVar7;
+  fStack_9 = fVar5;
+  fVar10 = (float)FUN_?(&uStack_8);
+  uStack_3 = uVar7;
+  fStack_11 = fVar5;
+  fVar12 = (float)FUN_?(&uStack_3);
+  if (1e-05 < fVar12) {
+    fVar5 = fVar5 / fVar12;
+    uStack_8 = CONCAT44(fVar6 / fVar12,fVar4 / fVar12);
   }
-  if (0.0 <= fVar6) {
-    VStack_1.z = point1.z - point.z;
-    VStack_1.y = point1.y - point.y;
-    VStack_1.x = point1.x - point.x;
-    fVar3 = (float10)func_?(&VStack_1,0);
-    return (float)fVar3;
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar13 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_8._0_4_ = (pVVar13->zeroVector).x;
+    uStack_8._4_4_ = (pVVar13->zeroVector).y;
+    fVar5 = (pVVar13->zeroVector).z;
   }
-  fVar3 = (float10)func_?(&uStack_5,0);
-  return (float)fVar3;
+  uVar14 = point->x;
+  uVar15 = point->y;
+  uVar16 = point0->x;
+  uVar17 = point0->y;
+  fStack_11 = point->z - point0->z;
+  uStack_3 = CONCAT44((float)uVar15 - (float)uVar17,(float)uVar14 - (float)uVar16);
+  fVar12 = ((float)uVar15 - (float)uVar17) * uStack_8._4_4_ + ((float)uVar14 - (float)uVar16) * (float)uStack_8 + fStack_11 * fVar5;
+  if ((fVar12 < 0.0) || (fVar10 < fVar12)) {
+    if (fVar12 < 0.0) {
+      puVar18 = &uStack_3;
+    }
+    else {
+      uVar19 = point->x;
+      uVar20 = point->y;
+      uVar21 = point1->x;
+      fStack_9 = point1->z - point->z;
+      uStack_8 = CONCAT44(point1->y - (float)uVar20,(float)uVar21 - (float)uVar19);
+      puVar18 = &uStack_8;
+    }
+  }
+  else {
+    uVar22 = point0->x;
+    uVar23 = point0->y;
+    uVar24 = point->x;
+    uVar25 = point->y;
+    fStack_9 = (fVar5 * fVar12 + point0->z) - point->z;
+    puVar18 = &uStack_8;
+    uStack_8 = CONCAT44((uStack_8._4_4_ * fVar12 + (float)uVar23) - (float)uVar25,((float)uStack_8 * fVar12 + (float)uVar22) - (float)uVar24);
+  }
+  fVar5 = (float)FUN_?(puVar18);
+  return fVar5;
 }
 
 
 /* Vector3 GetInverse(Vector3) */
 
-Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetInverse(Vector3 *__return_storage_ptr__,Vector3 vector,MethodInfo *method)
+Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetInverse(Vector3 *__return_storage_ptr__,Vector3 *vector,MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = 1.0 / vector.x;
-  __return_storage_ptr__->y = 1.0 / vector.y;
-  __return_storage_ptr__->z = 1.0 / vector.z;
+  fVar1 = vector->y;
+  fVar2 = vector->z;
+  __return_storage_ptr__->x = 1.0 / vector->x;
+  __return_storage_ptr__->y = 1.0 / fVar1;
+  __return_storage_ptr__->z = 1.0 / fVar2;
   return __return_storage_ptr__;
 }
 
 
 /* Single GetMaxAbsComp(Vector3) */
 
-float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMaxAbsComp(Vector3 v,MethodInfo *method)
+float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMaxAbsComp(Vector3 *v,MethodInfo *method)
 
 {
-  fVar1 = ABS(v.y);
-  if (ABS(v.y) <= ABS(v.x)) {
-    fVar1 = ABS(v.x);
+  fVar1 = ABS(v->y);
+  if (ABS(v->y) <= ABS(v->x)) {
+    fVar1 = ABS(v->x);
   }
-  fVar2 = ABS(v.z);
-  if (ABS(v.z) <= fVar1) {
+  fVar2 = ABS(v->z);
+  if (ABS(v->z) <= fVar1) {
     fVar2 = fVar1;
   }
   return fVar2;
@@ -128,91 +226,126 @@ float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMaxAbsComp(Vector3 v,Met
 
 /* Int32 GetMostAligned(Vector3[], Vector3, Boolean) */
 
-int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMostAligned(Vector3__Array *vectors,Vector3 dir,bool checkSameDirection,MethodInfo *method)
+int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMostAligned(Vector3__Array *vectors,Vector3 *dir,bool checkSameDirection,MethodInfo *method)
 
 {
-  if (vectors != (Vector3__Array *)0x0) {
-    if (vectors->max_length == 0) {
-      return -1;
-    }
-    fVar1 = -3.4028235e+38;
-    uVar2 = 0xffffffff;
-    uVar3 = 0;
-    if (checkSameDirection == 0) {
-      for (; (int)uVar3 < (int)vectors->max_length; uVar3 = uVar3 + 1) {
-        if (vectors->max_length <= uVar3) goto code_?;
-        uVar4 = vectors->vector[uVar3].x;
-        uVar5 = vectors->vector[uVar3].y;
-        fVar6 = ABS(dir.y * (float)uVar5 + dir.x * (float)uVar4 + dir.z * vectors->vector[uVar3].z);
-        uVar7 = uVar3;
-        if (fVar6 <= fVar1) {
-          uVar7 = uVar2;
-          fVar6 = fVar1;
-        }
-        fVar1 = fVar6;
-        uVar2 = uVar7;
-      }
-    }
-    else {
-      pVVar8 = vectors->vector;
-      for (; (int)uVar3 < (int)vectors->max_length; uVar3 = uVar3 + 1) {
-        if (vectors->max_length <= uVar3) goto code_?;
-        uVar9 = pVVar8->x;
-        uVar10 = pVVar8->y;
-        fVar6 = dir.y * (float)uVar10 + dir.x * (float)uVar9 + dir.z * pVVar8->z;
-        if ((0.0 < fVar6) && (fVar1 < fVar6)) {
-          uVar2 = uVar3;
-          fVar1 = fVar6;
-        }
-        pVVar8 = pVVar8 + 1;
-      }
-    }
-    return uVar2;
+  if (vectors == (Vector3__Array *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    iVar2 = (*pcVar1)();
+    return iVar2;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  iVar12 = (*pcVar11)();
-  return iVar12;
+  if (vectors->max_length == 0) {
+    return -1;
+  }
+  fVar3 = -3.4028235e+38;
+  pVVar4 = vectors->vector;
+  uVar5 = (uint)vectors->max_length;
+  uVar6 = 0xffffffff;
+  uVar7 = 0;
+  if (checkSameDirection == 0) {
+    for (; (int)uVar7 < (int)uVar5; uVar7 = uVar7 + 1) {
+      if (uVar5 <= uVar7) goto DAT_?;
+      uVar8 = dir->x;
+      uVar9 = dir->y;
+      uVar10 = pVVar4->x;
+      uVar11 = pVVar4->y;
+      fVar12 = ABS((float)uVar9 * (float)uVar11 + (float)uVar8 * (float)uVar10 + dir->z * pVVar4->z);
+      uVar13 = uVar7;
+      if (fVar12 <= fVar3) {
+        uVar13 = uVar6;
+        fVar12 = fVar3;
+      }
+      fVar3 = fVar12;
+      pVVar4 = pVVar4 + 1;
+      uVar6 = uVar13;
+    }
+  }
+  else {
+    for (; (int)uVar7 < (int)uVar5; uVar7 = uVar7 + 1) {
+      if (uVar5 <= uVar7) {
+DAT_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        iVar2 = (*pcVar1)();
+        return iVar2;
+      }
+      uVar14 = dir->x;
+      uVar15 = dir->y;
+      uVar16 = pVVar4->x;
+      uVar17 = pVVar4->y;
+      fVar12 = (float)uVar15 * (float)uVar17 + (float)uVar14 * (float)uVar16 + dir->z * pVVar4->z;
+      if ((0.0 < fVar12) && (fVar3 < fVar12)) {
+        fVar3 = fVar12;
+        uVar6 = uVar7;
+      }
+      pVVar4 = pVVar4 + 1;
+    }
+  }
+  return uVar6;
 }
 
 
 /* Int32 GetPointClosestToPoint(List`1[UnityEngine.Vector3], Vector3) */
 
-int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetPointClosestToPoint(List_1_UnityEngine_Vector3_ *points,Vector3 pt,MethodInfo *method)
+int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetPointClosestToPoint(List_1_UnityEngine_Vector3_ *points,Vector3 *pt,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fStack_1 = 3.4028235e+38;
-  index = 0;
-  iVar2 = -1;
+  fVar1 = 3.4028235e+38;
+  uVar2 = 0;
   if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    for (; fVar3 = fStack_1, index < (points->fields)._size; index = index + 1) {
-      pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-      uStack_6._0_4_ = pVVar4->alias;
-      uStack_6._4_4_ = pVVar4->path;
-      pVStack_7 = pVVar4->asset;
-      fVar8 = ((float)uStack_6._4_4_ - pt.y) * ((float)uStack_6._4_4_ - pt.y) + ((float)(undefined4)uStack_6 - pt.x) * ((float)(undefined4)uStack_6 - pt.x) + ((float)pVStack_7 - pt.z) * ((float)pVStack_7 - pt.z);
-      if (fVar8 < fStack_1) {
-        fStack_1 = fVar8;
+    uVar3 = (points->fields)._size;
+    uVar4 = uVar2;
+    uVar5 = 0xffffffff;
+    while( true ) {
+      uVar6 = (uint)uVar2;
+      if ((int)uVar3 <= (int)uVar6) {
+        return uVar5;
       }
-      iVar9 = index;
-      if (fVar3 <= fVar8) {
-        iVar9 = iVar2;
+      if (uVar3 <= uVar6) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+        pcVar7 = (code *)swi(3);
+        iVar8 = (*pcVar7)();
+        return iVar8;
       }
-      iVar2 = iVar9;
+      pVVar9 = (points->fields)._items;
+      if (pVVar9 == (Vector3__Array *)0x0) break;
+      if ((uint)pVVar9->max_length <= uVar6) {
+        FUN_?();
+        pcVar7 = (code *)swi(3);
+        iVar8 = (*pcVar7)();
+        return iVar8;
+      }
+      uVar10 = pt->x;
+      uVar11 = pt->y;
+      fVar12 = (float)*(undefined8 *)((longlong)&pVVar9->vector[0].x + uVar4) - (float)uVar10;
+      fVar13 = *(float *)((longlong)&pVVar9->vector[0].z + uVar4) - pt->z;
+      fVar14 = (float)((ulonglong)*(undefined8 *)((longlong)&pVVar9->vector[0].x + uVar4) >> 0x20) - (float)uVar11;
+      fVar13 = fVar14 * fVar14 + fVar12 * fVar12 + fVar13 * fVar13;
+      uVar15 = uVar6;
+      if (fVar1 <= fVar13) {
+        uVar15 = uVar5;
+        fVar13 = fVar1;
+      }
+      fVar1 = fVar13;
+      uVar2 = (ulonglong)(uVar6 + 1);
+      uVar4 = uVar4 + 0xc;
+      uVar5 = uVar15;
     }
-    return iVar2;
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  iVar2 = (*pcVar10)();
-  return iVar2;
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  iVar8 = (*pcVar7)();
+  return iVar8;
 }
 
 
@@ -221,142 +354,120 @@ int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetPointClosestToPoint(Li
 Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetPointCloudCenter(Vector3 *__return_storage_ptr__,IEnumerable_1_UnityEngine_Vector3_ *ptCloud,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  uStack_2 = 0xffffffff;
-  puStack_3 = &DAT_?;
-  uStack_4 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff30;
-  puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xffffff30;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector3>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar6 = puStack_1;
-    puVar7 = puStack_5;
   }
-  puStack_5 = puVar7;
-  puStack_1 = puVar6;
-  fStack_8 = -3.4028235e+38;
-  fStack_9 = -3.4028235e+38;
-  fStack_10 = -3.4028235e+38;
-  fStack_11 = -3.4028235e+38;
-  fStack_12 = -3.4028235e+38;
-  fStack_13 = -3.4028235e+38;
-  fStack_14 = 3.4028235e+38;
-  fStack_15 = 3.4028235e+38;
-  fStack_16 = 3.4028235e+38;
-  fStack_17 = 3.4028235e+38;
-  fStack_18 = 3.4028235e+38;
-  fStack_19 = 3.4028235e+38;
-  if (ptCloud != (IEnumerable_1_UnityEngine_Vector3_ *)0x0) {
-    apiStack_20[0] = (int *)func_?(0,TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector3>,ptCloud);
-    ppiStack_21 = apiStack_20;
-    uStack_22 = 0;
-    uStack_2 = 1;
-    fVar23 = fStack_18;
-    while (fStack_18 = fVar23, apiStack_20[0] != (int *)0x0) {
-      cVar24 = func_?(0,TypeInfo__System__Collections__IEnumerator,apiStack_20[0]);
-      if (cVar24 == '\0') {
-        uStack_2 = 0xffffffff;
-        if (apiStack_20[0] != (int *)0x0) {
-          func_?(0,TypeInfo__System__IDisposable,apiStack_20[0]);
+  fVar1 = -3.4028235e+38;
+  fVar2 = -3.4028235e+38;
+  fVar3 = -3.4028235e+38;
+  fVar4 = -3.4028235e+38;
+  fVar5 = 3.4028235e+38;
+  fVar6 = 3.4028235e+38;
+  fVar7 = 3.4028235e+38;
+  if (ptCloud == (IEnumerable_1_UnityEngine_Vector3_ *)0x0) {
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    plStack_8 = (longlong *)FUN_?(0,TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector3>,ptCloud);
+    uStack_9 = 0;
+    pplStack_10 = &plStack_8;
+    fVar11 = 3.4028235e+38;
+    while (plStack_8 != (longlong *)0x0) {
+      cVar12 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+      plVar13 = plStack_8;
+      if (cVar12 == '\0') {
+        if (plStack_8 != (longlong *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,plStack_8);
         }
-        __return_storage_ptr__->x = (fStack_8 + fStack_14) * 0.5;
-        __return_storage_ptr__->y = (fStack_10 + fStack_16) * 0.5;
-        __return_storage_ptr__->z = (fStack_18 + fStack_12) * 0.5;
-        *unaff_FS_OFFSET = uStack_4;
+        __return_storage_ptr__->x = (fVar5 + fVar1) * 0.5;
+        __return_storage_ptr__->y = (fVar6 + fVar2) * 0.5;
+        __return_storage_ptr__->z = (fVar11 + fVar3) * 0.5;
         return __return_storage_ptr__;
       }
-      piStack_25 = apiStack_20[0];
-      if (apiStack_20[0] == (int *)0x0) break;
-      iStack_26 = *apiStack_20[0];
-      uVar27 = 0;
-      uStack_28 = 0;
-      uVar29 = *(ushort *)(iStack_26 + 0xb6);
-      uStack_30 = (uint)uVar29;
-      if (uVar29 != 0) {
+      if (plStack_8 == (longlong *)0x0) goto code_?;
+      lVar14 = *plStack_8;
+      uVar15 = 0;
+      if (*(ushort *)(lVar14 + 0x12e) != 0) {
         do {
-          if (*(IEnumerator_1_UnityEngine_Vector3___Class **)(*(int *)(iStack_26 + 0x58) + (uint)uVar27 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>) {
-            puVar31 = (undefined4 *)(iStack_26 + (*(int *)(*(int *)(iStack_26 + 0x58) + 4 + (uint)uVar27 * 8) + 0x18) * 8);
+          if (*(IEnumerator_1_UnityEngine_Vector3___Class **)(*(longlong *)(lVar14 + 0xb0) + (ulonglong)uVar15 * 0x10) == TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>) {
+            puVar16 = (undefined8 *)((longlong)*(int *)(*(longlong *)(lVar14 + 0xb0) + 8 + (ulonglong)uVar15 * 0x10) * 0x10 + 0x138 + lVar14);
             goto code_?;
           }
-          uVar27 = uVar27 + 1;
-        } while (uVar27 < uVar29);
+          uVar15 = uVar15 + 1;
+        } while (uVar15 < *(ushort *)(lVar14 + 0x12e));
       }
-      puVar31 = (undefined4 *)func_?(apiStack_20[0],TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>,0);
+      puVar16 = (undefined8 *)FUN_?(plStack_8,TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>,0,TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>,fVar4,fVar7);
 code_?:
-      puVar32 = (undefined8 *)(*(code *)*puVar31)(auStack_33,piStack_25,puVar31[1]);
-      uVar34 = *puVar32;
-      fStack_35 = *(float *)(puVar32 + 1);
-      uStack_36._0_4_ = (float)uVar34;
-      if (fStack_8 <= (float)uStack_36) {
-        fStack_8 = (float)uStack_36;
+      puVar16 = (undefined8 *)(*(code *)*puVar16)(auStack_17,plVar13,puVar16[1]);
+      uVar18 = *puVar16;
+      if (fVar1 <= (float)uVar18) {
+        fVar1 = (float)uVar18;
       }
-      uStack_36._4_4_ = (float)((ulonglong)uVar34 >> 0x20);
-      if (fStack_10 <= uStack_36._4_4_) {
-        fStack_10 = uStack_36._4_4_;
+      uStack_19._4_4_ = (float)((ulonglong)uVar18 >> 0x20);
+      if (fVar2 <= uStack_19._4_4_) {
+        fVar2 = uStack_19._4_4_;
       }
-      fVar23 = fStack_35;
-      if (fStack_35 < fStack_12) {
-        fVar23 = fStack_12;
+      if (fVar3 <= *(float *)(puVar16 + 1)) {
+        fVar3 = *(float *)(puVar16 + 1);
       }
-      fStack_12 = fVar23;
-      uVar37 = *puVar32;
-      uStack_38._0_4_ = (float)uVar37;
-      if ((float)uStack_38 <= fStack_14) {
-        fStack_14 = (float)uStack_38;
+      uVar20 = *puVar16;
+      if ((float)uVar20 <= fVar5) {
+        fVar5 = (float)uVar20;
       }
-      uStack_38._4_4_ = (float)((ulonglong)uVar37 >> 0x20);
-      if (uStack_38._4_4_ <= fStack_16) {
-        fStack_16 = uStack_38._4_4_;
+      uStack_21._4_4_ = (float)((ulonglong)uVar20 >> 0x20);
+      if (uStack_21._4_4_ <= fVar6) {
+        fVar6 = uStack_21._4_4_;
       }
-      uStack_38 = uVar37;
-      uStack_36 = uVar34;
-      fStack_39 = fStack_35;
-      fStack_19 = fStack_35;
-      fStack_9 = fStack_8;
-      fStack_11 = fStack_10;
-      fStack_13 = fStack_12;
-      fStack_15 = fStack_14;
-      fStack_17 = fStack_16;
-      fVar23 = fStack_35;
-      if (fStack_18 < fStack_35) {
-        fStack_19 = fStack_18;
-        fVar23 = fStack_18;
+      fVar4 = fVar3;
+      fVar7 = fVar6;
+      uStack_19 = uVar18;
+      uStack_21 = uVar20;
+      if (*(float *)(puVar16 + 1) <= fVar11) {
+        fVar11 = *(float *)(puVar16 + 1);
       }
     }
   }
-  uVar40 = func_?();
-  func_?(uVar40);
-  pcVar41 = (code *)swi(3);
-  pVVar42 = (Vector3 *)(*pcVar41)();
-  return pVVar42;
+  FUN_?();
+  FUN_?();
+  pcVar22 = (code *)swi(3);
+  pVVar23 = (Vector3 *)(*pcVar22)();
+  return pVVar23;
 }
 
 
 /* Vector3 GetSignVector(Vector3) */
 
-Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetSignVector(Vector3 *__return_storage_ptr__,Vector3 v,MethodInfo *method)
+Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetSignVector(Vector3 *__return_storage_ptr__,Vector3 *v,MethodInfo *method)
 
 {
   fVar1 = 1.0;
-  if (v.x < 0.0) {
+  if (v->x < 0.0) {
     fVar2 = -1.0;
   }
   else {
     fVar2 = 1.0;
   }
-  if (v.y < 0.0) {
+  if (v->y < 0.0) {
     fVar3 = -1.0;
   }
   else {
     fVar3 = 1.0;
   }
-  if (v.z < 0.0) {
+  if (v->z < 0.0) {
     fVar1 = -1.0;
   }
   __return_storage_ptr__->x = fVar2;
@@ -368,120 +479,207 @@ Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetSignVector(Vector3 *
 
 /* Boolean IsAligned(Vector3, Vector3, Boolean) */
 
-bool Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_IsAligned(Vector3 vector,Vector3 other,bool checkSameDirection,MethodInfo *method)
+bool Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_IsAligned(Vector3 *vector,Vector3 *other,bool checkSameDirection,MethodInfo *method)
 
 {
-  fVar1 = vector.x * other.x + vector.y * other.y + vector.z * other.z;
+  uVar1 = other->x;
+  uVar2 = other->y;
+  uVar3 = vector->x;
+  uVar4 = vector->y;
+  fVar5 = (float)uVar2 * (float)uVar4 + (float)uVar1 * (float)uVar3 + other->z * vector->z;
   if (checkSameDirection == 0) {
-    return ABS(ABS(fVar1) - 1.0) < 1e-05;
+    fVar5 = ABS(fVar5);
   }
-  if (fVar1 <= 0.0) {
+  else if (fVar5 <= 0.0) {
     return 0;
   }
-  return ABS(fVar1 - 1.0) < 1e-05;
+  return ABS(fVar5 - 1.0) < 1e-05;
 }
 
 
 /* Void OffsetPoints(List`1[UnityEngine.Vector3], Vector3) */
 
-void Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_OffsetPoints(List_1_UnityEngine_Vector3_ *points,Vector3 offset,MethodInfo *method)
+void Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_OffsetPoints(List_1_UnityEngine_Vector3_ *points,Vector3 *offset,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  index = 0;
-  if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    for (; index < (points->fields)._size; index = index + 1) {
-      pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffd8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-      uVar2 = pVVar1->alias;
-      uVar3 = pVVar1->path;
-      value.FirstAxisSign = (int32_t)(offset.y + (float)uVar3);
-      value.Quadrant = (int32_t)(offset.x + (float)uVar2);
-      value.SecondAxisSign = (int32_t)(offset.z + (float)pVVar1->asset);
-      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)points,index,value,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_);
-    }
+  uVar1 = 0;
+  uVar2 = uVar1;
+  if (points == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
+  do {
+    uVar4 = (uint)uVar1;
+    if ((points->fields)._size <= (int)uVar4) {
+      return;
+    }
+    if ((uint)(points->fields)._size <= uVar4) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pVVar5 = (points->fields)._items;
+    if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+    if ((uint)pVVar5->max_length <= uVar4) {
+code_?:
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    uVar6 = *(undefined8 *)((longlong)&pVVar5->vector[0].x + uVar2);
+    uVar7 = offset->x;
+    fVar8 = offset->z;
+    if ((uint)(points->fields)._size <= uVar4) goto code_?;
+    if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+    if ((uint)pVVar5->max_length <= uVar4) goto code_?;
+    uVar1 = (ulonglong)(uVar4 + 1);
+    *(ulonglong *)((longlong)&pVVar5->vector[0].x + uVar2) = CONCAT44(offset->y + (float)((ulonglong)uVar6 >> 0x20),(float)uVar7 + (float)uVar6);
+    *(float *)((longlong)&pVVar5->vector[0].z + uVar2) = fVar8 + *(float *)((longlong)&pVVar5->vector[0].z + uVar2);
+    piVar9 = &(points->fields)._version;
+    *piVar9 = *piVar9 + 1;
+    uVar2 = uVar2 + 0xc;
+  } while( true );
 }
 
 
 /* Boolean PointsSameDir(Vector3, Vector3) */
 
-bool Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_PointsSameDir(Vector3 vector,Vector3 other,MethodInfo *method)
+bool Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_PointsSameDir(Vector3 *vector,Vector3 *other,MethodInfo *method)
 
 {
-  return 0.0 < vector.x * other.x + vector.y * other.y + vector.z * other.z;
+  uVar1 = other->x;
+  uVar2 = other->y;
+  uVar3 = vector->x;
+  uVar4 = vector->y;
+  return 0.0 < (float)uVar2 * (float)uVar4 + (float)uVar1 * (float)uVar3 + other->z * vector->z;
 }
 
 
 /* Vector3 ProjectOnSegment(Vector3, Vector3, Vector3) */
 
-Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_ProjectOnSegment(Vector3 *__return_storage_ptr__,Vector3 point,Vector3 point0,Vector3 point1,MethodInfo *method)
+Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_ProjectOnSegment(Vector3 *__return_storage_ptr__,Vector3 *point,Vector3 *point0,Vector3 *point1,MethodInfo *method)
 
 {
-  fStack_1 = point0.x;
-  uStack_2 = 0;
-  uStack_3 = 0;
-  fStack_4 = point1.z - point0.z;
-  value.y = point1.y - point0.y;
-  value.x = point1.x - point0.x;
-  value.z = fStack_4;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(aVStack_6,value,(MethodInfo *)0x0);
-  uVar7 = pVVar5->x;
-  uVar8 = pVVar5->y;
-  fVar9 = pVVar5->z;
-  fVar10 = (float)uVar8 * (point.y - point0.y) + (float)uVar7 * (point.x - fStack_1) + fVar9 * (point.z - point0.z);
-  __return_storage_ptr__->x = fStack_1 + (float)uVar7 * fVar10;
-  __return_storage_ptr__->y = point0.y + (float)uVar8 * fVar10;
-  __return_storage_ptr__->z = point0.z + fVar9 * fVar10;
+  uVar1 = point1->x;
+  uVar2 = point1->y;
+  uVar3 = point0->x;
+  uVar4 = point0->y;
+  fVar5 = point1->z - point0->z;
+  uStack_6 = CONCAT44((float)uVar2 - (float)uVar4,(float)uVar1 - (float)uVar3);
+  fStack_7 = fVar5;
+  fVar8 = (float)FUN_?(&uStack_6);
+  if (1e-05 < fVar8) {
+    fVar5 = fVar5 / fVar8;
+    uStack_6 = CONCAT44(((float)uVar2 - (float)uVar4) / fVar8,((float)uVar1 - (float)uVar3) / fVar8);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_6._0_4_ = (pVVar9->zeroVector).x;
+    uStack_6._4_4_ = (pVVar9->zeroVector).y;
+    fVar5 = (pVVar9->zeroVector).z;
+  }
+  uVar10 = point0->x;
+  uVar11 = point0->y;
+  uVar12 = point->x;
+  uVar13 = point->y;
+  fVar14 = ((float)uVar13 - (float)uVar11) * uStack_6._4_4_ + ((float)uVar12 - (float)uVar10) * (float)uStack_6 + (point->z - point0->z) * fVar5;
+  uVar15 = point0->x;
+  uVar16 = point0->y;
+  fVar8 = point0->z;
+  __return_storage_ptr__->x = (float)uStack_6 * fVar14 + (float)uVar15;
+  __return_storage_ptr__->y = uStack_6._4_4_ * fVar14 + (float)uVar16;
+  __return_storage_ptr__->z = fVar5 * fVar14 + fVar8;
   return __return_storage_ptr__;
 }
 
 
 /* Single SignedAngle(Vector3, Vector3, Vector3) */
 
-float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_SignedAngle(Vector3 from,Vector3 to,Vector3 axis,MethodInfo *method)
+float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_SignedAngle(Vector3 *from,Vector3 *to,Vector3 *axis,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffec,from,(MethodInfo *)0x0);
-  pMVar2 = (MethodInfo *)pVVar1->y;
-  fVar3 = pVVar1->z;
-  value.y = to.y;
-  value.x = to.x;
-  value.z = to.z;
-  fVar4 = to.z;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffd4,value,pMVar2);
-  uVar5 = pVVar1->x;
-  uVar6 = pVVar1->y;
-  fVar3 = (float)uVar6 * (float)pMVar2 + (float)uVar5 * fVar4 + pVVar1->z * fVar3;
-  if (1.0 - fVar3 < 1e-05) {
-    return 0.0;
+  method_00 = (MethodInfo *)axis;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_normalized(aVStack_2,from,(MethodInfo *)axis);
+  uVar3 = pVVar1->x;
+  uVar4 = pVVar1->y;
+  fVar5 = pVVar1->z;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_normalized(aVStack_2,to,method_00);
+  uVar6 = pVVar1->x;
+  uVar7 = pVVar1->y;
+  fVar5 = (float)uVar4 * (float)uVar7 + (float)uVar3 * (float)uVar6 + fVar5 * pVVar1->z;
+  if (1.0 - fVar5 < 1e-05) {
+    fVar5 = 0.0;
   }
-  if (1e-05 <= fVar3 + 1.0) {
-    fVar4 = from.y * to.z;
-    fVar3 = from.x * to.z;
-    to.z = from.x * to.y - to.x * from.y;
-    cosine = 0.0;
-    value_00.y = to.x * from.z - fVar3;
-    value_00.x = fVar4 - from.z * to.y;
-    value_00.z = to.z;
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&to,value_00,(MethodInfo *)0x0);
-    pMVar2 = (MethodInfo *)pVVar1->z;
-    fVar3 = MathEx::MathEx_SafeAcos(cosine,pMVar2);
-    to.z = fVar3 * 57.29578;
-    if (axis.y * cosine + axis.x * 4.402025e-29 + axis.z * (float)pMVar2 < 0.0) {
-      to.z = -to.z;
+  else if (fVar5 + 1.0 < 1e-05) {
+    fVar5 = 180.0;
+  }
+  else {
+    aVStack_2[0].x = from->x;
+    aVStack_2[0].y = from->y;
+    uVar8 = to->x;
+    uVar9 = to->y;
+    fVar10 = to->z * aVStack_2[0].y - (float)uVar9 * from->z;
+    fVar11 = (float)uVar8 * from->z - to->z * aVStack_2[0].x;
+    fVar12 = (float)uVar9 * aVStack_2[0].x - (float)uVar8 * aVStack_2[0].y;
+    uStack_13 = CONCAT44(fVar11,fVar10);
+    fStack_14 = fVar12;
+    fVar15 = (float)FUN_?(&uStack_13);
+    if (1e-05 < fVar15) {
+      fVar12 = fVar12 / fVar15;
+      uStack_13 = CONCAT44(fVar11 / fVar15,fVar10 / fVar15);
     }
-    return to.z;
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pVVar16 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uStack_13._0_4_ = (pVVar16->zeroVector).x;
+      uStack_13._4_4_ = (pVVar16->zeroVector).y;
+      fVar12 = (pVVar16->zeroVector).z;
+    }
+    fVar15 = 1.0;
+    if (fVar5 <= 1.0) {
+      fVar15 = fVar5;
+    }
+    fVar5 = -1.0;
+    if (-1.0 <= fVar15) {
+      fVar5 = fVar15;
+    }
+    fVar5 = (float)func_?(fVar5);
+    uVar17 = axis->x;
+    uVar18 = axis->y;
+    fVar5 = fVar5 * 57.29578;
+    if (uStack_13._4_4_ * (float)uVar18 + (float)uStack_13 * (float)uVar17 + fVar12 * axis->z < 0.0) {
+      fVar5 = -fVar5;
+    }
   }
-  return 180.0;
+  return fVar5;
 }
 

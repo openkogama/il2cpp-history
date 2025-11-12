@@ -15,8 +15,6 @@ public class ViewReleaseVersion : MonoBehaviour
 	// Fields
 	[SerializeField]
 	private UnityEngine.UI.Text text;
-	[SerializeField]
-	private KoGaMaSettingsContainer koGaMaSettingsContainer;
 
 	// Constructors
 	public ViewReleaseVersion();

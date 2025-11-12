@@ -13,14 +13,10 @@ float Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_AxisAlpha(Met
 Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_CameraBkGradientFirstColor(Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x47,0x47,0x47,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  __return_storage_ptr__->r = 0.2784314;
+  __return_storage_ptr__->g = 0.2784314;
+  __return_storage_ptr__->b = 0.2784314;
+  __return_storage_ptr__->a = 1.0;
   return __return_storage_ptr__;
 }
 
@@ -43,14 +39,10 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_CameraBkGra
 Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_CenterAxisColor(Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xcc,0xcc,0xcc,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  __return_storage_ptr__->r = 0.8000001;
+  __return_storage_ptr__->g = 0.8000001;
+  __return_storage_ptr__->b = 0.8000001;
+  __return_storage_ptr__->a = 1.0;
   return __return_storage_ptr__;
 }
 
@@ -60,14 +52,10 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_CenterAxisC
 Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_GridLineColor(Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x80,0x80,0x80,0x66,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  __return_storage_ptr__->r = 0.5019608;
+  __return_storage_ptr__->g = 0.5019608;
+  __return_storage_ptr__->b = 0.5019608;
+  __return_storage_ptr__->a = 0.40000004;
   return __return_storage_ptr__;
 }
 
@@ -103,14 +91,10 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_GuideFillCo
 Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_HoveredAxisColor(Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xf6,0xf2,0x32,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  __return_storage_ptr__->r = 0.96470594;
+  __return_storage_ptr__->g = 0.9490197;
+  __return_storage_ptr__->b = 0.19607845;
+  __return_storage_ptr__->a = 1.0;
   return __return_storage_ptr__;
 }
 
@@ -120,14 +104,10 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_HoveredAxis
 Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_XAxisColor(Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xdb,0x3e,0x1d,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  __return_storage_ptr__->r = 0.8588236;
+  __return_storage_ptr__->g = 0.24313727;
+  __return_storage_ptr__->b = 0.1137255;
+  __return_storage_ptr__->a = 1.0;
   return __return_storage_ptr__;
 }
 
@@ -137,14 +117,10 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_XAxisColor(
 Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_YAxisColor(Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x9a,0xf3,0x48,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  __return_storage_ptr__->r = 0.6039216;
+  __return_storage_ptr__->g = 0.95294124;
+  __return_storage_ptr__->b = 0.28235295;
+  __return_storage_ptr__->a = 1.0;
   return __return_storage_ptr__;
 }
 
@@ -154,14 +130,10 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_YAxisColor(
 Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_ZAxisColor(Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x3a,0x7a,0xf8,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  __return_storage_ptr__->r = 0.227451;
+  __return_storage_ptr__->g = 0.4784314;
+  __return_storage_ptr__->b = 0.9725491;
+  __return_storage_ptr__->a = 1.0;
   return __return_storage_ptr__;
 }
 

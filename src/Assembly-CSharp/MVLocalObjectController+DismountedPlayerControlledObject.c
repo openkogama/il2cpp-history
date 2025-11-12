@@ -4,8 +4,17 @@
 bool Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObject::MVLocalObjectController_DismountedPlayerControlledObject_ReadyToUnRegister(MVLocalObjectController_DismountedPlayerControlledObject *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  return 30.0 < fVar1 - (this->fields).dismountTime;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
+  }
+  pcRam_? = pcVar1;
+  fVar4 = (float)(*pcRam_?)();
+  return 30.0 < fVar4 - (this->fields).dismountTime;
 }
 
 
@@ -14,8 +23,17 @@ bool Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObje
 void Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObject::MVLocalObjectController_DismountedPlayerControlledObject_SetTimeBeforeUnregister(MVLocalObjectController_DismountedPlayerControlledObject *this,float newTimeBeforeUnregister,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).dismountTime = fVar1 - (30.0 - newTimeBeforeUnregister);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  (this->fields).dismountTime = fVar3 - (30.0 - newTimeBeforeUnregister);
   return;
 }
 
@@ -25,11 +43,34 @@ void Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObje
 void Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObject::MVLocalObjectController_DismountedPlayerControlledObject__ctor(MVLocalObjectController_DismountedPlayerControlledObject *this,ILocalObject *playerControlledObject,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  bVar1 = iRam_? != 0;
   (this->fields).playerControlledObject = playerControlledObject;
-  func_?(&(this->fields).playerControlledObject,playerControlledObject);
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).dismountTime = fVar1;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).playerControlledObject >> 0xc);
+    playerControlledObject = (ILocalObject *)(ulonglong)((uVar2 & 0x1fffff) >> 6);
+    method = (MethodInfo *)(ulonglong)(uVar2 & 0x3f);
+    do {
+      uVar3 = *(ulonglong *)((longlong)playerControlledObject * 8 + 0xADDR);
+      puVar4 = (ulonglong *)((longlong)playerControlledObject * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar3 == *puVar4;
+      if (bVar1) {
+        *puVar4 = uVar3 | 1L << (longlong)method;
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pcVar5 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar5 = (code *)FUN_?(&UNK_?,playerControlledObject,method), pcVar5 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pcRam_? = pcVar5;
+  fVar7 = (float)(*pcRam_?)();
+  (this->fields).dismountTime = fVar7;
   return;
 }
 

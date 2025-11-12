@@ -28,7 +28,7 @@ public class AccessoryInventoryViewItem : MonoBehaviour, IPointerEnterHandler, I
 	[SerializeField]
 	private AccessoryItemBackground accessoryItemBackground;
 	[SerializeField]
-	private Button purchasePopupButton;
+	private UnityEngine.UI.Button purchasePopupButton;
 	[SerializeField]
 	private AvatarAccessoryPurchasePopup purchasePopupPrefab;
 	[SerializeField]

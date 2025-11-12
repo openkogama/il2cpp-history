@@ -16,7 +16,7 @@ public class ContextMenuButton : MonoBehaviour, IPointerDownHandler
 {
 	// Fields
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private UnityEngine.UI.Text text;
 

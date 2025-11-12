@@ -17,7 +17,7 @@ public class TabMenuButtonAccessory : TabMenuButtonBase, IHighlightedElement
 {
 	// Fields
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private LayoutElement layoutElement;
 	[SerializeField]

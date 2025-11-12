@@ -4,21 +4,30 @@
 bool Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader_Update(GUICellCursor_Fader *this,float *fadeVal,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((this->fields).end <= fVar1) {
-    *fadeVal = (this->fields).endValue;
-    return 0;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
   }
-  fVar2 = (this->fields).startValue;
-  fVar1 = fVar1 * (this->fields).durationInv - (this->fields).startMulDurationInv;
-  if (fVar1 < 0.0) {
-    fVar1 = 0.0;
+  pcRam_? = pcVar1;
+  fVar4 = (float)(*pcRam_?)();
+  if (fVar4 < (this->fields).end) {
+    fVar5 = (this->fields).startValue;
+    fVar4 = fVar4 * (this->fields).durationInv - (this->fields).startMulDurationInv;
+    if (fVar4 < 0.0) {
+      fVar4 = 0.0;
+    }
+    else if (1.0 < fVar4) {
+      fVar4 = 1.0;
+    }
+    *fadeVal = ((this->fields).endValue - fVar5) * fVar4 + fVar5;
+    return 1;
   }
-  else if (1.0 < fVar1) {
-    fVar1 = 1.0;
-  }
-  *fadeVal = ((this->fields).endValue - fVar2) * fVar1 + fVar2;
-  return 1;
+  *fadeVal = (this->fields).endValue;
+  return 0;
 }
 
 
@@ -27,14 +36,22 @@ bool Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader_Update(GUICel
 void Assembly-CSharp.dll::GUICellCursor+Fader::GUICellCursor_Fader__ctor(GUICellCursor_Fader *this,float duration,float startValue,float endValue,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).start = fVar1;
-  (this->fields).end = fVar1 + duration;
-  (this->fields).startMulDurationInv = fVar1 / duration;
-  (this->fields).durationInv = 1.0 / duration;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  (this->fields).start = fVar3;
   (this->fields).startValue = startValue;
   (this->fields).endValue = endValue;
+  (this->fields).durationInv = 1.0 / duration;
+  (this->fields).end = fVar3 + duration;
+  (this->fields).startMulDurationInv = fVar3 / duration;
   return;
 }
 

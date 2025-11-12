@@ -25,11 +25,11 @@ public class SwitchThemeButton : MonoBehaviour
 	[SerializeField]
 	private GameObject memberUI;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	private Texture2D levelRequirementTextureAsset;
 
 	// Properties
-	public Button Button { get; }
+	public UnityEngine.UI.Button Button { get; }
 	private int LevelRequirement { set; }
 	private int GoldRequirement { set; }
 

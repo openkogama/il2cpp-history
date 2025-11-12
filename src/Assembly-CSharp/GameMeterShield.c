@@ -5,32 +5,40 @@ void Assembly-CSharp.dll::GameMeterShield::GameMeterShield_Initialize(GameMeterS
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__GameMeterShield__OnProgressUpdate_float_);
-    func_?(&MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<float>_);
-    func_?(&MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__);
-    func_?(&TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<float>);
+    FUN_?(&MethodInfo__GameMeterShield__OnProgressUpdate_float_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<float>_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
   if (pSVar1 != (SpawnRoleDataMediator *)0x0) {
-    this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)(pSVar1->fields).shield;
-    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<float>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor((UnityAction_1_System_Single_ *)value,(Object *)this,MethodInfo__GameMeterShield__OnProgressUpdate_float_,(MethodInfo *)0x0);
-    if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange(this_00,value,MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<float>_);
+    pSVar2 = (pSVar1->fields).shield;
+    uVar3 = FUN_?(TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<float>);
+    FUN_?(uVar3,this);
+    if (pSVar2 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_System_Single_ *)0x0) {
+      FUN_?(pSVar2,uVar3);
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,1,(MethodInfo *)0x0);
       pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
-      if ((pSVar1 != (SpawnRoleDataMediator *)0x0) && (this_01 = (SpawnRoleVariable_1_System_Single_ *)(pSVar1->fields).shield, this_01 != (SpawnRoleVariable_1_System_Single_ *)0x0)) {
-        fVar2 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::SpawnRoleVariable_1_System_Single__get_Value(this_01,MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__);
+      if (((pSVar1 != (SpawnRoleDataMediator *)0x0) && (pSVar2 = (pSVar1->fields).shield, pSVar2 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_System_Single_ *)0x0)) && (pSVar4 = (pSVar2->fields)._.subscribableVariable, pSVar4 != (SubscribableVariable_1_System_Single_ *)0x0)) {
+        fVar5 = (pSVar4->fields)._.value;
         (this->fields).elapsedInterpolationTime = 0.0;
-        (this->fields).interpolateTowardsShieldProgress = fVar2 / 100.0;
+        (this->fields).interpolateTowardsShieldProgress = fVar5 / 100.0;
         return;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -52,52 +60,85 @@ void Assembly-CSharp.dll::GameMeterShield::GameMeterShield_Update(GameMeterShiel
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).elapsedInterpolationTime;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = fVar2 + fVar1;
-  fVar1 = (this->fields).previousShieldProgress;
-  (this->fields).elapsedInterpolationTime = fVar2;
-  if (fVar2 < 0.0) {
-    fVar2 = 0.0;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else if (1.0 < fVar2) {
-    fVar2 = 1.0;
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcRam_?)();
+  fVar5 = (this->fields).previousShieldProgress;
+  fVar4 = fVar4 + fVar1;
+  (this->fields).elapsedInterpolationTime = fVar4;
+  if (fVar4 < 0.0) {
+    fVar4 = 0.0;
   }
-  pPVar3 = (this->fields).progressBar;
-  fVar1 = ((this->fields).interpolateTowardsShieldProgress - fVar1) * fVar2 + fVar1;
-  (this->fields).previousShieldProgress = fVar1;
-  if (pPVar3 != (ProgressBar *)0x0) {
-    if (fVar1 < 0.0) {
-      fVar1 = 0.0;
+  else if (1.0 < fVar4) {
+    fVar4 = 1.0;
+  }
+  pPVar6 = (this->fields).progressBar;
+  fVar5 = ((this->fields).interpolateTowardsShieldProgress - fVar5) * fVar4 + fVar5;
+  (this->fields).previousShieldProgress = fVar5;
+  if (pPVar6 != (ProgressBar *)0x0) {
+    if (fVar5 < 0.0) {
+      fVar5 = 0.0;
     }
-    else if (1.0 < fVar1) {
-      fVar1 = 1.0;
+    else if (1.0 < fVar5) {
+      fVar5 = 1.0;
     }
-    (pPVar3->fields).progress = fVar1;
-    this_00 = (pPVar3->fields).progressBar;
+    (pPVar6->fields).progress = fVar5;
+    this_00 = (pPVar6->fields).progressBar;
     if (this_00 != (Scrollbar *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size(this_00,fVar1,(MethodInfo *)0x0);
-      index = 0;
-      pLVar4 = (this->fields)._.gameMeterVisualEffects;
-      while (pLVar4 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
-        if ((pLVar4->fields)._size <= index) {
-          return;
-        }
-        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._.gameMeterVisualEffects;
-        if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_01,index,MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_), RVar5 == (RegexCharClass_SingleRange)0x0)) break;
-        (**(code **)(*(int *)RVar5 + 0xe0))();
-        index = index + 1;
-        pLVar4 = (this->fields)._.gameMeterVisualEffects;
+      UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size(this_00,fVar5,(MethodInfo *)0x0);
+      pLVar7 = (this->fields)._.gameMeterVisualEffects;
+      uVar8 = 0;
+      if (pLVar7 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
+        lVar9 = 0x20;
+        do {
+          if ((pLVar7->fields)._size <= (int)uVar8) {
+            return;
+          }
+          pLVar7 = (this->fields)._.gameMeterVisualEffects;
+          if (pLVar7 == (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) break;
+          if ((uint)(pLVar7->fields)._size <= uVar8) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pGVar10 = (pLVar7->fields)._items;
+          if (pGVar10 == (GameMeterVisualEffect__Array *)0x0) break;
+          if ((uint)pGVar10->max_length <= uVar8) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          plVar11 = *(longlong **)((longlong)pGVar10->vector + lVar9 + -0x20);
+          if (plVar11 == (longlong *)0x0) break;
+          (**(code **)(*plVar11 + 0x178))(plVar11,*(undefined8 *)(*plVar11 + 0x180));
+          pLVar7 = (this->fields)._.gameMeterVisualEffects;
+          uVar8 = uVar8 + 1;
+          lVar9 = lVar9 + 8;
+        } while (pLVar7 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0);
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

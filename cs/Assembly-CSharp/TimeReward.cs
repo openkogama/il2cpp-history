@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine.Networking;
+using UnityEngine.Scripting;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -63,6 +64,7 @@ public class TimeReward : IUpdatecontrollerSubscriberUpdate
 			public int gold;
 
 			// Constructors
+			[Preserve]
 			public RewardData();
 
 			// Methods

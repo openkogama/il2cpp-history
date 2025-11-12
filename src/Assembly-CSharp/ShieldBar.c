@@ -5,41 +5,96 @@ void Assembly-CSharp.dll::ShieldBar::ShieldBar_Update(ShieldBar *this,MethodInfo
 
 {
   fVar1 = (this->fields).elapsedInterpolationTime;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = fVar2 + fVar1;
-  fVar1 = (this->fields).previousShieldValue;
-  (this->fields).elapsedInterpolationTime = fVar2;
-  if (fVar2 < 0.0) {
-    fVar2 = 0.0;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else if (1.0 < fVar2) {
-    fVar2 = 1.0;
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcRam_?)();
+  fVar5 = (this->fields).previousShieldValue;
+  fVar4 = fVar4 + fVar1;
+  (this->fields).elapsedInterpolationTime = fVar4;
+  if (fVar4 < 0.0) {
+    fVar4 = 0.0;
   }
-  pTVar3 = (this->fields).shieldPivot;
-  fVar1 = ((this->fields).interpolateTowardsShield - fVar1) * fVar2 + fVar1;
-  (this->fields).previousShieldValue = fVar1;
-  if (pTVar3 != (Transform *)0x0) {
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale((Vector3 *)&stack0xffffffe4,pTVar3,(MethodInfo *)0x0);
-    uVar5 = pVVar4->y;
-    fVar1 = fVar1 / 100.0;
-    if (fVar1 < 0.0) {
-      fVar1 = 0.0;
-    }
-    else if (1.0 < fVar1) {
-      fVar1 = 1.0;
-    }
-    pTVar3 = (this->fields).shieldPivot;
-    if (pTVar3 != (Transform *)0x0) {
-      value.y = (float)uVar5;
-      value.x = fVar1;
-      value.z = pVVar4->z;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar3,value,(MethodInfo *)0x0);
-      return;
-    }
+  else if (1.0 < fVar4) {
+    fVar4 = 1.0;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pTVar6 = (this->fields).shieldPivot;
+  fVar5 = ((this->fields).interpolateTowardsShield - fVar5) * fVar4 + fVar5;
+  (this->fields).previousShieldValue = fVar5;
+  if (pTVar6 == (Transform *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar7 = (pTVar6->fields)._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar6,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar7);
+  fVar5 = fVar5 / 100.0;
+  if (fVar5 < 0.0) {
+    fVar5 = 0.0;
+  }
+  else if (1.0 < fVar5) {
+    fVar5 = 1.0;
+  }
+  pTVar6 = (this->fields).shieldPivot;
+  uStack_8 = (ulonglong)(uint)fVar5;
+  if (pTVar6 == (Transform *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  uStack_9 = 0;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar7 = (pTVar6->fields)._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar6,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar7,&uStack_8);
   return;
 }
 
@@ -49,15 +104,39 @@ void Assembly-CSharp.dll::ShieldBar::ShieldBar_Update(ShieldBar *this,MethodInfo
 float Assembly-CSharp.dll::ShieldBar::ShieldBar_get_Shield(ShieldBar *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).shieldPivot;
-  if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale(&VStack_2,this_00,(MethodInfo *)0x0);
-    return pVVar1->x * 100.0;
+  obj = (this->fields).shieldPivot;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    fVar2 = (float)(*pcVar1)();
+    return fVar2;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  fVar4 = (float10)(*pcVar3)();
-  return (float)fVar4;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_3 = 0;
+  uStack_4 = 0;
+  pvVar5 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    fVar2 = (float)(*pcVar1)();
+    return fVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar1 = (code *)swi(3);
+    fVar2 = (float)(*pcVar1)();
+    return fVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar5,&uStack_3);
+  return (float)uStack_3 * 100.0;
 }
 
 

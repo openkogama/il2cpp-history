@@ -1,345 +1,524 @@
 
 /* Single GetAbsDistanceToPoint(Plane, Vector3) */
 
-float Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetAbsDistanceToPoint(Plane plane,Vector3 point,MethodInfo *method)
+float Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetAbsDistanceToPoint(Plane *plane,Vector3 *point,MethodInfo *method)
 
 {
-  return ABS(plane.m_Normal.x * point.x + plane.m_Normal.y * point.y + plane.m_Normal.z * point.z + plane.m_Distance);
+  uVar1 = point->x;
+  uVar2 = point->y;
+  uVar3 = (plane->m_Normal).x;
+  uVar4 = (plane->m_Normal).y;
+  return ABS((float)uVar2 * (float)uVar4 + (float)uVar1 * (float)uVar3 + point->z * (plane->m_Normal).z + plane->m_Distance);
 }
 
 
 /* Plane GetCameraFacingAxisSlicePlane(Vector3, Vector3, Camera) */
 
-Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane(Plane *__return_storage_ptr__,Vector3 axisOrigin,Vector3 axis,Camera *camera,MethodInfo *method)
+Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane(Plane *__return_storage_ptr__,Vector3 *axisOrigin,Vector3 *axis,Camera *camera,MethodInfo *method)
 
 {
   if (camera != (Camera *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)camera,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward((Vector3 *)&stack0xffffffd4,pTVar1,(MethodInfo *)0x0);
-      fVar3 = pVVar2->x;
-      fVar4 = pVVar2->y;
-      fVar5 = pVVar2->z;
-      if (ABS(ABS(axis.y * fVar4 + axis.x * fVar3 + axis.z * fVar5) - 1.0) < 1e-05) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward(&VStack_3,pTVar1,(MethodInfo *)0x0);
+      uVar4 = axis->x;
+      uVar5 = axis->y;
+      VStack_6.x = pVVar2->x;
+      VStack_6.y = pVVar2->y;
+      fVar7 = pVVar2->z;
+      aVStack_8[0]._0_8_ = VStack_6._0_8_;
+      if (ABS(ABS((float)uVar5 * VStack_6.y + (float)uVar4 * VStack_6.x + axis->z * pVVar2->z) - 1.0) < 1e-05) {
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)camera,(MethodInfo *)0x0);
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right((Vector3 *)&stack0xffffffd4,pTVar1,(MethodInfo *)0x0);
-        uVar6 = pVVar2->x;
-        uVar7 = pVVar2->y;
-        fVar5 = pVVar2->z;
-        fVar3 = (float)uVar6;
-        fVar4 = (float)uVar7;
+        if (pTVar1 == (Transform *)0x0) goto DAT_?;
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right(aVStack_8,pTVar1,(MethodInfo *)0x0);
+        VStack_6.x = pVVar2->x;
+        VStack_6.y = pVVar2->y;
+        fVar7 = pVVar2->z;
       }
-      VVar8.y = fVar5 * axis.x - fVar3 * axis.z;
-      VVar8.x = fVar4 * axis.z - fVar5 * axis.y;
-      VVar8.z = fVar3 * axis.y - fVar4 * axis.x;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffd4,VVar8,(MethodInfo *)0x0);
-      fVar5 = pVVar2->x;
-      fVar9 = pVVar2->y;
-      fVar3 = pVVar2->z;
-      fVar10 = (float10)func_?();
-      if (0.0001 <= (float)fVar10) {
-        __return_storage_ptr__ = (Plane *)(fVar5 * axis.y - fVar9 * axis.x);
-        fVar11 = fVar3 * axis.x - fVar5 * axis.z;
-        VVar8.x = fVar9 * axis.z - fVar3 * axis.y;
-        VVar8 = (Vector3)CONCAT84(uVar12,VVar8.x);
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffd4,VVar8,(MethodInfo *)0x0);
-        uVar13 = pVVar2->x;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffd4,*pVVar2,(MethodInfo *)0x0);
-        uVar14 = pVVar2->x;
-        uVar15 = pVVar2->y;
-        fVar3 = pVVar2->z;
-        (__return_storage_ptr__->m_Normal).x = (float)uVar14;
-        (__return_storage_ptr__->m_Normal).y = (float)uVar15;
-        (__return_storage_ptr__->m_Normal).z = fVar3;
-        __return_storage_ptr__->m_Distance = -((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.388088e-29 + (float)uVar13 * fVar3);
-        return __return_storage_ptr__;
+      VStack_3.x = axis->x;
+      VStack_3.y = axis->y;
+      fVar9 = VStack_6.y * axis->z - fVar7 * VStack_3.y;
+      fVar10 = VStack_6.x * VStack_3.y - VStack_6.y * VStack_3.x;
+      fVar7 = fVar7 * VStack_3.x - VStack_6.x * axis->z;
+      VStack_6.y = fVar7;
+      VStack_6.x = fVar9;
+      VStack_6.z = fVar10;
+      fVar11 = (float)FUN_?(&VStack_6);
+      if (1e-05 < fVar11) {
+        fVar9 = fVar9 / fVar11;
+        fVar7 = fVar7 / fVar11;
+        fVar10 = fVar10 / fVar11;
       }
-      (__return_storage_ptr__->m_Normal).x = 0.0;
-      (__return_storage_ptr__->m_Normal).y = 0.0;
-      (__return_storage_ptr__->m_Normal).z = 0.0;
-      __return_storage_ptr__->m_Distance = 0.0;
+      else {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar9 = (pVVar12->zeroVector).x;
+        fVar7 = (pVVar12->zeroVector).y;
+        fVar10 = (pVVar12->zeroVector).z;
+      }
+      VStack_3.y = fVar7;
+      VStack_3.x = fVar9;
+      VStack_3.z = fVar10;
+      VStack_6.x = fVar9;
+      VStack_6.y = fVar7;
+      fVar7 = (float)FUN_?(&VStack_3);
+      if (fVar7 < 0.0001) {
+        fVar10 = 0.0;
+        fVar11 = 0.0;
+        fVar7 = 0.0;
+        fVar9 = 0.0;
+      }
+      else {
+        uVar13 = axis->x;
+        uVar14 = axis->y;
+        fVar11 = VStack_6.y * axis->z - fVar10 * (float)uVar14;
+        fVar7 = VStack_6.x * (float)uVar14 - VStack_6.y * (float)uVar13;
+        fVar10 = fVar10 * (float)uVar13 - VStack_6.x * axis->z;
+        VStack_3.y = fVar10;
+        VStack_3.x = fVar11;
+        VStack_3.z = fVar7;
+        fVar9 = (float)FUN_?(&VStack_3);
+        if (1e-05 < fVar9) {
+          VStack_6.x = fVar11 / fVar9;
+          fVar7 = fVar7 / fVar9;
+          VStack_6.y = fVar10 / fVar9;
+        }
+        else {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector3);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+          VStack_6.x = (pVVar12->zeroVector).x;
+          VStack_6.y = (pVVar12->zeroVector).y;
+          fVar7 = (pVVar12->zeroVector).z;
+        }
+        fVar10 = VStack_6.x;
+        fVar11 = VStack_6.y;
+        VStack_3.x = VStack_6.x;
+        VStack_3.y = VStack_6.y;
+        VStack_3.z = fVar7;
+        fVar9 = (float)FUN_?(&VStack_3);
+        if (1e-05 < fVar9) {
+          fVar10 = fVar10 / fVar9;
+          fVar11 = fVar11 / fVar9;
+          fVar7 = fVar7 / fVar9;
+        }
+        else {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector3);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+          fVar10 = (pVVar12->zeroVector).x;
+          fVar11 = (pVVar12->zeroVector).y;
+          fVar7 = (pVVar12->zeroVector).z;
+        }
+        uVar15 = axisOrigin->x;
+        uVar16 = axisOrigin->y;
+        fVar9 = -(fVar11 * (float)uVar16 + fVar10 * (float)uVar15 + fVar7 * axisOrigin->z);
+      }
+      (__return_storage_ptr__->m_Normal).x = fVar10;
+      (__return_storage_ptr__->m_Normal).y = fVar11;
+      (__return_storage_ptr__->m_Normal).z = fVar7;
+      __return_storage_ptr__->m_Distance = fVar9;
       return __return_storage_ptr__;
     }
   }
-code_?:
-  func_?();
-  pcVar16 = (code *)swi(3);
-  pPVar17 = (Plane *)(*pcVar16)();
-  return pPVar17;
+DAT_?:
+  FUN_?();
+  pcVar17 = (code *)swi(3);
+  pPVar18 = (Plane *)(*pcVar17)();
+  return pPVar18;
 }
 
 
 /* Int32 GetClosestPtInFront(Plane, List`1[UnityEngine.Vector3]) */
 
-int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetClosestPtInFront(Plane plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
+int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetClosestPtInFront(Plane *plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = -1;
-  index = 0;
-  fStack_2 = 3.4028235e+38;
-  if (points == (List_1_UnityEngine_Vector3_ *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    iVar1 = (*pcVar3)();
-    return iVar1;
-  }
-  for (; index < (points->fields)._size; index = index + 1) {
-    pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    uStack_6._0_4_ = pVVar4->alias;
-    uStack_6._4_4_ = pVVar4->path;
-    pVStack_7 = pVVar4->asset;
-    fVar8 = plane.m_Normal.y * (float)uStack_6._4_4_ + plane.m_Normal.x * (float)(undefined4)uStack_6 + plane.m_Normal.z * (float)pVStack_7 + plane.m_Distance;
-    if ((0.0 < fVar8) && (fVar8 < fStack_2)) {
-      iVar1 = index;
-      fStack_2 = fVar8;
+  fVar1 = 3.4028235e+38;
+  uVar2 = 0xffffffff;
+  uVar3 = 0;
+  if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
+    uVar4 = (points->fields)._size;
+    lVar5 = 0;
+    while( true ) {
+      if ((int)uVar4 <= (int)uVar3) {
+        return uVar2;
+      }
+      if (uVar4 <= uVar3) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      pVVar8 = (points->fields)._items;
+      if (pVVar8 == (Vector3__Array *)0x0) break;
+      if ((uint)pVVar8->max_length <= uVar3) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      uVar9 = *(undefined8 *)((longlong)&pVVar8->vector[0].x + lVar5);
+      uVar10 = (plane->m_Normal).x;
+      uVar11 = (plane->m_Normal).y;
+      fVar12 = (float)((ulonglong)uVar9 >> 0x20) * (float)uVar11 + (float)uVar9 * (float)uVar10 + *(float *)((longlong)&pVVar8->vector[0].z + lVar5) * (plane->m_Normal).z + plane->m_Distance;
+      if ((0.0 < fVar12) && (fVar12 < fVar1)) {
+        fVar1 = fVar12;
+        uVar2 = uVar3;
+      }
+      uVar3 = uVar3 + 1;
+      lVar5 = lVar5 + 0xc;
     }
   }
-  return iVar1;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  iVar7 = (*pcVar6)();
+  return iVar7;
 }
 
 
 /* Int32 GetClosestPtInFrontOrOnPlane(Plane, List`1[UnityEngine.Vector3]) */
 
-int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetClosestPtInFrontOrOnPlane(Plane plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
+int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetClosestPtInFrontOrOnPlane(Plane *plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iStack_1 = -1;
-  fStack_2 = 3.4028235e+38;
-  iVar3 = 0;
+  fVar1 = 3.4028235e+38;
+  uVar2 = 0xffffffff;
+  uVar3 = 0;
   if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    while (index = iVar3, index < (points->fields)._size) {
-      pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-      uStack_6._0_4_ = pVVar4->alias;
-      uStack_6._4_4_ = pVVar4->path;
-      pVStack_7 = pVVar4->asset;
-      fVar8 = plane.m_Normal.y * (float)uStack_6._4_4_ + plane.m_Normal.x * (float)(undefined4)uStack_6 + plane.m_Normal.z * (float)pVStack_7 + plane.m_Distance;
-      if (((0.0 <= fVar8) && (fVar8 < fStack_2)) || (ABS(fVar8) < 0.0001)) {
-        iVar3 = index + 1;
-        iStack_1 = index;
-        fStack_2 = fVar8;
+    uVar4 = (points->fields)._size;
+    lVar5 = 0;
+    while( true ) {
+      if ((int)uVar4 <= (int)uVar3) {
+        return uVar2;
       }
-      else {
-        iVar3 = index + 1;
+      if (uVar4 <= uVar3) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
       }
+      pVVar8 = (points->fields)._items;
+      if (pVVar8 == (Vector3__Array *)0x0) break;
+      if ((uint)pVVar8->max_length <= uVar3) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      uVar9 = *(undefined8 *)((longlong)&pVVar8->vector[0].x + lVar5);
+      uVar10 = (plane->m_Normal).x;
+      uVar11 = (plane->m_Normal).y;
+      fVar12 = (float)((ulonglong)uVar9 >> 0x20) * (float)uVar11 + (float)uVar9 * (float)uVar10 + *(float *)((longlong)&pVVar8->vector[0].z + lVar5) * (plane->m_Normal).z + plane->m_Distance;
+      if (((0.0 <= fVar12) && (fVar12 < fVar1)) || (ABS(fVar12) < 0.0001)) {
+        fVar1 = fVar12;
+        uVar2 = uVar3;
+      }
+      uVar3 = uVar3 + 1;
+      lVar5 = lVar5 + 0xc;
     }
-    return iStack_1;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  iVar10 = (*pcVar9)();
-  return iVar10;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  iVar7 = (*pcVar6)();
+  return iVar7;
 }
 
 
 /* Int32 GetFurthestPtBehind(Plane, List`1[UnityEngine.Vector3]) */
 
-int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetFurthestPtBehind(Plane plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
+int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetFurthestPtBehind(Plane *plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = -1;
-  index = 0;
-  fStack_2 = 3.4028235e+38;
-  if (points == (List_1_UnityEngine_Vector3_ *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    iVar1 = (*pcVar3)();
-    return iVar1;
-  }
-  for (; index < (points->fields)._size; index = index + 1) {
-    pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    uStack_6._0_4_ = pVVar4->alias;
-    uStack_6._4_4_ = pVVar4->path;
-    pVStack_7 = pVVar4->asset;
-    fVar8 = plane.m_Normal.y * (float)uStack_6._4_4_ + plane.m_Normal.x * (float)(undefined4)uStack_6 + plane.m_Normal.z * (float)pVStack_7 + plane.m_Distance;
-    if ((fVar8 < 0.0) && (fVar8 < fStack_2)) {
-      iVar1 = index;
-      fStack_2 = fVar8;
+  fVar1 = 3.4028235e+38;
+  uVar2 = 0xffffffff;
+  uVar3 = 0;
+  if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
+    uVar4 = (points->fields)._size;
+    lVar5 = 0;
+    while( true ) {
+      if ((int)uVar4 <= (int)uVar3) {
+        return uVar2;
+      }
+      if (uVar4 <= uVar3) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      pVVar8 = (points->fields)._items;
+      if (pVVar8 == (Vector3__Array *)0x0) break;
+      if ((uint)pVVar8->max_length <= uVar3) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      uVar9 = *(undefined8 *)((longlong)&pVVar8->vector[0].x + lVar5);
+      uVar10 = (plane->m_Normal).x;
+      uVar11 = (plane->m_Normal).y;
+      fVar12 = (float)((ulonglong)uVar9 >> 0x20) * (float)uVar11 + (float)uVar9 * (float)uVar10 + *(float *)((longlong)&pVVar8->vector[0].z + lVar5) * (plane->m_Normal).z + plane->m_Distance;
+      if ((fVar12 < 0.0) && (fVar12 < fVar1)) {
+        fVar1 = fVar12;
+        uVar2 = uVar3;
+      }
+      uVar3 = uVar3 + 1;
+      lVar5 = lVar5 + 0xc;
     }
   }
-  return iVar1;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  iVar7 = (*pcVar6)();
+  return iVar7;
 }
 
 
 /* Int32 GetFurthestPtInFront(Plane, List`1[UnityEngine.Vector3]) */
 
-int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetFurthestPtInFront(Plane plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
+int32_t Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetFurthestPtInFront(Plane *plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = -1;
-  index = 0;
-  fStack_2 = -3.4028235e+38;
-  if (points == (List_1_UnityEngine_Vector3_ *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    iVar1 = (*pcVar3)();
-    return iVar1;
-  }
-  for (; index < (points->fields)._size; index = index + 1) {
-    pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-    uStack_6._0_4_ = pVVar4->alias;
-    uStack_6._4_4_ = pVVar4->path;
-    pVStack_7 = pVVar4->asset;
-    fVar8 = plane.m_Normal.y * (float)uStack_6._4_4_ + plane.m_Normal.x * (float)(undefined4)uStack_6 + plane.m_Normal.z * (float)pVStack_7 + plane.m_Distance;
-    if ((0.0 < fVar8) && (fStack_2 < fVar8)) {
-      iVar1 = index;
-      fStack_2 = fVar8;
+  fVar1 = -3.4028235e+38;
+  uVar2 = 0xffffffff;
+  uVar3 = 0;
+  if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
+    uVar4 = (points->fields)._size;
+    lVar5 = 0;
+    while( true ) {
+      if ((int)uVar4 <= (int)uVar3) {
+        return uVar2;
+      }
+      if (uVar4 <= uVar3) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      pVVar8 = (points->fields)._items;
+      if (pVVar8 == (Vector3__Array *)0x0) break;
+      if ((uint)pVVar8->max_length <= uVar3) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      uVar9 = *(undefined8 *)((longlong)&pVVar8->vector[0].x + lVar5);
+      uVar10 = (plane->m_Normal).x;
+      uVar11 = (plane->m_Normal).y;
+      fVar12 = (float)((ulonglong)uVar9 >> 0x20) * (float)uVar11 + (float)uVar9 * (float)uVar10 + *(float *)((longlong)&pVVar8->vector[0].z + lVar5) * (plane->m_Normal).z + plane->m_Distance;
+      if ((0.0 < fVar12) && (fVar1 < fVar12)) {
+        fVar1 = fVar12;
+        uVar2 = uVar3;
+      }
+      uVar3 = uVar3 + 1;
+      lVar5 = lVar5 + 0xc;
     }
   }
-  return iVar1;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  iVar7 = (*pcVar6)();
+  return iVar7;
 }
 
 
 /* Plane InvertNormal(Plane) */
 
-Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_InvertNormal(Plane *__return_storage_ptr__,Plane plane,MethodInfo *method)
+Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_InvertNormal(Plane *__return_storage_ptr__,Plane *plane,MethodInfo *method)
 
 {
-  VStack_1.z = -plane.m_Normal.z;
+  VStack_1.x = (plane->m_Normal).x;
+  VStack_1.y = (plane->m_Normal).y;
+  VStack_1.z = -(plane->m_Normal).z;
+  fVar2 = plane->m_Distance;
   (__return_storage_ptr__->m_Normal).x = 0.0;
   (__return_storage_ptr__->m_Normal).y = 0.0;
-  (__return_storage_ptr__->m_Normal).z = 0.0;
-  __return_storage_ptr__->m_Distance = 0.0;
-  value.z = VStack_1.z;
-  value.x = (float)(int)(plane.m_Normal._0_8_ ^ 0x8000000080000000);
-  value.y = (float)(int)((plane.m_Normal._0_8_ ^ 0x8000000080000000) >> 0x20);
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_1,value,(MethodInfo *)0x0);
-  fVar3 = pVVar2->y;
-  fVar4 = pVVar2->z;
-  (__return_storage_ptr__->m_Normal).x = pVVar2->x;
-  (__return_storage_ptr__->m_Normal).y = fVar3;
-  (__return_storage_ptr__->m_Normal).z = fVar4;
-  __return_storage_ptr__->m_Distance = -plane.m_Distance;
+  *(undefined8 *)&(__return_storage_ptr__->m_Normal).z = 0;
+  VStack_1._0_8_ = VStack_1._0_8_ ^ 0x8000000080000000;
+  UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor_1(__return_storage_ptr__,&VStack_1,-fVar2,in_R9);
   return __return_storage_ptr__;
 }
 
 
 /* List`1[UnityEngine.Vector3] ProjectAllPoints(Plane, List`1[UnityEngine.Vector3]) */
 
-List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectAllPoints(Plane plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
+List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectAllPoints(Plane *plane,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__);
-    func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__);
-    func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._current.FirstAxisSign = 0;
-  LStack_6._current.SecondAxisSign = 0;
-  LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current.Quadrant = 0;
-  if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if ((points->fields)._size == 0) {
-      pLVar7 = (List_1_UnityEngine_Vector3_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar7,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-      *unaff_FS_OFFSET = uStack_3;
-      return pLVar7;
-    }
-    capacity = (points->fields)._size;
-    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2(this,capacity,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-    pLStack_8 = this;
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator(&LStack_10,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__);
-    uStack_11 = 0;
-    LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar9->_list;
-    LStack_6._index = pLVar9->_index;
-    LStack_6._version = pLVar9->_version;
-    LStack_6._current.Quadrant = (int32_t)(pLVar9->_current).alias;
-    LStack_6._current.FirstAxisSign = (int32_t)(pLVar9->_current).path;
-    LStack_6._current.SecondAxisSign = (int32_t)(pLVar9->_current).asset;
-    uStack_1 = 1;
-    pLStack_12 = &LStack_6;
-    while( true ) {
-      while( true ) {
-        bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__);
-        pMVar14 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-        if (bVar13 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__,unaff_EDI);
-          *unaff_FS_OFFSET = uStack_3;
-          return (List_1_UnityEngine_Vector3_ *)this;
-        }
-        fVar15 = plane.m_Distance + plane.m_Normal.y * (float)LStack_6._current.FirstAxisSign + plane.m_Normal.x * (float)LStack_6._current.Quadrant + plane.m_Normal.z * (float)LStack_6._current.SecondAxisSign;
-        pVStack_16 = (VisualTreeAsset *)((float)LStack_6._current.SecondAxisSign - plane.m_Normal.z * fVar15);
-        pSStack_17 = (String *)((float)LStack_6._current.FirstAxisSign - plane.m_Normal.y * fVar15);
-        pSStack_18 = (String *)((float)LStack_6._current.Quadrant - plane.m_Normal.x * fVar15);
-        if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) goto code_?;
-        piVar19 = &(this->fields)._version;
-        *piVar19 = *piVar19 + 1;
-        pMVar20 = (this->fields)._items;
-        uVar21 = (this->fields)._size;
-        if (pMVar20 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) goto code_?;
-        if (uVar21 < pMVar20->max_length) break;
-        item.FirstAxisSign = (int32_t)pSStack_17;
-        item.Quadrant = (int32_t)pSStack_18;
-        item.SecondAxisSign = (int32_t)pVStack_16;
-        mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,item,pMVar14->klass->rgctx_data[0xe].method);
-      }
-      (this->fields)._size = uVar21 + 1;
-      LStack_10._current.alias = pSStack_18;
-      LStack_10._current.path = pSStack_17;
-      LStack_10._current.asset = pVStack_16;
-      if (pMVar20->max_length <= uVar21) break;
-      *(ulonglong *)(&pMVar20->vector[0].index + uVar21 * 3) = CONCAT44(pSStack_17,pSStack_18);
-      (&pMVar20->vector[0].actualWidth)[uVar21 * 3] = (float)pVStack_16;
-    }
-    func_?();
-  }
+  if (points == (List_1_UnityEngine_Vector3_ *)0x0) {
+    FUN_?();
 code_?:
-  uVar22 = func_?();
-  func_?(uVar22);
-  pcVar23 = (code *)swi(3);
-  pLVar7 = (List_1_UnityEngine_Vector3_ *)(*pcVar23)();
-  return pLVar7;
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pLVar2 = (List_1_UnityEngine_Vector3_ *)(*pcVar1)();
+    return pLVar2;
+  }
+  if ((points->fields)._size == 0) {
+    this = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    FUN_?(this,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+  }
+  else {
+    iVar3 = (points->fields)._size;
+    this = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    FUN_?(this,iVar3,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
+    if (iRam_? != 0) {
+      uVar4 = (uint)((ulonglong)&uStack_5 >> 0xc);
+      uVar6 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+      do {
+        uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+        puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+        LOCK();
+        bVar9 = uVar7 == *puVar8;
+        if (bVar9) {
+          *puVar8 = uVar7 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar9);
+    }
+    ppLStack_10 = (List_1_UnityEngine_Vector3_ **)((ulonglong)(uint)(points->fields)._version << 0x20);
+    uStack_11 = 0;
+    uStack_12 = 0;
+    lStack_13 = (longlong)ppLStack_10;
+    uStack_14 = 0;
+    uStack_15 = 0;
+    uStack_5 = 0;
+    ppLStack_10 = &pLStack_16;
+    pLStack_16 = points;
+    while (cVar17 = FUN_?(&pLStack_16,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__), pMVar18 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_, cVar17 != '\0') {
+      fVar19 = (plane->m_Normal).x;
+      fVar20 = (plane->m_Normal).y;
+      fVar21 = (plane->m_Normal).z;
+      fVar22 = fVar21 * (float)uStack_15 + fVar19 * (float)uStack_14 + fVar20 * uStack_14._4_4_ + plane->m_Distance;
+      fVar21 = (float)uStack_15 - fVar22 * fVar21;
+      fVar20 = uStack_14._4_4_ - fVar22 * fVar20;
+      fVar19 = (float)uStack_14 - fVar22 * fVar19;
+      if (this == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) goto code_?;
+      piVar23 = &(this->fields)._version;
+      *piVar23 = *piVar23 + 1;
+      pPVar24 = (this->fields)._items;
+      uVar4 = (this->fields)._size;
+      if (pPVar24 == (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) goto code_?;
+      if (uVar4 < (uint)pPVar24->max_length) {
+        (this->fields)._size = uVar4 + 1;
+        if ((uint)pPVar24->max_length <= uVar4) goto code_?;
+        pPVar24->vector[(int)uVar4].Quadrant = (int32_t)fVar19;
+        pPVar24->vector[(int)uVar4].FirstAxisSign = (int32_t)fVar20;
+        pPVar24->vector[(int)uVar4].SecondAxisSign = (int32_t)fVar21;
+      }
+      else {
+        PStack_25.FirstAxisSign = (int32_t)fVar20;
+        PStack_25.Quadrant = (int32_t)fVar19;
+        PStack_25.SecondAxisSign = (int32_t)fVar21;
+        mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize(this,&PStack_25,pMVar18->klass->rgctx_data[0xe].method);
+      }
+    }
+  }
+  return (List_1_UnityEngine_Vector3_ *)this;
 }
 
 
 /* Vector3 ProjectPoint(Plane, Vector3) */
 
-Vector3 * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectPoint(Vector3 *__return_storage_ptr__,Plane plane,Vector3 pt,MethodInfo *method)
+Vector3 * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectPoint(Vector3 *__return_storage_ptr__,Plane *plane,Vector3 *pt,MethodInfo *method)
 
 {
-  fVar1 = plane.m_Normal.x * pt.x + plane.m_Normal.y * pt.y + plane.m_Normal.z * pt.z + plane.m_Distance;
-  __return_storage_ptr__->x = pt.x - plane.m_Normal.x * fVar1;
-  __return_storage_ptr__->y = pt.y - plane.m_Normal.y * fVar1;
-  __return_storage_ptr__->z = pt.z - plane.m_Normal.z * fVar1;
+  uVar1 = pt->x;
+  uVar2 = pt->y;
+  uVar3 = (plane->m_Normal).x;
+  uVar4 = (plane->m_Normal).y;
+  fVar5 = (float)uVar2 * (float)uVar4 + (float)uVar1 * (float)uVar3 + pt->z * (plane->m_Normal).z + plane->m_Distance;
+  uVar6 = (plane->m_Normal).x;
+  uVar7 = (plane->m_Normal).y;
+  uVar8 = pt->x;
+  fVar9 = pt->y;
+  fVar10 = (plane->m_Normal).z;
+  fVar11 = pt->z;
+  __return_storage_ptr__->x = (float)uVar8 - fVar5 * (float)uVar6;
+  __return_storage_ptr__->y = fVar9 - fVar5 * (float)uVar7;
+  __return_storage_ptr__->z = fVar11 - fVar5 * fVar10;
   return __return_storage_ptr__;
 }
 

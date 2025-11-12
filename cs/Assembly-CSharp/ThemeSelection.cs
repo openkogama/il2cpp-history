@@ -20,7 +20,7 @@ public class ThemeSelection : MonoBehaviour
 	[SerializeField]
 	private ThemeSelectionButton buttonPrefab;
 	[SerializeField]
-	private Button themeRemovalButtonPrefab;
+	private UnityEngine.UI.Button themeRemovalButtonPrefab;
 	[SerializeField]
 	private RectTransform themeButtonContainer;
 	[SerializeField]

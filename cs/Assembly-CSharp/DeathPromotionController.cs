@@ -20,14 +20,11 @@ public class DeathPromotionController : MonoBehaviour, IDeathPromotionSelector
 	private RegisteredPromotionController registeredAdController;
 	private IPromotionController adController;
 
-	// Properties
-	public bool ReadyForAd { get; }
-
 	// Constructors
 	public DeathPromotionController();
 
 	// Methods
 	public void Initialize();
-	public void TryShowPromotion(UnityAction<bool, bool> onPromotionPopped);
+	public void TryShowPromotionOrAd(UnityAction<bool, bool> onPromotionPopped);
 }
 

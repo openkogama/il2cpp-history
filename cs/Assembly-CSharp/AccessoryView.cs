@@ -24,7 +24,7 @@ public class AccessoryView : MonoBehaviour
 	[SerializeField]
 	private UnityEngine.UI.Text nameText;
 	[SerializeField]
-	private Button purchaseButton;
+	private UnityEngine.UI.Button purchaseButton;
 	[SerializeField]
 	private UnityEngine.UI.Text priceText;
 	[SerializeField]

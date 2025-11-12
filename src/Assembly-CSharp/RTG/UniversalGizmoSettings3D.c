@@ -4,29 +4,36 @@
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_ConnectMvDblSliderSettings(UniversalGizmoSettings3D *this,GizmoPlaneSlider3D *dblSlider,PlaneId__Enum planeId,MethodInfo *method)
 
 {
-  pGStack_1 = (GizmoPlaneSlider3DSettings *)&stack0xfffffffc;
-  pGVar2 = (this->fields)._mvDblSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length <= planeId) {
-      pGStack_1 = (GizmoPlaneSlider3DSettings *)0x0;
-      ppGStack_3 = (GizmoPlaneSlider3DSettings **)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+  pGVar1 = (this->fields)._mvDblSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((PlaneId__Enum)pGVar1->max_length <= planeId) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
     if (dblSlider != (GizmoPlaneSlider3D *)0x0) {
-      pGStack_1 = pGVar2->vector[planeId];
-      (dblSlider->fields)._sharedSettings = pGStack_1;
-      ppGStack_3 = &(dblSlider->fields)._sharedSettings;
-      func_?();
+      bVar3 = iRam_? != 0;
+      (dblSlider->fields)._sharedSettings = pGVar1->vector[(int)planeId];
+      if (bVar3) {
+        uVar4 = (uint)((ulonglong)&(dblSlider->fields)._sharedSettings >> 0xc);
+        puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar6 = *puVar5;
+          LOCK();
+          uVar7 = *puVar5;
+          if (uVar6 == uVar7) {
+            *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar6 != uVar7);
+      }
       return;
     }
   }
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -36,38 +43,45 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_ConnectMvSliderSettings(UniversalGizmoSettings3D *this,GizmoLineSlider3D *slider,int32_t axisIndex,AxisSign__Enum axisSign,MethodInfo *method)
 
 {
-  pGStack_1 = (GizmoLineSlider3DSettings *)&stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
   if (axisSign == AxisSign__Enum_Positive) {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
-    if (pGVar2->max_length <= (uint)axisIndex) goto code_?;
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
+    if ((uint)pGVar1->max_length <= (uint)axisIndex) goto code_?;
+    lVar2 = (longlong)axisIndex;
   }
   else {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
-    axisIndex = axisIndex + 3;
-    if (pGVar2->max_length <= (uint)axisIndex) {
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
+    lVar2 = (longlong)axisIndex + 3;
+    if ((uint)pGVar1->max_length <= (uint)lVar2) {
 code_?:
-      pGStack_1 = (GizmoLineSlider3DSettings *)0x0;
-      ppGStack_3 = (GizmoLineSlider3DSettings **)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
-  pGVar5 = pGVar2->vector[axisIndex];
   if (slider != (GizmoLineSlider3D *)0x0) {
-    (slider->fields)._sharedSettings = pGVar5;
-    ppGStack_3 = &(slider->fields)._sharedSettings;
-    pGStack_1 = pGVar5;
-    func_?();
+    bVar4 = iRam_? != 0;
+    (slider->fields)._sharedSettings = pGVar1->vector[lVar2];
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(slider->fields)._sharedSettings >> 0xc);
+      puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar7 = *puVar6;
+        LOCK();
+        uVar8 = *puVar6;
+        if (uVar7 == uVar8) {
+          *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar7 != uVar8);
+    }
     return;
   }
 code_?:
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -77,18 +91,27 @@ code_?:
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_ConnectRtCamLookSliderSettings(UniversalGizmoSettings3D *this,GizmoPlaneSlider2D *slider,MethodInfo *method)
 
 {
-  pGStack_1 = (GizmoPlaneSlider2DSettings *)&stack0xfffffffc;
-  if (slider != (GizmoPlaneSlider2D *)0x0) {
-    pGStack_1 = (this->fields)._rtCamLookSliderSettings;
-    (slider->fields)._sharedSettings = pGStack_1;
-    ppGStack_2 = &(slider->fields)._sharedSettings;
-    func_?();
+  if (slider == (GizmoPlaneSlider2D *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  bVar2 = iRam_? != 0;
+  (slider->fields)._sharedSettings = (this->fields)._rtCamLookSliderSettings;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(slider->fields)._sharedSettings >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 
@@ -98,29 +121,36 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_ConnectRtSliderSettings(UniversalGizmoSettings3D *this,GizmoPlaneSlider3D *slider,int32_t axisIndex,MethodInfo *method)
 
 {
-  pGStack_1 = (GizmoPlaneSlider3DSettings *)&stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length <= (uint)axisIndex) {
-      pGStack_1 = (GizmoPlaneSlider3DSettings *)0x0;
-      ppGStack_3 = (GizmoPlaneSlider3DSettings **)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length <= (uint)axisIndex) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
     if (slider != (GizmoPlaneSlider3D *)0x0) {
-      pGStack_1 = pGVar2->vector[axisIndex];
-      (slider->fields)._sharedSettings = pGStack_1;
-      ppGStack_3 = &(slider->fields)._sharedSettings;
-      func_?();
+      bVar3 = iRam_? != 0;
+      (slider->fields)._sharedSettings = pGVar1->vector[axisIndex];
+      if (bVar3) {
+        uVar4 = (uint)((ulonglong)&(slider->fields)._sharedSettings >> 0xc);
+        puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar6 = *puVar5;
+          LOCK();
+          uVar7 = *puVar5;
+          if (uVar6 == uVar7) {
+            *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar6 != uVar7);
+      }
       return;
     }
   }
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -130,29 +160,36 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_ConnectScDblSliderSettings(UniversalGizmoSettings3D *this,GizmoPlaneSlider3D *dblSlider,PlaneId__Enum planeId,MethodInfo *method)
 
 {
-  pGStack_1 = (GizmoPlaneSlider3DSettings *)&stack0xfffffffc;
-  pGVar2 = (this->fields)._scDblSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length <= planeId) {
-      pGStack_1 = (GizmoPlaneSlider3DSettings *)0x0;
-      ppGStack_3 = (GizmoPlaneSlider3DSettings **)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+  pGVar1 = (this->fields)._scDblSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((PlaneId__Enum)pGVar1->max_length <= planeId) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
     if (dblSlider != (GizmoPlaneSlider3D *)0x0) {
-      pGStack_1 = pGVar2->vector[planeId];
-      (dblSlider->fields)._sharedSettings = pGStack_1;
-      ppGStack_3 = &(dblSlider->fields)._sharedSettings;
-      func_?();
+      bVar3 = iRam_? != 0;
+      (dblSlider->fields)._sharedSettings = pGVar1->vector[(int)planeId];
+      if (bVar3) {
+        uVar4 = (uint)((ulonglong)&(dblSlider->fields)._sharedSettings >> 0xc);
+        puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar6 = *puVar5;
+          LOCK();
+          uVar7 = *puVar5;
+          if (uVar6 == uVar7) {
+            *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar6 != uVar7);
+      }
       return;
     }
   }
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -162,38 +199,45 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_ConnectScSliderSettings(UniversalGizmoSettings3D *this,GizmoLineSlider3D *slider,int32_t axisIndex,AxisSign__Enum axisSign,MethodInfo *method)
 
 {
-  pGStack_1 = (GizmoLineSlider3DSettings *)&stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
+  pGVar1 = (this->fields)._scSglSliderSettings;
   if (axisSign == AxisSign__Enum_Positive) {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
-    if (pGVar2->max_length <= (uint)axisIndex) goto code_?;
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
+    if ((uint)pGVar1->max_length <= (uint)axisIndex) goto code_?;
+    lVar2 = (longlong)axisIndex;
   }
   else {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
-    axisIndex = axisIndex + 3;
-    if (pGVar2->max_length <= (uint)axisIndex) {
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
+    lVar2 = (longlong)axisIndex + 3;
+    if ((uint)pGVar1->max_length <= (uint)lVar2) {
 code_?:
-      pGStack_1 = (GizmoLineSlider3DSettings *)0x0;
-      ppGStack_3 = (GizmoLineSlider3DSettings **)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
-  pGVar5 = pGVar2->vector[axisIndex];
   if (slider != (GizmoLineSlider3D *)0x0) {
-    (slider->fields)._sharedSettings = pGVar5;
-    ppGStack_3 = &(slider->fields)._sharedSettings;
-    pGStack_1 = pGVar5;
-    func_?();
+    bVar4 = iRam_? != 0;
+    (slider->fields)._sharedSettings = pGVar1->vector[lVar2];
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(slider->fields)._sharedSettings >> 0xc);
+      puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar7 = *puVar6;
+        LOCK();
+        uVar8 = *puVar6;
+        if (uVar7 == uVar8) {
+          *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar7 != uVar8);
+    }
     return;
   }
 code_?:
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -203,24 +247,20 @@ code_?:
 GizmoPlaneSlider3DSettings * Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_GetMvDblSliderSettings(UniversalGizmoSettings3D *this,PlaneId__Enum planeId,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvDblSliderSettings;
-  if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    pGVar6 = (GizmoPlaneSlider3DSettings *)(*pcVar5)();
-    return pGVar6;
+  pGVar1 = (this->fields)._mvDblSliderSettings;
+  if (pGVar1 == (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pGVar3 = (GizmoPlaneSlider3DSettings *)(*pcVar2)();
+    return pGVar3;
   }
-  if (planeId < pGVar2->max_length) {
-    return pGVar2->vector[planeId];
+  if (planeId < (PlaneId__Enum)pGVar1->max_length) {
+    return pGVar1->vector[(int)planeId];
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_7 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pGVar6 = (GizmoPlaneSlider3DSettings *)(*pcVar5)();
-  return pGVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pGVar3 = (GizmoPlaneSlider3DSettings *)(*pcVar2)();
+  return pGVar3;
 }
 
 
@@ -229,33 +269,29 @@ GizmoPlaneSlider3DSettings * Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D:
 GizmoLineSlider3DSettings * Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_GetMvSglSliderSettings(UniversalGizmoSettings3D *this,int32_t axisIndex,AxisSign__Enum axisSign,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
   if (axisSign == AxisSign__Enum_Positive) {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
-    if (pGVar2->max_length <= (uint)axisIndex) goto code_?;
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
+    if ((uint)axisIndex < (uint)pGVar1->max_length) {
+      return pGVar1->vector[axisIndex];
+    }
   }
   else {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) {
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) {
 code_?:
-      uVar3 = func_?(&puStack_4);
-      func_?(uVar3);
-      pcVar5 = (code *)swi(3);
-      pGVar6 = (GizmoLineSlider3DSettings *)(*pcVar5)();
-      return pGVar6;
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      pGVar3 = (GizmoLineSlider3DSettings *)(*pcVar2)();
+      return pGVar3;
     }
-    axisIndex = axisIndex + 3;
-    if (pGVar2->max_length <= (uint)axisIndex) {
-code_?:
-      puStack_1 = (undefined1 *)0x0;
-      puStack_7 = (undefined *)func_?();
-      func_?();
-      pcVar5 = (code *)swi(3);
-      pGVar6 = (GizmoLineSlider3DSettings *)(*pcVar5)();
-      return pGVar6;
+    if (axisIndex + 3U < (uint)pGVar1->max_length) {
+      return pGVar1->vector[(longlong)axisIndex + 3];
     }
   }
-  return pGVar2->vector[axisIndex];
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pGVar3 = (GizmoLineSlider3DSettings *)(*pcVar2)();
+  return pGVar3;
 }
 
 
@@ -264,24 +300,20 @@ code_?:
 GizmoPlaneSlider3DSettings * Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_GetScDblSliderSettings(UniversalGizmoSettings3D *this,PlaneId__Enum planeId,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scDblSliderSettings;
-  if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    pGVar6 = (GizmoPlaneSlider3DSettings *)(*pcVar5)();
-    return pGVar6;
+  pGVar1 = (this->fields)._scDblSliderSettings;
+  if (pGVar1 == (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pGVar3 = (GizmoPlaneSlider3DSettings *)(*pcVar2)();
+    return pGVar3;
   }
-  if (planeId < pGVar2->max_length) {
-    return pGVar2->vector[planeId];
+  if (planeId < (PlaneId__Enum)pGVar1->max_length) {
+    return pGVar1->vector[(int)planeId];
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_7 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pGVar6 = (GizmoPlaneSlider3DSettings *)(*pcVar5)();
-  return pGVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pGVar3 = (GizmoPlaneSlider3DSettings *)(*pcVar2)();
+  return pGVar3;
 }
 
 
@@ -290,33 +322,29 @@ GizmoPlaneSlider3DSettings * Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D:
 GizmoLineSlider3DSettings * Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_GetScSglSliderSettings(UniversalGizmoSettings3D *this,int32_t axisIndex,AxisSign__Enum axisSign,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
+  pGVar1 = (this->fields)._scSglSliderSettings;
   if (axisSign == AxisSign__Enum_Positive) {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
-    if (pGVar2->max_length <= (uint)axisIndex) goto code_?;
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) goto code_?;
+    if ((uint)axisIndex < (uint)pGVar1->max_length) {
+      return pGVar1->vector[axisIndex];
+    }
   }
   else {
-    if (pGVar2 == (GizmoLineSlider3DSettings__Array *)0x0) {
+    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) {
 code_?:
-      uVar3 = func_?(&puStack_4);
-      func_?(uVar3);
-      pcVar5 = (code *)swi(3);
-      pGVar6 = (GizmoLineSlider3DSettings *)(*pcVar5)();
-      return pGVar6;
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      pGVar3 = (GizmoLineSlider3DSettings *)(*pcVar2)();
+      return pGVar3;
     }
-    axisIndex = axisIndex + 3;
-    if (pGVar2->max_length <= (uint)axisIndex) {
-code_?:
-      puStack_1 = (undefined1 *)0x0;
-      puStack_7 = (undefined *)func_?();
-      func_?();
-      pcVar5 = (code *)swi(3);
-      pGVar6 = (GizmoLineSlider3DSettings *)(*pcVar5)();
-      return pGVar6;
+    if (axisIndex + 3U < (uint)pGVar1->max_length) {
+      return pGVar1->vector[(longlong)axisIndex + 3];
     }
   }
-  return pGVar2->vector[axisIndex];
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pGVar3 = (GizmoLineSlider3DSettings *)(*pcVar2)();
+  return pGVar3;
 }
 
 
@@ -325,398 +353,285 @@ code_?:
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_Inherit(UniversalGizmoSettings3D *this,MoveGizmoSettings3D *settings,MethodInfo *method)
 
 {
-  if (settings != (MoveGizmoSettings3D *)0x0) {
-    fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_LineSliderHoverEps((ScaleGizmoSettings3D *)settings,(MethodInfo *)0x0);
-    uVar2 = 0;
-    pGVar3 = (this->fields)._mvSglSliderSettings;
-    if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-      ppGVar4 = pGVar3->vector;
-      for (; (int)uVar2 < (int)pGVar3->max_length; uVar2 = uVar2 + 1) {
-        if (pGVar3->max_length <= uVar2) goto code_?;
-        if ((GizmoPlaneSlider3DSettings *)*ppGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-        GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_AreaHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar4,fVar1,(MethodInfo *)0x0);
-        ppGVar4 = ppGVar4 + 1;
-      }
-      fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_BoxSliderHoverEps((ScaleGizmoSettings3D *)settings,(MethodInfo *)0x0);
-      uVar2 = 0;
+  if ((settings != (MoveGizmoSettings3D *)0x0) && (pGVar1 = (settings->fields)._sglSliderSettings, pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0)) {
+    pUVar2 = this;
+    pGVar3 = (GizmoLineSlider3DSettings__Array *)settings;
+    if ((int)pGVar1->max_length == 0) goto code_?;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
       pGVar3 = (this->fields)._mvSglSliderSettings;
+      uVar4 = 0;
+      fVar5 = (pGVar1->vector[0]->fields)._lineHoverEps;
+      uVar6 = 0;
+      pUVar2 = (UniversalGizmoSettings3D *)0x0;
       if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        ppGVar4 = pGVar3->vector;
-        for (; (int)uVar2 < (int)pGVar3->max_length; uVar2 = uVar2 + 1) {
-          if (pGVar3->max_length <= uVar2) goto code_?;
-          if (*ppGVar4 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-          Sphere::Sphere_set_Radius((Sphere *)*ppGVar4,fVar1,(MethodInfo *)0x0);
-          ppGVar4 = ppGVar4 + 1;
-        }
-        fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_CylinderSliderHoverEps((ScaleGizmoSettings3D *)settings,(MethodInfo *)0x0);
-        uVar2 = 0;
-        pGVar3 = (this->fields)._mvSglSliderSettings;
-        if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-          ppGVar4 = pGVar3->vector;
-          for (; (int)uVar2 < (int)pGVar3->max_length; uVar2 = uVar2 + 1) {
-            if (pGVar3->max_length <= uVar2) goto code_?;
-            if ((GizmoPlaneSlider3DSettings *)*ppGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-            GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar4,fVar1,(MethodInfo *)0x0);
-            ppGVar4 = ppGVar4 + 1;
+        method = (MethodInfo *)pGVar3->vector;
+        while ((int)pUVar2 < (int)pGVar3->max_length) {
+          if ((uint)pGVar3->max_length <= uVar6) goto code_?;
+          pGVar7 = (GizmoLineSlider3DSettings *)method->methodPointer;
+          if (pGVar7 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+          if (0.0 <= fVar5) {
+            uVar6 = uVar6 + 1;
+            (pGVar7->fields)._lineHoverEps = fVar5;
+            method = (MethodInfo *)&method->virtualMethodPointer;
+            pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
           }
-          fVar1 = MoveGizmoSettings3D::MoveGizmoSettings3D_get_DragSensitivity(settings,(MethodInfo *)0x0);
-          uVar2 = 0;
-          pGVar3 = (this->fields)._mvSglSliderSettings;
-          if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-            ppGVar4 = pGVar3->vector;
-            for (; (int)uVar2 < (int)pGVar3->max_length; uVar2 = uVar2 + 1) {
-              if (pGVar3->max_length <= uVar2) goto code_?;
-              if ((UniversalGizmoSettings3D *)*ppGVar4 == (UniversalGizmoSettings3D *)0x0) goto code_?;
-              UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)*ppGVar4,fVar1,(MethodInfo *)0x0);
-              ppGVar4 = ppGVar4 + 1;
-            }
-            uVar2 = 0;
-            pGVar5 = (this->fields)._mvDblSliderSettings;
-            if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-              ppGVar6 = pGVar5->vector;
-              for (; (int)uVar2 < (int)pGVar5->max_length; uVar2 = uVar2 + 1) {
-                if (pGVar5->max_length <= uVar2) goto code_?;
-                if (*ppGVar6 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-                GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSensitivity(*ppGVar6,fVar1,(MethodInfo *)0x0);
-                ppGVar6 = ppGVar6 + 1;
+          else {
+            uVar6 = uVar6 + 1;
+            (pGVar7->fields)._lineHoverEps = 0.0;
+            method = (MethodInfo *)&method->virtualMethodPointer;
+            pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
+          }
+        }
+        pGVar1 = (settings->fields)._sglSliderSettings;
+        if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+          if ((int)pGVar1->max_length == 0) goto code_?;
+          if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+            fVar5 = (pGVar1->vector[0]->fields)._boxHoverEps;
+            pUVar2 = (UniversalGizmoSettings3D *)0x0;
+            uVar6 = 0;
+            if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
+              method = (MethodInfo *)pGVar3->vector;
+              while ((int)pUVar2 < (int)pGVar3->max_length) {
+                if ((uint)pGVar3->max_length <= uVar6) goto code_?;
+                pGVar7 = (GizmoLineSlider3DSettings *)method->methodPointer;
+                if (pGVar7 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+                if (0.0 <= fVar5) {
+                  uVar6 = uVar6 + 1;
+                  (pGVar7->fields)._boxHoverEps = fVar5;
+                  method = (MethodInfo *)&method->virtualMethodPointer;
+                  pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
+                }
+                else {
+                  uVar6 = uVar6 + 1;
+                  (pGVar7->fields)._boxHoverEps = 0.0;
+                  method = (MethodInfo *)&method->virtualMethodPointer;
+                  pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
+                }
               }
-              fVar1 = MoveGizmoSettings3D::MoveGizmoSettings3D_get_XSnapStep(settings,(MethodInfo *)0x0);
-              pGVar3 = (this->fields)._mvSglSliderSettings;
-              if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                if (pGVar3->max_length == 0) goto code_?;
-                if (pGVar3->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-                  ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar3->vector[0],fVar1,(MethodInfo *)0x0);
-                  pGVar3 = (this->fields)._mvSglSliderSettings;
+              pGVar1 = (settings->fields)._sglSliderSettings;
+              if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                if ((int)pGVar1->max_length == 0) goto code_?;
+                if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+                  fVar5 = (pGVar1->vector[0]->fields)._cylinderHoverEps;
+                  pUVar2 = (UniversalGizmoSettings3D *)0x0;
+                  uVar6 = 0;
                   if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                    if (pGVar3->max_length < 4) goto code_?;
-                    if (pGVar3->vector[3] != (GizmoLineSlider3DSettings *)0x0) {
-                      ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar3->vector[3],fVar1,(MethodInfo *)0x0);
-                      pGVar5 = (this->fields)._mvDblSliderSettings;
-                      if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                        if (pGVar5->max_length == 0) goto code_?;
-                        this_00 = pGVar5->vector[0];
-                        if (this_00 != (GizmoPlaneSlider3DSettings *)0x0) {
-                          GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight(this_00,fVar1,(MethodInfo *)0x0);
-                          pGVar5 = (this->fields)._mvDblSliderSettings;
-                          if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                            if (pGVar5->max_length < 3) goto code_?;
-                            if (pGVar5->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                              UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)pGVar5->vector[2],(float)this_00,(MethodInfo *)0x0);
-                              fVar1 = MoveGizmoSettings3D::MoveGizmoSettings3D_get_YSnapStep(settings,(MethodInfo *)0x0);
-                              pGVar3 = (this->fields)._mvSglSliderSettings;
-                              if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                                if (pGVar3->max_length < 2) goto code_?;
-                                if (pGVar3->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
-                                  ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar3->vector[1],fVar1,(MethodInfo *)0x0);
-                                  pGVar3 = (this->fields)._mvSglSliderSettings;
-                                  if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                                    if (pGVar3->max_length < 5) goto code_?;
-                                    if (pGVar3->vector[4] != (GizmoLineSlider3DSettings *)0x0) {
-                                      ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar3->vector[4],fVar1,(MethodInfo *)0x0);
-                                      pGVar5 = (this->fields)._mvDblSliderSettings;
-                                      if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                        if (pGVar5->max_length == 0) goto code_?;
-                                        if (pGVar5->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                          UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)pGVar5->vector[0],fVar1,(MethodInfo *)0x0);
-                                          pGVar5 = (this->fields)._mvDblSliderSettings;
-                                          if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                            if (pGVar5->max_length < 2) goto code_?;
-                                            if (pGVar5->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight(pGVar5->vector[1],fVar1,(MethodInfo *)0x0);
-                                              fVar1 = MoveGizmoSettings3D::MoveGizmoSettings3D_get_ZSnapStep(settings,(MethodInfo *)0x0);
-                                              pGVar3 = (this->fields)._mvSglSliderSettings;
-                                              if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                                                if (pGVar3->max_length < 3) goto code_?;
-                                                if (pGVar3->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
-                                                  ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar3->vector[2],fVar1,(MethodInfo *)0x0);
-                                                  pGVar3 = (this->fields)._mvSglSliderSettings;
-                                                  if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                                                    if (pGVar3->max_length < 6) goto code_?;
-                                                    if (pGVar3->vector[5] != (GizmoLineSlider3DSettings *)0x0) {
-                                                      ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar3->vector[5],fVar1,(MethodInfo *)0x0);
-                                                      pGVar5 = (this->fields)._mvDblSliderSettings;
-                                                      if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                                        if (pGVar5->max_length < 2) goto code_?;
-                                                        if (pGVar5->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                          UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)pGVar5->vector[1],fVar1,(MethodInfo *)0x0);
-                                                          pGVar5 = (this->fields)._mvDblSliderSettings;
-                                                          if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                                            if (pGVar5->max_length < 3) goto code_?;
-                                                            if (pGVar5->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight(pGVar5->vector[2],fVar1,(MethodInfo *)0x0);
-                                                              this_01 = (settings->fields)._vertexSnapSettings;
-                                                              if (this_01 != (GizmoObjectVertexSnapSettings *)0x0) {
-                                                                GizmoObjectVertexSnapSettings::GizmoObjectVertexSnapSettings_Transfer(this_01,(this->fields)._mvVertexSnapSettings,(MethodInfo *)0x0);
-                                                                return;
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
+                    method = (MethodInfo *)pGVar3->vector;
+                    while ((int)pUVar2 < (int)pGVar3->max_length) {
+                      if ((uint)pGVar3->max_length <= uVar6) goto code_?;
+                      pGVar7 = (GizmoLineSlider3DSettings *)method->methodPointer;
+                      if (pGVar7 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+                      if (0.0 <= fVar5) {
+                        uVar6 = uVar6 + 1;
+                        (pGVar7->fields)._cylinderHoverEps = fVar5;
+                        method = (MethodInfo *)&method->virtualMethodPointer;
+                        pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
+                      }
+                      else {
+                        uVar6 = uVar6 + 1;
+                        (pGVar7->fields)._cylinderHoverEps = 0.0;
+                        method = (MethodInfo *)&method->virtualMethodPointer;
+                        pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
                       }
                     }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+                    pGVar1 = (settings->fields)._sglSliderSettings;
+                    if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                      if ((int)pGVar1->max_length == 0) goto code_?;
+                      if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+                        fVar5 = (pGVar1->vector[0]->fields)._offsetSensitivity;
+                        pUVar2 = (UniversalGizmoSettings3D *)0x0;
+                        uVar6 = 0;
+                        if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                          method = (MethodInfo *)pGVar3->vector;
+                          while ((int)pUVar2 < (int)pGVar3->max_length) {
+                            if ((uint)pGVar3->max_length <= uVar6) goto code_?;
+                            pGVar7 = (GizmoLineSlider3DSettings *)method->methodPointer;
+                            if (pGVar7 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+                            if (0.0001 <= fVar5) {
+                              uVar6 = uVar6 + 1;
+                              (pGVar7->fields)._offsetSensitivity = fVar5;
+                              method = (MethodInfo *)&method->virtualMethodPointer;
+                              pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
+                            }
+                            else {
+                              uVar6 = uVar6 + 1;
+                              (pGVar7->fields)._offsetSensitivity = 0.0001;
+                              method = (MethodInfo *)&method->virtualMethodPointer;
+                              pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar6;
+                            }
+                          }
+                          pGVar8 = (this->fields)._mvDblSliderSettings;
+                          pUVar2 = (UniversalGizmoSettings3D *)0x0;
+                          if (pGVar8 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                            pGVar3 = (GizmoLineSlider3DSettings__Array *)pGVar8->vector;
+                            while ((int)pUVar2 < (int)pGVar8->max_length) {
+                              if ((uint)pGVar8->max_length <= uVar4) goto code_?;
+                              pGVar9 = pGVar3->klass;
+                              if (pGVar9 == (GizmoLineSlider3DSettings__Array__Class *)0x0) goto code_?;
+                              if (0.0001 <= fVar5) {
+                                uVar4 = uVar4 + 1;
+                                *(float *)&(pGVar9->_0).castClass = fVar5;
+                                pGVar3 = (GizmoLineSlider3DSettings__Array *)&pGVar3->monitor;
+                                pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar4;
+                              }
+                              else {
+                                uVar4 = uVar4 + 1;
+                                *(undefined4 *)&(pGVar9->_0).castClass = 0x38d1b717;
+                                pGVar3 = (GizmoLineSlider3DSettings__Array *)&pGVar3->monitor;
+                                pUVar2 = (UniversalGizmoSettings3D *)(ulonglong)uVar4;
+                              }
+                            }
+                            pGVar1 = (settings->fields)._sglSliderSettings;
+                            if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                              if ((int)pGVar1->max_length == 0) {
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
-}
-
-
-/* Void Inherit(RotationGizmoSettings3D) */
-
-void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_Inherit_1(UniversalGizmoSettings3D *this,RotationGizmoSettings3D *settings,MethodInfo *method)
-
-{
-  if (settings != (RotationGizmoSettings3D *)0x0) {
-    fVar1 = UniversalGizmoSettings3D_get_MvCylinderSliderHoverEps((UniversalGizmoSettings3D *)settings,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._rtSliderSettings;
-    uVar3 = 0;
-    if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-      ppGVar4 = pGVar2->vector;
-      for (; (int)uVar3 < (int)pGVar2->max_length; uVar3 = uVar3 + 1) {
-        if (pGVar2->max_length <= uVar3) goto code_?;
-        if (*ppGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-        GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps(*ppGVar4,fVar1,(MethodInfo *)0x0);
-        ppGVar4 = ppGVar4 + 1;
-      }
-      fVar1 = UniversalGizmoLookAndFeel2D::UniversalGizmoLookAndFeel2D_get_MvBoxSliderThickness((UniversalGizmoLookAndFeel2D *)settings,(MethodInfo *)0x0);
-      UniversalGizmoSettings3D_SetRtAxisTorusHoverEps(this,fVar1,(MethodInfo *)0x0);
-      fVar1 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_CamLookThickHoverEps(settings,(MethodInfo *)0x0);
-      this_00 = (GizmoPlaneSlider3DSettings *)(this->fields)._rtCamLookSliderSettings;
-      if (this_00 != (GizmoPlaneSlider3DSettings *)0x0) {
-        GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps(this_00,fVar1,(MethodInfo *)0x0);
-        fVar1 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_CamLookLineHoverEps(settings,(MethodInfo *)0x0);
-        pGVar5 = (this->fields)._rtCamLookSliderSettings;
-        if (pGVar5 != (GizmoPlaneSlider2DSettings *)0x0) {
-          Sphere::Sphere_set_Radius((Sphere *)pGVar5,fVar1,(MethodInfo *)0x0);
-          fVar1 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_CamLookSnapStep(settings,(MethodInfo *)0x0);
-          pGVar5 = (this->fields)._rtCamLookSliderSettings;
-          if (pGVar5 != (GizmoPlaneSlider2DSettings *)0x0) {
-            ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_ZRotationStep((ObjectKeyRotationSettings *)pGVar5,fVar1,(MethodInfo *)0x0);
-            fVar1 = (settings->fields)._camRightSnapStep;
-            if (fVar1 < 0.0001) {
-              fVar1 = 0.0001;
-            }
-            (this->fields)._rtCamRightSnapStep = fVar1;
-            fVar1 = (settings->fields)._camUpSnapStep;
-            fVar6 = 0.0001;
-            if (0.0001 <= fVar1) {
-              fVar6 = fVar1;
-            }
-            (this->fields)._rtCamUpSnapStep = fVar6;
-            canHover = RotationGizmoSettings3D::RotationGizmoSettings3D_get_CanHoverCulledPixels(settings,(MethodInfo *)0x0);
-            UniversalGizmoSettings3D_SetRtCanHoverCulledPixels(this,canHover,(MethodInfo *)0x0);
-            fVar1 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_DragSensitivity(settings,(MethodInfo *)0x0);
-            pGVar2 = (this->fields)._rtSliderSettings;
-            uVar3 = 0;
-            if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-              ppGVar4 = pGVar2->vector;
-              for (; (int)uVar3 < (int)pGVar2->max_length; uVar3 = uVar3 + 1) {
-                if (pGVar2->max_length <= uVar3) goto code_?;
-                if (*ppGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-                GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_RotationSensitivity(*ppGVar4,fVar1,(MethodInfo *)0x0);
-                ppGVar4 = ppGVar4 + 1;
-              }
-              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp((GizmoPlaneSlider3DSettings *)0x5dd914c4,fVar1,(MethodInfo *)0x0);
-              GVar7 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_SnapMode(settings,(MethodInfo *)0x0);
-              piVar8 = (int *)0x8330469b;
-              for (uVar3 = 0; (int)uVar3 < (int)uRam_?; uVar3 = uVar3 + 1) {
-                if (uRam_? <= uVar3) goto code_?;
-                if (*piVar8 == 0) goto code_?;
-                *(GizmoSnapMode__Enum *)(*piVar8 + 0x2c) = GVar7;
-                piVar8 = piVar8 + 1;
-              }
-              GRam5dd914e4 = GVar7;
-              fVar1 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_XSnapStep(settings,(MethodInfo *)0x0);
-              if (uRam_? == 0) goto code_?;
-              if (pURam8330469b != (UniversalGizmoSettings3D *)0x0) {
-                UniversalGizmoSettings3D_SetRtCamUpSnapStep(pURam8330469b,fVar1,(MethodInfo *)0x0);
-                fVar1 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_YSnapStep(settings,(MethodInfo *)0x0);
-                if (uRam_? < 2) goto code_?;
-                if (pURam8330469f != (UniversalGizmoSettings3D *)0x0) {
-                  UniversalGizmoSettings3D_SetRtCamUpSnapStep(pURam8330469f,fVar1,(MethodInfo *)0x0);
-                  fVar1 = RotationGizmoSettings3D::RotationGizmoSettings3D_get_ZSnapStep(settings,(MethodInfo *)0x0);
-                  if (uRam_? < 3) goto code_?;
-                  if (pURam833046a3 != (UniversalGizmoSettings3D *)0x0) {
-                    UniversalGizmoSettings3D_SetRtCamUpSnapStep(pURam833046a3,fVar1,(MethodInfo *)0x0);
-                    return;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
-  return;
-}
-
-
-/* Void Inherit(ScaleGizmoSettings3D) */
-
-void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_Inherit_2(UniversalGizmoSettings3D *this,ScaleGizmoSettings3D *settings,MethodInfo *method)
-
-{
-  if (settings != (ScaleGizmoSettings3D *)0x0) {
-    fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_LineSliderHoverEps(settings,(MethodInfo *)0x0);
-    uVar2 = 0;
-    pGVar3 = (this->fields)._scSglSliderSettings;
-    if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-      ppGVar4 = pGVar3->vector;
-      for (; (int)uVar2 < (int)pGVar3->max_length; uVar2 = uVar2 + 1) {
-        if (pGVar3->max_length <= uVar2) goto code_?;
-        if ((GizmoPlaneSlider3DSettings *)*ppGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-        GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_AreaHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar4,fVar1,(MethodInfo *)0x0);
-        ppGVar4 = ppGVar4 + 1;
-      }
-      fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_CylinderSliderHoverEps(settings,(MethodInfo *)0x0);
-      pGVar3 = (this->fields)._scSglSliderSettings;
-      uVar2 = 0;
-      if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        ppGVar4 = pGVar3->vector;
-        for (; (int)uVar2 < (int)pGVar3->max_length; uVar2 = uVar2 + 1) {
-          if (pGVar3->max_length <= uVar2) goto code_?;
-          if ((GizmoPlaneSlider3DSettings *)*ppGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-          GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar4,fVar1,(MethodInfo *)0x0);
-          ppGVar4 = ppGVar4 + 1;
-        }
-        fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_BoxSliderHoverEps(settings,(MethodInfo *)0x0);
-        pGVar3 = (this->fields)._scSglSliderSettings;
-        uVar2 = 0;
-        if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-          ppGVar4 = pGVar3->vector;
-          while( true ) {
-            if ((int)pGVar3->max_length <= (int)uVar2) break;
-            if (pGVar3->max_length <= uVar2) goto code_?;
-            if (*ppGVar4 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-            Sphere::Sphere_set_Radius((Sphere *)*ppGVar4,fVar1,(MethodInfo *)0x0);
-            uVar2 = uVar2 + 1;
-            ppGVar4 = ppGVar4 + 1;
-          }
-          fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_DragSensitivity(settings,(MethodInfo *)0x0);
-          UniversalGizmoSettings3D_SetScDragSensitivity(this,fVar1,(MethodInfo *)0x0);
-          fVar1 = (settings->fields)._uniformSnapStep;
-          fVar5 = 0.0001;
-          if (0.0001 <= fVar1) {
-            fVar5 = fVar1;
-          }
-          (this->fields)._scUniformSnapStep = fVar5;
-          fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_XSnapStep(settings,(MethodInfo *)0x0);
-          pGVar3 = (this->fields)._scSglSliderSettings;
-          if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-            if (pGVar3->max_length == 0) goto code_?;
-            if ((GizmoPlaneSlider3DSettings *)pGVar3->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar3->vector[0],fVar1,(MethodInfo *)0x0);
-              pGVar3 = (this->fields)._scSglSliderSettings;
-              if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                if (pGVar3->max_length < 4) goto code_?;
-                if ((GizmoPlaneSlider3DSettings *)pGVar3->vector[3] != (GizmoPlaneSlider3DSettings *)0x0) {
-                  GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar3->vector[3],0.0,(MethodInfo *)0x0);
-                  pGVar6 = (this->fields)._scDblSliderSettings;
-                  if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                    if (pGVar6->max_length == 0) goto code_?;
-                    if (pGVar6->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-                      UniversalGizmoSettings3D_SetScUniformScaleSnapStep((UniversalGizmoSettings3D *)pGVar6->vector[0],4.367581e-29,(MethodInfo *)0x0);
-                      pGVar6 = (this->fields)._scDblSliderSettings;
-                      if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                        if (pGVar6->max_length < 3) goto code_?;
-                        if (pGVar6->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                          GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp(pGVar6->vector[2],4.367581e-29,(MethodInfo *)0x0);
-                          fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_YSnapStep(settings,(MethodInfo *)0x0);
-                          pGVar3 = (this->fields)._scSglSliderSettings;
-                          if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                            if (pGVar3->max_length < 2) goto code_?;
-                            if ((GizmoPlaneSlider3DSettings *)pGVar3->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar3->vector[1],fVar1,(MethodInfo *)0x0);
-                              pGVar3 = (this->fields)._scSglSliderSettings;
-                              if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                                if (pGVar3->max_length < 5) goto code_?;
-                                if ((GizmoPlaneSlider3DSettings *)pGVar3->vector[4] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                  GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar3->vector[4],fVar1,(MethodInfo *)0x0);
-                                  pGVar6 = (this->fields)._scDblSliderSettings;
-                                  if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                    if (pGVar6->max_length == 0) goto code_?;
-                                    if (pGVar6->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp(pGVar6->vector[0],fVar1,(MethodInfo *)0x0);
-                                      pGVar6 = (this->fields)._scDblSliderSettings;
-                                      if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                        if (pGVar6->max_length < 2) goto code_?;
-                                        if (pGVar6->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                          UniversalGizmoSettings3D_SetScUniformScaleSnapStep((UniversalGizmoSettings3D *)pGVar6->vector[1],fVar1,(MethodInfo *)0x0);
-                                          fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_ZSnapStep(settings,(MethodInfo *)0x0);
-                                          pGVar3 = (this->fields)._scSglSliderSettings;
-                                          if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                                            if (pGVar3->max_length < 3) goto code_?;
-                                            if ((GizmoPlaneSlider3DSettings *)pGVar3->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar3->vector[2],fVar1,(MethodInfo *)0x0);
-                                              pGVar3 = (this->fields)._scSglSliderSettings;
-                                              if (pGVar3 != (GizmoLineSlider3DSettings__Array *)0x0) {
-                                                if (pGVar3->max_length < 6) goto code_?;
-                                                if ((GizmoPlaneSlider3DSettings *)pGVar3->vector[5] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                  GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar3->vector[5],fVar1,(MethodInfo *)0x0);
-                                                  pGVar6 = (this->fields)._scDblSliderSettings;
-                                                  if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                                    if (pGVar6->max_length < 2) goto code_?;
-                                                    if (pGVar6->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp(pGVar6->vector[1],fVar1,(MethodInfo *)0x0);
-                                                      pGVar6 = (this->fields)._scDblSliderSettings;
-                                                      if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                                        if (pGVar6->max_length < 3) goto code_?;
-                                                        if (pGVar6->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                          UniversalGizmoSettings3D_SetScUniformScaleSnapStep((UniversalGizmoSettings3D *)pGVar6->vector[2],fVar1,(MethodInfo *)0x0);
-                                                          fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_XYSnapStep(settings,(MethodInfo *)0x0);
-                                                          pGVar6 = (this->fields)._scDblSliderSettings;
-                                                          if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                                            if (pGVar6->max_length == 0) goto code_?;
-                                                            if (pGVar6->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ProportionalScaleSnapStep(pGVar6->vector[0],fVar1,(MethodInfo *)0x0);
-                                                              fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_YZSnapStep(settings,(MethodInfo *)0x0);
-                                                              pGVar6 = (this->fields)._scDblSliderSettings;
-                                                              if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                                                if (pGVar6->max_length < 2) goto code_?;
-                                                                if (pGVar6->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                                  GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ProportionalScaleSnapStep(pGVar6->vector[1],fVar1,(MethodInfo *)0x0);
-                                                                  fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_ZXSnapStep(settings,(MethodInfo *)0x0);
-                                                                  pGVar6 = (this->fields)._scDblSliderSettings;
-                                                                  if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                                                                    if (pGVar6->max_length < 3) goto code_?;
-                                                                    if (pGVar6->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                                                                      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ProportionalScaleSnapStep(pGVar6->vector[2],fVar1,(MethodInfo *)0x0);
-                                                                      return;
+                                FUN_?(pUVar2,pGVar3,method);
+                                pcVar10 = (code *)swi(3);
+                                (*pcVar10)();
+                                return;
+                              }
+                              pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[0];
+                              if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                pGVar1 = (this->fields)._mvSglSliderSettings;
+                                fVar5 = *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4);
+                                if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                  if ((int)pGVar1->max_length == 0) goto code_?;
+                                  pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[0];
+                                  if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                    fVar11 = fVar5;
+                                    if (fVar5 < 0.0001) {
+                                      fVar11 = 0.0001;
+                                    }
+                                    *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4) = fVar11;
+                                    if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                      if ((uint)pGVar1->max_length < 4) goto code_?;
+                                      pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[3];
+                                      if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                        fVar11 = fVar5;
+                                        if (fVar5 < 0.0001) {
+                                          fVar11 = 0.0001;
+                                        }
+                                        pGVar8 = (this->fields)._mvDblSliderSettings;
+                                        *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4) = fVar11;
+                                        if (pGVar8 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                          if ((int)pGVar8->max_length == 0) goto code_?;
+                                          pUVar2 = (UniversalGizmoSettings3D *)pGVar8->vector[0];
+                                          if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                            fVar11 = fVar5;
+                                            if (fVar5 < 0.0001) {
+                                              fVar11 = 0.0001;
+                                            }
+                                            (pUVar2->fields)._displayCategory = (int32_t)fVar11;
+                                            if (pGVar8 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                              if ((uint)pGVar8->max_length < 3) goto code_?;
+                                              pUVar2 = (UniversalGizmoSettings3D *)pGVar8->vector[2];
+                                              if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                if (fVar5 < 0.0001) {
+                                                  fVar5 = 0.0001;
+                                                }
+                                                *(float *)&(pUVar2->fields).field_0x1c = fVar5;
+                                                pGVar1 = (settings->fields)._sglSliderSettings;
+                                                if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                  if ((uint)pGVar1->max_length < 2) goto code_?;
+                                                  pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[1];
+                                                  if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                    pGVar1 = (this->fields)._mvSglSliderSettings;
+                                                    fVar5 = *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4);
+                                                    if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                      if ((uint)pGVar1->max_length < 2) goto code_?;
+                                                      pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[1];
+                                                      if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                        fVar11 = fVar5;
+                                                        if (fVar5 < 0.0001) {
+                                                          fVar11 = 0.0001;
+                                                        }
+                                                        *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4) = fVar11;
+                                                        if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                          if ((uint)pGVar1->max_length < 5) goto code_?;
+                                                          pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[4];
+                                                          if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                            fVar11 = fVar5;
+                                                            if (fVar5 < 0.0001) {
+                                                              fVar11 = 0.0001;
+                                                            }
+                                                            pGVar8 = (this->fields)._mvDblSliderSettings;
+                                                            *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4) = fVar11;
+                                                            if (pGVar8 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                              if ((int)pGVar8->max_length == 0) goto code_?;
+                                                              pUVar2 = (UniversalGizmoSettings3D *)pGVar8->vector[0];
+                                                              if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                                fVar11 = fVar5;
+                                                                if (fVar5 < 0.0001) {
+                                                                  fVar11 = 0.0001;
+                                                                }
+                                                                *(float *)&(pUVar2->fields).field_0x1c = fVar11;
+                                                                if (pGVar8 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                  if ((uint)pGVar8->max_length < 2) goto code_?;
+                                                                  pUVar2 = (UniversalGizmoSettings3D *)pGVar8->vector[1];
+                                                                  if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                                    if (fVar5 < 0.0001) {
+                                                                      fVar5 = 0.0001;
+                                                                    }
+                                                                    (pUVar2->fields)._displayCategory = (int32_t)fVar5;
+                                                                    pGVar1 = (settings->fields)._sglSliderSettings;
+                                                                    if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                                      if ((uint)pGVar1->max_length < 3) goto code_?;
+                                                                      pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[2];
+                                                                      if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                                        pGVar1 = (this->fields)._mvSglSliderSettings;
+                                                                        fVar5 = *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4);
+                                                                        if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                                          if ((uint)pGVar1->max_length < 3) goto code_?;
+                                                                          pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[2];
+                                                                          if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                                            fVar11 = fVar5;
+                                                                            if (fVar5 < 0.0001) {
+                                                                              fVar11 = 0.0001;
+                                                                            }
+                                                                            *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4) = fVar11;
+                                                                            if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                                              if ((uint)pGVar1->max_length < 6) goto code_?;
+                                                                              pUVar2 = (UniversalGizmoSettings3D *)pGVar1->vector[5];
+                                                                              if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                                                fVar11 = fVar5;
+                                                                                if (fVar5 < 0.0001) {
+                                                                                  fVar11 = 0.0001;
+                                                                                }
+                                                                                pGVar8 = (this->fields)._mvDblSliderSettings;
+                                                                                *(float *)((longlong)&(pUVar2->fields)._._foldoutLabel + 4) = fVar11;
+                                                                                if (pGVar8 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                  if ((uint)pGVar8->max_length < 2) goto code_?;
+                                                                                  pUVar2 = (UniversalGizmoSettings3D *)pGVar8->vector[1];
+                                                                                  if (pUVar2 != (UniversalGizmoSettings3D *)0x0) {
+                                                                                    fVar11 = fVar5;
+                                                                                    if (fVar5 < 0.0001) {
+                                                                                      fVar11 = 0.0001;
+                                                                                    }
+                                                                                    *(float *)&(pUVar2->fields).field_0x1c = fVar11;
+                                                                                    if (pGVar8 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                      if ((uint)pGVar8->max_length < 3) goto code_?;
+                                                                                      if (pGVar8->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                        fVar11 = 0.0001;
+                                                                                        if (0.0001 <= fVar5) {
+                                                                                          fVar11 = fVar5;
+                                                                                        }
+                                                                                        (pGVar8->vector[2]->fields)._offsetSnapStepRight = fVar11;
+                                                                                        pGVar12 = (settings->fields)._vertexSnapSettings;
+                                                                                        if ((pGVar12 != (GizmoObjectVertexSnapSettings *)0x0) && (pGVar13 = (this->fields)._mvVertexSnapSettings, pGVar13 != (GizmoObjectVertexSnapSettings *)0x0)) {
+                                                                                          (pGVar13->fields)._snapDestinationLayers = (pGVar12->fields)._snapDestinationLayers;
+                                                                                          (pGVar13->fields)._canSnapToGrid = (pGVar12->fields)._canSnapToGrid;
+                                                                                          (pGVar13->fields)._canSnapToObjectVerts = (pGVar12->fields)._canSnapToObjectVerts;
+                                                                                          return;
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
                                                                     }
                                                                   }
                                                                 }
@@ -752,11 +667,532 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
     }
   }
 code_?:
-  func_?();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
+  return;
+}
+
+
+/* Void Inherit(RotationGizmoSettings3D) */
+
+void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_Inherit_1(UniversalGizmoSettings3D *this,RotationGizmoSettings3D *settings,MethodInfo *method)
+
+{
+  if ((settings != (RotationGizmoSettings3D *)0x0) && (pGVar1 = (settings->fields)._sliderSettings, pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0)) {
+    if ((int)pGVar1->max_length == 0) goto code_?;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      pGVar2 = (this->fields)._rtSliderSettings;
+      uVar3 = 0;
+      fVar4 = (pGVar1->vector[0]->fields)._borderLineHoverEps;
+      uVar5 = 0;
+      if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+        ppGVar6 = pGVar2->vector;
+        while ((int)uVar5 < (int)pGVar2->max_length) {
+          if ((uint)pGVar2->max_length <= uVar5) goto code_?;
+          pGVar7 = *ppGVar6;
+          if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+          if (0.0 <= fVar4) {
+            uVar5 = uVar5 + 1;
+            (pGVar7->fields)._borderLineHoverEps = fVar4;
+            ppGVar6 = ppGVar6 + 1;
+          }
+          else {
+            uVar5 = uVar5 + 1;
+            (pGVar7->fields)._borderLineHoverEps = 0.0;
+            ppGVar6 = ppGVar6 + 1;
+          }
+        }
+        pGVar1 = (settings->fields)._sliderSettings;
+        if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+          if ((int)pGVar1->max_length == 0) goto code_?;
+          if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+            UniversalGizmoSettings3D_SetRtAxisTorusHoverEps(this,(pGVar1->vector[0]->fields)._borderTorusHoverEps,(MethodInfo *)0x0);
+            pGVar8 = (settings->fields)._camLookSliderSettings;
+            if ((pGVar8 != (GizmoPlaneSlider2DSettings *)0x0) && (pGVar9 = (this->fields)._rtCamLookSliderSettings, pGVar9 != (GizmoPlaneSlider2DSettings *)0x0)) {
+              fVar4 = (pGVar8->fields)._thickBorderPolyHoverEps;
+              if (fVar4 < 0.0) {
+                fVar4 = 0.0;
+              }
+              (pGVar9->fields)._thickBorderPolyHoverEps = fVar4;
+              pGVar8 = (settings->fields)._camLookSliderSettings;
+              if ((pGVar8 != (GizmoPlaneSlider2DSettings *)0x0) && (pGVar9 = (this->fields)._rtCamLookSliderSettings, pGVar9 != (GizmoPlaneSlider2DSettings *)0x0)) {
+                fVar4 = (pGVar8->fields)._borderLineHoverEps;
+                fVar10 = 0.0;
+                if (0.0 <= fVar4) {
+                  fVar10 = fVar4;
+                }
+                (pGVar9->fields)._borderLineHoverEps = fVar10;
+                pGVar8 = (settings->fields)._camLookSliderSettings;
+                if ((pGVar8 != (GizmoPlaneSlider2DSettings *)0x0) && (pGVar9 = (this->fields)._rtCamLookSliderSettings, pGVar9 != (GizmoPlaneSlider2DSettings *)0x0)) {
+                  fVar4 = (pGVar8->fields)._rotationSnapStep;
+                  if (fVar4 < 0.0001) {
+                    fVar4 = 0.0001;
+                  }
+                  (pGVar9->fields)._rotationSnapStep = fVar4;
+                  fVar4 = (settings->fields)._camRightSnapStep;
+                  if (fVar4 < 0.0001) {
+                    fVar4 = 0.0001;
+                  }
+                  (this->fields)._rtCamRightSnapStep = fVar4;
+                  fVar4 = (settings->fields)._camUpSnapStep;
+                  if (fVar4 < 0.0001) {
+                    fVar4 = 0.0001;
+                  }
+                  (this->fields)._rtCamUpSnapStep = fVar4;
+                  pGVar1 = (settings->fields)._sliderSettings;
+                  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                    if ((int)pGVar1->max_length == 0) goto code_?;
+                    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                      pGVar2 = (this->fields)._rtSliderSettings;
+                      bVar11 = (pGVar1->vector[0]->fields)._isCircleHoverCullEnabled;
+                      uVar5 = 0;
+                      if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                        ppGVar6 = pGVar2->vector;
+                        for (; (int)uVar5 < (int)pGVar2->max_length; uVar5 = uVar5 + 1) {
+                          if ((uint)pGVar2->max_length <= uVar5) goto code_?;
+                          if (*ppGVar6 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+                          ((*ppGVar6)->fields)._isCircleHoverCullEnabled = bVar11 != 0;
+                          ppGVar6 = ppGVar6 + 1;
+                        }
+                        pGVar1 = (settings->fields)._sliderSettings;
+                        if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                          if ((int)pGVar1->max_length == 0) goto code_?;
+                          if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                            pGVar2 = (this->fields)._rtSliderSettings;
+                            fVar4 = (pGVar1->vector[0]->fields)._rotationSensitivity;
+                            uVar5 = 0;
+                            if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                              ppGVar6 = pGVar2->vector;
+                              while ((int)uVar5 < (int)pGVar2->max_length) {
+                                if ((uint)pGVar2->max_length <= uVar5) goto code_?;
+                                pGVar7 = *ppGVar6;
+                                if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+                                if (0.0001 <= fVar4) {
+                                  uVar5 = uVar5 + 1;
+                                  (pGVar7->fields)._rotationSensitivity = fVar4;
+                                  ppGVar6 = ppGVar6 + 1;
+                                }
+                                else {
+                                  uVar5 = uVar5 + 1;
+                                  (pGVar7->fields)._rotationSensitivity = 0.0001;
+                                  ppGVar6 = ppGVar6 + 1;
+                                }
+                              }
+                              pGVar8 = (this->fields)._rtCamLookSliderSettings;
+                              if (pGVar8 != (GizmoPlaneSlider2DSettings *)0x0) {
+                                if (fVar4 < 0.0001) {
+                                  fVar4 = 0.0001;
+                                }
+                                (pGVar8->fields)._rotationSensitivity = fVar4;
+                                pGVar1 = (settings->fields)._sliderSettings;
+                                if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                  if ((int)pGVar1->max_length == 0) goto code_?;
+                                  if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                    pGVar2 = (this->fields)._rtSliderSettings;
+                                    iVar12 = (pGVar1->vector[0]->fields)._rotationSnapMode;
+                                    if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                      ppGVar6 = pGVar2->vector;
+                                      for (; (int)uVar3 < (int)pGVar2->max_length; uVar3 = uVar3 + 1) {
+                                        if ((uint)pGVar2->max_length <= uVar3) goto code_?;
+                                        if (*ppGVar6 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+                                        ((*ppGVar6)->fields)._rotationSnapMode = iVar12;
+                                        ppGVar6 = ppGVar6 + 1;
+                                      }
+                                      pGVar8 = (this->fields)._rtCamLookSliderSettings;
+                                      if (pGVar8 != (GizmoPlaneSlider2DSettings *)0x0) {
+                                        (pGVar8->fields)._rotationSnapMode = iVar12;
+                                        pGVar1 = (settings->fields)._sliderSettings;
+                                        if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                          if ((int)pGVar1->max_length == 0) {
 code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+                                            FUN_?();
+                                            pcVar13 = (code *)swi(3);
+                                            (*pcVar13)();
+                                            return;
+                                          }
+                                          if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                            pGVar2 = (this->fields)._rtSliderSettings;
+                                            fVar4 = (pGVar1->vector[0]->fields)._rotationSnapStep;
+                                            if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                              if ((int)pGVar2->max_length == 0) goto code_?;
+                                              if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                if (fVar4 < 0.0001) {
+                                                  fVar4 = 0.0001;
+                                                }
+                                                (pGVar2->vector[0]->fields)._rotationSnapStep = fVar4;
+                                                pGVar1 = (settings->fields)._sliderSettings;
+                                                if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                  if ((uint)pGVar1->max_length < 2) goto code_?;
+                                                  if (pGVar1->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                    pGVar2 = (this->fields)._rtSliderSettings;
+                                                    fVar4 = (pGVar1->vector[1]->fields)._rotationSnapStep;
+                                                    if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                      if ((uint)pGVar2->max_length < 2) goto code_?;
+                                                      if (pGVar2->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                        if (fVar4 < 0.0001) {
+                                                          fVar4 = 0.0001;
+                                                        }
+                                                        (pGVar2->vector[1]->fields)._rotationSnapStep = fVar4;
+                                                        pGVar1 = (settings->fields)._sliderSettings;
+                                                        if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                          if ((uint)pGVar1->max_length < 3) goto code_?;
+                                                          if (pGVar1->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                            pGVar2 = (this->fields)._rtSliderSettings;
+                                                            fVar4 = (pGVar1->vector[2]->fields)._rotationSnapStep;
+                                                            if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                              if ((uint)pGVar2->max_length < 3) goto code_?;
+                                                              if (pGVar2->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                fVar10 = 0.0001;
+                                                                if (0.0001 <= fVar4) {
+                                                                  fVar10 = fVar4;
+                                                                }
+                                                                (pGVar2->vector[2]->fields)._rotationSnapStep = fVar10;
+                                                                return;
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
+  return;
+}
+
+
+/* Void Inherit(ScaleGizmoSettings3D) */
+
+void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_Inherit_2(UniversalGizmoSettings3D *this,ScaleGizmoSettings3D *settings,MethodInfo *method)
+
+{
+  if ((settings != (ScaleGizmoSettings3D *)0x0) && (pGVar1 = (settings->fields)._sglSliderSettings, pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0)) {
+    if ((int)pGVar1->max_length == 0) goto code_?;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      pGVar2 = (this->fields)._scSglSliderSettings;
+      uVar3 = 0;
+      fVar4 = (pGVar1->vector[0]->fields)._lineHoverEps;
+      uVar5 = 0;
+      if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
+        ppGVar6 = pGVar2->vector;
+        while ((int)uVar5 < (int)pGVar2->max_length) {
+          if ((uint)pGVar2->max_length <= uVar5) goto code_?;
+          pGVar7 = *ppGVar6;
+          if (pGVar7 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+          if (0.0 <= fVar4) {
+            uVar5 = uVar5 + 1;
+            (pGVar7->fields)._lineHoverEps = fVar4;
+            ppGVar6 = ppGVar6 + 1;
+          }
+          else {
+            uVar5 = uVar5 + 1;
+            (pGVar7->fields)._lineHoverEps = 0.0;
+            ppGVar6 = ppGVar6 + 1;
+          }
+        }
+        pGVar1 = (settings->fields)._sglSliderSettings;
+        if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+          if ((int)pGVar1->max_length == 0) goto code_?;
+          if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+            fVar4 = (pGVar1->vector[0]->fields)._cylinderHoverEps;
+            uVar5 = 0;
+            if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
+              ppGVar6 = pGVar2->vector;
+              while ((int)uVar5 < (int)pGVar2->max_length) {
+                if ((uint)pGVar2->max_length <= uVar5) goto code_?;
+                pGVar7 = *ppGVar6;
+                if (pGVar7 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+                if (0.0 <= fVar4) {
+                  uVar5 = uVar5 + 1;
+                  (pGVar7->fields)._cylinderHoverEps = fVar4;
+                  ppGVar6 = ppGVar6 + 1;
+                }
+                else {
+                  uVar5 = uVar5 + 1;
+                  (pGVar7->fields)._cylinderHoverEps = 0.0;
+                  ppGVar6 = ppGVar6 + 1;
+                }
+              }
+              pGVar1 = (settings->fields)._sglSliderSettings;
+              if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                if ((int)pGVar1->max_length == 0) {
+code_?:
+                  FUN_?();
+                  pcVar8 = (code *)swi(3);
+                  (*pcVar8)();
+                  return;
+                }
+                if ((pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) && (fVar4 = (pGVar1->vector[0]->fields)._boxHoverEps, pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0)) {
+                  ppGVar6 = pGVar2->vector;
+                  while ((int)uVar3 < (int)pGVar2->max_length) {
+                    if ((uint)pGVar2->max_length <= uVar3) goto code_?;
+                    pGVar7 = *ppGVar6;
+                    if (pGVar7 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+                    if (0.0 <= fVar4) {
+                      uVar3 = uVar3 + 1;
+                      (pGVar7->fields)._boxHoverEps = fVar4;
+                      ppGVar6 = ppGVar6 + 1;
+                    }
+                    else {
+                      uVar3 = uVar3 + 1;
+                      (pGVar7->fields)._boxHoverEps = 0.0;
+                      ppGVar6 = ppGVar6 + 1;
+                    }
+                  }
+                  pGVar1 = (settings->fields)._sglSliderSettings;
+                  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                    if ((int)pGVar1->max_length == 0) goto code_?;
+                    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+                      UniversalGizmoSettings3D_SetScDragSensitivity(this,(pGVar1->vector[0]->fields)._scaleSensitivity,(MethodInfo *)0x0);
+                      fVar4 = (settings->fields)._uniformSnapStep;
+                      if (fVar4 < 0.0001) {
+                        fVar4 = 0.0001;
+                      }
+                      (this->fields)._scUniformSnapStep = fVar4;
+                      pGVar1 = (settings->fields)._sglSliderSettings;
+                      if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                        if ((int)pGVar1->max_length == 0) goto code_?;
+                        if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+                          pGVar2 = (this->fields)._scSglSliderSettings;
+                          fVar4 = (pGVar1->vector[0]->fields)._scaleSnapStep;
+                          if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                            if ((int)pGVar2->max_length == 0) goto code_?;
+                            if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+                              fVar9 = fVar4;
+                              if (fVar4 < 0.0001) {
+                                fVar9 = 0.0001;
+                              }
+                              (pGVar2->vector[0]->fields)._scaleSnapStep = fVar9;
+                              pGVar1 = (this->fields)._scSglSliderSettings;
+                              if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                if ((uint)pGVar1->max_length < 4) goto code_?;
+                                if (pGVar1->vector[3] != (GizmoLineSlider3DSettings *)0x0) {
+                                  fVar9 = fVar4;
+                                  if (fVar4 < 0.0001) {
+                                    fVar9 = 0.0001;
+                                  }
+                                  (pGVar1->vector[3]->fields)._scaleSnapStep = fVar9;
+                                  pGVar10 = (this->fields)._scDblSliderSettings;
+                                  if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                    if ((int)pGVar10->max_length == 0) goto code_?;
+                                    if (pGVar10->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                      fVar9 = fVar4;
+                                      if (fVar4 < 0.0001) {
+                                        fVar9 = 0.0001;
+                                      }
+                                      (pGVar10->vector[0]->fields)._scaleSnapStepRight = fVar9;
+                                      pGVar10 = (this->fields)._scDblSliderSettings;
+                                      if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                        if ((uint)pGVar10->max_length < 3) goto code_?;
+                                        if (pGVar10->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                          if (fVar4 < 0.0001) {
+                                            fVar4 = 0.0001;
+                                          }
+                                          (pGVar10->vector[2]->fields)._scaleSnapStepUp = fVar4;
+                                          pGVar1 = (settings->fields)._sglSliderSettings;
+                                          if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                            if ((uint)pGVar1->max_length < 2) goto code_?;
+                                            if (pGVar1->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
+                                              pGVar2 = (this->fields)._scSglSliderSettings;
+                                              fVar4 = (pGVar1->vector[1]->fields)._scaleSnapStep;
+                                              if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                if ((uint)pGVar2->max_length < 2) goto code_?;
+                                                if (pGVar2->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
+                                                  fVar9 = fVar4;
+                                                  if (fVar4 < 0.0001) {
+                                                    fVar9 = 0.0001;
+                                                  }
+                                                  (pGVar2->vector[1]->fields)._scaleSnapStep = fVar9;
+                                                  pGVar1 = (this->fields)._scSglSliderSettings;
+                                                  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                    if ((uint)pGVar1->max_length < 5) goto code_?;
+                                                    if (pGVar1->vector[4] != (GizmoLineSlider3DSettings *)0x0) {
+                                                      fVar9 = fVar4;
+                                                      if (fVar4 < 0.0001) {
+                                                        fVar9 = 0.0001;
+                                                      }
+                                                      (pGVar1->vector[4]->fields)._scaleSnapStep = fVar9;
+                                                      pGVar10 = (this->fields)._scDblSliderSettings;
+                                                      if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                        if ((int)pGVar10->max_length == 0) goto code_?;
+                                                        if (pGVar10->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                          fVar9 = fVar4;
+                                                          if (fVar4 < 0.0001) {
+                                                            fVar9 = 0.0001;
+                                                          }
+                                                          (pGVar10->vector[0]->fields)._scaleSnapStepUp = fVar9;
+                                                          pGVar10 = (this->fields)._scDblSliderSettings;
+                                                          if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                            if ((uint)pGVar10->max_length < 2) goto code_?;
+                                                            if (pGVar10->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                              if (fVar4 < 0.0001) {
+                                                                fVar4 = 0.0001;
+                                                              }
+                                                              (pGVar10->vector[1]->fields)._scaleSnapStepRight = fVar4;
+                                                              pGVar1 = (settings->fields)._sglSliderSettings;
+                                                              if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                                if ((uint)pGVar1->max_length < 3) goto code_?;
+                                                                if (pGVar1->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
+                                                                  pGVar2 = (this->fields)._scSglSliderSettings;
+                                                                  fVar4 = (pGVar1->vector[2]->fields)._scaleSnapStep;
+                                                                  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                                    if ((uint)pGVar2->max_length < 3) goto code_?;
+                                                                    if (pGVar2->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
+                                                                      fVar9 = fVar4;
+                                                                      if (fVar4 < 0.0001) {
+                                                                        fVar9 = 0.0001;
+                                                                      }
+                                                                      (pGVar2->vector[2]->fields)._scaleSnapStep = fVar9;
+                                                                      pGVar1 = (this->fields)._scSglSliderSettings;
+                                                                      if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+                                                                        if ((uint)pGVar1->max_length < 6) goto code_?;
+                                                                        if (pGVar1->vector[5] != (GizmoLineSlider3DSettings *)0x0) {
+                                                                          fVar9 = fVar4;
+                                                                          if (fVar4 < 0.0001) {
+                                                                            fVar9 = 0.0001;
+                                                                          }
+                                                                          (pGVar1->vector[5]->fields)._scaleSnapStep = fVar9;
+                                                                          pGVar10 = (this->fields)._scDblSliderSettings;
+                                                                          if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                            if ((uint)pGVar10->max_length < 2) goto code_?;
+                                                                            if (pGVar10->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                              fVar9 = fVar4;
+                                                                              if (fVar4 < 0.0001) {
+                                                                                fVar9 = 0.0001;
+                                                                              }
+                                                                              (pGVar10->vector[1]->fields)._scaleSnapStepUp = fVar9;
+                                                                              pGVar10 = (this->fields)._scDblSliderSettings;
+                                                                              if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                if ((uint)pGVar10->max_length < 3) goto code_?;
+                                                                                if (pGVar10->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                  if (fVar4 < 0.0001) {
+                                                                                    fVar4 = 0.0001;
+                                                                                  }
+                                                                                  (pGVar10->vector[2]->fields)._scaleSnapStepRight = fVar4;
+                                                                                  pGVar10 = (settings->fields)._dblSliderSettings;
+                                                                                  if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                    if ((int)pGVar10->max_length == 0) goto code_?;
+                                                                                    if (pGVar10->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                      pGVar11 = (this->fields)._scDblSliderSettings;
+                                                                                      fVar4 = (pGVar10->vector[0]->fields)._proportionalScaleSnapStep;
+                                                                                      if (pGVar11 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                        if ((int)pGVar11->max_length == 0) goto code_?;
+                                                                                        if (pGVar11->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                          if (fVar4 < 0.0001) {
+                                                                                            fVar4 = 0.0001;
+                                                                                          }
+                                                                                          (pGVar11->vector[0]->fields)._proportionalScaleSnapStep = fVar4;
+                                                                                          pGVar10 = (settings->fields)._dblSliderSettings;
+                                                                                          if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                            if ((uint)pGVar10->max_length < 2) goto code_?;
+                                                                                            if (pGVar10->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                              pGVar11 = (this->fields)._scDblSliderSettings;
+                                                                                              fVar4 = (pGVar10->vector[1]->fields)._proportionalScaleSnapStep;
+                                                                                              if (pGVar11 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                                if ((uint)pGVar11->max_length < 2) goto code_?;
+                                                                                                if (pGVar11->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                                  if (fVar4 < 0.0001) {
+                                                                                                    fVar4 = 0.0001;
+                                                                                                  }
+                                                                                                  (pGVar11->vector[1]->fields)._proportionalScaleSnapStep = fVar4;
+                                                                                                  pGVar10 = (settings->fields)._dblSliderSettings;
+                                                                                                  if (pGVar10 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                                    if ((uint)pGVar10->max_length < 3) goto code_?;
+                                                                                                    if (pGVar10->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                                      pGVar11 = (this->fields)._scDblSliderSettings;
+                                                                                                      fVar4 = (pGVar10->vector[2]->fields)._proportionalScaleSnapStep;
+                                                                                                      if (pGVar11 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                                                                                                        if ((uint)pGVar11->max_length < 3) goto code_?;
+                                                                                                        if (pGVar11->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                                                                                                          fVar9 = 0.0001;
+                                                                                                          if (0.0001 <= fVar4) {
+                                                                                                            fVar9 = fVar4;
+                                                                                                          }
+                                                                                                          (pGVar11->vector[2]->fields)._proportionalScaleSnapStep = fVar9;
+                                                                                                          return;
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -769,23 +1205,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._mvSglSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if (*ppGVar3 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-      Sphere::Sphere_set_Radius((Sphere *)*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoLineSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._boxHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._boxHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -798,23 +1245,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._mvSglSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if ((GizmoPlaneSlider3DSettings *)*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoLineSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._cylinderHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._cylinderHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -828,34 +1286,55 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
     ppGVar3 = pGVar1->vector;
-    for (; (int)uVar2 < (int)pGVar1->max_length; uVar2 = uVar2 + 1) {
-      if (pGVar1->max_length <= uVar2) goto code_?;
-      if ((UniversalGizmoSettings3D *)*ppGVar3 == (UniversalGizmoSettings3D *)0x0) goto code_?;
-      UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)*ppGVar3,sensitivity,(MethodInfo *)0x0);
-      ppGVar3 = ppGVar3 + 1;
+    while ((int)uVar2 < (int)pGVar1->max_length) {
+      if ((uint)pGVar1->max_length <= uVar2) goto code_?;
+      pGVar4 = *ppGVar3;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+      if (0.0001 <= sensitivity) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._offsetSensitivity = sensitivity;
+        ppGVar3 = ppGVar3 + 1;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._offsetSensitivity = 0.0001;
+        ppGVar3 = ppGVar3 + 1;
+      }
     }
+    pGVar5 = (this->fields)._mvDblSliderSettings;
     uVar2 = 0;
-    pGVar4 = (this->fields)._mvDblSliderSettings;
-    if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-      ppGVar5 = pGVar4->vector;
-      while( true ) {
-        if ((int)pGVar4->max_length <= (int)uVar2) {
+    if (pGVar5 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+      ppGVar6 = pGVar5->vector;
+      do {
+        if ((int)pGVar5->max_length <= (int)uVar2) {
           return;
         }
-        if (pGVar4->max_length <= uVar2) break;
-        if (*ppGVar5 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-        GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSensitivity(*ppGVar5,sensitivity,(MethodInfo *)0x0);
-        uVar2 = uVar2 + 1;
-        ppGVar5 = ppGVar5 + 1;
-      }
+        if ((uint)pGVar5->max_length <= uVar2) {
 code_?:
-      func_?();
+          FUN_?();
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        pGVar8 = *ppGVar6;
+        if (pGVar8 == (GizmoPlaneSlider3DSettings *)0x0) break;
+        if (0.0001 <= sensitivity) {
+          uVar2 = uVar2 + 1;
+          (pGVar8->fields)._offsetSensitivity = sensitivity;
+          ppGVar6 = ppGVar6 + 1;
+        }
+        else {
+          uVar2 = uVar2 + 1;
+          (pGVar8->fields)._offsetSensitivity = 0.0001;
+          ppGVar6 = ppGVar6 + 1;
+        }
+      } while( true );
     }
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -868,23 +1347,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._mvSglSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if ((GizmoPlaneSlider3DSettings *)*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_AreaHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoLineSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._lineHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._lineHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -896,24 +1386,44 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._mvSglSliderSettings;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length == 0) goto code_?;
+    if ((int)pGVar1->max_length == 0) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
     if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar1->vector[0],snapStep,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._mvSglSliderSettings;
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[0]->fields)._offsetSnapStep = fVar3;
       if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        if (pGVar1->max_length < 4) goto code_?;
+        if ((uint)pGVar1->max_length < 4) goto code_?;
         if (pGVar1->vector[3] != (GizmoLineSlider3DSettings *)0x0) {
-          ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar1->vector[3],snapStep,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._mvDblSliderSettings;
-          if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-            if (pGVar2->max_length == 0) goto code_?;
-            if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight(pGVar2->vector[0],snapStep,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._mvDblSliderSettings;
-              if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                if (pGVar2->max_length < 3) goto code_?;
-                if (pGVar2->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                  UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)pGVar2->vector[2],snapStep,(MethodInfo *)0x0);
+          pGVar4 = (this->fields)._mvDblSliderSettings;
+          fVar3 = 0.0001;
+          if (0.0001 <= snapStep) {
+            fVar3 = snapStep;
+          }
+          (pGVar1->vector[3]->fields)._offsetSnapStep = fVar3;
+          if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+            if ((int)pGVar4->max_length == 0) goto code_?;
+            if (pGVar4->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+              fVar3 = 0.0001;
+              if (0.0001 <= snapStep) {
+                fVar3 = snapStep;
+              }
+              (pGVar4->vector[0]->fields)._offsetSnapStepRight = fVar3;
+              if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                if ((uint)pGVar4->max_length < 3) goto code_?;
+                if (pGVar4->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                  fVar3 = 0.0001;
+                  if (0.0001 <= snapStep) {
+                    fVar3 = snapStep;
+                  }
+                  (pGVar4->vector[2]->fields)._offsetSnapStepUp = fVar3;
                   return;
                 }
               }
@@ -923,11 +1433,9 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -939,24 +1447,44 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._mvSglSliderSettings;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length < 2) goto code_?;
+    if ((uint)pGVar1->max_length < 2) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
     if (pGVar1->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
-      ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar1->vector[1],snapStep,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._mvSglSliderSettings;
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[1]->fields)._offsetSnapStep = fVar3;
       if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        if (pGVar1->max_length < 5) goto code_?;
+        if ((uint)pGVar1->max_length < 5) goto code_?;
         if (pGVar1->vector[4] != (GizmoLineSlider3DSettings *)0x0) {
-          ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar1->vector[4],snapStep,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._mvDblSliderSettings;
-          if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-            if (pGVar2->max_length == 0) goto code_?;
-            if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-              UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)pGVar2->vector[0],snapStep,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._mvDblSliderSettings;
-              if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                if (pGVar2->max_length < 2) goto code_?;
-                if (pGVar2->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                  GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight(pGVar2->vector[1],snapStep,(MethodInfo *)0x0);
+          pGVar4 = (this->fields)._mvDblSliderSettings;
+          fVar3 = 0.0001;
+          if (0.0001 <= snapStep) {
+            fVar3 = snapStep;
+          }
+          (pGVar1->vector[4]->fields)._offsetSnapStep = fVar3;
+          if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+            if ((int)pGVar4->max_length == 0) goto code_?;
+            if (pGVar4->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+              fVar3 = 0.0001;
+              if (0.0001 <= snapStep) {
+                fVar3 = snapStep;
+              }
+              (pGVar4->vector[0]->fields)._offsetSnapStepUp = fVar3;
+              if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                if ((uint)pGVar4->max_length < 2) goto code_?;
+                if (pGVar4->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                  fVar3 = 0.0001;
+                  if (0.0001 <= snapStep) {
+                    fVar3 = snapStep;
+                  }
+                  (pGVar4->vector[1]->fields)._offsetSnapStepRight = fVar3;
                   return;
                 }
               }
@@ -966,11 +1494,9 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -982,24 +1508,44 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._mvSglSliderSettings;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length < 3) goto code_?;
+    if ((uint)pGVar1->max_length < 3) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
     if (pGVar1->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
-      ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar1->vector[2],snapStep,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._mvSglSliderSettings;
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[2]->fields)._offsetSnapStep = fVar3;
       if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        if (pGVar1->max_length < 6) goto code_?;
+        if ((uint)pGVar1->max_length < 6) goto code_?;
         if (pGVar1->vector[5] != (GizmoLineSlider3DSettings *)0x0) {
-          ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep((ObjectKeyRotationSettings *)pGVar1->vector[5],snapStep,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._mvDblSliderSettings;
-          if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-            if (pGVar2->max_length < 2) goto code_?;
-            if (pGVar2->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-              UniversalGizmoSettings3D_SetRtCamRightSnapStep((UniversalGizmoSettings3D *)pGVar2->vector[1],snapStep,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._mvDblSliderSettings;
-              if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                if (pGVar2->max_length < 3) goto code_?;
-                if (pGVar2->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                  GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight(pGVar2->vector[2],snapStep,(MethodInfo *)0x0);
+          pGVar4 = (this->fields)._mvDblSliderSettings;
+          fVar3 = 0.0001;
+          if (0.0001 <= snapStep) {
+            fVar3 = snapStep;
+          }
+          (pGVar1->vector[5]->fields)._offsetSnapStep = fVar3;
+          if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+            if ((uint)pGVar4->max_length < 2) goto code_?;
+            if (pGVar4->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+              fVar3 = 0.0001;
+              if (0.0001 <= snapStep) {
+                fVar3 = snapStep;
+              }
+              (pGVar4->vector[1]->fields)._offsetSnapStepUp = fVar3;
+              if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                if ((uint)pGVar4->max_length < 3) goto code_?;
+                if (pGVar4->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                  fVar3 = 0.0001;
+                  if (0.0001 <= snapStep) {
+                    fVar3 = snapStep;
+                  }
+                  (pGVar4->vector[2]->fields)._offsetSnapStepRight = fVar3;
                   return;
                 }
               }
@@ -1009,11 +1555,9 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1026,23 +1570,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._rtSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if (*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps(*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoPlaneSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._borderLineHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._borderLineHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1054,20 +1609,22 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._rtSliderSettings;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length <= (uint)axisIndex) {
-      func_?();
-      func_?();
+    if ((uint)pGVar1->max_length <= (uint)axisIndex) {
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
     if (pGVar1->vector[axisIndex] != (GizmoPlaneSlider3DSettings *)0x0) {
-      UniversalGizmoSettings3D_SetRtCamUpSnapStep((UniversalGizmoSettings3D *)pGVar1->vector[axisIndex],snapStep,(MethodInfo *)0x0);
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[axisIndex]->fields)._rotationSnapStep = fVar3;
       return;
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -1082,23 +1639,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._rtSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if (*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      CameraMoveSettings::CameraMoveSettings_set_AccelerationRate((CameraMoveSettings *)*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoPlaneSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._borderTorusHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._borderTorusHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1108,15 +1676,18 @@ code_?:
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_SetRtCamLookLineHoverEps(UniversalGizmoSettings3D *this,float eps,MethodInfo *method)
 
 {
-  this_00 = (this->fields)._rtCamLookSliderSettings;
-  if (this_00 != (GizmoPlaneSlider2DSettings *)0x0) {
-    Sphere::Sphere_set_Radius((Sphere *)this_00,eps,(MethodInfo *)0x0);
+  pGVar1 = (this->fields)._rtCamLookSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider2DSettings *)0x0) {
+    fVar2 = 0.0;
+    if (0.0 <= eps) {
+      fVar2 = eps;
+    }
+    (pGVar1->fields)._borderLineHoverEps = fVar2;
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1126,15 +1697,18 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_SetRtCamLookSnapStep(UniversalGizmoSettings3D *this,float snapStep,MethodInfo *method)
 
 {
-  this_00 = (this->fields)._rtCamLookSliderSettings;
-  if (this_00 != (GizmoPlaneSlider2DSettings *)0x0) {
-    ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_ZRotationStep((ObjectKeyRotationSettings *)this_00,snapStep,(MethodInfo *)0x0);
+  pGVar1 = (this->fields)._rtCamLookSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider2DSettings *)0x0) {
+    fVar2 = 0.0001;
+    if (0.0001 <= snapStep) {
+      fVar2 = snapStep;
+    }
+    (pGVar1->fields)._rotationSnapStep = fVar2;
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1144,15 +1718,18 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_SetRtCamLookThickHoverEps(UniversalGizmoSettings3D *this,float eps,MethodInfo *method)
 
 {
-  this_00 = (GizmoPlaneSlider3DSettings *)(this->fields)._rtCamLookSliderSettings;
-  if (this_00 != (GizmoPlaneSlider3DSettings *)0x0) {
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps(this_00,eps,(MethodInfo *)0x0);
+  pGVar1 = (this->fields)._rtCamLookSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider2DSettings *)0x0) {
+    fVar2 = 0.0;
+    if (0.0 <= eps) {
+      fVar2 = eps;
+    }
+    (pGVar1->fields)._thickBorderPolyHoverEps = fVar2;
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1190,27 +1767,31 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_SetRtCanHoverCulledPixels(UniversalGizmoSettings3D *this,bool canHover,MethodInfo *method)
 
 {
-  uVar1 = 0;
+  uVar1 = CONCAT71(in_register_00000011,canHover);
   pGVar2 = (this->fields)._rtSliderSettings;
+  uVar3 = 0;
   if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar2->vector;
+    method = (MethodInfo *)pGVar2->vector;
     while( true ) {
-      if ((int)pGVar2->max_length <= (int)uVar1) {
+      if ((int)pGVar2->max_length <= (int)uVar3) {
         return;
       }
-      if (pGVar2->max_length <= uVar1) break;
-      pGVar4 = *ppGVar3;
-      if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      uVar1 = uVar1 + 1;
-      ppGVar3 = ppGVar3 + 1;
-      (pGVar4->fields)._isCircleHoverCullEnabled = canHover ^ 1;
+      if ((uint)pGVar2->max_length <= uVar3) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      uVar1 = 0;
+      if ((GizmoPlaneSlider3DSettings *)method->methodPointer == (GizmoPlaneSlider3DSettings *)0x0) break;
+      uVar3 = uVar3 + 1;
+      (((GizmoPlaneSlider3DSettings *)method->methodPointer)->fields)._isCircleHoverCullEnabled = canHover ^ 1;
+      method = (MethodInfo *)&method->virtualMethodPointer;
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?(uVar3,uVar1,method);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1224,22 +1805,38 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   uVar2 = 0;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
     ppGVar3 = pGVar1->vector;
-    for (; (int)uVar2 < (int)pGVar1->max_length; uVar2 = uVar2 + 1) {
-      if (pGVar1->max_length <= uVar2) goto code_?;
-      if (*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_RotationSensitivity(*ppGVar3,sensitivity,(MethodInfo *)0x0);
-      ppGVar3 = ppGVar3 + 1;
+    while ((int)uVar2 < (int)pGVar1->max_length) {
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pGVar5 = *ppGVar3;
+      if (pGVar5 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+      if (0.0001 <= sensitivity) {
+        uVar2 = uVar2 + 1;
+        (pGVar5->fields)._rotationSensitivity = sensitivity;
+        ppGVar3 = ppGVar3 + 1;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar5->fields)._rotationSensitivity = 0.0001;
+        ppGVar3 = ppGVar3 + 1;
+      }
     }
-    this_00 = (GizmoPlaneSlider3DSettings *)(this->fields)._rtCamLookSliderSettings;
-    if (this_00 != (GizmoPlaneSlider3DSettings *)0x0) {
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp(this_00,sensitivity,(MethodInfo *)0x0);
+    pGVar6 = (this->fields)._rtCamLookSliderSettings;
+    if (pGVar6 != (GizmoPlaneSlider2DSettings *)0x0) {
+      fVar7 = 0.0001;
+      if (0.0001 <= sensitivity) {
+        fVar7 = sensitivity;
+      }
+      (pGVar6->fields)._rotationSensitivity = fVar7;
       return;
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -1251,28 +1848,33 @@ code_?:
 void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_SetRtSnapMode(UniversalGizmoSettings3D *this,GizmoSnapMode__Enum snapMode,MethodInfo *method)
 
 {
-  uVar1 = 0;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar2->vector;
-    for (; (int)uVar1 < (int)pGVar2->max_length; uVar1 = uVar1 + 1) {
-      if (pGVar2->max_length <= uVar1) goto code_?;
-      if (*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      ((*ppGVar3)->fields)._rotationSnapMode = snapMode;
-      ppGVar3 = ppGVar3 + 1;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  uVar2 = 0;
+  pUVar3 = this;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    method = (MethodInfo *)pGVar1->vector;
+    for (; (int)uVar2 < (int)pGVar1->max_length; uVar2 = uVar2 + 1) {
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pUVar3 = (UniversalGizmoSettings3D *)method->methodPointer;
+      if (pUVar3 == (UniversalGizmoSettings3D *)0x0) goto code_?;
+      *(GizmoSnapMode__Enum *)((longlong)&(pUVar3->fields)._mvVertexSnapSettings + 4) = snapMode;
+      method = (MethodInfo *)&method->virtualMethodPointer;
     }
-    pGVar4 = (this->fields)._rtCamLookSliderSettings;
-    if (pGVar4 != (GizmoPlaneSlider2DSettings *)0x0) {
-      (pGVar4->fields)._rotationSnapMode = snapMode;
+    pGVar5 = (this->fields)._rtCamLookSliderSettings;
+    if (pGVar5 != (GizmoPlaneSlider2DSettings *)0x0) {
+      (pGVar5->fields)._rotationSnapMode = snapMode;
       return;
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?(pUVar3,snapMode,method);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1285,23 +1887,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._scSglSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if (*ppGVar3 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-      Sphere::Sphere_set_Radius((Sphere *)*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoLineSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._boxHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._boxHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1314,23 +1927,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._scSglSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if ((GizmoPlaneSlider3DSettings *)*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoLineSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._cylinderHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._cylinderHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1343,23 +1967,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._scSglSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if (*ppGVar3 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-      GizmoLineSlider3DSettings::GizmoLineSlider3DSettings_set_ScaleSensitivity(*ppGVar3,sensitivity,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoLineSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) break;
+      if (0.0001 <= sensitivity) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._scaleSensitivity = sensitivity;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._scaleSensitivity = 0.0001;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1372,23 +2007,34 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
   pGVar1 = (this->fields)._scSglSliderSettings;
   uVar2 = 0;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    ppGVar3 = pGVar1->vector;
+    method = (MethodInfo *)pGVar1->vector;
     while( true ) {
       if ((int)pGVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pGVar1->max_length <= uVar2) break;
-      if ((GizmoPlaneSlider3DSettings *)*ppGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_AreaHoverEps((GizmoPlaneSlider3DSettings *)*ppGVar3,eps,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppGVar3 = ppGVar3 + 1;
+      if ((uint)pGVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pGVar4 = (GizmoLineSlider3DSettings *)method->methodPointer;
+      if (pGVar4 == (GizmoLineSlider3DSettings *)0x0) break;
+      if (0.0 <= eps) {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._lineHoverEps = eps;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        (pGVar4->fields)._lineHoverEps = 0.0;
+        method = (MethodInfo *)&method->virtualMethodPointer;
+      }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(0,pGVar1,method);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1414,24 +2060,44 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._scSglSliderSettings;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length == 0) goto code_?;
-    if ((GizmoPlaneSlider3DSettings *)pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar1->vector[0],snapStep,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._scSglSliderSettings;
+    if ((int)pGVar1->max_length == 0) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[0]->fields)._scaleSnapStep = fVar3;
       if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        if (pGVar1->max_length < 4) goto code_?;
-        if ((GizmoPlaneSlider3DSettings *)pGVar1->vector[3] != (GizmoPlaneSlider3DSettings *)0x0) {
-          GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar1->vector[3],snapStep,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._scDblSliderSettings;
-          if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-            if (pGVar2->max_length == 0) goto code_?;
-            if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-              UniversalGizmoSettings3D_SetScUniformScaleSnapStep((UniversalGizmoSettings3D *)pGVar2->vector[0],snapStep,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._scDblSliderSettings;
-              if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                if (pGVar2->max_length < 3) goto code_?;
-                if (pGVar2->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                  GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp(pGVar2->vector[2],snapStep,(MethodInfo *)0x0);
+        if ((uint)pGVar1->max_length < 4) goto code_?;
+        if (pGVar1->vector[3] != (GizmoLineSlider3DSettings *)0x0) {
+          pGVar4 = (this->fields)._scDblSliderSettings;
+          fVar3 = 0.0001;
+          if (0.0001 <= snapStep) {
+            fVar3 = snapStep;
+          }
+          (pGVar1->vector[3]->fields)._scaleSnapStep = fVar3;
+          if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+            if ((int)pGVar4->max_length == 0) goto code_?;
+            if (pGVar4->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+              fVar3 = 0.0001;
+              if (0.0001 <= snapStep) {
+                fVar3 = snapStep;
+              }
+              (pGVar4->vector[0]->fields)._scaleSnapStepRight = fVar3;
+              if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                if ((uint)pGVar4->max_length < 3) goto code_?;
+                if (pGVar4->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                  fVar3 = 0.0001;
+                  if (0.0001 <= snapStep) {
+                    fVar3 = snapStep;
+                  }
+                  (pGVar4->vector[2]->fields)._scaleSnapStepUp = fVar3;
                   return;
                 }
               }
@@ -1441,11 +2107,9 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1457,20 +2121,22 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._scDblSliderSettings;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length == 0) {
-      func_?();
-      func_?();
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
     if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ProportionalScaleSnapStep(pGVar1->vector[0],snapStep,(MethodInfo *)0x0);
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[0]->fields)._proportionalScaleSnapStep = fVar3;
       return;
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -1484,24 +2150,44 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._scSglSliderSettings;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length < 2) goto code_?;
-    if ((GizmoPlaneSlider3DSettings *)pGVar1->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar1->vector[1],snapStep,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._scSglSliderSettings;
+    if ((uint)pGVar1->max_length < 2) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if (pGVar1->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[1]->fields)._scaleSnapStep = fVar3;
       if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        if (pGVar1->max_length < 5) goto code_?;
-        if ((GizmoPlaneSlider3DSettings *)pGVar1->vector[4] != (GizmoPlaneSlider3DSettings *)0x0) {
-          GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar1->vector[4],snapStep,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._scDblSliderSettings;
-          if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-            if (pGVar2->max_length == 0) goto code_?;
-            if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp(pGVar2->vector[0],snapStep,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._scDblSliderSettings;
-              if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                if (pGVar2->max_length < 2) goto code_?;
-                if (pGVar2->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-                  UniversalGizmoSettings3D_SetScUniformScaleSnapStep((UniversalGizmoSettings3D *)pGVar2->vector[1],snapStep,(MethodInfo *)0x0);
+        if ((uint)pGVar1->max_length < 5) goto code_?;
+        if (pGVar1->vector[4] != (GizmoLineSlider3DSettings *)0x0) {
+          pGVar4 = (this->fields)._scDblSliderSettings;
+          fVar3 = 0.0001;
+          if (0.0001 <= snapStep) {
+            fVar3 = snapStep;
+          }
+          (pGVar1->vector[4]->fields)._scaleSnapStep = fVar3;
+          if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+            if ((int)pGVar4->max_length == 0) goto code_?;
+            if (pGVar4->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+              fVar3 = 0.0001;
+              if (0.0001 <= snapStep) {
+                fVar3 = snapStep;
+              }
+              (pGVar4->vector[0]->fields)._scaleSnapStepUp = fVar3;
+              if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                if ((uint)pGVar4->max_length < 2) goto code_?;
+                if (pGVar4->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+                  fVar3 = 0.0001;
+                  if (0.0001 <= snapStep) {
+                    fVar3 = snapStep;
+                  }
+                  (pGVar4->vector[1]->fields)._scaleSnapStepRight = fVar3;
                   return;
                 }
               }
@@ -1511,11 +2197,9 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1527,20 +2211,22 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._scDblSliderSettings;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length < 2) {
-      func_?();
-      func_?();
+    if ((uint)pGVar1->max_length < 2) {
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
     if (pGVar1->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ProportionalScaleSnapStep(pGVar1->vector[1],snapStep,(MethodInfo *)0x0);
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[1]->fields)._proportionalScaleSnapStep = fVar3;
       return;
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -1554,24 +2240,44 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._scSglSliderSettings;
   if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length < 3) goto code_?;
-    if ((GizmoPlaneSlider3DSettings *)pGVar1->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar1->vector[2],snapStep,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._scSglSliderSettings;
+    if ((uint)pGVar1->max_length < 3) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if (pGVar1->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[2]->fields)._scaleSnapStep = fVar3;
       if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        if (pGVar1->max_length < 6) goto code_?;
-        if ((GizmoPlaneSlider3DSettings *)pGVar1->vector[5] != (GizmoPlaneSlider3DSettings *)0x0) {
-          GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_OffsetSnapStepRight((GizmoPlaneSlider3DSettings *)pGVar1->vector[5],snapStep,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._scDblSliderSettings;
-          if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-            if (pGVar2->max_length < 2) goto code_?;
-            if (pGVar2->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-              GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp(pGVar2->vector[1],snapStep,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._scDblSliderSettings;
-              if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-                if (pGVar2->max_length < 3) goto code_?;
-                if (pGVar2->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-                  UniversalGizmoSettings3D_SetScUniformScaleSnapStep((UniversalGizmoSettings3D *)pGVar2->vector[2],snapStep,(MethodInfo *)0x0);
+        if ((uint)pGVar1->max_length < 6) goto code_?;
+        if (pGVar1->vector[5] != (GizmoLineSlider3DSettings *)0x0) {
+          pGVar4 = (this->fields)._scDblSliderSettings;
+          fVar3 = 0.0001;
+          if (0.0001 <= snapStep) {
+            fVar3 = snapStep;
+          }
+          (pGVar1->vector[5]->fields)._scaleSnapStep = fVar3;
+          if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+            if ((uint)pGVar4->max_length < 2) goto code_?;
+            if (pGVar4->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+              fVar3 = 0.0001;
+              if (0.0001 <= snapStep) {
+                fVar3 = snapStep;
+              }
+              (pGVar4->vector[1]->fields)._scaleSnapStepUp = fVar3;
+              if (pGVar4 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+                if ((uint)pGVar4->max_length < 3) goto code_?;
+                if (pGVar4->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+                  fVar3 = 0.0001;
+                  if (0.0001 <= snapStep) {
+                    fVar3 = snapStep;
+                  }
+                  (pGVar4->vector[2]->fields)._scaleSnapStepRight = fVar3;
                   return;
                 }
               }
@@ -1581,11 +2287,9 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1597,20 +2301,22 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 {
   pGVar1 = (this->fields)._scDblSliderSettings;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar1->max_length < 3) {
-      func_?();
-      func_?();
+    if ((uint)pGVar1->max_length < 3) {
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
     if (pGVar1->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-      GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ProportionalScaleSnapStep(pGVar1->vector[2],snapStep,(MethodInfo *)0x0);
+      fVar3 = 0.0001;
+      if (0.0001 <= snapStep) {
+        fVar3 = snapStep;
+      }
+      (pGVar1->vector[2]->fields)._proportionalScaleSnapStep = fVar3;
       return;
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -1623,263 +2329,543 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GizmoLineSlider3DSettings);
-    func_?(&TypeInfo__RTG__GizmoLineSlider3DSettings);
-    func_?(&TypeInfo__RTG__GizmoObjectVertexSnapSettings);
-    func_?(&TypeInfo__RTG__GizmoPlaneSlider2DSettings);
-    func_?(&TypeInfo__RTG__GizmoPlaneSlider3DSettings);
-    func_?(&TypeInfo__RTG__GizmoPlaneSlider3DSettings);
+    FUN_?(&TypeInfo__RTG__GizmoLineSlider3DSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoLineSlider3DSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoObjectVertexSnapSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoPlaneSlider2DSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoPlaneSlider3DSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoPlaneSlider3DSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (GizmoObjectVertexSnapSettings *)func_?(TypeInfo__RTG__GizmoObjectVertexSnapSettings);
-  GizmoObjectVertexSnapSettings::GizmoObjectVertexSnapSettings__ctor(this_00,(MethodInfo *)0x0);
+  this_00 = (GizmoObjectVertexSnapSettings *)FUN_?(TypeInfo__RTG__GizmoObjectVertexSnapSettings);
+  (this_00->fields)._snapDestinationLayers = -1;
+  (this_00->fields)._canSnapToGrid = 1;
+  (this_00->fields)._canSnapToObjectVerts = 1;
+  Settings::Settings__ctor((Settings *)this_00,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields)._mvVertexSnapSettings = this_00;
-  func_?(&(this->fields)._mvVertexSnapSettings,this_00);
-  pGVar1 = (GizmoLineSlider3DSettings__Array *)func_?(TypeInfo__RTG__GizmoLineSlider3DSettings,6);
-  (this->fields)._mvSglSliderSettings = pGVar1;
-  func_?(&(this->fields)._mvSglSliderSettings,pGVar1);
-  pGVar2 = (GizmoPlaneSlider3DSettings__Array *)func_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings,3);
-  (this->fields)._mvDblSliderSettings = pGVar2;
-  func_?(&(this->fields)._mvDblSliderSettings,pGVar2);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._mvVertexSnapSettings >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pGVar6 = (GizmoLineSlider3DSettings__Array *)FUN_?(TypeInfo__RTG__GizmoLineSlider3DSettings,6);
+  bVar1 = iRam_? != 0;
+  (this->fields)._mvSglSliderSettings = pGVar6;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._mvSglSliderSettings >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pGVar7 = (GizmoPlaneSlider3DSettings__Array *)FUN_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings,3);
+  bVar1 = iRam_? != 0;
+  (this->fields)._mvDblSliderSettings = pGVar7;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._mvDblSliderSettings >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields)._rtCamRightSnapStep = 15.0;
   (this->fields)._rtCamUpSnapStep = 15.0;
-  pGVar2 = (GizmoPlaneSlider3DSettings__Array *)func_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings,3);
-  (this->fields)._rtSliderSettings = pGVar2;
-  func_?(&(this->fields)._rtSliderSettings,pGVar2);
-  pGVar3 = (GizmoPlaneSlider2DSettings *)func_?(TypeInfo__RTG__GizmoPlaneSlider2DSettings);
-  GizmoPlaneSlider2DSettings::GizmoPlaneSlider2DSettings__ctor(pGVar3,(MethodInfo *)0x0);
-  (this->fields)._rtCamLookSliderSettings = pGVar3;
-  func_?(&(this->fields)._rtCamLookSliderSettings,pGVar3);
+  pGVar7 = (GizmoPlaneSlider3DSettings__Array *)FUN_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings,3);
+  bVar1 = iRam_? != 0;
+  (this->fields)._rtSliderSettings = pGVar7;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._rtSliderSettings >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pGVar8 = (GizmoPlaneSlider2DSettings *)FUN_?(TypeInfo__RTG__GizmoPlaneSlider2DSettings);
+  bVar1 = iRam_? != 0;
+  (pGVar8->fields)._areaHoverEps = 1e-05;
+  (pGVar8->fields)._borderLineHoverEps = 7.0;
+  (pGVar8->fields)._thickBorderPolyHoverEps = 7.0;
+  (pGVar8->fields)._offsetSnapStepRight = 1.0;
+  (pGVar8->fields)._offsetSnapStepUp = 1.0;
+  (pGVar8->fields)._rotationSnapStep = 15.0;
+  (pGVar8->fields)._scaleMode = 1;
+  (pGVar8->fields)._scaleSnapStepRight = 0.1;
+  (pGVar8->fields)._scaleSnapStepUp = 0.1;
+  (pGVar8->fields)._proportionalScaleSnapStep = 0.1;
+  (pGVar8->fields)._offsetSensitivity = 1.0;
+  (pGVar8->fields)._rotationSensitivity = 0.45;
+  (pGVar8->fields)._scaleSensitivity = 1.0;
+  (this->fields)._rtCamLookSliderSettings = pGVar8;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._rtCamLookSliderSettings >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields)._scUniformSnapStep = 0.1;
-  pGVar1 = (GizmoLineSlider3DSettings__Array *)func_?(TypeInfo__RTG__GizmoLineSlider3DSettings,6);
-  (this->fields)._scSglSliderSettings = pGVar1;
-  func_?(&(this->fields)._scSglSliderSettings,pGVar1);
-  pGVar2 = (GizmoPlaneSlider3DSettings__Array *)func_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings,3);
-  (this->fields)._scDblSliderSettings = pGVar2;
-  func_?(&(this->fields)._scDblSliderSettings,pGVar2);
-  if (cRam_? == '\0') {
-    func_?(&StringLiteral_Settings);
-    cRam_? = '\x01';
-  }
-  (this->fields)._._canBeDisplayed = 1;
-  (this->fields)._._isExpanded = 1;
-  (this->fields)._._foldoutLabel = StringLiteral_Settings;
-  method_00 = (MethodInfo *)&(this->fields)._._foldoutLabel;
-  func_?(method_00,StringLiteral_Settings);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  uVar4 = 0;
-  pGVar1 = (this->fields)._mvSglSliderSettings;
-  while (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if ((int)pGVar1->max_length <= (int)uVar4) {
-      pGVar2 = (this->fields)._mvDblSliderSettings;
-      uVar4 = 0;
-      if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-        iVar5 = 0x10;
-        goto code_?;
+  pGVar6 = (GizmoLineSlider3DSettings__Array *)FUN_?(TypeInfo__RTG__GizmoLineSlider3DSettings,6);
+  bVar1 = iRam_? != 0;
+  (this->fields)._scSglSliderSettings = pGVar6;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._scSglSliderSettings >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
       }
-      break;
-    }
-    pGVar1 = (this->fields)._mvSglSliderSettings;
-    pGVar6 = (GizmoLineSlider3DSettings *)func_?();
-    GizmoLineSlider3DSettings::GizmoLineSlider3DSettings__ctor(pGVar6,(MethodInfo *)0x0);
-    if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) break;
-    if ((pGVar6 != (GizmoLineSlider3DSettings *)0x0) && (iVar5 = func_?(pGVar6), iVar5 == 0)) goto code_?;
-    if (pGVar1->max_length <= uVar4) goto code_?;
-    pGVar1->vector[uVar4] = pGVar6;
-    func_?(pGVar1->vector + uVar4);
-    uVar4 = uVar4 + 1;
-    pGVar1 = (this->fields)._mvSglSliderSettings;
+      UNLOCK();
+    } while (!bVar1);
   }
-  goto code_?;
-  while( true ) {
-    pGVar2 = (this->fields)._mvDblSliderSettings;
-    pGVar7 = (GizmoPlaneSlider3DSettings *)func_?();
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings__ctor(pGVar7,(MethodInfo *)0x0);
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    puVar8 = (undefined *)0x0;
-    if (pGVar7 != (GizmoPlaneSlider3DSettings *)0x0) {
-      puVar8 = &UNK_?;
-      iVar9 = func_?(pGVar7);
-      if (iVar9 == 0) goto code_?;
-    }
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    *(undefined **)((int)pGVar2->vector + iVar5 + -0x10) = puVar8;
-    func_?((int)pGVar2->vector + iVar5 + -0x10);
-    pGVar2 = (this->fields)._mvDblSliderSettings;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    pGVar7 = *(GizmoPlaneSlider3DSettings **)((int)pGVar2->vector + iVar5 + -0x10);
-    if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) break;
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_AreaHoverEps(pGVar7,0.0,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._mvDblSliderSettings;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    pGVar7 = *(GizmoPlaneSlider3DSettings **)((int)pGVar2->vector + iVar5 + -0x10);
-    if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) break;
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps(pGVar7,0.0,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._mvDblSliderSettings;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    pGVar7 = *(GizmoPlaneSlider3DSettings **)((int)pGVar2->vector + iVar5 + -0x10);
-    if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) break;
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderBoxHoverEps(pGVar7,0.0,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._mvDblSliderSettings;
-    uVar4 = uVar4 + 1;
-    iVar5 = iVar5 + 4;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-code_?:
-    if ((int)pGVar2->max_length <= (int)uVar4) {
-      pGVar2 = (this->fields)._rtSliderSettings;
-      uVar4 = 0;
-      if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) goto code_?;
-      break;
-    }
-  }
-  goto code_?;
-  while( true ) {
-    pGVar2 = (this->fields)._rtSliderSettings;
-    pGVar7 = (GizmoPlaneSlider3DSettings *)func_?();
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings__ctor(pGVar7,(MethodInfo *)0x0);
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if ((pGVar7 != (GizmoPlaneSlider3DSettings *)0x0) && (iVar5 = func_?(pGVar7), iVar5 == 0)) goto code_?;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    pGVar2->vector[uVar4] = pGVar7;
-    func_?(pGVar2->vector + uVar4);
-    pGVar2 = (this->fields)._rtSliderSettings;
-    uVar4 = uVar4 + 1;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-code_?:
-    if ((int)pGVar2->max_length <= (int)uVar4) {
-      pGVar3 = (this->fields)._rtCamLookSliderSettings;
-      if (pGVar3 != (GizmoPlaneSlider2DSettings *)0x0) {
-        Sphere::Sphere_set_Radius((Sphere *)pGVar3,7.0,(MethodInfo *)0x0);
-        pGVar2 = (this->fields)._rtSliderSettings;
-        uVar4 = 0;
-        if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-          ppGVar10 = pGVar2->vector;
-          goto code_?;
-        }
+  pGVar7 = (GizmoPlaneSlider3DSettings__Array *)FUN_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings);
+  bVar1 = iRam_? != 0;
+  (this->fields)._scDblSliderSettings = pGVar7;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._scDblSliderSettings >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
       }
-      break;
-    }
+      UNLOCK();
+    } while (!bVar1);
   }
-  goto code_?;
-code_?:
-  if ((int)pGVar2->max_length <= (int)uVar4) goto code_?;
-  if (pGVar2->max_length <= uVar4) goto code_?;
-  if (*ppGVar10 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-  uVar4 = uVar4 + 1;
-  ((*ppGVar10)->fields)._isCircleHoverCullEnabled = 1;
-  ppGVar10 = ppGVar10 + 1;
-  goto code_?;
-code_?:
-  pGVar2 = (this->fields)._rtSliderSettings;
-  uVar4 = 0;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    ppGVar10 = pGVar2->vector;
-    for (; (int)uVar4 < (int)pGVar2->max_length; uVar4 = uVar4 + 1) {
-      if (pGVar2->max_length <= uVar4) goto code_?;
-      if (*ppGVar10 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      CameraMoveSettings::CameraMoveSettings_set_AccelerationRate((CameraMoveSettings *)*ppGVar10,0.4,(MethodInfo *)0x0);
-      ppGVar10 = ppGVar10 + 1;
-    }
-    uVar4 = 0;
-    pGVar1 = (this->fields)._scSglSliderSettings;
-    while (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-      if ((int)pGVar1->max_length <= (int)uVar4) {
-        pGVar2 = (this->fields)._scDblSliderSettings;
-        uVar4 = 0;
-        if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-          iVar5 = 0x10;
+  Settings::Settings__ctor((Settings *)this,(MethodInfo *)0x0);
+  pGVar6 = (this->fields)._mvSglSliderSettings;
+  uVar9 = 0;
+  uVar2 = 0;
+  if (pGVar6 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    lVar10 = 0x20;
+    lVar11 = 0x20;
+    do {
+      if ((int)pGVar6->max_length <= (int)uVar2) {
+        pGVar7 = (this->fields)._mvDblSliderSettings;
+        uVar2 = 0;
+        if (pGVar7 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+          lVar11 = 0x20;
           goto code_?;
         }
         break;
       }
-      pGVar1 = (this->fields)._scSglSliderSettings;
-      pGVar6 = (GizmoLineSlider3DSettings *)func_?();
-      GizmoLineSlider3DSettings::GizmoLineSlider3DSettings__ctor(pGVar6,(MethodInfo *)0x0);
-      if (pGVar1 == (GizmoLineSlider3DSettings__Array *)0x0) break;
-      if ((pGVar6 != (GizmoLineSlider3DSettings *)0x0) && (iVar5 = func_?(pGVar6), iVar5 == 0)) goto code_?;
-      if (pGVar1->max_length <= uVar4) goto code_?;
-      pGVar1->vector[uVar4] = pGVar6;
-      func_?(pGVar1->vector + uVar4);
-      uVar4 = uVar4 + 1;
-      pGVar1 = (this->fields)._scSglSliderSettings;
-    }
+      pGVar6 = (this->fields)._mvSglSliderSettings;
+      lVar12 = FUN_?(TypeInfo__RTG__GizmoLineSlider3DSettings);
+      *(undefined4 *)(lVar12 + 0x10) = 0x3f333333;
+      *(undefined4 *)(lVar12 + 0x14) = 0x3f000000;
+      *(undefined4 *)(lVar12 + 0x18) = 0x3f000000;
+      *(undefined4 *)(lVar12 + 0x1c) = 0x3f800000;
+      *(undefined4 *)(lVar12 + 0x20) = 0x41700000;
+      *(undefined4 *)(lVar12 + 0x28) = 0x3dcccccd;
+      *(undefined4 *)(lVar12 + 0x2c) = 0x3f800000;
+      *(undefined4 *)(lVar12 + 0x30) = 0x3ee66666;
+      *(undefined4 *)(lVar12 + 0x34) = 0x3f800000;
+      if (pGVar6 == (GizmoLineSlider3DSettings__Array *)0x0) break;
+      lVar13 = FUN_?(lVar12,(pGVar6->klass->_0).element_class);
+      if (lVar13 == 0) {
+        uVar14 = FUN_?();
+        FUN_?(uVar14,0);
+        pcVar15 = (code *)swi(3);
+        (*pcVar15)();
+        return;
+      }
+      if ((uint)pGVar6->max_length <= uVar2) goto code_?;
+      bVar1 = iRam_? != 0;
+      *(longlong *)((longlong)pGVar6->vector + lVar11 + -0x20) = lVar12;
+      if (bVar1) {
+        uVar16 = (uint)((ulonglong)(pGVar6->vector + (int)uVar2) >> 0xc);
+        uVar3 = (ulonglong)((uVar16 & 0x1fffff) >> 6);
+        do {
+          uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+          puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar16 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
+      }
+      pGVar6 = (this->fields)._mvSglSliderSettings;
+      uVar2 = uVar2 + 1;
+      lVar11 = lVar11 + 8;
+    } while (pGVar6 != (GizmoLineSlider3DSettings__Array *)0x0);
   }
-  goto code_?;
-code_?:
-  if ((int)pGVar1->max_length <= (int)uVar4) {
-    return;
-  }
-  if (pGVar1->max_length <= uVar4) goto code_?;
-  if (*ppGVar11 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-  GizmoLineSlider3DSettings::GizmoLineSlider3DSettings_set_ScaleSensitivity(*ppGVar11,0.6,(MethodInfo *)0x0);
-  uVar4 = uVar4 + 1;
-  ppGVar11 = ppGVar11 + 1;
   goto code_?;
   while( true ) {
-    pGVar2 = (this->fields)._scDblSliderSettings;
-    pGVar7 = (GizmoPlaneSlider3DSettings *)func_?();
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings__ctor(pGVar7,(MethodInfo *)0x0);
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    puVar8 = (undefined *)0x0;
-    if (pGVar7 != (GizmoPlaneSlider3DSettings *)0x0) {
-      puVar8 = &UNK_?;
-      iVar9 = func_?(pGVar7);
-      if (iVar9 == 0) goto code_?;
+    pGVar7 = (this->fields)._mvDblSliderSettings;
+    lVar12 = FUN_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings);
+    *(undefined4 *)(lVar12 + 0x10) = 0x3727c5ac;
+    *(undefined4 *)(lVar12 + 0x14) = 0x3727c5ac;
+    *(undefined4 *)(lVar12 + 0x18) = 0x3f333333;
+    *(undefined4 *)(lVar12 + 0x1c) = 0x3f333333;
+    *(undefined4 *)(lVar12 + 0x20) = 0x3f333333;
+    *(undefined4 *)(lVar12 + 0x28) = 0x3f800000;
+    *(undefined4 *)(lVar12 + 0x2c) = 0x3f800000;
+    *(undefined4 *)(lVar12 + 0x30) = 0x41700000;
+    *(undefined4 *)(lVar12 + 0x38) = 1;
+    *(undefined4 *)(lVar12 + 0x3c) = 0x3dcccccd;
+    *(undefined4 *)(lVar12 + 0x40) = 0x3dcccccd;
+    *(undefined4 *)(lVar12 + 0x44) = 0x3dcccccd;
+    *(undefined4 *)(lVar12 + 0x48) = 0x3f800000;
+    *(undefined4 *)(lVar12 + 0x4c) = 0x3ee66666;
+    *(undefined4 *)(lVar12 + 0x50) = 0x3f800000;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    lVar13 = FUN_?(lVar12,(pGVar7->klass->_0).element_class);
+    if (lVar13 == 0) {
+      uVar14 = FUN_?();
+      FUN_?(uVar14,0);
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
+      return;
     }
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    *(undefined **)((int)pGVar2->vector + iVar5 + -0x10) = puVar8;
-    func_?((int)pGVar2->vector + iVar5 + -0x10);
-    pGVar2 = (this->fields)._scDblSliderSettings;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    iVar9 = *(int *)((int)pGVar2->vector + iVar5 + -0x10);
-    if (iVar9 == 0) break;
-    *(undefined4 *)(iVar9 + 0x30) = 1;
-    pGVar2 = (this->fields)._scDblSliderSettings;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    pGVar7 = *(GizmoPlaneSlider3DSettings **)((int)pGVar2->vector + iVar5 + -0x10);
-    if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) break;
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_AreaHoverEps(pGVar7,0.0,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._scDblSliderSettings;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    pGVar7 = *(GizmoPlaneSlider3DSettings **)((int)pGVar2->vector + iVar5 + -0x10);
-    if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) break;
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderLineHoverEps(pGVar7,0.0,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._scDblSliderSettings;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if (pGVar2->max_length <= uVar4) goto code_?;
-    pGVar7 = *(GizmoPlaneSlider3DSettings **)((int)pGVar2->vector + iVar5 + -0x10);
-    if (pGVar7 == (GizmoPlaneSlider3DSettings *)0x0) break;
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderBoxHoverEps(pGVar7,0.0,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._scDblSliderSettings;
-    uVar4 = uVar4 + 1;
-    iVar5 = iVar5 + 4;
-    if (pGVar2 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    bVar1 = iRam_? != 0;
+    *(longlong *)((longlong)pGVar7->vector + lVar11 + -0x20) = lVar12;
+    if (bVar1) {
+      uVar16 = (uint)((ulonglong)(pGVar7->vector + (int)uVar2) >> 0xc);
+      uVar3 = (ulonglong)((uVar16 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar16 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    pGVar7 = (this->fields)._mvDblSliderSettings;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    lVar12 = *(longlong *)((longlong)pGVar7->vector + lVar11 + -0x20);
+    if (lVar12 == 0) break;
+    *(undefined4 *)(lVar12 + 0x10) = 0;
+    pGVar7 = (this->fields)._mvDblSliderSettings;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    lVar12 = *(longlong *)((longlong)pGVar7->vector + lVar11 + -0x20);
+    if (lVar12 == 0) break;
+    *(undefined4 *)(lVar12 + 0x18) = 0;
+    pGVar7 = (this->fields)._mvDblSliderSettings;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    lVar12 = *(longlong *)((longlong)pGVar7->vector + lVar11 + -0x20);
+    if (lVar12 == 0) break;
+    *(undefined4 *)(lVar12 + 0x1c) = 0;
+    uVar2 = uVar2 + 1;
+    pGVar7 = (this->fields)._mvDblSliderSettings;
+    lVar11 = lVar11 + 8;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
 code_?:
-    if ((int)pGVar2->max_length <= (int)uVar4) {
-      pGVar1 = (this->fields)._scSglSliderSettings;
-      uVar4 = 0;
-      if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
-        ppGVar11 = pGVar1->vector;
+    if ((int)pGVar7->max_length <= (int)uVar2) {
+      pGVar7 = (this->fields)._rtSliderSettings;
+      uVar2 = 0;
+      if (pGVar7 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+        lVar11 = 0x20;
+        goto code_?;
+      }
+      break;
+    }
+  }
+  goto code_?;
+  while( true ) {
+    pGVar7 = (this->fields)._rtSliderSettings;
+    lVar12 = FUN_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings);
+    *(undefined4 *)(lVar12 + 0x10) = 0x3727c5ac;
+    *(undefined4 *)(lVar12 + 0x14) = 0x3727c5ac;
+    *(undefined4 *)(lVar12 + 0x18) = 0x3f333333;
+    *(undefined4 *)(lVar12 + 0x1c) = 0x3f333333;
+    *(undefined4 *)(lVar12 + 0x20) = 0x3f333333;
+    *(undefined4 *)(lVar12 + 0x28) = 0x3f800000;
+    *(undefined4 *)(lVar12 + 0x2c) = 0x3f800000;
+    *(undefined4 *)(lVar12 + 0x30) = 0x41700000;
+    *(undefined4 *)(lVar12 + 0x38) = 1;
+    *(undefined4 *)(lVar12 + 0x3c) = 0x3dcccccd;
+    *(undefined4 *)(lVar12 + 0x40) = 0x3dcccccd;
+    *(undefined4 *)(lVar12 + 0x44) = 0x3dcccccd;
+    *(undefined4 *)(lVar12 + 0x48) = 0x3f800000;
+    *(undefined4 *)(lVar12 + 0x4c) = 0x3ee66666;
+    *(undefined4 *)(lVar12 + 0x50) = 0x3f800000;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    lVar13 = FUN_?(lVar12,(pGVar7->klass->_0).element_class);
+    if (lVar13 == 0) {
+      uVar14 = FUN_?();
+      FUN_?(uVar14,0);
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
+      return;
+    }
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    bVar1 = iRam_? != 0;
+    *(longlong *)((longlong)pGVar7->vector + lVar11 + -0x20) = lVar12;
+    if (bVar1) {
+      uVar16 = (uint)((ulonglong)(pGVar7->vector + (int)uVar2) >> 0xc);
+      uVar3 = (ulonglong)((uVar16 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar16 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    pGVar7 = (this->fields)._rtSliderSettings;
+    uVar2 = uVar2 + 1;
+    lVar11 = lVar11 + 8;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+code_?:
+    if ((int)pGVar7->max_length <= (int)uVar2) {
+      pGVar8 = (this->fields)._rtCamLookSliderSettings;
+      if (pGVar8 != (GizmoPlaneSlider2DSettings *)0x0) {
+        (pGVar8->fields)._borderLineHoverEps = 7.0;
+        uVar2 = 0;
+        pGVar7 = (this->fields)._rtSliderSettings;
+        if (pGVar7 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+          ppGVar17 = pGVar7->vector;
+          goto code_?;
+        }
+      }
+      break;
+    }
+  }
+  goto code_?;
+code_?:
+  if ((int)pGVar7->max_length <= (int)uVar2) goto code_?;
+  if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+  if (*ppGVar17 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+  uVar2 = uVar2 + 1;
+  ((*ppGVar17)->fields)._isCircleHoverCullEnabled = 1;
+  ppGVar17 = ppGVar17 + 1;
+  goto code_?;
+code_?:
+  pGVar7 = (this->fields)._rtSliderSettings;
+  uVar2 = 0;
+  if (pGVar7 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    ppGVar17 = pGVar7->vector;
+    for (; (int)uVar2 < (int)pGVar7->max_length; uVar2 = uVar2 + 1) {
+      if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+      if (*ppGVar17 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+      ((*ppGVar17)->fields)._borderTorusHoverEps = 0.4;
+      ppGVar17 = ppGVar17 + 1;
+    }
+    pGVar6 = (this->fields)._scSglSliderSettings;
+    uVar2 = 0;
+    if (pGVar6 != (GizmoLineSlider3DSettings__Array *)0x0) {
+      lVar11 = 0x20;
+      do {
+        if ((int)pGVar6->max_length <= (int)uVar2) {
+          pGVar7 = (this->fields)._scDblSliderSettings;
+          uVar2 = 0;
+          if (pGVar7 != (GizmoPlaneSlider3DSettings__Array *)0x0) goto code_?;
+          break;
+        }
+        pGVar6 = (this->fields)._scSglSliderSettings;
+        lVar12 = FUN_?(TypeInfo__RTG__GizmoLineSlider3DSettings);
+        *(undefined4 *)(lVar12 + 0x10) = 0x3f333333;
+        *(undefined4 *)(lVar12 + 0x14) = 0x3f000000;
+        *(undefined4 *)(lVar12 + 0x18) = 0x3f000000;
+        *(undefined4 *)(lVar12 + 0x1c) = 0x3f800000;
+        *(undefined4 *)(lVar12 + 0x20) = 0x41700000;
+        *(undefined4 *)(lVar12 + 0x28) = 0x3dcccccd;
+        *(undefined4 *)(lVar12 + 0x2c) = 0x3f800000;
+        *(undefined4 *)(lVar12 + 0x30) = 0x3ee66666;
+        *(undefined4 *)(lVar12 + 0x34) = 0x3f800000;
+        if (pGVar6 == (GizmoLineSlider3DSettings__Array *)0x0) break;
+        lVar13 = FUN_?(lVar12,(pGVar6->klass->_0).element_class);
+        if (lVar13 == 0) {
+          uVar14 = FUN_?();
+          FUN_?(uVar14,0);
+          pcVar15 = (code *)swi(3);
+          (*pcVar15)();
+          return;
+        }
+        if ((uint)pGVar6->max_length <= uVar2) goto code_?;
+        bVar1 = iRam_? != 0;
+        *(longlong *)((longlong)pGVar6->vector + lVar11 + -0x20) = lVar12;
+        if (bVar1) {
+          uVar16 = (uint)((ulonglong)(pGVar6->vector + (int)uVar2) >> 0xc);
+          uVar3 = (ulonglong)((uVar16 & 0x1fffff) >> 6);
+          do {
+            uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+            puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+            LOCK();
+            bVar1 = uVar4 == *puVar5;
+            if (bVar1) {
+              *puVar5 = uVar4 | 1L << (uVar16 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar1);
+        }
+        pGVar6 = (this->fields)._scSglSliderSettings;
+        uVar2 = uVar2 + 1;
+        lVar11 = lVar11 + 8;
+      } while (pGVar6 != (GizmoLineSlider3DSettings__Array *)0x0);
+    }
+  }
+  goto code_?;
+code_?:
+  if ((int)pGVar6->max_length <= (int)uVar9) {
+    return;
+  }
+  if ((uint)pGVar6->max_length <= uVar9) {
+code_?:
+    FUN_?();
+    pcVar15 = (code *)swi(3);
+    (*pcVar15)();
+    return;
+  }
+  if (*ppGVar18 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
+  uVar9 = uVar9 + 1;
+  ((*ppGVar18)->fields)._scaleSensitivity = 0.6;
+  ppGVar18 = ppGVar18 + 1;
+  goto code_?;
+  while( true ) {
+    pGVar7 = (this->fields)._scDblSliderSettings;
+    lVar11 = FUN_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings);
+    *(undefined4 *)(lVar11 + 0x10) = 0x3727c5ac;
+    *(undefined4 *)(lVar11 + 0x14) = 0x3727c5ac;
+    *(undefined4 *)(lVar11 + 0x18) = 0x3f333333;
+    *(undefined4 *)(lVar11 + 0x1c) = 0x3f333333;
+    *(undefined4 *)(lVar11 + 0x20) = 0x3f333333;
+    *(undefined4 *)(lVar11 + 0x28) = 0x3f800000;
+    *(undefined4 *)(lVar11 + 0x2c) = 0x3f800000;
+    *(undefined4 *)(lVar11 + 0x30) = 0x41700000;
+    *(undefined4 *)(lVar11 + 0x38) = 1;
+    *(undefined4 *)(lVar11 + 0x3c) = 0x3dcccccd;
+    *(undefined4 *)(lVar11 + 0x40) = 0x3dcccccd;
+    *(undefined4 *)(lVar11 + 0x44) = 0x3dcccccd;
+    *(undefined4 *)(lVar11 + 0x48) = 0x3f800000;
+    *(undefined4 *)(lVar11 + 0x4c) = 0x3ee66666;
+    *(undefined4 *)(lVar11 + 0x50) = 0x3f800000;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    lVar12 = FUN_?(lVar11,(pGVar7->klass->_0).element_class);
+    if (lVar12 == 0) {
+      uVar14 = FUN_?();
+      FUN_?(uVar14,0);
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
+      return;
+    }
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    bVar1 = iRam_? != 0;
+    *(longlong *)((longlong)pGVar7->vector + lVar10 + -0x20) = lVar11;
+    if (bVar1) {
+      uVar16 = (uint)((ulonglong)(pGVar7->vector + (int)uVar2) >> 0xc);
+      uVar3 = (ulonglong)((uVar16 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar16 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    pGVar7 = (this->fields)._scDblSliderSettings;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    lVar11 = *(longlong *)((longlong)pGVar7->vector + lVar10 + -0x20);
+    if (lVar11 == 0) break;
+    *(undefined4 *)(lVar11 + 0x38) = 1;
+    pGVar7 = (this->fields)._scDblSliderSettings;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    lVar11 = *(longlong *)((longlong)pGVar7->vector + lVar10 + -0x20);
+    if (lVar11 == 0) break;
+    *(undefined4 *)(lVar11 + 0x10) = 0;
+    pGVar7 = (this->fields)._scDblSliderSettings;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    lVar11 = *(longlong *)((longlong)pGVar7->vector + lVar10 + -0x20);
+    if (lVar11 == 0) break;
+    *(undefined4 *)(lVar11 + 0x18) = 0;
+    pGVar7 = (this->fields)._scDblSliderSettings;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+    if ((uint)pGVar7->max_length <= uVar2) goto code_?;
+    lVar11 = *(longlong *)((longlong)pGVar7->vector + lVar10 + -0x20);
+    if (lVar11 == 0) break;
+    *(undefined4 *)(lVar11 + 0x1c) = 0;
+    uVar2 = uVar2 + 1;
+    pGVar7 = (this->fields)._scDblSliderSettings;
+    lVar10 = lVar10 + 8;
+    if (pGVar7 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
+code_?:
+    if ((int)pGVar7->max_length <= (int)uVar2) {
+      pGVar6 = (this->fields)._scSglSliderSettings;
+      if (pGVar6 != (GizmoLineSlider3DSettings__Array *)0x0) {
+        ppGVar18 = pGVar6->vector;
         goto code_?;
       }
       break;
     }
   }
 code_?:
-  func_?();
-code_?:
-  uVar12 = func_?();
-  func_?(uVar12);
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1889,26 +2875,22 @@ code_?:
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_MvBoxSliderHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._boxHoverEps;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._boxHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -1917,26 +2899,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_MvCylinderSliderHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._cylinderHoverEps;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._cylinderHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -1945,26 +2923,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_MvDragSensitivity(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._offsetSensitivity;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._offsetSensitivity;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -1973,26 +2947,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_MvLineSliderHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._lineHoverEps;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._lineHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2001,26 +2971,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_MvXSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._offsetSnapStep;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._offsetSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2029,26 +2995,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_MvYSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 2) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 2) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[1]->fields)._offsetSnapStep;
+    if (pGVar1->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[1]->fields)._offsetSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2057,26 +3019,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_MvZSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._mvSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 3) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._mvSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 3) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[2]->fields)._offsetSnapStep;
+    if (pGVar1->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[2]->fields)._offsetSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2085,26 +3043,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtAxisLineHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._borderLineHoverEps;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._borderLineHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2113,26 +3067,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtAxisTorusHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._borderTorusHoverEps;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._borderTorusHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2141,16 +3091,14 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtCamLookLineHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtCamLookSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) {
-    return (pGVar2->fields)._borderLineHoverEps;
+  pGVar1 = (this->fields)._rtCamLookSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider2DSettings *)0x0) {
+    return (pGVar1->fields)._borderLineHoverEps;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2159,16 +3107,14 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtCamLookSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtCamLookSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) {
-    return (pGVar2->fields)._rotationSnapStep;
+  pGVar1 = (this->fields)._rtCamLookSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider2DSettings *)0x0) {
+    return (pGVar1->fields)._rotationSnapStep;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2177,16 +3123,14 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtCamLookThickHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtCamLookSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) {
-    return (pGVar2->fields)._thickBorderPolyHoverEps;
+  pGVar1 = (this->fields)._rtCamLookSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider2DSettings *)0x0) {
+    return (pGVar1->fields)._thickBorderPolyHoverEps;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2195,26 +3139,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 bool Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtCanHoverCulledPixels(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      bVar5 = (*pcVar4)();
-      return bVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
     }
-    if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._isCircleHoverCullEnabled == 0;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._isCircleHoverCullEnabled == 0;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -2223,26 +3163,22 @@ bool Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtDragSensitivity(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._rotationSensitivity;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._rotationSensitivity;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2251,26 +3187,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 GizmoSnapMode__Enum Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtSnapMode(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      GVar5 = (*pcVar4)();
-      return GVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      GVar3 = (*pcVar2)();
+      return GVar3;
     }
-    if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._rotationSnapMode;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._rotationSnapMode;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  GVar5 = (*pcVar4)();
-  return GVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  GVar3 = (*pcVar2)();
+  return GVar3;
 }
 
 
@@ -2279,26 +3211,22 @@ GizmoSnapMode__Enum Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::Universa
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtXSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._rotationSnapStep;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._rotationSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2307,26 +3235,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtYSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 2) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 2) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[1]->fields)._rotationSnapStep;
+    if (pGVar1->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[1]->fields)._rotationSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2335,26 +3259,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_RtZSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._rtSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 3) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._rtSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 3) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[2]->fields)._rotationSnapStep;
+    if (pGVar1->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[2]->fields)._rotationSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2363,26 +3283,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScBoxSliderHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._boxHoverEps;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._boxHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2391,26 +3307,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScCylinderSliderHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._cylinderHoverEps;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._cylinderHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2419,26 +3331,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScDragSensitivity(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._scaleSensitivity;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._scaleSensitivity;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2447,26 +3355,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScLineSliderHoverEps(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._lineHoverEps;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._lineHoverEps;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2475,26 +3379,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScXSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._scaleSnapStep;
+    if (pGVar1->vector[0] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._scaleSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2503,26 +3403,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScXYSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scDblSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scDblSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((int)pGVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[0]->fields)._proportionalScaleSnapStep;
+    if (pGVar1->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[0]->fields)._proportionalScaleSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2531,26 +3427,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScYSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 2) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 2) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[1]->fields)._scaleSnapStep;
+    if (pGVar1->vector[1] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[1]->fields)._scaleSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2559,26 +3451,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScYZSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scDblSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 2) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scDblSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 2) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[1]->fields)._proportionalScaleSnapStep;
+    if (pGVar1->vector[1] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[1]->fields)._proportionalScaleSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2587,26 +3475,22 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScZSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scSglSliderSettings;
-  if (pGVar2 != (GizmoLineSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 3) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scSglSliderSettings;
+  if (pGVar1 != (GizmoLineSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 3) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
-      return (pGVar2->vector[2]->fields)._scaleSnapStep;
+    if (pGVar1->vector[2] != (GizmoLineSlider3DSettings *)0x0) {
+      return (pGVar1->vector[2]->fields)._scaleSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -2615,25 +3499,21 @@ float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings
 float Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3D_get_ScZXSnapStep(UniversalGizmoSettings3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._scDblSliderSettings;
-  if (pGVar2 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
-    if (pGVar2->max_length < 3) {
-      puStack_1 = (undefined1 *)0x0;
-      puStack_3 = (undefined *)func_?();
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
+  pGVar1 = (this->fields)._scDblSliderSettings;
+  if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
+    if ((uint)pGVar1->max_length < 3) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      fVar3 = (float)(*pcVar2)();
+      return fVar3;
     }
-    if (pGVar2->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
-      return (pGVar2->vector[2]->fields)._proportionalScaleSnapStep;
+    if (pGVar1->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
+      return (pGVar1->vector[2]->fields)._proportionalScaleSnapStep;
     }
   }
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 

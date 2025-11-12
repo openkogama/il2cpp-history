@@ -4,55 +4,35 @@
 void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnDrag(JoystickForwardingButton *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__ResolutionManager);
-    cRam_? = '\x01';
-  }
-  fVar1 = (this->fields).deadZoneBase;
-  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__ResolutionManager);
-  }
-  VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fVar1 = VStack_3.x * fVar1;
-  VStack_3 = VVar2;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Mathf);
-    cRam_? = '\x01';
-  }
-  fVar4 = ABS(fVar1);
-  if (fVar4 <= 0.0) {
-    fVar4 = 0.0;
-  }
-  fVar5 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
-  fVar6 = fVar4 * 1e-06;
-  if (fVar4 * 1e-06 <= fVar5) {
-    fVar6 = fVar5;
-  }
-  if ((ABS(0.0 - fVar1) < fVar6) || ((this->fields).isDragging != 0)) {
-    pJVar7 = (this->fields).joystickBase;
-    if (pJVar7 != (JoystickBase *)0x0) {
-      (*(code *)(pJVar7->klass->vtable).__unknown.method)(pJVar7,eventData,(pJVar7->klass->vtable).__unknown_1.methodPtr);
+  fVar1 = JoystickForwardingButton_get_DeadZone(this,(MethodInfo *)0x0);
+  cVar2 = FUN_?(fVar1,0);
+  if ((cVar2 == '\0') && ((this->fields).isDragging == 0)) {
+    if (eventData != (PointerEventData *)0x0) {
+      uStackX_20 = CONCAT44((eventData->fields)._position_k__BackingField.y - (this->fields).startPosition.y,(eventData->fields)._position_k__BackingField.x - (this->fields).startPosition.x);
+      fVar1 = (float)FUN_?(&uStackX_20);
+      fVar3 = JoystickForwardingButton_get_DeadZone(this,(MethodInfo *)0x0);
+      if (fVar3 <= fVar1) {
+        pJVar4 = (this->fields).joystickBase;
+        (this->fields).isDragging = 1;
+        if (pJVar4 == (JoystickBase *)0x0) goto code_?;
+        (*(pJVar4->klass->vtable).__unknown_1.methodPtr)(pJVar4,eventData,(pJVar4->klass->vtable).__unknown_1.method);
+      }
       return;
     }
   }
-  else if (eventData != (PointerEventData *)0x0) {
-    VStack_3.y = (eventData->fields)._position_k__BackingField.y - (this->fields).startPosition.y;
-    VStack_3.x = (eventData->fields)._position_k__BackingField.x - (this->fields).startPosition.x;
-    fVar8 = (float10)func_?(&VStack_3,0);
-    fVar1 = JoystickForwardingButton_get_DeadZone(this,(MethodInfo *)0x0);
-    VStack_3.y = fVar1;
-    if (fVar1 <= (float)fVar8) {
-      pJVar7 = (this->fields).joystickBase;
-      (this->fields).isDragging = 1;
-      if (pJVar7 == (JoystickBase *)0x0) goto code_?;
-      (*(code *)(pJVar7->klass->vtable).__unknown_1.method)(pJVar7,eventData,(pJVar7->klass->vtable).__unknown_2.methodPtr);
+  else {
+    pJVar4 = (this->fields).joystickBase;
+    if (pJVar4 != (JoystickBase *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pJVar4->klass->vtable).__unknown.methodPtr)(pJVar4,eventData,(pJVar4->klass->vtable).__unknown.method);
+      return;
     }
-    return;
   }
 code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -62,45 +42,28 @@ code_?:
 void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnPointerDown(JoystickForwardingButton *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__ResolutionManager);
-    cRam_? = '\x01';
-  }
-  fVar1 = (this->fields).deadZoneBase;
-  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__ResolutionManager);
-  }
-  VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fVar1 = fVar1 * VVar2.x;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Mathf);
-    cRam_? = '\x01';
-  }
-  fVar3 = ABS(fVar1);
-  if (fVar3 <= 0.0) {
-    fVar3 = 0.0;
-  }
-  fVar4 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
-  fVar5 = fVar3 * 1e-06;
-  if (fVar3 * 1e-06 <= fVar4) {
-    fVar5 = fVar4;
-  }
-  if (ABS(0.0 - fVar1) < fVar5) {
-    pJVar6 = (this->fields).joystickBase;
-    if (pJVar6 != (JoystickBase *)0x0) {
-      (*(code *)(pJVar6->klass->vtable).__unknown_1.method)(pJVar6,eventData,(pJVar6->klass->vtable).__unknown_2.methodPtr);
+  fVar1 = JoystickForwardingButton_get_DeadZone(this,(MethodInfo *)0x0);
+  cVar2 = FUN_?(fVar1,0);
+  if (cVar2 == '\0') {
+    if (eventData != (PointerEventData *)0x0) {
+      fVar1 = (eventData->fields)._position_k__BackingField.x;
+      (this->fields).startPosition.y = (eventData->fields)._position_k__BackingField.y;
+      (this->fields).startPosition.x = fVar1;
       return;
     }
   }
-  else if (eventData != (PointerEventData *)0x0) {
-    fVar1 = (eventData->fields)._position_k__BackingField.y;
-    (this->fields).startPosition.x = (eventData->fields)._position_k__BackingField.x;
-    (this->fields).startPosition.y = fVar1;
-    return;
+  else {
+    pJVar3 = (this->fields).joystickBase;
+    if (pJVar3 != (JoystickBase *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pJVar3->klass->vtable).__unknown_1.methodPtr)(pJVar3,eventData,(pJVar3->klass->vtable).__unknown_1.method);
+      return;
+    }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -112,11 +75,11 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnP
 {
   pJVar1 = (this->fields).joystickBase;
   if (pJVar1 != (JoystickBase *)0x0) {
-    (*(code *)(pJVar1->klass->vtable).__unknown_2.method)(pJVar1,eventData,pJVar1->klass[1]._0.image);
+    (*(pJVar1->klass->vtable).__unknown_2.methodPtr)(pJVar1,eventData,(pJVar1->klass->vtable).__unknown_2.method);
     (this->fields).isDragging = 0;
     return;
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -129,20 +92,272 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  bVar2 = cRam_? == '\0';
   (this->fields).startPosition.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
   (this->fields).startPosition.y = fVar1;
   (this->fields).deadZoneBase = 10.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object,unaff_EBP);
+  if (bVar2) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pOVar3 = TypeInfo__UnityEngine__Object;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
   }
+  ppMVar4 = (MethodInfo **)0x0;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  lVar5 = _Baselib_Thread_GetCurrentThreadId_il2cpp_baselib__YA_JXZ();
+  ppMVar6 = ppMVar4;
+  if (lVar5 == lRam_?) {
+    iRam_? = iRam_? + 1;
+    lVar5 = lRam_?;
+  }
+  else {
+    do {
+      uVar7 = (uint)ppMVar6;
+      LOCK();
+      bVar2 = uVar7 != uRam_?;
+      uVar8 = uVar7;
+      uVar9 = uVar7 + 1;
+      if (bVar2) {
+        uVar8 = uRam_?;
+        uVar9 = uRam_?;
+      }
+      uRam_? = uVar9;
+      UNLOCK();
+    } while ((bVar2) && (ppMVar6 = (MethodInfo **)(ulonglong)uVar8, uVar7 = uVar8, uVar8 != 2));
+    while (uVar7 != 0) {
+      _Baselib_SystemFutex_Wait_il2cpp_baselib__YAXPEAHHI_Z(0xADDR,2,0xffffffff);
+      uVar7 = uRam_?;
+      LOCK();
+      uRam_? = 2;
+      UNLOCK();
+    }
+  }
+  lRam_? = lVar5;
+  puVar10 = &(pOVar3->_1).field_0x1c;
+  LOCK();
+  bVar2 = *(int *)puVar10 == 1;
+  if (bVar2) {
+    *(undefined4 *)puVar10 = 1;
+  }
+  uVar7 = uRam_?;
+  UNLOCK();
+  if (bVar2) {
+    if (iRam_? != 0) {
+      iRam_? = iRam_? + -1;
+      return;
+    }
+    lRam_? = 0;
+    LOCK();
+    uRam_? = 0;
+    UNLOCK();
+    if (uVar7 != 2) {
+      uRam_? = 0;
+      lRam_? = 0;
+      return;
+    }
+    _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z(0xADDR,1,0);
+    return;
+  }
+  puVar11 = &(pOVar3->_1).cctor_finished_or_no_cctor;
+  LOCK();
+  bVar2 = *puVar11 == 1;
+  if (bVar2) {
+    *puVar11 = 1;
+  }
+  uVar7 = uRam_?;
+  UNLOCK();
+  if (bVar2) {
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar7 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z(0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    uVar7 = GetCurrentThreadId();
+    psVar12 = &(pOVar3->_1).cctor_thread;
+    LOCK();
+    bVar2 = (ulonglong)uVar7 == *psVar12;
+    if (bVar2) {
+      *psVar12 = (ulonglong)uVar7;
+    }
+    UNLOCK();
+    if (bVar2) {
+      return;
+    }
+    while( true ) {
+      puVar10 = &(pOVar3->_1).field_0x1c;
+      LOCK();
+      bVar2 = *(int *)puVar10 == 1;
+      if (bVar2) {
+        *(undefined4 *)puVar10 = 1;
+      }
+      UNLOCK();
+      if (bVar2) break;
+      LOCK();
+      lVar5._0_4_ = (pOVar3->_1).initializationExceptionGCHandle;
+      lVar5._4_4_ = (pOVar3->_1).cctor_started;
+      if (lVar5 == 0) {
+        (pOVar3->_1).initializationExceptionGCHandle = 0;
+        (pOVar3->_1).cctor_started = 0;
+      }
+      UNLOCK();
+      if (lVar5 != 0) break;
+      FUN_?(*puRam_?);
+    }
+code_?:
+    lVar13._0_4_ = (pOVar3->_1).initializationExceptionGCHandle;
+    lVar13._4_4_ = (pOVar3->_1).cctor_started;
+    if (lVar13 == 0) {
+      return;
+    }
+  }
+  else {
+    uVar7 = GetCurrentThreadId();
+    LOCK();
+    (pOVar3->_1).cctor_thread = (ulonglong)uVar7;
+    UNLOCK();
+    LOCK();
+    (pOVar3->_1).cctor_finished_or_no_cctor = 1;
+    uVar7 = uRam_?;
+    UNLOCK();
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar7 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z(0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    alStackX_10[0] = 0;
+    if (((pOVar3->_1).field_0x6e & 4) != 0) {
+      FUN_?(pOVar3);
+      ppMVar6 = ppMVar4;
+      pIVar14 = (Il2CppClass *)pOVar3;
+code_?:
+      do {
+        if (ppMVar6 == (MethodInfo **)0x0) {
+          FUN_?(pIVar14);
+          if (pIVar14->field_count != 0) {
+            ppMVar6 = pIVar14->methods;
+            pMVar15 = *ppMVar6;
+code_?:
+            if (pMVar15 != (MethodInfo *)0x0) {
+              if ((*pMVar15->name == '.') && ((pMVar15->flags & 0x800) != 0)) {
+                ppMVar16 = ppMVar4;
+                while (ppMVar17 = ppMVar16 + 0x30528cee, ppMVar16 = (MethodInfo **)((longlong)ppMVar16 + 1), *(char *)ppMVar17 == (pMVar15->name + -1)[(longlong)ppMVar16]) {
+                  if (ppMVar16 == (MethodInfo **)0x7) {
+                    FUN_?(pMVar15,0,0,alStackX_10);
+                    goto code_?;
+                  }
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+        else {
+          ppMVar6 = ppMVar6 + 1;
+          if (ppMVar6 < pIVar14->methods + pIVar14->field_count) {
+            pMVar15 = *ppMVar6;
+            goto code_?;
+          }
+        }
+        pIVar14 = pIVar14->parent;
+        ppMVar6 = ppMVar4;
+      } while (pIVar14 != (Il2CppClass *)0x0);
+    }
+code_?:
+    LOCK();
+    (pOVar3->_1).cctor_thread = 0;
+    UNLOCK();
+    if (alStackX_10[0] == 0) {
+      LOCK();
+      *(undefined4 *)&(pOVar3->_1).field_0x1c = 1;
+      UNLOCK();
+      goto code_?;
+    }
+    uStack_18 = 0;
+    uStack_19 = 0;
+    uStack_20 = 0xf;
+    pppppppuStack_78 = (undefined8 *******)0x0;
+    FUN_?(&pppppppuStack_78,&(pOVar3->_0).byval_arg,0,0);
+    pppppppuVar18 = &pppppppuStack_78;
+    if (0xf < uStack_20) {
+      pppppppuVar18 = pppppppuStack_78;
+    }
+    FUN_?(apppppppuStack_58,&UNK_?,pppppppuVar18);
+    if (uStack_20 < 0x10) {
+code_?:
+      lVar5 = alStackX_10[0];
+      uStack_19 = 0;
+      uStack_20 = 0xf;
+      pppppppuStack_78 = (undefined8 *******)((ulonglong)pppppppuStack_78 & 0xffffffffffffff00);
+      pppppppuVar18 = apppppppuStack_58;
+      if (0xf < uStack_21) {
+        pppppppuVar18 = apppppppuStack_58[0];
+      }
+      lVar13 = FUN_?(uRam_?,&UNK_?,&UNK_?,pppppppuVar18);
+      if (lVar5 != 0) {
+        *(longlong *)(lVar13 + 0x28U) = lVar5;
+        if (iRam_? != 0) {
+          uVar7 = (uint)(lVar13 + 0x28U >> 0xc);
+          puVar22 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar23 = *puVar22;
+            LOCK();
+            uVar24 = *puVar22;
+            if (uVar23 == uVar24) {
+              *puVar22 = uVar23 | 1L << (uVar7 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar23 != uVar24);
+        }
+      }
+      FUN_?(pOVar3,lVar13);
+      if (0xf < uStack_21) {
+        pppppppuVar18 = apppppppuStack_58[0];
+        if ((0xfff < uStack_21 + 1) && (pppppppuVar18 = (undefined8 *******)apppppppuStack_58[0][-1], 0x1f < (ulonglong)((longlong)apppppppuStack_58[0] + (-8 - (longlong)pppppppuVar18)))) goto code_?;
+        func_?(pppppppuVar18);
+      }
+      goto code_?;
+    }
+    pppppppuVar18 = pppppppuStack_78;
+    if ((uStack_20 + 1 < 0x1000) || (pppppppuVar18 = (undefined8 *******)pppppppuStack_78[-1], (ulonglong)((longlong)pppppppuStack_78 + (-8 - (longlong)pppppppuVar18)) < 0x20)) {
+      func_?(pppppppuVar18);
+      goto code_?;
+    }
+    FUN_?(0,0,0,0,0);
+  }
+  uVar25._0_4_ = (pOVar3->_1).initializationExceptionGCHandle;
+  uVar25._4_4_ = (pOVar3->_1).cctor_started;
+  uVar25 = FUN_?(uVar25);
+  FUN_?(uVar25,0);
+code_?:
+  FUN_?(0,0,0,0,0);
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
   return;
 }
 
@@ -153,14 +368,17 @@ float Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_ge
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ResolutionManager);
+    FUN_?(&TypeInfo__ResolutionManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).deadZoneBase;
-  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__ResolutionManager);
+  if (*(int *)&(TypeInfo__ResolutionManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  return VVar2.x * fVar1;
+  fStackX_8 = VVar2.x;
+  return fStackX_8 * fVar1;
 }
 

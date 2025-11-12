@@ -553,7 +553,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 	private void OnScaleChanged(MVWorldObjectClient wo, ScaleChangedEventArgs scaleChangedEventArgs);
 	protected override void OnCurrentPickupChange(object newPickupDataData);
 	private void HandleBlinkerVisibility();
-	public void ToggleAudioListener(bool on);
+	public void SetLocalAvatarEarsState(bool activeState);
 	[CompilerGenerated]
 	private void _OnHolsteredChanged_b__111_0(SpawnRoleDataReceiver receiver);
 	[CompilerGenerated]

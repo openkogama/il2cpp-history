@@ -20,3 +20,31 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider2DSettings::GizmoPlaneSlider2DSet
   return;
 }
 
+
+/* Void set_ProportionalScaleSnapStep(Single) */
+
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider2DSettings::GizmoPlaneSlider2DSettings_set_ProportionalScaleSnapStep(GizmoPlaneSlider2DSettings *this,float value,MethodInfo *method)
+
+{
+  fVar1 = 0.0001;
+  if (0.0001 <= value) {
+    fVar1 = value;
+  }
+  (this->fields)._proportionalScaleSnapStep = fVar1;
+  return;
+}
+
+
+/* Void set_RotationSnapStep(Single) */
+
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider2DSettings::GizmoPlaneSlider2DSettings_set_RotationSnapStep(GizmoPlaneSlider2DSettings *this,float value,MethodInfo *method)
+
+{
+  fVar1 = 0.0001;
+  if (0.0001 <= value) {
+    fVar1 = value;
+  }
+  (this->fields)._rotationSnapStep = fVar1;
+  return;
+}
+

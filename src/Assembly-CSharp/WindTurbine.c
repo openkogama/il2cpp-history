@@ -5,42 +5,169 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_Destroy(WindTurbine *this,Met
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<EditModeChangeArgs>);
-    func_?(&TypeInfo__IEditModeUI);
-    func_?(&TypeInfo__UpdateController);
-    func_?(&MethodInfo__WindTurbine__OnEditModeChange_EditModeChangeArgs_);
+    FUN_?(&TypeInfo__System__Action<EditModeChangeArgs>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IEditModeUI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WindTurbine__OnEditModeChange_EditModeChangeArgs_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar1 == MVGameMode__Enum_Edit) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 == (GameSessionData *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if ((pGVar1->fields).gameMode == 0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-    if (pIVar2 == (IEditModeUI *)0x0) {
-      func_?(0);
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField == (IEditModeUI *)0x0) goto code_?;
+    pDVar3 = (Delegate *)FUN_?();
+    value = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
+    FUN_?(value,this);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar3,value,(MethodInfo *)0x0);
+    pAVar4 = TypeInfo__System__Action<EditModeChangeArgs>;
+    if ((pDVar3 != (Delegate *)0x0) && (lVar5 = FUN_?(pDVar3,TypeInfo__System__Action<EditModeChangeArgs>), lVar5 == 0)) {
+      FUN_?(pDVar3,pAVar4);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    pDVar4 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar2);
-    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_00,(Object *)this,MethodInfo__WindTurbine__OnEditModeChange_EditModeChangeArgs_,(MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar4 != (Delegate *)0x0) {
-      iVar5 = func_?();
-      if (iVar5 == 0) goto code_?;
-    }
-    func_?(3);
+    FUN_?();
   }
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UpdateController);
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UpdateController::UpdateController_RemoveFixedUpdateObject((IUpdatecontrollerSubscriberFixedUpdate *)this,(MethodInfo *)0x0);
-  MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UpdateController::UpdateController_RemoveUpdateObject((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
+    bVar6 = iRam_? != 0;
+    (this->fields)._.cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    if (bVar6) {
+      uVar7 = (uint)((ulonglong)&(this->fields)._.cullingSubscriberBase >> 0xc);
+      puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar9 = *puVar8;
+        LOCK();
+        uVar10 = *puVar8;
+        if (uVar9 == uVar10) {
+          *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar9 != uVar10);
+    }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar11 = (this->fields)._._.gameObject;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar11 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar11->fields)._.m_CachedPtr != (void *)0x0) {
+      pGVar11 = (this->fields)._._.gameObject;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy((Object_1 *)pGVar11,0.0,(MethodInfo *)0x0);
+    }
+  }
+  if ((this->fields)._._.initializedFromInventory != 0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar12 != (MVGameControllerBase *)0x0) && (pMVar13 = (pMVar12->fields).game, pMVar13 != (MVNetworkGame *)0x0)) {
+    pRVar14 = (pMVar13->fields).runtimeVariableNetworkManager;
+    item = (this->fields)._._._.id;
+    if (pRVar14 != (RuntimeVariableNetworkManager *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_00 = (HashSet_1_System_Int32Enum_ *)(pRVar14->fields).runtimeDataVariables;
+      if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+        bVar15 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::HashSet_1_System_Int32Enum__Contains(this_00,item,MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        if (bVar15 != 0) {
+          pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar13 == (MVNetworkGame *)0x0) || (pRVar14 = (pMVar13->fields).runtimeVariableNetworkManager, pRVar14 == (RuntimeVariableNetworkManager *)0x0)) goto DAT_?;
+          RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_RemoveRuntimeDataVariables(pRVar14,(this->fields)._._._.id,(MethodInfo *)0x0);
+        }
+        return;
+      }
+    }
+  }
+DAT_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -51,57 +178,106 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_EnterWindZone(WindTurbine *th
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__set_Item_int__MVRigidBody_);
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-    func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-    func_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__set_Item_int__MVRigidBody_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).affectedBodies;
-  if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)pDVar1,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
-    if (bVar2 != 0) {
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).affectedBodies;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_->klass->rgctx_data[0x21].method);
+    if (-1 < iVar1) {
       return;
     }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (((this_00 != (MVWorldObjectClientManager *)0x0) && (pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,instigatorWOID,(MethodInfo *)0x0), pMVar3 != (MVWorldObject *)0x0)) && (pLVar4 = pMVar3[1].fields.inputLinkRefs, pLVar4 != (List_1_MV_WorldObject_Link_ *)0x0)) {
-      pOVar5 = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1((GameObject *)pLVar4,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (((this_02 != (MVWorldObjectClientManager *)0x0) && (pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient(this_02,instigatorWOID,(MethodInfo *)0x0), pMVar2 != (MVWorldObjectClient *)0x0)) && (pGVar3 = (pMVar2->fields).gameObject, pGVar3 != (GameObject *)0x0)) {
+      value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar3,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(pOVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        return;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      pLVar4 = pMVar3[1].fields.inputLinkRefs;
-      if (pLVar4 != (List_1_MV_WorldObject_Link_ *)0x0) {
-        pOVar5 = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1((GameObject *)pLVar4,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (value != (Object *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(pOVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          return;
-        }
-        pLVar4 = (this->fields)._._._.inputLinkRefs;
-        if (pLVar4 != (List_1_MV_WorldObject_Link_ *)0x0) {
-          if (((pLVar4->fields)._size == 0) || ((this->fields)._._._.inputState != 0)) {
-            if (pOVar5 == (Object_1 *)0x0) goto code_?;
-            (*(code *)pOVar5->klass[1]._0.parent)();
+        if (value[1].klass != (Object__Class *)0x0) {
+          pGVar3 = (pMVar2->fields).gameObject;
+          if (pGVar3 == (GameObject *)0x0) goto code_?;
+          pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar3,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          pDVar1 = (this->fields).affectedBodies;
-          if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__set_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,instigatorWOID,(Object *)&UNK_?,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__set_Item_int__MVRigidBody_);
-            return;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pOVar4 != (Object *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (pOVar4[1].klass != (Object__Class *)0x0) {
+              pLVar5 = (this->fields)._._._.inputLinkRefs;
+              if (pLVar5 != (List_1_MV_WorldObject_Link_ *)0x0) {
+                if (((pLVar5->fields)._size == 0) || ((this->fields)._._._.inputState != 0)) {
+                  in_R9 = 0;
+                  (*(code *)pOVar4->klass[1]._0.declaringType)(pOVar4,0xd,0xffffffff,0,pOVar4->klass[1]._0.parent);
+                }
+                this_01 = (this->fields).affectedBodies;
+                if (this_01 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryInsert((Dictionary_2_System_Int32_System_Object_ *)this_01,instigatorWOID,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),1),MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__set_Item_int__MVRigidBody_->klass->rgctx_data[0x22].method);
+                  return;
+                }
+              }
+              goto code_?;
+            }
           }
         }
       }
+      return;
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -114,97 +290,151 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_ExitWindZone(WindTurbine *thi
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).affectedBodies;
-  if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)pDVar1,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
-    if (bVar2 == 0) {
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).affectedBodies;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_->klass->rgctx_data[0x21].method);
+    if (iVar1 < 0) {
       return;
     }
-    pDVar1 = (this->fields).affectedBodies;
-    if ((pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) && (this_00 = (Component *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_), this_00 != (Component *)0x0)) {
-      x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1(this_00,MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    pDVar2 = (this->fields).affectedBodies;
+    if ((pDVar2 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) && (this_01 = (Component *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar2,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_), this_01 != (Component *)0x0)) {
+      pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1(this_01,MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pOVar3 == (Object *)0x0) {
         return;
       }
-      if (x != (Object_1 *)0x0) {
-        (*(code *)x->klass[1]._0.klass)(x,0xd,0xffffffff,x->klass[1]._0.fields);
-        pDVar1 = (this->fields).affectedBodies;
-        if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar1,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
-          return;
-        }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar3[1].klass == (Object__Class *)0x0) {
+        return;
+      }
+      (*(code *)pOVar3->klass[1]._0.interopData)(pOVar3,0xd,0xffffffff,pOVar3->klass[1]._0.klass);
+      pDVar2 = (this->fields).affectedBodies;
+      if (pDVar2 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar2,instigatorWOID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
+        return;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
 
 /* Vector3 GetClosestGridPoint(Single, Vector3) */
 
-Vector3 * Assembly-CSharp.dll::WindTurbine::WindTurbine_GetClosestGridPoint(Vector3 *__return_storage_ptr__,WindTurbine *this,float gridSize,Vector3 position,MethodInfo *method)
+Vector3 * Assembly-CSharp.dll::WindTurbine::WindTurbine_GetClosestGridPoint(Vector3 *__return_storage_ptr__,WindTurbine *this,float gridSize,Vector3 *position,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SharedCubeFunctions);
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar2 = (pVVar1->oneVector).x;
-  uVar3 = (pVVar1->oneVector).y;
-  fVar4 = (pVVar1->oneVector).z * 2.0;
+  VStack_2.x = (pVVar1->oneVector).x;
+  VStack_2.y = (pVVar1->oneVector).y;
+  fVar3 = (pVVar1->oneVector).z;
+  fVar4 = VStack_2.x * 2.0;
+  fVar5 = VStack_2.y + VStack_2.y;
   this_00 = (this->fields)._._.gameObject;
-  if (this_00 != (GameObject *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
-    if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
-      pSVar5 = TypeInfo__SharedCubeFunctions;
-      pSVar6 = (SharedCubeFunctions__Class *)((float)uVar2 * 2.0);
-      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        pSVar6 = pSVar5;
-      }
-      worldPosition.z = position.z;
-      worldPosition.x = position.x;
-      worldPosition.y = position.y;
-      rotation.y = (float)pSVar6;
-      rotation.x = gridSize;
-      rotation.z = (float)uVar3 * 2.0;
-      rotation.w = fVar4;
-      scale.y = (float)uVar3 * 2.0;
-      scale.x = (float)pSVar6;
-      scale.z = fVar4;
-      pVVar7 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar8 = pVVar7->y;
-      fVar4 = pVVar7->z;
-      __return_storage_ptr__->x = pVVar7->x;
-      __return_storage_ptr__->y = fVar8;
-      __return_storage_ptr__->z = fVar4;
-      return __return_storage_ptr__;
+  if ((this_00 != (GameObject *)0x0) && (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
+    QStack_6.x = 0.0;
+    QStack_6.y = 0.0;
+    QStack_6.z = 0.0;
+    QStack_6.w = 0.0;
+    pvVar7 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar7 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar8 = (code *)swi(3);
+      pVVar9 = (Vector3 *)(*pcVar8)();
+      return pVVar9;
+    }
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) && (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar10 = func_?(&UNK_?);
+      FUN_?(uVar10,0);
+      pcVar8 = (code *)swi(3);
+      pVVar9 = (Vector3 *)(*pcVar8)();
+      return pVVar9;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)(pvVar7,&QStack_6);
+    if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    VStack_2.z = position->z;
+    VStack_2.x = position->x;
+    VStack_2.y = position->y;
+    aQStack_11[0].x = QStack_6.x;
+    aQStack_11[0].y = QStack_6.y;
+    aQStack_11[0].z = QStack_6.z;
+    aQStack_11[0].w = QStack_6.w;
+    VStack_12.y = fVar5;
+    VStack_12.x = fVar4;
+    VStack_12.z = fVar3 + fVar3;
+    pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint((Vector3 *)&QStack_6,&VStack_2,aQStack_11,gridSize,&VStack_12,(MethodInfo *)0x0);
+    fVar5 = pVVar9->y;
+    fVar3 = pVVar9->z;
+    __return_storage_ptr__->x = pVVar9->x;
+    __return_storage_ptr__->y = fVar5;
+    __return_storage_ptr__->z = fVar3;
+    return __return_storage_ptr__;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pVVar7 = (Vector3 *)(*pcVar9)();
-  return pVVar7;
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  pVVar9 = (Vector3 *)(*pcVar8)();
+  return pVVar9;
 }
 
 
@@ -229,71 +459,127 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_Initialize(WindTurbine *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<EditModeChangeArgs>);
-    func_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-    func_?(&TypeInfo__IEditModeUI);
-    func_?(&TypeInfo__IInputSignalReceiver);
-    func_?(&TypeInfo__UpdateController);
-    func_?(&MethodInfo__WindTurbine__InputStateUpdateCallback_LogicInputState__LogicObjectManager_);
-    func_?(&MethodInfo__WindTurbine__OnEditModeChange_EditModeChangeArgs_);
+    FUN_?(&TypeInfo__System__Action<EditModeChangeArgs>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IEditModeUI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IInputSignalReceiver);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WindTurbine__InputStateUpdateCallback_LogicInputState__LogicObjectManager_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WindTurbine__OnEditModeChange_EditModeChangeArgs_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar1 == MVGameMode__Enum_Edit) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-    if (pIVar2 != (IEditModeUI *)0x0) {
-      pDVar3 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar2);
-      this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)this,MethodInfo__WindTurbine__OnEditModeChange_EditModeChangeArgs_,(MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar3 != (Delegate *)0x0) {
-        iVar4 = func_?();
-        if (iVar4 == 0) goto code_?;
-      }
-      func_?();
-      goto code_?;
-    }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  else {
-code_?:
-    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 != (GameSessionData *)0x0) {
+    if ((pGVar1->fields).gameMode == 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField == (IEditModeUI *)0x0) goto code_?;
+      pDVar2 = (Delegate *)FUN_?();
+      b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
+      FUN_?(b,this);
+      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar2,b,(MethodInfo *)0x0);
+      pAVar3 = TypeInfo__System__Action<EditModeChangeArgs>;
+      if ((pDVar2 != (Delegate *)0x0) && (lVar4 = FUN_?(pDVar2,TypeInfo__System__Action<EditModeChangeArgs>), lVar4 == 0)) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      FUN_?();
+    }
+    if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UpdateController::UpdateController_AddFixedUpdateObject((IUpdatecontrollerSubscriberFixedUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
     WindTurbine_SetData(this,(MethodInfo *)0x0);
-    pWVar5 = (this->fields).windTurbineObject;
-    if (pWVar5 != (WindTurbineObject *)0x0) {
-      this_02 = MVLogicObject::MVLogicObject_SetupCulling((MVLogicObject *)this,(pWVar5->fields).visualObject,2.0,(MethodInfo *)0x0);
-      if (this_02 != (CullingSubscriberBase *)0x0) {
-        CullingSubscriberBase::CullingSubscriberBase_set_Radius(this_02,4.0,(MethodInfo *)0x0);
-        this_03 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_03,(Object *)this,MethodInfo__WindTurbine__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
-        pIVar6 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_03,(MethodInfo *)0x0);
-        (this->fields)._InputSignalReceiver_k__BackingField = pIVar6;
-        func_?();
-        if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
-          value = func_?();
-          (this->fields).isActive = value;
-          pWVar5 = (this->fields).windTurbineObject;
-          if ((pWVar5 != (WindTurbineObject *)0x0) && (this_00 = (pWVar5->fields).windParticleSystem, this_00 != (ParticleSystem *)0x0)) {
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_enabled_Injected((ParticleSystem_EmissionModule *)&stack0xfffffff4,value,(MethodInfo *)0x0);
-            return;
+    pWVar6 = (this->fields).windTurbineObject;
+    if ((pWVar6 != (WindTurbineObject *)0x0) && (this_00 = MVLogicObject::MVLogicObject_SetupCulling((MVLogicObject *)this,(pWVar6->fields).visualObject,2.0,(MethodInfo *)0x0), this_00 != (CullingSubscriberBase *)0x0)) {
+      CullingSubscriberBase::CullingSubscriberBase_set_Radius(this_00,4.0,(MethodInfo *)0x0);
+      this_01 = (Action_2_Int32Enum_Object_ *)FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor(this_01,(Object *)this,MethodInfo__WindTurbine__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
+      pIVar7 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
+      bVar8 = iRam_? != 0;
+      (this->fields)._InputSignalReceiver_k__BackingField = pIVar7;
+      if (bVar8) {
+        uVar9 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
+        uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+        do {
+          uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+          puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
           }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
+        bVar13 = FUN_?(1,TypeInfo__IInputSignalReceiver);
+        pWVar6 = (this->fields).windTurbineObject;
+        (this->fields).isActive = bVar13;
+        if ((pWVar6 == (WindTurbineObject *)0x0) || (pPStackX_20 = (pWVar6->fields).windParticleSystem, pPStackX_20 == (ParticleSystem *)0x0)) {
+          FUN_?(this,bVar13,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
+        if (iRam_? != 0) {
+          uVar9 = (uint)((ulonglong)&stack0x00000008 >> 0xc);
+          puVar12 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar11 = *puVar12;
+            LOCK();
+            uVar10 = *puVar12;
+            if (uVar11 == uVar10) {
+              *puVar12 = uVar11 | 1L << (ulonglong)(uVar9 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar11 != uVar10);
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) && (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar14 = func_?(&UNK_?);
+          FUN_?(uVar14,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        (*pcRam_?)(&pPStackX_20,bVar13);
+        return;
       }
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -305,25 +591,49 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_InitializeInventory(WindTurbi
 {
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   pWVar1 = (this->fields).windTurbineObject;
-  if ((pWVar1 != (WindTurbineObject *)0x0) && (this_00 = (pWVar1->fields).areaColliderTransform, this_00 != (Transform *)0x0)) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
-    if (pGVar2 != (GameObject *)0x0) {
+  if (((pWVar1 != (WindTurbineObject *)0x0) && (this_00 = (pWVar1->fields).areaColliderTransform, this_00 != (Transform *)0x0)) && (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0,(MethodInfo *)0x0);
+    pWVar1 = (this->fields).windTurbineObject;
+    if (((pWVar1 != (WindTurbineObject *)0x0) && (this_01 = (pWVar1->fields).windParticleSystem, this_01 != (ParticleSystem *)0x0)) && (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0,(MethodInfo *)0x0);
-      pWVar1 = (this->fields).windTurbineObject;
-      if ((pWVar1 != (WindTurbineObject *)0x0) && (this_01 = (pWVar1->fields).windParticleSystem, this_01 != (ParticleSystem *)0x0)) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._._.inputConnectorObject;
-          if (pGVar2 != (GameObject *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0,(MethodInfo *)0x0);
-            return;
-          }
+      pGVar2 = (this->fields)._._.inputConnectorObject;
+      if (pGVar2 != (GameObject *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,0,0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
+        if (pGVar2 == (GameObject *)0x0) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pvVar4 = (pGVar2->fields)._.m_CachedPtr;
+        if (pvVar4 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar2,(MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcVar3 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+          uVar5 = func_?(&UNK_?);
+          FUN_?(uVar5,0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcRam_? = pcVar3;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*pcRam_?)(pvVar4,0);
+        return;
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -336,27 +646,46 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_InputStateUpdateCallback(Wind
 
 {
   if (logicInputState == LogicInputState__Enum_FromColdToHot) {
-    (this->fields).isActive = 1;
-    pWVar1 = (this->fields).windTurbineObject;
-    if ((pWVar1 != (WindTurbineObject *)0x0) && (pPVar2 = (pWVar1->fields).windParticleSystem, pPVar2 != (ParticleSystem *)0x0)) {
-      logicInputState = (LogicInputState__Enum)UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_enabled_Injected((ParticleSystem_EmissionModule *)&logicInputState,1,(MethodInfo *)0x0);
+    uVar1 = CONCAT71((int7)(CONCAT44(in_register_00000014,logicInputState) >> 8),1);
+  }
+  else {
+    if (logicInputState != LogicInputState__Enum_FromHotToCold) {
       return;
     }
-code_?:
-    uVar3 = func_?(&stack0xfffffff0);
-    func_?(uVar3);
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    uVar1 = 0;
+  }
+  pWVar2 = (this->fields).windTurbineObject;
+  (this->fields).isActive = (bool)uVar1;
+  if ((pWVar2 != (WindTurbineObject *)0x0) && (apPStackX_8[0] = (pWVar2->fields).windParticleSystem, apPStackX_8[0] != (ParticleSystem *)0x0)) {
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)apPStackX_8 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (ulonglong)(uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pcVar7 = pcRam_?;
+    pPStackX_20 = apPStackX_8[0];
+    if ((pcRam_? == (code *)0x0) && (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcRam_? = pcVar7;
+    (*pcRam_?)(&pPStackX_20,uVar1 & 0xff);
     return;
   }
-  if (logicInputState == LogicInputState__Enum_FromHotToCold) {
-    (this->fields).isActive = 0;
-    pWVar1 = (this->fields).windTurbineObject;
-    if ((pWVar1 == (WindTurbineObject *)0x0) || (pPVar2 = (pWVar1->fields).windParticleSystem, pPVar2 == (ParticleSystem *)0x0)) goto code_?;
-    logicInputState = (LogicInputState__Enum)UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_enabled_Injected((ParticleSystem_EmissionModule *)&logicInputState,0,(MethodInfo *)0x0);
-  }
+  FUN_?(this,uVar1,0);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -369,7 +698,27 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_OnDataUpdate(WindTurbine *thi
   WindTurbine_SetData(this,(MethodInfo *)0x0);
   woID = (this->fields)._._._.id;
   worldObjectManager = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk(woID,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__,worldObjectManager,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  resetNodes = (HashSet_1_System_Int32_ *)FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(resetNodes,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetNode(woID,resetNodes,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
+  if (resetNodes != (HashSet_1_System_Int32_ *)0x0) {
+    return;
+  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -392,17 +741,14 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_OnEditModeChange(WindTurbine 
       if ((pWVar1 != (WindTurbineObject *)0x0) && (pCVar2 = (pWVar1->fields).editorCollider, pCVar2 != (Collider *)0x0)) {
         UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar2,0,(MethodInfo *)0x0);
         pWVar1 = (this->fields).windTurbineObject;
-        if ((pWVar1 != (WindTurbineObject *)0x0) && ((pWVar1->fields).areaCollider != (Collider *)0x0)) {
-          if (pcRam_? == (code *)0x0) {
-            pcRam_? = (code *)func_?();
-          }
-          (*pcRam_?)();
+        if ((pWVar1 != (WindTurbineObject *)0x0) && (pCVar2 = (pWVar1->fields).areaCollider, pCVar2 != (Collider *)0x0)) {
+          UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar2,1,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -414,45 +760,169 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_OnEditModeChange(WindTurbine 
 void Assembly-CSharp.dll::WindTurbine::WindTurbine_Rescale(WindTurbine *this,MethodInfo *method)
 
 {
-  pWVar1 = this;
-  pWVar2 = (this->fields).windTurbineObject;
-  if ((pWVar2 != (WindTurbineObject *)0x0) && (pTVar3 = (pWVar2->fields).areaColliderTransform, pTVar3 != (Transform *)0x0)) {
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale((Vector3 *)&puStack_5,pTVar3,(MethodInfo *)0x0);
-    pWVar2 = (this->fields).windTurbineObject;
-    uVar6 = pVVar4->x;
-    uVar7 = pVVar4->y;
-    VVar8.y = (float)uVar7;
-    VVar8.x = (float)uVar6;
-    if ((pWVar2 != (WindTurbineObject *)0x0) && (pTVar3 = (pWVar2->fields).areaColliderTransform, pTVar3 != (Transform *)0x0)) {
-      VVar8.z = (this->fields).windAreaSize;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale(pTVar3,VVar8,(MethodInfo *)0x0);
-      pWVar2 = (this->fields).windTurbineObject;
-      if ((pWVar2 != (WindTurbineObject *)0x0) && (pTVar3 = (pWVar2->fields).areaColliderTransform, pTVar3 != (Transform *)0x0)) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar3,(MethodInfo *)0x0);
-        pWVar2 = (this->fields).windTurbineObject;
-        uVar9 = pVVar4->x;
-        uVar10 = pVVar4->y;
-        if ((pWVar2 != (WindTurbineObject *)0x0) && (pTVar3 = (pWVar2->fields).areaColliderTransform, pTVar3 != (Transform *)0x0)) {
-          method = (MethodInfo *)0x0;
-          this = (WindTurbine *)((this->fields).windAreaSize * 0.5 + 0.5);
-          fVar11 = (float)uVar10;
-          VVar8.x = (float)uVar9;
-          VVar8 = (Vector3)CONCAT84(uVar12,VVar8.x);
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,VVar8,(MethodInfo *)0x0);
-          pWVar2 = (pWVar1->fields).windTurbineObject;
-          if ((pWVar2 != (WindTurbineObject *)0x0) && (this_00 = (pWVar2->fields).windParticleSystem, this_00 != (ParticleSystem *)0x0)) {
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected((ParticleSystem_MainModule *)&this,(pWVar1->fields).windAreaSize / 20.0,(MethodInfo *)0x0);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startSizeMultiplier_Injected((ParticleSystem_MainModule *)&this,0.1,(MethodInfo *)0x0);
+  pWVar1 = (this->fields).windTurbineObject;
+  if ((pWVar1 == (WindTurbineObject *)0x0) || (pTVar2 = (pWVar1->fields).areaColliderTransform, pTVar2 == (Transform *)0x0)) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar4 = (pTVar2->fields)._._.m_CachedPtr;
+  if (pvVar4 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(pvVar4);
+  pWVar1 = (this->fields).windTurbineObject;
+  fVar6 = (this->fields).windAreaSize;
+  fStack_7 = 0.0;
+  if ((pWVar1 != (WindTurbineObject *)0x0) && (pTVar2 = (pWVar1->fields).areaColliderTransform, pTVar2 != (Transform *)0x0)) {
+    uStack_8 = 0;
+    fStack_7 = fVar6;
+    if (cRam_? == '\0') {
+      FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar4 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    (*pcRam_?)(pvVar4);
+    pWVar1 = (this->fields).windTurbineObject;
+    if ((pWVar1 != (WindTurbineObject *)0x0) && (pTVar2 = (pWVar1->fields).areaColliderTransform, pTVar2 != (Transform *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar4 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar4 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar5 = func_?(&UNK_?);
+        FUN_?(uVar5,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      (*pcRam_?)(pvVar4);
+      pWVar1 = (this->fields).windTurbineObject;
+      fStack_7 = 0.0;
+      fVar6 = (this->fields).windAreaSize * 0.5 + 0.5;
+      if ((pWVar1 != (WindTurbineObject *)0x0) && (pTVar2 = (pWVar1->fields).areaColliderTransform, pTVar2 != (Transform *)0x0)) {
+        uStack_8 = 0;
+        fStack_7 = fVar6;
+        if (cRam_? == '\0') {
+          FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar4 = (pTVar2->fields)._._.m_CachedPtr;
+        if (pvVar4 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcVar3 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+          uVar5 = func_?(&UNK_?);
+          FUN_?(uVar5,0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcRam_? = pcVar3;
+        (*pcRam_?)(pvVar4,&uStack_8);
+        pWVar1 = (this->fields).windTurbineObject;
+        if ((pWVar1 != (WindTurbineObject *)0x0) && (pPStackX_8 = (pWVar1->fields).windParticleSystem, pPStackX_8 != (ParticleSystem *)0x0)) {
+          if (iRam_? != 0) {
+            uVar9 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+            uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+            do {
+              uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+              puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+              LOCK();
+              bVar13 = uVar11 == *puVar12;
+              if (bVar13) {
+                *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar13);
+          }
+          fVar6 = (this->fields).windAreaSize;
+          pcVar3 = pcRam_?;
+          apPStackX_18[0] = pPStackX_8;
+          if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar5 = func_?(&UNK_?);
+            FUN_?(uVar5,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
             return;
           }
+          pcRam_? = pcVar3;
+          (*pcRam_?)(apPStackX_18,fVar6 / 20.0);
+          pcVar3 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar5 = func_?(&UNK_?);
+            FUN_?(uVar5,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar3;
+          (*pcRam_?)(apPStackX_18,0x3dcccccd);
+          return;
         }
       }
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -466,24 +936,22 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_Rotate(WindTurbine *this,Meth
   if (pGVar1 != (GameObject *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles((Vector3 *)&stack0xffffffe4,pTVar2,(MethodInfo *)0x0);
-      uVar4 = pVVar3->y;
-      fVar5 = pVVar3->z;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles(&VStack_4,pTVar2,(MethodInfo *)0x0);
       pGVar1 = (this->fields)._._.gameObject;
-      fVar6 = (this->fields).windPitch - 90.0;
+      uVar5 = pVVar3->y;
+      VStack_6.z = pVVar3->z;
+      VStack_6.y = (float)uVar5;
+      VStack_6.x = (this->fields).windPitch - 90.0;
       if (pGVar1 != (GameObject *)0x0) {
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
-          value.y = (float)uVar4;
-          value.x = fVar6;
-          value.z = fVar5;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles(pTVar2,value,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles(pTVar2,&VStack_6,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;
@@ -496,41 +964,71 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_SetData(WindTurbine *this,Met
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    func_?(&TypeInfo__System__Single);
-    func_?(&StringLiteral_windSize);
-    func_?(&StringLiteral_windPitch);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_windSize);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_windPitch);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
-  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar1,(Object *)StringLiteral_windSize,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (TVar2.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
-      pfVar3 = (float *)func_?();
-      (this->fields).windAreaSize = *pfVar3;
-      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
-      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar1,(Object *)StringLiteral_windPitch,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-        if (TVar2.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) == (TypeInfo__System__Single->_0).element_class) {
-            pfVar3 = (float *)func_?();
-            (this->fields).windPitch = *pfVar3;
-            (this->fields).windStrength = ((this->fields).windAreaSize / 20.0) * 280.0;
-            WindTurbine_Rescale(this,(MethodInfo *)0x0);
-            WindTurbine_Rotate(this,(MethodInfo *)0x0);
+  pDVar1 = (this->fields)._._._.data;
+  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar1,(Object *)StringLiteral_windSize,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar2,lRam_?);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pDVar1 = (this->fields)._._._.data;
+      (this->fields).windAreaSize = *(float *)&pOVar2[1].klass;
+      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar1,(Object *)StringLiteral_windPitch,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+        if (pOVar2 != (Object *)0x0) {
+          if ((pOVar2->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOVar2,lRam_?);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
             return;
           }
-          goto code_?;
+          (this->fields).windPitch = *(float *)&pOVar2[1].klass;
+          (this->fields).windStrength = ((this->fields).windAreaSize / 20.0) * 280.0;
+          WindTurbine_Rescale(this,(MethodInfo *)0x0);
+          pGVar4 = (this->fields)._._.gameObject;
+          if (pGVar4 != (GameObject *)0x0) {
+            pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
+            if (pTVar5 != (Transform *)0x0) {
+              pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localEulerAngles(&VStack_7,pTVar5,(MethodInfo *)0x0);
+              pGVar4 = (this->fields)._._.gameObject;
+              uVar8 = pVVar6->y;
+              VStack_9.z = pVVar6->z;
+              VStack_9.y = (float)uVar8;
+              VStack_9.x = (this->fields).windPitch - 90.0;
+              if (pGVar4 != (GameObject *)0x0) {
+                pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
+                if (pTVar5 != (Transform *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles(pTVar5,&VStack_9,(MethodInfo *)0x0);
+                  return;
+                }
+              }
+            }
+          }
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
         }
       }
     }
   }
-  TVar2.m_Index = func_?();
-code_?:
-  func_?(TVar2.m_Index);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -540,17 +1038,40 @@ code_?:
 void Assembly-CSharp.dll::WindTurbine::WindTurbine_ToggleTurbine(WindTurbine *this,bool state,MethodInfo *method)
 
 {
-  value = state;
-  (this->fields).isActive = value;
-  pWVar1 = (this->fields).windTurbineObject;
-  if ((pWVar1 != (WindTurbineObject *)0x0) && (this_00 = (pWVar1->fields).windParticleSystem, this_00 != (ParticleSystem *)0x0)) {
-    _state = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_enabled_Injected((ParticleSystem_EmissionModule *)&state,value,(MethodInfo *)0x0);
+  puVar1 = (ulonglong *)CONCAT71(in_register_00000011,state);
+  pWVar2 = (this->fields).windTurbineObject;
+  (this->fields).isActive = state;
+  if ((pWVar2 == (WindTurbineObject *)0x0) || (apPStackX_8[0] = (pWVar2->fields).windParticleSystem, apPStackX_8[0] == (ParticleSystem *)0x0)) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)apPStackX_8 >> 0xc);
+    method = (MethodInfo *)(ulonglong)(uVar4 & 0x3f);
+    puVar1 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar1;
+      LOCK();
+      uVar6 = *puVar1;
+      if (uVar5 == uVar6) {
+        *puVar1 = uVar5 | 1L << (longlong)method;
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  pcVar3 = pcRam_?;
+  pPStackX_20 = apPStackX_8[0];
+  if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?,puVar1,method), pcVar3 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(&pPStackX_20,state);
   return;
 }
 
@@ -560,135 +1081,233 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_ToggleTurbine(WindTurbine *th
 void Assembly-CSharp.dll::WindTurbine::WindTurbine_UpdateControllerFixedUpdate(WindTurbine *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff44;
-  pWStack_5 = this;
-  puVar6 = &stack0xffffff44;
   if (cRam_? == '\0') {
-    func_?(&UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__GetEnumerator__);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__Dispose__);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__MoveNext__);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__get_Current__);
-    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_MVRigidBody>__get_Key__);
-    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_MVRigidBody>__get_Value__);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__Clear__);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__GetEnumerator__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__Dispose__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__MoveNext__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__get_Current__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_MVRigidBody>__get_Key__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_MVRigidBody>__get_Value__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar6 = puStack_4;
   }
-  puStack_4 = puVar6;
-  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_7._version = 0;
-  DStack_7._index = 0;
-  DStack_7._current.key = 0;
-  DStack_7._current.value = (Object *)0x0;
-  DStack_7._getEnumeratorRetType = 0;
   if ((this->fields).isActive == 0) {
-code_?:
-    *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  method_00 = (MethodInfo *)(this->fields).affectedBodies;
-  if (method_00 != (MethodInfo *)0x0) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator(&DStack_9,(Dictionary_2_System_UInt32_System_Object_ *)method_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__GetEnumerator__);
-    uStack_10 = 0;
-    DStack_7._dictionary = pDVar8->_dictionary;
-    DStack_7._version = pDVar8->_version;
-    DStack_7._index = pDVar8->_index;
-    DStack_7._current.key = (pDVar8->_current).key;
-    DStack_7._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
-    uStack_1 = 1;
-    pDStack_11 = &DStack_7;
-    while (bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_7,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__MoveNext__), bVar12 != 0) {
-      pTStack_13 = (Transform *)DStack_7._current.key;
-      pMStack_14 = (MVRigidBody *)DStack_7._current.value;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pMStack_14,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar12 == 0) {
-        if (pMStack_14 == (MVRigidBody *)0x0) goto code_?;
-        method_00 = (MethodInfo *)&UNK_?;
-        cVar15 = func_?(7);
-        if (cVar15 == '\0') {
-          pGVar16 = (this->fields)._._.gameObject;
-          if (pGVar16 == (GameObject *)0x0) goto code_?;
-          pTStack_13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar16,(MethodInfo *)0x0);
-          this_02 = (Collider *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)pMStack_14,UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__);
-          if (this_02 == (Collider *)0x0) goto code_?;
-          pBVar17 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds(&BStack_18,this_02,(MethodInfo *)0x0);
-          DStack_9._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)(pBVar17->m_Center).x;
-          DStack_9._version = (int32_t)(pBVar17->m_Center).y;
-          DStack_9._index = (int32_t)(pBVar17->m_Center).z;
-          DStack_9._current.key = (uint32_t)(pBVar17->m_Extents).x;
-          DStack_9._current.value = (Object *)(pBVar17->m_Extents).y;
-          DStack_9._getEnumeratorRetType = (int32_t)(pBVar17->m_Extents).z;
-          if (pTStack_13 == (Transform *)0x0) goto code_?;
-          pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint(&VStack_20,pTStack_13,pBVar17->m_Center,(MethodInfo *)0x0);
-          uStack_21._0_4_ = pVVar19->x;
-          uStack_21._4_4_ = pVVar19->y;
-          fStack_22 = pVVar19->z;
-          fVar23 = 1.0 - (fStack_22 * fStack_22) / ((this->fields).windAreaSize * 20.0);
-          if (fVar23 <= 0.0) {
-            fVar23 = 0.0;
-          }
-          pTStack_13 = (Transform *)(fVar23 * (this->fields).windStrength);
-          pGVar16 = (this->fields)._._.gameObject;
-          if ((pGVar16 == (GameObject *)0x0) || (this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar16,(MethodInfo *)0x0), this_03 == (Transform *)0x0)) goto code_?;
-          pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward(&VStack_24,this_03,(MethodInfo *)0x0);
-          uStack_25._0_4_ = pVVar19->x;
-          uStack_25._4_4_ = pVVar19->y;
-          fStack_26 = pVVar19->z;
-          fStack_27 = fStack_26 * (float)pTStack_13;
-          impulse.y = (float)uStack_25._4_4_ * (float)pTStack_13;
-          impulse.x = (float)(undefined4)uStack_25 * (float)pTStack_13;
-          impulse.z = fStack_27;
-          MVRigidBody::MVRigidBody_AddImpulse_1(pMStack_14,impulse,1,(MethodInfo *)0x0);
+  pDVar1 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).affectedBodies;
+  if (pDVar1 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&pDStack_3 >> 0xc);
+      uVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (ulonglong)(uVar2 & 0x3f);
         }
-      }
-      else {
-        method_00 = (MethodInfo *)(this->fields).keysToRemove;
-        if (method_00 == (MethodInfo *)0x0) goto code_?;
-        func_?(method_00,pTStack_13);
-      }
+        UNLOCK();
+      } while (!bVar7);
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&DStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__Dispose__,method_00);
-    uStack_1 = 0xffffffff;
-    pLVar28 = (this->fields).keysToRemove;
-    index = 0;
-    if (pLVar28 != (List_1_System_Int32_ *)0x0) {
-      while (index < (pLVar28->fields)._size) {
-        this_00 = (this->fields).affectedBodies;
-        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pWStack_5->fields).keysToRemove;
-        if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (key = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_01,index,MethodInfo__System__Collections__Generic__List<int>__get_Item_int_), this_00 == (Dictionary_2_System_Int32_MVRigidBody_ *)0x0)) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
-        pLVar28 = (this->fields).keysToRemove;
-        index = index + 1;
-        if (pLVar28 == (List_1_System_Int32_ *)0x0) goto code_?;
+    uStack_8 = (ulonglong)(uint)(pDVar1->fields)._version;
+    uStack_9 = 2;
+    uStack_10 = 0;
+    uStack_11 = 0;
+    DStack_12._version = (undefined4)uStack_8;
+    DStack_12._index = uStack_8._4_4_;
+    DStack_12._current.key = 0;
+    DStack_12._current._4_4_ = 0;
+    DStack_12._current.value._0_4_ = 0;
+    DStack_12._current.value._4_4_ = 0;
+    DStack_12._getEnumeratorRetType = 2;
+    DStack_12._36_4_ = 0;
+    uStack_13 = 0;
+    pDStack_14 = &DStack_12;
+    pDStack_3 = pDVar1;
+    DStack_12._dictionary = pDVar1;
+code_?:
+    while (bVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_12,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__MoveNext__), uVar16 = DStack_12._current.key, bVar15 != 0) {
+      this_01 = (MVRigidBody *)CONCAT44(DStack_12._current.value._4_4_,DStack_12._current.value._0_4_);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pLVar28 = (pWStack_5->fields).keysToRemove;
-      if (pLVar28 != (List_1_System_Int32_ *)0x0) {
-        piVar29 = &(pLVar28->fields)._version;
-        *piVar29 = *piVar29 + 1;
-        (pLVar28->fields)._size = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this_01 != (MVRigidBody *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((this_01->fields)._._._._._.m_CachedPtr == (void *)0x0) goto code_?;
+        if (this_01 != (MVRigidBody *)0x0) goto code_?;
         goto code_?;
       }
+code_?:
+      pLVar17 = (this->fields).keysToRemove;
+      if (pLVar17 == (List_1_System_Int32_ *)0x0) goto code_?;
+      FUN_?(pLVar17,uVar16);
+    }
+    uVar2 = 0;
+    pLVar17 = (this->fields).keysToRemove;
+    if (pLVar17 != (List_1_System_Int32_ *)0x0) {
+      lVar18 = 0x20;
+      do {
+        if ((pLVar17->fields)._size <= (int)uVar2) {
+          pLVar17 = (this->fields).keysToRemove;
+          if (pLVar17 != (List_1_System_Int32_ *)0x0) {
+            piVar19 = &(pLVar17->fields)._version;
+            *piVar19 = *piVar19 + 1;
+            (pLVar17->fields)._size = 0;
+            return;
+          }
+          break;
+        }
+        this_00 = (this->fields).affectedBodies;
+        pLVar17 = (this->fields).keysToRemove;
+        if (pLVar17 == (List_1_System_Int32_ *)0x0) break;
+        if ((uint)(pLVar17->fields)._size <= uVar2) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+          pcVar20 = (code *)swi(3);
+          (*pcVar20)();
+          return;
+        }
+        pIVar21 = (pLVar17->fields)._items;
+        if (pIVar21 == (Int32__Array *)0x0) break;
+        if ((uint)pIVar21->max_length <= uVar2) {
+          FUN_?();
+          pcVar20 = (code *)swi(3);
+          (*pcVar20)();
+          return;
+        }
+        if (this_00 == (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) break;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)this_00,*(int32_t *)((longlong)pIVar21->vector + lVar18 + -0x20),MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
+        uVar2 = uVar2 + 1;
+        lVar18 = lVar18 + 4;
+        pLVar17 = (this->fields).keysToRemove;
+      } while (pLVar17 != (List_1_System_Int32_ *)0x0);
     }
   }
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
+  return;
 code_?:
-  uVar30 = func_?();
-  func_?(uVar30);
-  pcVar31 = (code *)swi(3);
-  (*pcVar31)();
+  cVar22 = (*(this_01->klass->vtable).__unknown_2.methodPtr)(this_01);
+  if (cVar22 != '\0') goto code_?;
+  pGVar23 = (this->fields)._._.gameObject;
+  if (pGVar23 == (GameObject *)0x0) goto code_?;
+  obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar23,(MethodInfo *)0x0);
+  this_02 = (Collider *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this_01,UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__);
+  if (this_02 != (Collider *)0x0) {
+    pBVar24 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds(aBStack_25,this_02,(MethodInfo *)0x0);
+    uVar26._0_4_ = (pBVar24->m_Center).x;
+    uVar26._4_4_ = (pBVar24->m_Center).y;
+    uVar27 = (undefined4)*(undefined8 *)&(pBVar24->m_Center).z;
+    uStack_10._0_4_ = (pBVar24->m_Extents).y;
+    uStack_10._4_4_ = (pBVar24->m_Extents).z;
+    if (obj != (Transform *)0x0) {
+      uStack_28 = uVar26;
+      uStack_29 = uVar27;
+      if (cRam_? == '\0') {
+        FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar30 = (obj->fields)._._.m_CachedPtr;
+      if (pvVar30 != (void *)0x0) {
+        pcVar20 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) && (pcVar20 = (code *)FUN_?(&UNK_?), pcVar20 == (code *)0x0)) {
+          uVar26 = func_?(&UNK_?);
+          FUN_?(uVar26);
+code_?:
+          FUN_?();
+        }
+        else {
+          pcRam_? = pcVar20;
+          (*pcRam_?)(pvVar30);
+          fVar31 = 1.0 - 0.0 / ((this->fields).windAreaSize * 20.0);
+          if (fVar31 <= 0.0) {
+            fVar31 = 0.0;
+          }
+          fVar31 = fVar31 * (this->fields).windStrength;
+          pGVar23 = (this->fields)._._.gameObject;
+          if (pGVar23 != (GameObject *)0x0) {
+            this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar23,(MethodInfo *)0x0);
+            if (this_03 != (Transform *)0x0) {
+              pVVar32 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward(&VStack_33,this_03,(MethodInfo *)0x0);
+              aBStack_25[0].m_Center.x = pVVar32->x;
+              aBStack_25[0].m_Center.y = pVVar32->y;
+              VStack_34.z = pVVar32->z * fVar31;
+              VStack_34.x = aBStack_25[0].m_Center.x * fVar31;
+              VStack_34.y = aBStack_25[0].m_Center.y * fVar31;
+              MVRigidBody::MVRigidBody_AddImpulse_1(this_01,&VStack_34,1,(MethodInfo *)0x0);
+              goto code_?;
+            }
+            goto code_?;
+          }
+        }
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    }
+    FUN_?();
+  }
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -699,108 +1318,171 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine__ctor(WindTurbine *this,Dicti
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Dictionary__);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>);
-    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<int>);
-    func_?(&TypeInfo__System__Single);
-    func_?(&TypeInfo__WindTurbineObject);
-    func_?(&MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
-    func_?(&MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
-    func_?(&StringLiteral_windSize);
-    func_?(&StringLiteral_windPitch);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Dictionary__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__WindTurbineObject);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_windSize);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_windPitch);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).windStrength = 1000.0;
   (this->fields).windAreaSize = 10.0;
-  this_00 = (List_1_System_Int32_ *)func_?(TypeInfo__System__Collections__Generic__List<int>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this->fields).keysToRemove = this_00;
-  func_?(&(this->fields).keysToRemove,this_00);
+  pLVar1 = (List_1_System_Int32_ *)FUN_?(TypeInfo__System__Collections__Generic__List<int>);
+  FUN_?(pLVar1,MethodInfo__System__Collections__Generic__List<int>__List__);
+  bVar2 = iRam_? != 0;
+  (this->fields).keysToRemove = pLVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).keysToRemove >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 == (PrefabPool *)0x0) {
-code_?:
-    uVar2 = func_?();
-  }
-  else {
-    MVLogicObject::MVLogicObject__ctor((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).windTurbinePrefab,worldObjects,(MethodInfo *)0x0);
-    pWVar3 = (WindTurbineObject *)(this->fields)._._.component;
-    if (pWVar3 == (WindTurbineObject *)0x0) {
+  pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar7 != (PrefabPool *)0x0) {
+    MVLogicObject::MVLogicObject__ctor((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar7->fields).windTurbinePrefab,worldObjects,(MethodInfo *)0x0);
+    pWVar8 = (WindTurbineObject *)(this->fields)._._.component;
+    if (pWVar8 == (WindTurbineObject *)0x0) {
       (this->fields).windTurbineObject = (WindTurbineObject *)0x0;
     }
     else {
-      if (((((ObjectPrefab__Class *)pWVar3->klass)->_1).naturalAligment < (TypeInfo__WindTurbineObject->_1).naturalAligment) || ((((ObjectPrefab__Class *)pWVar3->klass)->_1).typeHierarchy[(TypeInfo__WindTurbineObject->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__WindTurbineObject)) goto code_?;
-      (this->fields).windTurbineObject = pWVar3;
-      if (((((ObjectPrefab__Class *)pWVar3->klass)->_1).naturalAligment < (TypeInfo__WindTurbineObject->_1).naturalAligment) || ((((ObjectPrefab__Class *)pWVar3->klass)->_1).typeHierarchy[(TypeInfo__WindTurbineObject->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__WindTurbineObject)) goto code_?;
+      bVar9 = (TypeInfo__WindTurbineObject->_1).naturalAligment;
+      if (((((ObjectPrefab__Class *)pWVar8->klass)->_1).naturalAligment < bVar9) || ((((ObjectPrefab__Class *)pWVar8->klass)->_1).typeHierarchy[(ulonglong)bVar9 - 1] != (Il2CppClass *)TypeInfo__WindTurbineObject)) {
+        FUN_?(pWVar8);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      (this->fields).windTurbineObject = pWVar8;
+      bVar9 = (TypeInfo__WindTurbineObject->_1).naturalAligment;
+      if (((((ObjectPrefab__Class *)pWVar8->klass)->_1).naturalAligment < bVar9) || ((((ObjectPrefab__Class *)pWVar8->klass)->_1).typeHierarchy[(ulonglong)bVar9 - 1] != (Il2CppClass *)TypeInfo__WindTurbineObject)) {
+        FUN_?(pWVar8);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
     }
-    func_?();
-    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
-    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar4,(Object *)StringLiteral_windSize,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    uVar2 = CONCAT44(TypeInfo__System__Single,TVar5.m_Index);
-    if (TVar5.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) == (TypeInfo__System__Single->_0).element_class) {
-      pfVar6 = (float *)func_?(TVar5.m_Index);
-      (this->fields).windAreaSize = *pfVar6;
-      pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
-      if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar4,(Object *)StringLiteral_windPitch,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-        uVar2 = CONCAT44(TypeInfo__System__Single,TVar5.m_Index);
-        if (TVar5.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar6 = (float *)func_?(TVar5.m_Index);
-          (this->fields).windPitch = *pfVar6;
-          (this->fields).windStrength = ((this->fields).windAreaSize / 20.0) * 280.0;
-          WindTurbine_Rescale(this,(MethodInfo *)0x0);
-          WindTurbine_Rotate(this,(MethodInfo *)0x0);
-          iVar7 = (this->fields)._._.interactionFlags;
-          pWVar3 = (this->fields).windTurbineObject;
-          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-          uVar8 = *(uint *)((int)&(this->fields)._._.interactionFlags + 4);
-          *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar7 | 0x18200;
-          piVar9 = &(this->fields)._._.interactionFlags;
-          *(uint *)piVar9 = (uint)*piVar9 & 0xfffffeff;
-          *(uint *)((int)&(this->fields)._._.interactionFlags + 4) = uVar8 | 0x38;
-          if (pWVar3 != (WindTurbineObject *)0x0) {
-            pTVar10 = (pWVar3->fields).triggerBoxEvents;
-            pEVar11 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar11,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
-            if (pTVar10 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar10,(EventHandler_1_TriggerEventArgs_ *)pEVar11,(MethodInfo *)0x0);
-              pWVar3 = (this->fields).windTurbineObject;
-              if (pWVar3 != (WindTurbineObject *)0x0) {
-                pTVar10 = (pWVar3->fields).triggerBoxEvents;
-                pEVar11 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar11,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
-                if (pTVar10 != (TriggerBoxEvents *)0x0) {
-                  TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar10,(EventHandler_1_TriggerEventArgs_ *)pEVar11,(MethodInfo *)0x0);
-                  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>);
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Dictionary__);
-                  (this->fields).affectedBodies = (Dictionary_2_System_Int32_MVRigidBody_ *)this_01;
-                  func_?(&(this->fields).affectedBodies,this_01);
-                  (this->fields).isActive = 1;
-                  return;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields).windTurbineObject >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    pDVar11 = (this->fields)._._._.data;
+    if ((pDVar11 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar11,(Object *)StringLiteral_windSize,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pOVar12 != (Object *)0x0)) {
+      if ((pOVar12->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar12);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      pDVar11 = (this->fields)._._._.data;
+      (this->fields).windAreaSize = *(float *)&pOVar12[1].klass;
+      if ((pDVar11 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar11,(Object *)StringLiteral_windPitch,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pOVar12 != (Object *)0x0)) {
+        if ((pOVar12->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+          FUN_?(pOVar12);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        (this->fields).windPitch = *(float *)&pOVar12[1].klass;
+        (this->fields).windStrength = ((this->fields).windAreaSize / 20.0) * 280.0;
+        WindTurbine_Rescale(this,(MethodInfo *)0x0);
+        WindTurbine_Rotate(this,(MethodInfo *)0x0);
+        pWVar8 = (this->fields).windTurbineObject;
+        (this->fields)._._.interactionFlags = (this->fields)._._.interactionFlags & 0xfffffffffffffeffU | 0x3800018200;
+        if (pWVar8 != (WindTurbineObject *)0x0) {
+          pTVar13 = (pWVar8->fields).triggerBoxEvents;
+          pUVar14 = (UnityAction_2_System_Object_System_Object_ *)FUN_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar14,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+          if (pTVar13 != (TriggerBoxEvents *)0x0) {
+            TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar13,(EventHandler_1_TriggerEventArgs_ *)pUVar14,(MethodInfo *)0x0);
+            pWVar8 = (this->fields).windTurbineObject;
+            if (pWVar8 != (WindTurbineObject *)0x0) {
+              pTVar13 = (pWVar8->fields).triggerBoxEvents;
+              pUVar14 = (UnityAction_2_System_Object_System_Object_ *)FUN_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar14,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+              if (pTVar13 != (TriggerBoxEvents *)0x0) {
+                TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar13,(EventHandler_1_TriggerEventArgs_ *)pUVar14,(MethodInfo *)0x0);
+                this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Dictionary__);
+                bVar2 = iRam_? != 0;
+                (this->fields).affectedBodies = (Dictionary_2_System_Int32_MVRigidBody_ *)this_00;
+                if (bVar2) {
+                  uVar3 = (uint)((ulonglong)&(this->fields).affectedBodies >> 0xc);
+                  uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                  do {
+                    uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                    puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                    LOCK();
+                    bVar2 = uVar5 == *puVar6;
+                    if (bVar2) {
+                      *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar2);
                 }
+                (this->fields).isActive = 1;
+                return;
               }
             }
           }
         }
       }
-      goto code_?;
     }
   }
-code_?:
-  func_?(uVar2);
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -822,20 +1504,42 @@ Vector3 * Assembly-CSharp.dll::WindTurbine::WindTurbine_get_InputConnectorOffset
 Vector3 * Assembly-CSharp.dll::WindTurbine::WindTurbine_get_WorldPivot(Vector3 *__return_storage_ptr__,WindTurbine *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields)._._.transform;
-  if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_2,this_00,(MethodInfo *)0x0);
-    fVar3 = pVVar1->y;
-    fVar4 = pVVar1->z;
-    __return_storage_ptr__->x = pVVar1->x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar4;
-    return __return_storage_ptr__;
+  obj = (this->fields)._._.transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar1 = (Vector3 *)(*pcVar5)();
-  return pVVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_3 = 0;
+  fStack_4 = 0.0;
+  pvVar5 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar5,&uStack_3);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_3;
+  __return_storage_ptr__->y = (float)uStack_3._4_4_;
+  __return_storage_ptr__->z = fStack_4;
+  return __return_storage_ptr__;
 }
 
 
@@ -844,14 +1548,116 @@ Vector3 * Assembly-CSharp.dll::WindTurbine::WindTurbine_get_WorldPivot(Vector3 *
 void Assembly-CSharp.dll::WindTurbine::WindTurbine_triggerBoxEvents_TriggerEnter(WindTurbine *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
 
 {
-  if (e != (TriggerEventArgs *)0x0) {
-    WindTurbine_EnterWindZone(this,(e->fields).instigatorWOID,(MethodInfo *)0x0);
+  if (e == (TriggerEventArgs *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  key = (e->fields).instigatorWOID;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_,key,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__set_Item_int__MVRigidBody_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).affectedBodies;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_->klass->rgctx_data[0x21].method);
+    if (-1 < iVar2) {
+      return;
+    }
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (((this_02 != (MVWorldObjectClientManager *)0x0) && (pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient(this_02,key,(MethodInfo *)0x0), pMVar3 != (MVWorldObjectClient *)0x0)) && (pGVar4 = (pMVar3->fields).gameObject, pGVar4 != (GameObject *)0x0)) {
+      value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar4,MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (value != (Object *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (value[1].klass != (Object__Class *)0x0) {
+          pGVar4 = (pMVar3->fields).gameObject;
+          if (pGVar4 == (GameObject *)0x0) goto code_?;
+          pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar4,MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pOVar5 != (Object *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (pOVar5[1].klass != (Object__Class *)0x0) {
+              pLVar6 = (this->fields)._._._.inputLinkRefs;
+              if (pLVar6 != (List_1_MV_WorldObject_Link_ *)0x0) {
+                if (((pLVar6->fields)._size == 0) || ((this->fields)._._._.inputState != 0)) {
+                  method = (MethodInfo *)0x0;
+                  (*(code *)pOVar5->klass[1]._0.declaringType)(pOVar5,0xd,0xffffffff,0,pOVar5->klass[1]._0.parent);
+                }
+                this_01 = (this->fields).affectedBodies;
+                if (this_01 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryInsert((Dictionary_2_System_Int32_System_Object_ *)this_01,key,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),1),MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__set_Item_int__MVRigidBody_->klass->rgctx_data[0x22].method);
+                  return;
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+      }
+      return;
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -861,46 +1667,78 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_triggerBoxEvents_TriggerEnter
 void Assembly-CSharp.dll::WindTurbine::WindTurbine_triggerBoxEvents_TriggerExit(WindTurbine *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
 
 {
-  if (e != (TriggerEventArgs *)0x0) {
-    key = (e->fields).instigatorWOID;
-    if (cRam_? == '\0') {
-      func_?(&MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__);
-      func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
-      func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
-      func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_);
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
+  if (e == (TriggerEventArgs *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  key = (e->fields).instigatorWOID;
+  if (cRam_? == '\0') {
+    FUN_?(&MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__,key,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).affectedBodies;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_->klass->rgctx_data[0x21].method);
+    if (iVar2 < 0) {
+      return;
     }
-    pDVar1 = (this->fields).affectedBodies;
-    if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)pDVar1,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__ContainsKey_int_);
-      if (bVar2 == 0) {
+    pDVar3 = (this->fields).affectedBodies;
+    if ((pDVar3 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) && (this_01 = (Component *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_), this_01 != (Component *)0x0)) {
+      pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1(this_01,MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pOVar4 == (Object *)0x0) {
         return;
       }
-      pDVar1 = (this->fields).affectedBodies;
-      if ((pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) && (this_00 = (Component *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__get_Item_int_), this_00 != (Component *)0x0)) {
-        x = (Object_1 *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1(this_00,MVInteractableBase_MethodInfo__UnityEngine__Component__GetComponent<MVInteractableBase>__);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          return;
-        }
-        if (x != (Object_1 *)0x0) {
-          (*(code *)x->klass[1]._0.klass)(x,0xd,0xffffffff,x->klass[1]._0.fields);
-          pDVar1 = (this->fields).affectedBodies;
-          if (pDVar1 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
-            return;
-          }
-        }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar4[1].klass == (Object__Class *)0x0) {
+        return;
+      }
+      (*(code *)pOVar4->klass[1]._0.interopData)(pOVar4,0xd,0xffffffff,pOVar4->klass[1]._0.klass);
+      pDVar3 = (this->fields).affectedBodies;
+      if (pDVar3 != (Dictionary_2_System_Int32_MVRigidBody_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Remove((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Remove_int_);
+        return;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

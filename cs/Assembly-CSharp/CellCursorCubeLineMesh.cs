@@ -19,8 +19,6 @@ public class CellCursorCubeLineMesh
 	private float prevCursorSetTime;
 	private GameObject gameObject;
 	private static readonly int ColorID;
-	private Material flashingMaterial;
-	private float flashingTimer;
 	private readonly MeshRenderer meshRenderer;
 
 	// Properties
