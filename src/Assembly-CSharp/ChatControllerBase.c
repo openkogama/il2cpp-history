@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_AddAdminMessage
   pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(data,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   pOVar1 = (Object *)0x0;
   if (pOVar3 != (Object *)0x0) {
-    if (pOVar3->klass == pORam0000000182db2460) {
+    if (pOVar3->klass == pORam0000000182db2520) {
       pOVar1 = pOVar3;
     }
     if (pOVar1 == (Object *)0x0) {
@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_AddChatLine(Cha
     pOVar1 = (Object *)0x0;
     pOVar4 = pOVar1;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182db2460) {
+      if (pOVar2->klass == pORam0000000182db2520) {
         pOVar4 = pOVar2;
       }
       if (pOVar4 == (Object *)0x0) {
@@ -405,7 +405,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_AddWarningMessa
     pSVar1 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(data,key,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (pSVar1 != (String *)0x0) {
       pSVar2 = (String *)0x0;
-      if (pSVar1->klass == pSRam0000000182db2460) {
+      if (pSVar1->klass == pSRam0000000182db2520) {
         pSVar2 = pSVar1;
       }
       if (pSVar2 != (String *)0x0) {
@@ -568,7 +568,7 @@ String * Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_FormatSayCh
     pOVar1 = (Object *)0x0;
     pOVar4 = pOVar1;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182db2460) {
+      if (pOVar2->klass == pORam0000000182db2520) {
         pOVar4 = pOVar2;
       }
       if (pOVar4 == (Object *)0x0) {
@@ -818,7 +818,7 @@ String * Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_FormatTeamC
     pOVar1 = (Object *)0x0;
     pOVar4 = pOVar1;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182db2460) {
+      if (pOVar2->klass == pORam0000000182db2520) {
         pOVar4 = pOVar2;
       }
       if (pOVar4 == (Object *)0x0) {
@@ -1435,7 +1435,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_ReceiveMessage(
     pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(message,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     pOVar1 = (Object *)0x0;
     if (pOVar3 != (Object *)0x0) {
-      if ((String__Class *)pOVar3->klass == pSRam0000000182db2460) {
+      if ((String__Class *)pOVar3->klass == pSRam0000000182db2520) {
         pOVar1 = pOVar3;
       }
       if (pOVar1 == (Object *)0x0) {
@@ -1692,7 +1692,7 @@ code_?:
       return;
     }
     pSVar6 = (String *)0x0;
-    if (pSVar7->klass == pSRam0000000182db2460) {
+    if (pSVar7->klass == pSRam0000000182db2520) {
       pSVar6 = pSVar7;
     }
     if (pSVar6 != (String *)0x0) {
@@ -1764,7 +1764,7 @@ code_?:
     pOVar1 = (Object *)0x0;
     pOVar3 = pOVar1;
     if (pOVar23 != (Object *)0x0) {
-      if ((String__Class *)pOVar23->klass == pSRam0000000182db2460) {
+      if ((String__Class *)pOVar23->klass == pSRam0000000182db2520) {
         pOVar3 = pOVar23;
       }
       if (pOVar3 == (Object *)0x0) {

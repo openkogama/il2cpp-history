@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -13,29 +14,36 @@ using UnityEngine;
 public class RegionConfigManager : ScriptableObject
 {
 	// Fields
-	[SerializeField]
-	private RegionConfig local;
-	[SerializeField]
-	private RegionConfig dev;
-	[SerializeField]
-	private RegionConfig test;
-	[SerializeField]
-	private RegionConfig friends;
-	[SerializeField]
-	private RegionConfig br;
-	[SerializeField]
-	private RegionConfig www;
-	[SerializeField]
-	private RegionConfig ut;
 	private string region;
+	[SerializeField]
+	private List<RegionConfigNamePair> expectedRegionValues;
 
 	// Properties
 	public RegionConfig RegionConfig { get; }
+
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<RegionConfigNamePair, bool> __9__4_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _DetectRegionFromEnvironment_b__4_0(RegionConfigNamePair p);
+	}
 
 	// Constructors
 	public RegionConfigManager();
 
 	// Methods
 	private string DetectRegionFromEnvironment();
+	[CompilerGenerated]
+	private bool _get_RegionConfig_b__3_0(RegionConfigNamePair p);
 }
 

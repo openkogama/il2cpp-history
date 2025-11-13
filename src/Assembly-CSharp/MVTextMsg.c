@@ -214,11 +214,11 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_InitializeInventory(MVTextMsg *th
     if ((pMVar5 == (MVTextMsgObject *)0x0) || (pTVar6 = (pMVar5->fields).textMesh, pTVar6 == (TextMesh *)0x0)) goto code_?;
     pSVar7 = pSVar3;
     if (apSStackX_8[0] != (Single__Array *)0x0) {
-      if (apSStackX_8[0]->klass == pSRam0000000182db2460) {
+      if (apSStackX_8[0]->klass == pSRam0000000182db2520) {
         pSVar7 = apSStackX_8[0];
       }
       if (pSVar7 == (Single__Array *)0x0) {
-        FUN_?(apSStackX_8[0],pSRam0000000182db2460);
+        FUN_?(apSStackX_8[0],pSRam0000000182db2520);
         pcVar2 = (code *)swi(3);
         (*pcVar2)();
         return;
@@ -319,7 +319,7 @@ code_?:
     pSVar7 = pSVar12;
     if (cVar15 == '\0') {
       if (((pSVar14->_1).field_0x6e & 0x10) == 0) goto code_?;
-      if ((((((((pSVar13->_1).token & 0x20) == 0) && ((pSVar13->_0).byval_arg.type != 0x13)) && ((pSVar13->_0).byval_arg.type != 0x1e)) || (((pSVar13->_0).interopData == (Il2CppInteropData *)0x0 || (((pSVar13->_0).interopData)->guid == (Il2CppGuid *)0x0)))) || (lVar16 = FUN_?(pSVar12), lVar16 == 0)) && (pSVar7 = (Single__Array *)0x0, pSVar13 == pSRam0000000182db23e0)) {
+      if ((((((((pSVar13->_1).token & 0x20) == 0) && ((pSVar13->_0).byval_arg.type != 0x13)) && ((pSVar13->_0).byval_arg.type != 0x1e)) || (((pSVar13->_0).interopData == (Il2CppInteropData *)0x0 || (((pSVar13->_0).interopData)->guid == (Il2CppGuid *)0x0)))) || (lVar16 = FUN_?(pSVar12), lVar16 == 0)) && (pSVar7 = (Single__Array *)0x0, pSVar13 == pSRam0000000182db24a0)) {
         pSVar7 = pSVar12;
       }
     }
@@ -655,11 +655,11 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateText(MVTextMsg *this,Method
     if ((pMVar5 == (MVTextMsgObject *)0x0) || (pTVar6 = (pMVar5->fields).textMesh, pTVar6 == (TextMesh *)0x0)) goto code_?;
     pSVar7 = pSVar2;
     if (pSStackX_8 != (Single__Array *)0x0) {
-      if (pSStackX_8->klass == pSRam0000000182db2460) {
+      if (pSStackX_8->klass == pSRam0000000182db2520) {
         pSVar7 = pSStackX_8;
       }
       if (pSVar7 == (Single__Array *)0x0) {
-        FUN_?(pSStackX_8,pSRam0000000182db2460);
+        FUN_?(pSStackX_8,pSRam0000000182db2520);
         pcVar8 = (code *)swi(3);
         (*pcVar8)();
         return;
@@ -760,7 +760,7 @@ code_?:
     pSVar7 = pSVar15;
     if (cVar18 == '\0') {
       if (((pSVar17->_1).field_0x6e & 0x10) == 0) goto code_?;
-      if ((((((((pSVar16->_1).token & 0x20) == 0) && ((pSVar16->_0).byval_arg.type != 0x13)) && ((pSVar16->_0).byval_arg.type != 0x1e)) || (((pSVar16->_0).interopData == (Il2CppInteropData *)0x0 || (((pSVar16->_0).interopData)->guid == (Il2CppGuid *)0x0)))) || (lVar19 = FUN_?(pSVar15), lVar19 == 0)) && (pSVar7 = (Single__Array *)0x0, pSVar16 == pSRam0000000182db23e0)) {
+      if ((((((((pSVar16->_1).token & 0x20) == 0) && ((pSVar16->_0).byval_arg.type != 0x13)) && ((pSVar16->_0).byval_arg.type != 0x1e)) || (((pSVar16->_0).interopData == (Il2CppInteropData *)0x0 || (((pSVar16->_0).interopData)->guid == (Il2CppGuid *)0x0)))) || (lVar19 = FUN_?(pSVar15), lVar19 == 0)) && (pSVar7 = (Single__Array *)0x0, pSVar16 == pSRam0000000182db24a0)) {
         pSVar7 = pSVar15;
       }
     }

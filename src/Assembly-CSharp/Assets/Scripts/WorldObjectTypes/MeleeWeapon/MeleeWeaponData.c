@@ -305,7 +305,7 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::Melee
       return INFINITY;
     }
     pOVar8 = (Object *)0x0;
-    if (pOVar3->klass == pORam0000000182db2418) {
+    if (pOVar3->klass == pORam0000000182db24d8) {
       pOVar8 = pOVar3;
     }
     if (pOVar8 == (Object *)0x0) {
@@ -460,7 +460,7 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::Melee
       return 0.0;
     }
     pOVar8 = (Object *)0x0;
-    if (pOVar3->klass == pORam0000000182db2418) {
+    if (pOVar3->klass == pORam0000000182db24d8) {
       pOVar8 = pOVar3;
     }
     if (pOVar8 == (Object *)0x0) {

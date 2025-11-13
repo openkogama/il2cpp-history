@@ -750,7 +750,7 @@ code_?:
           GStack_42._e = (char)((uint)iVar50 >> 8);
           GStack_42._f = (char)((uint)iVar50 >> 0x10);
           GStack_42._g = (char)((uint)iVar50 >> 0x18);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Guid,ChunkInstances+ChunkInstanceVariables]::Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables__TryInsert(pDVar32,&GStack_42,&CStack_40,0x82dc2701,MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__set_Item_System__Guid__ChunkInstances__ChunkInstanceVariables_->klass->rgctx_data[0x22].method);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Guid,ChunkInstances+ChunkInstanceVariables]::Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables__TryInsert(pDVar32,&GStack_42,&CStack_40,0x82dc1f01,MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__set_Item_System__Guid__ChunkInstances__ChunkInstanceVariables_->klass->rgctx_data[0x22].method);
           return;
         }
         goto code_?;
@@ -3861,7 +3861,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_SetInstanceDataRef(Cube
                       aCStack_34[0].collider = (BoxCollider *)pCVar18;
                       aCStack_34[0].renderer = pMVar32;
                       aCStack_34[0].filter = pMVar31;
-                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Guid,ChunkInstances+ChunkInstanceVariables]::Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables__TryInsert(this_01,(Guid *)auStack_15,aCStack_34,0x82dc2702,MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Add_System__Guid__ChunkInstances__ChunkInstanceVariables_->klass->rgctx_data[0x22].method);
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Guid,ChunkInstances+ChunkInstanceVariables]::Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables__TryInsert(this_01,(Guid *)auStack_15,aCStack_34,0x82dc1f02,MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Add_System__Guid__ChunkInstances__ChunkInstanceVariables_->klass->rgctx_data[0x22].method);
                       pCVar5 = (cubeInstance->fields).chunkInstances;
                       if (pCVar5 != (ChunkInstances *)0x0) {
                         if (cRam_? == '\0') {

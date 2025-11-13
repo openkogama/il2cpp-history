@@ -274,7 +274,7 @@ GamePassProgressionDataObjectShared * Assembly-CSharp.dll::MVGamePassProgression
   pMVar4 = MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectShared_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectShared>_System__String_;
   value = (String *)0x0;
   if (pSVar3 != (String *)0x0) {
-    if (pSVar3->klass == pSRam0000000182db2460) {
+    if (pSVar3->klass == pSRam0000000182db2520) {
       value = pSVar3;
     }
     if (value == (String *)0x0) {

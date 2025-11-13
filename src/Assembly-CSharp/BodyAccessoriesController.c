@@ -1397,10 +1397,10 @@ code_?:
       pDVar3 = (Dictionary_2_System_Object_System_Object___Class *)(avatarAccessory->fields)._AssetPath_k__BackingField;
       pDVar19 = (Dictionary_2_System_Object_System_Object___Class *)0x0;
       if (pDVar2 != (Dictionary_2_System_Object_System_Object___Class *)0x0) {
-        if ((MethodInfo *)(pDVar2->_0).image == pMRam0000000182db2460) {
+        if ((MethodInfo *)(pDVar2->_0).image == pMRam0000000182db2520) {
           pDVar19 = pDVar2;
         }
-        method = pMRam0000000182db2460;
+        method = pMRam0000000182db2520;
         if (pDVar19 == (Dictionary_2_System_Object_System_Object___Class *)0x0) goto code_?;
       }
       if ((pDVar19 == pDVar3) || ((((pDVar19 != (Dictionary_2_System_Object_System_Object___Class *)0x0 && (pDVar3 != (Dictionary_2_System_Object_System_Object___Class *)0x0)) && (*(int *)&(pDVar19->_0).name == *(int *)&(pDVar3->_0).name)) && (bVar13 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual((uint8_t *)((longlong)&(pDVar19->_0).name + 4),(uint8_t *)((longlong)&(pDVar3->_0).name + 4),(longlong)*(int *)&(pDVar19->_0).name * 2,(MethodInfo *)0x0), bVar13 != 0)))) {
@@ -1549,11 +1549,11 @@ void Assembly-CSharp.dll::BodyAccessoriesController::BodyAccessoriesController_L
           pSVar8 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)pSVar4,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
           pSVar4 = (String *)0x0;
           if (pSVar8 != (String *)0x0) {
-            if (pSVar8->klass == pSRam0000000182db2460) {
+            if (pSVar8->klass == pSRam0000000182db2520) {
               pSVar4 = pSVar8;
             }
             if (pSVar4 == (String *)0x0) {
-              FUN_?(pSVar8,pSRam0000000182db2460);
+              FUN_?(pSVar8,pSRam0000000182db2520);
               pcVar6 = (code *)swi(3);
               (*pcVar6)();
               return;
@@ -2316,14 +2316,14 @@ code_?:
     pEVar21 = (Enum *)FUN_?(TypeInfo__MV__Common__AvatarAccessoryData,auStack_20);
     pSVar22 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar21,StringLiteral_d,(MethodInfo *)0x0);
     pOVar23 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)pSVar22,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    pAVar19 = pARam0000000182db2418;
+    pAVar19 = pARam0000000182db24d8;
     if (pOVar23 != (Object *)0x0) {
-      if ((pOVar23->klass->_0).element_class == (pARam0000000182db2418->_0).element_class) {
+      if ((pOVar23->klass->_0).element_class == (pARam0000000182db24d8->_0).element_class) {
         uVar2 = *(uint *)&pOVar23[1].klass;
         uStack_3 = uVar2;
         goto code_?;
       }
-      FUN_?(pOVar23,pARam0000000182db2418);
+      FUN_?(pOVar23,pARam0000000182db24d8);
     }
     pOVar23 = (Object *)FUN_?();
 code_?:
@@ -2586,7 +2586,7 @@ code_?:
                 aiStackX_10[0] = -1;
                 pOVar22 = pOVar5;
                 if ((Object__Class *)DStack_4._current.key != (Object__Class *)0x0) {
-                  if (((Il2CppClass_0 *)&(DStack_4._current.key)->klass)->image == pIRam0000000182db2460) {
+                  if (((Il2CppClass_0 *)&(DStack_4._current.key)->klass)->image == pIRam0000000182db2520) {
                     pOVar22 = (Object__Class *)DStack_4._current.key;
                   }
                   if (pOVar22 == (Object__Class *)0x0) goto code_?;
@@ -2642,7 +2642,7 @@ code_?:
               pOVar28 = (Object__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pOVar22,(Object *)pSVar27,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
               url = pOVar5;
               if (pOVar28 != (Object__Class *)0x0) {
-                if ((pOVar28->_0).image == pIRam0000000182db2460) {
+                if ((pOVar28->_0).image == pIRam0000000182db2520) {
                   url = pOVar28;
                 }
                 if (url != (Object__Class *)0x0) goto code_?;
@@ -2678,17 +2678,17 @@ code_?:
                     pEVar26 = (Enum *)FUN_?(TypeInfo__MV__Common__AvatarAccessoryData,&pBStackX_8);
                     pSVar27 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar26,StringLiteral_d,(MethodInfo *)0x0);
                     pOVar32 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pOVar22,(Object *)pSVar27,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                    pOVar19 = pORam0000000182db2448;
+                    pOVar19 = pORam0000000182db2508;
                     if (pOVar32 == (Object *)0x0) goto code_?;
-                    if ((pOVar32->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pORam0000000182db2448->_0).element_class)->genericMethod) goto code_?;
+                    if ((pOVar32->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pORam0000000182db2508->_0).element_class)->genericMethod) goto code_?;
                     BodyAccessoriesController_ApplyAccessoryOffset(this,*(float *)&pOVar32[1].klass,*(AccessorySlotType__Enum *)&object[1].klass,(MethodInfo *)0x0);
                     pBStackX_8 = (BodyAccessoriesController *)CONCAT62(pBStackX_8._2_6_,5);
                     pEVar26 = (Enum *)FUN_?(TypeInfo__MV__Common__AvatarAccessoryData,&pBStackX_8);
                     pSVar27 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar26,StringLiteral_d,(MethodInfo *)0x0);
                     pOVar32 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pOVar22,(Object *)pSVar27,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                    pOVar19 = pORam0000000182db2448;
+                    pOVar19 = pORam0000000182db2508;
                     if (pOVar32 == (Object *)0x0) goto code_?;
-                    if ((pOVar32->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pORam0000000182db2448->_0).element_class)->genericMethod) goto code_?;
+                    if ((pOVar32->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pORam0000000182db2508->_0).element_class)->genericMethod) goto code_?;
                     BodyAccessoriesController_ApplySizeChange(this,*(float *)&pOVar32[1].klass,*(AccessorySlotType__Enum *)&object[1].klass,(MethodInfo *)0x0);
                   }
                 }

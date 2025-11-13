@@ -1714,7 +1714,7 @@ code_?:
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xcf,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
     pMVar79 = MV__WorldObject__MetaData__ProfileMetaData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::MetaData::ProfileMetaData>_System__String_;
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     lVar56 = func_?(uVar39,pMVar79);
     func_?(TypeInfo__StatHatWrapper);
     StatHatWrapper::StatHatWrapper_Count(StringLiteral_FirstTime_Success,1,(MethodInfo *)0x0);
@@ -1746,7 +1746,7 @@ code_?:
   case MVEventCodes__Enum_ServerError:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
-    pSVar24 = (String *)FUN_?(pOVar12,pDRam0000000182db2460);
+    pSVar24 = (String *)FUN_?(pOVar12,pDRam0000000182db2520);
     pSVar24 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_Server_error__,pSVar24,(MethodInfo *)0x0);
     MVGameControllerBase::MVGameControllerBase_PostGameMsg_1(MVGameMsgType__Enum_Warning,pSVar24,(MethodInfo *)0x0);
     break;
@@ -1786,7 +1786,7 @@ code_?:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     playerPlanetData = (PlayerPlanetData *)func_?(uVar39);
     func_?(TypeInfo__UnityEngine__Debug);
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)playerPlanetData,(MethodInfo *)0x0);
@@ -1803,7 +1803,7 @@ code_?:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     value_00 = (List_1_System_Object_ *)func_?(uVar39);
     func_?(TypeInfo__UnityEngine__Debug);
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)value_00,(MethodInfo *)0x0);
@@ -1823,7 +1823,7 @@ code_?:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     newHighScore = (HighScoreDatas *)func_?(uVar39);
     GamePassesHighScoreUpdateManager::GamePassesHighScoreUpdateManager_UpdateHigscore(newHighScore,(MethodInfo *)0x0);
 code_?:
@@ -1834,7 +1834,7 @@ code_?:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     lVar56 = func_?(uVar39);
     FUN_?(lVar56);
     levelRewards = *(Dictionary_2_System_Int32_System_Int32_ **)(lVar56 + 0x10);
@@ -1848,7 +1848,7 @@ code_?:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     lVar56 = func_?(uVar39);
     pMVar11 = (this->fields).networkGame;
     FUN_?(pMVar11);
@@ -1864,7 +1864,7 @@ code_?:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     pOVar12 = (Object *)func_?(uVar39);
     func_?(TypeInfo__UnityEngine__Debug);
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar12,(MethodInfo *)0x0);
@@ -1878,7 +1878,7 @@ code_?:
     FUN_?(photonEvent);
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     newProjectEarningReport = (ProjectEarningsReport *)func_?(uVar39);
     GamePassesProjectEarningsManager::GamePassesProjectEarningsManager_UpdateProjectEarningReport(newProjectEarningReport,(MethodInfo *)0x0);
     break;
@@ -1887,7 +1887,7 @@ code_?:
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
     pMVar79 = MV__WorldObject__GamePassSystem__GamePassEarnings__KogamaVatValues_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassEarnings::KogamaVatValues>_System__String_;
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     uVar39 = func_?(uVar39,pMVar79);
     func_?(TypeInfo__SubscriberRewardDataManager);
     FUN_?(uVar39,0);
@@ -1957,7 +1957,7 @@ code_?:
     camera = (Camera *)0x0;
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     spawnRolesRuntimeData = (SpawnRolesRuntimeData *)func_?(uVar39);
     this_15 = (RenderPipeline *)func_?(TypeInfo__SpawnRoleChangeHandlerRemote);
     UnityEngine.CoreModule.dll::UnityEngine::Rendering::RenderPipeline::RenderPipeline_ProcessRenderRequests_1(this_15,(ScriptableRenderContext)0x0,camera,(_Il2CppFullySharedGenericType *)method,in_stack_84);
@@ -1977,7 +1977,7 @@ code_?:
     pOVar12 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xf5,(MethodInfo *)0x0);
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
     pMVar79 = MV__WorldObject__SpawnRoles__SpawnRoleBodySwitchData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRoleBodySwitchData>_System__String_;
-    uVar39 = FUN_?(pOVar12,pDRam0000000182db2460);
+    uVar39 = FUN_?(pOVar12,pDRam0000000182db2520);
     spawnRoleBodySwitchData = (SpawnRoleBodySwitchData *)func_?(uVar39,pMVar79);
     pMVar54 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     FUN_?(spawnRoleBodySwitchData);
@@ -2066,7 +2066,7 @@ code_?:
           FUN_?();
         }
         if (pDVar85 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          if (pDVar85->klass == pDRam0000000182db2460) {
+          if (pDVar85->klass == pDRam0000000182db2520) {
             pDVar2 = pDVar85;
           }
           if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -2105,7 +2105,7 @@ code_?:
               }
               pDVar85 = pDVar2;
               if (pDStack_6 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                if (pDStack_6->klass == pDRam0000000182db2460) {
+                if (pDStack_6->klass == pDRam0000000182db2520) {
                   pDVar85 = pDStack_6;
                 }
                 pOVar12 = (Object *)0x0;
@@ -2213,7 +2213,7 @@ code_?:
       pDVar87 = (Dictionary_2_System_Object_System_Object_ *)Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0x9a,(MethodInfo *)0x0);
       pDVar85 = pDVar2;
       if (pDVar87 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        if (pDVar87->klass == pDRam0000000182db2460) {
+        if (pDVar87->klass == pDRam0000000182db2520) {
           pDVar85 = pDVar87;
         }
         if (pDVar85 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -2237,7 +2237,7 @@ code_?:
         FUN_?();
       }
       if (pDVar87 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        if (pDVar87->klass == pDRam0000000182db2460) {
+        if (pDVar87->klass == pDRam0000000182db2520) {
           pDVar2 = pDVar87;
         }
         if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) {

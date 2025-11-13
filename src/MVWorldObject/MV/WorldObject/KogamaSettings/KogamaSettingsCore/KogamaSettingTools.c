@@ -62,11 +62,11 @@ code_?:
       pSVar16 = (source->fields).key;
       pSVar17 = (String *)0x0;
       if ((String *)auStack_13._16_8_ != (String *)0x0) {
-        if (*(String__Class **)auStack_13._16_8_ == pSRam0000000182db2460) {
+        if (*(String__Class **)auStack_13._16_8_ == pSRam0000000182db2520) {
           pSVar17 = (String *)auStack_13._16_8_;
         }
         pSVar3 = (String *)auStack_13._16_8_;
-        pSVar2 = pSRam0000000182db2460;
+        pSVar2 = pSRam0000000182db2520;
         if (pSVar17 == (String *)0x0) goto code_?;
       }
       if ((pSVar17 == pSVar16) || ((((pSVar17 != (String *)0x0 && (pSVar16 != (String *)0x0)) && ((pSVar17->fields)._stringLength == (pSVar16->fields)._stringLength)) && (bVar15 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual((uint8_t *)&(pSVar17->fields)._firstChar,(uint8_t *)&(pSVar16->fields)._firstChar,(longlong)(pSVar17->fields)._stringLength * 2,(MethodInfo *)0x0), bVar15 != 0)))) {
@@ -149,11 +149,11 @@ code_?:
       pSVar14 = (prototypeRoot->fields).key;
       pSVar15 = (String *)0x0;
       if ((String *)DStack_12._current.key != (String *)0x0) {
-        if ((String__Class *)(DStack_12._current.key)->klass == pSRam0000000182db2460) {
+        if ((String__Class *)(DStack_12._current.key)->klass == pSRam0000000182db2520) {
           pSVar15 = (String *)DStack_12._current.key;
         }
         pSVar2 = (String *)DStack_12._current.key;
-        pSVar1 = pSRam0000000182db2460;
+        pSVar1 = pSRam0000000182db2520;
         if (pSVar15 == (String *)0x0) goto code_?;
       }
       if ((pSVar15 == pSVar14) || ((((pSVar15 != (String *)0x0 && (pSVar14 != (String *)0x0)) && ((pSVar15->fields)._stringLength == (pSVar14->fields)._stringLength)) && (bVar13 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual((uint8_t *)&(pSVar15->fields)._firstChar,(uint8_t *)&(pSVar14->fields)._firstChar,(longlong)(pSVar15->fields)._stringLength * 2,(MethodInfo *)0x0), bVar13 != 0)))) {
@@ -280,7 +280,7 @@ KogamaSettingWrapperBase * MVWorldObject.dll::MV::WorldObject::KogamaSettings::K
           if (prototype[1].klass == (KogamaSettingWrapperBase__Class *)0x0) break;
           key = (Object *)0x0;
           if (DStack_15._current.key != (Object *)0x0) {
-            if ((DStack_15._current.key)->klass == pORam0000000182db2460) {
+            if ((DStack_15._current.key)->klass == pORam0000000182db2520) {
               key = DStack_15._current.key;
             }
             if (key == (Object *)0x0) goto code_?;

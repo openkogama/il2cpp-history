@@ -144,7 +144,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_AllModesSetup(MVNetworkGa
     value_00 = (String *)0x0;
     value = value_00;
     if (pSVar2 != (String *)0x0) {
-      if (pSVar2->klass == pSRam0000000182db2460) {
+      if (pSVar2->klass == pSRam0000000182db2520) {
         value = pSVar2;
       }
       if (value == (String *)0x0) {
@@ -224,7 +224,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_AllModesSetup(MVNetworkGa
           pMVar1 = (MethodInfo *)0x0;
           pSVar2 = (String *)Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item(photonEvent,0xcf,(MethodInfo *)0x0);
           if (pSVar2 != (String *)0x0) {
-            if (pSVar2->klass == pSRam0000000182db2460) {
+            if (pSVar2->klass == pSRam0000000182db2520) {
               value_00 = pSVar2;
             }
             if (value_00 == (String *)0x0) {
@@ -805,7 +805,7 @@ code_?:
       plStack_16 = *(longlong **)((longlong)&spawnRolesRuntimeData->vector[0].key + lVar17 * 0x18);
       func_?();
       if (plStack_16 != (longlong *)0x0) {
-        if (*(Il2CppClass **)(*plStack_16 + 0x40) == *(Il2CppClass **)(pDRam0000000182db2418->vector + 1)) {
+        if (*(Il2CppClass **)(*plStack_16 + 0x40) == *(Il2CppClass **)(pDRam0000000182db24d8->vector + 1)) {
           uVar9 = *(uint *)(plStack_16 + 2);
           unaff_RDI = (MVPlayer *)(ulonglong)uVar9;
           pMVar1 = (this->fields).playerContainer;
@@ -844,7 +844,7 @@ code_?:
 code_?:
   if (uVar9 == *(uint *)((longlong)&spawnRolesRuntimeData->vector[1].value + 4)) goto code_?;
   auStackX_20[0] = uVar9;
-  key = (Object *)FUN_?(pDRam0000000182db2418,auStackX_20);
+  key = (Object *)FUN_?(pDRam0000000182db24d8,auStackX_20);
   spawnRolesRuntimeData = (Dictionary_2_TKey_TValue_Entry_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object___Array *)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_;
   pMVar1 = (MVPlayerContainer *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(userList,key,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   if (pMVar1 == (MVPlayerContainer *)0x0) {
@@ -890,28 +890,28 @@ code_?:
     bVar19 = (TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>->_1).naturalAligment;
     if ((*(byte *)&spawnRolesRuntimeData->vector[8].key.DestinationType < bVar19) || (*(Dictionary_2_System_Byte_System_Object___Class **)((longlong)spawnRolesRuntimeData->vector[5].key.SourceType + (ulonglong)bVar19 * 8 + -8) != TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>)) goto code_?;
     plVar21 = (longlong *)FUN_?(pMVar1,0xb);
-    spawnRolesRuntimeData = pDRam0000000182db2418;
+    spawnRolesRuntimeData = pDRam0000000182db24d8;
     if (plVar21 != (longlong *)0x0) {
-      if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db2418->vector + 1)) {
+      if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db24d8->vector + 1)) {
         profileID = *(uint *)(plVar21 + 2);
         plVar21 = (longlong *)FUN_?(pMVar1,CONCAT71((int7)((ulonglong)*plVar21 >> 8),0x59));
-        spawnRolesRuntimeData = pDRam0000000182db2418;
+        spawnRolesRuntimeData = pDRam0000000182db24d8;
         if (plVar21 != (longlong *)0x0) {
-          if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db2418->vector + 1)) {
+          if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db24d8->vector + 1)) {
             lVar17 = plVar21[2];
             plVar21 = (longlong *)FUN_?(pMVar1,CONCAT71((int7)((ulonglong)*plVar21 >> 8),0xa9));
-            spawnRolesRuntimeData = pDRam0000000182db2418;
+            spawnRolesRuntimeData = pDRam0000000182db24d8;
             if (plVar21 != (longlong *)0x0) {
-              if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db2418->vector + 1)) {
+              if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db24d8->vector + 1)) {
                 lVar23 = plVar21[2];
                 pSVar20 = (String *)FUN_?(pMVar1,CONCAT71((int7)((ulonglong)*plVar21 >> 8),0x9a));
                 pSVar24 = (String *)0x0;
                 if (pSVar20 == (String *)0x0) {
 code_?:
                   plVar21 = (longlong *)FUN_?(pMVar1,0xd2);
-                  spawnRolesRuntimeData = pDRam0000000182db23f8;
+                  spawnRolesRuntimeData = pDRam0000000182db24b8;
                   if (plVar21 != (longlong *)0x0) {
-                    if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db23f8->vector + 1)) {
+                    if (*(Il2CppClass **)(*plVar21 + 0x40) == *(Il2CppClass **)(pDRam0000000182db24b8->vector + 1)) {
                       isReady = *(bool *)(plVar21 + 2);
                       plVar21 = (longlong *)FUN_?(pMVar1,CONCAT71((int7)((ulonglong)*plVar21 >> 8),0x44));
                       spawnRolesRuntimeData = (Dictionary_2_TKey_TValue_Entry_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object___Array *)TypeInfo__MV__Common__PlayerGameState;
@@ -960,7 +960,7 @@ code_?:
                                       }
                                       goto code_?;
                                     }
-                                    if (pSVar20->klass == pSRam0000000182db2460) {
+                                    if (pSVar20->klass == pSRam0000000182db2520) {
                                       pSVar24 = pSVar20;
                                     }
                                     if (pSVar24 != (String *)0x0) goto code_?;
@@ -972,13 +972,13 @@ code_?:
                               }
                               goto code_?;
                             }
-                            if (pSVar22->klass == pSRam0000000182db2460) {
+                            if (pSVar22->klass == pSRam0000000182db2520) {
                               pSVar20 = pSVar22;
                             }
                             if (pSVar20 != (String *)0x0) goto code_?;
                             goto code_?;
                           }
-                          if ((String__Class *)unaff_RDI->klass == pSRam0000000182db2460) {
+                          if ((String__Class *)unaff_RDI->klass == pSRam0000000182db2520) {
                             value = unaff_RDI;
                           }
                           if (value != (MVPlayer *)0x0) goto code_?;
@@ -992,7 +992,7 @@ code_?:
                   }
                   goto code_?;
                 }
-                if (pSVar20->klass == pSRam0000000182db2460) {
+                if (pSVar20->klass == pSRam0000000182db2520) {
                   pSVar24 = pSVar20;
                 }
                 if (pSVar24 != (String *)0x0) goto code_?;
@@ -4473,13 +4473,13 @@ code_?:
     pMVar19 = (MethodInfo *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pMVar16,pOVar18,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (pMVar19 != (MethodInfo *)0x0) {
       pMVar20 = pMVar8;
-      if (pMVar19->methodPointer == pIRam0000000182db2460) {
+      if (pMVar19->methodPointer == pIRam0000000182db2520) {
         pMVar20 = pMVar19;
       }
       if (pMVar20 != (MethodInfo *)0x0) {
         *(MethodInfo **)(lVar4 + 0x28) = pMVar20;
         pMVar20 = pMVar8;
-        if (pMVar19->methodPointer == pIRam0000000182db2460) {
+        if (pMVar19->methodPointer == pIRam0000000182db2520) {
           pMVar20 = pMVar19;
         }
         if (pMVar20 != (MethodInfo *)0x0) goto code_?;
@@ -4513,13 +4513,13 @@ code_?:
     auStackX_10[0] = 100;
     pOVar18 = (Object *)FUN_?(uRam_?,auStackX_10);
     pOVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pMVar16,pOVar18,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    pMVar15 = pMRam0000000182db23f8;
+    pMVar15 = pMRam0000000182db24b8;
     if (pOVar18 == (Object *)0x0) {
 code_?:
       FUN_?();
       goto code_?;
     }
-    if ((pOVar18->klass->_0).element_class != (Il2CppClass *)(pMRam0000000182db23f8->field8_0x40).genericMethod) goto code_?;
+    if ((pOVar18->klass->_0).element_class != (Il2CppClass *)(pMRam0000000182db24b8->field8_0x40).genericMethod) goto code_?;
     resellable = *(byte *)&pOVar18[1].klass;
     pMVar15 = (MethodInfo *)(ulonglong)resellable;
     *(byte *)(lVar4 + 0x41) = resellable;
@@ -4840,21 +4840,21 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnGetItemCategories(MVNet
         func_?(apMStack_15);
         unaff_RBX = apMStack_15[0];
         if (apMStack_15[0] == (MethodInfo *)0x0) goto code_?;
-        pMVar17 = pMRam0000000182db2418;
-        if ((((Dictionary_2_System_Object_System_Object___Class *)apMStack_15[0]->methodPointer)->_0).element_class != (Il2CppClass *)(pMRam0000000182db2418->field8_0x40).genericMethod) goto code_?;
+        pMVar17 = pMRam0000000182db24d8;
+        if ((((Dictionary_2_System_Object_System_Object___Class *)apMStack_15[0]->methodPointer)->_0).element_class != (Il2CppClass *)(pMRam0000000182db24d8->field8_0x40).genericMethod) goto code_?;
         auStackX_10[0] = *(undefined4 *)&((Dictionary_2_System_Object_System_Object___Fields *)&apMStack_15[0]->invoker_method)->_buckets;
-        pOVar18 = (Object *)FUN_?(pMRam0000000182db2418,auStackX_10);
+        pOVar18 = (Object *)FUN_?(pMRam0000000182db24d8,auStackX_10);
         pMVar17 = (MethodInfo *)outData;
         pOVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(outData,pOVar18,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         if (this_00 == (Object__Class *)0x0) goto code_?;
-        method = pMRam0000000182db2418;
-        if ((((Dictionary_2_System_Object_System_Object___Class *)unaff_RBX->methodPointer)->_0).element_class != (Il2CppClass *)(pMRam0000000182db2418->field8_0x40).genericMethod) goto code_?;
+        method = pMRam0000000182db24d8;
+        if ((((Dictionary_2_System_Object_System_Object___Class *)unaff_RBX->methodPointer)->_0).element_class != (Il2CppClass *)(pMRam0000000182db24d8->field8_0x40).genericMethod) goto code_?;
         key = (Object *)0x0;
         if (pOVar18 != (Object *)0x0) {
-          if (pOVar18->klass == pORam0000000182db2460) {
+          if (pOVar18->klass == pORam0000000182db2520) {
             key = pOVar18;
           }
-          this_02 = pORam0000000182db2460;
+          this_02 = pORam0000000182db2520;
           if (key == (Object *)0x0) goto code_?;
         }
         this_02 = this_00;
@@ -4991,23 +4991,23 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnGetPlanetOwnershipTypes
         if (pPVar18 == (PlayerRepository *)0x0) goto code_?;
         this_00 = (pPVar18->fields)._.PlanetOwnershipTypes;
         if (plStack_14 == (longlong *)0x0) goto code_?;
-        pDVar19 = pDRam0000000182db2418;
-        if (*(Dictionary_2_TKey_TValue_ValueCollection_System_Object_System_Object_ **)(*plStack_14 + 0x40) != (pDRam0000000182db2418->fields)._values) goto code_?;
+        pDVar19 = pDRam0000000182db24d8;
+        if (*(Dictionary_2_TKey_TValue_ValueCollection_System_Object_System_Object_ **)(*plStack_14 + 0x40) != (pDRam0000000182db24d8->fields)._values) goto code_?;
         auStackX_10[0] = (undefined4)plStack_14[2];
-        key = (Object *)FUN_?(pDRam0000000182db2418,auStackX_10);
+        key = (Object *)FUN_?(pDRam0000000182db24d8,auStackX_10);
         pDVar19 = outData;
         pDVar20 = (Dictionary_2_System_Object_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(outData,key,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         if (this_00 == (Dictionary_2_System_Int32_System_String_ *)0x0) goto code_?;
         pDVar19 = (Dictionary_2_System_Object_System_Object_ *)0x0;
         if (pDVar20 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          if (pDVar20->klass == pDRam0000000182db2460) {
+          if (pDVar20->klass == pDRam0000000182db2520) {
             pDVar19 = pDVar20;
           }
           if (pDVar19 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
         }
-        in_R9 = pDRam0000000182db2418;
-        if (*(Dictionary_2_TKey_TValue_ValueCollection_System_Object_System_Object_ **)(*unaff_RBX + 0x40) != (pDRam0000000182db2418->fields)._values) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryInsert((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)unaff_RBX[2],(Object *)pDVar19,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pDRam0000000182db2418 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_->klass->rgctx_data[0x22].method);
+        in_R9 = pDRam0000000182db24d8;
+        if (*(Dictionary_2_TKey_TValue_ValueCollection_System_Object_System_Object_ **)(*unaff_RBX + 0x40) != (pDRam0000000182db24d8->fields)._values) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryInsert((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)unaff_RBX[2],(Object *)pDVar19,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pDRam0000000182db24d8 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_->klass->rgctx_data[0x22].method);
       }
       goto code_?;
     }
@@ -5172,15 +5172,15 @@ code_?:
           FUN_?();
           goto code_?;
         }
-        name = pORam0000000182db2418;
-        if (*(Il2CppClass **)(*aplStack_16[0] + 0x40) != (pORam0000000182db2418->_0).element_class) {
+        name = pORam0000000182db24d8;
+        if (*(Il2CppClass **)(*aplStack_16[0] + 0x40) != (pORam0000000182db24d8->_0).element_class) {
 code_?:
           FUN_?(uVar19,name);
           goto code_?;
         }
         itemID = (int32_t)aplStack_16[0][2];
         aiStackX_20[0] = itemID;
-        pOVar20 = (Object *)FUN_?(pORam0000000182db2418,aiStackX_20);
+        pOVar20 = (Object *)FUN_?(pORam0000000182db24d8,aiStackX_20);
         pOVar21 = (Object__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(outData,pOVar20,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pOVar17 = (Object__Class *)0x0;
         if (pOVar21 != (Object__Class *)0x0) {
@@ -5205,9 +5205,9 @@ code_?:
           pOVar20 = (Object *)FUN_?(uRam_?,aiStackX_20);
           if (pOVar17 != (Object__Class *)0x0) {
             pOVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pOVar17,pOVar20,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-            name = pORam0000000182db2418;
+            name = pORam0000000182db24d8;
             if (pOVar20 != (Object *)0x0) {
-              if ((pOVar20->klass->_0).element_class == (pORam0000000182db2418->_0).element_class) {
+              if ((pOVar20->klass->_0).element_class == (pORam0000000182db24d8->_0).element_class) {
                 (this_01->fields).slotPosition = *(int32_t *)&pOVar20[1].klass;
                 pOVar17 = (Object__Class *)FUN_?();
                 if (pOVar17 != (Object__Class *)0x0) {
@@ -5337,7 +5337,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   pDVar2 = (Dictionary_2_System_Object_System_Object_ *)0x0;
   pDVar3 = pDVar2;
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar1->klass == pDRam0000000182db2460) {
+    if (pDVar1->klass == pDRam0000000182db2520) {
       pDVar3 = pDVar1;
     }
     if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -5428,7 +5428,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   }
   pDVar3 = pDVar2;
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar1->klass == pDRam0000000182db2460) {
+    if (pDVar1->klass == pDRam0000000182db2520) {
       pDVar3 = pDVar1;
     }
     if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -5552,7 +5552,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   }
   pDVar3 = pDVar2;
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar1->klass == pDRam0000000182db2460) {
+    if (pDVar1->klass == pDRam0000000182db2520) {
       pDVar3 = pDVar1;
     }
     if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -5663,7 +5663,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   pDVar3 = (Dictionary_2_System_Object_System_Object_ *)FUN_?(returnValues,0xe1);
   pDVar1 = pDVar2;
   if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar3->klass == pDRam0000000182db2460) {
+    if (pDVar3->klass == pDRam0000000182db2520) {
       pDVar1 = pDVar3;
     }
     if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -5692,7 +5692,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   pDVar3 = (Dictionary_2_System_Object_System_Object_ *)FUN_?(returnValues,0xe2);
   pDVar1 = pDVar2;
   if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar3->klass == pDRam0000000182db2460) {
+    if (pDVar3->klass == pDRam0000000182db2520) {
       pDVar1 = pDVar3;
     }
     if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -5732,11 +5732,11 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   bVar21 = *(bool *)(plVar19 + 2);
   pDVar3 = pDVar2;
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar1->klass == pDRam0000000182db2460) {
+    if (pDVar1->klass == pDRam0000000182db2520) {
       pDVar3 = pDVar1;
     }
     if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      FUN_?(pDVar1,pDRam0000000182db2460);
+      FUN_?(pDVar1,pDRam0000000182db2520);
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
@@ -5798,7 +5798,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   bVar21 = *(bool *)(plVar19 + 2);
   pDVar24 = pDVar2;
   if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar3->klass == pDRam0000000182db2460) {
+    if (pDVar3->klass == pDRam0000000182db2520) {
       pDVar24 = pDVar3;
     }
     if (pDVar24 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -5810,7 +5810,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnJoinResponse(MVNetworkG
   }
   pDVar3 = pDVar2;
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar1->klass == pDRam0000000182db2460) {
+    if (pDVar1->klass == pDRam0000000182db2520) {
       pDVar3 = pDVar1;
     }
     if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -6073,7 +6073,7 @@ code_?:
   pDVar1 = pDVar2;
   if (((value->klass->_1).naturalAligment < bVar6) || ((value->klass->_1).typeHierarchy[(ulonglong)bVar6 - 1] != (Il2CppClass *)TypeInfo__MVLocalPlayerTourist)) {
     if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      if (pDVar3->klass == pDRam0000000182db2460) {
+      if (pDVar3->klass == pDRam0000000182db2520) {
         pDVar1 = pDVar3;
       }
       if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -6086,7 +6086,7 @@ code_?:
   }
   else {
     if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      if (pDVar3->klass == pDRam0000000182db2460) {
+      if (pDVar3->klass == pDRam0000000182db2520) {
         pDVar1 = pDVar3;
       }
       if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -6120,7 +6120,7 @@ code_?:
   }
   pDVar3 = (Dictionary_2_System_Object_System_Object_ *)FUN_?(returnValues,0x68);
   if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (pDVar3->klass == pDRam0000000182db2460) {
+    if (pDVar3->klass == pDRam0000000182db2520) {
       pDVar2 = pDVar3;
     }
     if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -7508,15 +7508,15 @@ code_?:
       FUN_?();
       goto code_?;
     }
-    pOVar16 = pORam0000000182db2418;
-    if (*(Il2CppGenericMethod **)(*aplStack_15[0] + 0x40) != ((_union_155 *)&(pORam0000000182db2418->_0).element_class)->genericMethod) {
+    pOVar16 = pORam0000000182db24d8;
+    if (*(Il2CppGenericMethod **)(*aplStack_15[0] + 0x40) != ((_union_155 *)&(pORam0000000182db24d8->_0).element_class)->genericMethod) {
 code_?:
       FUN_?(uVar18,pOVar16);
       goto code_?;
     }
     uVar6 = *(uint *)(aplStack_15[0] + 2);
     uStackX_10 = uVar6;
-    pOVar19 = (Object *)FUN_?(pORam0000000182db2418,&uStackX_10);
+    pOVar19 = (Object *)FUN_?(pORam0000000182db24d8,&uStackX_10);
     pOVar16 = (Object__Class *)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_;
     this_01 = (Object__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(friendsList,pOVar19,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     uVar20 = uStackX_10;
@@ -7564,13 +7564,13 @@ code_?:
       goto code_?;
     }
     pOVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar19,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    pOVar16 = pORam0000000182db2418;
+    pOVar16 = pORam0000000182db24d8;
     if (pOVar19 == (Object *)0x0) {
 code_?:
       FUN_?();
       goto code_?;
     }
-    if ((pOVar19->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pORam0000000182db2418->_0).element_class)->genericMethod) {
+    if ((pOVar19->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pORam0000000182db24d8->_0).element_class)->genericMethod) {
 code_?:
       FUN_?(pOVar19,pOVar16);
       goto code_?;
@@ -7586,8 +7586,8 @@ code_?:
       goto code_?;
     }
     pOVar16 = pOVar19->klass;
-    pOVar22 = pORam0000000182db2418;
-    if (((_union_155 *)&(pOVar16->_0).element_class)->genericMethod != ((_union_155 *)&(pORam0000000182db2418->_0).element_class)->genericMethod) {
+    pOVar22 = pORam0000000182db24d8;
+    if (((_union_155 *)&(pOVar16->_0).element_class)->genericMethod != ((_union_155 *)&(pORam0000000182db24d8->_0).element_class)->genericMethod) {
 code_?:
       FUN_?(pOVar19,pOVar22);
       goto code_?;
@@ -7830,10 +7830,10 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnRequestMaterialsRespons
         pIStack_19 = *(Il2CppType **)((longlong)&(pDVar2->_0).byval_arg + lVar26 * 0x18 + 8);
         uVar27 = func_?(&pIStack_19);
         if (pIStack_19 == (Il2CppType *)0x0) goto code_?;
-        pDVar2 = pDRam0000000182db23e8;
-        if (*(Il2CppGenericMethod **)((longlong)(pIStack_19->data).dummy + 0x40) != ((_union_155 *)&(pDRam0000000182db23e8->_0).element_class)->genericMethod) goto code_?;
+        pDVar2 = pDRam0000000182db24a8;
+        if (*(Il2CppGenericMethod **)((longlong)(pIStack_19->data).dummy + 0x40) != ((_union_155 *)&(pDRam0000000182db24a8->_0).element_class)->genericMethod) goto code_?;
         auStackX_20[0] = *(undefined1 *)&pIStack_19[1].data;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         pDVar2 = (Dictionary_2_System_Object_System_Object___Class *)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_;
         pDVar4 = (Dictionary_2_System_Object_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(materialList,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -7842,66 +7842,66 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnRequestMaterialsRespons
           if (((pDVar2->_1).naturalAligment < bVar29) || ((Dictionary_2_System_Object_System_Object___Class *)(pDVar2->_1).typeHierarchy[(ulonglong)bVar29 - 1] != TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) goto code_?;
         }
         auStackX_20[0] = 0x33;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         if (pDVar4 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
         pDVar2 = (Dictionary_2_System_Object_System_Object___Class *)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_;
         pSVar30 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pSVar25 = (String *)0x0;
         if (pSVar30 != (String *)0x0) {
-          if (pSVar30->klass == pSRam0000000182db2460) {
+          if (pSVar30->klass == pSRam0000000182db2520) {
             pSVar25 = pSVar30;
           }
           if (pSVar25 == (String *)0x0) goto code_?;
         }
         auStackX_20[0] = 0x34;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         pDVar2 = (Dictionary_2_System_Object_System_Object___Class *)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_;
         pSVar31 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pSVar30 = (String *)0x0;
         if (pSVar31 != (String *)0x0) {
-          if (pSVar31->klass == pSRam0000000182db2460) {
+          if (pSVar31->klass == pSRam0000000182db2520) {
             pSVar30 = pSVar31;
           }
           if (pSVar30 == (String *)0x0) goto code_?;
         }
         auStackX_20[0] = 0x35;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         auStackX_20[0] = 0x36;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         pOVar28 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-        pDVar2 = pDRam0000000182db2418;
+        pDVar2 = pDRam0000000182db24d8;
         if (pOVar28 == (Object *)0x0) goto code_?;
-        if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db2418->_0).element_class)->genericMethod) goto code_?;
+        if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db24d8->_0).element_class)->genericMethod) goto code_?;
         materialSound = *(MaterialSound__Enum *)&pOVar28[1].klass;
         auStackX_20[0] = 0x37;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         pOVar28 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-        pDVar2 = pDRam0000000182db2418;
+        pDVar2 = pDRam0000000182db24d8;
         if (pOVar28 == (Object *)0x0) goto code_?;
-        if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db2418->_0).element_class)->genericMethod) goto code_?;
+        if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db24d8->_0).element_class)->genericMethod) goto code_?;
         modifierPackageType = *(AvatarModifierPackageType__Enum *)&pOVar28[1].klass;
         auStackX_20[0] = 0x39;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         pOVar28 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-        pDVar2 = pDRam0000000182db2418;
+        pDVar2 = pDRam0000000182db24d8;
         if (pOVar28 == (Object *)0x0) goto code_?;
-        if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db2418->_0).element_class)->genericMethod) goto code_?;
+        if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db24d8->_0).element_class)->genericMethod) goto code_?;
         unlockPriceGold = *(int32_t *)&pOVar28[1].klass;
         if (bVar7 == 0) {
           auStackX_20[0] = 0x3a;
-          pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+          pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
           pOVar28 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-          pDVar2 = pDRam0000000182db23f8;
+          pDVar2 = pDRam0000000182db24b8;
           if (pOVar28 == (Object *)0x0) goto code_?;
-          if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db23f8->_0).element_class)->genericMethod) goto code_?;
+          if ((pOVar28->klass->_0).element_class != (Il2CppClass *)((_union_155 *)&(pDRam0000000182db24b8->_0).element_class)->genericMethod) goto code_?;
           cVar32 = *(char *)&pOVar28[1].klass;
         }
         else {
           cVar32 = '\x01';
         }
         auStackX_20[0] = 0x6f;
-        pOVar28 = (Object *)FUN_?(pDRam0000000182db23e8,auStackX_20);
+        pOVar28 = (Object *)FUN_?(pDRam0000000182db24a8,auStackX_20);
         pDVar2 = (Dictionary_2_System_Object_System_Object___Class *)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_;
         pDVar4 = (Dictionary_2_System_Object_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar4,pOVar28,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         unaff_RDI = TypeInfo__System__Single;
@@ -8430,7 +8430,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnShopInventoryResultSetR
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) {
-      uStack_2._0_4_ = 0x8094415c;
+      uStack_2._0_4_ = 0x8094417c;
       uStack_2._4_4_ = 1;
       lVar1 = FUN_?();
       if (lVar1 != 0) {

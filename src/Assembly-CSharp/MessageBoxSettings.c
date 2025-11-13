@@ -167,7 +167,7 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize(Mess
       pSVar6 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)this_03,(Object *)StringLiteral_text,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
       if (this_01 != (SettingsInputField *)0x0) {
         if (pSVar6 != (String *)0x0) {
-          if (pSVar6->klass == pSRam0000000182db2460) {
+          if (pSVar6->klass == pSRam0000000182db2520) {
             pSVar1 = pSVar6;
           }
           if (pSVar1 == (String *)0x0) {
@@ -658,7 +658,7 @@ Object * Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_RemoveQuadF
   }
   if (((key == StringLiteral_text) || ((((key != (String *)0x0 && (StringLiteral_text != (String *)0x0)) && ((key->fields)._stringLength == (StringLiteral_text->fields)._stringLength)) && (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual((uint8_t *)&(key->fields)._firstChar,(uint8_t *)&(StringLiteral_text->fields)._firstChar,(longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 != 0)))) && (val != (Object *)0x0)) {
     pSVar2 = (String *)0x0;
-    if (val->klass == pORam0000000182db2460) {
+    if (val->klass == pORam0000000182db2520) {
       pSVar2 = (String *)val;
     }
     if (pSVar2 != (String *)0x0) {
@@ -1086,7 +1086,7 @@ code_?:
             if (pMVar18 != (MethodInfo *)0x0) {
               if ((*pMVar18->name == '.') && ((pMVar18->flags & 0x800) != 0)) {
                 ppMVar19 = ppMVar8;
-                while (ppMVar20 = ppMVar19 + 0x30528cee, ppMVar19 = (MethodInfo **)((longlong)ppMVar19 + 1), *(char *)ppMVar20 == (pMVar18->name + -1)[(longlong)ppMVar19]) {
+                while (pcVar20 = (char *)((longlong)ppMVar19 + 0xADDR), ppMVar19 = (MethodInfo **)((longlong)ppMVar19 + 1), *pcVar20 == (pMVar18->name + -1)[(longlong)ppMVar19]) {
                   if (ppMVar19 == (MethodInfo **)0x7) {
                     FUN_?(pMVar18,0,0,alStackX_10);
                     goto code_?;
