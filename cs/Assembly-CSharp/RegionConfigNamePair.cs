@@ -9,12 +9,20 @@ using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class CFX_AutodestructWhenNoChildren : MonoBehaviour
+[Serializable]
+public class RegionConfigNamePair
 {
-	// Constructors
-	public CFX_AutodestructWhenNoChildren();
+	// Fields
+	[SerializeField]
+	private string regionName;
+	[SerializeField]
+	private RegionConfig regionConfig;
 
-	// Methods
-	private void Update();
+	// Properties
+	public string RegionName { get; }
+	public RegionConfig RegionConfig { get; }
+
+	// Constructors
+	public RegionConfigNamePair();
 }
 
