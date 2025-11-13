@@ -11,21 +11,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Image 10: UnityEngine.UI.dll - Assembly: UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCopyright("Copyright \u00A9 Microsoft 2013")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyProduct("guisystem")]
-[assembly: AssemblyTitle("guisystem")]
-[assembly: AssemblyTrademark("")]
-[assembly: CompilationRelaxations(8)]
-[assembly: ComVisible(false)]
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.None | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: Guid("d4f464c7-9b15-460d-b4bc-2cacd1c1df73")]
-[assembly: InternalsVisibleTo("UnityEditor.UI")]
-[assembly: InternalsVisibleTo("UnityEngine.UI.Tests")]
-[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 
 [CompilerGenerated]
 [EditorBrowsable(EditorBrowsableState.Never)]

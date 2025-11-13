@@ -188,18 +188,18 @@ Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_GetDefaultConfiguratio
     }
     else {
       pSVar3 = (String *)0x0;
-      if (pSVar2->klass == pSRam0000000182db2460) {
+      if (pSVar2->klass == pSRam0000000182db2520) {
         pSVar3 = pSVar2;
       }
       if (pSVar3 == (String *)0x0) {
-        FUN_?(pSVar2,pSRam0000000182db2460);
+        FUN_?(pSVar2,pSRam0000000182db2520);
         pcVar4 = (code *)swi(3);
         pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
         return pPVar1;
       }
       (pPVar1->fields).name = pSVar3;
       pSVar3 = (String *)0x0;
-      if (pSVar2->klass == pSRam0000000182db2460) {
+      if (pSVar2->klass == pSRam0000000182db2520) {
         pSVar3 = pSVar2;
       }
       if (pSVar3 == (String *)0x0) {

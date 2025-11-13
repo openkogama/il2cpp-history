@@ -254,7 +254,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costu
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             ), this_01 != (SettingsInputField *)0x0)) {
       if (pSVar16 != (String *)0x0) {
-        if (pSVar16->klass == pSRam0000000182db2460) {
+        if (pSVar16->klass == pSRam0000000182db2520) {
           pSVar1 = pSVar16;
         }
         if (pSVar1 == (String *)0x0) {
@@ -1064,7 +1064,7 @@ CostumeSettings_ReadWorldObjectItemData
       }
       defaultValue_00 = defaultValue;
       if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        if (pDVar3->klass == pDRam0000000182db2460) {
+        if (pDVar3->klass == pDRam0000000182db2520) {
           defaultValue_00 = pDVar3;
         }
         if (defaultValue_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -1564,9 +1564,9 @@ code_?:
             if (pMVar17 != (MethodInfo *)0x0) {
               if ((*pMVar17->name == '.') && ((pMVar17->flags & 0x800) != 0)) {
                 ppMVar18 = ppMVar7;
-                while (ppMVar19 = ppMVar18 + 0x30528cee,
+                while (pcVar19 = (char *)((longlong)ppMVar18 + 0xADDR),
                       ppMVar18 = (MethodInfo **)((longlong)ppMVar18 + 1),
-                      *(char *)ppMVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
+                      *pcVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
                   if (ppMVar18 == (MethodInfo **)0x7) {
                     FUN_?(pMVar17,0,0,alStackX_10);
                     goto code_?;

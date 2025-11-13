@@ -5716,7 +5716,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGloba
             }
             else {
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182db2460) {
+              if ((pCVar11->_0).image == pIRam0000000182db2520) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {
@@ -5727,7 +5727,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGloba
               }
               this_08[5].klass = pCVar12;
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182db2460) {
+              if ((pCVar11->_0).image == pIRam0000000182db2520) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {
@@ -9211,7 +9211,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSound
             }
             else {
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182db2460) {
+              if ((pCVar11->_0).image == pIRam0000000182db2520) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {
@@ -9222,7 +9222,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSound
               }
               this_08[5].klass = pCVar12;
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182db2460) {
+              if ((pCVar11->_0).image == pIRam0000000182db2520) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {

@@ -40,9 +40,9 @@ MobileAdManagerCredentials_GetAdMobCredentials(MethodInfo *method)
   }
   pAVar1 = (AdMobCredentials *)
            FUN_?(TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
-  pSVar2 = StringLiteral_Banner_ad_unit_not;
-  pSVar3 = StringLiteral_Reward_ad_unit_not_set;
-  pSVar4 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar2 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar3 = StringLiteral_Banner_ad_unit_not;
+  pSVar4 = StringLiteral_Reward_ad_unit_not_set;
   (pAVar1->fields).AppId = StringLiteral_AppId_not_set;
   if (iRam_? != 0) {
     uVar5 = (uint)((ulonglong)&pAVar1->fields >> 0xc);
@@ -59,7 +59,7 @@ MobileAdManagerCredentials_GetAdMobCredentials(MethodInfo *method)
     } while (!bVar9);
   }
   iVar10 = iRam_?;
-  (pAVar1->fields).RewardedAdUnitId = pSVar3;
+  (pAVar1->fields).RewardedAdUnitId = pSVar4;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).RewardedAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
@@ -75,7 +75,7 @@ MobileAdManagerCredentials_GetAdMobCredentials(MethodInfo *method)
       iVar10 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).InterstitialAdUnitId = pSVar4;
+  (pAVar1->fields).InterstitialAdUnitId = pSVar2;
   iVar11 = 0;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).InterstitialAdUnitId >> 0xc);
@@ -92,7 +92,7 @@ MobileAdManagerCredentials_GetAdMobCredentials(MethodInfo *method)
       iVar11 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).BannerAdUnitId = pSVar2;
+  (pAVar1->fields).BannerAdUnitId = pSVar3;
   if (iVar11 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).BannerAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
@@ -138,9 +138,9 @@ MobileAdManagerCredentials_GetDefault(MethodInfo *method)
   }
   pAVar1 = (AdMobCredentials *)
            FUN_?(TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
-  pSVar2 = StringLiteral_Banner_ad_unit_not;
-  pSVar3 = StringLiteral_Reward_ad_unit_not_set;
-  pSVar4 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar2 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar3 = StringLiteral_Banner_ad_unit_not;
+  pSVar4 = StringLiteral_Reward_ad_unit_not_set;
   (pAVar1->fields).AppId = StringLiteral_AppId_not_set;
   if (iRam_? != 0) {
     uVar5 = (uint)((ulonglong)&pAVar1->fields >> 0xc);
@@ -157,7 +157,7 @@ MobileAdManagerCredentials_GetDefault(MethodInfo *method)
     } while (!bVar9);
   }
   iVar10 = iRam_?;
-  (pAVar1->fields).RewardedAdUnitId = pSVar3;
+  (pAVar1->fields).RewardedAdUnitId = pSVar4;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).RewardedAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
@@ -173,7 +173,7 @@ MobileAdManagerCredentials_GetDefault(MethodInfo *method)
       iVar10 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).InterstitialAdUnitId = pSVar4;
+  (pAVar1->fields).InterstitialAdUnitId = pSVar2;
   iVar11 = 0;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).InterstitialAdUnitId >> 0xc);
@@ -190,7 +190,7 @@ MobileAdManagerCredentials_GetDefault(MethodInfo *method)
       iVar11 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).BannerAdUnitId = pSVar2;
+  (pAVar1->fields).BannerAdUnitId = pSVar3;
   if (iVar11 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).BannerAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;

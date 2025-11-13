@@ -255,7 +255,7 @@ Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_VertIndices
         return pIVar2;
       }
       pIVar7 = (Int32__Array *)0x0;
-      if (pIVar3 == pIRam0000000182db23e0) {
+      if (pIVar3 == pIRam0000000182db24a0) {
         pIVar7 = pIVar2;
       }
       return pIVar7;
@@ -385,7 +385,7 @@ Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_Vertices
         return pVVar2;
       }
       pVVar7 = (Vector3__Array *)0x0;
-      if (pVVar3 == pVRam0000000182db23e0) {
+      if (pVVar3 == pVRam0000000182db24a0) {
         pVVar7 = pVVar2;
       }
       return pVVar7;

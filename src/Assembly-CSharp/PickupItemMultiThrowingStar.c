@@ -1562,9 +1562,9 @@ code_?:
                 if (pMVar26 != (MethodInfo *)0x0) {
                   if ((*pMVar26->name == '.') && ((pMVar26->flags & 0x800) != 0)) {
                     ppMVar27 = ppMVar17;
-                    while (ppMVar28 = ppMVar27 + 0x30528cee,
+                    while (pcVar28 = (char *)((longlong)ppMVar27 + 0xADDR),
                           ppMVar27 = (MethodInfo **)((longlong)ppMVar27 + 1),
-                          *(char *)ppMVar28 == (pMVar26->name + -1)[(longlong)ppMVar27]) {
+                          *pcVar28 == (pMVar26->name + -1)[(longlong)ppMVar27]) {
                       if (ppMVar27 == (MethodInfo **)0x7) {
                         FUN_?(pMVar26,0,0,&stack0x00000010);
                         goto code_?;

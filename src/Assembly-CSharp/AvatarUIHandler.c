@@ -603,7 +603,7 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_OnSayChatMessageRecie
                            );
         text = (String *)0x0;
         if (pSVar2 != (String *)0x0) {
-          if (pSVar2->klass == pSRam0000000182db2460) {
+          if (pSVar2->klass == pSRam0000000182db2520) {
             text = pSVar2;
           }
           if (text == (String *)0x0) {

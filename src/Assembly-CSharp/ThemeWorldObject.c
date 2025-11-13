@@ -662,7 +662,7 @@ String * Assembly-CSharp.dll::ThemeWorldObject::ThemeWorldObject_get_Identifier
   pSVar2 = pSVar3;
   if (pSVar3 != (String *)0x0) {
     pSVar2 = (String *)0x0;
-    if (pSVar3->klass == pSRam0000000182db2460) {
+    if (pSVar3->klass == pSRam0000000182db2520) {
       pSVar2 = pSVar3;
     }
     if (pSVar2 == (String *)0x0) {

@@ -6106,8 +6106,9 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
               (this,(MethodInfo *)0x0);
     uVar4 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
-    FUN_?(this,uVar4);
-    *unaff_RSI = *unaff_RSI + (char)((ulonglong)unaff_RBX >> 8);
+    lVar5 = FUN_?(this,uVar4);
+    *(char *)(unaff_RSI + 0x1e) = *(char *)(unaff_RSI + 0x1e) + unaff_BL;
+    *(char *)(lVar5 + -0x5dff62e2) = *(char *)(lVar5 + -0x5dff62e2) + (char)lVar5;
                     /* WARNING: Bad instruction - Truncating control flow here */
     halt_baddata();
   }

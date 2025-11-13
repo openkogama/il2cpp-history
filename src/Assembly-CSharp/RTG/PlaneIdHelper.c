@@ -1252,7 +1252,7 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_get_AllPlaneIds(MethodInf
         return pPVar2;
       }
       pPVar7 = (PlaneId__Enum__Array *)0x0;
-      if (pPVar3 == pPRam0000000182db23e0) {
+      if (pPVar3 == pPRam0000000182db24a0) {
         pPVar7 = pPVar2;
       }
       return pPVar7;

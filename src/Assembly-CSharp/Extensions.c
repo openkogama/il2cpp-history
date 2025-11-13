@@ -263,7 +263,7 @@ code_?:
           }
           if (this != (StringBuilder *)0x0) {
             pSVar14 = pSVar1;
-            if (this->klass == pSRam0000000182db2460) {
+            if (this->klass == pSRam0000000182db2520) {
               pSVar14 = this;
             }
             if (pSVar14 != (StringBuilder *)0x0) goto code_?;
@@ -1329,12 +1329,12 @@ bool Assembly-CSharp.dll::Extensions::Extensions_GetBool
                       );
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182db23f8) {
+      if (pOStackX_8->klass == pORam0000000182db24b8) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db23f8->_0).element_class) {
-          FUN_?(pOStackX_8,pORam0000000182db23f8);
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db24b8->_0).element_class) {
+          FUN_?(pOStackX_8,pORam0000000182db24b8);
           pcVar3 = (code *)swi(3);
           bVar1 = (*pcVar3)();
           return bVar1;
@@ -1379,11 +1379,11 @@ float Assembly-CSharp.dll::Extensions::Extensions_GetClampedFloat
                       );
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182db2448) {
+      if (pOStackX_8->klass == pORam0000000182db2508) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db2448->_0).element_class) {
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db2508->_0).element_class) {
           FUN_?(pOStackX_8);
           pcVar3 = (code *)swi(3);
           fVar4 = (float)(*pcVar3)();
@@ -1432,11 +1432,11 @@ int32_t Assembly-CSharp.dll::Extensions::Extensions_GetClampedInt
                       );
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182db2418) {
+      if (pOStackX_8->klass == pORam0000000182db24d8) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db2418->_0).element_class) {
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db24d8->_0).element_class) {
           FUN_?(pOStackX_8);
           pcVar3 = (code *)swi(3);
           iVar4 = (*pcVar3)();
@@ -1702,7 +1702,7 @@ code_?:
           return defaultValue;
         }
         pOVar9 = pOVar5;
-        if (pOVar2->klass == pORam0000000182db2418) {
+        if (pOVar2->klass == pORam0000000182db24d8) {
           pOVar9 = pOVar2;
         }
         if (pOVar9 == (Object *)0x0) {
@@ -1970,7 +1970,7 @@ bool Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182db2418) {
+    if (pOVar2->klass == pORam0000000182db24d8) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -2063,7 +2063,7 @@ Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_2
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182db2418) {
+    if (pOVar2->klass == pORam0000000182db24d8) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -2169,7 +2169,7 @@ code_?:
           return defaultValue;
         }
         pOVar9 = pOVar5;
-        if (pOVar2->klass == pORam0000000182db2418) {
+        if (pOVar2->klass == pORam0000000182db24d8) {
           pOVar9 = pOVar2;
         }
         if (pOVar9 == (Object *)0x0) {
@@ -2249,7 +2249,7 @@ float Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_4
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182db2418) {
+    if (pOVar2->klass == pORam0000000182db24d8) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -2366,7 +2366,7 @@ Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_5
     cVar13 = (*pcVar11)(plVar10,uVar12);
     if ((cVar13 != '\0') && (pOVar7 != (Object *)0x0)) {
       pOVar14 = pOVar9;
-      if (pOVar7->klass == pORam0000000182db2418) {
+      if (pOVar7->klass == pORam0000000182db24d8) {
         pOVar14 = pOVar7;
       }
       if (pOVar14 != (Object *)0x0) goto code_?;

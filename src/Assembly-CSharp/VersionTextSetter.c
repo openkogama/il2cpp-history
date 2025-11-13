@@ -13,12 +13,12 @@ void Assembly-CSharp.dll::VersionTextSetter::VersionTextSetter_SetText
   }
   pTVar1 = (this->fields).textObject;
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_Unity6_and_Maintenance);
+    FUN_?(&StringLiteral_Unity_6_and_region_fix);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar2 = StringLiteral_Unity6_and_Maintenance;
+  pSVar2 = StringLiteral_Unity_6_and_region_fix;
   if (cRam_? == '\0') {
     FUN_?(&StringLiteral__3_1_60);
     LOCK();

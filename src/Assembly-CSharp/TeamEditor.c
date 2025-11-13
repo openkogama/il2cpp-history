@@ -293,7 +293,7 @@ code_?:
                            );
         pSVar20 = (String *)0x0;
         if (pSVar23 != (String *)0x0) {
-          if (pSVar23->klass == pSRam0000000182db2460) {
+          if (pSVar23->klass == pSRam0000000182db2520) {
             pSVar20 = pSVar23;
           }
           if (pSVar20 == (String *)0x0) {
@@ -561,7 +561,7 @@ code_?:
                            );
         pSVar19 = (String *)0x0;
         if (pSVar21 != (String *)0x0) {
-          if (pSVar21->klass == pSRam0000000182db2460) {
+          if (pSVar21->klass == pSRam0000000182db2520) {
             pSVar19 = pSVar21;
           }
           if (pSVar19 == (String *)0x0) {
@@ -759,7 +759,7 @@ code_?:
                            );
         pSVar19 = (String *)0x0;
         if (pSVar21 != (String *)0x0) {
-          if (pSVar21->klass == pSRam0000000182db2460) {
+          if (pSVar21->klass == pSRam0000000182db2520) {
             pSVar19 = pSVar21;
           }
           if (pSVar19 == (String *)0x0) {

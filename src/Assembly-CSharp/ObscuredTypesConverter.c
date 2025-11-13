@@ -98,14 +98,14 @@ Object * Assembly-CSharp.dll::ObscuredTypesConverter::ObscuredTypesConverter_Cre
   value_03 = (Object__Class *)0x0;
   if (value != (Object *)0x0) {
     pOVar1 = value_03;
-    if (value->klass == pORam0000000182db2418) {
+    if (value->klass == pORam0000000182db24d8) {
       pOVar1 = (Object__Class *)value;
     }
     if (pOVar1 == (Object__Class *)0x0) goto code_?;
     if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
       FUN_?();
     }
-    if ((value->klass->_0).element_class != (pORam0000000182db2418->_0).element_class) {
+    if ((value->klass->_0).element_class != (pORam0000000182db24d8->_0).element_class) {
       FUN_?(value);
       pcVar2 = (code *)swi(3);
       pOVar3 = (Object *)(*pcVar2)();
@@ -231,7 +231,7 @@ code_?:
   }
   if (value != (Object *)0x0) {
     pOVar1 = value_03;
-    if (value->klass == pORam0000000182db2448) {
+    if (value->klass == pORam0000000182db2508) {
       pOVar1 = (Object__Class *)value;
     }
     if (pOVar1 != (Object__Class *)0x0) {
@@ -239,7 +239,7 @@ code_?:
           0) {
         FUN_?();
       }
-      if ((value->klass->_0).element_class != (pORam0000000182db2448->_0).element_class) {
+      if ((value->klass->_0).element_class != (pORam0000000182db2508->_0).element_class) {
         FUN_?(value);
 code_?:
         FUN_?();
@@ -429,7 +429,7 @@ code_?:
         }
         pOVar1 = value_03;
         if ((Object__Class *)value != (Object__Class *)0x0) {
-          if ((Object__Class *)(((Object__Class *)value)->_0).image == pORam0000000182db2460) {
+          if ((Object__Class *)(((Object__Class *)value)->_0).image == pORam0000000182db2520) {
             pOVar1 = (Object__Class *)value;
           }
           if (pOVar1 == (Object__Class *)0x0) goto code_?;
@@ -450,7 +450,7 @@ code_?:
       } while( true );
     }
     pOVar1 = value_03;
-    if (value->klass == pORam0000000182db23f8) {
+    if (value->klass == pORam0000000182db24b8) {
       pOVar1 = (Object__Class *)value;
     }
     if (pOVar1 != (Object__Class *)0x0) {
@@ -458,7 +458,7 @@ code_?:
          ) {
         FUN_?();
       }
-      if ((value->klass->_0).element_class != (pORam0000000182db23f8->_0).element_class) {
+      if ((value->klass->_0).element_class != (pORam0000000182db24b8->_0).element_class) {
         FUN_?(value);
         pcVar2 = (code *)swi(3);
         pOVar3 = (Object *)(*pcVar2)();
@@ -659,7 +659,7 @@ code_?:
   }
   else {
     pOVar1 = value_03;
-    if (value->klass == pORam0000000182db2460) {
+    if (value->klass == pORam0000000182db2520) {
       pOVar1 = (Object__Class *)value;
     }
     if (pOVar1 != (Object__Class *)0x0) {
@@ -667,7 +667,7 @@ code_?:
           0) {
         FUN_?();
       }
-      if (value->klass == pORam0000000182db2460) {
+      if (value->klass == pORam0000000182db2520) {
         value_03 = (Object__Class *)value;
       }
       if (value_03 != (Object__Class *)0x0) {
@@ -681,12 +681,12 @@ code_?:
       return pOVar3;
     }
     pOVar1 = value_03;
-    if (value->klass == pORam0000000182db23e8) {
+    if (value->klass == pORam0000000182db24a8) {
       pOVar1 = (Object__Class *)value;
     }
     if (pOVar1 == (Object__Class *)0x0) {
       pOVar1 = value_03;
-      if (value->klass == pORam0000000182db2438) {
+      if (value->klass == pORam0000000182db24f8) {
         pOVar1 = (Object__Class *)value;
       }
       if (pOVar1 == (Object__Class *)0x0) goto code_?;
@@ -694,7 +694,7 @@ code_?:
          ) {
         FUN_?();
       }
-      if ((value->klass->_0).element_class != (pORam0000000182db2438->_0).element_class) {
+      if ((value->klass->_0).element_class != (pORam0000000182db24f8->_0).element_class) {
         FUN_?(value);
         pcVar2 = (code *)swi(3);
         pOVar3 = (Object *)(*pcVar2)();
@@ -716,7 +716,7 @@ code_?:
          ) {
         FUN_?();
       }
-      if ((value->klass->_0).element_class != (pORam0000000182db23e8->_0).element_class) {
+      if ((value->klass->_0).element_class != (pORam0000000182db24a8->_0).element_class) {
         FUN_?(value);
         pcVar2 = (code *)swi(3);
         pOVar3 = (Object *)(*pcVar2)();

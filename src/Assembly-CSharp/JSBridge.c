@@ -233,11 +233,11 @@ void Assembly-CSharp.dll::JSBridge::JSBridge_ExternalEval(String *script,MethodI
       pSVar3 = (String *)FUN_?(uRam_?);
       pSVar4 = (String *)0x0;
       if (pSVar3 != (String *)0x0) {
-        if (pSVar3->klass == pSRam0000000182db2460) {
+        if (pSVar3->klass == pSRam0000000182db2520) {
           pSVar4 = pSVar3;
         }
         if (pSVar4 == (String *)0x0) {
-          FUN_?(pSVar3,pSRam0000000182db2460);
+          FUN_?(pSVar3,pSRam0000000182db2520);
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
           return;
@@ -369,37 +369,37 @@ String * Assembly-CSharp.dll::JSBridge::JSBridge_ObjectToJSString(Object *o,Meth
   }
   pOVar1 = (Object *)0x0;
   pOVar2 = pOVar1;
-  if (o->klass == pORam0000000182db2460) {
+  if (o->klass == pORam0000000182db2520) {
     pOVar2 = o;
   }
   if (pOVar2 == (Object *)0x0) {
     pOVar2 = pOVar1;
-    if (o->klass == pORam0000000182db2418) {
+    if (o->klass == pORam0000000182db24d8) {
       pOVar2 = o;
     }
     if (pOVar2 == (Object *)0x0) {
       pOVar2 = pOVar1;
-      if (o->klass == pORam0000000182db2408) {
+      if (o->klass == pORam0000000182db24c8) {
         pOVar2 = o;
       }
       if (pOVar2 == (Object *)0x0) {
         pOVar2 = pOVar1;
-        if (o->klass == pORam0000000182db2420) {
+        if (o->klass == pORam0000000182db24e0) {
           pOVar2 = o;
         }
         if (pOVar2 == (Object *)0x0) {
           pOVar2 = pOVar1;
-          if (o->klass == pORam0000000182db2410) {
+          if (o->klass == pORam0000000182db24d0) {
             pOVar2 = o;
           }
           if (pOVar2 == (Object *)0x0) {
             pOVar2 = pOVar1;
-            if (o->klass == pORam0000000182db23e8) {
+            if (o->klass == pORam0000000182db24a8) {
               pOVar2 = o;
             }
             if (pOVar2 == (Object *)0x0) {
               pOVar2 = pOVar1;
-              if (o->klass == pORam0000000182db2448) {
+              if (o->klass == pORam0000000182db2508) {
                 pOVar2 = o;
               }
               if (pOVar2 != (Object *)0x0) {
@@ -412,13 +412,13 @@ String * Assembly-CSharp.dll::JSBridge::JSBridge_ObjectToJSString(Object *o,Meth
                   pIVar4 = (IFormatProvider *)
                            (*(pCVar3->klass->vtable).get_NumberFormat.methodPtr)
                                      (pCVar3,(pCVar3->klass->vtable).get_NumberFormat.method);
-                  if ((o->klass->_0).element_class == (pORam0000000182db2448->_0).element_class) {
+                  if ((o->klass->_0).element_class == (pORam0000000182db2508->_0).element_class) {
                     DStackX_8.m_value._0_4_ = *(undefined4 *)&o[1].klass;
                     pSVar5 = mscorlib.dll::System::Single::Single_ToString_1
                                        ((Single *)&DStackX_8,pIVar4,(MethodInfo *)0x0);
                     return pSVar5;
                   }
-                  FUN_?(o,pORam0000000182db2448);
+                  FUN_?(o,pORam0000000182db2508);
                   pcVar6 = (code *)swi(3);
                   pSVar5 = (String *)(*pcVar6)();
                   return pSVar5;
@@ -430,7 +430,7 @@ code_?:
                 return pSVar5;
               }
               pOVar2 = pOVar1;
-              if (o->klass == pORam0000000182db2450) {
+              if (o->klass == pORam0000000182db2510) {
                 pOVar2 = o;
               }
               if (pOVar2 != (Object *)0x0) {
@@ -443,13 +443,13 @@ code_?:
                   pIVar4 = (IFormatProvider *)
                            (*(pCVar3->klass->vtable).get_NumberFormat.methodPtr)
                                      (pCVar3,(pCVar3->klass->vtable).get_NumberFormat.method);
-                  if ((o->klass->_0).element_class == (pORam0000000182db2450->_0).element_class) {
+                  if ((o->klass->_0).element_class == (pORam0000000182db2510->_0).element_class) {
                     DStackX_8.m_value = (double)o[1].klass;
                     pSVar5 = mscorlib.dll::System::Double::Double_ToString_2
                                        (&DStackX_8,pIVar4,(MethodInfo *)0x0);
                     return pSVar5;
                   }
-                  FUN_?(o,pORam0000000182db2450);
+                  FUN_?(o,pORam0000000182db2510);
                   pcVar6 = (code *)swi(3);
                   pSVar5 = (String *)(*pcVar6)();
                   return pSVar5;
@@ -457,11 +457,11 @@ code_?:
                 goto code_?;
               }
               pOVar2 = pOVar1;
-              if (o->klass == pORam0000000182db2458) {
+              if (o->klass == pORam0000000182db2518) {
                 pOVar2 = o;
               }
               if (pOVar2 != (Object *)0x0) {
-                if ((o->klass->_0).element_class != (pORam0000000182db2458->_0).element_class) {
+                if ((o->klass->_0).element_class != (pORam0000000182db2518->_0).element_class) {
                   FUN_?(o);
                   pcVar6 = (code *)swi(3);
                   pSVar5 = (String *)(*pcVar6)();
@@ -470,10 +470,10 @@ code_?:
                 if (*(short *)&o[1].klass == 0x22) {
                   return ::StringLiteral_____;
                 }
-                if ((*(int *)&(pORam0000000182db2458->_1).field_0x1c == 0) &&
-                   (FUN_?(pORam0000000182db2458),
-                   *(int *)&(pORam0000000182db2458->_1).field_0x1c == 0)) {
-                  FUN_?(pORam0000000182db2458);
+                if ((*(int *)&(pORam0000000182db2518->_1).field_0x1c == 0) &&
+                   (FUN_?(pORam0000000182db2518),
+                   *(int *)&(pORam0000000182db2518->_1).field_0x1c == 0)) {
+                  FUN_?(pORam0000000182db2518);
                 }
                 pSVar5 = mscorlib.dll::System::Char::Char_ToString_2(0x22,(MethodInfo *)0x0);
                 pSVar7 = (String *)
@@ -529,8 +529,8 @@ code_?:
                        (o,(((StringBuilder *)o)->klass->vtable).ToString.method);
   }
   else {
-    if ((*(int *)&(pORam0000000182db2458->_1).field_0x1c == 0) &&
-       (FUN_?(), *(int *)&(pORam0000000182db2458->_1).field_0x1c == 0)) {
+    if ((*(int *)&(pORam0000000182db2518->_1).field_0x1c == 0) &&
+       (FUN_?(), *(int *)&(pORam0000000182db2518->_1).field_0x1c == 0)) {
       FUN_?();
     }
     pSVar5 = mscorlib.dll::System::Char::Char_ToString_2(0x22,(MethodInfo *)0x0);

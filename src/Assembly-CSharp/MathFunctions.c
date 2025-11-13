@@ -1740,7 +1740,7 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedAngle_1
         }
         func_?(0x30);
         if ((longlong)auVar14._0_8_ < 0) {
-          return __01D2661CD3F3DAAF31E7896803487B4AF8D684212C9D4A34633EF34B49C7DBA1_Field;
+          return __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
         return 0.0;
       }
@@ -1858,7 +1858,7 @@ code_?:
     if (iVar15 < -0x96) {
       func_?(0x30);
       if ((longlong)auVar16._0_8_ < 0) {
-        return __01D2661CD3F3DAAF31E7896803487B4AF8D684212C9D4A34633EF34B49C7DBA1_Field;
+        return __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       }
       return 0.0;
     }

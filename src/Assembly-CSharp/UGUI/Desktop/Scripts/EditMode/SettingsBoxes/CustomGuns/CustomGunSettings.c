@@ -460,7 +460,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                         ), this_01 != (SettingsInputField *)0x0)) {
                   if (pSVar16 != (String *)0x0) {
-                    if (pSVar16->klass == pSRam0000000182db2460) {
+                    if (pSVar16->klass == pSRam0000000182db2520) {
                       pSVar1 = pSVar16;
                     }
                     if (pSVar1 == (String *)0x0) {

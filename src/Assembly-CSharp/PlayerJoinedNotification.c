@@ -97,7 +97,7 @@ void Assembly-CSharp.dll::PlayerJoinedNotification::PlayerJoinedNotification_Ini
                            );
         pSVar8 = (String *)0x0;
         if (pSVar7 != (String *)0x0) {
-          if (pSVar7->klass == pSRam0000000182db2460) {
+          if (pSVar7->klass == pSRam0000000182db2520) {
             pSVar8 = pSVar7;
           }
           if (pSVar8 == (String *)0x0) {

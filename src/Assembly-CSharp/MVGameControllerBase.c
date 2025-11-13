@@ -6309,28 +6309,18 @@ Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_get_RegionConfig
     FUN_?(&TypeInfo__UnityEngine__Debug);
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral_friends);
+    FUN_?(&
+                  RegionConfigNamePair_MethodInfo__System__Linq__Enumerable__FirstOrDefault<RegionConfigNamePair>_System__Collections__Generic__IEnumerable<RegionConfigNamePair>__System__Func<RegionConfigNamePair,_bool>_
+                 );
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral_br);
+    FUN_?(&TypeInfo__System__Func<RegionConfigNamePair,_bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RegionConfigManager___get_RegionConfig_b__3_0_RegionConfigNamePair_);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_RegionConfigManager_GetRegionCon);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_www);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_test);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_dev);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_ut);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_local);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -6354,101 +6344,37 @@ Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_get_RegionConfig
         UNLOCK();
       } while (uVar7 != uVar8);
     }
-    pSVar3 = RegionConfigManager::RegionConfigManager_DetectRegionFromEnvironment
-                       (this_00,(MethodInfo *)0x0);
     pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_RegionConfigManager_GetRegionCon,pSVar3,(MethodInfo *)0x0);
+                       (StringLiteral_RegionConfigManager_GetRegionCon,(this_00->fields).region,
+                        (MethodInfo *)0x0);
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
   }
-  pSVar3 = (this_00->fields).region;
-  if ((pSVar3 == StringLiteral_local) ||
-     ((((pSVar3 != (String *)0x0 && (StringLiteral_local != (String *)0x0)) &&
-       ((pSVar3->fields)._stringLength == (StringLiteral_local->fields)._stringLength)) &&
-      (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                         ((uint8_t *)&(pSVar3->fields)._firstChar,
-                          (uint8_t *)&(StringLiteral_local->fields)._firstChar,
-                          (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0),
-      bVar9 != 0)))) {
-    return (this_00->fields).local;
+  source = (this_00->fields).expectedRegionValues;
+  this_01 = (Predicate_1_Object_ *)FUN_?(TypeInfo__System__Func<RegionConfigNamePair,_bool>)
+  ;
+  mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+            (this_01,(Object *)this_00,
+             MethodInfo__RegionConfigManager___get_RegionConfig_b__3_0_RegionConfigNamePair_,
+             (MethodInfo *)0x0);
+  pOVar9 = System.Core.dll::System::Linq::Enumerable::Enumerable_FirstOrDefault_3
+                     ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Boolean_ *)this_01,
+                      RegionConfigNamePair_MethodInfo__System__Linq__Enumerable__FirstOrDefault<RegionConfigNamePair>_System__Collections__Generic__IEnumerable<RegionConfigNamePair>__System__Func<RegionConfigNamePair,_bool>_
+                     );
+  if (pOVar9 == (Object *)0x0) {
+    uVar10 = func_?(&TypeInfo__System__Exception);
+    this_02 = (Exception *)func_?(uVar10);
+    pSVar3 = (String *)func_?(&StringLiteral_RegionConfig_not_found);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_02,pSVar3,(MethodInfo *)0x0);
+    uVar10 = func_?(&MethodInfo__RegionConfigManager__get_RegionConfig__);
+    FUN_?(this_02,uVar10);
+    pcVar1 = (code *)swi(3);
+    pRVar2 = (RegionConfig *)(*pcVar1)();
+    return pRVar2;
   }
-  pSVar3 = (this_00->fields).region;
-  if ((pSVar3 == StringLiteral_dev) ||
-     (((pSVar3 != (String *)0x0 && (StringLiteral_dev != (String *)0x0)) &&
-      (((pSVar3->fields)._stringLength == (StringLiteral_dev->fields)._stringLength &&
-       (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                          ((uint8_t *)&(pSVar3->fields)._firstChar,
-                           (uint8_t *)&(StringLiteral_dev->fields)._firstChar,
-                           (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0),
-       bVar9 != 0)))))) {
-    return (this_00->fields).dev;
-  }
-  pSVar3 = (this_00->fields).region;
-  if ((pSVar3 != StringLiteral_test) &&
-     (((pSVar3 == (String *)0x0 || (StringLiteral_test == (String *)0x0)) ||
-      (((pSVar3->fields)._stringLength != (StringLiteral_test->fields)._stringLength ||
-       (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                          ((uint8_t *)&(pSVar3->fields)._firstChar,
-                           (uint8_t *)&(StringLiteral_test->fields)._firstChar,
-                           (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0),
-       bVar9 == 0)))))) {
-    pSVar3 = (this_00->fields).region;
-    if ((pSVar3 == StringLiteral_friends) ||
-       ((((pSVar3 != (String *)0x0 && (StringLiteral_friends != (String *)0x0)) &&
-         ((pSVar3->fields)._stringLength == (StringLiteral_friends->fields)._stringLength)) &&
-        (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                           ((uint8_t *)&(pSVar3->fields)._firstChar,
-                            (uint8_t *)&(StringLiteral_friends->fields)._firstChar,
-                            (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0),
-        bVar9 != 0)))) {
-      return (this_00->fields).friends;
-    }
-    pSVar3 = (this_00->fields).region;
-    if ((pSVar3 == StringLiteral_br) ||
-       (((pSVar3 != (String *)0x0 && (StringLiteral_br != (String *)0x0)) &&
-        (((pSVar3->fields)._stringLength == (StringLiteral_br->fields)._stringLength &&
-         (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                            ((uint8_t *)&(pSVar3->fields)._firstChar,
-                             (uint8_t *)&(StringLiteral_br->fields)._firstChar,
-                             (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0),
-         bVar9 != 0)))))) {
-      return (this_00->fields).br;
-    }
-    pSVar3 = (this_00->fields).region;
-    if ((pSVar3 != StringLiteral_www) &&
-       (((pSVar3 == (String *)0x0 || (StringLiteral_www == (String *)0x0)) ||
-        (((pSVar3->fields)._stringLength != (StringLiteral_www->fields)._stringLength ||
-         (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                            ((uint8_t *)&(pSVar3->fields)._firstChar,
-                             (uint8_t *)&(StringLiteral_www->fields)._firstChar,
-                             (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0),
-         bVar9 == 0)))))) {
-      pSVar3 = (this_00->fields).region;
-      if ((pSVar3 != StringLiteral_ut) &&
-         ((((pSVar3 == (String *)0x0 || (StringLiteral_ut == (String *)0x0)) ||
-           ((pSVar3->fields)._stringLength != (StringLiteral_ut->fields)._stringLength)) ||
-          (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                             ((uint8_t *)&(pSVar3->fields)._firstChar,
-                              (uint8_t *)&(StringLiteral_ut->fields)._firstChar,
-                              (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0),
-          bVar9 == 0)))) {
-        uVar10 = func_?(&TypeInfo__System__Exception);
-        this_01 = (Exception *)func_?(uVar10);
-        pSVar3 = (String *)func_?(&StringLiteral_RegionConfig_not_found);
-        mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar3,(MethodInfo *)0x0);
-        uVar10 = func_?(&MethodInfo__RegionConfigManager__get_RegionConfig__);
-        FUN_?(this_01,uVar10);
-        pcVar1 = (code *)swi(3);
-        pRVar2 = (RegionConfig *)(*pcVar1)();
-        return pRVar2;
-      }
-      return (this_00->fields).ut;
-    }
-    return (this_00->fields).www;
-  }
-  return (this_00->fields).test;
+  return (RegionConfig *)pOVar9[1].monitor;
 }
 
 

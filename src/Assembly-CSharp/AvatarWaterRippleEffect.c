@@ -795,9 +795,9 @@ code_?:
             if (pMVar16 != (MethodInfo *)0x0) {
               if ((*pMVar16->name == '.') && ((pMVar16->flags & 0x800) != 0)) {
                 ppMVar17 = ppMVar5;
-                while (ppMVar18 = ppMVar17 + 0x30528cee,
+                while (pcVar18 = (char *)((longlong)ppMVar17 + 0xADDR),
                       ppMVar17 = (MethodInfo **)((longlong)ppMVar17 + 1),
-                      *(char *)ppMVar18 == (pMVar16->name + -1)[(longlong)ppMVar17]) {
+                      *pcVar18 == (pMVar16->name + -1)[(longlong)ppMVar17]) {
                   if (ppMVar17 == (MethodInfo **)0x7) {
                     FUN_?(pMVar16,0,0,&lStackX_10);
                     goto code_?;
