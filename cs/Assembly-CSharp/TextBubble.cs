@@ -22,18 +22,18 @@ public class TextBubble : MonoBehaviour
 	private RectTransform tail;
 	[SerializeField]
 	private CanvasGroup fadeGroup;
-	[NonSerialized]
-	public Transform transform;
-	private List<UnityEngine.Object> content;
 	[SerializeField]
 	private Vector2 centerPoint;
+	private List<UnityEngine.Object> content;
 	private int bubbleId;
+	[NonSerialized]
+	public Transform transform;
 
 	// Properties
-	public Vector2 Position { private get; set; }
 	private RectTransform BubbleTransform { get; }
 	private float HorizontalPadding { get; }
 	private float VerticalPadding { get; }
+	public Vector2 Position { private get; set; }
 
 	// Constructors
 	public TextBubble();
@@ -51,6 +51,6 @@ public class TextBubble : MonoBehaviour
 	protected void OnValidate();
 	private float CalculatePivotNearEdgeOffset(float pivot);
 	[CompilerGenerated]
-	private void _OnDestroy_b__16_0(TextBubbleController x, BaseEventData y);
+	private void _OnDestroy_b__17_0(TextBubbleController x, BaseEventData y);
 }
 

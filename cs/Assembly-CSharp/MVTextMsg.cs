@@ -13,6 +13,7 @@ using UnityEngine;
 public class MVTextMsg : MVLogicObject, ILogicWorldObject
 {
 	// Fields
+	private const float StoredFontSizeValueToTMPFontSize = 1.625f;
 	private readonly Bounds localBounds;
 	private readonly MVTextMsgObject msgObject;
 	[CompilerGenerated]
@@ -22,6 +23,7 @@ public class MVTextMsg : MVLogicObject, ILogicWorldObject
 	public override MVWorldObjectDocumentationType DocumentationType { get; }
 	public override bool HasInputConnector { get; }
 	public override bool HasOutputConnector { get; }
+	public override Vector3 InputConnectorOffset { get; }
 	protected override bool HasVisualsInPlaymode { get; }
 	public IInputSignalReceiver InputSignalReceiver { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
@@ -35,6 +37,11 @@ public class MVTextMsg : MVLogicObject, ILogicWorldObject
 	private void InputStateUpdateCallback(LogicInputState logicInputState, LogicObjectManager logicObjectManager);
 	public override void InitializeInventory();
 	public override void OnDataUpdate();
+	private void UpdateTextMessageSettings();
 	private void UpdateText();
+	private void UpdateFontSettings();
+	private void UpdateTextMessageBackground();
+	private void UpdateTextObjectBillboardSettings();
+	private void UpdateTextCulling();
 }
 

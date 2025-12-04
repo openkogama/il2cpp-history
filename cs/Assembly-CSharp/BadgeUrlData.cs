@@ -17,8 +17,11 @@ public class BadgeUrlData
 	private int friendsLimit;
 
 	// Properties
+	[Preserve]
 	public int Level { get; set; }
+	[Preserve]
 	public string URL { get; set; }
+	[Preserve]
 	public int FriendsLimit { get; set; }
 
 	// Constructors
