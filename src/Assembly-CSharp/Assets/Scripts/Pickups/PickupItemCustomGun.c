@@ -488,18 +488,18 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
     }
     else {
       pSVar3 = (String *)0x0;
-      if (pSVar2->klass == pSRam0000000182db2520) {
+      if (pSVar2->klass == pSRam0000000182dbbc60) {
         pSVar3 = pSVar2;
       }
       if (pSVar3 == (String *)0x0) {
-        FUN_?(pSVar2,pSRam0000000182db2520);
+        FUN_?(pSVar2,pSRam0000000182dbbc60);
         pcVar4 = (code *)swi(3);
         pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
         return pPVar1;
       }
       (pPVar1->fields).name = pSVar3;
       pSVar3 = (String *)0x0;
-      if (pSVar2->klass == pSRam0000000182db2520) {
+      if (pSVar2->klass == pSRam0000000182dbbc60) {
         pSVar3 = pSVar2;
       }
       if (pSVar3 == (String *)0x0) {
@@ -7100,9 +7100,9 @@ code_?:
             if (pMVar27 != (MethodInfo *)0x0) {
               if ((*pMVar27->name == '.') && ((pMVar27->flags & 0x800) != 0)) {
                 ppMVar28 = ppMVar17;
-                while (pcVar29 = (char *)((longlong)ppMVar28 + 0xADDR),
+                while (ppMVar29 = ppMVar28 + 0x30529dd4,
                       ppMVar28 = (MethodInfo **)((longlong)ppMVar28 + 1),
-                      *pcVar29 == (pMVar27->name + -1)[(longlong)ppMVar28]) {
+                      *(char *)ppMVar29 == (pMVar27->name + -1)[(longlong)ppMVar28]) {
                   if (ppMVar28 == (MethodInfo **)0x7) {
                     FUN_?(pMVar27,0,0,alStackX_10);
                     goto code_?;

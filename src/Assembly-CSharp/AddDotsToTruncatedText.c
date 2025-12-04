@@ -35,7 +35,7 @@ int32_t Assembly-CSharp.dll::AddDotsToTruncatedText::AddDotsToTruncatedText_Calc
         uVar15 = *puVar11;
         obj_00 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator
                            (this_00,(MethodInfo *)0x0);
-        if (obj_00 == (TextGenerator *)0x0) break;
+        if (obj_00 == (TextGenerator_1 *)0x0) break;
         pvVar16 = (obj_00->fields).m_Ptr;
         if (pvVar16 == (void *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::

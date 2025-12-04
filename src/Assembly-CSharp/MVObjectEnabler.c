@@ -727,3 +727,14 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler__ctor
   return;
 }
 
+
+/* MVWorldObjectDocumentationType get_DocumentationType() */
+
+MVWorldObjectDocumentationType__Enum
+Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_get_DocumentationType
+          (MVObjectEnabler *this,MethodInfo *method)
+
+{
+  return MVWorldObjectDocumentationType__Enum_ModelToggle;
+}
+

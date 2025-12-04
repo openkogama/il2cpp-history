@@ -113,7 +113,7 @@ void Assembly-CSharp.dll::CountingCubeSettings::CountingCubeSettings_Initialize
         (*pcVar4)();
         return;
       }
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                 (this_01,StringLiteral_startingValue,(float)*(int *)&pOVar2[1].klass,
                  (MethodInfo *)0x0);
       pSVar5 = (this->fields).toggle;

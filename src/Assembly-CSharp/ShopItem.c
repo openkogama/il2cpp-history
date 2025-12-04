@@ -235,7 +235,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
               }
               else {
                 pSVar7 = pSVar6;
-                if (pSVar5->klass == pSRam0000000182db2520) {
+                if (pSVar5->klass == pSRam0000000182dbbc60) {
                   pSVar7 = pSVar5;
                 }
                 if (pSVar7 == (String *)0x0) {
@@ -246,7 +246,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                 }
                 (this->fields).name = pSVar7;
                 pSVar7 = pSVar6;
-                if (pSVar5->klass == pSRam0000000182db2520) {
+                if (pSVar5->klass == pSRam0000000182dbbc60) {
                   pSVar7 = pSVar5;
                 }
                 if (pSVar7 == (String *)0x0) {
@@ -307,7 +307,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                 }
                 else {
                   pSVar7 = pSVar6;
-                  if (pSVar5->klass == pSRam0000000182db2520) {
+                  if (pSVar5->klass == pSRam0000000182dbbc60) {
                     pSVar7 = pSVar5;
                   }
                   if (pSVar7 == (String *)0x0) {
@@ -317,7 +317,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                     return;
                   }
                   (this->fields).description = pSVar7;
-                  if (pSVar5->klass == pSRam0000000182db2520) {
+                  if (pSVar5->klass == pSRam0000000182dbbc60) {
                     pSVar6 = pSVar5;
                   }
                   if (pSVar6 == (String *)0x0) {

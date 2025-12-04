@@ -2062,20 +2062,20 @@ code_?:
     }
     pSVar5 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral__3_1_60_0);
+      FUN_?(&StringLiteral__3_2_9_0);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pSVar41 = StringLiteral__3_1_60_0;
+    pSVar41 = StringLiteral__3_2_9_0;
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral_development);
+      FUN_?(&StringLiteral__2025_11_26TextOverhaul);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
     pSVar5 = mscorlib.dll::System::String::String_Format_1
-                        (pSVar5,(Object *)pSVar41,(Object *)StringLiteral_development,
+                        (pSVar5,(Object *)pSVar41,(Object *)StringLiteral__2025_11_26TextOverhaul,
                          (MethodInfo *)0x0);
     goto code_?;
   }
@@ -4285,14 +4285,14 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ShowBuildInform
   }
   pSVar1 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_1_60_0);
+    FUN_?(&StringLiteral__3_2_9_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  arg0 = StringLiteral__3_1_60_0;
+  arg0 = StringLiteral__3_2_9_0;
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_development);
+    FUN_?(&StringLiteral__2025_11_26TextOverhaul);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -4302,7 +4302,8 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ShowBuildInform
   PStack_2._arg2 = (Object *)0x0;
   PStack_2._args = (Object__Array *)0x0;
   mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1
-            (&PStack_2,(Object *)arg0,(Object *)StringLiteral_development,(MethodInfo *)0x0);
+            (&PStack_2,(Object *)arg0,(Object *)StringLiteral__2025_11_26TextOverhaul,
+             (MethodInfo *)0x0);
   PStack_3._arg0 = PStack_2._arg0;
   PStack_3._arg1 = PStack_2._arg1;
   PStack_3._arg2 = PStack_2._arg2;

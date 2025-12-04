@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_AddAdminMessage
                      );
   pOVar1 = (Object *)0x0;
   if (pOVar3 != (Object *)0x0) {
-    if (pOVar3->klass == pORam0000000182db2520) {
+    if (pOVar3->klass == pORam0000000182dbbc60) {
       pOVar1 = pOVar3;
     }
     if (pOVar1 == (Object *)0x0) {
@@ -111,7 +111,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_AddChatLine
     pOVar1 = (Object *)0x0;
     pOVar4 = pOVar1;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182db2520) {
+      if (pOVar2->klass == pORam0000000182dbbc60) {
         pOVar4 = pOVar2;
       }
       if (pOVar4 == (Object *)0x0) {
@@ -505,7 +505,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_AddWarningMessa
                        );
     if (pSVar1 != (String *)0x0) {
       pSVar2 = (String *)0x0;
-      if (pSVar1->klass == pSRam0000000182db2520) {
+      if (pSVar1->klass == pSRam0000000182dbbc60) {
         pSVar2 = pSVar1;
       }
       if (pSVar2 != (String *)0x0) {
@@ -695,7 +695,7 @@ String * Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_FormatSayCh
     pOVar1 = (Object *)0x0;
     pOVar4 = pOVar1;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182db2520) {
+      if (pOVar2->klass == pORam0000000182dbbc60) {
         pOVar4 = pOVar2;
       }
       if (pOVar4 == (Object *)0x0) {
@@ -990,7 +990,7 @@ String * Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_FormatTeamC
     pOVar1 = (Object *)0x0;
     pOVar4 = pOVar1;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182db2520) {
+      if (pOVar2->klass == pORam0000000182dbbc60) {
         pOVar4 = pOVar2;
       }
       if (pOVar4 == (Object *)0x0) {
@@ -1344,11 +1344,10 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_HandleSayChatMe
           bVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                    GameObject_get_activeInHierarchy(this_00,(MethodInfo *)0x0);
           if ((bVar14 != 0) &&
-             (TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved !=
-              (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *
-              )0x0)) {
-            pAVar15 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
-                     OnSayChatMessageRecieved;
+             (pAVar15 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+                       OnSayChatMessageRecieved,
+             pAVar15 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                        *)0x0)) {
             (*(pAVar15->fields)._._.invoke_impl)
                       ((pAVar15->fields)._._.method_code,iVar8,data,(pAVar15->fields)._._.method);
           }
@@ -1630,92 +1629,9 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_PromptRegisterF
       if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
         FUN_?();
       }
-      if (cRam_? == '\0') {
-        FUN_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                      ,8,0);
-        LOCK();
-        UNLOCK();
-        FUN_?(&
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     );
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__NotificationController);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-                 *)FUN_?(
-                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
-                (this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
-        FUN_?();
-      }
-      uVar2 = 0;
-      if (cRam_? == '\0') {
-        FUN_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                      ,this_01,8,0);
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__NotificationController);
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__NotificationLifetime);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      auStackX_18[0] = CONCAT31(auStackX_18[0]._1_3_,2);
-      key = (Object *)FUN_?(uRam_?,auStackX_18);
-      auStackX_18[0] = 8;
-      value = (Object *)FUN_?(TypeInfo__NotificationLifetime,auStackX_18);
-      if (this_01 !=
-          (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-           *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__TryInsert
-                  ((Dictionary_2_System_Object_System_Object_ *)this_01,key,value,
-                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   ->klass->rgctx_data[0x22].method);
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__NotificationsManager);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
-          if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__NotificationsManager);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
-          if (this_00 == (NotificationsManager *)0x0) goto code_?;
-          NotificationsManager::NotificationsManager_InstantiateNotification
-                    (this_00,NotificationType__Enum_RegisterToChat,
-                     (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
-        }
-        return;
-      }
-code_?:
-      FUN_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      NotificationController::NotificationController_PushNotification_1
+                (NotificationType__Enum_RegisterToChat,NotificationLifetime__Enum_High,
+                 (MethodInfo *)0x0);
     }
   }
   return;
@@ -1760,7 +1676,7 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_ReceiveMessage
                         );
     pOVar1 = (Object *)0x0;
     if (pOVar3 != (Object *)0x0) {
-      if ((String__Class *)pOVar3->klass == pSRam0000000182db2520) {
+      if ((String__Class *)pOVar3->klass == pSRam0000000182dbbc60) {
         pOVar1 = pOVar3;
       }
       if (pOVar1 == (Object *)0x0) {
@@ -2009,12 +1925,11 @@ void Assembly-CSharp.dll::ChatControllerBase::ChatControllerBase_ReceiveMessage
                   bVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                            GameObject_get_activeInHierarchy(this_03,(MethodInfo *)0x0);
                   if ((bVar19 != 0) &&
-                     (TypeInfo__SayChatBubbleVisibilityManager->static_fields->
-                      OnSayChatMessageRecieved !=
-                      (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                       *)0x0)) {
-                    pAVar21 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
-                              OnSayChatMessageRecieved;
+                     (pAVar21 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+                                OnSayChatMessageRecieved,
+                     pAVar21 !=
+                     (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                      *)0x0)) {
                     PStack_4._args = (Object__Array *)&UNK_?;
                     (*(pAVar21->fields)._._.invoke_impl)
                               ((pAVar21->fields)._._.method_code,iVar20,message,
@@ -2064,7 +1979,7 @@ code_?:
       return;
     }
     pSVar6 = (String *)0x0;
-    if (pSVar7->klass == pSRam0000000182db2520) {
+    if (pSVar7->klass == pSRam0000000182dbbc60) {
       pSVar6 = pSVar7;
     }
     if (pSVar6 != (String *)0x0) {
@@ -2147,7 +2062,7 @@ code_?:
     pOVar1 = (Object *)0x0;
     pOVar3 = pOVar1;
     if (pOVar23 != (Object *)0x0) {
-      if ((String__Class *)pOVar23->klass == pSRam0000000182db2520) {
+      if ((String__Class *)pOVar23->klass == pSRam0000000182dbbc60) {
         pOVar3 = pOVar23;
       }
       if (pOVar3 == (Object *)0x0) {

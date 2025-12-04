@@ -952,7 +952,7 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_OnSubmitData
                 if (this_02 == (List_1_System_Object_ *)0x0) goto code_?;
                 if (pOVar1 != (Object *)0x0) {
                   pOVar17 = (Object *)0x0;
-                  if (pOVar1->klass == pORam0000000182db2520) {
+                  if (pOVar1->klass == pORam0000000182dbbc60) {
                     pOVar17 = pOVar1;
                   }
                   if (pOVar17 == (Object *)0x0) goto code_?;

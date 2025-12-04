@@ -99,7 +99,7 @@ bool Assembly-CSharp.dll::AddDotsToTruncatedText+<Start>d__1::
     pTVar2 = (this_00->fields).text;
     if ((pTVar2 != (Text *)0x0) &&
        (pTVar15 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator
-                            (pTVar2,(MethodInfo *)0x0), pTVar15 != (TextGenerator *)0x0)) {
+                            (pTVar2,(MethodInfo *)0x0), pTVar15 != (TextGenerator_1 *)0x0)) {
       pvVar16 = (pTVar15->fields).m_Ptr;
       if (pvVar16 == (void *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
@@ -147,7 +147,7 @@ bool Assembly-CSharp.dll::AddDotsToTruncatedText+<Start>d__1::
         if ((pFVar19->fields).m_BestFit != 0) {
           pTVar15 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator
                               (pTVar2,(MethodInfo *)0x0);
-          if (pTVar15 == (TextGenerator *)0x0) goto code_?;
+          if (pTVar15 == (TextGenerator_1 *)0x0) goto code_?;
           pvVar16 = (pTVar15->fields).m_Ptr;
           if (pvVar16 == (void *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::

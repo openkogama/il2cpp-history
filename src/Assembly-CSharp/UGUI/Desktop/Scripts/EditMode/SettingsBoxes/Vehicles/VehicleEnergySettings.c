@@ -618,7 +618,7 @@ code_?:
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           ), this_02 == (SettingsInputField *)0x0)) goto code_?;
   if (pSVar14 != (String *)0x0) {
-    if (pSVar14->klass == pSRam0000000182db2520) {
+    if (pSVar14->klass == pSRam0000000182dbbc60) {
       pSVar4 = pSVar14;
     }
     if (pSVar4 == (String *)0x0) {
@@ -669,7 +669,7 @@ code_?:
   pSVar4 = mscorlib.dll::System::String::String_Concat_4
                       (StringLiteral_BlueprintData_,pSVar4,(MethodInfo *)0x0);
   if (pSVar18 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar18,pSVar4,(float)iVar16,(MethodInfo *)0x0);
   VehicleEnergySettings_UpdateSpawnOptionText(this,iVar16,(MethodInfo *)0x0);
   pDVar13 = (this->fields).spawnerBpData;
@@ -724,7 +724,7 @@ code_?:
   pSVar4 = mscorlib.dll::System::String::String_Concat_4
                       (StringLiteral_BlueprintData_,pSVar4,(MethodInfo *)0x0);
   if (pSVar18 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar18,pSVar4,fVar19,(MethodInfo *)0x0);
   pSVar4 = StringLiteral_VehicleEnergyAmount;
   pSVar17 = (this->fields).energyAmountSlider;
@@ -854,7 +854,7 @@ code_?:
     }
   }
   pSVar4 = mscorlib.dll::System::String::String_Replace_1
-                      (pSVar4,::StringLiteral__,*(String **)pSRam0000000182db2520->static_fields,
+                      (pSVar4,::StringLiteral__,*(String **)pSRam0000000182dbbc60->static_fields,
                        (MethodInfo *)0x0);
   if ((this_00->fields).m_LineType == 0) {
     if ((pSVar4 == (String *)0x0) ||

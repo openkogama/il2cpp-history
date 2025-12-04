@@ -179,7 +179,7 @@ CubeMathFunctions_WorldPosToFineGrainedLocalPos
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar8 = mscorlib.dll::System::Math::Math_Round_5
+  dVar8 = mscorlib.dll::System::Math::Math_Round_4
                     ((double)fVar7,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
@@ -191,7 +191,7 @@ CubeMathFunctions_WorldPosToFineGrainedLocalPos
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar9 = mscorlib.dll::System::Math::Math_Round_5
+  dVar9 = mscorlib.dll::System::Math::Math_Round_4
                     ((double)fVar7,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
@@ -203,7 +203,7 @@ CubeMathFunctions_WorldPosToFineGrainedLocalPos
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar10 = mscorlib.dll::System::Math::Math_Round_5
+  dVar10 = mscorlib.dll::System::Math::Math_Round_4
                     ((double)fVar7,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   __return_storage_ptr__->x = (int16_t)(int)dVar8;
   __return_storage_ptr__->y = (int16_t)(int)dVar9;
@@ -258,7 +258,7 @@ CubeMathFunctions_WorldPosToFineGrainedLocalPos_1
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar11 = mscorlib.dll::System::Math::Math_Round_5
+  dVar11 = mscorlib.dll::System::Math::Math_Round_4
                     ((double)fVar10,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
@@ -270,7 +270,7 @@ CubeMathFunctions_WorldPosToFineGrainedLocalPos_1
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar12 = mscorlib.dll::System::Math::Math_Round_5
+  dVar12 = mscorlib.dll::System::Math::Math_Round_4
                     ((double)fVar10,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
@@ -282,7 +282,7 @@ CubeMathFunctions_WorldPosToFineGrainedLocalPos_1
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar13 = mscorlib.dll::System::Math::Math_Round_5
+  dVar13 = mscorlib.dll::System::Math::Math_Round_4
                      ((double)fVar10,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   __return_storage_ptr__->x = (int16_t)(int)dVar11;
   __return_storage_ptr__->y = (int16_t)(int)dVar12;

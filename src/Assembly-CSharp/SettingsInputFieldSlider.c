@@ -225,12 +225,37 @@ code_?:
 
 
 /* Void Initialize(String, Dictionary`2[System.Object,System.Object],
-   Func`2[String,ValueTuple`2[Single,Single]]) */
+   Func`2[String,ValueTuple`2[Single,Single]], Single) */
 
 void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
                (SettingsInputFieldSlider *this,String *key,
                Dictionary_2_System_Object_System_Object_ *itemData,
-               Func_2_String_ValueTuple_2_Single_Single_ *mimMaxFunc,MethodInfo *method)
+               Func_2_String_ValueTuple_2_Single_Single_ *minMaxFunc,float conversionValue,
+               MethodInfo *method)
+
+{
+  if (minMaxFunc != (Func_2_String_ValueTuple_2_Single_Single_ *)0x0) {
+    uVar1 = (*(minMaxFunc->fields)._._.invoke_impl)
+                      ((minMaxFunc->fields)._._.method_code,key,(minMaxFunc->fields)._._.method);
+    fStackX_14 = (float)((ulonglong)uVar1 >> 0x20);
+    fStackX_10 = (float)uVar1;
+    SettingsInputFieldSlider_Initialize_1
+              (this,key,itemData,fStackX_10,fStackX_14,conversionValue,(MethodInfo *)0x0);
+    return;
+  }
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void Initialize(String, Dictionary`2[System.Object,System.Object], Single, Single, Single) */
+
+void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+               (SettingsInputFieldSlider *this,String *key,
+               Dictionary_2_System_Object_System_Object_ *itemData,float min,float max,
+               float conversionValue,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -259,33 +284,28 @@ code_?:
     (*pcVar2)();
     return;
   }
-  fVar3 = *(float *)&pOVar1[1].klass;
-  if (mimMaxFunc == (Func_2_String_ValueTuple_2_Single_Single_ *)0x0) goto code_?;
-  uVar4 = (*(mimMaxFunc->fields)._._.invoke_impl)((mimMaxFunc->fields)._._.method_code,key);
   this_00 = (this->fields).settingsSlider;
+  fVar3 = conversionValue * *(float *)&pOVar1[1].klass;
   if (this_00 == (SettingsSlider *)0x0) goto code_?;
-  fStackX_14 = (float)((ulonglong)uVar4 >> 0x20);
-  fStackX_10 = (float)uVar4;
-  SettingsSlider::SettingsSlider_Initialize
-            (this_00,key,fVar3,fStackX_10,fStackX_14,(MethodInfo *)0x0);
-  bVar5 = iRam_? != 0;
+  SettingsSlider::SettingsSlider_Initialize(this_00,key,fVar3,min,max,(MethodInfo *)0x0);
+  bVar4 = iRam_? != 0;
   (this->fields).key = key;
-  if (bVar5) {
-    uVar6 = (uint)((ulonglong)&(this->fields).key >> 0xc);
-    uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&(this->fields).key >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
     do {
-      uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
-      puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
       LOCK();
-      bVar5 = uVar8 == *puVar9;
-      if (bVar5) {
-        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
       }
       UNLOCK();
-    } while (!bVar5);
+    } while (!bVar4);
   }
   fVar3 = SettingsInputFieldSlider_GetInputFieldValue(this,fVar3,(MethodInfo *)0x0);
-  pSVar10 = SettingsInputFieldSlider_ConvertFloatToString(fVar3,(MethodInfo *)0x0);
+  pSVar9 = SettingsInputFieldSlider_ConvertFloatToString(fVar3,(MethodInfo *)0x0);
   this_01 = (this->fields).inputField;
   if (this_01 == (InputField *)0x0) {
     FUN_?();
@@ -317,184 +337,184 @@ code_?:
     UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar11 = (this_01->fields).m_Text;
-  if (pSVar11 == pSVar10) {
+  pSVar10 = (this_01->fields).m_Text;
+  if (pSVar10 == pSVar9) {
     return;
   }
-  if (pSVar11 == (String *)0x0) {
+  if (pSVar10 == (String *)0x0) {
 code_?:
-    if (pSVar10 == (String *)0x0) {
+    if (pSVar9 == (String *)0x0) {
 code_?:
-      pSVar10 = ::StringLiteral__;
+      pSVar9 = ::StringLiteral__;
       if (::StringLiteral__ == (String *)0x0) goto DAT_?;
     }
   }
   else {
-    if (pSVar10 == (String *)0x0) goto code_?;
-    if ((pSVar11->fields)._stringLength == (pSVar10->fields)._stringLength) {
-      bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
-                        ((uint8_t *)&(pSVar11->fields)._firstChar,
-                         (uint8_t *)&(pSVar10->fields)._firstChar,
-                         (longlong)(pSVar11->fields)._stringLength * 2,(MethodInfo *)0x0);
-      if (bVar12 != 0) {
+    if (pSVar9 == (String *)0x0) goto code_?;
+    if ((pSVar10->fields)._stringLength == (pSVar9->fields)._stringLength) {
+      bVar11 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                        ((uint8_t *)&(pSVar10->fields)._firstChar,
+                         (uint8_t *)&(pSVar9->fields)._firstChar,
+                         (longlong)(pSVar10->fields)._stringLength * 2,(MethodInfo *)0x0);
+      if (bVar11 != 0) {
         return;
       }
       goto code_?;
     }
   }
-  pSVar10 = mscorlib.dll::System::String::String_Replace_1
-                      (pSVar10,::StringLiteral__,
-                       (String *)**(undefined8 **)(lRam_? + 0xb8),(MethodInfo *)0x0);
+  pSVar9 = mscorlib.dll::System::String::String_Replace_1
+                     (pSVar9,::StringLiteral__,
+                      (String *)**(undefined8 **)(lRam_? + 0xb8),(MethodInfo *)0x0);
   if ((this_01->fields).m_LineType == 0) {
-    if ((pSVar10 == (String *)0x0) ||
-       (pSVar10 = mscorlib.dll::System::String::String_Replace_1
-                            (pSVar10,StringLiteral_u000A,::StringLiteral__,(MethodInfo *)0x0),
-       pSVar10 == (String *)0x0)) goto DAT_?;
-    pSVar10 = mscorlib.dll::System::String::String_Replace_1
-                        (pSVar10,StringLiteral_u0009,::StringLiteral__,(MethodInfo *)0x0);
+    if ((pSVar9 == (String *)0x0) ||
+       (pSVar9 = mscorlib.dll::System::String::String_Replace_1
+                           (pSVar9,StringLiteral_u000A,::StringLiteral__,(MethodInfo *)0x0),
+       pSVar9 == (String *)0x0)) goto DAT_?;
+    pSVar9 = mscorlib.dll::System::String::String_Replace_1
+                       (pSVar9,StringLiteral_u0009,::StringLiteral__,(MethodInfo *)0x0);
   }
   if (((this_01->fields).m_OnValidateInput == (InputField_OnValidateInput *)0x0) &&
      ((this_01->fields).m_CharacterValidation == 0)) {
     if (0 < (this_01->fields).m_CharacterLimit) {
-      if (pSVar10 == (String *)0x0) goto DAT_?;
-      iVar13 = (this_01->fields).m_CharacterLimit;
-      if (iVar13 < (pSVar10->fields)._stringLength) {
-        pSVar10 = mscorlib.dll::System::String::String_Substring_1
-                            (pSVar10,0,iVar13,(MethodInfo *)0x0);
+      if (pSVar9 == (String *)0x0) goto DAT_?;
+      iVar12 = (this_01->fields).m_CharacterLimit;
+      if (iVar12 < (pSVar9->fields)._stringLength) {
+        pSVar9 = mscorlib.dll::System::String::String_Substring_1(pSVar9,0,iVar12,(MethodInfo *)0x0)
+        ;
       }
     }
-    (this_01->fields).m_Text = pSVar10;
+    (this_01->fields).m_Text = pSVar9;
     func_?(&(this_01->fields).m_Text);
   }
   else {
-    bVar5 = iRam_? != 0;
+    bVar4 = iRam_? != 0;
     (this_01->fields).m_Text = ::StringLiteral__;
-    if (bVar5) {
-      uVar6 = (uint)((ulonglong)&(this_01->fields).m_Text >> 0xc);
-      lVar14 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(this_01->fields).m_Text >> 0xc);
+      lVar13 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
       do {
-        uVar7 = *(ulonglong *)(lVar14 + 0xADDR);
-        puVar9 = (ulonglong *)(lVar14 + 0xADDR);
+        uVar6 = *(ulonglong *)(lVar13 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar13 + 0xADDR);
         LOCK();
-        bVar5 = uVar7 == *puVar9;
-        if (bVar5) {
-          *puVar9 = uVar7 | 1L << (uVar6 & 0x3f);
+        bVar4 = uVar6 == *puVar8;
+        if (bVar4) {
+          *puVar8 = uVar6 | 1L << (uVar5 & 0x3f);
         }
         UNLOCK();
-      } while (!bVar5);
+      } while (!bVar4);
     }
-    pIVar15 = (this_01->fields).m_OnValidateInput;
-    if (pIVar15 == (InputField_OnValidateInput *)0x0) {
-      pIVar15 = (InputField_OnValidateInput *)
+    pIVar14 = (this_01->fields).m_OnValidateInput;
+    if (pIVar14 == (InputField_OnValidateInput *)0x0) {
+      pIVar14 = (InputField_OnValidateInput *)
                 FUN_?(TypeInfo__UnityEngine__UI__InputField__OnValidateInput);
-      pMVar16 = MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_;
-      bVar5 = iRam_? != 0;
-      (pIVar15->fields)._._.method_ptr =
+      pMVar15 = MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_;
+      bVar4 = iRam_? != 0;
+      (pIVar14->fields)._._.method_ptr =
            MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_->
            virtualMethodPointer;
-      (pIVar15->fields)._._.method = pMVar16;
-      (pIVar15->fields)._._.m_target = (Object *)this_01;
-      if (bVar5) {
-        uVar6 = (uint)((ulonglong)&(pIVar15->fields)._._.m_target >> 0xc);
-        lVar14 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      (pIVar14->fields)._._.method = pMVar15;
+      (pIVar14->fields)._._.m_target = (Object *)this_01;
+      if (bVar4) {
+        uVar5 = (uint)((ulonglong)&(pIVar14->fields)._._.m_target >> 0xc);
+        lVar13 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
         do {
-          uVar7 = *(ulonglong *)(lVar14 + 0xADDR);
-          puVar9 = (ulonglong *)(lVar14 + 0xADDR);
+          uVar6 = *(ulonglong *)(lVar13 + 0xADDR);
+          puVar8 = (ulonglong *)(lVar13 + 0xADDR);
           LOCK();
-          bVar5 = uVar7 == *puVar9;
-          if (bVar5) {
-            *puVar9 = uVar7 | 1L << (uVar6 & 0x3f);
+          bVar4 = uVar6 == *puVar8;
+          if (bVar4) {
+            *puVar8 = uVar6 | 1L << (uVar5 & 0x3f);
           }
           UNLOCK();
-        } while (!bVar5);
+        } while (!bVar4);
       }
-      uVar17 = pMVar16->parameters_count;
-      (pIVar15->fields)._._.method_code = pIVar15;
-      if ((pMVar16->flags & 0x10) == 0) {
-        if (uVar17 != 2) goto code_?;
+      uVar16 = pMVar15->parameters_count;
+      (pIVar14->fields)._._.method_code = pIVar14;
+      if ((pMVar15->flags & 0x10) == 0) {
+        if (uVar16 != 2) goto code_?;
         pcVar2 = FUN_?;
       }
-      else if (uVar17 == 3) {
+      else if (uVar16 == 3) {
         pcVar2 = FUN_?;
       }
       else {
 code_?:
-        (pIVar15->fields)._._.method_code = (pIVar15->fields)._._.m_target;
-        pcVar2 = (pIVar15->fields)._._.method_ptr;
+        (pIVar14->fields)._._.method_code = (pIVar14->fields)._._.m_target;
+        pcVar2 = (pIVar14->fields)._._.method_ptr;
       }
-      (pIVar15->fields)._._.invoke_impl = pcVar2;
-      (pIVar15->fields)._._.extra_arg = FUN_?;
+      (pIVar14->fields)._._.invoke_impl = pcVar2;
+      (pIVar14->fields)._._.extra_arg = FUN_?;
     }
-    if (pSVar10 == (String *)0x0) goto DAT_?;
-    iVar18 = (pSVar10->fields)._stringLength;
-    (this_01->fields).m_CaretSelectPosition = iVar18;
-    (this_01->fields).m_CaretPosition = iVar18;
+    if (pSVar9 == (String *)0x0) goto DAT_?;
+    iVar17 = (pSVar9->fields)._stringLength;
+    (this_01->fields).m_CaretSelectPosition = iVar17;
+    (this_01->fields).m_CaretPosition = iVar17;
     if ((this_01->fields).m_CharacterLimit < 1) {
-      iVar13 = (pSVar10->fields)._stringLength;
+      iVar12 = (pSVar9->fields)._stringLength;
     }
     else {
-      iVar13 = (this_01->fields).m_CharacterLimit;
-      iVar19 = (pSVar10->fields)._stringLength;
+      iVar12 = (this_01->fields).m_CharacterLimit;
+      iVar18 = (pSVar9->fields)._stringLength;
       if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
         FUN_?();
       }
-      if (iVar19 < iVar13) {
-        iVar13 = iVar19;
+      if (iVar18 < iVar12) {
+        iVar12 = iVar18;
       }
     }
-    uVar6 = 0;
-    if (0 < iVar13) {
-      puVar20 = &(pSVar10->fields)._firstChar;
-      lVar14 = 0;
+    uVar5 = 0;
+    if (0 < iVar12) {
+      puVar19 = &(pSVar9->fields)._firstChar;
+      lVar13 = 0;
       do {
-        pSVar11 = (this_01->fields).m_Text;
-        if (pSVar11 == (String *)0x0) goto DAT_?;
-        if ((longlong)(pSVar10->fields)._stringLength <= (longlong)(ulonglong)uVar6) {
+        pSVar10 = (this_01->fields).m_Text;
+        if (pSVar10 == (String *)0x0) goto DAT_?;
+        if ((longlong)(pSVar9->fields)._stringLength <= (longlong)(ulonglong)uVar5) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException
                     ((MethodInfo *)0x0);
           pcVar2 = (code *)swi(3);
           (*pcVar2)();
           return;
         }
-        if (pIVar15 == (InputField_OnValidateInput *)0x0) goto DAT_?;
-        c = (*(pIVar15->fields)._._.invoke_impl)
-                      ((pIVar15->fields)._._.method_code,(this_01->fields).m_Text,
-                       (pSVar11->fields)._stringLength,*puVar20,(pIVar15->fields)._._.method);
+        if (pIVar14 == (InputField_OnValidateInput *)0x0) goto DAT_?;
+        c = (*(pIVar14->fields)._._.invoke_impl)
+                      ((pIVar14->fields)._._.method_code,(this_01->fields).m_Text,
+                       (pSVar10->fields)._stringLength,*puVar19,(pIVar14->fields)._._.method);
         if (c != 0) {
-          pSVar11 = (this_01->fields).m_Text;
+          pSVar10 = (this_01->fields).m_Text;
           if ((*(int *)(lRam_? + 0xe4) == 0) &&
              (FUN_?(), *(int *)(lRam_? + 0xe4) == 0)) {
             FUN_?();
           }
           str1 = mscorlib.dll::System::Char::Char_ToString_2(c,(MethodInfo *)0x0);
-          pSVar11 = mscorlib.dll::System::String::String_Concat_4(pSVar11,str1,(MethodInfo *)0x0);
-          (this_01->fields).m_Text = pSVar11;
+          pSVar10 = mscorlib.dll::System::String::String_Concat_4(pSVar10,str1,(MethodInfo *)0x0);
+          (this_01->fields).m_Text = pSVar10;
           func_?(&(this_01->fields).m_Text);
         }
-        uVar6 = uVar6 + 1;
-        lVar14 = lVar14 + 1;
-        puVar20 = puVar20 + 1;
-      } while (lVar14 < iVar13);
+        uVar5 = uVar5 + 1;
+        lVar13 = lVar13 + 1;
+        puVar19 = puVar19 + 1;
+      } while (lVar13 < iVar12);
     }
   }
   if ((this_01->fields).m_Keyboard != (TouchScreenKeyboard *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::TouchScreenKeyboard::TouchScreenKeyboard_set_text
               ((this_01->fields).m_Keyboard,(this_01->fields).m_Text,(MethodInfo *)0x0);
   }
-  pSVar10 = (this_01->fields).m_Text;
-  if (pSVar10 == (String *)0x0) {
+  pSVar9 = (this_01->fields).m_Text;
+  if (pSVar9 == (String *)0x0) {
 DAT_?:
     FUN_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  iVar13 = (pSVar10->fields)._stringLength;
-  if (iVar13 < (this_01->fields).m_CaretPosition) {
-    (this_01->fields).m_CaretPosition = iVar13;
+  iVar12 = (pSVar9->fields)._stringLength;
+  if (iVar12 < (this_01->fields).m_CaretPosition) {
+    (this_01->fields).m_CaretPosition = iVar12;
   }
-  else if ((this_01->fields).m_CaretSelectPosition <= iVar13) goto code_?;
-  (this_01->fields).m_CaretSelectPosition = iVar13;
+  else if ((this_01->fields).m_CaretSelectPosition <= iVar12) goto code_?;
+  (this_01->fields).m_CaretSelectPosition = iVar12;
 code_?:
   if (cRam_? == '\0') {
     FUN_?(&
@@ -524,7 +544,7 @@ code_?:
 
 /* Void Initialize(String, Single) */
 
-void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                (SettingsInputFieldSlider *this,String *key,float value,MethodInfo *method)
 
 {
@@ -784,7 +804,7 @@ code_?:
 
 /* Void Initialize(String, Int32) */
 
-void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
+void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_3
                (SettingsInputFieldSlider *this,String *key,int32_t value,MethodInfo *method)
 
 {
@@ -1413,11 +1433,11 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Sli
           LOCK();
           UNLOCK();
           FUN_?(&
-                        MethodInfo__SettingsInputFieldSlider____c__DisplayClass18_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+                        MethodInfo__SettingsInputFieldSlider____c__DisplayClass19_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
                        );
           LOCK();
           UNLOCK();
-          FUN_?(&TypeInfo__SettingsInputFieldSlider____c__DisplayClass18_0);
+          FUN_?(&TypeInfo__SettingsInputFieldSlider____c__DisplayClass19_0);
           LOCK();
           UNLOCK();
           FUN_?(&::StringLiteral__);
@@ -1428,7 +1448,7 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Sli
           UNLOCK();
           cRam_? = '\x01';
         }
-        object = (Object *)FUN_?(TypeInfo__SettingsInputFieldSlider____c__DisplayClass18_0);
+        object = (Object *)FUN_?(TypeInfo__SettingsInputFieldSlider____c__DisplayClass19_0);
         if (object != (Object *)0x0) {
           bVar6 = iRam_? != 0;
           object[1].klass = (Object__Class *)this;
@@ -1488,7 +1508,7 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Sli
                 UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System
                 ::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
                           (this_01,object,
-                           MethodInfo__SettingsInputFieldSlider____c__DisplayClass18_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+                           MethodInfo__SettingsInputFieldSlider____c__DisplayClass19_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
                            ,(MethodInfo *)0x0);
                 if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c ==
                     0) {
@@ -1685,11 +1705,11 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Val
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__SettingsInputFieldSlider____c__DisplayClass18_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+                  MethodInfo__SettingsInputFieldSlider____c__DisplayClass19_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
                  );
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__SettingsInputFieldSlider____c__DisplayClass18_0);
+    FUN_?(&TypeInfo__SettingsInputFieldSlider____c__DisplayClass19_0);
     LOCK();
     UNLOCK();
     FUN_?(&::StringLiteral__);
@@ -1700,7 +1720,7 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Val
     UNLOCK();
     cRam_? = '\x01';
   }
-  object = (Object *)FUN_?(TypeInfo__SettingsInputFieldSlider____c__DisplayClass18_0);
+  object = (Object *)FUN_?(TypeInfo__SettingsInputFieldSlider____c__DisplayClass19_0);
   if (object != (Object *)0x0) {
     bVar1 = iRam_? != 0;
     object[1].klass = (Object__Class *)this;
@@ -1760,7 +1780,7 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Val
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
           Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
                     (this_01,object,
-                     MethodInfo__SettingsInputFieldSlider____c__DisplayClass18_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+                     MethodInfo__SettingsInputFieldSlider____c__DisplayClass19_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
             FUN_?();

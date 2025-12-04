@@ -16,6 +16,11 @@ public class RoundedRectangle : Image
 {
 	// Fields
 	public float radius;
+	public float borderThickness;
+	public Color borderColor;
+
+	// Properties
+	public Rect Rectangle { get; }
 
 	// Constructors
 	public RoundedRectangle();

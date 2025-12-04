@@ -1,8 +1,8 @@
 
-/* Boolean BindAttachedBubble(ChatBubble) */
+/* Boolean BindAttachedBubble(ChatBubble, String) */
 
 bool Assembly-CSharp.dll::ChatAnchor::ChatAnchor_BindAttachedBubble
-               (ChatAnchor *this,ChatBubble *value,MethodInfo *method)
+               (ChatAnchor *this,ChatBubble *value,String *ownerName,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -65,10 +65,27 @@ bool Assembly-CSharp.dll::ChatAnchor::ChatAnchor_BindAttachedBubble
           iVar3 = iRam_?;
         } while (!bVar2);
       }
+      (this->fields)._OwnerName_k__BackingField = ownerName;
+      iVar8 = 0;
+      if (iVar3 != 0) {
+        uVar4 = (uint)((ulonglong)&(this->fields)._OwnerName_k__BackingField >> 0xc);
+        lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+          puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+          LOCK();
+          bVar2 = uVar6 == *puVar7;
+          if (bVar2) {
+            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+          iVar8 = iRam_?;
+        } while (!bVar2);
+      }
       pCVar1 = (this->fields).AttachedBubble;
       if (pCVar1 != (ChatBubble *)0x0) {
         (pCVar1->fields).anchor = this;
-        if (iVar3 != 0) {
+        if (iVar8 != 0) {
           uVar4 = (uint)((ulonglong)&(pCVar1->fields).anchor >> 0xc);
           lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
           do {
@@ -87,25 +104,25 @@ bool Assembly-CSharp.dll::ChatAnchor::ChatAnchor_BindAttachedBubble
       }
 code_?:
       FUN_?();
-      pcVar8 = (code *)swi(3);
-      bVar9 = (*pcVar8)();
-      return bVar9;
+      pcVar9 = (code *)swi(3);
+      bVar10 = (*pcVar9)();
+      return bVar10;
     }
   }
   return 0;
 }
 
 
-/* Vector3 HandleOfScreenChatBubble(Camera, Vector3) */
+/* Vector3 HandleOffScreenChatBubble(Camera, Vector3) */
 
-Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
+Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOffScreenChatBubble
                     (Vector3 *__return_storage_ptr__,ChatAnchor *this,Camera *camera,
                     Vector3 *adjustedPosition,MethodInfo *method)
 
 {
   pCVar1 = (this->fields).AttachedBubble;
   if ((pCVar1 != (ChatBubble *)0x0) &&
-     (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+     (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
      pRVar2 != (RectTransform *)0x0)) {
     if (cRam_? == '\0') {
       FUN_?(&
@@ -138,7 +155,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
     (*pcRam_?)(pvVar5);
     pCVar1 = (this->fields).AttachedBubble;
     if ((pCVar1 != (ChatBubble *)0x0) &&
-       (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+       (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
        pRVar2 != (RectTransform *)0x0)) {
       if (cRam_? == '\0') {
         FUN_?(&
@@ -171,7 +188,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
       (*pcRam_?)(pvVar5);
       pCVar1 = (this->fields).AttachedBubble;
       if ((pCVar1 != (ChatBubble *)0x0) &&
-         (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+         (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
          pRVar2 != (RectTransform *)0x0)) {
         VVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
                           (pRVar2,(MethodInfo *)0x0);
@@ -209,7 +226,7 @@ code_?:
           iVar14 = (*pcRam_?)(pvVar5);
           pCVar1 = (this->fields).AttachedBubble;
           if ((pCVar1 != (ChatBubble *)0x0) &&
-             (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+             (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
              pRVar2 != (RectTransform *)0x0)) {
             if (cRam_? == '\0') {
               FUN_?(&
@@ -242,7 +259,7 @@ code_?:
             (*pcRam_?)(pvVar5);
             pCVar1 = (this->fields).AttachedBubble;
             if ((pCVar1 != (ChatBubble *)0x0) &&
-               (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+               (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
                pRVar2 != (RectTransform *)0x0)) {
               if (cRam_? == '\0') {
                 FUN_?(&
@@ -275,7 +292,7 @@ code_?:
               (*pcRam_?)(pvVar5);
               pCVar1 = (this->fields).AttachedBubble;
               if ((pCVar1 != (ChatBubble *)0x0) &&
-                 (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+                 (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
                  pRVar2 != (RectTransform *)0x0)) {
                 VVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                         RectTransform_get_pivot(pRVar2,(MethodInfo *)0x0);
@@ -286,7 +303,7 @@ code_?:
                          (float)uStack_4 * (float)uStack_9 * (_UNK_? - fStackX_8)) -
                          fVar12;
                 if ((pCVar1 != (ChatBubble *)0x0) &&
-                   (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+                   (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
                    pRVar2 != (RectTransform *)0x0)) {
                   if (cRam_? == '\0') {
                     FUN_?(&
@@ -319,7 +336,7 @@ code_?:
                   (*pcRam_?)(pvVar5);
                   pCVar1 = (this->fields).AttachedBubble;
                   if ((pCVar1 != (ChatBubble *)0x0) &&
-                     (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+                     (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
                      pRVar2 != (RectTransform *)0x0)) {
                     if (cRam_? == '\0') {
                       FUN_?(&
@@ -352,7 +369,7 @@ code_?:
                     (*pcRam_?)(pvVar5);
                     pCVar1 = (this->fields).AttachedBubble;
                     if ((pCVar1 != (ChatBubble *)0x0) &&
-                       (pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+                       (pRVar2 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
                        pRVar2 != (RectTransform *)0x0)) {
                       VVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                               RectTransform_get_pivot(pRVar2,(MethodInfo *)0x0);
@@ -381,7 +398,7 @@ code_?:
                       iVar14 = (*pcRam_?)(pvVar5);
                       pCVar1 = (this->fields).AttachedBubble;
                       if ((pCVar1 != (ChatBubble *)0x0) &&
-                         (pRVar2 = ChatBubble::ChatBubble_get_rectTransform
+                         (pRVar2 = ChatBubble::ChatBubble_get_RectTransform
                                              (pCVar1,(MethodInfo *)0x0),
                          pRVar2 != (RectTransform *)0x0)) {
                         if (cRam_? == '\0') {
@@ -417,7 +434,7 @@ code_?:
                         (*pcRam_?)(pvVar5);
                         pCVar1 = (this->fields).AttachedBubble;
                         if ((pCVar1 != (ChatBubble *)0x0) &&
-                           (pRVar2 = ChatBubble::ChatBubble_get_rectTransform
+                           (pRVar2 = ChatBubble::ChatBubble_get_RectTransform
                                                (pCVar1,(MethodInfo *)0x0),
                            pRVar2 != (RectTransform *)0x0)) {
                           if (cRam_? == '\0') {
@@ -453,7 +470,7 @@ code_?:
                           (*pcRam_?)(pvVar5);
                           pCVar1 = (this->fields).AttachedBubble;
                           if ((pCVar1 != (ChatBubble *)0x0) &&
-                             (pRVar2 = ChatBubble::ChatBubble_get_rectTransform
+                             (pRVar2 = ChatBubble::ChatBubble_get_RectTransform
                                                  (pCVar1,(MethodInfo *)0x0),
                              pRVar2 != (RectTransform *)0x0)) {
                             VVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
@@ -626,20 +643,13 @@ void Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HideChatBubble(ChatAnchor *this
     }
     if ((pCVar1->fields)._._._._.m_CachedPtr != (void *)0x0) {
       pCVar1 = (this->fields).AttachedBubble;
-      if (pCVar1 != (ChatBubble *)0x0) {
-        (pCVar1->fields).currentFade = 0.0;
-        (pCVar1->fields).timeUntilFade = 0.0;
-        this_00 = (pCVar1->fields).CanvasGroup;
-        if (this_00 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (this_00,0.0,(MethodInfo *)0x0);
-          return;
-        }
+      if (pCVar1 == (ChatBubble *)0x0) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
       }
-      FUN_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      ChatBubble::ChatBubble_HideBubble(pCVar1,(MethodInfo *)0x0);
     }
   }
   return;
@@ -704,10 +714,10 @@ void Assembly-CSharp.dll::ChatAnchor::ChatAnchor_InterpolateToNewBubblePosition
   pCVar9 = (this->fields).AttachedBubble;
   (this->fields).currentInterpolationProgress = fVar8 * (this->fields).TrackingSpeed + fVar5;
   if (pCVar9 != (ChatBubble *)0x0) {
-    pRVar10 = ChatBubble::ChatBubble_get_rectTransform(pCVar9,(MethodInfo *)0x0);
+    pRVar10 = ChatBubble::ChatBubble_get_RectTransform(pCVar9,(MethodInfo *)0x0);
     pCVar9 = (this->fields).AttachedBubble;
     if ((pCVar9 != (ChatBubble *)0x0) &&
-       (pRVar11 = ChatBubble::ChatBubble_get_rectTransform(pCVar9,(MethodInfo *)0x0),
+       (pRVar11 = ChatBubble::ChatBubble_get_RectTransform(pCVar9,(MethodInfo *)0x0),
        pRVar11 != (RectTransform *)0x0)) {
       if (cRam_? == '\0') {
         FUN_?(&
@@ -766,10 +776,10 @@ void Assembly-CSharp.dll::ChatAnchor::ChatAnchor_InterpolateToNewBubblePosition
         (*pcRam_?)(pvVar12);
         pCVar9 = (this->fields).AttachedBubble;
         if (pCVar9 != (ChatBubble *)0x0) {
-          pRVar10 = ChatBubble::ChatBubble_get_rectTransform(pCVar9,(MethodInfo *)0x0);
+          pRVar10 = ChatBubble::ChatBubble_get_RectTransform(pCVar9,(MethodInfo *)0x0);
           pCVar9 = (this->fields).AttachedBubble;
           if ((pCVar9 != (ChatBubble *)0x0) &&
-             (pRVar11 = ChatBubble::ChatBubble_get_rectTransform(pCVar9,(MethodInfo *)0x0),
+             (pRVar11 = ChatBubble::ChatBubble_get_RectTransform(pCVar9,(MethodInfo *)0x0),
              pRVar11 != (RectTransform *)0x0)) {
             if (cRam_? == '\0') {
               FUN_?(&
@@ -1021,52 +1031,43 @@ code_?:
               (*pcVar6)();
               return;
             }
-            cVar7 = (*(pPVar5->klass->vtable).get_FirstPerson.methodPtr)(pPVar5);
+            cVar7 = (*(pPVar5->klass->vtable).get_FirstPerson.methodPtr)
+                              (pPVar5,(pPVar5->klass->vtable).get_FirstPerson.method);
             if ((cVar7 != '\0') && ((pPVar5->fields)._IsHolstered_k__BackingField == 0)) {
               pCVar1 = (this->fields).AttachedBubble;
               if (pCVar1 != (ChatBubble *)0x0) {
-                obj = (pCVar1->fields).CanvasGroup;
-                (pCVar1->fields).currentFade = 0.0;
-                (pCVar1->fields).timeUntilFade = 0.0;
-                if (obj != (CanvasGroup *)0x0) {
-                  fVar8 = (pCVar1->fields).currentFade;
-                  if (cRam_? == '\0') {
-                    FUN_?(&
-                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
-                                  ,0,0);
-                    LOCK();
-                    UNLOCK();
-                    cRam_? = '\x01';
-                  }
-                  if (obj == (CanvasGroup *)0x0) {
-                    FUN_?();
-                    pcVar6 = (code *)swi(3);
-                    (*pcVar6)();
-                    return;
-                  }
-                  pvVar9 = (obj->fields)._._._.m_CachedPtr;
-                  if (pvVar9 == (void *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-                    pcVar6 = (code *)swi(3);
-                    (*pcVar6)();
-                    return;
-                  }
-                  pcVar6 = pcRam_?;
-                  if ((pcRam_? == (code *)0x0) &&
-                     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
-                    uVar10 = func_?(&UNK_?);
-                    FUN_?(uVar10,0);
-                    pcVar6 = (code *)swi(3);
-                    (*pcVar6)();
-                    return;
-                  }
-                  pcRam_? = pcVar6;
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                  (*pcRam_?)(pvVar9,fVar8);
+                this_00 = (pCVar1->fields).CanvasGroup;
+                if (this_00 == (CanvasGroup *)0x0) {
+                  FUN_?(0,0);
+                  pcVar6 = (code *)swi(3);
+                  (*pcVar6)();
                   return;
                 }
+                UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                          (this_00,0.0,(MethodInfo *)0x0);
+                if ((pCVar1->fields).animationCoroutine != (IEnumerator *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+                  MonoBehaviour_StopCoroutine
+                            ((MonoBehaviour *)pCVar1,(pCVar1->fields).animationCoroutine,
+                             (MethodInfo *)0x0);
+                  bVar8 = iRam_? != 0;
+                  (pCVar1->fields).animationCoroutine = (IEnumerator *)0x0;
+                  if (bVar8) {
+                    uVar9 = (uint)((ulonglong)&(pCVar1->fields).animationCoroutine >> 0xc);
+                    uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+                    do {
+                      uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+                      puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+                      LOCK();
+                      bVar8 = uVar11 == *puVar12;
+                      if (bVar8) {
+                        *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar8);
+                  }
+                }
+                return;
               }
               goto code_?;
             }
@@ -1209,7 +1210,7 @@ void Assembly-CSharp.dll::ChatAnchor::ChatAnchor_UpdateAttachedBubblePosition
             pCVar1 = (this->fields).AttachedBubble;
             aVStack_7[0].z = VStack_8.z;
             if ((pCVar1 != (ChatBubble *)0x0) &&
-               (obj_00 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+               (obj_00 = ChatBubble::ChatBubble_get_RectTransform(pCVar1,(MethodInfo *)0x0),
                obj_00 != (RectTransform *)0x0)) {
               if (cRam_? == '\0') {
                 FUN_?(&
@@ -1242,7 +1243,7 @@ void Assembly-CSharp.dll::ChatAnchor::ChatAnchor_UpdateAttachedBubblePosition
                 aVStack_7[0].x = VStack_8.x;
                 aVStack_7[0].y = VStack_8.y;
                 VStack_8._0_8_ = uVar9;
-                pVVar10 = ChatAnchor_HandleOfScreenChatBubble
+                pVVar10 = ChatAnchor_HandleOffScreenChatBubble
                                    (&VStack_8,this,camera,aVStack_7,(MethodInfo *)0x0);
                 aVStack_7[0].x = pVVar10->x;
                 aVStack_7[0].y = pVVar10->y;
@@ -1447,9 +1448,9 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (pcVar16 = (char *)((longlong)ppMVar15 + 0xADDR),
+                while (ppMVar16 = ppMVar15 + 0x30529dd4,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
-                      *pcVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                      *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

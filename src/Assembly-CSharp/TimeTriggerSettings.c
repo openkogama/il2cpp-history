@@ -93,7 +93,7 @@ code_?:
             (pSVar5,StringLiteral_duration,fVar4,_UNK_?,_UNK_?,(MethodInfo *)0x0);
   pSVar6 = (this->fields).durationInputField;
   if (pSVar6 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar6,StringLiteral_duration,fVar4,(MethodInfo *)0x0);
   pSVar5 = (this->fields).delaySlider;
   if (pSVar5 == (SettingsSlider *)0x0) goto code_?;

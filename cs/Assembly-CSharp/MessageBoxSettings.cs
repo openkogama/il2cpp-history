@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -14,30 +15,113 @@ using UnityEngine.UI;
 public class MessageBoxSettings : MonoBehaviour, IHandleSettingChanged
 {
 	// Fields
+	public const float FontSizeConversion = 10f;
+	private const int MIN = 0;
+	private const int MAX = 1;
+	public const float DefaultFontSize = 0.5f;
+	public const float DefaultTextThickness = 0f;
+	public const float DefaultBackgroundWidth = 30f;
+	public const float DefaultTextOutlineThickness = 0.1f;
+	public const float DefaultBackgroundRadius = 10f;
+	public const float DefaultBackgroundOutlineThickness = 2f;
+	public static readonly float[] DefaultTextColor;
+	public static readonly float[] DefaultTextOutlineColor;
+	public static readonly float[] DefaultBackgroundColor;
+	public static readonly float[] DefaultBackgroundOutlineColor;
+	private static readonly float[] FontSizeMinMax;
+	private static readonly float[] TextThicknessMinMax;
+	private static readonly float[] BackgroundWidthMinMax;
+	private static readonly float[] TextOutlineThicknessMinMax;
+	private static readonly float[] BackgroundRadiusMinMax;
+	private static readonly float[] BackgroundOutlineThicknessMinMax;
 	public const string TextKey = "text";
+	public const string FontSelectionKey = "fontSelection";
 	public const string TextSizeKey = "textSize";
+	public const string TextThicknessKey = "textThickness";
 	public const string TextColorKey = "textColor";
-	public const string BillboardKey = "billboard";
+	public const string TextOutlineToggleKey = "textOutline";
+	public const string TextOutlineThicknessKey = "textOutlineThickness";
+	public const string TextOutlineColorKey = "textOutlineColor";
+	public const string TextItalicToggleKey = "textItalic";
+	public const string TextUnderscoredToggleKey = "textUnderscored";
+	public const string BackgroundToggleKey = "background";
+	public const string BackgroundWidthKey = "backgroundWidth";
+	public const string BackgroundColorKey = "backgroundColor";
+	public const string BackgroundRadiusKey = "backgroundRadius";
+	public const string BackgroundOutlineToggleKey = "backgroundOutline";
+	public const string BackgroundOutlineThicknessKey = "backgroundOutlineThickness";
+	public const string BackgroundOutlineColorKey = "backgroundOutlineColor";
+	public const string BillboardToggleKey = "billboard";
+	public const string FontShaderPath = "TextMeshPro/Mobile/Distance Field";
+	private static readonly Vector2 NormalCanvasSize;
+	private static readonly Vector2 ColorEditingCanvasSize;
+	public static readonly Dictionary<object, object> DefaultData;
+	[Header("Base settings serialized fields")]
 	[SerializeField]
+	[Space(15f)]
 	private SettingsBase settingsBase;
 	[SerializeField]
-	private SettingsSlider sizeSlider;
+	protected RectTransform canvas;
 	[SerializeField]
-	private UnityEngine.UI.Text sizeLabel;
+	protected GameObject content;
 	[SerializeField]
-	private SettingsInputField inputField;
+	protected GameObject colorPicker;
 	[SerializeField]
-	private SettingsSlider colorR;
+	protected UnityEngine.UI.Text colorText;
 	[SerializeField]
-	private SettingsSlider colorG;
+	protected Image colorPickerPreview;
 	[SerializeField]
-	private SettingsSlider colorB;
+	protected SettingsSlider colorR;
 	[SerializeField]
-	private Image preview;
+	protected SettingsSlider colorG;
+	[SerializeField]
+	protected SettingsSlider colorB;
+	[SerializeField]
+	protected SettingsSlider colorA;
+	[SerializeField]
+	[Space(15f)]
+	private SettingsInputField messageInputField;
+	[SerializeField]
+	private SettingsTMPDropdown fontSelectionDropdown;
+	[SerializeField]
+	private SettingsInputFieldSlider fontSizeSlider;
+	[SerializeField]
+	private SettingsInputFieldSlider textThicknessSlider;
+	[SerializeField]
+	private SettingsInputFieldSlider bakgroundWidthSlider;
+	[SerializeField]
+	private SettingsInputFieldSlider textOutlineThicknessSlider;
+	[SerializeField]
+	private SettingsInputFieldSlider backgroundRadiusSlider;
+	[SerializeField]
+	private SettingsInputFieldSlider backgroundOutlineThicknessSlider;
 	[SerializeField]
 	private SettingsToggle billboardToggle;
+	[SerializeField]
+	private SettingsToggle textOutlineToggle;
+	[SerializeField]
+	private SettingsToggle textItalicToggle;
+	[SerializeField]
+	private SettingsToggle textUnderscoredToggle;
+	[SerializeField]
+	private SettingsToggle backgroundToggle;
+	[SerializeField]
+	private SettingsToggle backgroundOutlineToggle;
+	[SerializeField]
+	private Image textColorPreview;
+	[SerializeField]
+	private Image textOutlineColorPreview;
+	[SerializeField]
+	private Image backgroundColorPreview;
+	[SerializeField]
+	private Image backgroundOutlineColorPreview;
+	[SerializeField]
+	private TMPSettingsDropdownItemFont selectedFontItem;
+	[SerializeField]
+	private StreamedTextMeshProFontList fontList;
+	private Dictionary<object, object> data;
+	private string editingColorKey;
 	private float[] color;
-	public static readonly float[] defaultColor;
 
 	// Constructors
 	public MessageBoxSettings();
@@ -45,8 +129,12 @@ public class MessageBoxSettings : MonoBehaviour, IHandleSettingChanged
 
 	// Methods
 	public void Initialize(int woID, GameObject root);
+	private Dictionary<object, object> ReadData(int woID);
 	public void OnSettingChanged(string key, object value);
+	private void UpdateUI();
 	private static object RemoveQuadFromText(string key, object val);
-	private void SetTextSize(float value);
+	public void OnColorPressed(string colorKey);
+	public void OnColorEdited();
+	private void UpdateColorPickerPreview();
 }
 

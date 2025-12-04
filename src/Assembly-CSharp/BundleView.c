@@ -3696,7 +3696,7 @@ void Assembly-CSharp.dll::BundleView::BundleView_ProductPurchaseResponseHandler
             }
             value = pSVar12;
             if (pSVar17 != (String *)0x0) {
-              if (pSVar17->klass == pSRam0000000182db2520) {
+              if (pSVar17->klass == pSRam0000000182dbbc60) {
                 value = pSVar17;
               }
               if (value == (String *)0x0) {

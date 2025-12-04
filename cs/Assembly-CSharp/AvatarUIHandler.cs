@@ -17,6 +17,7 @@ public class AvatarUIHandler : MonoBehaviour
 	protected ChatAnchor chatBubbleAnchor;
 	protected MVWorldObjectClient worldObject;
 	protected int ownerActorNr;
+	private string ownerActorName;
 	protected bool shouldShowUI;
 
 	// Constructors

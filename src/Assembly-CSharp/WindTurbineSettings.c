@@ -138,7 +138,7 @@ code_?:
                       );
   iVar12 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar9,(MethodInfo *)0x0);
   if (pSVar14 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar14,StringLiteral_windPitch,(float)iVar12,(MethodInfo *)0x0);
   pSVar10 = (this->fields).powerSlider;
   pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]

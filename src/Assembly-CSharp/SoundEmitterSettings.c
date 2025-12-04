@@ -150,7 +150,7 @@ code_?:
       FUN_?();
     }
     afStackX_8[0] = (float)mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
-    value_00 = (Object *)FUN_?(uRam_?,afStackX_8);
+    uVar6 = uRam_?;
   }
   else {
     if (((key == (String *)0x0) || (pSVar4 == (String *)0x0)) ||
@@ -158,30 +158,81 @@ code_?:
       pSVar5 = (this->fields).settingsBase;
     }
     else {
-      bVar6 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+      bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
                         ((uint8_t *)&(key->fields)._firstChar,
                          (uint8_t *)&(pSVar4->fields)._firstChar,
                          (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0);
       pSVar5 = (this->fields).settingsBase;
-      if (bVar6 != 0) goto code_?;
+      if (bVar7 != 0) goto code_?;
     }
     if (*(int *)&(TypeInfo__System__Convert->_1).field_0x1c == 0) {
       FUN_?();
     }
-    pDVar7 = mscorlib.dll::System::Convert::Convert_ToDecimal
-                       ((Decimal *)&uStackY_28,value,(MethodInfo *)0x0);
-    uStackY_28._0_4_ = pDVar7->flags;
-    uStackY_28._4_4_ = pDVar7->hi;
-    uStackY_20._0_4_ = pDVar7->lo;
-    uStackY_20._4_4_ = pDVar7->mid;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__Decimal);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__System__IConvertible);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pIVar8 = TypeInfo__System__IConvertible;
+    if (value == (Object *)0x0) {
+      if (*(int *)&(TypeInfo__System__Decimal->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pDVar9 = TypeInfo__System__Decimal->static_fields;
+    }
+    else {
+      lVar10 = FUN_?(value,TypeInfo__System__IConvertible);
+      pIVar11 = TypeInfo__System__IConvertible;
+      if (lVar10 == 0) {
+        FUN_?(value,pIVar8);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      plVar12 = (longlong *)FUN_?(value,TypeInfo__System__IConvertible);
+      if (plVar12 == (longlong *)0x0) {
+        FUN_?(value,pIVar11);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      lVar10 = *plVar12;
+      uVar13 = 0;
+      if (*(ushort *)(lVar10 + 0x12e) != 0) {
+        do {
+          if (*(IConvertible__Class **)(*(longlong *)(lVar10 + 0xb0) + (ulonglong)uVar13 * 0x10) ==
+              TypeInfo__System__IConvertible) {
+            puVar14 = (undefined8 *)
+                      ((longlong)
+                       (*(int *)(*(longlong *)(lVar10 + 0xb0) + 8 + (ulonglong)uVar13 * 0x10) + 0xd)
+                       * 0x10 + 0x138 + lVar10);
+            goto code_?;
+          }
+          uVar13 = uVar13 + 1;
+        } while (uVar13 < *(ushort *)(lVar10 + 0x12e));
+      }
+      puVar14 = (undefined8 *)FUN_?(plVar12,TypeInfo__System__IConvertible,0xd);
+code_?:
+      pDVar9 = (Decimal__StaticFields *)(*(code *)*puVar14)(&DStackY_38,plVar12,0);
+    }
+    uVar6._0_4_ = (pDVar9->Zero).flags;
+    uVar6._4_4_ = (pDVar9->Zero).hi;
+    uVar15._0_4_ = (pDVar9->Zero).lo;
+    uVar15._4_4_ = (pDVar9->Zero).mid;
     if (*(int *)&(TypeInfo__System__Decimal->_1).field_0x1c == 0) {
       FUN_?();
     }
+    DStackY_38._0_8_ = uVar6;
+    DStackY_38._8_8_ = uVar15;
     afStackX_8[0] =
-         mscorlib.dll::System::Decimal::Decimal_op_Explicit_5
-                   ((Decimal *)&uStackY_28,(MethodInfo *)0x0);
-    value_00 = (Object *)FUN_?(uRam_?,afStackX_8);
+         mscorlib.dll::System::Decimal::Decimal_op_Explicit_5(&DStackY_38,(MethodInfo *)0x0);
+    uVar6 = uRam_?;
   }
+  value_00 = (Object *)FUN_?(uVar6,afStackX_8);
   if (pSVar5 != (SettingsBase *)0x0) {
     if (cRam_? == '\0') {
       FUN_?(&
@@ -221,15 +272,15 @@ code_?:
         if (*(int *)&(TypeInfo__WorldObjectDataValidator->_1).field_0x1c == 0) {
           FUN_?();
         }
-        uVar8 = 0;
+        uVar6 = 0;
         WorldObjectDataValidator::WorldObjectDataValidator_Validate
                   (wo,key,value_00,(MethodInfo *)0x0);
         this_00 = (pSVar5->fields).result;
         if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),1);
+          uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),1);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__TryInsert
-                    (this_00,(Object *)key,value_00,(InsertionBehavior__Enum)uVar8,
+                    (this_00,(Object *)key,value_00,(InsertionBehavior__Enum)uVar6,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                      ->klass->rgctx_data[0x22].method);
           this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
@@ -248,7 +299,7 @@ code_?:
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__TryInsert
                       ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)key,value_00,
-                       (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar8 >> 8),2),
+                       (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                        ->klass->rgctx_data[0x22].method);
             (*(wo->klass->vtable).PartialUpdateWOData.methodPtr)

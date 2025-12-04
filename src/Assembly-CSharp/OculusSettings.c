@@ -150,7 +150,7 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_Initialize
                           (pSVar7,StringLiteral_Lives,value_00,1,100,(MethodInfo *)0x0);
                 pSVar11 = (this->fields).numOfLivesInputSlider;
                 if (pSVar11 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                             (pSVar11,StringLiteral_Lives,(float)value_00,(MethodInfo *)0x0);
                   value = StringLiteral_u221E;
                   if (value_00 != 100) {

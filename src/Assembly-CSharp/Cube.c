@@ -6105,12 +6105,14 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal
     this = (NotImplementedException *)func_?(uVar4);
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
               (this,(MethodInfo *)0x0);
-    uVar4 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
-    lVar5 = FUN_?(this,uVar4);
-    *(char *)(unaff_RSI + 0x1e) = *(char *)(unaff_RSI + 0x1e) + unaff_BL;
-    *(char *)(lVar5 + -0x5dff62e2) = *(char *)(lVar5 + -0x5dff62e2) + (char)lVar5;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    uVar5 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
+    uRam_? = FUN_?(this);
+    uVar6 = in(uVar5);
+    *unaff_RDI = uVar6;
+    pcVar7 = (code *)swi(3);
+    uRam_? = uRam_?;
+    pVVar8 = (Vector3 *)(*pcVar7)(extraout_XMM0_Da,(char)uVar5 * '\x02');
+    return pVVar8;
   }
   __return_storage_ptr__->x = (float)(int)(ulonglong)(uint)fVar2;
   __return_storage_ptr__->y = (float)(int)((ulonglong)(uint)fVar2 >> 0x20);

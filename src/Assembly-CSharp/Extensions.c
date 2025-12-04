@@ -263,7 +263,7 @@ code_?:
           }
           if (this != (StringBuilder *)0x0) {
             pSVar14 = pSVar1;
-            if (this->klass == pSRam0000000182db2520) {
+            if (this->klass == pSRam0000000182dbbc60) {
               pSVar14 = this;
             }
             if (pSVar14 != (StringBuilder *)0x0) goto code_?;
@@ -1329,12 +1329,12 @@ bool Assembly-CSharp.dll::Extensions::Extensions_GetBool
                       );
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182db24b8) {
+      if (pOStackX_8->klass == pORam0000000182dbbbf8) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db24b8->_0).element_class) {
-          FUN_?(pOStackX_8,pORam0000000182db24b8);
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbbf8->_0).element_class) {
+          FUN_?(pOStackX_8,pORam0000000182dbbbf8);
           pcVar3 = (code *)swi(3);
           bVar1 = (*pcVar3)();
           return bVar1;
@@ -1379,11 +1379,11 @@ float Assembly-CSharp.dll::Extensions::Extensions_GetClampedFloat
                       );
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182db2508) {
+      if (pOStackX_8->klass == pORam0000000182dbbc48) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db2508->_0).element_class) {
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbc48->_0).element_class) {
           FUN_?(pOStackX_8);
           pcVar3 = (code *)swi(3);
           fVar4 = (float)(*pcVar3)();
@@ -1432,11 +1432,11 @@ int32_t Assembly-CSharp.dll::Extensions::Extensions_GetClampedInt
                       );
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182db24d8) {
+      if (pOStackX_8->klass == pORam0000000182dbbc18) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db24d8->_0).element_class) {
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbc18->_0).element_class) {
           FUN_?(pOStackX_8);
           pcVar3 = (code *)swi(3);
           iVar4 = (*pcVar3)();
@@ -1702,7 +1702,7 @@ code_?:
           return defaultValue;
         }
         pOVar9 = pOVar5;
-        if (pOVar2->klass == pORam0000000182db24d8) {
+        if (pOVar2->klass == pORam0000000182dbbc18) {
           pOVar9 = pOVar2;
         }
         if (pOVar9 == (Object *)0x0) {
@@ -1970,7 +1970,7 @@ bool Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182db24d8) {
+    if (pOVar2->klass == pORam0000000182dbbc18) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -2063,7 +2063,7 @@ Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_2
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182db24d8) {
+    if (pOVar2->klass == pORam0000000182dbbc18) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -2169,7 +2169,7 @@ code_?:
           return defaultValue;
         }
         pOVar9 = pOVar5;
-        if (pOVar2->klass == pORam0000000182db24d8) {
+        if (pOVar2->klass == pORam0000000182dbbc18) {
           pOVar9 = pOVar2;
         }
         if (pOVar9 == (Object *)0x0) {
@@ -2249,7 +2249,7 @@ float Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_4
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182db24d8) {
+    if (pOVar2->klass == pORam0000000182dbbc18) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -2366,7 +2366,7 @@ Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_5
     cVar13 = (*pcVar11)(plVar10,uVar12);
     if ((cVar13 != '\0') && (pOVar7 != (Object *)0x0)) {
       pOVar14 = pOVar9;
-      if (pOVar7->klass == pORam0000000182db24d8) {
+      if (pOVar7->klass == pORam0000000182dbbc18) {
         pOVar14 = pOVar7;
       }
       if (pOVar14 != (Object *)0x0) goto code_?;
@@ -3752,6 +3752,137 @@ code_?:
   pcVar2 = (code *)swi(3);
   pVVar3 = (Vector3 *)(*pcVar2)();
   return pVVar3;
+}
+
+
+/* List`1[System.Int32] ValidIndexes[Object](List`1[System.Object]) */
+
+List_1_System_Int32_ *
+Assembly-CSharp.dll::Extensions::Extensions_ValidIndexes
+          (List_1_System_Object_ *values,MethodInfo *method)
+
+{
+  if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__List_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<int>);
+    LOCK();
+    UNLOCK();
+    if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(method);
+    }
+  }
+  if (values != (List_1_System_Object_ *)0x0) {
+    iVar1 = (values->fields)._size;
+    this = (List_1_System_UInt32Enum_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<int>);
+    FUN_?(this,iVar1,MethodInfo__System__Collections__Generic__List<int>__List_int_);
+    item = 0;
+    while( true ) {
+      pMVar2 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+      if ((values->fields)._size <= (int)item) {
+        return (List_1_System_Int32_ *)this;
+      }
+      if (this == (List_1_System_UInt32Enum_ *)0x0) break;
+      piVar3 = &(this->fields)._version;
+      *piVar3 = *piVar3 + 1;
+      pUVar4 = (this->fields)._items;
+      if (pUVar4 == (UInt32Enum__Enum__Array *)0x0) break;
+      uVar5 = (this->fields)._size;
+      if (uVar5 < (uint)pUVar4->max_length) {
+        (this->fields)._size = uVar5 + 1;
+        if ((uint)pUVar4->max_length <= uVar5) {
+          FUN_?();
+          pcVar6 = (code *)swi(3);
+          pLVar7 = (List_1_System_Int32_ *)(*pcVar6)();
+          return pLVar7;
+        }
+        pUVar4->vector[(int)uVar5] = item;
+        item = item + 1;
+      }
+      else {
+        mscorlib.dll::System::Collections::Generic::List`1[System::UInt32Enum]::
+        List_1_System_UInt32Enum__AddWithResize(this,item,pMVar2->klass->rgctx_data[0xe].method);
+        item = item + 1;
+      }
+    }
+  }
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pLVar7 = (List_1_System_Int32_ *)(*pcVar6)();
+  return pLVar7;
+}
+
+
+/* List`1[System.Int32]
+   ValidIndexes[__Il2CppFullySharedGenericType](List`1[Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType])
+    */
+
+List_1_System_Int32_ *
+Assembly-CSharp.dll::Extensions::Extensions_ValidIndexes_1
+          (List_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *values,MethodInfo *method)
+
+{
+  if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__List_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<int>);
+    LOCK();
+    UNLOCK();
+    if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(method);
+    }
+  }
+  if (values != (List_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    uVar1 = (*((method->field7_0x38).rgctx_data[1].method)->methodPointer)
+                      (values,(method->field7_0x38).rgctx_data[1].method);
+    this = (List_1_System_UInt32Enum_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<int>);
+    FUN_?(this,uVar1,MethodInfo__System__Collections__Generic__List<int>__List_int_);
+    item = 0;
+    while( true ) {
+      iVar2 = (*((method->field7_0x38).rgctx_data[1].method)->methodPointer)
+                        (values,(method->field7_0x38).rgctx_data[1].method);
+      pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+      if (iVar2 <= (int)item) {
+        return (List_1_System_Int32_ *)this;
+      }
+      if (this == (List_1_System_UInt32Enum_ *)0x0) break;
+      piVar4 = &(this->fields)._version;
+      *piVar4 = *piVar4 + 1;
+      pUVar5 = (this->fields)._items;
+      if (pUVar5 == (UInt32Enum__Enum__Array *)0x0) break;
+      uVar6 = (this->fields)._size;
+      if (uVar6 < (uint)pUVar5->max_length) {
+        (this->fields)._size = uVar6 + 1;
+        if ((uint)pUVar5->max_length <= uVar6) {
+          FUN_?();
+          pcVar7 = (code *)swi(3);
+          pLVar8 = (List_1_System_Int32_ *)(*pcVar7)();
+          return pLVar8;
+        }
+        pUVar5->vector[(int)uVar6] = item;
+        item = item + 1;
+      }
+      else {
+        mscorlib.dll::System::Collections::Generic::List`1[System::UInt32Enum]::
+        List_1_System_UInt32Enum__AddWithResize(this,item,pMVar3->klass->rgctx_data[0xe].method);
+        item = item + 1;
+      }
+    }
+  }
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  pLVar8 = (List_1_System_Int32_ *)(*pcVar7)();
+  return pLVar8;
 }
 
 

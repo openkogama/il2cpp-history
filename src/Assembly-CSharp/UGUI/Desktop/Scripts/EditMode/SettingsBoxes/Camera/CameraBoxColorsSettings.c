@@ -415,7 +415,7 @@ code_?:
             (pSVar12,StringLiteral_ppColorsPExp,iVar13,-0xf,0xf,(MethodInfo *)0x0);
   pSVar14 = (this->fields).postExposureInputField;
   if (pSVar14 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar14,StringLiteral_ppColorsPExp,(float)iVar13,(MethodInfo *)0x0);
   lVar1 = lRam_?;
   pCVar3 = (this->fields).cameraBoxSettings;
@@ -458,7 +458,7 @@ code_?:
             (pSVar12,StringLiteral_ppColorsTemp,iVar13,-100,100,(MethodInfo *)0x0);
   pSVar14 = (this->fields).temperatureInputField;
   if (pSVar14 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar14,StringLiteral_ppColorsTemp,(float)iVar13,(MethodInfo *)0x0);
   lVar1 = lRam_?;
   pCVar3 = (this->fields).cameraBoxSettings;
@@ -501,7 +501,7 @@ code_?:
             (pSVar12,StringLiteral_ppColorsSatur,iVar13,-100,100,(MethodInfo *)0x0);
   pSVar14 = (this->fields).saturationInputField;
   if (pSVar14 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar14,StringLiteral_ppColorsSatur,(float)iVar13,(MethodInfo *)0x0);
   lVar1 = lRam_?;
   pCVar3 = (this->fields).cameraBoxSettings;

@@ -13,20 +13,20 @@ void Assembly-CSharp.dll::VersionTextSetter::VersionTextSetter_SetText
   }
   pTVar1 = (this->fields).textObject;
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_Unity_6_and_region_fix);
+    FUN_?(&StringLiteral_TextOverhaul);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar2 = StringLiteral_Unity_6_and_region_fix;
+  pSVar2 = StringLiteral_TextOverhaul;
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_1_60);
+    FUN_?(&StringLiteral__3_2_9);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
   pSVar2 = mscorlib.dll::System::String::String_Concat_5
-                     (pSVar2,StringLiteral_u000Av__,StringLiteral__3_1_60,(MethodInfo *)0x0);
+                     (pSVar2,StringLiteral_u000Av__,StringLiteral__3_2_9,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
     UNRECOVERED_JUMPTABLE = (pTVar1->klass->vtable).set_text.methodPtr;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */

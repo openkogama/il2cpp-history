@@ -1,9 +1,9 @@
 
 /* Void <ValueChanged>b__0(IHandleSettingChanged, BaseEventData) */
 
-void Assembly-CSharp.dll::SettingsInputFieldSlider+<>c__DisplayClass18_0::
-     SettingsInputFieldSlider_c_DisplayClass18_0__ValueChanged_b__0
-               (SettingsInputFieldSlider_c_DisplayClass18_0 *this,IHandleSettingChanged *handler,
+void Assembly-CSharp.dll::SettingsInputFieldSlider+<>c__DisplayClass19_0::
+     SettingsInputFieldSlider_c_DisplayClass19_0__ValueChanged_b__0
+               (SettingsInputFieldSlider_c_DisplayClass19_0 *this,IHandleSettingChanged *handler,
                BaseEventData *data,MethodInfo *method)
 
 {

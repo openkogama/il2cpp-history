@@ -33,103 +33,38 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_Initialize
     UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = iRam_?;
+  bVar1 = iRam_? != 0;
   (this->fields).worldObject = wo;
-  if (iVar1 != 0) {
+  if (bVar1) {
     uVar2 = (uint)((ulonglong)&(this->fields).worldObject >> 0xc);
     lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
     do {
       uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
       puVar5 = (ulonglong *)(lVar3 + 0xADDR);
       LOCK();
-      bVar6 = uVar4 == *puVar5;
-      if (bVar6) {
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
         *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
       }
       UNLOCK();
-      iVar1 = iRam_?;
-    } while (!bVar6);
+    } while (!bVar1);
   }
+  bVar1 = iRam_? != 0;
   (this->fields).chatBubbleAnchor = chatBubbleAnchor;
   (this->fields).ownerActorNr = ownerActorNr;
-  if (iVar1 != 0) {
+  if (bVar1) {
     uVar2 = (uint)((ulonglong)&(this->fields).chatBubbleAnchor >> 0xc);
     lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
     do {
       uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
       puVar5 = (ulonglong *)(lVar3 + 0xADDR);
       LOCK();
-      bVar6 = uVar4 == *puVar5;
-      if (bVar6) {
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
         *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
       }
       UNLOCK();
-    } while (!bVar6);
-  }
-  pAVar7 = (Action *)0x0;
-  if (isLocal != 0) {
-    pAVar8 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
-    this_00 = (Action_2_Int32Enum_Object_ *)
-              FUN_?(
-                           TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                           );
-    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__AvatarUIHandler__OnSayChatMessageRecieved_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-               ,(MethodInfo *)0x0);
-    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar8,(Delegate *)this_00,(MethodInfo *)0x0);
-    pAVar10 = 
-    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-    ;
-    if (pDVar9 == (Delegate *)0x0) {
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
-           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-           0x0;
-    }
-    else {
-      pAVar8 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                 *)FUN_?(pDVar9,
-                                 TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                                );
-      if (pAVar8 ==
-          (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0
-         ) {
-        FUN_?(pDVar9,pAVar10);
-        pcVar11 = (code *)swi(3);
-        (*pcVar11)();
-        return;
-      }
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar8;
-      pAVar10 = 
-      TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-      ;
-      lVar3 = FUN_?(pDVar9,
-                             TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                            );
-      if (lVar3 == 0) {
-        FUN_?(pDVar9,pAVar10);
-        pcVar11 = (code *)swi(3);
-        (*pcVar11)();
-        return;
-      }
-    }
-    if (iRam_? != 0) {
-      uVar2 = (uint)((ulonglong)
-                      &TypeInfo__SayChatBubbleVisibilityManager->static_fields->
-                       OnSayChatMessageRecieved >> 0xc);
-      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
-      do {
-        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
-        LOCK();
-        bVar6 = uVar4 == *puVar5;
-        if (bVar6) {
-          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
-        }
-        UNLOCK();
-      } while (!bVar6);
-    }
+    } while (!bVar1);
   }
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
@@ -137,187 +72,288 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_Initialize
     UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((pMVar12 != (MVGameControllerBase *)0x0) &&
-     (pFVar13 = (pMVar12->fields).firstFrameUpdateActorReady,
-     pFVar13 != (FirstFrameUpdateActorReady *)0x0)) {
-    pAVar14 = (pFVar13->fields).callbacks;
-    pNVar15 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar15,(Object *)this,(this->klass->vtable).HandleTeamChange.method,
-               (MethodInfo *)0x0);
-    pAVar16 = (Action *)
-              mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
-    pAVar14 = pAVar7;
-    if (pAVar16 != (Action *)0x0) {
-      if (pAVar16->klass == TypeInfo__System__Action) {
-        pAVar14 = pAVar16;
+  pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (pMVar6 != (MVGameControllerBase *)0x0) {
+    pMVar7 = (pMVar6->fields).game;
+    pAVar8 = (Action *)0x0;
+    pAVar9 = pAVar8;
+    if ((((pMVar7 != (MVNetworkGame *)0x0) &&
+         (pMVar10 = (pMVar7->fields).playerContainer, pMVar10 != (MVPlayerContainer *)0x0)) &&
+        (pMVar11 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                             (pMVar10,ownerActorNr,(MethodInfo *)0x0), pMVar11 != (MVPlayer *)0x0))
+       && (pUVar12 = (pMVar11->fields)._UserProfileData_k__BackingField,
+          pUVar12 != (UserProfileData *)0x0)) {
+      pAVar9 = (Action *)(pUVar12->fields).UserName;
+    }
+    bVar1 = iRam_? != 0;
+    (this->fields).ownerActorName = (String *)pAVar9;
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)&(this->fields).ownerActorName >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    if (isLocal != 0) {
+      pAVar13 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
+      this_00 = (Action_2_Int32Enum_Object_ *)
+                FUN_?(
+                             TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                             );
+      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__AvatarUIHandler__OnSayChatMessageRecieved_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                 ,(MethodInfo *)0x0);
+      pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar13,(Delegate *)this_00,(MethodInfo *)0x0);
+      pAVar15 = 
+      TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+      ;
+      if (pDVar14 == (Delegate *)0x0) {
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
+             (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             0x0;
       }
-      if (pAVar14 == (Action *)0x0) {
-        FUN_?(pAVar16);
-        pcVar11 = (code *)swi(3);
-        (*pcVar11)();
-        return;
+      else {
+        pAVar13 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                   *)FUN_?(pDVar14,
+                                   TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                                  );
+        if (pAVar13 ==
+            (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+            0x0) {
+          FUN_?(pDVar14,pAVar15);
+          pcVar16 = (code *)swi(3);
+          (*pcVar16)();
+          return;
+        }
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar13;
+        pAVar15 = 
+        TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+        ;
+        lVar3 = FUN_?(pDVar14,
+                               TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                              );
+        if (lVar3 == 0) {
+          FUN_?(pDVar14,pAVar15);
+          pcVar16 = (code *)swi(3);
+          (*pcVar16)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)
+                        &TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+                         OnSayChatMessageRecieved >> 0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
       }
     }
-    MVGameControllerBase::MVGameControllerBase_set_OnFirstFrameUpdateActorReady
-              (pAVar14,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (((pMVar12 != (MVGameControllerBase *)0x0) &&
-        (pMVar17 = (pMVar12->fields).game, pMVar17 != (MVNetworkGame *)0x0)) &&
-       (pMVar18 = (pMVar17->fields).playerContainer, pMVar18 != (MVPlayerContainer *)0x0)) {
-      pAVar14 = (pMVar18->fields).OnPlayerListChanged;
-      pNVar15 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+    pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar6 != (MVGameControllerBase *)0x0) &&
+       (pFVar17 = (pMVar6->fields).firstFrameUpdateActorReady,
+       pFVar17 != (FirstFrameUpdateActorReady *)0x0)) {
+      pAVar9 = (pFVar17->fields).callbacks;
+      pNVar18 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar15,(Object *)this,(this->klass->vtable).HandleTeamChange.method,
+                (pNVar18,(Object *)this,(this->klass->vtable).HandleTeamChange.method,
                  (MethodInfo *)0x0);
-      pAVar14 = (Action *)
+      pAVar19 = (Action *)
                 mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
-      if (pAVar14 == (Action *)0x0) {
-        (pMVar18->fields).OnPlayerListChanged = (Action *)0x0;
-      }
-      else {
-        pAVar16 = pAVar7;
-        if (pAVar14->klass == TypeInfo__System__Action) {
-          pAVar16 = pAVar14;
+                          ((Delegate *)pAVar9,(Delegate *)pNVar18,(MethodInfo *)0x0);
+      pAVar9 = pAVar8;
+      if (pAVar19 != (Action *)0x0) {
+        if (pAVar19->klass == TypeInfo__System__Action) {
+          pAVar9 = pAVar19;
         }
-        if (pAVar16 == (Action *)0x0) {
-          FUN_?(pAVar14);
-          pcVar11 = (code *)swi(3);
-          (*pcVar11)();
-          return;
-        }
-        (pMVar18->fields).OnPlayerListChanged = pAVar16;
-        if (pAVar14->klass == TypeInfo__System__Action) {
-          pAVar7 = pAVar14;
-        }
-        if (pAVar7 == (Action *)0x0) {
-          FUN_?(pAVar14);
-          pcVar11 = (code *)swi(3);
-          (*pcVar11)();
+        if (pAVar9 == (Action *)0x0) {
+          FUN_?(pAVar19);
+          pcVar16 = (code *)swi(3);
+          (*pcVar16)();
           return;
         }
       }
-      if (iRam_? != 0) {
-        uVar2 = (uint)((ulonglong)&(pMVar18->fields).OnPlayerListChanged >> 0xc);
-        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
-        do {
-          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
-          LOCK();
-          bVar6 = uVar4 == *puVar5;
-          if (bVar6) {
-            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
-          }
-          UNLOCK();
-        } while (!bVar6);
-      }
+      MVGameControllerBase::MVGameControllerBase_set_OnFirstFrameUpdateActorReady
+                (pAVar9,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__MVGameControllerBase);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if ((pMVar12 != (MVGameControllerBase *)0x0) &&
-         (pMVar17 = (pMVar12->fields).game, pMVar17 != (MVNetworkGame *)0x0)) {
-        pMVar19 = (pMVar17->fields).teamManager;
-        pUVar20 = (UnityAction_2_System_Object_System_Object_ *)
-                  FUN_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar20,(Object *)this,
-                   MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
-                   ,(MethodInfo *)0x0);
-        if (pMVar19 != (MVTeamManager *)0x0) {
-          MVTeamManager::MVTeamManager_add_OnTeamAdded
-                    (pMVar19,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar20,
-                     (MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__MVGameControllerBase);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
+      pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar6 != (MVGameControllerBase *)0x0) &&
+          (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
+         (pMVar10 = (pMVar7->fields).playerContainer, pMVar10 != (MVPlayerContainer *)0x0)) {
+        pAVar9 = (pMVar10->fields).OnPlayerListChanged;
+        pNVar18 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar18,(Object *)this,(this->klass->vtable).HandleTeamChange.method,
+                   (MethodInfo *)0x0);
+        pAVar9 = (Action *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pAVar9,(Delegate *)pNVar18,(MethodInfo *)0x0);
+        if (pAVar9 == (Action *)0x0) {
+          (pMVar10->fields).OnPlayerListChanged = (Action *)0x0;
+        }
+        else {
+          pAVar19 = pAVar8;
+          if (pAVar9->klass == TypeInfo__System__Action) {
+            pAVar19 = pAVar9;
           }
-          pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
-          if ((pMVar12 != (MVGameControllerBase *)0x0) &&
-             (pMVar17 = (pMVar12->fields).game, pMVar17 != (MVNetworkGame *)0x0)) {
-            pMVar19 = (pMVar17->fields).teamManager;
-            pUVar20 = (UnityAction_2_System_Object_System_Object_ *)
-                      FUN_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar20,(Object *)this,
-                       MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
-                       ,(MethodInfo *)0x0);
-            if (pMVar19 != (MVTeamManager *)0x0) {
-              if (cRam_? == '\0') {
-                FUN_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
-                LOCK();
-                UNLOCK();
-                cRam_? = '\x01';
-              }
-              ppEVar21 = &(pMVar19->fields).OnTeamRemoved;
-              a = (pMVar19->fields).OnTeamRemoved;
-              do {
-                pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                    ((Delegate *)a,(Delegate *)pUVar20,(MethodInfo *)0x0);
-                pEVar22 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
-                if (pDVar9 == (Delegate *)0x0) {
-                  pEVar23 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)0x0;
+          if (pAVar19 == (Action *)0x0) {
+            FUN_?(pAVar9);
+            pcVar16 = (code *)swi(3);
+            (*pcVar16)();
+            return;
+          }
+          (pMVar10->fields).OnPlayerListChanged = pAVar19;
+          if (pAVar9->klass == TypeInfo__System__Action) {
+            pAVar8 = pAVar9;
+          }
+          if (pAVar8 == (Action *)0x0) {
+            FUN_?(pAVar9);
+            pcVar16 = (code *)swi(3);
+            (*pcVar16)();
+            return;
+          }
+        }
+        if (iRam_? != 0) {
+          uVar2 = (uint)((ulonglong)&(pMVar10->fields).OnPlayerListChanged >> 0xc);
+          lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+            puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+            LOCK();
+            bVar1 = uVar4 == *puVar5;
+            if (bVar1) {
+              *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar1);
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if ((pMVar6 != (MVGameControllerBase *)0x0) &&
+           (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) {
+          pMVar20 = (pMVar7->fields).teamManager;
+          pUVar21 = (UnityAction_2_System_Object_System_Object_ *)
+                    FUN_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (pUVar21,(Object *)this,
+                     MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
+                     ,(MethodInfo *)0x0);
+          if (pMVar20 != (MVTeamManager *)0x0) {
+            MVTeamManager::MVTeamManager_add_OnTeamAdded
+                      (pMVar20,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar21,
+                       (MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if ((pMVar6 != (MVGameControllerBase *)0x0) &&
+               (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) {
+              pMVar20 = (pMVar7->fields).teamManager;
+              pUVar21 = (UnityAction_2_System_Object_System_Object_ *)
+                        FUN_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>
+                                     );
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+              Object]::UnityAction_2_System_Object_System_Object___ctor
+                        (pUVar21,(Object *)this,
+                         MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_
+                         ,(MethodInfo *)0x0);
+              if (pMVar20 != (MVTeamManager *)0x0) {
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
                 }
-                else {
-                  pEVar23 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)
-                            FUN_?(pDVar9,
-                                          TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>
-                                         );
-                  if (pEVar23 == (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)0x0) {
-                    FUN_?(pDVar9,pEVar22);
-                    pcVar11 = (code *)swi(3);
-                    (*pcVar11)();
-                    return;
+                ppEVar22 = &(pMVar20->fields).OnTeamRemoved;
+                a = (pMVar20->fields).OnTeamRemoved;
+                do {
+                  pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                      ((Delegate *)a,(Delegate *)pUVar21,(MethodInfo *)0x0);
+                  pEVar23 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
+                  if (pDVar14 == (Delegate *)0x0) {
+                    pEVar24 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)0x0;
                   }
-                }
-                LOCK();
-                pEVar24 = *ppEVar21;
-                bVar6 = a == pEVar24;
-                if (bVar6) {
-                  *ppEVar21 = pEVar23;
-                  pEVar24 = a;
-                }
-                UNLOCK();
-                pEVar23 = a;
-                if (!bVar6) {
-                  pEVar23 = pEVar24;
-                }
-                if (iRam_? != 0) {
-                  uVar2 = (uint)((ulonglong)ppEVar21 >> 0xc);
-                  uVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
-                  do {
-                    uVar25 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-                    puVar5 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-                    LOCK();
-                    bVar6 = uVar25 == *puVar5;
-                    if (bVar6) {
-                      *puVar5 = uVar25 | 1L << (uVar2 & 0x3f);
+                  else {
+                    pEVar24 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)
+                              FUN_?(pDVar14,
+                                            TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>
+                                           );
+                    if (pEVar24 == (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)0x0) {
+                      FUN_?(pDVar14,pEVar23);
+                      pcVar16 = (code *)swi(3);
+                      (*pcVar16)();
+                      return;
                     }
-                    UNLOCK();
-                  } while (!bVar6);
-                }
-                bVar6 = pEVar23 != a;
-                a = pEVar23;
-              } while (bVar6);
-              return;
+                  }
+                  LOCK();
+                  pEVar25 = *ppEVar22;
+                  bVar1 = a == pEVar25;
+                  if (bVar1) {
+                    *ppEVar22 = pEVar24;
+                    pEVar25 = a;
+                  }
+                  UNLOCK();
+                  pEVar24 = a;
+                  if (!bVar1) {
+                    pEVar24 = pEVar25;
+                  }
+                  if (iRam_? != 0) {
+                    uVar2 = (uint)((ulonglong)ppEVar22 >> 0xc);
+                    uVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+                    do {
+                      uVar26 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                      puVar5 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                      LOCK();
+                      bVar1 = uVar26 == *puVar5;
+                      if (bVar1) {
+                        *puVar5 = uVar26 | 1L << (uVar2 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar1);
+                  }
+                  bVar1 = pEVar24 != a;
+                  a = pEVar24;
+                } while (bVar1);
+                return;
+              }
             }
           }
         }
@@ -325,8 +361,8 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_Initialize
     }
   }
   FUN_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -603,7 +639,7 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_OnSayChatMessageRecie
                            );
         text = (String *)0x0;
         if (pSVar2 != (String *)0x0) {
-          if (pSVar2->klass == pSRam0000000182db2520) {
+          if (pSVar2->klass == pSRam0000000182dbbc60) {
             text = pSVar2;
           }
           if (text == (String *)0x0) {
@@ -614,7 +650,8 @@ void Assembly-CSharp.dll::AvatarUIHandler::AvatarUIHandler_OnSayChatMessageRecie
           }
         }
         ChatBubbleManager::ChatBubbleManager_ShowChatBubble
-                  (text,anchorId,(this->fields).chatBubbleAnchor,(MethodInfo *)0x0);
+                  (text,(this->fields).ownerActorName,anchorId,(this->fields).chatBubbleAnchor,
+                   (MethodInfo *)0x0);
         return;
       }
     }

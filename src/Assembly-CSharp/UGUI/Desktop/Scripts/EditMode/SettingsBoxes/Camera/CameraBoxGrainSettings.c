@@ -314,7 +314,7 @@ code_?:
             (pSVar11,StringLiteral_ppGrainInt,iVar12,0,100,(MethodInfo *)0x0);
   pSVar13 = (this->fields).intensityInputField;
   if (pSVar13 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar13,StringLiteral_ppGrainInt,(float)iVar12,(MethodInfo *)0x0);
   pCVar2 = (this->fields).cameraBoxSettings;
   pSStackX_8 = (String *)CONCAT44(pSStackX_8._4_4_,10);
@@ -336,7 +336,7 @@ code_?:
             (pSVar11,StringLiteral_ppGrainSize,iVar12,3,0x1e,(MethodInfo *)0x0);
   pSVar13 = (this->fields).sizeInputField;
   if (pSVar13 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar13,StringLiteral_ppGrainSize,(float)iVar12,(MethodInfo *)0x0);
   pCVar2 = (this->fields).cameraBoxSettings;
   pSStackX_8 = (String *)CONCAT44(pSStackX_8._4_4_,8);

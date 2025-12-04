@@ -24,8 +24,8 @@ Vector3 * Assembly-CSharp.dll::AxisBias::AxisBias_GetBiased
     pVVar2 = (Vector3 *)(*pcVar1)();
     return pVVar2;
   }
-  pMVar4 = pMRam0000000182dbd410;
-  if ((pMRam0000000182dbd410 == (MethodInfo *)0x0) &&
+  pMVar4 = pMRam0000000182dc6b68;
+  if ((pMRam0000000182dc6b68 == (MethodInfo *)0x0) &&
      (pMVar4 = (MethodInfo *)FUN_?(&UNK_?), pMVar4 == (MethodInfo *)0x0)) {
     uVar5 = func_?(&UNK_?);
     FUN_?(uVar5,0);
@@ -33,14 +33,14 @@ Vector3 * Assembly-CSharp.dll::AxisBias::AxisBias_GetBiased
     pVVar2 = (Vector3 *)(*pcVar1)();
     return pVVar2;
   }
-  pMRam0000000182dbd410 = pMVar4;
+  pMRam0000000182dc6b68 = pMVar4;
   uVar6 = biasVector->x;
   uVar7 = biasVector->y;
   fVar8 = biasVector->z;
   uVar9 = normalizedInputVector->x;
   uVar10 = normalizedInputVector->y;
-  pMVar4 = pMRam0000000182dbd410;
-  fVar11 = (float)(*(code *)pMRam0000000182dbd410)(pvVar3,dotVal);
+  pMVar4 = pMRam0000000182dc6b68;
+  fVar11 = (float)(*(code *)pMRam0000000182dc6b68)(pvVar3,dotVal);
   if (fVar11 < 0.0) {
     fVar11 = 0.0;
   }

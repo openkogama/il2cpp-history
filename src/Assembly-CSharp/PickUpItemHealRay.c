@@ -5592,9 +5592,9 @@ code_?:
             if (pMVar21 != (MethodInfo *)0x0) {
               if ((*pMVar21->name == '.') && ((pMVar21->flags & 0x800) != 0)) {
                 ppMVar22 = ppMVar12;
-                while (pcVar23 = (char *)((longlong)ppMVar22 + 0xADDR),
+                while (ppMVar23 = ppMVar22 + 0x30529dd4,
                       ppMVar22 = (MethodInfo **)((longlong)ppMVar22 + 1),
-                      *pcVar23 == (pMVar21->name + -1)[(longlong)ppMVar22]) {
+                      *(char *)ppMVar23 == (pMVar21->name + -1)[(longlong)ppMVar22]) {
                   if (ppMVar22 == (MethodInfo **)0x7) {
                     FUN_?(pMVar21,0,0,alStackX_10);
                     goto code_?;

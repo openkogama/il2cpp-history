@@ -438,7 +438,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar12,1,(MethodInfo *)0x0);
         this_02 = (this->fields).avatarName;
-        if ((this_02 != (TextMesh *)0x0) &&
+        if ((this_02 != (TMP_Text *)0x0) &&
            (pRVar1 = (Renderer *)
                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                ((Component *)this_02,
@@ -1612,7 +1612,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
      (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0))
   goto code_?;
   bVar4 = MVPlayerContainer::MVPlayerContainer_ContainsKey
-                    (pMVar3,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
+                     (pMVar3,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
   if (bVar4 == 0) {
     return;
   }
@@ -1631,10 +1631,10 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
         pMVar5 == (MVPlayer *)0x0 ||
         (pUVar6 = (pMVar5->fields)._UserProfileData_k__BackingField,
         pUVar6 == (UserProfileData *)0x0)))))) ||
-     (this_00 = (this->fields).avatarName, this_00 == (TextMesh *)0x0)) goto code_?;
-  UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-            (this_00,(pUVar6->fields).UserName,(MethodInfo *)0x0);
-  fVar7 = _UNK_?;
+     (pTVar7 = (this->fields).avatarName, pTVar7 == (TMP_Text *)0x0)) goto code_?;
+  (*(pTVar7->klass->vtable).set_text.methodPtr)
+            (pTVar7,(pUVar6->fields).UserName,(pTVar7->klass->vtable).set_text.method);
+  uVar8 = _UNK_?;
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
@@ -1644,7 +1644,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (((pMVar1 == (MVGameControllerBase *)0x0) ||
       (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
-     (pMVar8 = (pMVar2->fields).teamManager, pMVar8 == (MVTeamManager *)0x0))
+     (pMVar9 = (pMVar2->fields).teamManager, pMVar9 == (MVTeamManager *)0x0))
   goto code_?;
   if (cRam_? == '\0') {
     FUN_?(&
@@ -1654,45 +1654,45 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
     UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar9 = (pMVar8->fields).teams;
-  if (pDVar9 == (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0)
+  pDVar10 = (pMVar9->fields).teams;
+  if (pDVar10 == (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0)
   goto code_?;
-  aCStack_10[0].b = fVar7;
-  aCStack_10[0].g = fVar7;
-  if (1 < (pDVar9->fields)._count - (pDVar9->fields)._freeCount) {
-    iVar11 = (pMVar5->fields)._Team_k__BackingField;
-    if (iVar11 == 0) {
-      aCStack_10[0].g = 0.0;
+  uStack_11 = uVar8;
+  uStack_12 = uVar8;
+  if (1 < (pDVar10->fields)._count - (pDVar10->fields)._freeCount) {
+    iVar13 = (pMVar5->fields)._Team_k__BackingField;
+    if (iVar13 == 0) {
+      uStack_12 = 0;
 code_?:
-      fVar7 = 0.0;
+      uVar8 = 0;
     }
-    else if (iVar11 == 1) {
-      aCStack_10[0].g = 0.0;
-      aCStack_10[0].b = 0.0;
+    else if (iVar13 == 1) {
+      uStack_12 = 0;
+      uStack_11 = 0;
     }
     else {
-      if (iVar11 == 2) {
-        aCStack_10[0].b = 0.0;
+      if (iVar13 == 2) {
+        uStack_11 = 0;
         goto code_?;
       }
-      if (iVar11 == 3) {
-        aCStack_10[0].b = _UNK_?;
-        aCStack_10[0].g = _UNK_?;
+      if (iVar13 == 3) {
+        uStack_11 = _UNK_?;
+        uStack_12 = _UNK_?;
       }
     }
   }
-  this_01 = (this->fields).avatarNameMaterial;
-  aCStack_10[0].r = fVar7;
-  aCStack_10[0].a = 1.0;
-  if (this_01 != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-              (this_01,aCStack_10,(MethodInfo *)0x0);
+  pTVar7 = (this->fields).avatarName;
+  if (pTVar7 != (TMP_Text *)0x0) {
+    uStack_14 = 0x3f800000;
+    uStack_15 = uVar8;
+    (*(pTVar7->klass->vtable).set_color.methodPtr)
+              (pTVar7,&uStack_15,(pTVar7->klass->vtable).set_color.method);
     return;
   }
 code_?:
   FUN_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1873,9 +1873,9 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (pcVar16 = (char *)((longlong)ppMVar15 + 0xADDR),
+                while (ppMVar16 = ppMVar15 + 0x30529dd4,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
-                      *pcVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                      *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;
@@ -2012,16 +2012,6 @@ Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_EnemyIconM
   pcVar5 = (code *)swi(3);
   pMVar6 = (Material *)(*pcVar5)();
   return pMVar6;
-}
-
-
-/* Boolean get_ForceHideUI() */
-
-bool Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_ForceHideUI
-               (AvatarUIHandlerRemote *this,MethodInfo *method)
-
-{
-  return (this->fields).forceHideUI;
 }
 
 

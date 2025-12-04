@@ -754,7 +754,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
             (*pcVar5)();
             return;
           }
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                     (pSVar6,pSVar1,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
           pSVar1 = StringLiteral_randomLeaveVehicle;
           pSVar2 = (this->fields).randomLeaveVehicleSlider;
@@ -810,7 +810,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                     (*pcVar5)();
                     return;
                   }
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                             (pSVar6,pSVar1,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
                   pSVar1 = StringLiteral_speed;
                   pSVar2 = (this->fields).speedSlider;
@@ -873,7 +873,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                             (*pcVar5)();
                             return;
                           }
-                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                                     (pSVar6,pSVar1,(float)*(int *)&pOVar4[1].klass,
                                      (MethodInfo *)0x0);
                           pSVar1 = StringLiteral_jumpHeight;
@@ -936,7 +936,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                     (*pcVar5)();
                                     return;
                                   }
-                                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                                             (pSVar6,pSVar1,*(float *)&pOVar4[1].klass,
                                              (MethodInfo *)0x0);
                                   pSVar1 = StringLiteral_thrustersOn;
@@ -1041,7 +1041,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                                 return;
                                               }
                                               SettingsInputFieldSlider::
-                                              SettingsInputFieldSlider_Initialize_1
+                                              SettingsInputFieldSlider_Initialize_2
                                                         (pSVar6,pSVar1,
                                                          *(float *)&pOVar4[1].klass * fVar9,
                                                          (MethodInfo *)0x0);
@@ -1119,7 +1119,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                                       return;
                                                     }
                                                     SettingsInputFieldSlider::
-                                                    SettingsInputFieldSlider_Initialize_1
+                                                    SettingsInputFieldSlider_Initialize_2
                                                               (pSVar6,pSVar1,
                                                                *(float *)&pOVar4[1].klass * fVar7,
                                                                (MethodInfo *)0x0);
@@ -1453,7 +1453,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                             worldObjectID = (this->fields)._.vehicleWoID;
                             str1 = (String *)0x0;
                             if (pSVar34 != (String *)0x0) {
-                              if (pSVar34->klass == pSRam0000000182db2520) {
+                              if (pSVar34->klass == pSRam0000000182dbbc60) {
                                 str1 = pSVar34;
                               }
                               if (str1 == (String *)0x0) goto code_?;
@@ -2244,9 +2244,9 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (pcVar16 = (char *)((longlong)ppMVar15 + 0xADDR),
+                while (ppMVar16 = ppMVar15 + 0x30529dd4,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
-                      *pcVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                      *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

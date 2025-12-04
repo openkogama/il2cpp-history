@@ -2359,7 +2359,7 @@ code_?:
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                     ((Object *)StringLiteral_OnRemoved,(MethodInfo *)0x0);
-          *(undefined4 *)(pMVar21 + 0x50) = 0xffffffff;
+          *(undefined4 *)(pMVar21 + 0x48) = 0xffffffff;
           pDVar17 = (this->fields).textBubbles;
           pLVar14 = (this->fields).removeList;
           if (pLVar14 == (List_1_System_Int32_ *)0x0) goto code_?;
@@ -2667,9 +2667,9 @@ void Assembly-CSharp.dll::TextBubbleController::TextBubbleController_UpdatePosit
      (pMVar3 = pOVar2[1].monitor, pMVar3 != (MonitorData *)0x0)) {
     fStack_4 = targetCenterPoint.x;
     fStack_5 = targetCenterPoint.y;
-    *(float *)(pMVar3 + 0x48) = fStack_4;
-    *(float *)(pMVar3 + 0x4c) = fStack_5;
-    *(int32_t *)(pMVar3 + 0x50) = bubbleId;
+    *(float *)(pMVar3 + 0x38) = fStack_4;
+    *(float *)(pMVar3 + 0x3c) = fStack_5;
+    *(int32_t *)(pMVar3 + 0x48) = bubbleId;
     pDVar1 = (this->fields).textBubbles;
     if (((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
         (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
@@ -2831,9 +2831,9 @@ void Assembly-CSharp.dll::TextBubbleController::TextBubbleController_UpdatePosit
                                MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
                               ), pOVar14 != (Object *)0x0)) &&
          (pMVar15 = pOVar14[1].monitor, pMVar15 != (MonitorData *)0x0)) {
-        *(float *)(pMVar15 + 0x48) = fVar11;
-        *(float *)(pMVar15 + 0x4c) = fVar12;
-        *(int32_t *)(pMVar15 + 0x50) = bubbleId;
+        *(float *)(pMVar15 + 0x38) = fVar11;
+        *(float *)(pMVar15 + 0x3c) = fVar12;
+        *(int32_t *)(pMVar15 + 0x48) = bubbleId;
         pDVar13 = (this->fields).textBubbles;
         if (((pDVar13 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
             (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System

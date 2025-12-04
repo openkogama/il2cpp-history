@@ -69,7 +69,7 @@ code_?:
     (*pcVar1)();
     return;
   }
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar6,StringLiteral_scaleX,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
   pSVar3 = (this->fields).ScaleY;
   pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
@@ -101,7 +101,7 @@ code_?:
     (*pcVar1)();
     return;
   }
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
             (pSVar6,StringLiteral_scaleY,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
   pSVar3 = (this->fields).ScaleZ;
   pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]

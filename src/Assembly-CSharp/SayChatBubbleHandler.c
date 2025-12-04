@@ -53,123 +53,165 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_Initialize
     UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = iRam_? != 0;
+  bVar1 = cRam_? == '\0';
   (this->fields).ownerActorNr = actorNr;
-  (this->fields).chatAnchor = chatAnchor;
   if (bVar1) {
-    uVar2 = (uint)((ulonglong)&(this->fields).chatAnchor >> 0xc);
-    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (pMVar2 == (MVGameControllerBase *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pMVar4 = (pMVar2->fields).game;
+  if ((((pMVar4 == (MVNetworkGame *)0x0) ||
+       (this_00 = (pMVar4->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
+      (pMVar5 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                           (this_00,actorNr,(MethodInfo *)0x0), pMVar5 == (MVPlayer *)0x0)) ||
+     (pUVar6 = (pMVar5->fields)._UserProfileData_k__BackingField, pUVar6 == (UserProfileData *)0x0)
+     ) {
+    pSVar7 = (String *)0x0;
+  }
+  else {
+    pSVar7 = (pUVar6->fields).UserName;
+  }
+  (this->fields).ownerActorName = pSVar7;
+  if (iRam_? != 0) {
+    uVar8 = (uint)((ulonglong)&(this->fields).ownerActorName >> 0xc);
+    lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
     do {
-      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+      puVar11 = (ulonglong *)(lVar9 + 0xADDR);
       LOCK();
-      bVar1 = uVar4 == *puVar5;
+      bVar1 = uVar10 == *puVar11;
       if (bVar1) {
-        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
       }
       UNLOCK();
     } while (!bVar1);
   }
-  pAVar6 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
-           OnSayChatIndicatorVisibilityChange;
-  pDVar7 = (Delegate *)FUN_?(TypeInfo__System__Action<int,_bool>);
-  FUN_?(pDVar7,this);
-  pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar6,pDVar7,(MethodInfo *)0x0);
-  pAVar8 = TypeInfo__System__Action<int,_bool>;
-  if (pDVar7 == (Delegate *)0x0) {
+  iVar12 = iRam_?;
+  (this->fields).chatAnchor = chatAnchor;
+  if (iVar12 != 0) {
+    uVar8 = (uint)((ulonglong)&(this->fields).chatAnchor >> 0xc);
+    lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+      puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+      LOCK();
+      bVar1 = uVar10 == *puVar11;
+      if (bVar1) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pAVar13 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+            OnSayChatIndicatorVisibilityChange;
+  pDVar14 = (Delegate *)FUN_?(TypeInfo__System__Action<int,_bool>);
+  FUN_?(pDVar14,this);
+  pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar13,pDVar14,(MethodInfo *)0x0);
+  pAVar15 = TypeInfo__System__Action<int,_bool>;
+  if (pDVar14 == (Delegate *)0x0) {
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
          (Action_2_Int32_Boolean_ *)0x0;
   }
   else {
-    pAVar6 = (Action_2_Int32_Boolean_ *)FUN_?(pDVar7,TypeInfo__System__Action<int,_bool>);
-    if (pAVar6 == (Action_2_Int32_Boolean_ *)0x0) {
-      FUN_?(pDVar7,pAVar8);
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+    pAVar13 = (Action_2_Int32_Boolean_ *)FUN_?(pDVar14,TypeInfo__System__Action<int,_bool>);
+    if (pAVar13 == (Action_2_Int32_Boolean_ *)0x0) {
+      FUN_?(pDVar14,pAVar15);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
-         pAVar6;
-    pAVar8 = TypeInfo__System__Action<int,_bool>;
-    lVar3 = FUN_?(pDVar7,TypeInfo__System__Action<int,_bool>);
-    if (lVar3 == 0) {
-      FUN_?(pDVar7,pAVar8);
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+         pAVar13;
+    pAVar15 = TypeInfo__System__Action<int,_bool>;
+    lVar9 = FUN_?(pDVar14,TypeInfo__System__Action<int,_bool>);
+    if (lVar9 == 0) {
+      FUN_?(pDVar14,pAVar15);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
   if (iRam_? != 0) {
-    uVar2 = (uint)((ulonglong)TypeInfo__SayChatBubbleVisibilityManager->static_fields >> 0xc);
-    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    uVar8 = (uint)((ulonglong)TypeInfo__SayChatBubbleVisibilityManager->static_fields >> 0xc);
+    lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
     do {
-      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+      puVar11 = (ulonglong *)(lVar9 + 0xADDR);
       LOCK();
-      bVar1 = uVar4 == *puVar5;
+      bVar1 = uVar10 == *puVar11;
       if (bVar1) {
-        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
       }
       UNLOCK();
     } while (!bVar1);
   }
-  pAVar10 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
-  this_00 = (Action_2_Int32Enum_Object_ *)
+  pAVar16 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
+  this_01 = (Action_2_Int32Enum_Object_ *)
             FUN_?(
                          TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                          );
   mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-            (this_00,(Object *)this,
+            (this_01,(Object *)this,
              MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
              ,(MethodInfo *)0x0);
-  pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar10,(Delegate *)this_00,(MethodInfo *)0x0);
-  pAVar11 = 
+  pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar16,(Delegate *)this_01,(MethodInfo *)0x0);
+  pAVar17 = 
   TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
   ;
-  if (pDVar7 == (Delegate *)0x0) {
+  if (pDVar14 == (Delegate *)0x0) {
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
          (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
   }
   else {
-    pAVar10 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             FUN_?(pDVar7,
-                           TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                          );
-    if (pAVar10 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                   *)0x0) {
-      FUN_?(pDVar7,pAVar11);
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+    pAVar16 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *
+              )FUN_?(pDVar14,
+                             TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                            );
+    if (pAVar16 ==
+        (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0)
+    {
+      FUN_?(pDVar14,pAVar17);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar10;
-    pAVar11 = 
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar16;
+    pAVar17 = 
     TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
     ;
-    lVar3 = FUN_?(pDVar7,
-                          TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                         );
-    if (lVar3 == 0) {
-      FUN_?(pDVar7,pAVar11);
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+    lVar9 = FUN_?(pDVar14,
+                           TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                          );
+    if (lVar9 == 0) {
+      FUN_?(pDVar14,pAVar17);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
   if (iRam_? != 0) {
-    uVar2 = (uint)((ulonglong)
+    uVar8 = (uint)((ulonglong)
                     &TypeInfo__SayChatBubbleVisibilityManager->static_fields->
                      OnSayChatMessageRecieved >> 0xc);
-    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
     do {
-      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+      puVar11 = (ulonglong *)(lVar9 + 0xADDR);
       LOCK();
-      bVar1 = uVar4 == *puVar5;
+      bVar1 = uVar10 == *puVar11;
       if (bVar1) {
-        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
       }
       UNLOCK();
     } while (!bVar1);
@@ -440,7 +482,7 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnSayChatMe
                          );
       text = (String *)0x0;
       if (pSVar2 != (String *)0x0) {
-        if (pSVar2->klass == pSRam0000000182db2520) {
+        if (pSVar2->klass == pSRam0000000182dbbc60) {
           text = pSVar2;
         }
         if (text == (String *)0x0) {
@@ -451,7 +493,8 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnSayChatMe
         }
       }
       ChatBubbleManager::ChatBubbleManager_ShowChatBubble
-                (text,anchorId,(this->fields).chatAnchor,(MethodInfo *)0x0);
+                (text,(this->fields).ownerActorName,anchorId,(this->fields).chatAnchor,
+                 (MethodInfo *)0x0);
       if (TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard ==
           (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
         return;

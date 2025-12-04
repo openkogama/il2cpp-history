@@ -3,8 +3,11 @@
  */
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,8 +18,16 @@ using UnityEngine.UI;
 public class ChatBubble : MonoBehaviour
 {
 	// Fields
+	[Tooltip("Name container of the chat bubble")]
+	public RoundedRectangle NameContainer;
+	[Tooltip("Name text of the chat bubble")]
+	public TextMeshProUGUI NameValue;
 	[Tooltip("Text component in the tree used to display the bubble\'s message.")]
-	public UnityEngine.UI.Text MessageComponent;
+	public TextMeshProUGUI MessageComponent;
+	[Tooltip("Background graphic of the chat bubble")]
+	public RoundedRectangle Background;
+	[Tooltip("Animation Container of the chat bubble")]
+	public RectTransform AnimationContainer;
 	[Multiline]
 	public string MessageValue;
 	[Tooltip("True if the bubble should be autosized according to the message content.")]
@@ -38,39 +49,69 @@ public class ChatBubble : MonoBehaviour
 	private bool isActive;
 	private RectTransform _rectTransform;
 	private ChatAnchor anchor;
-	private float currentFade;
-	private float timeUntilFade;
-	private const float baseFadeWaitTime = 5f;
-	private const float charactersPerSecond = 30f;
-	private const int characerLimit = 130;
-	private const float startFadeRadius = 17.5f;
-	private const float completelyFadeRadius = 20f;
+	private IEnumerator animationCoroutine;
+	private bool targetActivation;
 
 	// Properties
 	public bool IsActive { get; }
-	public RectTransform rectTransform { get; }
 	public ChatAnchor Anchor { set; }
+	public RectTransform RectTransform { get; }
+
+	// Nested types
+	[CompilerGenerated]
+	private sealed class _UpdateAnimationCoroutine_d__37 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public ChatBubble __4__this;
+		private float _startYPosition_5__2;
+		private float _targetYPosition_5__3;
+		private float _animationTime_5__4;
+		private float _currentTime_5__5;
+		private float _showingTime_5__6;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _UpdateAnimationCoroutine_d__37(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
+	}
 
 	// Constructors
 	public ChatBubble();
 
 	// Methods
-	public bool BindMessageValue(string value);
-	public bool BindExtenderDock(ExtenderBorderEnum value);
 	private void Awake();
 	private void OnEnable();
 	private void OnDisable();
 	private void Update();
-	private void UpdateFading();
-	private void UpdateDistanceFading();
+	public void SetSenderName(string name);
+	public bool BindMessageValue(string value);
+	private void SetupMessageComponent(string value);
+	private void SetupActivationAnimation(bool activationValue);
+	public bool BindExtenderDock(ExtenderBorderEnum value);
 	public void HideBubble();
-	public void SetChatBubbleVisibility(bool shouldBeVisible);
+	private void SetAlpha(float alpha);
+	private float GetDistanceAlpha();
+	[IteratorStateMachine(typeof(_UpdateAnimationCoroutine_d__37))]
+	private IEnumerator UpdateAnimationCoroutine();
+	private void UpdateAnimationState(float currentTime, float animationTime, float startYPosition, float targetYPosition);
 	public Vector2 PerformManualSize(string value);
 	public void PerformAutoSize();
 	private bool PerformAutoHeight();
 	private bool PerformAutoWidth();
 	public void PerformExtenderSnap();
-	public void PerformExtenderPosition();
+	public void UpdateExtenderPosition();
 	private void BindExtenderToClosestBorder(Camera camera);
 	private void SetExtenderAnchorPosToBorder(ExtenderBorderInfo info);
 	public void CalculateExtenderBorderVertices(ExtenderBorderInfo info, ref Vector3 v1, ref Vector3 v2);

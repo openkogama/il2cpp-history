@@ -500,9 +500,9 @@ code_?:
             if (pMVar17 != (MethodInfo *)0x0) {
               if ((*pMVar17->name == '.') && ((pMVar17->flags & 0x800) != 0)) {
                 ppMVar18 = ppMVar6;
-                while (pcVar19 = (char *)((longlong)ppMVar18 + 0xADDR),
+                while (ppMVar19 = ppMVar18 + 0x30529dd4,
                       ppMVar18 = (MethodInfo **)((longlong)ppMVar18 + 1),
-                      *pcVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
+                      *(char *)ppMVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
                   if (ppMVar18 == (MethodInfo **)0x7) {
                     FUN_?(pMVar17,0,0,&lStackX_10);
                     goto code_?;

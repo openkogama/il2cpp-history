@@ -2002,7 +2002,7 @@ Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetTags(MethodInfo *method
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
             );
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_1_60_0);
+    FUN_?(&StringLiteral__3_2_9_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -2013,11 +2013,11 @@ Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetTags(MethodInfo *method
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_Version,
-               (Object *)StringLiteral__3_1_60_0,IVar1,
+               (Object *)StringLiteral__3_2_9_0,IVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                ->klass->rgctx_data[0x22].method);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral_Unity_6_and_region_fix);
+      FUN_?(&StringLiteral_TextOverhaul);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
@@ -2026,7 +2026,7 @@ Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetTags(MethodInfo *method
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ReleaseName
-               ,(Object *)StringLiteral_Unity_6_and_region_fix,IVar1,
+               ,(Object *)StringLiteral_TextOverhaul,IVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                ->klass->rgctx_data[0x22].method);
     if (cRam_? == '\0') {

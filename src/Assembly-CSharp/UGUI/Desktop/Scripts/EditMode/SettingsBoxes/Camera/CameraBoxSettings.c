@@ -219,7 +219,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                       TypeInfo__System__Globalization__CultureInfo->static_fields->
                                       invariant_culture_info,(MethodInfo *)0x0);
           if (this_02 != (SettingsInputFieldSlider *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
                       (this_02,StringLiteral_distanceToAvatar,fVar8,(MethodInfo *)0x0);
             pDVar1 = (this->fields).woData;
             pSVar9 = (this->fields).toggle;

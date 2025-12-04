@@ -118,7 +118,7 @@ code_?:
                      ,(MethodInfo *)0x0);
           AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset
                     ((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,
-                     0x22dadb96,(MethodInfo *)0x0);
+                     0x2306f5ca,(MethodInfo *)0x0);
           return;
         }
       }
@@ -443,7 +443,7 @@ code_?:
                              ,(MethodInfo *)0x0);
                   AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset
                             ((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,
-                             0x22dadb96,(MethodInfo *)0x0);
+                             0x2306f5ca,(MethodInfo *)0x0);
                   return;
                 }
               }

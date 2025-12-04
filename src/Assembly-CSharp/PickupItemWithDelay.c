@@ -823,9 +823,9 @@ code_?:
             if (pMVar24 != (MethodInfo *)0x0) {
               if ((*pMVar24->name == '.') && ((pMVar24->flags & 0x800) != 0)) {
                 ppMVar25 = ppMVar14;
-                while (pcVar26 = (char *)((longlong)ppMVar25 + 0xADDR),
+                while (ppMVar26 = ppMVar25 + 0x30529dd4,
                       ppMVar25 = (MethodInfo **)((longlong)ppMVar25 + 1),
-                      *pcVar26 == (pMVar24->name + -1)[(longlong)ppMVar25]) {
+                      *(char *)ppMVar26 == (pMVar24->name + -1)[(longlong)ppMVar25]) {
                   if (ppMVar25 == (MethodInfo **)0x7) {
                     FUN_?(pMVar24,0,0,alStackX_10);
                     goto code_?;

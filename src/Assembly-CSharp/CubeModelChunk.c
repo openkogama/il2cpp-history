@@ -829,7 +829,7 @@ code_?:
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
           Guid,ChunkInstances+ChunkInstanceVariables]::
           Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables__TryInsert
-                    (pDVar32,&GStack_42,&CStack_40,0x82dc1f01,
+                    (pDVar32,&GStack_42,&CStack_40,0x82dcbf01,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__set_Item_System__Guid__ChunkInstances__ChunkInstanceVariables_
                      ->klass->rgctx_data[0x22].method);
           return;
@@ -4451,7 +4451,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_SetInstanceDataRef
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Guid,ChunkInstances+ChunkInstanceVariables]::
                       Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables__TryInsert
-                                (this_01,(Guid *)auStack_15,aCStack_34,0x82dc1f02,
+                                (this_01,(Guid *)auStack_15,aCStack_34,0x82dcbf02,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Add_System__Guid__ChunkInstances__ChunkInstanceVariables_
                                  ->klass->rgctx_data[0x22].method);
                       pCVar5 = (cubeInstance->fields).chunkInstances;
