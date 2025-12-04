@@ -8,10 +8,10 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_MonoScriptData * Assembly-CSharp.
     FUN_?(&TypeInfo__System__Byte);
     LOCK();
     UNLOCK();
-    FUN_?(&BFB4AECB46837AA4FD254086D49E204E86CD847CEB02BD1E31F4423D7AAD5205_Field);
+    FUN_?(&_807DBB07A2A37C67A83CAF55058EEAEB68E765FCB91FCBCB0CFF1AD043DAD13C_Field);
     LOCK();
     UNLOCK();
-    FUN_?(&F6C2293A0F7A58AD45BB2493EFD2FF056DA333333F28EB24E0B9A220545DD250_Field);
+    FUN_?(&_8F20DCA221945697814B839B06340967A2FA640A0589B481736FCDE4F18C16E5_Field);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -21,8 +21,8 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_MonoScriptData * Assembly-CSharp.
   __return_storage_ptr__->TotalTypes = 0;
   __return_storage_ptr__->TotalFiles = 0;
   *(undefined8 *)&__return_storage_ptr__->IsEditorOnly = 0;
-  pBVar1 = (Byte__Array *)FUN_?(TypeInfo__System__Byte,0x2aeda);
-  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1((Array *)pBVar1,_BFB4AECB46837AA4FD254086D49E204E86CD847CEB02BD1E31F4423D7AAD5205_Field,(MethodInfo *)0x0);
+  pBVar1 = (Byte__Array *)FUN_?(TypeInfo__System__Byte,0x2b123);
+  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1((Array *)pBVar1,__8F20DCA221945697814B839B06340967A2FA640A0589B481736FCDE4F18C16E5_Field,(MethodInfo *)0x0);
   bVar2 = iRam_? != 0;
   __return_storage_ptr__->FilePathsData = pBVar1;
   if (bVar2) {
@@ -39,8 +39,8 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_MonoScriptData * Assembly-CSharp.
       UNLOCK();
     } while (!bVar2);
   }
-  pBVar1 = (Byte__Array *)FUN_?(TypeInfo__System__Byte,0x1526b);
-  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1((Array *)pBVar1,_F6C2293A0F7A58AD45BB2493EFD2FF056DA333333F28EB24E0B9A220545DD250_Field,(MethodInfo *)0x0);
+  pBVar1 = (Byte__Array *)FUN_?(TypeInfo__System__Byte,0x1538b);
+  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1((Array *)pBVar1,__807DBB07A2A37C67A83CAF55058EEAEB68E765FCB91FCBCB0CFF1AD043DAD13C_Field,(MethodInfo *)0x0);
   bVar2 = iRam_? != 0;
   __return_storage_ptr__->TypesData = pBVar1;
   if (bVar2) {
@@ -57,8 +57,8 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_MonoScriptData * Assembly-CSharp.
       UNLOCK();
     } while (!bVar2);
   }
-  __return_storage_ptr__->TotalFiles = 0x814;
-  __return_storage_ptr__->TotalTypes = 0xaa0;
+  __return_storage_ptr__->TotalFiles = 0x81c;
+  __return_storage_ptr__->TotalTypes = 0xaa9;
   __return_storage_ptr__->IsEditorOnly = 0;
   return __return_storage_ptr__;
 }

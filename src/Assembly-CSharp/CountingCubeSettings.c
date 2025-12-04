@@ -65,7 +65,7 @@ void Assembly-CSharp.dll::CountingCubeSettings::CountingCubeSettings_Initialize(
         (*pcVar4)();
         return;
       }
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_01,StringLiteral_startingValue,(float)*(int *)&pOVar2[1].klass,(MethodInfo *)0x0);
+      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(this_01,StringLiteral_startingValue,(float)*(int *)&pOVar2[1].klass,(MethodInfo *)0x0);
       pSVar5 = (this->fields).toggle;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)this_03,(Object *)StringLiteral_reset,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
       pSVar6 = StringLiteral_reset;

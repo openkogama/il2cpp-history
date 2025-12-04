@@ -49,7 +49,7 @@ code_?:
     (*pcVar1)();
     return;
   }
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar5,StringLiteral_scaleX,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar5,StringLiteral_scaleX,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
   pSVar3 = (this->fields).ScaleY;
   pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_scaleY,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   if ((pSVar3 == (SettingsSlider *)0x0) || (pOVar4 == (Object *)0x0)) goto code_?;
@@ -69,7 +69,7 @@ code_?:
     (*pcVar1)();
     return;
   }
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar5,StringLiteral_scaleY,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar5,StringLiteral_scaleY,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
   pSVar3 = (this->fields).ScaleZ;
   pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_scaleZ,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   if ((pSVar3 == (SettingsSlider *)0x0) || (pOVar4 == (Object *)0x0)) goto code_?;

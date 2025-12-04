@@ -256,7 +256,7 @@ code_?:
   SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppLensDistInt,iVar12,-0x4b,0x4b,(MethodInfo *)0x0);
   pSVar13 = (this->fields).intensityInputField;
   if (pSVar13 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppLensDistInt,(float)iVar12,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppLensDistInt,(float)iVar12,(MethodInfo *)0x0);
   pCVar2 = (this->fields).cameraBoxSettings;
   pSStackX_8 = (String *)CONCAT44(pSStackX_8._4_4_,100);
   pOVar9 = (Object *)FUN_?(lRam_?,&pSStackX_8);
@@ -273,7 +273,7 @@ code_?:
   SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppLensDistXmult,iVar12,0,100,(MethodInfo *)0x0);
   pSVar13 = (this->fields).xMultiplierInputField;
   if (pSVar13 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppLensDistXmult,(float)iVar12,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppLensDistXmult,(float)iVar12,(MethodInfo *)0x0);
   pCVar2 = (this->fields).cameraBoxSettings;
   pSStackX_8 = (String *)CONCAT44(pSStackX_8._4_4_,100);
   pOVar9 = (Object *)FUN_?(lRam_?,&pSStackX_8);

@@ -237,7 +237,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnDestroy(TextBubble *this,Meth
     FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__TextBubble___OnDestroy_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_);
+    FUN_?(&MethodInfo__TextBubble___OnDestroy_b__17_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_Bubble_not_removed_from_controll);
@@ -252,7 +252,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnDestroy(TextBubble *this,Meth
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Bubble_not_removed_from_controll,(MethodInfo *)0x0);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     this_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>);
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor(this_00,(Object *)this,MethodInfo__TextBubble___OnDestroy_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor(this_00,(Object *)this,MethodInfo__TextBubble___OnDestroy_b__17_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
       FUN_?();
     }
@@ -843,9 +843,9 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_Start(TextBubble *this,MethodIn
 }
 
 
-/* Void <OnDestroy>b__16_0(TextBubbleController, BaseEventData) */
+/* Void <OnDestroy>b__17_0(TextBubbleController, BaseEventData) */
 
-void Assembly-CSharp.dll::TextBubble::TextBubble__OnDestroy_b__16_0(TextBubble *this,TextBubbleController *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::TextBubble::TextBubble__OnDestroy_b__17_0(TextBubble *this,TextBubbleController *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (x == (TextBubbleController *)0x0) {

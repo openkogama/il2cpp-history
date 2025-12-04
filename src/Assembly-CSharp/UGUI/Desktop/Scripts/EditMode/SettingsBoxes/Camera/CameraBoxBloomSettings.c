@@ -470,7 +470,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
         SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppBloomInty,iVar12,0,7,(MethodInfo *)0x0);
         pSVar13 = (this->fields).intensityInputField;
         if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppBloomInty,(float)iVar12,(MethodInfo *)0x0);
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppBloomInty,(float)iVar12,(MethodInfo *)0x0);
           pCVar4 = (this->fields).cameraBoxSettings;
           uStackX_8 = 5;
           pOVar3 = (Object *)FUN_?(lRam_?,&uStackX_8);
@@ -487,7 +487,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
               SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppBloomSKnee,iVar12,0,10,(MethodInfo *)0x0);
               pSVar13 = (this->fields).softKneeInputField;
               if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppBloomSKnee,(float)iVar12,(MethodInfo *)0x0);
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppBloomSKnee,(float)iVar12,(MethodInfo *)0x0);
                 pCVar4 = (this->fields).cameraBoxSettings;
                 uStackX_8 = 7;
                 pOVar3 = (Object *)FUN_?(lRam_?,&uStackX_8);
@@ -504,7 +504,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                     SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppBloomDiff,iVar12,1,10,(MethodInfo *)0x0);
                     pSVar13 = (this->fields).diffusionInputField;
                     if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
-                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppBloomDiff,(float)iVar12,(MethodInfo *)0x0);
+                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppBloomDiff,(float)iVar12,(MethodInfo *)0x0);
                       pCVar4 = (this->fields).cameraBoxSettings;
                       uStackX_8 = 0x3f800000;
                       pOVar3 = (Object *)FUN_?(lRam_?,&uStackX_8);

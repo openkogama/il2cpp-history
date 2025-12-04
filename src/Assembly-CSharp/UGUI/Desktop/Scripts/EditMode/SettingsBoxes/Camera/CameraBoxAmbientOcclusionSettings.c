@@ -458,7 +458,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
         SettingsSlider::SettingsSlider_Initialize_1(pSVar10,StringLiteral_ppAOInty,iVar11,0,0xf,(MethodInfo *)0x0);
         pSVar12 = (this->fields).intensityInputField;
         if (pSVar12 != (SettingsInputFieldSlider *)0x0) {
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar12,StringLiteral_ppAOInty,(float)iVar11,(MethodInfo *)0x0);
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar12,StringLiteral_ppAOInty,(float)iVar11,(MethodInfo *)0x0);
           pCVar3 = (this->fields).cameraBoxSettings;
           uStackX_8 = 1;
           pOVar4 = (Object *)FUN_?(lRam_?,&uStackX_8);
@@ -475,7 +475,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
               SettingsSlider::SettingsSlider_Initialize_1(pSVar10,StringLiteral_ppAOThick,iVar11,1,10,(MethodInfo *)0x0);
               pSVar12 = (this->fields).thicknessInputField;
               if (pSVar12 != (SettingsInputFieldSlider *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar12,StringLiteral_ppAOThick,(float)iVar11,(MethodInfo *)0x0);
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar12,StringLiteral_ppAOThick,(float)iVar11,(MethodInfo *)0x0);
                 pCVar3 = (this->fields).cameraBoxSettings;
                 uStackX_8 = 0;
                 pOVar4 = (Object *)FUN_?(lRam_?,&uStackX_8);

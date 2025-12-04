@@ -95,7 +95,7 @@ code_?:
   SettingsSlider::SettingsSlider_Initialize(pSVar6,StringLiteral_intervalOn,fVar5,0.1,1000.0,(MethodInfo *)0x0);
   pSVar7 = (this->fields).enabledInputField;
   if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar7,StringLiteral_intervalOn,fVar5,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar7,StringLiteral_intervalOn,fVar5,(MethodInfo *)0x0);
   pSVar6 = (this->fields).disabledSlider;
   if (pSVar6 == (SettingsSlider *)0x0) goto code_?;
   SettingsSlider::SettingsSlider_Initialize(pSVar6,StringLiteral_intervalOff,value,0.1,1000.0,(MethodInfo *)0x0);

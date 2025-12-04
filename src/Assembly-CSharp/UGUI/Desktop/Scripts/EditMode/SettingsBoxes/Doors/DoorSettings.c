@@ -49,7 +49,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors
       pSVar5 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_03,(Object *)pSVar4,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
       if (this_01 != (SettingsInputField *)0x0) {
         if (pSVar5 != (String *)0x0) {
-          if (pSVar5->klass == pSRam0000000182db2520) {
+          if (pSVar5->klass == pSRam0000000182dbbc60) {
             value_00 = pSVar5;
           }
           if (value_00 == (String *)0x0) {

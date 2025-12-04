@@ -36,9 +36,9 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     cRam_? = '\x01';
   }
   pAVar1 = (AdMobCredentials *)FUN_?(TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
-  pSVar2 = StringLiteral_Interstitial_ad_unit_not_set;
-  pSVar3 = StringLiteral_Banner_ad_unit_not;
-  pSVar4 = StringLiteral_Reward_ad_unit_not_set;
+  pSVar2 = StringLiteral_Reward_ad_unit_not_set;
+  pSVar3 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar4 = StringLiteral_Banner_ad_unit_not;
   (pAVar1->fields).AppId = StringLiteral_AppId_not_set;
   if (iRam_? != 0) {
     uVar5 = (uint)((ulonglong)&pAVar1->fields >> 0xc);
@@ -55,7 +55,7 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     } while (!bVar9);
   }
   iVar10 = iRam_?;
-  (pAVar1->fields).RewardedAdUnitId = pSVar4;
+  (pAVar1->fields).RewardedAdUnitId = pSVar2;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).RewardedAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
@@ -71,7 +71,7 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       iVar10 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).InterstitialAdUnitId = pSVar2;
+  (pAVar1->fields).InterstitialAdUnitId = pSVar3;
   iVar11 = 0;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).InterstitialAdUnitId >> 0xc);
@@ -88,7 +88,7 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       iVar11 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).BannerAdUnitId = pSVar3;
+  (pAVar1->fields).BannerAdUnitId = pSVar4;
   if (iVar11 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).BannerAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
@@ -131,9 +131,9 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     cRam_? = '\x01';
   }
   pAVar1 = (AdMobCredentials *)FUN_?(TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
-  pSVar2 = StringLiteral_Interstitial_ad_unit_not_set;
-  pSVar3 = StringLiteral_Banner_ad_unit_not;
-  pSVar4 = StringLiteral_Reward_ad_unit_not_set;
+  pSVar2 = StringLiteral_Reward_ad_unit_not_set;
+  pSVar3 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar4 = StringLiteral_Banner_ad_unit_not;
   (pAVar1->fields).AppId = StringLiteral_AppId_not_set;
   if (iRam_? != 0) {
     uVar5 = (uint)((ulonglong)&pAVar1->fields >> 0xc);
@@ -150,7 +150,7 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     } while (!bVar9);
   }
   iVar10 = iRam_?;
-  (pAVar1->fields).RewardedAdUnitId = pSVar4;
+  (pAVar1->fields).RewardedAdUnitId = pSVar2;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).RewardedAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
@@ -166,7 +166,7 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       iVar10 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).InterstitialAdUnitId = pSVar2;
+  (pAVar1->fields).InterstitialAdUnitId = pSVar3;
   iVar11 = 0;
   if (iVar10 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).InterstitialAdUnitId >> 0xc);
@@ -183,7 +183,7 @@ AdMobCredentials * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       iVar11 = iRam_?;
     } while (!bVar9);
   }
-  (pAVar1->fields).BannerAdUnitId = pSVar3;
+  (pAVar1->fields).BannerAdUnitId = pSVar4;
   if (iVar11 != 0) {
     uVar5 = (uint)((ulonglong)&(pAVar1->fields).BannerAdUnitId >> 0xc);
     lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;

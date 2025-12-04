@@ -235,7 +235,7 @@ code_?:
   }
   pSVar4 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_BlueprintData_,pSVar4,(MethodInfo *)0x0);
   if (pSVar11 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar11,pSVar4,(float)iVar9,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar11,pSVar4,(float)iVar9,(MethodInfo *)0x0);
   pSVar4 = StringLiteral_vehicleEnergyConsumption;
   pVVar1 = (this->fields).vehicleBaseSettings;
   if (pVVar1 == (VehicleBaseSettings *)0x0) goto code_?;

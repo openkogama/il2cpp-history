@@ -287,7 +287,7 @@ MVVehicleEnergy_VehicleEnergyConfiguration * Assembly-CSharp.dll::WorldObjectTyp
     bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar12,(Object *)StringLiteral_VehicleEnergyName,(Object **)&pSStackX_8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
     if ((bVar13 != 0) && (pSStackX_8 != (String *)0x0)) {
       pSVar4 = pSVar1;
-      if (pSStackX_8->klass == pSRam0000000182db2520) {
+      if (pSStackX_8->klass == pSRam0000000182dbbc60) {
         pSVar4 = pSStackX_8;
       }
       if ((pSVar4 != (String *)0x0) && (bVar2 = iRam_? != 0, __return_storage_ptr__->name = pSVar4, bVar2)) {
@@ -310,11 +310,11 @@ MVVehicleEnergy_VehicleEnergyConfiguration * Assembly-CSharp.dll::WorldObjectTyp
       bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar12,(Object *)StringLiteral_RespawnCount,(Object **)&pSStackX_10,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
       if ((bVar13 != 0) && (pSStackX_10 != (String *)0x0)) {
         pSVar4 = pSVar1;
-        if (pSStackX_10->klass == pSRam0000000182db24d8) {
+        if (pSStackX_10->klass == pSRam0000000182dbbc18) {
           pSVar4 = pSStackX_10;
         }
         if (pSVar4 != (String *)0x0) {
-          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182db24d8->_0).element_class) {
+          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182dbbc18->_0).element_class) {
             FUN_?(pSStackX_10);
             pcVar14 = (code *)swi(3);
             pMVar15 = (MVVehicleEnergy_VehicleEnergyConfiguration *)(*pcVar14)();
@@ -328,11 +328,11 @@ MVVehicleEnergy_VehicleEnergyConfiguration * Assembly-CSharp.dll::WorldObjectTyp
         bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar12,(Object *)StringLiteral_RespawnInterval,(Object **)&pSStackX_20,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
         if ((bVar13 != 0) && (pSStackX_20 != (String *)0x0)) {
           pSVar4 = pSVar1;
-          if (pSStackX_20->klass == pSRam0000000182db24d8) {
+          if (pSStackX_20->klass == pSRam0000000182dbbc18) {
             pSVar4 = pSStackX_20;
           }
           if (pSVar4 != (String *)0x0) {
-            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182db24d8->_0).element_class) {
+            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182dbbc18->_0).element_class) {
               FUN_?(pSStackX_20);
               pcVar14 = (code *)swi(3);
               pMVar15 = (MVVehicleEnergy_VehicleEnergyConfiguration *)(*pcVar14)();
@@ -345,11 +345,11 @@ MVVehicleEnergy_VehicleEnergyConfiguration * Assembly-CSharp.dll::WorldObjectTyp
         if (pDVar12 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar12,(Object *)StringLiteral_VehicleEnergyAmount,(Object **)&pSStack_3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
           if ((bVar13 != 0) && (pSStack_3 != (String *)0x0)) {
-            if (pSStack_3->klass == pSRam0000000182db24d8) {
+            if (pSStack_3->klass == pSRam0000000182dbbc18) {
               pSVar1 = pSStack_3;
             }
             if (pSVar1 != (String *)0x0) {
-              if ((pSStack_3->klass->_0).element_class != (pSRam0000000182db24d8->_0).element_class) {
+              if ((pSStack_3->klass->_0).element_class != (pSRam0000000182dbbc18->_0).element_class) {
                 FUN_?(pSStack_3);
                 pcVar14 = (code *)swi(3);
                 pMVar15 = (MVVehicleEnergy_VehicleEnergyConfiguration *)(*pcVar14)();

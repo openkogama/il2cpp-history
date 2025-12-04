@@ -24,11 +24,11 @@ void Assembly-CSharp.dll::BestFlagTimeNotification::BestFlagTimeNotification_Ini
   if ((data != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pAVar3 = (Action *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(data,key,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pTVar1 != (Text *)0x0)) {
     if (pAVar3 != (Action *)0x0) {
       pAVar4 = pAVar2;
-      if (pAVar3->klass == pARam0000000182db2520) {
+      if (pAVar3->klass == pARam0000000182dbbc60) {
         pAVar4 = pAVar3;
       }
       if (pAVar4 == (Action *)0x0) {
-        FUN_?(pAVar3,pARam0000000182db2520);
+        FUN_?(pAVar3,pARam0000000182dbbc60);
         pcVar5 = (code *)swi(3);
         (*pcVar5)();
         return;

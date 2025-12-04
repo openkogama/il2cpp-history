@@ -14,6 +14,7 @@ using UnityEngine;
 public class ChatAnchor : MonoBehaviour
 {
 	// Fields
+	private const float screenEdgeOffset = 40f;
 	[Tooltip("Chat Bubble that should be anchored at this transform.")]
 	public ChatBubble AttachedBubble;
 	[Tooltip("Radius in world units from the anchor transform to the bubble\'s pivot.")]
@@ -31,20 +32,24 @@ public class ChatAnchor : MonoBehaviour
 	private Avatar avatar;
 	private float currentInterpolationProgress;
 	private Vector3 previousAdjustedPosition;
-	private const float screenEdgeOffset = 40f;
+	[CompilerGenerated]
+	private string _OwnerName_k__BackingField;
+
+	// Properties
+	public string OwnerName { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Constructors
 	public ChatAnchor();
 
 	// Methods
-	public bool BindAttachedBubble(ChatBubble value);
 	public void Initialize(bool isLocal, Avatar avatar);
 	private void OnEnable();
 	private void OnValidate();
 	private void OnDestroy();
 	private void Update();
+	public bool BindAttachedBubble(ChatBubble value, string ownerName);
 	public void UpdateAttachedBubblePosition();
-	private Vector3 HandleOfScreenChatBubble(Camera camera, Vector3 adjustedPosition);
+	private Vector3 HandleOffScreenChatBubble(Camera camera, Vector3 adjustedPosition);
 	private void InterpolateToNewBubblePosition(Vector3 adjustedPosition);
 	public void SkipInterpolation();
 	public void HideChatBubble();

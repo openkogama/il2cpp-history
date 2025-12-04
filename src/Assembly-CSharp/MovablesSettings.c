@@ -89,7 +89,7 @@ code_?:
           SettingsSlider::SettingsSlider_Initialize(this_01,StringLiteral_BlueprintData_Velocity,value,0.3,3.0,(MethodInfo *)0x0);
           this_02 = (this->fields).inputField;
           if (this_02 != (SettingsInputFieldSlider *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_02,StringLiteral_BlueprintData_Velocity,value,(MethodInfo *)0x0);
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(this_02,StringLiteral_BlueprintData_Velocity,value,(MethodInfo *)0x0);
             return;
           }
         }

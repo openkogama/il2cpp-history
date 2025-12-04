@@ -199,10 +199,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
     (this->fields)._.data = (Dictionary_2_System_Object_System_Object_ *)this_03;
     if (bVar5) {
       uVar6 = (uint)((ulonglong)&(this->fields)._.data >> 0xc);
-      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
       do {
-        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
         LOCK();
         bVar5 = uVar8 == *puVar9;
         if (bVar5) {
@@ -236,10 +236,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
     }
     if (iRam_? != 0) {
       uVar6 = (uint)((ulonglong)&(this->fields)._.itemData >> 0xc);
-      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
       do {
-        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
         LOCK();
         bVar5 = uVar8 == *puVar9;
         if (bVar5) {
@@ -256,10 +256,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
     (this->fields)._.data = (pMVar12->fields)._.data;
     if (bVar5) {
       uVar6 = (uint)((ulonglong)&(this->fields)._.data >> 0xc);
-      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
       do {
-        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
         LOCK();
         bVar5 = uVar8 == *puVar9;
         if (bVar5) {
@@ -273,10 +273,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
     (this->fields)._.itemData = pDVar2;
     if (bVar5) {
       uVar6 = (uint)((ulonglong)&(this->fields)._.itemData >> 0xc);
-      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
       do {
-        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
         LOCK();
         bVar5 = uVar8 == *puVar9;
         if (bVar5) {
@@ -298,10 +298,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
     (this->fields).fireAudioPlayer = pCVar13;
     if (bVar5) {
       uVar6 = (uint)((ulonglong)&(this->fields).fireAudioPlayer >> 0xc);
-      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
       do {
-        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
         LOCK();
         bVar5 = uVar8 == *puVar9;
         if (bVar5) {
@@ -319,10 +319,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
       (this->fields).chargeAudioPlayer = pCVar13;
       if (bVar5) {
         uVar6 = (uint)((ulonglong)&(this->fields).chargeAudioPlayer >> 0xc);
-        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
         do {
-          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+          puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
           LOCK();
           bVar5 = uVar8 == *puVar9;
           if (bVar5) {
@@ -340,10 +340,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
         (this->fields).hitAudioPlayer = pCVar13;
         if (bVar5) {
           uVar6 = (uint)((ulonglong)&(this->fields).hitAudioPlayer >> 0xc);
-          lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+          uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
           do {
-            uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-            puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+            uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+            puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
             LOCK();
             bVar5 = uVar8 == *puVar9;
             if (bVar5) {
@@ -371,7 +371,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                 this_01 = (this->fields).nameInputField;
                 if ((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pSVar16 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_Name,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), this_01 != (SettingsInputField *)0x0)) {
                   if (pSVar16 != (String *)0x0) {
-                    if (pSVar16->klass == pSRam0000000182db2520) {
+                    if (pSVar16->klass == pSRam0000000182dbbc60) {
                       pSVar1 = pSVar16;
                     }
                     if (pSVar1 == (String *)0x0) {
@@ -386,291 +386,316 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                   pDVar2 = (this->fields)._.itemData;
                   pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                   mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                  if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_Damage,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                  pSVar1 = StringLiteral_Damage;
+                  if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                    CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_Damage,(pFVar18->fields)._._.method);
+                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                     pSVar17 = (this->fields).maxAmmoInputSlider;
                     pDVar2 = (this->fields)._.itemData;
                     pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                     mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_MaxAmmo,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                    pSVar1 = StringLiteral_MaxAmmo;
+                    if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                      CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_MaxAmmo,(pFVar18->fields)._._.method);
+                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                       pSVar17 = (this->fields).impulseStrengthInputSlider;
                       pDVar2 = (this->fields)._.itemData;
                       pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                       mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                      if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ImpulseStrength,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                      pSVar1 = StringLiteral_ImpulseStrength;
+                      if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                        CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ImpulseStrength,(pFVar18->fields)._._.method);
+                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                         pSVar17 = (this->fields).recoilStrengthInputSlider;
                         pDVar2 = (this->fields)._.itemData;
                         pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                         mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                        if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_RecoilStrength,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                        pSVar1 = StringLiteral_RecoilStrength;
+                        if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                          CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_RecoilStrength,(pFVar18->fields)._._.method);
+                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                           pSVar17 = (this->fields).attackAnimationInputSlider;
                           pDVar2 = (this->fields)._.itemData;
                           pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                           mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                          if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_AttackAnimationTime,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                          pSVar1 = StringLiteral_AttackAnimationTime;
+                          if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                            CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_AttackAnimationTime,(pFVar18->fields)._._.method);
+                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                             pSVar17 = (this->fields).attackCooldownInputSlider;
                             pDVar2 = (this->fields)._.itemData;
                             pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                             mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                            if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_AttackCooldown,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                            pSVar1 = StringLiteral_AttackCooldown;
+                            if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                              CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_AttackCooldown,(pFVar18->fields)._._.method);
+                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                               pSVar17 = (this->fields).spreadInputSlider;
                               pDVar2 = (this->fields)._.itemData;
                               pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                               mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                              if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_Radius,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                              pSVar1 = StringLiteral_Radius;
+                              if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_Radius,(pFVar18->fields)._._.method);
+                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                 pSVar17 = (this->fields).fireSoundVolumeInputSlider;
                                 pDVar2 = (this->fields)._.itemData;
                                 pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                 mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_FireSoundEffectVolume,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                pSVar1 = StringLiteral_FireSoundEffectVolume;
+                                if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                  CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_FireSoundEffectVolume,(pFVar18->fields)._._.method);
+                                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                   pSVar17 = (this->fields).hitSoundVolumeInputSlider;
                                   pDVar2 = (this->fields)._.itemData;
                                   pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                   mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                  if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_HitSoundEffectVolume,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                  pSVar1 = StringLiteral_HitSoundEffectVolume;
+                                  if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                    CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_HitSoundEffectVolume,(pFVar18->fields)._._.method);
+                                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                     pSVar17 = (this->fields).movementSpeedInputSlider;
                                     pDVar2 = (this->fields)._.itemData;
                                     pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                     mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_MovementSpeedWhileHeld,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                    pSVar1 = StringLiteral_MovementSpeedWhileHeld;
+                                    if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                      CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_MovementSpeedWhileHeld,(pFVar18->fields)._._.method);
+                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                       pSVar17 = (this->fields).shotsPerBurstInputSlider;
                                       pDVar2 = (this->fields)._.itemData;
                                       pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                       mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                      if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ShotsPerBurst,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                      pSVar1 = StringLiteral_ShotsPerBurst;
+                                      if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                        CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ShotsPerBurst,(pFVar18->fields)._._.method);
+                                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                         pSVar17 = (this->fields).burstCooldownBetweenShotsInputSlider;
                                         pDVar2 = (this->fields)._.itemData;
                                         pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                         mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                        if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_BurstCooldownBetweenShots,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                        pSVar1 = StringLiteral_BurstCooldownBetweenShots;
+                                        if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                          CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_BurstCooldownBetweenShots,(pFVar18->fields)._._.method);
+                                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                           pSVar17 = (this->fields).muzzleFlareSizeInputSlider;
                                           pDVar2 = (this->fields)._.itemData;
                                           pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                           mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                          if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_MuzzleFlareSize,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                          pSVar1 = StringLiteral_MuzzleFlareSize;
+                                          if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                            CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_MuzzleFlareSize,(pFVar18->fields)._._.method);
+                                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                             pSVar17 = (this->fields).projectilesPerShotInputSlider;
                                             pDVar2 = (this->fields)._.itemData;
                                             pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                             mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                            if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ProjectilesPerShot,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                            pSVar1 = StringLiteral_ProjectilesPerShot;
+                                            if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                              CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ProjectilesPerShot,(pFVar18->fields)._._.method);
+                                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                               pSVar17 = (this->fields).chargeTimeInputSlider;
                                               pDVar2 = (this->fields)._.itemData;
                                               pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                               mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                              if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ChargeTime,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                              pSVar1 = StringLiteral_ChargeTime;
+                                              if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ChargeTime,(pFVar18->fields)._._.method);
+                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                 pSVar17 = (this->fields).chargeSoundVolumeInputSlider;
                                                 pDVar2 = (this->fields)._.itemData;
                                                 pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                 mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ChargeSoundEffectVolume,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                pSVar1 = StringLiteral_ChargeSoundEffectVolume;
+                                                if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                  CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ChargeSoundEffectVolume,(pFVar18->fields)._._.method);
+                                                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                   pSVar17 = (this->fields).chargeZoomAmmountInputSlider;
                                                   pDVar2 = (this->fields)._.itemData;
                                                   pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                   mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                  if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ChargeZoomAmmount,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                  pSVar1 = StringLiteral_ChargeZoomAmmount;
+                                                  if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                    CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ChargeZoomAmmount,(pFVar18->fields)._._.method);
+                                                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                     pSVar17 = (this->fields).chargeZoomTimeInputSlider;
                                                     pDVar2 = (this->fields)._.itemData;
                                                     pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                     mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ChargeZoomTime,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                    pSVar1 = StringLiteral_ChargeZoomTime;
+                                                    if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                      CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ChargeZoomTime,(pFVar18->fields)._._.method);
+                                                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                       pSVar17 = (this->fields).chargeParticlesSizeInputSlider;
                                                       pDVar2 = (this->fields)._.itemData;
                                                       pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                       mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                      if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ChargeParticlesSize,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                      pSVar1 = StringLiteral_ChargeParticlesSize;
+                                                      if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                        CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ChargeParticlesSize,(pFVar18->fields)._._.method);
+                                                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                         pSVar17 = (this->fields).rangeInputSlider;
                                                         pDVar2 = (this->fields)._.itemData;
                                                         pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                         mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                        if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_Range,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                        pSVar1 = StringLiteral_Range;
+                                                        if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                          CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_Range,(pFVar18->fields)._._.method);
+                                                          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                           pSVar17 = (this->fields).projectileSpeedInputSlider;
                                                           pDVar2 = (this->fields)._.itemData;
                                                           pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                           mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                          if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ProjectileSpeed,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                          pSVar1 = StringLiteral_ProjectileSpeed;
+                                                          if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                            CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ProjectileSpeed,(pFVar18->fields)._._.method);
+                                                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                             pSVar17 = (this->fields).projectileSizeInputSlider;
                                                             pDVar2 = (this->fields)._.itemData;
                                                             pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                             mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                            if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_ProjectileSize,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                            pSVar1 = StringLiteral_ProjectileSize;
+                                                            if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                              CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_ProjectileSize,(pFVar18->fields)._._.method);
+                                                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                               pSVar17 = (this->fields).sparksSizeInputSlider;
                                                               pDVar2 = (this->fields)._.itemData;
                                                               pFVar18 = (Func_2_Object_ValueTuple_2_Single_Single_ *)FUN_?(TypeInfo__System__Func<System::String,_System::ValueTuple<float,_float>_>);
                                                               mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::Func_2_Object_ValueTuple_2_Single_Single___ctor(pFVar18,(Object *)0x0,MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_,(MethodInfo *)0x0);
-                                                              if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize(pSVar17,StringLiteral_SparksSize,pDVar2,(Func_2_String_ValueTuple_2_Single_Single_ *)pFVar18,(MethodInfo *)0x0);
+                                                              pSVar1 = StringLiteral_SparksSize;
+                                                              if ((pSVar17 != (SettingsInputFieldSlider *)0x0) && (pFVar18 != (Func_2_Object_ValueTuple_2_Single_Single_ *)0x0)) {
+                                                                CStack_19._0_8_ = (*(pFVar18->fields)._._.invoke_impl)((pFVar18->fields)._._.method_code,StringLiteral_SparksSize,(pFVar18->fields)._._.method);
+                                                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar17,pSVar1,pDVar2,CStack_19.r,CStack_19.g,1.0,(MethodInfo *)0x0);
                                                                 pDVar2 = (this->fields)._.itemData;
-                                                                pSVar19 = (this->fields).fireModeDropdown;
+                                                                pSVar20 = (this->fields).fireModeDropdown;
                                                                 if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                                                   pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_FireMode,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                  pSVar20 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->fireModes;
-                                                                  if (((pSVar20 != (String__Array *)0x0) && (pLVar21 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar20->max_length,(MethodInfo *)0x0), pSVar19 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                  pSVar21 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->fireModes;
+                                                                  if (((pSVar21 != (String__Array *)0x0) && (pLVar22 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar21->max_length,(MethodInfo *)0x0), pSVar20 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                     if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                       FUN_?(pOVar4,lRam_?);
                                                                       pcVar11 = (code *)swi(3);
                                                                       (*pcVar11)();
                                                                       return;
                                                                     }
-                                                                    SettingsDropdown::SettingsDropdown_Initialize(pSVar19,StringLiteral_FireMode,*(int32_t *)&pOVar4[1].klass,pSVar20,pLVar21,(MethodInfo *)0x0);
+                                                                    SettingsDropdown::SettingsDropdown_Initialize(pSVar20,StringLiteral_FireMode,*(int32_t *)&pOVar4[1].klass,pSVar21,pLVar22,(MethodInfo *)0x0);
                                                                     pDVar2 = (this->fields)._.itemData;
-                                                                    pSVar19 = (this->fields).chargeSoundEffectDropdown;
+                                                                    pSVar20 = (this->fields).chargeSoundEffectDropdown;
                                                                     if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                                                       pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                      pSVar20 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->chargeSoundEffects;
-                                                                      if (((pSVar20 != (String__Array *)0x0) && (pLVar21 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar20->max_length,(MethodInfo *)0x0), pSVar19 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                      pSVar21 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->chargeSoundEffects;
+                                                                      if (((pSVar21 != (String__Array *)0x0) && (pLVar22 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar21->max_length,(MethodInfo *)0x0), pSVar20 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                         if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                           FUN_?(pOVar4,lRam_?);
                                                                           pcVar11 = (code *)swi(3);
                                                                           (*pcVar11)();
                                                                           return;
                                                                         }
-                                                                        SettingsDropdown::SettingsDropdown_Initialize(pSVar19,StringLiteral_ChargeSoundEffect,*(int32_t *)&pOVar4[1].klass,pSVar20,pLVar21,(MethodInfo *)0x0);
+                                                                        SettingsDropdown::SettingsDropdown_Initialize(pSVar20,StringLiteral_ChargeSoundEffect,*(int32_t *)&pOVar4[1].klass,pSVar21,pLVar22,(MethodInfo *)0x0);
                                                                         pDVar2 = (this->fields)._.itemData;
-                                                                        pSVar19 = (this->fields).fireSoundEffectDropdown;
+                                                                        pSVar20 = (this->fields).fireSoundEffectDropdown;
                                                                         if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                                                           pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_FireSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                          pSVar20 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->fireSoundEffects;
-                                                                          if (((pSVar20 != (String__Array *)0x0) && (pLVar21 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar20->max_length,(MethodInfo *)0x0), pSVar19 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                          pSVar21 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->fireSoundEffects;
+                                                                          if (((pSVar21 != (String__Array *)0x0) && (pLVar22 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar21->max_length,(MethodInfo *)0x0), pSVar20 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                             if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                               FUN_?(pOVar4,lRam_?);
                                                                               pcVar11 = (code *)swi(3);
                                                                               (*pcVar11)();
                                                                               return;
                                                                             }
-                                                                            SettingsDropdown::SettingsDropdown_Initialize(pSVar19,StringLiteral_FireSoundEffect,*(int32_t *)&pOVar4[1].klass,pSVar20,pLVar21,(MethodInfo *)0x0);
+                                                                            SettingsDropdown::SettingsDropdown_Initialize(pSVar20,StringLiteral_FireSoundEffect,*(int32_t *)&pOVar4[1].klass,pSVar21,pLVar22,(MethodInfo *)0x0);
                                                                             pDVar2 = (this->fields)._.itemData;
-                                                                            pSVar19 = (this->fields).hitSoundEffectDropdown;
+                                                                            pSVar20 = (this->fields).hitSoundEffectDropdown;
                                                                             if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                                                               pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_HitSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                              pSVar20 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->hitSoundEffects;
-                                                                              if (((pSVar20 != (String__Array *)0x0) && (pLVar21 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar20->max_length,(MethodInfo *)0x0), pSVar19 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                              pSVar21 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields->hitSoundEffects;
+                                                                              if (((pSVar21 != (String__Array *)0x0) && (pLVar22 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::SettingsUI_GetAcceptableIndexes((SettingsUI *)this,(int32_t)pSVar21->max_length,(MethodInfo *)0x0), pSVar20 != (SettingsDropdown *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                                 if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                                   FUN_?(pOVar4,lRam_?);
                                                                                   pcVar11 = (code *)swi(3);
                                                                                   (*pcVar11)();
                                                                                   return;
                                                                                 }
-                                                                                SettingsDropdown::SettingsDropdown_Initialize(pSVar19,StringLiteral_HitSoundEffect,*(int32_t *)&pOVar4[1].klass,pSVar20,pLVar21,(MethodInfo *)0x0);
+                                                                                SettingsDropdown::SettingsDropdown_Initialize(pSVar20,StringLiteral_HitSoundEffect,*(int32_t *)&pOVar4[1].klass,pSVar21,pLVar22,(MethodInfo *)0x0);
                                                                                 pDVar2 = (this->fields)._.itemData;
-                                                                                pSVar22 = (this->fields).thirdPersonCameraToggle;
-                                                                                if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ThirdPersonCamera,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar22 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                                pSVar23 = (this->fields).thirdPersonCameraToggle;
+                                                                                if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ThirdPersonCamera,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                                   if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                                     FUN_?(pOVar4,lRam_?);
                                                                                     pcVar11 = (code *)swi(3);
                                                                                     (*pcVar11)();
                                                                                     return;
                                                                                   }
-                                                                                  SettingsToggle::SettingsToggle_Initialize(pSVar22,StringLiteral_ThirdPersonCamera,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                                                                                  SettingsToggle::SettingsToggle_Initialize(pSVar23,StringLiteral_ThirdPersonCamera,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
                                                                                   pDVar2 = (this->fields)._.itemData;
-                                                                                  pSVar22 = (this->fields).muzzleFlareOnFireToggle;
-                                                                                  if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_MuzzleFlareOnFire,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar22 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                                  pSVar23 = (this->fields).muzzleFlareOnFireToggle;
+                                                                                  if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_MuzzleFlareOnFire,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                                     if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                                       FUN_?(pOVar4,lRam_?);
                                                                                       pcVar11 = (code *)swi(3);
                                                                                       (*pcVar11)();
                                                                                       return;
                                                                                     }
-                                                                                    SettingsToggle::SettingsToggle_Initialize(pSVar22,StringLiteral_MuzzleFlareOnFire,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                                                                                    SettingsToggle::SettingsToggle_Initialize(pSVar23,StringLiteral_MuzzleFlareOnFire,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
                                                                                     pDVar2 = (this->fields)._.itemData;
-                                                                                    pSVar22 = (this->fields).smokeOnFireToggle;
-                                                                                    if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_SmokeOnFire,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar22 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                                    pSVar23 = (this->fields).smokeOnFireToggle;
+                                                                                    if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_SmokeOnFire,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                                       if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                                         FUN_?(pOVar4,lRam_?);
                                                                                         pcVar11 = (code *)swi(3);
                                                                                         (*pcVar11)();
                                                                                         return;
                                                                                       }
-                                                                                      SettingsToggle::SettingsToggle_Initialize(pSVar22,StringLiteral_SmokeOnFire,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                                                                                      SettingsToggle::SettingsToggle_Initialize(pSVar23,StringLiteral_SmokeOnFire,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
                                                                                       pDVar2 = (this->fields)._.itemData;
-                                                                                      pSVar22 = (this->fields).chargeEnabledToggle;
-                                                                                      if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar22 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                                      pSVar23 = (this->fields).chargeEnabledToggle;
+                                                                                      if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                                         if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                                           FUN_?(pOVar4,lRam_?);
                                                                                           pcVar11 = (code *)swi(3);
                                                                                           (*pcVar11)();
                                                                                           return;
                                                                                         }
-                                                                                        SettingsToggle::SettingsToggle_Initialize(pSVar22,StringLiteral_ChargeEnabled,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                                                                                        SettingsToggle::SettingsToggle_Initialize(pSVar23,StringLiteral_ChargeEnabled,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
                                                                                         pDVar2 = (this->fields)._.itemData;
-                                                                                        pSVar22 = (this->fields).chargeParticlesToggle;
-                                                                                        if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeParticlesEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar22 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                                        pSVar23 = (this->fields).chargeParticlesToggle;
+                                                                                        if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeParticlesEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                                           if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                                             FUN_?(pOVar4,lRam_?);
                                                                                             pcVar11 = (code *)swi(3);
                                                                                             (*pcVar11)();
                                                                                             return;
                                                                                           }
-                                                                                          SettingsToggle::SettingsToggle_Initialize(pSVar22,StringLiteral_ChargeParticlesEnabled,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                                                                                          SettingsToggle::SettingsToggle_Initialize(pSVar23,StringLiteral_ChargeParticlesEnabled,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
                                                                                           pDVar2 = (this->fields)._.itemData;
-                                                                                          pSVar22 = (this->fields).chargeZoomToggle;
-                                                                                          if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeZoomEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar22 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
+                                                                                          pSVar23 = (this->fields).chargeZoomToggle;
+                                                                                          if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeZoomEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
                                                                                             if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
                                                                                               FUN_?(pOVar4,lRam_?);
                                                                                               pcVar11 = (code *)swi(3);
                                                                                               (*pcVar11)();
                                                                                               return;
                                                                                             }
-                                                                                            SettingsToggle::SettingsToggle_Initialize(pSVar22,StringLiteral_ChargeZoomEnabled,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                                                                                            SettingsToggle::SettingsToggle_Initialize(pSVar23,StringLiteral_ChargeZoomEnabled,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
                                                                                             pDVar2 = (this->fields)._.itemData;
-                                                                                            pSVar22 = (this->fields).sparksOnHitToggle;
-                                                                                            if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_SparksOnHit,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar22 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
-                                                                                              if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                FUN_?(pOVar4,lRam_?);
-                                                                                                pcVar11 = (code *)swi(3);
-                                                                                                (*pcVar11)();
-                                                                                                return;
-                                                                                              }
-                                                                                              SettingsToggle::SettingsToggle_Initialize(pSVar22,StringLiteral_SparksOnHit,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
-                                                                                              pIVar23 = (this->fields).muzzleFlareColorImage;
-                                                                                              pDVar2 = (this->fields)._.itemData;
-                                                                                              if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
-                                                                                                FUN_?();
-                                                                                              }
-                                                                                              pSVar1 = StringLiteral_MuzzleFlareColor;
-                                                                                              if (cRam_? == '\0') {
-                                                                                                FUN_?(&TypeInfo__Extensions);
-                                                                                                LOCK();
-                                                                                                UNLOCK();
-                                                                                                cRam_? = '\x01';
-                                                                                              }
-                                                                                              if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
-                                                                                                FUN_?();
-                                                                                              }
-                                                                                              CStack_24.r = 0.0;
-                                                                                              CStack_24.g = 0.0;
-                                                                                              CStack_24.b = 0.0;
-                                                                                              CStack_24.a = 0.0;
-                                                                                              pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_24,(MethodInfo *)0x0);
-                                                                                              if (pIVar23 != (Image *)0x0) {
-                                                                                                CStack_24.r = pCVar25->r;
-                                                                                                CStack_24.g = pCVar25->g;
-                                                                                                CStack_24.b = pCVar25->b;
-                                                                                                CStack_24.a = pCVar25->a;
-                                                                                                (*(pIVar23->klass->vtable).set_color.methodPtr)(pIVar23,&CStack_24,(pIVar23->klass->vtable).set_color.method);
-                                                                                                pSVar1 = StringLiteral_ChargeParticlesColor;
-                                                                                                pIVar23 = (this->fields).chargeParticlesColorImage;
+                                                                                            pSVar23 = (this->fields).sparksOnHitToggle;
+                                                                                            if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                              pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_SparksOnHit,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                              if ((pSVar23 != (SettingsToggle *)0x0) && (pOVar4 != (Object *)0x0)) {
+                                                                                                if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                  FUN_?(pOVar4,lRam_?);
+                                                                                                  pcVar11 = (code *)swi(3);
+                                                                                                  (*pcVar11)();
+                                                                                                  return;
+                                                                                                }
+                                                                                                SettingsToggle::SettingsToggle_Initialize(pSVar23,StringLiteral_SparksOnHit,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                                                                                                pIVar24 = (this->fields).muzzleFlareColorImage;
                                                                                                 pDVar2 = (this->fields)._.itemData;
+                                                                                                if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                                                                                                  FUN_?();
+                                                                                                }
+                                                                                                pSVar1 = StringLiteral_MuzzleFlareColor;
                                                                                                 if (cRam_? == '\0') {
                                                                                                   FUN_?(&TypeInfo__Extensions);
                                                                                                   LOCK();
@@ -680,19 +705,19 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                                                                                                 if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
                                                                                                   FUN_?();
                                                                                                 }
-                                                                                                CStack_24.r = 0.0;
-                                                                                                CStack_24.g = 0.0;
-                                                                                                CStack_24.b = 0.0;
-                                                                                                CStack_24.a = 0.0;
-                                                                                                pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_24,(MethodInfo *)0x0);
-                                                                                                if (pIVar23 != (Image *)0x0) {
-                                                                                                  CStack_24.r = pCVar25->r;
-                                                                                                  CStack_24.g = pCVar25->g;
-                                                                                                  CStack_24.b = pCVar25->b;
-                                                                                                  CStack_24.a = pCVar25->a;
-                                                                                                  (*(pIVar23->klass->vtable).set_color.methodPtr)(pIVar23,&CStack_24,(pIVar23->klass->vtable).set_color.method);
-                                                                                                  pSVar1 = StringLiteral_ProjectileColor;
-                                                                                                  pIVar23 = (this->fields).projectileColorImage;
+                                                                                                CStack_19.r = 0.0;
+                                                                                                CStack_19.g = 0.0;
+                                                                                                CStack_19.b = 0.0;
+                                                                                                CStack_19.a = 0.0;
+                                                                                                pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_19,(MethodInfo *)0x0);
+                                                                                                if (pIVar24 != (Image *)0x0) {
+                                                                                                  CStack_19.r = pCVar25->r;
+                                                                                                  CStack_19.g = pCVar25->g;
+                                                                                                  CStack_19.b = pCVar25->b;
+                                                                                                  CStack_19.a = pCVar25->a;
+                                                                                                  (*(pIVar24->klass->vtable).set_color.methodPtr)(pIVar24,&CStack_19,(pIVar24->klass->vtable).set_color.method);
+                                                                                                  pSVar1 = StringLiteral_ChargeParticlesColor;
+                                                                                                  pIVar24 = (this->fields).chargeParticlesColorImage;
                                                                                                   pDVar2 = (this->fields)._.itemData;
                                                                                                   if (cRam_? == '\0') {
                                                                                                     FUN_?(&TypeInfo__Extensions);
@@ -703,19 +728,19 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                                                                                                   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
                                                                                                     FUN_?();
                                                                                                   }
-                                                                                                  CStack_24.r = 0.0;
-                                                                                                  CStack_24.g = 0.0;
-                                                                                                  CStack_24.b = 0.0;
-                                                                                                  CStack_24.a = 0.0;
-                                                                                                  pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_24,(MethodInfo *)0x0);
-                                                                                                  if (pIVar23 != (Image *)0x0) {
-                                                                                                    CStack_24.r = pCVar25->r;
-                                                                                                    CStack_24.g = pCVar25->g;
-                                                                                                    CStack_24.b = pCVar25->b;
-                                                                                                    CStack_24.a = pCVar25->a;
-                                                                                                    (*(pIVar23->klass->vtable).set_color.methodPtr)(pIVar23,&CStack_24,(pIVar23->klass->vtable).set_color.method);
-                                                                                                    pSVar1 = StringLiteral_ProjectileTrailColor;
-                                                                                                    pIVar23 = (this->fields).projectileTrailColorImage;
+                                                                                                  CStack_19.r = 0.0;
+                                                                                                  CStack_19.g = 0.0;
+                                                                                                  CStack_19.b = 0.0;
+                                                                                                  CStack_19.a = 0.0;
+                                                                                                  pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_19,(MethodInfo *)0x0);
+                                                                                                  if (pIVar24 != (Image *)0x0) {
+                                                                                                    CStack_19.r = pCVar25->r;
+                                                                                                    CStack_19.g = pCVar25->g;
+                                                                                                    CStack_19.b = pCVar25->b;
+                                                                                                    CStack_19.a = pCVar25->a;
+                                                                                                    (*(pIVar24->klass->vtable).set_color.methodPtr)(pIVar24,&CStack_19,(pIVar24->klass->vtable).set_color.method);
+                                                                                                    pSVar1 = StringLiteral_ProjectileColor;
+                                                                                                    pIVar24 = (this->fields).projectileColorImage;
                                                                                                     pDVar2 = (this->fields)._.itemData;
                                                                                                     if (cRam_? == '\0') {
                                                                                                       FUN_?(&TypeInfo__Extensions);
@@ -726,19 +751,19 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                                                                                                     if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
                                                                                                       FUN_?();
                                                                                                     }
-                                                                                                    CStack_24.r = 0.0;
-                                                                                                    CStack_24.g = 0.0;
-                                                                                                    CStack_24.b = 0.0;
-                                                                                                    CStack_24.a = 0.0;
-                                                                                                    pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_24,(MethodInfo *)0x0);
-                                                                                                    if (pIVar23 != (Image *)0x0) {
-                                                                                                      CStack_24.r = pCVar25->r;
-                                                                                                      CStack_24.g = pCVar25->g;
-                                                                                                      CStack_24.b = pCVar25->b;
-                                                                                                      CStack_24.a = pCVar25->a;
-                                                                                                      (*(pIVar23->klass->vtable).set_color.methodPtr)(pIVar23,&CStack_24,(pIVar23->klass->vtable).set_color.method);
-                                                                                                      pSVar1 = StringLiteral_SparksColor;
-                                                                                                      pIVar23 = (this->fields).sparksColorImage;
+                                                                                                    CStack_19.r = 0.0;
+                                                                                                    CStack_19.g = 0.0;
+                                                                                                    CStack_19.b = 0.0;
+                                                                                                    CStack_19.a = 0.0;
+                                                                                                    pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_19,(MethodInfo *)0x0);
+                                                                                                    if (pIVar24 != (Image *)0x0) {
+                                                                                                      CStack_19.r = pCVar25->r;
+                                                                                                      CStack_19.g = pCVar25->g;
+                                                                                                      CStack_19.b = pCVar25->b;
+                                                                                                      CStack_19.a = pCVar25->a;
+                                                                                                      (*(pIVar24->klass->vtable).set_color.methodPtr)(pIVar24,&CStack_19,(pIVar24->klass->vtable).set_color.method);
+                                                                                                      pSVar1 = StringLiteral_ProjectileTrailColor;
+                                                                                                      pIVar24 = (this->fields).projectileTrailColorImage;
                                                                                                       pDVar2 = (this->fields)._.itemData;
                                                                                                       if (cRam_? == '\0') {
                                                                                                         FUN_?(&TypeInfo__Extensions);
@@ -749,362 +774,386 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                                                                                                       if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
                                                                                                         FUN_?();
                                                                                                       }
-                                                                                                      CStack_24.r = 0.0;
-                                                                                                      CStack_24.g = 0.0;
-                                                                                                      CStack_24.b = 0.0;
-                                                                                                      CStack_24.a = 0.0;
-                                                                                                      pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_24,(MethodInfo *)0x0);
-                                                                                                      if (pIVar23 != (Image *)0x0) {
-                                                                                                        CStack_24.r = pCVar25->r;
-                                                                                                        CStack_24.g = pCVar25->g;
-                                                                                                        CStack_24.b = pCVar25->b;
-                                                                                                        CStack_24.a = pCVar25->a;
-                                                                                                        (*(pIVar23->klass->vtable).set_color.methodPtr)(pIVar23,&CStack_24,(pIVar23->klass->vtable).set_color.method);
+                                                                                                      CStack_19.r = 0.0;
+                                                                                                      CStack_19.g = 0.0;
+                                                                                                      CStack_19.b = 0.0;
+                                                                                                      CStack_19.a = 0.0;
+                                                                                                      pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_19,(MethodInfo *)0x0);
+                                                                                                      if (pIVar24 != (Image *)0x0) {
+                                                                                                        CStack_19.r = pCVar25->r;
+                                                                                                        CStack_19.g = pCVar25->g;
+                                                                                                        CStack_19.b = pCVar25->b;
+                                                                                                        CStack_19.a = pCVar25->a;
+                                                                                                        (*(pIVar24->klass->vtable).set_color.methodPtr)(pIVar24,&CStack_19,(pIVar24->klass->vtable).set_color.method);
+                                                                                                        pSVar1 = StringLiteral_SparksColor;
+                                                                                                        pIVar24 = (this->fields).sparksColorImage;
+                                                                                                        pDVar2 = (this->fields)._.itemData;
                                                                                                         if (cRam_? == '\0') {
-                                                                                                          FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_,0);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__FireMode);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_ChargeSoundEffect);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_ChargeZoomEnabled);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_MuzzleFlareOnFire);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_ChargeParticlesEnabled);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_FireMode);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_u221E);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_HitSoundEffect);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_SparksOnHit);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_MaxAmmo);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_FireSoundEffect);
-                                                                                                          LOCK();
-                                                                                                          UNLOCK();
-                                                                                                          FUN_?(&StringLiteral_ChargeEnabled);
+                                                                                                          FUN_?(&TypeInfo__Extensions);
                                                                                                           LOCK();
                                                                                                           UNLOCK();
                                                                                                           cRam_? = '\x01';
                                                                                                         }
-                                                                                                        pDVar2 = (this->fields)._.itemData;
-                                                                                                        if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                          pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_MaxAmmo,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                          pSVar1 = StringLiteral_u221E;
-                                                                                                          if (pOVar4 != (Object *)0x0) {
-                                                                                                            if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                              FUN_?(pOVar4,lRam_?);
-                                                                                                              pcVar11 = (code *)swi(3);
-                                                                                                              (*pcVar11)();
-                                                                                                              return;
-                                                                                                            }
-                                                                                                            if (999.0 <= *(float *)&pOVar4[1].klass) {
-                                                                                                              pSVar17 = (this->fields).maxAmmoInputSlider;
-                                                                                                              if ((pSVar17 == (SettingsInputFieldSlider *)0x0) || (pIVar27 = (pSVar17->fields).inputField, pIVar27 == (InputField *)0x0)) goto code_?;
-                                                                                                              UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_contentType(pIVar27,InputField_ContentType__Enum_Standard,(MethodInfo *)0x0);
-                                                                                                              pIVar27 = (pSVar17->fields).inputField;
-                                                                                                              if (pIVar27 == (InputField *)0x0) goto code_?;
-                                                                                                              UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_SetText(pIVar27,pSVar1,1,(MethodInfo *)0x0);
-                                                                                                            }
-                                                                                                            pDVar2 = (this->fields)._.itemData;
-                                                                                                            if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                              pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_FireSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                              if (pOVar4 != (Object *)0x0) {
-                                                                                                                if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                  FUN_?(pOVar4,lRam_?);
-                                                                                                                  pcVar11 = (code *)swi(3);
-                                                                                                                  (*pcVar11)();
-                                                                                                                  return;
-                                                                                                                }
-                                                                                                                iVar28 = *(int *)&pOVar4[1].klass;
-                                                                                                                pSVar17 = (this->fields).fireSoundVolumeInputSlider;
-                                                                                                                if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                  pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                  if (pTVar15 != (Transform *)0x0) {
-                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                        if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                                                                                                          FUN_?();
+                                                                                                        }
+                                                                                                        CStack_19.r = 0.0;
+                                                                                                        CStack_19.g = 0.0;
+                                                                                                        CStack_19.b = 0.0;
+                                                                                                        CStack_19.a = 0.0;
+                                                                                                        pCVar25 = Extensions::Extensions_GetColorOrDefault(&CStack_26,pDVar2,pSVar1,&CStack_19,(MethodInfo *)0x0);
+                                                                                                        if (pIVar24 != (Image *)0x0) {
+                                                                                                          CStack_19.r = pCVar25->r;
+                                                                                                          CStack_19.g = pCVar25->g;
+                                                                                                          CStack_19.b = pCVar25->b;
+                                                                                                          CStack_19.a = pCVar25->a;
+                                                                                                          (*(pIVar24->klass->vtable).set_color.methodPtr)(pIVar24,&CStack_19,(pIVar24->klass->vtable).set_color.method);
+                                                                                                          if (cRam_? == '\0') {
+                                                                                                            FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_,0);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__FireMode);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_ChargeSoundEffect);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_ChargeZoomEnabled);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_MuzzleFlareOnFire);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_ChargeParticlesEnabled);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_FireMode);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_u221E);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_HitSoundEffect);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_SparksOnHit);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_MaxAmmo);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_FireSoundEffect);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            FUN_?(&StringLiteral_ChargeEnabled);
+                                                                                                            LOCK();
+                                                                                                            UNLOCK();
+                                                                                                            cRam_? = '\x01';
+                                                                                                          }
+                                                                                                          pDVar2 = (this->fields)._.itemData;
+                                                                                                          if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_MaxAmmo,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                            pSVar1 = StringLiteral_u221E;
+                                                                                                            if (pOVar4 != (Object *)0x0) {
+                                                                                                              if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                FUN_?(pOVar4,lRam_?);
+                                                                                                                pcVar11 = (code *)swi(3);
+                                                                                                                (*pcVar11)();
+                                                                                                                return;
+                                                                                                              }
+                                                                                                              if (999.0 <= *(float *)&pOVar4[1].klass) {
+                                                                                                                pSVar17 = (this->fields).maxAmmoInputSlider;
+                                                                                                                if ((pSVar17 == (SettingsInputFieldSlider *)0x0) || (pIVar27 = (pSVar17->fields).inputField, pIVar27 == (InputField *)0x0)) goto code_?;
+                                                                                                                UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_contentType(pIVar27,InputField_ContentType__Enum_Standard,(MethodInfo *)0x0);
+                                                                                                                pIVar27 = (pSVar17->fields).inputField;
+                                                                                                                if (pIVar27 == (InputField *)0x0) goto code_?;
+                                                                                                                UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_SetText(pIVar27,pSVar1,1,(MethodInfo *)0x0);
+                                                                                                              }
+                                                                                                              pDVar2 = (this->fields)._.itemData;
+                                                                                                              if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_FireSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                if (pOVar4 != (Object *)0x0) {
+                                                                                                                  if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                    FUN_?(pOVar4,lRam_?);
+                                                                                                                    pcVar11 = (code *)swi(3);
+                                                                                                                    (*pcVar11)();
+                                                                                                                    return;
+                                                                                                                  }
+                                                                                                                  iVar28 = *(int *)&pOVar4[1].klass;
+                                                                                                                  pSVar17 = (this->fields).fireSoundVolumeInputSlider;
+                                                                                                                  if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                     if (pTVar15 != (Transform *)0x0) {
-                                                                                                                      pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                      if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,0 < iVar28,(MethodInfo *)0x0);
-                                                                                                                        pDVar2 = (this->fields)._.itemData;
-                                                                                                                        if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                          pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_FireMode,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                          if (pOVar4 != (Object *)0x0) {
-                                                                                                                            if ((pOVar4->klass->_0).element_class != (TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__FireMode->_0).element_class) {
-                                                                                                                              FUN_?(pOVar4,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__FireMode);
-                                                                                                                              pcVar11 = (code *)swi(3);
-                                                                                                                              (*pcVar11)();
-                                                                                                                              return;
-                                                                                                                            }
-                                                                                                                            bVar5 = *(int *)&pOVar4[1].klass == 2;
-                                                                                                                            pSVar17 = (this->fields).shotsPerBurstInputSlider;
-                                                                                                                            if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                              pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                              if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                      if (pTVar15 != (Transform *)0x0) {
+                                                                                                                        pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                        if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,0 < iVar28,(MethodInfo *)0x0);
+                                                                                                                          pDVar2 = (this->fields)._.itemData;
+                                                                                                                          if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_FireMode,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                            if (pOVar4 != (Object *)0x0) {
+                                                                                                                              if ((pOVar4->klass->_0).element_class != (TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__FireMode->_0).element_class) {
+                                                                                                                                FUN_?(pOVar4,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__FireMode);
+                                                                                                                                pcVar11 = (code *)swi(3);
+                                                                                                                                (*pcVar11)();
+                                                                                                                                return;
+                                                                                                                              }
+                                                                                                                              bVar5 = *(int *)&pOVar4[1].klass == 2;
+                                                                                                                              pSVar17 = (this->fields).shotsPerBurstInputSlider;
+                                                                                                                              if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                 if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                  pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                  if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar5,(MethodInfo *)0x0);
-                                                                                                                                    pSVar17 = (this->fields).burstCooldownBetweenShotsInputSlider;
-                                                                                                                                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                      if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                  pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                  if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                    pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                    if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar5,(MethodInfo *)0x0);
+                                                                                                                                      pSVar17 = (this->fields).burstCooldownBetweenShotsInputSlider;
+                                                                                                                                      if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                         if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                          pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                          if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar5,(MethodInfo *)0x0);
-                                                                                                                                            pDVar2 = (this->fields)._.itemData;
-                                                                                                                                            if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                                              pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_MuzzleFlareOnFire,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                                              if (pOVar4 != (Object *)0x0) {
-                                                                                                                                                if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                                                  FUN_?(pOVar4,lRam_?);
-                                                                                                                                                  pcVar11 = (code *)swi(3);
-                                                                                                                                                  (*pcVar11)();
-                                                                                                                                                  return;
-                                                                                                                                                }
-                                                                                                                                                pSVar17 = (this->fields).muzzleFlareSizeInputSlider;
-                                                                                                                                                bVar30 = *(bool *)&pOVar4[1].klass;
-                                                                                                                                                if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                  pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                  if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                          if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                            pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                            if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar5,(MethodInfo *)0x0);
+                                                                                                                                              pDVar2 = (this->fields)._.itemData;
+                                                                                                                                              if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                                                pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_MuzzleFlareOnFire,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                                                if (pOVar4 != (Object *)0x0) {
+                                                                                                                                                  if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                                                    FUN_?(pOVar4,lRam_?);
+                                                                                                                                                    pcVar11 = (code *)swi(3);
+                                                                                                                                                    (*pcVar11)();
+                                                                                                                                                    return;
+                                                                                                                                                  }
+                                                                                                                                                  pSVar17 = (this->fields).muzzleFlareSizeInputSlider;
+                                                                                                                                                  bVar30 = *(bool *)&pOVar4[1].klass;
+                                                                                                                                                  if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                     if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                      pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                      if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
-                                                                                                                                                        pIVar23 = (this->fields).muzzleFlareColorImage;
-                                                                                                                                                        if (pIVar23 != (Image *)0x0) {
-                                                                                                                                                          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar23,(MethodInfo *)0x0);
-                                                                                                                                                          if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                            pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                      if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                        pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                        if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
+                                                                                                                                                          pIVar24 = (this->fields).muzzleFlareColorImage;
+                                                                                                                                                          if (pIVar24 != (Image *)0x0) {
+                                                                                                                                                            pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar24,(MethodInfo *)0x0);
                                                                                                                                                             if (pTVar15 != (Transform *)0x0) {
                                                                                                                                                               pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
                                                                                                                                                               if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                  pDVar2 = (this->fields)._.itemData;
-                                                                                                                                                                  if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                                                                    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                                                                    if (pOVar4 != (Object *)0x0) {
-                                                                                                                                                                      if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                                                                        FUN_?(pOVar4,lRam_?);
-                                                                                                                                                                        pcVar11 = (code *)swi(3);
-                                                                                                                                                                        (*pcVar11)();
-                                                                                                                                                                        return;
-                                                                                                                                                                      }
-                                                                                                                                                                      pDVar2 = (this->fields)._.itemData;
-                                                                                                                                                                      bVar30 = *(bool *)&pOVar4[1].klass;
-                                                                                                                                                                      if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                                                                        pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeParticlesEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                                                                        if (pOVar4 != (Object *)0x0) {
-                                                                                                                                                                          if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                                                                            FUN_?(pOVar4,lRam_?);
-                                                                                                                                                                            pcVar11 = (code *)swi(3);
-                                                                                                                                                                            (*pcVar11)();
-                                                                                                                                                                            return;
-                                                                                                                                                                          }
-                                                                                                                                                                          pDVar2 = (this->fields)._.itemData;
-                                                                                                                                                                          bVar10 = *(byte *)&pOVar4[1].klass;
-                                                                                                                                                                          if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                                                                            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeZoomEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                                                                            if (pOVar4 != (Object *)0x0) {
-                                                                                                                                                                              if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                                                                                FUN_?(pOVar4,lRam_?);
-                                                                                                                                                                                pcVar11 = (code *)swi(3);
-                                                                                                                                                                                (*pcVar11)();
-                                                                                                                                                                                return;
-                                                                                                                                                                              }
-                                                                                                                                                                              pDVar2 = (this->fields)._.itemData;
-                                                                                                                                                                              bVar31 = *(byte *)&pOVar4[1].klass;
-                                                                                                                                                                              if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                                                                                pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                                                                                if (pOVar4 != (Object *)0x0) {
-                                                                                                                                                                                  if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                                                                                    FUN_?(pOVar4,lRam_?);
-                                                                                                                                                                                    pcVar11 = (code *)swi(3);
-                                                                                                                                                                                    (*pcVar11)();
-                                                                                                                                                                                    return;
-                                                                                                                                                                                  }
-                                                                                                                                                                                  iVar28 = *(int *)&pOVar4[1].klass;
-                                                                                                                                                                                  pSVar17 = (this->fields).chargeTimeInputSlider;
-                                                                                                                                                                                  if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                                                    if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                  pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                  if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                    pDVar2 = (this->fields)._.itemData;
+                                                                                                                                                                    if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                                                                      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                                                                      if (pOVar4 != (Object *)0x0) {
+                                                                                                                                                                        if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                                                                          FUN_?(pOVar4,lRam_?);
+                                                                                                                                                                          pcVar11 = (code *)swi(3);
+                                                                                                                                                                          (*pcVar11)();
+                                                                                                                                                                          return;
+                                                                                                                                                                        }
+                                                                                                                                                                        pDVar2 = (this->fields)._.itemData;
+                                                                                                                                                                        bVar30 = *(bool *)&pOVar4[1].klass;
+                                                                                                                                                                        if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                                                                          pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeParticlesEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                                                                          if (pOVar4 != (Object *)0x0) {
+                                                                                                                                                                            if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                                                                              FUN_?(pOVar4,lRam_?);
+                                                                                                                                                                              pcVar11 = (code *)swi(3);
+                                                                                                                                                                              (*pcVar11)();
+                                                                                                                                                                              return;
+                                                                                                                                                                            }
+                                                                                                                                                                            pDVar2 = (this->fields)._.itemData;
+                                                                                                                                                                            bVar10 = *(byte *)&pOVar4[1].klass;
+                                                                                                                                                                            if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                                                                              pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeZoomEnabled,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                                                                              if (pOVar4 != (Object *)0x0) {
+                                                                                                                                                                                if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                                                                                  FUN_?(pOVar4,lRam_?);
+                                                                                                                                                                                  pcVar11 = (code *)swi(3);
+                                                                                                                                                                                  (*pcVar11)();
+                                                                                                                                                                                  return;
+                                                                                                                                                                                }
+                                                                                                                                                                                pDVar2 = (this->fields)._.itemData;
+                                                                                                                                                                                bVar31 = *(byte *)&pOVar4[1].klass;
+                                                                                                                                                                                if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                                                                                  pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_ChargeSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                                                                                  if (pOVar4 != (Object *)0x0) {
+                                                                                                                                                                                    if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                                                                                      FUN_?(pOVar4,lRam_?);
+                                                                                                                                                                                      pcVar11 = (code *)swi(3);
+                                                                                                                                                                                      (*pcVar11)();
+                                                                                                                                                                                      return;
+                                                                                                                                                                                    }
+                                                                                                                                                                                    iVar28 = *(int *)&pOVar4[1].klass;
+                                                                                                                                                                                    pSVar17 = (this->fields).chargeTimeInputSlider;
+                                                                                                                                                                                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                                                       if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                        pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                        if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                          pSVar19 = (this->fields).chargeSoundEffectDropdown;
-                                                                                                                                                                                          if (pSVar19 != (SettingsDropdown *)0x0) {
-                                                                                                                                                                                            pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar19,(MethodInfo *)0x0);
-                                                                                                                                                                                            if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                              pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                        if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                          pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                          if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                            pSVar20 = (this->fields).chargeSoundEffectDropdown;
+                                                                                                                                                                                            if (pSVar20 != (SettingsDropdown *)0x0) {
+                                                                                                                                                                                              pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar20,(MethodInfo *)0x0);
                                                                                                                                                                                               if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                  pSVar17 = (this->fields).chargeSoundVolumeInputSlider;
-                                                                                                                                                                                                  if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                                                                    if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                  pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                  if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                    pSVar17 = (this->fields).chargeSoundVolumeInputSlider;
+                                                                                                                                                                                                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                                                                       if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                        pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                        if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,0 < iVar28 & bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                          pSVar22 = (this->fields).chargeParticlesToggle;
-                                                                                                                                                                                                          if (pSVar22 != (SettingsToggle *)0x0) {
-                                                                                                                                                                                                            pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pSVar22,(MethodInfo *)0x0);
-                                                                                                                                                                                                            if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                              pSVar17 = (this->fields).chargeParticlesSizeInputSlider;
-                                                                                                                                                                                                              if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                                                                                if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                  pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                        if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                          pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                          if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,0 < iVar28 & bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                            pSVar23 = (this->fields).chargeParticlesToggle;
+                                                                                                                                                                                                            if (pSVar23 != (SettingsToggle *)0x0) {
+                                                                                                                                                                                                              pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pSVar23,(MethodInfo *)0x0);
+                                                                                                                                                                                                              if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                                pSVar17 = (this->fields).chargeParticlesSizeInputSlider;
+                                                                                                                                                                                                                if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                                                                                  pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                                                                                   if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                    pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                                    if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar10 & bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                                      pIVar23 = (this->fields).chargeParticlesColorImage;
-                                                                                                                                                                                                                      if (pIVar23 != (Image *)0x0) {
-                                                                                                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar23,(MethodInfo *)0x0);
-                                                                                                                                                                                                                        if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                    if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                                      pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                      if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar10 & bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                                        pIVar24 = (this->fields).chargeParticlesColorImage;
+                                                                                                                                                                                                                        if (pIVar24 != (Image *)0x0) {
+                                                                                                                                                                                                                          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar24,(MethodInfo *)0x0);
                                                                                                                                                                                                                           if (pTVar15 != (Transform *)0x0) {
                                                                                                                                                                                                                             pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
                                                                                                                                                                                                                             if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                              pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                                              if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar10 & bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                pSVar22 = (this->fields).chargeZoomToggle;
-                                                                                                                                                                                                                                if (pSVar22 != (SettingsToggle *)0x0) {
-                                                                                                                                                                                                                                  pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pSVar22,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                  if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                    pSVar17 = (this->fields).chargeZoomAmmountInputSlider;
-                                                                                                                                                                                                                                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                      if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                              pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                              if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                                                pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar10 & bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                  pSVar23 = (this->fields).chargeZoomToggle;
+                                                                                                                                                                                                                                  if (pSVar23 != (SettingsToggle *)0x0) {
+                                                                                                                                                                                                                                    pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pSVar23,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                    if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                      pSVar17 = (this->fields).chargeZoomAmmountInputSlider;
+                                                                                                                                                                                                                                      if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                                                                                                         if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                          pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                          if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar31 & bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                            pSVar17 = (this->fields).chargeZoomTimeInputSlider;
-                                                                                                                                                                                                                                            if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                                                                                                              pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                              if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                          if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                                                            pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                            if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar31 & bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                              pSVar17 = (this->fields).chargeZoomTimeInputSlider;
+                                                                                                                                                                                                                                              if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                                                                                                                 if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                  pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                  if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                                                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar31 & bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                    pDVar2 = (this->fields)._.itemData;
-                                                                                                                                                                                                                                                    if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                                                                                                                                                      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_HitSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                                                                                                                                                      if (pOVar4 != (Object *)0x0) {
-                                                                                                                                                                                                                                                        if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                                                                                                                                                          FUN_?(pOVar4,lRam_?);
-                                                                                                                                                                                                                                                          pcVar11 = (code *)swi(3);
-                                                                                                                                                                                                                                                          (*pcVar11)();
-                                                                                                                                                                                                                                                          return;
-                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                        iVar28 = *(int *)&pOVar4[1].klass;
-                                                                                                                                                                                                                                                        pSVar17 = (this->fields).hitSoundVolumeInputSlider;
-                                                                                                                                                                                                                                                        if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                                                                                                                          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                          if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                            pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                  pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                  if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                                                                    pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                    if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                                                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar31 & bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                      pDVar2 = (this->fields)._.itemData;
+                                                                                                                                                                                                                                                      if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                                                                                                                                                        pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_HitSoundEffect,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                                                                                                                                                        if (pOVar4 != (Object *)0x0) {
+                                                                                                                                                                                                                                                          if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                                                                                                                                                            FUN_?(pOVar4,lRam_?);
+                                                                                                                                                                                                                                                            pcVar11 = (code *)swi(3);
+                                                                                                                                                                                                                                                            (*pcVar11)();
+                                                                                                                                                                                                                                                            return;
+                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                          iVar28 = *(int *)&pOVar4[1].klass;
+                                                                                                                                                                                                                                                          pSVar17 = (this->fields).hitSoundVolumeInputSlider;
+                                                                                                                                                                                                                                                          if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                                                                                                                            pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                                                                                                                             if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                              pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                              if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                                                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,0 < iVar28,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                                pDVar2 = (this->fields)._.itemData;
-                                                                                                                                                                                                                                                                if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                                                                                                                                                                                                                                                  pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_SparksOnHit,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                                                                                                                                                                                                                                                                  if (pOVar4 != (Object *)0x0) {
-                                                                                                                                                                                                                                                                    if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                                                                                                                                                                                                                                      FUN_?(pOVar4,lRam_?);
-                                                                                                                                                                                                                                                                      pcVar11 = (code *)swi(3);
-                                                                                                                                                                                                                                                                      (*pcVar11)();
-                                                                                                                                                                                                                                                                      return;
-                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                    pSVar17 = (this->fields).sparksSizeInputSlider;
-                                                                                                                                                                                                                                                                    bVar30 = *(bool *)&pOVar4[1].klass;
-                                                                                                                                                                                                                                                                    if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                                                                                                                                                                                      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                                      if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                              pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                              if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                                                                                pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                                                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,0 < iVar28,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                  pDVar2 = (this->fields)._.itemData;
+                                                                                                                                                                                                                                                                  if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                                                                                                                                                                                                                                    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_SparksOnHit,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                                                                                                                                                                                                                                                                    if (pOVar4 != (Object *)0x0) {
+                                                                                                                                                                                                                                                                      if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+                                                                                                                                                                                                                                                                        FUN_?(pOVar4,lRam_?);
+                                                                                                                                                                                                                                                                        pcVar11 = (code *)swi(3);
+                                                                                                                                                                                                                                                                        (*pcVar11)();
+                                                                                                                                                                                                                                                                        return;
+                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                      pSVar17 = (this->fields).sparksSizeInputSlider;
+                                                                                                                                                                                                                                                                      bVar30 = *(bool *)&pOVar4[1].klass;
+                                                                                                                                                                                                                                                                      if (pSVar17 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                                                                                                                                                                        pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar17,(MethodInfo *)0x0);
                                                                                                                                                                                                                                                                         if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                                          pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                                          if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                                                                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                                            pIVar23 = (this->fields).sparksColorImage;
-                                                                                                                                                                                                                                                                            if (pIVar23 != (Image *)0x0) {
-                                                                                                                                                                                                                                                                              pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar23,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                                              if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                          if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                                                                                            pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                            if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                                                                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar29,bVar30,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                              pIVar24 = (this->fields).sparksColorImage;
+                                                                                                                                                                                                                                                                              if (pIVar24 != (Image *)0x0) {
+                                                                                                                                                                                                                                                                                pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar24,(MethodInfo *)0x0);
                                                                                                                                                                                                                                                                                 if (pTVar15 != (Transform *)0x0) {
                                                                                                                                                                                                                                                                                   pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
                                                                                                                                                                                                                                                                                   if (pTVar15 != (Transform *)0x0) {
-                                                                                                                                                                                                                                                                                    pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                                                    if (pGVar29 != (GameObject *)0x0) {
-                                                                                                                                                                                                                                                                                      if (cRam_? == '\0') {
-                                                                                                                                                                                                                                                                                        FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,bVar30,0);
-                                                                                                                                                                                                                                                                                        LOCK();
-                                                                                                                                                                                                                                                                                        UNLOCK();
-                                                                                                                                                                                                                                                                                        cRam_? = '\x01';
-                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                      if (pGVar29 == (GameObject *)0x0) {
-                                                                                                                                                                                                                                                                                        FUN_?();
-                                                                                                                                                                                                                                                                                        pcVar11 = (code *)swi(3);
-                                                                                                                                                                                                                                                                                        (*pcVar11)();
-                                                                                                                                                                                                                                                                                        return;
-                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                      pvVar32 = (pGVar29->fields)._.m_CachedPtr;
-                                                                                                                                                                                                                                                                                      if (pvVar32 == (void *)0x0) {
-                                                                                                                                                                                                                                                                                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar29,(MethodInfo *)0x0);
-                                                                                                                                                                                                                                                                                        pcVar11 = (code *)swi(3);
-                                                                                                                                                                                                                                                                                        (*pcVar11)();
-                                                                                                                                                                                                                                                                                        return;
-                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                      pcVar11 = pcRam_?;
-                                                                                                                                                                                                                                                                                      if (pcRam_? == (code *)0x0) {
-                                                                                                                                                                                                                                                                                        pcVar11 = (code *)FUN_?(&UNK_?);
-                                                                                                                                                                                                                                                                                        if (pcVar11 == (code *)0x0) {
-                                                                                                                                                                                                                                                                                          uVar3 = func_?(&UNK_?);
-                                                                                                                                                                                                                                                                                          FUN_?(uVar3,0);
+                                                                                                                                                                                                                                                                                    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                                    if (pTVar15 != (Transform *)0x0) {
+                                                                                                                                                                                                                                                                                      pGVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar15,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                                      if (pGVar29 != (GameObject *)0x0) {
+                                                                                                                                                                                                                                                                                        if (cRam_? == '\0') {
+                                                                                                                                                                                                                                                                                          FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,bVar30,0);
+                                                                                                                                                                                                                                                                                          LOCK();
+                                                                                                                                                                                                                                                                                          UNLOCK();
+                                                                                                                                                                                                                                                                                          cRam_? = '\x01';
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                        if (pGVar29 == (GameObject *)0x0) {
+                                                                                                                                                                                                                                                                                          FUN_?();
                                                                                                                                                                                                                                                                                           pcVar11 = (code *)swi(3);
                                                                                                                                                                                                                                                                                           (*pcVar11)();
                                                                                                                                                                                                                                                                                           return;
                                                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                      pcRam_? = pcVar11;
+                                                                                                                                                                                                                                                                                        pvVar32 = (pGVar29->fields)._.m_CachedPtr;
+                                                                                                                                                                                                                                                                                        if (pvVar32 == (void *)0x0) {
+                                                                                                                                                                                                                                                                                          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar29,(MethodInfo *)0x0);
+                                                                                                                                                                                                                                                                                          pcVar11 = (code *)swi(3);
+                                                                                                                                                                                                                                                                                          (*pcVar11)();
+                                                                                                                                                                                                                                                                                          return;
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                        pcVar11 = pcRam_?;
+                                                                                                                                                                                                                                                                                        if (pcRam_? == (code *)0x0) {
+                                                                                                                                                                                                                                                                                          pcVar11 = (code *)FUN_?(&UNK_?);
+                                                                                                                                                                                                                                                                                          if (pcVar11 == (code *)0x0) {
+                                                                                                                                                                                                                                                                                            uVar3 = func_?(&UNK_?);
+                                                                                                                                                                                                                                                                                            FUN_?(uVar3,0);
+                                                                                                                                                                                                                                                                                            pcVar11 = (code *)swi(3);
+                                                                                                                                                                                                                                                                                            (*pcVar11)();
+                                                                                                                                                                                                                                                                                            return;
+                                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                        pcRam_? = pcVar11;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                                                                                                                                                                                                                                                                                      (*pcRam_?)(pvVar32,bVar30);
-                                                                                                                                                                                                                                                                                      return;
+                                                                                                                                                                                                                                                                                        (*pcRam_?)(pvVar32,bVar30);
+                                                                                                                                                                                                                                                                                        return;
+                                                                                                                                                                                                                                                                                      }
                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                 }
@@ -1191,17 +1240,21 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                                                                                                               }
                                                                                                             }
                                                                                                           }
-                                                                                                        }
 code_?:
-                                                                                                        FUN_?();
-                                                                                                        pcVar11 = (code *)swi(3);
-                                                                                                        (*pcVar11)();
-                                                                                                        return;
+                                                                                                          FUN_?();
+                                                                                                          pcVar11 = (code *)swi(3);
+                                                                                                          (*pcVar11)();
+                                                                                                          return;
+                                                                                                        }
                                                                                                       }
                                                                                                     }
                                                                                                   }
                                                                                                 }
                                                                                               }
+                                                                                              FUN_?();
+                                                                                              pcVar11 = (code *)swi(3);
+                                                                                              (*pcVar11)();
+                                                                                              return;
                                                                                             }
                                                                                           }
                                                                                         }

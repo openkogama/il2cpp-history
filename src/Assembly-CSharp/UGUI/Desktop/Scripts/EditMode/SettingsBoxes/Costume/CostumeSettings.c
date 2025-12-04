@@ -191,7 +191,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costu
     this_01 = (this->fields).nameInputField;
     if ((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pSVar16 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_Name,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), this_01 != (SettingsInputField *)0x0)) {
       if (pSVar16 != (String *)0x0) {
-        if (pSVar16->klass == pSRam0000000182db2520) {
+        if (pSVar16->klass == pSRam0000000182dbbc60) {
           pSVar1 = pSVar16;
         }
         if (pSVar1 == (String *)0x0) {
@@ -223,7 +223,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costu
             (*pcVar11)();
             return;
           }
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar20,StringLiteral_Health,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar20,StringLiteral_Health,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
           pDVar2 = (this->fields).itemData;
           pSVar17 = (this->fields).movementSpeedSlider;
           if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_MovementSpeed,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar17 != (SettingsSlider *)0x0)) && (pOVar4 != (Object *)0x0)) {
@@ -243,7 +243,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costu
                 (*pcVar11)();
                 return;
               }
-              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar20,StringLiteral_MovementSpeed,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
+              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar20,StringLiteral_MovementSpeed,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
               pDVar2 = (this->fields).itemData;
               pSVar21 = (this->fields).playerInvisibleToggle;
               if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_PlayerInvisible,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar21 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
@@ -293,7 +293,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costu
                           (*pcVar11)();
                           return;
                         }
-                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar20,StringLiteral_TrailLength,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
+                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar20,StringLiteral_TrailLength,*(float *)&pOVar4[1].klass,(MethodInfo *)0x0);
                         pIVar22 = (this->fields).trailColorImage;
                         pDVar2 = (this->fields).itemData;
                         if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -786,7 +786,7 @@ Dictionary_2_System_Object_System_Object_ * Assembly-CSharp.dll::UGUI::Desktop::
       }
       defaultValue_00 = defaultValue;
       if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        if (pDVar3->klass == pDRam0000000182db2520) {
+        if (pDVar3->klass == pDRam0000000182dbbc60) {
           defaultValue_00 = pDVar3;
         }
         if (defaultValue_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
@@ -1147,7 +1147,7 @@ code_?:
             if (pMVar17 != (MethodInfo *)0x0) {
               if ((*pMVar17->name == '.') && ((pMVar17->flags & 0x800) != 0)) {
                 ppMVar18 = ppMVar7;
-                while (pcVar19 = (char *)((longlong)ppMVar18 + 0xADDR), ppMVar18 = (MethodInfo **)((longlong)ppMVar18 + 1), *pcVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
+                while (ppMVar19 = ppMVar18 + 0x30529dd4, ppMVar18 = (MethodInfo **)((longlong)ppMVar18 + 1), *(char *)ppMVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
                   if (ppMVar18 == (MethodInfo **)0x7) {
                     FUN_?(pMVar17,0,0,alStackX_10);
                     goto code_?;

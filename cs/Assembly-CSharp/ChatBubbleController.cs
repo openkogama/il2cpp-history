@@ -20,6 +20,6 @@ public class ChatBubbleController : MonoBehaviour
 
 	// Methods
 	private void Start();
-	private void ShowChatBubble(string text, int anchorId, ChatAnchor chatBubbleAnchor);
+	private void ShowChatBubble(string text, string senderName, int anchorId, ChatAnchor chatBubbleAnchor);
 }
 

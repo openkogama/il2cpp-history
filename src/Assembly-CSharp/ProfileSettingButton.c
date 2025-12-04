@@ -1317,18 +1317,18 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start(Profi
   pOVar7 = (Object *)0x0;
   (this->fields).isIncrease = (this->fields).profileSettingButtonType == 0;
   (this->fields).minValue = 0;
-  handle_04 = TypeRef__MV__WorldObject__MetaData__AnistropicFilteringLevel;
-  handle_03 = TypeRef__UnityEngine__FilterMode;
-  handle_02 = TypeRef__MV__WorldObject__MetaData__AntiAliasingLevel;
-  handle_01 = TypeRef__MV__WorldObject__MetaData__LightingQualityLevel;
-  handle_00 = TypeRef__MV__WorldObject__MetaData__TextureQualityLevel;
-  handle = TypeRef__MV__WorldObject__MetaData__TargetFrameRateValue;
+  handle_04 = TypeRef__MV__WorldObject__MetaData__AntiAliasingLevel;
+  handle_03 = TypeRef__MV__WorldObject__MetaData__AnistropicFilteringLevel;
+  handle_02 = TypeRef__MV__WorldObject__MetaData__LightingQualityLevel;
+  handle_01 = TypeRef__UnityEngine__FilterMode;
+  handle_00 = TypeRef__MV__WorldObject__MetaData__TargetFrameRateValue;
+  handle = TypeRef__MV__WorldObject__MetaData__TextureQualityLevel;
   switch((this->fields).profileSettingKey) {
   case 1:
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
-    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_00,(MethodInfo *)0x0);
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
@@ -1355,7 +1355,7 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start(Profi
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
-    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_00,(MethodInfo *)0x0);
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
@@ -1382,7 +1382,7 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start(Profi
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
-    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_03,(MethodInfo *)0x0);
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_01,(MethodInfo *)0x0);
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
@@ -1409,7 +1409,7 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start(Profi
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
-    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_04,(MethodInfo *)0x0);
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_03,(MethodInfo *)0x0);
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
@@ -1436,7 +1436,7 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start(Profi
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
-    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_02,(MethodInfo *)0x0);
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_04,(MethodInfo *)0x0);
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
@@ -1463,7 +1463,7 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start(Profi
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }
-    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_01,(MethodInfo *)0x0);
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle_02,(MethodInfo *)0x0);
     if (*(int *)(lRam_? + 0xe4) == 0) {
       FUN_?();
     }

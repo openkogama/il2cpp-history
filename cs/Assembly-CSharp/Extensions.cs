@@ -60,5 +60,6 @@ public static class Extensions
 	public static Vector3 GetVector3OrDefault(this Dictionary<object, object> hashtable, string vectorKey, Vector3 defaultValue = default);
 	public static void SetColor(this Dictionary<object, object> hashtable, string colorKey, Color color);
 	public static string AddSpacesToSentence(this string text);
+	public static List<int> ValidIndexes<T>(this List<T> values);
 }
 

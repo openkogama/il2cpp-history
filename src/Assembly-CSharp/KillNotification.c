@@ -34,7 +34,7 @@ code_?:
   pSVar4 = (String *)mscorlib.dll::System::Collections::Generic::CollectionExtensions::CollectionExtensions_GetValueOrDefault_5((IReadOnlyDictionary_2_System_Object_System_Object_ *)data,key,(Object *)::StringLiteral__,System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object__System__Object_);
   pSVar3 = (String *)0x0;
   if (pSVar4 != (String *)0x0) {
-    if (pSVar4->klass == pSRam0000000182db2520) {
+    if (pSVar4->klass == pSRam0000000182dbbc60) {
       pSVar3 = pSVar4;
     }
     if (pSVar3 == (String *)0x0) {
@@ -236,7 +236,7 @@ code_?:
       if ((pSVar3 != (String *)0x0) && ((pSVar3->fields)._stringLength != 0)) {
         return pSVar3;
       }
-      return *(String **)pSRam0000000182db2520->static_fields;
+      return *(String **)pSRam0000000182dbbc60->static_fields;
     }
     if ((pSVar3 == (String *)0x0) || ((pSVar3->fields)._stringLength == 0)) {
       return pSVar4;
@@ -835,7 +835,7 @@ void Assembly-CSharp.dll::KillNotification::KillNotification_Initialize(KillNoti
                       pSVar28 = (String *)mscorlib.dll::System::Collections::Generic::CollectionExtensions::CollectionExtensions_GetValueOrDefault_5((IReadOnlyDictionary_2_System_Object_System_Object_ *)data,key,(Object *)::StringLiteral__,System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object__System__Object_);
                       pSVar29 = (String *)0x0;
                       if (pSVar28 != (String *)0x0) {
-                        if (pSVar28->klass == pSRam0000000182db2520) {
+                        if (pSVar28->klass == pSRam0000000182dbbc60) {
                           pSVar29 = pSVar28;
                         }
                         if (pSVar29 == (String *)0x0) {

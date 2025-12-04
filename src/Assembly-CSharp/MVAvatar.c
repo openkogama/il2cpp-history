@@ -114,43 +114,119 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_AvatarStateChangedHandler(MVAvatar 
     UNLOCK();
     cRam_? = '\x01';
   }
-  if (a == (Object *)0x0) goto code_?;
-  if ((a->klass->_0).element_class != (TypeInfo__MV__Common__SpawnRoleModeType->_0).element_class) goto code_?;
-  if (((ulonglong)a[1].klass & 4) == 0) {
+  if (a == (Object *)0x0) {
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    if ((a->klass->_0).element_class != (TypeInfo__MV__Common__SpawnRoleModeType->_0).element_class) goto code_?;
+    if (((ulonglong)a[1].klass & 4) != 0) {
+      pAVar1 = (this->fields).avatar;
+      if ((pAVar1 != (Avatar *)0x0) && (pCVar2 = (pAVar1->fields).avatarCollider, pCVar2 != (Collider *)0x0)) {
+        UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar2,0,(MethodInfo *)0x0);
+        pAVar1 = (this->fields).avatar;
+        if ((pAVar1 != (Avatar *)0x0) && (pIVar3 = (pAVar1->fields).interactionDataHandler, pIVar3 != (InteractionDataHandlerBase *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar3,0,(MethodInfo *)0x0);
+          pAVar1 = (this->fields).avatar;
+          a = (Object *)0x0;
+          if ((pAVar1 != (Avatar *)0x0) && (a = (Object *)(pAVar1->fields).chatBubbleAnchor, (ChatAnchor *)a != (ChatAnchor *)0x0)) {
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Object);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pCVar4 = (((ChatAnchor *)a)->fields).AttachedBubble;
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Object);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Object);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (pCVar4 != (ChatBubble *)0x0) {
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if ((pCVar4->fields)._._._._.m_CachedPtr != (void *)0x0) {
+                pCVar4 = (((ChatAnchor *)a)->fields).AttachedBubble;
+                if (pCVar4 == (ChatBubble *)0x0) goto code_?;
+                ChatBubble::ChatBubble_HideBubble(pCVar4,(MethodInfo *)0x0);
+              }
+            }
+            pAVar1 = (this->fields).avatar;
+            if ((pAVar1 != (Avatar *)0x0) && (pAVar5 = (pAVar1->fields).avatarUIHandler, pAVar5 != (AvatarUIHandler *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (*(pAVar5->klass->vtable).SetShouldShowUI.methodPtr)(pAVar5,0,(pAVar5->klass->vtable).SetShouldShowUI.method);
+              return;
+            }
+          }
+        }
+      }
+      goto code_?;
+    }
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (pMVar1 != (MVGameControllerBase *)0x0) {
-      pMVar2 = (pMVar1->fields).game;
-      if (pMVar2 != (MVNetworkGame *)0x0) {
-        this_00 = (pMVar2->fields).playerContainer;
+    pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar6 != (MVGameControllerBase *)0x0) {
+      pMVar7 = (pMVar6->fields).game;
+      if (pMVar7 != (MVNetworkGame *)0x0) {
+        this_00 = (pMVar7->fields).playerContainer;
         if (this_00 == (MVPlayerContainer *)0x0) goto code_?;
         actorNr = (this->fields)._._._.ownerActorNr;
-        uVar3 = (ulonglong)actorNr;
-        pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(this_00,actorNr,(MethodInfo *)0x0);
-        if ((pMVar4 == (MVPlayer *)0x0) || ((pMVar4->fields).playerState == 3)) {
+        uVar8 = (ulonglong)actorNr;
+        pMVar9 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(this_00,actorNr,(MethodInfo *)0x0);
+        if ((pMVar9 == (MVPlayer *)0x0) || ((pMVar9->fields).playerState == 3)) {
           return;
         }
-        pAVar5 = (this->fields).avatar;
-        if (pAVar5 != (Avatar *)0x0) {
-          pCVar6 = (pAVar5->fields).avatarCollider;
-          if (pCVar6 != (Collider *)0x0) {
-            uVar7 = (undefined7)(uVar3 >> 8);
-            UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar6,1,(MethodInfo *)0x0);
-            pAVar5 = (this->fields).avatar;
-            if (pAVar5 != (Avatar *)0x0) {
-              pIVar8 = (pAVar5->fields).interactionDataHandler;
-              if (pIVar8 != (InteractionDataHandlerBase *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar8,1,(MethodInfo *)0x0);
-                pAVar5 = (this->fields).avatar;
-                if (pAVar5 != (Avatar *)0x0) {
-                  pAVar9 = (pAVar5->fields).avatarUIHandler;
-                  if (pAVar9 != (AvatarUIHandler *)0x0) {
-                    (*(pAVar9->klass->vtable).SetShouldShowUI.methodPtr)(pAVar9,CONCAT71(uVar7,1),(pAVar9->klass->vtable).SetShouldShowUI.method);
+        pAVar1 = (this->fields).avatar;
+        if (pAVar1 != (Avatar *)0x0) {
+          pCVar2 = (pAVar1->fields).avatarCollider;
+          if (pCVar2 != (Collider *)0x0) {
+            uVar10 = (undefined7)(uVar8 >> 8);
+            UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar2,1,(MethodInfo *)0x0);
+            pAVar1 = (this->fields).avatar;
+            if (pAVar1 != (Avatar *)0x0) {
+              pIVar3 = (pAVar1->fields).interactionDataHandler;
+              if (pIVar3 != (InteractionDataHandlerBase *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar3,1,(MethodInfo *)0x0);
+                pAVar1 = (this->fields).avatar;
+                if (pAVar1 != (Avatar *)0x0) {
+                  pAVar5 = (pAVar1->fields).avatarUIHandler;
+                  if (pAVar5 != (AvatarUIHandler *)0x0) {
+                    (*(pAVar5->klass->vtable).SetShouldShowUI.methodPtr)(pAVar5,CONCAT71(uVar10,1),(pAVar5->klass->vtable).SetShouldShowUI.method);
                     return;
                   }
                   goto code_?;
@@ -167,91 +243,6 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_AvatarStateChangedHandler(MVAvatar 
       }
       goto code_?;
     }
-  }
-  else {
-    pAVar5 = (this->fields).avatar;
-    if ((pAVar5 != (Avatar *)0x0) && (pCVar6 = (pAVar5->fields).avatarCollider, pCVar6 != (Collider *)0x0)) {
-      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar6,0,(MethodInfo *)0x0);
-      pAVar5 = (this->fields).avatar;
-      if ((pAVar5 != (Avatar *)0x0) && (pIVar8 = (pAVar5->fields).interactionDataHandler, pIVar8 != (InteractionDataHandlerBase *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar8,0,(MethodInfo *)0x0);
-        pAVar5 = (this->fields).avatar;
-        a = (Object *)0x0;
-        if ((pAVar5 != (Avatar *)0x0) && (a = (Object *)(pAVar5->fields).chatBubbleAnchor, (ChatAnchor *)a != (ChatAnchor *)0x0)) {
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__UnityEngine__Object);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          pCVar10 = (((ChatAnchor *)a)->fields).AttachedBubble;
-          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__UnityEngine__Object);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__UnityEngine__Object);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          if (pCVar10 != (ChatBubble *)0x0) {
-            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-              FUN_?();
-            }
-            if ((pCVar10->fields)._._._._.m_CachedPtr != (void *)0x0) {
-              pCVar10 = (((ChatAnchor *)a)->fields).AttachedBubble;
-              if (pCVar10 != (ChatBubble *)0x0) {
-                a = (Object *)0x0;
-                (pCVar10->fields).currentFade = 0.0;
-                (pCVar10->fields).timeUntilFade = 0.0;
-                this_01 = (pCVar10->fields).CanvasGroup;
-                if (this_01 != (CanvasGroup *)0x0) {
-                  UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(this_01,0.0,(MethodInfo *)0x0);
-                  a = (Object *)(ChatAnchor *)0x0;
-                  goto code_?;
-                }
-              }
-              goto code_?;
-            }
-          }
-code_?:
-          pAVar5 = (this->fields).avatar;
-          if ((pAVar5 != (Avatar *)0x0) && (pAVar9 = (pAVar5->fields).avatarUIHandler, pAVar9 != (AvatarUIHandler *)0x0)) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-            (*(pAVar9->klass->vtable).SetShouldShowUI.methodPtr)(pAVar9,0,(pAVar9->klass->vtable).SetShouldShowUI.method);
-            return;
-          }
-        }
-      }
-    }
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
-code_?:
-    FUN_?();
   }
   FUN_?();
 code_?:
@@ -1435,7 +1426,7 @@ code_?:
       }
       pSVar28 = (String *)0x0;
       if (pSStack_13 != (String *)0x0) {
-        if (pSStack_13->klass == pSRam0000000182db2520) {
+        if (pSStack_13->klass == pSRam0000000182dbbc60) {
           pSVar28 = pSStack_13;
         }
         if (pSVar28 == (String *)0x0) goto code_?;
@@ -1542,9 +1533,9 @@ code_?:
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar34,IVar33,(Object *)this_05,(InsertionBehavior__Enum)uVar46,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Add_AvatarModifierPackageType__AvatarModifier_->klass->rgctx_data[0x22].method);
             pDVar53 = (owner->fields).currentModifierByteState;
             if (pDVar53 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-            method_01 = pDRam0000000182db24a8;
+            method_01 = pDRam0000000182dbbbe8;
             if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182db24a8->vector + 1))->genericMethod) goto code_?;
+            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbbbe8->vector + 1))->genericMethod) goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar53,IVar33,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar46 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Add_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method);
             *(undefined1 *)&this_05->vector[0].next = 1;
             (**(code **)&((Il2CppClass_0 *)&this_05->klass)->image[5].token)(this_05,owner);
@@ -1572,9 +1563,9 @@ code_?:
         pDVar53 = (owner->fields).currentModifierByteState;
         if (pDVar53 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
         cVar50 = FUN_?(pDVar53,IVar33);
-        method_01 = pDRam0000000182db24a8;
+        method_01 = pDRam0000000182dbbbe8;
         if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182db24a8->vector + 1))->genericMethod) goto code_?;
+        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbbbe8->vector + 1))->genericMethod) goto code_?;
         if (*(char *)&(value->fields)._items != cVar50) {
           pDVar34 = (owner->fields).modifiers;
           if (pDVar34 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) goto code_?;
@@ -1585,7 +1576,7 @@ code_?:
           (*(code *)method_01)(pOVar35,pOVar35->klass[1]._0.namespaze);
           pDVar53 = (owner->fields).currentModifierByteState;
           if (pDVar53 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182db24a8->vector + 1))->genericMethod) goto code_?;
+          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbbbe8->vector + 1))->genericMethod) goto code_?;
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__set_Item_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar53,IVar33,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),method_00);
         }
@@ -1664,7 +1655,7 @@ code_?:
   pOVar6 = (Object__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)newAnimationData,(Object *)StringLiteral_state,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   pOVar7 = (Object__Class *)0x0;
   if (pOVar6 != (Object__Class *)0x0) {
-    if ((Object__Class *)(pOVar6->_0).image == pORam0000000182db2520) {
+    if ((Object__Class *)(pOVar6->_0).image == pORam0000000182dbbc60) {
       pOVar7 = pOVar6;
     }
     if (pOVar7 == (Object__Class *)0x0) {
@@ -2269,56 +2260,48 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_OnStateChangeToHidden(MVAvatar *thi
 
 {
   pAVar1 = (this->fields).avatar;
-  if ((pAVar1 == (Avatar *)0x0) || (pCVar2 = (pAVar1->fields).chatBubbleAnchor, pCVar2 == (ChatAnchor *)0x0)) {
-code_?:
-    FUN_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__UnityEngine__Object);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  pCVar4 = (pCVar2->fields).AttachedBubble;
-  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__UnityEngine__Object);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__UnityEngine__Object);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if (pCVar4 != (ChatBubble *)0x0) {
+  if ((pAVar1 != (Avatar *)0x0) && (pCVar2 = (pAVar1->fields).chatBubbleAnchor, pCVar2 != (ChatAnchor *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pCVar3 = (pCVar2->fields).AttachedBubble;
     if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
       FUN_?();
     }
-    if ((pCVar4->fields)._._._._.m_CachedPtr != (void *)0x0) {
-      pCVar4 = (pCVar2->fields).AttachedBubble;
-      if (pCVar4 != (ChatBubble *)0x0) {
-        (pCVar4->fields).currentFade = 0.0;
-        (pCVar4->fields).timeUntilFade = 0.0;
-        this_00 = (pCVar4->fields).CanvasGroup;
-        if (this_00 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(this_00,0.0,(MethodInfo *)0x0);
-          return;
-        }
-      }
-      goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pCVar3 != (ChatBubble *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pCVar3->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        pCVar3 = (pCVar2->fields).AttachedBubble;
+        if (pCVar3 == (ChatBubble *)0x0) goto code_?;
+        ChatBubble::ChatBubble_HideBubble(pCVar3,(MethodInfo *)0x0);
+      }
+    }
+    return;
   }
+code_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -3243,7 +3226,7 @@ code_?:
       }
       pSVar23 = (String *)0x0;
       if (pSStack_5 != (String *)0x0) {
-        if (pSStack_5->klass == pSRam0000000182db2520) {
+        if (pSStack_5->klass == pSRam0000000182dbbc60) {
           pSVar23 = pSStack_5;
         }
         if (pSVar23 == (String *)0x0) goto code_?;
@@ -3350,9 +3333,9 @@ code_?:
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar29,IVar28,(Object *)this_04,(InsertionBehavior__Enum)uVar41,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Add_AvatarModifierPackageType__AvatarModifier_->klass->rgctx_data[0x22].method);
             pDVar49 = (owner->fields).currentModifierByteState;
             if (pDVar49 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-            method_01 = pDRam0000000182db24a8;
+            method_01 = pDRam0000000182dbbbe8;
             if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182db24a8->vector + 1))->genericMethod) goto code_?;
+            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbbbe8->vector + 1))->genericMethod) goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar49,IVar28,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar41 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Add_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method);
             *(undefined1 *)&this_04->vector[0].next = 1;
             (**(code **)&((Il2CppClass_0 *)&this_04->klass)->image[5].token)(this_04,owner);
@@ -3380,9 +3363,9 @@ code_?:
         pDVar49 = (owner->fields).currentModifierByteState;
         if (pDVar49 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
         cVar46 = FUN_?(pDVar49,IVar28);
-        method_01 = pDRam0000000182db24a8;
+        method_01 = pDRam0000000182dbbbe8;
         if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182db24a8->vector + 1))->genericMethod) goto code_?;
+        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbbbe8->vector + 1))->genericMethod) goto code_?;
         if (*(char *)&(value->fields)._items != cVar46) {
           pDVar29 = (owner->fields).modifiers;
           if (pDVar29 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) goto code_?;
@@ -3393,7 +3376,7 @@ code_?:
           (*(code *)method_01)(pOVar30,pOVar30->klass[1]._0.namespaze);
           pDVar49 = (owner->fields).currentModifierByteState;
           if (pDVar49 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182db24a8->vector + 1))->genericMethod) goto code_?;
+          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbbbe8->vector + 1))->genericMethod) goto code_?;
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__set_Item_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar49,IVar28,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),method_00);
         }

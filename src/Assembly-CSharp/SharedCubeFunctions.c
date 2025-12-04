@@ -4223,7 +4223,7 @@ Vector3 * Assembly-CSharp.dll::SharedCubeFunctions::SharedCubeFunctions_WorldPos
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar1 = mscorlib.dll::System::Math::Math_Round_5((double)(1.0 / (float)cubeSegments),2,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar1 = mscorlib.dll::System::Math::Math_Round_4((double)(1.0 / (float)cubeSegments),2,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   fVar2 = (float)dVar1;
   if ((gameObject != (GameObject *)0x0) && (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(gameObject,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
     uStack_3._0_4_ = worldPos->x;

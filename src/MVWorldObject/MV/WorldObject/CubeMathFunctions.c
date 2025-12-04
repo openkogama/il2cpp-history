@@ -161,7 +161,7 @@ IntVector * MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunct
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar8 = mscorlib.dll::System::Math::Math_Round_5((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar8 = mscorlib.dll::System::Math::Math_Round_4((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
     LOCK();
@@ -172,7 +172,7 @@ IntVector * MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunct
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar9 = mscorlib.dll::System::Math::Math_Round_5((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar9 = mscorlib.dll::System::Math::Math_Round_4((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
     LOCK();
@@ -183,7 +183,7 @@ IntVector * MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunct
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar10 = mscorlib.dll::System::Math::Math_Round_5((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar10 = mscorlib.dll::System::Math::Math_Round_4((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   __return_storage_ptr__->x = (int16_t)(int)dVar8;
   __return_storage_ptr__->y = (int16_t)(int)dVar9;
   __return_storage_ptr__->z = (int16_t)(int)dVar10;
@@ -234,7 +234,7 @@ IntVector * MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunct
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar11 = mscorlib.dll::System::Math::Math_Round_5((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar11 = mscorlib.dll::System::Math::Math_Round_4((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
     LOCK();
@@ -245,7 +245,7 @@ IntVector * MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunct
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar12 = mscorlib.dll::System::Math::Math_Round_5((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar12 = mscorlib.dll::System::Math::Math_Round_4((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__System__Math);
     LOCK();
@@ -256,7 +256,7 @@ IntVector * MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunct
   if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
     FUN_?();
   }
-  dVar13 = mscorlib.dll::System::Math::Math_Round_5((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar13 = mscorlib.dll::System::Math::Math_Round_4((double)fVar6,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   __return_storage_ptr__->x = (int16_t)(int)dVar11;
   __return_storage_ptr__->y = (int16_t)(int)dVar12;
   __return_storage_ptr__->z = (int16_t)(int)dVar13;

@@ -238,7 +238,7 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_Initialize(RespawnSet
               SettingsSlider::SettingsSlider_Initialize_1(this_02,StringLiteral_respawnTime,value_00,0x1e,0x708,(MethodInfo *)0x0);
               this_03 = (this->fields).respawnTimeInputField;
               if (this_03 != (SettingsInputFieldSlider *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_03,StringLiteral_respawnTime,(float)value_00,(MethodInfo *)0x0);
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(this_03,StringLiteral_respawnTime,(float)value_00,(MethodInfo *)0x0);
                 pGVar8 = (this->fields).respawnTimeSettingsUI;
                 if (pGVar8 != (GameObject *)0x0) {
                   value = (this->fields).isRespawnActive;

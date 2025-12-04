@@ -239,7 +239,7 @@ void Assembly-CSharp.dll::UnityEngine::UI::LetterSpacing::LetterSpacing_ModifyVe
   if (this_00 == (Text *)0x0) goto DAT_?;
   pSVar2 = (String *)(*(this_00->klass->vtable).get_text.methodPtr)(this_00);
   this_01 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator(this_00,(MethodInfo *)0x0);
-  if ((this_01 == (TextGenerator *)0x0) || (pIVar3 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::TextGenerator_get_lines(this_01,(MethodInfo *)0x0), pIVar3 == (IList_1_UnityEngine_UILineInfo_ *)0x0)) goto DAT_?;
+  if ((this_01 == (TextGenerator_1 *)0x0) || (pIVar3 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::TextGenerator_1_get_lines(this_01,(MethodInfo *)0x0), pIVar3 == (IList_1_UnityEngine_UILineInfo_ *)0x0)) goto DAT_?;
   uVar4 = FUN_?(0,TypeInfo__System__Collections__Generic__ICollection<UnityEngine::UILineInfo>,pIVar3);
   pIVar5 = (IEnumerator *)0x0;
   while (uVar4 = uVar4 - 1, 0 < (int)uVar4) {

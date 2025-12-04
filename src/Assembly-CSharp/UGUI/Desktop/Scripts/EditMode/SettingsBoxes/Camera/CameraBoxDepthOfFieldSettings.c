@@ -233,7 +233,7 @@ code_?:
   SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppDofPFDist,iVar12,0x1d,0x5dc,(MethodInfo *)0x0);
   pSVar13 = (this->fields).focusDistanceInputField;
   if (pSVar13 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppDofPFDist,(float)iVar12,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppDofPFDist,(float)iVar12,(MethodInfo *)0x0);
   pCVar2 = (this->fields).cameraBoxSettings;
   pSStackX_8 = (String *)CONCAT44(pSStackX_8._4_4_,0x38);
   pOVar9 = (Object *)FUN_?(lRam_?,&pSStackX_8);
@@ -250,7 +250,7 @@ code_?:
   SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppDofApert,iVar12,1,0x140,(MethodInfo *)0x0);
   pSVar13 = (this->fields).apertureInputField;
   if (pSVar13 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppDofApert,(float)iVar12,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppDofApert,(float)iVar12,(MethodInfo *)0x0);
   pCVar2 = (this->fields).cameraBoxSettings;
   pSStackX_8 = (String *)CONCAT44(pSStackX_8._4_4_,0x32);
   pOVar9 = (Object *)FUN_?(lRam_?,&pSStackX_8);
@@ -267,7 +267,7 @@ code_?:
   SettingsSlider::SettingsSlider_Initialize_1(pSVar11,StringLiteral_ppDofFLen,iVar12,1,300,(MethodInfo *)0x0);
   pSVar13 = (this->fields).focalLengthInputField;
   if (pSVar13 == (SettingsInputFieldSlider *)0x0) goto code_?;
-  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar13,StringLiteral_ppDofFLen,(float)iVar12,(MethodInfo *)0x0);
+  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar13,StringLiteral_ppDofFLen,(float)iVar12,(MethodInfo *)0x0);
   pCVar2 = (this->fields).cameraBoxSettings;
   pSStackX_8 = (String *)CONCAT44(pSStackX_8._4_4_,2);
   pOVar9 = (Object *)FUN_?(lRam_?,&pSStackX_8);

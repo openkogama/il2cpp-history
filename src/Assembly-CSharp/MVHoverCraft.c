@@ -73,11 +73,11 @@ code_?:
   bVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue((this->fields)._._._.blueprintData,(Object *)StringLiteral_thrustersOn,&pOStackX_8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
   if ((bVar16 != 0) && (pOStackX_8 != (Object *)0x0)) {
     pOVar17 = pOVar2;
-    if (pOStackX_8->klass == pORam0000000182db24b8) {
+    if (pOStackX_8->klass == pORam0000000182dbbbf8) {
       pOVar17 = pOStackX_8;
     }
     if (pOVar17 != (Object *)0x0) {
-      if ((pOStackX_8->klass->_0).element_class != (pORam0000000182db24b8->_0).element_class) {
+      if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbbf8->_0).element_class) {
         FUN_?(pOStackX_8);
         pcVar18 = (code *)swi(3);
         pHVar19 = (HoverCraftVisualization_HoverCraftVisualizationSettings *)(*pcVar18)();
@@ -91,11 +91,11 @@ code_?:
     bVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar20,(Object *)StringLiteral_thrustersSize,apOStackX_10,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
     if ((bVar16 != 0) && (apOStackX_10[0] != (Object *)0x0)) {
       pOVar17 = pOVar2;
-      if (apOStackX_10[0]->klass == pORam0000000182db2508) {
+      if (apOStackX_10[0]->klass == pORam0000000182dbbc48) {
         pOVar17 = apOStackX_10[0];
       }
       if (pOVar17 != (Object *)0x0) {
-        if ((apOStackX_10[0]->klass->_0).element_class != (pORam0000000182db2508->_0).element_class) {
+        if ((apOStackX_10[0]->klass->_0).element_class != (pORam0000000182dbbc48->_0).element_class) {
           FUN_?(apOStackX_10[0]);
           pcVar18 = (code *)swi(3);
           pHVar19 = (HoverCraftVisualization_HoverCraftVisualizationSettings *)(*pcVar18)();
@@ -109,11 +109,11 @@ code_?:
       bVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar20,(Object *)StringLiteral_thrustersColor,&pOStackX_20,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
       if (bVar16 != 0) {
         if (pOStackX_20 != (Object *)0x0) {
-          if (pOStackX_20->klass == pORam0000000182db24b8) {
+          if (pOStackX_20->klass == pORam0000000182dbbbf8) {
             pOVar2 = pOStackX_20;
           }
           if (pOVar2 != (Object *)0x0) {
-            if ((pOStackX_20->klass->_0).element_class != (pORam0000000182db24b8->_0).element_class) {
+            if ((pOStackX_20->klass->_0).element_class != (pORam0000000182dbbbf8->_0).element_class) {
               FUN_?(pOStackX_20);
               pcVar18 = (code *)swi(3);
               pHVar19 = (HoverCraftVisualization_HoverCraftVisualizationSettings *)(*pcVar18)();
@@ -636,11 +636,11 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_Initialize(MVHoverCraft *th
             } while (!bVar11);
           }
           if ((((this->fields)._._._.blueprintData != (Dictionary_2_System_Object_System_Object_ *)0x0) && (bVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue((this->fields)._._._.blueprintData,(Object *)StringLiteral_randomLeaveVehicle,(Object **)apMStack_2,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__), bVar19 != 0)) && (apMStack_2[0] != (MVCubeModelInstance *)0x0)) {
-            if (apMStack_2[0]->klass == pMRam0000000182db2508) {
+            if (apMStack_2[0]->klass == pMRam0000000182dbbc48) {
               pMVar1 = apMStack_2[0];
             }
             if (pMVar1 != (MVCubeModelInstance *)0x0) {
-              if ((apMStack_2[0]->klass->_0).element_class != (pMRam0000000182db2508->_0).element_class) {
+              if ((apMStack_2[0]->klass->_0).element_class != (pMRam0000000182dbbc48->_0).element_class) {
                 FUN_?(apMStack_2[0]);
                 pcVar7 = (code *)swi(3);
                 (*pcVar7)();

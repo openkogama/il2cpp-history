@@ -11,9 +11,9 @@ using System.Runtime.CompilerServices;
 public static class ChatBubbleManager
 {
 	// Fields
-	public static Action<string, int, ChatAnchor> OnShowChatBubble;
+	public static Action<string, string, int, ChatAnchor> OnShowChatBubble;
 
 	// Methods
-	public static void ShowChatBubble(string text, int anchorId, ChatAnchor chatBubbleAnchor);
+	public static void ShowChatBubble(string text, string senderName, int anchorId, ChatAnchor chatBubbleAnchor);
 }
 

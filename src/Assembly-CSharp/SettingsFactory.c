@@ -820,7 +820,7 @@ code_?:
     this_01 = (pCVar11->fields).nameInputField;
     if ((pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pSVar23 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar14,(Object *)StringLiteral_Name,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), this_01 != (SettingsInputField *)0x0)) {
       if (pSVar23 != (String *)0x0) {
-        if (pSVar23->klass == pSRam0000000182db2520) {
+        if (pSVar23->klass == pSRam0000000182dbbc60) {
           pSVar13 = pSVar23;
         }
         if (pSVar13 == (String *)0x0) {
@@ -852,7 +852,7 @@ code_?:
             (*pcVar2)();
             return;
           }
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar27,StringLiteral_Health,*(float *)&pOVar9[1].klass,(MethodInfo *)0x0);
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar27,StringLiteral_Health,*(float *)&pOVar9[1].klass,(MethodInfo *)0x0);
           pDVar14 = (pCVar11->fields).itemData;
           pSVar24 = (pCVar11->fields).movementSpeedSlider;
           if (((pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar14,(Object *)StringLiteral_MovementSpeed,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar24 != (SettingsSlider *)0x0)) && (pOVar9 != (Object *)0x0)) {
@@ -872,7 +872,7 @@ code_?:
                 (*pcVar2)();
                 return;
               }
-              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar27,StringLiteral_MovementSpeed,*(float *)&pOVar9[1].klass,(MethodInfo *)0x0);
+              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar27,StringLiteral_MovementSpeed,*(float *)&pOVar9[1].klass,(MethodInfo *)0x0);
               pDVar14 = (pCVar11->fields).itemData;
               pSVar28 = (pCVar11->fields).playerInvisibleToggle;
               if (((pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar14,(Object *)StringLiteral_PlayerInvisible,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar28 != (SettingsToggle *)0x0)) && (pOVar9 != (Object *)0x0)) {
@@ -922,7 +922,7 @@ code_?:
                           (*pcVar2)();
                           return;
                         }
-                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar27,StringLiteral_TrailLength,*(float *)&pOVar9[1].klass,(MethodInfo *)0x0);
+                        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar27,StringLiteral_TrailLength,*(float *)&pOVar9[1].klass,(MethodInfo *)0x0);
                         pIVar29 = (pCVar11->fields).trailColorImage;
                         pDVar14 = (pCVar11->fields).itemData;
                         if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -1792,7 +1792,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateGlobalSoundsInv
         }
         else {
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182db2520) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbbc60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -1803,7 +1803,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateGlobalSoundsInv
           }
           this_11[5].klass = pCVar9;
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182db2520) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbbc60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -2383,7 +2383,7 @@ code_?:
         if ((SettingsSlider *)pOVar1[2].monitor != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize((SettingsSlider *)pOVar1[2].monitor,StringLiteral_BlueprintData_Velocity,value,0.3,3.0,(MethodInfo *)0x0);
           if (pOVar1[3].klass != (Object__Class *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_BlueprintData_Velocity,value,(MethodInfo *)0x0);
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_BlueprintData_Velocity,value,(MethodInfo *)0x0);
             return;
           }
         }
@@ -2473,7 +2473,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateRespawnSetting(
             if ((SettingsSlider *)pOVar1[2].monitor != (SettingsSlider *)0x0) {
               SettingsSlider::SettingsSlider_Initialize_1((SettingsSlider *)pOVar1[2].monitor,StringLiteral_respawnTime,value_00,0x1e,0x708,(MethodInfo *)0x0);
               if (pOVar1[3].klass != (Object__Class *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_respawnTime,(float)value_00,(MethodInfo *)0x0);
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_respawnTime,(float)value_00,(MethodInfo *)0x0);
                 if ((GameObject *)pOVar1[3].monitor != (GameObject *)0x0) {
                   value = *(bool *)((longlong)&pOVar1[5].klass + 5);
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive((GameObject *)pOVar1[3].monitor,value,(MethodInfo *)0x0);
@@ -5553,7 +5553,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSoundsInventory
         }
         else {
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182db2520) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbbc60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -5564,7 +5564,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSoundsInventory
           }
           this_11[5].klass = pCVar9;
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182db2520) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbbc60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {

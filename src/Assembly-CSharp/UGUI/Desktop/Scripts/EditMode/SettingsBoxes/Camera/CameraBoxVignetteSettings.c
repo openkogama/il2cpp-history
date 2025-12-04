@@ -511,7 +511,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
         SettingsSlider::SettingsSlider_Initialize_1(pSVar12,StringLiteral_ppVignInty,iVar13,0,100,(MethodInfo *)0x0);
         pSVar14 = (this->fields).intensityInputField;
         if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppVignInty,(float)iVar13,(MethodInfo *)0x0);
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppVignInty,(float)iVar13,(MethodInfo *)0x0);
           pCVar5 = (this->fields).cameraBoxSettings;
           uStackX_8 = 2;
           pOVar6 = (Object *)FUN_?(lRam_?,&uStackX_8);
@@ -528,7 +528,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
               SettingsSlider::SettingsSlider_Initialize_1(pSVar12,StringLiteral_ppVignSmooth,iVar13,0,100,(MethodInfo *)0x0);
               pSVar14 = (this->fields).smoothnessInputField;
               if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppVignSmooth,(float)iVar13,(MethodInfo *)0x0);
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppVignSmooth,(float)iVar13,(MethodInfo *)0x0);
                 pCVar5 = (this->fields).cameraBoxSettings;
                 uStackX_8 = 100;
                 pOVar6 = (Object *)FUN_?(lRam_?,&uStackX_8);
@@ -545,7 +545,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                     SettingsSlider::SettingsSlider_Initialize_1(pSVar12,StringLiteral_ppVignRness,iVar13,0,100,(MethodInfo *)0x0);
                     pSVar14 = (this->fields).roundnessInputField;
                     if (pSVar14 != (SettingsInputFieldSlider *)0x0) {
-                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(pSVar14,StringLiteral_ppVignRness,(float)iVar13,(MethodInfo *)0x0);
+                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(pSVar14,StringLiteral_ppVignRness,(float)iVar13,(MethodInfo *)0x0);
                       uVar1 = uStackX_8;
                       lVar2 = lRam_?;
                       pSVar3 = (this->fields).roundedToggle;

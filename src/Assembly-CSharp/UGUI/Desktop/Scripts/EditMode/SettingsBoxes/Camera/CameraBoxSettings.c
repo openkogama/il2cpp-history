@@ -174,7 +174,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
           UNLOCK();
           fVar8 = mscorlib.dll::System::Convert::Convert_ToSingle_1(pOVar7,(IFormatProvider *)TypeInfo__System__Globalization__CultureInfo->static_fields->invariant_culture_info,(MethodInfo *)0x0);
           if (this_02 != (SettingsInputFieldSlider *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_02,StringLiteral_distanceToAvatar,fVar8,(MethodInfo *)0x0);
+            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2(this_02,StringLiteral_distanceToAvatar,fVar8,(MethodInfo *)0x0);
             pDVar1 = (this->fields).woData;
             pSVar9 = (this->fields).toggle;
             if (((pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar1,(Object *)StringLiteral_forceFirstPersonCamera,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar10 = StringLiteral_forceFirstPersonCamera, pSVar9 != (SettingsToggle *)0x0)) && (pOVar7 != (Object *)0x0)) {
