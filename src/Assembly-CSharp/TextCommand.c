@@ -97,7 +97,7 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_SetStreamingAssetVersion_has_no_,(MethodInfo *)0x0);
           this = (Action_3_Object_Single_Int32_ *)FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest,_float,_int>);
           mscorlib.dll::System::Action`3[Object,Single,Int32]::Action_3_Object_Single_Int32___ctor(this,(Object *)0x0,MethodInfo__AssetBundleCacheTest__OnFirstDownloadFinished_UnityEngine__Networking__UnityWebRequest__float__int_,(MethodInfo *)0x0);
-          AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,0x230955f1,(MethodInfo *)0x0);
+          AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,0x23096d33,(MethodInfo *)0x0);
           return;
         }
       }
@@ -354,7 +354,7 @@ code_?:
                   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_SetStreamingAssetVersion_has_no_,(MethodInfo *)0x0);
                   this = (Action_3_Object_Single_Int32_ *)FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest,_float,_int>);
                   mscorlib.dll::System::Action`3[Object,Single,Int32]::Action_3_Object_Single_Int32___ctor(this,(Object *)0x0,MethodInfo__AssetBundleCacheTest__OnFirstDownloadFinished_UnityEngine__Networking__UnityWebRequest__float__int_,(MethodInfo *)0x0);
-                  AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,0x230955f1,(MethodInfo *)0x0);
+                  AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,0x23096d33,(MethodInfo *)0x0);
                   return;
                 }
               }
