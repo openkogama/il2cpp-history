@@ -8,13 +8,13 @@ Assembly-CSharp.dll::CachedTextureRequest::CachedTextureRequest_Create
 {
   pSVar1 = (this->fields)._._._.path;
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__version_587814385);
+    FUN_?(&StringLiteral__version_587820339);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = mscorlib.dll::System::String::String_Concat_4
-                     (pSVar1,StringLiteral__version_587814385,(MethodInfo *)0x0);
+                     (pSVar1,StringLiteral__version_587820339,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__UnityEngine__Networking__DownloadHandlerTexture,
                   (this->fields)._ReadableTextureData_k__BackingField == 0,0);

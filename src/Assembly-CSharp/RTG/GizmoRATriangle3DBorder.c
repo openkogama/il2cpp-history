@@ -140,7 +140,7 @@ code_?:
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                    (**ppIVar15)(pIVar11,*ppIVar15,(MethodInfo *)ppIVar15[1]);
+                    (**ppIVar15)(pIVar11,fVar7,(MethodInfo *)ppIVar15[1]);
                     return;
                   }
                 }

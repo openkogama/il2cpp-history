@@ -846,7 +846,7 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetSliderAlignedRealLengt
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      fVar7 = (float)(**ppIVar12)(pIVar8,zoomFactor,(MethodInfo *)ppIVar12[1]);
+      fVar7 = (float)(**ppIVar12)(pIVar8,*ppIVar12,(MethodInfo *)ppIVar12[1]);
       return fVar7;
     }
   }
@@ -1062,35 +1062,34 @@ code_?:
           }
           lVar1 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar3);
           if (lVar1 != 0) {
-            fVar6 = _UNK_?;
             if (*(char *)(lVar1 + 0x20) != '\0') {
               this_01 = (this->fields)._._handle;
               if (this_01 == (GizmoHandle *)0x0) goto code_?;
-              fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+              GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
             }
             if (pIVar5 != (IGizmoCap3DController *)0x0) {
-              pIVar7 = pIVar5->klass;
-              uVar8 = 0;
-              uVar9._0_1_ = (pIVar7->_1).rank;
-              uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
-              if (uVar9 != 0) {
+              pIVar6 = pIVar5->klass;
+              uVar7 = 0;
+              uVar8._0_1_ = (pIVar6->_1).rank;
+              uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
+              if (uVar8 != 0) {
                 do {
-                  if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+                  if (pIVar6->interfaceOffsets[uVar7].interfaceType ==
                       (Il2CppClass *)TypeInfo__RTG__IGizmoCap3DController) {
-                    ppIVar10 = &(&(pIVar7->vtable).UpdateHandles)
-                               [pIVar7->interfaceOffsets[uVar8].offset + 1].methodPtr;
+                    ppIVar9 = &(&(pIVar6->vtable).UpdateHandles)
+                               [pIVar6->interfaceOffsets[uVar7].offset + 1].methodPtr;
                     goto code_?;
                   }
-                  uVar11 = (short)uVar8 + 1;
-                  uVar8 = (ulonglong)uVar11;
-                } while (uVar11 < uVar9);
+                  uVar10 = (short)uVar7 + 1;
+                  uVar7 = (ulonglong)uVar10;
+                } while (uVar10 < uVar8);
               }
-              ppIVar10 = (Il2CppMethodPointer *)
+              ppIVar9 = (Il2CppMethodPointer *)
                         FUN_?(pIVar5,TypeInfo__RTG__IGizmoCap3DController,1);
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-              (**ppIVar10)(pIVar5,fVar6,(MethodInfo *)ppIVar10[1]);
+              (**ppIVar9)(pIVar5,*ppIVar9,(MethodInfo *)ppIVar9[1]);
               return;
             }
           }
