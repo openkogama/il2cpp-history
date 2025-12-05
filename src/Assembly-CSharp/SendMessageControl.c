@@ -2062,12 +2062,12 @@ code_?:
     }
     pSVar5 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral__3_2_9_0);
+      FUN_?(&StringLiteral__3_2_10_0);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pSVar41 = StringLiteral__3_2_9_0;
+    pSVar41 = StringLiteral__3_2_10_0;
     if (cRam_? == '\0') {
       FUN_?(&StringLiteral__2025_11_26TextOverhaul);
       LOCK();
@@ -4285,12 +4285,12 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ShowBuildInform
   }
   pSVar1 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_2_9_0);
+    FUN_?(&StringLiteral__3_2_10_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  arg0 = StringLiteral__3_2_9_0;
+  arg0 = StringLiteral__3_2_10_0;
   if (cRam_? == '\0') {
     FUN_?(&StringLiteral__2025_11_26TextOverhaul);
     LOCK();

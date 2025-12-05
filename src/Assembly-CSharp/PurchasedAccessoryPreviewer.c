@@ -126,9 +126,8 @@ void Assembly-CSharp.dll::PurchasedAccessoryPreviewer::
                         (*(pIVar6->klass->vtable).get_color.methodPtr)
                                   (&VStack_12,pIVar6,(pIVar6->klass->vtable).get_color.method);
               pAVar1 = (this->fields).fadeEffect;
-              fVar5 = pVVar16->y;
               VVar9 = *pVVar16;
-              fVar10 = pVVar16[1].x;
+              fVar5 = pVVar16[1].x;
               if (pAVar1 != (AnimationCurve *)0x0) {
                 pvVar2 = (pAVar1->fields).m_Ptr;
                 if (pvVar2 == (void *)0x0) {
@@ -152,9 +151,9 @@ void Assembly-CSharp.dll::PurchasedAccessoryPreviewer::
                 pIVar6 = (this->fields).image;
                 if (pIVar6 != (Image *)0x0) {
                   VStack_12 = VVar9;
-                  fStack_14 = fVar10;
+                  fStack_14 = fVar5;
                   fStack_15 = (float)uVar17;
-                  (*(pIVar6->klass->vtable).set_color.methodPtr)(pIVar6,fVar5,fVar10);
+                  (*(pIVar6->klass->vtable).set_color.methodPtr)(pIVar6,&VStack_12,fVar5);
                   return;
                 }
               }

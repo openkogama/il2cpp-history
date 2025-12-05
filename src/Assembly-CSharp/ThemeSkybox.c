@@ -1213,9 +1213,9 @@ code_?:
             if (pMVar20 != (MethodInfo *)0x0) {
               if ((*pMVar20->name == '.') && ((pMVar20->flags & 0x800) != 0)) {
                 ppMVar21 = ppMVar9;
-                while (ppMVar22 = ppMVar21 + 0x30529dd4,
+                while (pcVar22 = (char *)((longlong)ppMVar21 + 0xADDR),
                       ppMVar21 = (MethodInfo **)((longlong)ppMVar21 + 1),
-                      *(char *)ppMVar22 == (pMVar20->name + -1)[(longlong)ppMVar21]) {
+                      *pcVar22 == (pMVar20->name + -1)[(longlong)ppMVar21]) {
                   if (ppMVar21 == (MethodInfo **)0x7) {
                     FUN_?(pMVar20,0,0,&lStackX_10);
                     goto code_?;

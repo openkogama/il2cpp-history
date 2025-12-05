@@ -283,12 +283,12 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
               (this_01,MVUtils_MethodInfo__UnityEngine__GameObject__AddComponent<MVUtils>__);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral_Build_Info___Version__3_2_9_0__R);
+      FUN_?(&StringLiteral_Build_Info___Version__3_2_10_0__);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    message = StringLiteral_Build_Info___Version__3_2_9_0__R;
+    message = StringLiteral_Build_Info___Version__3_2_10_0__;
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
@@ -6320,61 +6320,60 @@ Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_get_RegionConfig
     FUN_?(&MethodInfo__RegionConfigManager___get_RegionConfig_b__3_0_RegionConfigNamePair_);
     LOCK();
     UNLOCK();
+    FUN_?(&TypeInfo__RegionConfigNamePair__RegionConfigType);
+    LOCK();
+    UNLOCK();
     FUN_?(&StringLiteral_RegionConfigManager_GetRegionCon);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar3 = (this_00->fields).region;
-  if ((pSVar3 == (String *)0x0) || ((pSVar3->fields)._stringLength == 0)) {
-    pSVar3 = RegionConfigManager::RegionConfigManager_DetectRegionFromEnvironment
-                       (this_00,(MethodInfo *)0x0);
-    bVar4 = iRam_? != 0;
-    (this_00->fields).region = pSVar3;
-    if (bVar4) {
-      uVar5 = (uint)((ulonglong)&(this_00->fields).region >> 0xc);
-      puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
-      do {
-        uVar7 = *puVar6;
-        LOCK();
-        uVar8 = *puVar6;
-        if (uVar7 == uVar8) {
-          *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
-        }
-        UNLOCK();
-      } while (uVar7 != uVar8);
-    }
-    pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_RegionConfigManager_GetRegionCon,(this_00->fields).region,
-                        (MethodInfo *)0x0);
+  if ((this_00->fields).regionConfigType == 0) {
+    RStack_3 = RegionConfigManager::RegionConfigManager_DetectRegionFromEnvironment
+                          (this_00,(MethodInfo *)0x0);
+    (this_00->fields).regionConfigType = RStack_3;
+    EStack_4.klass = (Enum__Class *)TypeInfo__RegionConfigNamePair__RegionConfigType;
+    EStack_4.monitor = (MonitorData *)0xffffffffffffffff;
+    pSVar5 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_4,(MethodInfo *)0x0);
+    pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_RegionConfigManager_GetRegionCon,pSVar5,(MethodInfo *)0x0);
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar5,(MethodInfo *)0x0);
   }
-  source = (this_00->fields).expectedRegionValues;
+  pLVar6 = (this_00->fields).expectedRegionValues;
   this_01 = (Predicate_1_Object_ *)FUN_?(TypeInfo__System__Func<RegionConfigNamePair,_bool>)
   ;
   mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
             (this_01,(Object *)this_00,
              MethodInfo__RegionConfigManager___get_RegionConfig_b__3_0_RegionConfigNamePair_,
              (MethodInfo *)0x0);
-  pOVar9 = System.Core.dll::System::Linq::Enumerable::Enumerable_FirstOrDefault_3
-                     ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Boolean_ *)this_01,
+  pOVar7 = System.Core.dll::System::Linq::Enumerable::Enumerable_FirstOrDefault_3
+                     ((IEnumerable_1_System_Object_ *)pLVar6,(Func_2_Object_Boolean_ *)this_01,
                       RegionConfigNamePair_MethodInfo__System__Linq__Enumerable__FirstOrDefault<RegionConfigNamePair>_System__Collections__Generic__IEnumerable<RegionConfigNamePair>__System__Func<RegionConfigNamePair,_bool>_
                      );
-  if (pOVar9 == (Object *)0x0) {
-    uVar10 = func_?(&TypeInfo__System__Exception);
-    this_02 = (Exception *)func_?(uVar10);
-    pSVar3 = (String *)func_?(&StringLiteral_RegionConfig_not_found);
-    mscorlib.dll::System::Exception::Exception__ctor_1(this_02,pSVar3,(MethodInfo *)0x0);
-    uVar10 = func_?(&MethodInfo__RegionConfigManager__get_RegionConfig__);
-    FUN_?(this_02,uVar10);
-    pcVar1 = (code *)swi(3);
-    pRVar2 = (RegionConfig *)(*pcVar1)();
-    return pRVar2;
+  if (pOVar7 != (Object *)0x0) {
+    return (RegionConfig *)pOVar7[1].monitor;
   }
-  return (RegionConfig *)pOVar9[1].monitor;
+  uVar8 = func_?(&TypeInfo__RegionConfigNamePair__RegionConfigType);
+  pOVar7 = (Object *)func_?(uVar8);
+  pLVar6 = (this_00->fields).expectedRegionValues;
+  uVar8 = func_?(&TypeInfo__Extensions);
+  func_?(uVar8);
+  pSVar5 = Extensions::Extensions_BuildStringRecursive
+                     ((IEnumerable *)pLVar6,(String *)0x0,1,(MethodInfo *)0x0);
+  format = (String *)func_?(&StringLiteral_RegionConfig_not_found_for_regio);
+  pSVar5 = mscorlib.dll::System::String::String_Format_1
+                     (format,pOVar7,(Object *)pSVar5,(MethodInfo *)0x0);
+  uVar8 = func_?(&TypeInfo__System__Exception);
+  this_02 = (Exception *)func_?(uVar8);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_02,pSVar5,(MethodInfo *)0x0);
+  uVar8 = func_?(&MethodInfo__RegionConfigManager__get_RegionConfig__);
+  FUN_?(this_02,uVar8);
+  pcVar1 = (code *)swi(3);
+  pRVar2 = (RegionConfig *)(*pcVar1)();
+  return pRVar2;
 }
 
 

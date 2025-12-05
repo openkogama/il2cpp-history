@@ -2877,7 +2877,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                ->klass->rgctx_data[0x22].method);
                     if (cRam_? == '\0') {
-                      FUN_?(&StringLiteral__3_2_9_0);
+                      FUN_?(&StringLiteral__3_2_10_0);
                       LOCK();
                       UNLOCK();
                       cRam_? = '\x01';
@@ -2885,7 +2885,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                     uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (this_01,0xd9,(Object *)StringLiteral__3_2_9_0,
+                              (this_01,0xd9,(Object *)StringLiteral__3_2_10_0,
                                (InsertionBehavior__Enum)uVar6,
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                ->klass->rgctx_data[0x22].method);

@@ -2673,8 +2673,29 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogErrorRecursive
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
     FUN_?();
   }
-  Extensions_LogRecursive_1
-            (collection,(Action_1_String_ *)this,prependInfo,eachEntryNewLine,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar1 = Extensions_BuildStringRecursive
+                     (collection,prependInfo,eachEntryNewLine,(MethodInfo *)0x0);
+  if (this != (UnityAction_1_System_Object_ *)0x0) {
+    UNRECOVERED_JUMPTABLE = (this->fields)._._.invoke_impl;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*UNRECOVERED_JUMPTABLE)
+              ((this->fields)._._.method_code,pSVar1,(this->fields)._._.method,UNRECOVERED_JUMPTABLE
+              );
+    return;
+  }
+  FUN_?();
+  UNRECOVERED_JUMPTABLE = (code *)swi(3);
+  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -2706,8 +2727,29 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogRecursive
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
     FUN_?();
   }
-  Extensions_LogRecursive_1
-            (collection,(Action_1_String_ *)this,prependInfo,eachEntryNewLine,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar1 = Extensions_BuildStringRecursive
+                     (collection,prependInfo,eachEntryNewLine,(MethodInfo *)0x0);
+  if (this != (UnityAction_1_System_Object_ *)0x0) {
+    UNRECOVERED_JUMPTABLE = (this->fields)._._.invoke_impl;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*UNRECOVERED_JUMPTABLE)
+              ((this->fields)._._.method_code,pSVar1,(this->fields)._._.method,UNRECOVERED_JUMPTABLE
+              );
+    return;
+  }
+  FUN_?();
+  UNRECOVERED_JUMPTABLE = (code *)swi(3);
+  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -2728,39 +2770,17 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogRecursive_1
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
     FUN_?();
   }
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__Extensions);
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__System__Text__StringBuilder);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  this = (StringBuilder *)FUN_?(TypeInfo__System__Text__StringBuilder);
-  mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this,(MethodInfo *)0x0);
-  if (prependInfo != (String *)0x0) {
-    if (this == (StringBuilder *)0x0) goto code_?;
-    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-              (this,prependInfo,(MethodInfo *)0x0);
-  }
-  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  Extensions_AppendRecursive(this,collection,0,eachEntryNewLine,(MethodInfo *)0x0);
-  if (this != (StringBuilder *)0x0) {
-    uVar1 = (*(this->klass->vtable).ToString.methodPtr)(this,(this->klass->vtable).ToString.method);
-    if (logFunc != (Action_1_String_ *)0x0) {
-      UNRECOVERED_JUMPTABLE = (logFunc->fields)._._.invoke_impl;
+  pSVar1 = Extensions_BuildStringRecursive
+                     (collection,prependInfo,eachEntryNewLine,(MethodInfo *)0x0);
+  if (logFunc != (Action_1_String_ *)0x0) {
+    UNRECOVERED_JUMPTABLE = (logFunc->fields)._._.invoke_impl;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      (*UNRECOVERED_JUMPTABLE)
-                ((logFunc->fields)._._.method_code,uVar1,(logFunc->fields)._._.method,
-                 UNRECOVERED_JUMPTABLE);
-      return;
-    }
+    (*UNRECOVERED_JUMPTABLE)
+              ((logFunc->fields)._._.method_code,pSVar1,(logFunc->fields)._._.method,
+               UNRECOVERED_JUMPTABLE);
+    return;
   }
-code_?:
   FUN_?();
   UNRECOVERED_JUMPTABLE = (code *)swi(3);
   (*UNRECOVERED_JUMPTABLE)();
@@ -2834,8 +2854,29 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogWarningRecursive
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
     FUN_?();
   }
-  Extensions_LogRecursive_1
-            (collection,(Action_1_String_ *)this,prependInfo,eachEntryNewLine,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar1 = Extensions_BuildStringRecursive
+                     (collection,prependInfo,eachEntryNewLine,(MethodInfo *)0x0);
+  if (this != (UnityAction_1_System_Object_ *)0x0) {
+    UNRECOVERED_JUMPTABLE = (this->fields)._._.invoke_impl;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*UNRECOVERED_JUMPTABLE)
+              ((this->fields)._._.method_code,pSVar1,(this->fields)._._.method,UNRECOVERED_JUMPTABLE
+              );
+    return;
+  }
+  FUN_?();
+  UNRECOVERED_JUMPTABLE = (code *)swi(3);
+  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 

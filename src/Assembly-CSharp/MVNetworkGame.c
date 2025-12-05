@@ -10221,7 +10221,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnShopInventoryResultSetR
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
         (IEditModeUI *)0x0) {
-      uStack_2._0_4_ = 0x8094c6ac;
+      uStack_2._0_4_ = 0x8094c94c;
       uStack_2._4_4_ = 1;
       lVar1 = FUN_?();
       if (lVar1 != 0) {

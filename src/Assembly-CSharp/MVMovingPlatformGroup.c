@@ -2678,7 +2678,7 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::
     (*pcVar1)();
     return;
   }
-  uStack_2._0_4_ = 0x804b922c;
+  uStack_2._0_4_ = 0x804b949c;
   uStack_2._4_4_ = 1;
   MVMovingPlatform::MVMovingPlatform_RecalculateMovement(this_00,(MethodInfo *)0x0);
   if (cRam_? == '\0') {

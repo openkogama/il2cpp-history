@@ -26,8 +26,8 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
   if (*(int *)&(TypeInfo__BrowserComm->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__BrowserComm);
   }
-  str0 = StringLiteral_Would_have_sent_function__;
-  pSVar1 = StringLiteral___to_JSBridge_with_args__;
+  str2 = StringLiteral___to_JSBridge_with_args__;
+  pSVar1 = StringLiteral_Would_have_sent_function__;
   if (TypeInfo__BrowserComm->static_fields->enableExternalCall == 0) {
     if (args == (Object__Array *)0x0) {
       str3 = (String *)0x0;
@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
       str3 = (String *)(*(code *)pOVar2[1]._0.this_arg.data)(args,uVar3);
     }
     pSVar1 = mscorlib.dll::System::String::String_Concat_6
-                       (str0,functionName,pSVar1,str3,(MethodInfo *)0x0);
+                       (pSVar1,functionName,str2,str3,(MethodInfo *)0x0);
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
