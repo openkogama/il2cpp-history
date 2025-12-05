@@ -265,32 +265,32 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
         iVar6 = (*pcVar5)();
         return iVar6;
       }
+      uVar7 = *(undefined4 *)&pOVar3[1].klass;
       if (pIVar1 != (IAttributePointFloatCalculator *)0x0) {
-        pIVar7 = pIVar1->klass;
-        uVar8 = 0;
-        uVar9._0_1_ = (pIVar7->_1).rank;
-        uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
-        if (uVar9 != 0) {
+        pIVar8 = pIVar1->klass;
+        uVar9 = 0;
+        uVar10._0_1_ = (pIVar8->_1).rank;
+        uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
+        if (uVar10 != 0) {
           do {
-            if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+            if (pIVar8->interfaceOffsets[uVar9].interfaceType ==
                 (Il2CppClass *)
                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
                ) {
-              pIVar10 = &pIVar7->vtable + pIVar7->interfaceOffsets[uVar8].offset;
+              pIVar11 = &pIVar8->vtable + pIVar8->interfaceOffsets[uVar9].offset;
               goto code_?;
             }
-            uVar8 = uVar8 + 1;
-          } while (uVar8 < uVar9);
+            uVar9 = uVar9 + 1;
+          } while (uVar9 < uVar10);
         }
-        pIVar10 = (IAttributePointFloatCalculator__VTable *)
-                 FUN_?(pIVar1,
-                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
-                               ,0);
+        pIVar11 = (IAttributePointFloatCalculator__VTable *)
+                  FUN_?(pIVar1,
+                                TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator
+                                ,0);
 code_?:
-        UNRECOVERED_JUMPTABLE = (pIVar10->Calc).methodPtr;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        iVar6 = (*UNRECOVERED_JUMPTABLE)(pIVar1,UNRECOVERED_JUMPTABLE,(pIVar10->Calc).method);
+        iVar6 = (*(pIVar11->Calc).methodPtr)(pIVar1,uVar7,(pIVar11->Calc).method);
         return iVar6;
       }
     }

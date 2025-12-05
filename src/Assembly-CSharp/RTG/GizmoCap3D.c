@@ -846,7 +846,7 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetSliderAlignedRealLengt
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      fVar7 = (float)(**ppIVar12)(pIVar8,*ppIVar12,(MethodInfo *)ppIVar12[1]);
+      fVar7 = (float)(**ppIVar12)(pIVar8,zoomFactor,(MethodInfo *)ppIVar12[1]);
       return fVar7;
     }
   }

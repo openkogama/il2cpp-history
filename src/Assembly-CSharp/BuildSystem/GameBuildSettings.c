@@ -90,12 +90,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__12_4_2025_11_52_51_PM);
+    FUN_?(&StringLiteral__12_4_2025_11_23_43_PM);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral__12_4_2025_11_52_51_PM;
+  return StringLiteral__12_4_2025_11_23_43_PM;
 }
 
 
@@ -121,7 +121,7 @@ DateTime Assembly-CSharp.dll::BuildSystem::GameBuildSettings::
     FUN_?(&MethodInfo__System__Nullable<System::DateTime>__get_Value__);
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral__2025_12_04T23_52_51_9958738_01_0);
+    FUN_?(&StringLiteral__2025_12_04T23_23_43_5071566_01_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -130,7 +130,7 @@ DateTime Assembly-CSharp.dll::BuildSystem::GameBuildSettings::
     if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
       FUN_?();
     }
-    pSVar1 = StringLiteral__2025_12_04T23_52_51_9958738_01_0;
+    pSVar1 = StringLiteral__2025_12_04T23_23_43_5071566_01_0;
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__System__Globalization__DateTimeFormatInfo);
       LOCK();
@@ -189,7 +189,7 @@ int32_t Assembly-CSharp.dll::BuildSystem::GameBuildSettings::
         GameBuildSettings_get_LocalDiscCacheAssetVersion(MethodInfo *method)
 
 {
-  return 0x23096d33;
+  return 0x230965eb;
 }
 
 
@@ -216,12 +216,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__version_587820339);
+    FUN_?(&StringLiteral__version_587818475);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral__version_587820339;
+  return StringLiteral__version_587818475;
 }
 
 
@@ -242,12 +242,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__4d4a0a64_63a0_4749_9581_6a735595);
+    FUN_?(&StringLiteral_efbb394f_27d6_4f5b_8c25_2f462915);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral__4d4a0a64_63a0_4749_9581_6a735595;
+  return StringLiteral_efbb394f_27d6_4f5b_8c25_2f462915;
 }
 
 
