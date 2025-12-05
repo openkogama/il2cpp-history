@@ -469,7 +469,7 @@ code_?:
                                                                                             pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
                                                                                             if (pGVar25 != (GameObject *)0x0) {
                                                                                               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,value,(MethodInfo *)0x0);
-                                                                                              pSVar16 = (this->fields).backgroundRadiusSlider;
+                                                                                              pSVar16 = (this->fields).bakgroundWidthSlider;
                                                                                               if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
                                                                                                 pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar16,(MethodInfo *)0x0);
                                                                                                 if (pTVar24 != (Transform *)0x0) {
@@ -478,77 +478,90 @@ code_?:
                                                                                                     pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
                                                                                                     if (pGVar25 != (GameObject *)0x0) {
                                                                                                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,value_00,(MethodInfo *)0x0);
-                                                                                                      pSVar18 = (this->fields).backgroundOutlineToggle;
-                                                                                                      if (pSVar18 != (SettingsToggle *)0x0) {
-                                                                                                        pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pSVar18,(MethodInfo *)0x0);
-                                                                                                        if (pGVar25 != (GameObject *)0x0) {
-                                                                                                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,value_00,(MethodInfo *)0x0);
-                                                                                                          pSVar16 = (this->fields).backgroundOutlineThicknessSlider;
-                                                                                                          if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
-                                                                                                            pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar16,(MethodInfo *)0x0);
-                                                                                                            if (pTVar24 != (Transform *)0x0) {
-                                                                                                              pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
-                                                                                                              if (pTVar24 != (Transform *)0x0) {
-                                                                                                                pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
+                                                                                                      pSVar16 = (this->fields).backgroundRadiusSlider;
+                                                                                                      if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                        pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar16,(MethodInfo *)0x0);
+                                                                                                        if (pTVar24 != (Transform *)0x0) {
+                                                                                                          pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
+                                                                                                          if (pTVar24 != (Transform *)0x0) {
+                                                                                                            pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
+                                                                                                            if (pGVar25 != (GameObject *)0x0) {
+                                                                                                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,value_00,(MethodInfo *)0x0);
+                                                                                                              pSVar18 = (this->fields).backgroundOutlineToggle;
+                                                                                                              if (pSVar18 != (SettingsToggle *)0x0) {
+                                                                                                                pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pSVar18,(MethodInfo *)0x0);
                                                                                                                 if (pGVar25 != (GameObject *)0x0) {
-                                                                                                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,bVar23 & value_00,(MethodInfo *)0x0);
-                                                                                                                  pIVar19 = (this->fields).backgroundColorPreview;
-                                                                                                                  if (pIVar19 != (Image *)0x0) {
-                                                                                                                    pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar19,(MethodInfo *)0x0);
+                                                                                                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,value_00,(MethodInfo *)0x0);
+                                                                                                                  pSVar16 = (this->fields).backgroundOutlineThicknessSlider;
+                                                                                                                  if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
+                                                                                                                    pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar16,(MethodInfo *)0x0);
                                                                                                                     if (pTVar24 != (Transform *)0x0) {
                                                                                                                       pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
                                                                                                                       if (pTVar24 != (Transform *)0x0) {
-                                                                                                                        pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
-                                                                                                                        if (pTVar24 != (Transform *)0x0) {
-                                                                                                                          pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
-                                                                                                                          if (pGVar25 != (GameObject *)0x0) {
-                                                                                                                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,value_00,(MethodInfo *)0x0);
-                                                                                                                            pIVar19 = (this->fields).backgroundOutlineColorPreview;
-                                                                                                                            if (pIVar19 != (Image *)0x0) {
-                                                                                                                              pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar19,(MethodInfo *)0x0);
+                                                                                                                        pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
+                                                                                                                        if (pGVar25 != (GameObject *)0x0) {
+                                                                                                                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,bVar23 & value_00,(MethodInfo *)0x0);
+                                                                                                                          pIVar19 = (this->fields).backgroundColorPreview;
+                                                                                                                          if (pIVar19 != (Image *)0x0) {
+                                                                                                                            pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar19,(MethodInfo *)0x0);
+                                                                                                                            if (pTVar24 != (Transform *)0x0) {
+                                                                                                                              pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
                                                                                                                               if (pTVar24 != (Transform *)0x0) {
                                                                                                                                 pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
                                                                                                                                 if (pTVar24 != (Transform *)0x0) {
-                                                                                                                                  pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
-                                                                                                                                  if (pTVar24 != (Transform *)0x0) {
-                                                                                                                                    pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
-                                                                                                                                    if (pGVar25 != (GameObject *)0x0) {
-                                                                                                                                      bVar23 = bVar23 & value_00;
-                                                                                                                                      if (cRam_? == '\0') {
-                                                                                                                                        FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,bVar23,0);
-                                                                                                                                        LOCK();
-                                                                                                                                        UNLOCK();
-                                                                                                                                        cRam_? = '\x01';
-                                                                                                                                      }
-                                                                                                                                      if (pGVar25 == (GameObject *)0x0) {
-                                                                                                                                        FUN_?();
-                                                                                                                                        pcVar9 = (code *)swi(3);
-                                                                                                                                        (*pcVar9)();
-                                                                                                                                        return;
-                                                                                                                                      }
-                                                                                                                                      pvVar26 = (pGVar25->fields)._.m_CachedPtr;
-                                                                                                                                      if (pvVar26 == (void *)0x0) {
-                                                                                                                                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar25,(MethodInfo *)0x0);
-                                                                                                                                        pcVar9 = (code *)swi(3);
-                                                                                                                                        (*pcVar9)();
-                                                                                                                                        return;
-                                                                                                                                      }
-                                                                                                                                      pcVar9 = pcRam_?;
-                                                                                                                                      if (pcRam_? == (code *)0x0) {
-                                                                                                                                        pcVar9 = (code *)FUN_?(&UNK_?);
-                                                                                                                                        if (pcVar9 == (code *)0x0) {
-                                                                                                                                          uVar27 = func_?(&UNK_?);
-                                                                                                                                          FUN_?(uVar27,0);
-                                                                                                                                          pcVar9 = (code *)swi(3);
-                                                                                                                                          (*pcVar9)();
-                                                                                                                                          return;
-                                                                                                                                        }
-                                                                                                                                      }
-                                                                                                                                      pcRam_? = pcVar9;
+                                                                                                                                  pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
+                                                                                                                                  if (pGVar25 != (GameObject *)0x0) {
+                                                                                                                                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar25,value_00,(MethodInfo *)0x0);
+                                                                                                                                    pIVar19 = (this->fields).backgroundOutlineColorPreview;
+                                                                                                                                    if (pIVar19 != (Image *)0x0) {
+                                                                                                                                      pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar19,(MethodInfo *)0x0);
+                                                                                                                                      if (pTVar24 != (Transform *)0x0) {
+                                                                                                                                        pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
+                                                                                                                                        if (pTVar24 != (Transform *)0x0) {
+                                                                                                                                          pTVar24 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar24,(MethodInfo *)0x0);
+                                                                                                                                          if (pTVar24 != (Transform *)0x0) {
+                                                                                                                                            pGVar25 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar24,(MethodInfo *)0x0);
+                                                                                                                                            if (pGVar25 != (GameObject *)0x0) {
+                                                                                                                                              bVar23 = bVar23 & value_00;
+                                                                                                                                              if (cRam_? == '\0') {
+                                                                                                                                                FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,bVar23,0);
+                                                                                                                                                LOCK();
+                                                                                                                                                UNLOCK();
+                                                                                                                                                cRam_? = '\x01';
+                                                                                                                                              }
+                                                                                                                                              if (pGVar25 == (GameObject *)0x0) {
+                                                                                                                                                FUN_?();
+                                                                                                                                                pcVar9 = (code *)swi(3);
+                                                                                                                                                (*pcVar9)();
+                                                                                                                                                return;
+                                                                                                                                              }
+                                                                                                                                              pvVar26 = (pGVar25->fields)._.m_CachedPtr;
+                                                                                                                                              if (pvVar26 == (void *)0x0) {
+                                                                                                                                                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar25,(MethodInfo *)0x0);
+                                                                                                                                                pcVar9 = (code *)swi(3);
+                                                                                                                                                (*pcVar9)();
+                                                                                                                                                return;
+                                                                                                                                              }
+                                                                                                                                              pcVar9 = pcRam_?;
+                                                                                                                                              if (pcRam_? == (code *)0x0) {
+                                                                                                                                                pcVar9 = (code *)FUN_?(&UNK_?);
+                                                                                                                                                if (pcVar9 == (code *)0x0) {
+                                                                                                                                                  uVar27 = func_?(&UNK_?);
+                                                                                                                                                  FUN_?(uVar27,0);
+                                                                                                                                                  pcVar9 = (code *)swi(3);
+                                                                                                                                                  (*pcVar9)();
+                                                                                                                                                  return;
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                              pcRam_? = pcVar9;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                                                                                                                                      (*pcRam_?)(pvVar26,bVar23);
-                                                                                                                                      return;
+                                                                                                                                              (*pcRam_?)(pvVar26,bVar23);
+                                                                                                                                              return;
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
                                                                                                                                     }
                                                                                                                                   }
                                                                                                                                 }
@@ -1620,53 +1633,57 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_UpdateUI(Messag
                 pIVar8 = (this->fields).textOutlineColorPreview;
                 if (((pIVar8 != (Image *)0x0) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar8,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)))))) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,value,(MethodInfo *)0x0);
-                  pSVar4 = (this->fields).backgroundRadiusSlider;
+                  pSVar4 = (this->fields).bakgroundWidthSlider;
                   if ((pSVar4 != (SettingsInputFieldSlider *)0x0) && (((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar4,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)))) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,value_00,(MethodInfo *)0x0);
-                    this_02 = (this->fields).backgroundOutlineToggle;
-                    if ((this_02 != (SettingsToggle *)0x0) && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)) {
+                    pSVar4 = (this->fields).backgroundRadiusSlider;
+                    if (((pSVar4 != (SettingsInputFieldSlider *)0x0) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar4,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)))) {
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,value_00,(MethodInfo *)0x0);
-                      pSVar4 = (this->fields).backgroundOutlineThicknessSlider;
-                      if (((pSVar4 != (SettingsInputFieldSlider *)0x0) && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar4,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)))) && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)) {
-                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,bVar5 & value_00,(MethodInfo *)0x0);
-                        pIVar8 = (this->fields).backgroundColorPreview;
-                        if ((((pIVar8 != (Image *)0x0) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar8,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)))) {
-                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,value_00,(MethodInfo *)0x0);
-                          pIVar8 = (this->fields).backgroundOutlineColorPreview;
-                          if ((((pIVar8 != (Image *)0x0) && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar8,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)))) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)) {
-                            bVar5 = bVar5 & value_00;
-                            if (cRam_? == '\0') {
-                              FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,bVar5,0);
-                              LOCK();
-                              UNLOCK();
-                              cRam_? = '\x01';
-                            }
-                            if (pGVar7 == (GameObject *)0x0) {
-                              FUN_?();
-                              pcVar3 = (code *)swi(3);
-                              (*pcVar3)();
-                              return;
-                            }
-                            pvVar9 = (pGVar7->fields)._.m_CachedPtr;
-                            if (pvVar9 == (void *)0x0) {
-                              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar7,(MethodInfo *)0x0);
-                              pcVar3 = (code *)swi(3);
-                              (*pcVar3)();
-                              return;
-                            }
-                            pcVar3 = pcRam_?;
-                            if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
-                              uVar10 = func_?(&UNK_?);
-                              FUN_?(uVar10,0);
-                              pcVar3 = (code *)swi(3);
-                              (*pcVar3)();
-                              return;
-                            }
-                            pcRam_? = pcVar3;
+                      this_02 = (this->fields).backgroundOutlineToggle;
+                      if ((this_02 != (SettingsToggle *)0x0) && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)) {
+                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,value_00,(MethodInfo *)0x0);
+                        pSVar4 = (this->fields).backgroundOutlineThicknessSlider;
+                        if ((pSVar4 != (SettingsInputFieldSlider *)0x0) && (((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pSVar4,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)))) {
+                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,bVar5 & value_00,(MethodInfo *)0x0);
+                          pIVar8 = (this->fields).backgroundColorPreview;
+                          if (((pIVar8 != (Image *)0x0) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar8,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && ((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)))))) {
+                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar7,value_00,(MethodInfo *)0x0);
+                            pIVar8 = (this->fields).backgroundOutlineColorPreview;
+                            if ((pIVar8 != (Image *)0x0) && ((((pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar8,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0 && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar6,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) && (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)))) {
+                              bVar5 = bVar5 & value_00;
+                              if (cRam_? == '\0') {
+                                FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,bVar5,0);
+                                LOCK();
+                                UNLOCK();
+                                cRam_? = '\x01';
+                              }
+                              if (pGVar7 == (GameObject *)0x0) {
+                                FUN_?();
+                                pcVar3 = (code *)swi(3);
+                                (*pcVar3)();
+                                return;
+                              }
+                              pvVar9 = (pGVar7->fields)._.m_CachedPtr;
+                              if (pvVar9 == (void *)0x0) {
+                                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar7,(MethodInfo *)0x0);
+                                pcVar3 = (code *)swi(3);
+                                (*pcVar3)();
+                                return;
+                              }
+                              pcVar3 = pcRam_?;
+                              if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+                                uVar10 = func_?(&UNK_?);
+                                FUN_?(uVar10,0);
+                                pcVar3 = (code *)swi(3);
+                                (*pcVar3)();
+                                return;
+                              }
+                              pcRam_? = pcVar3;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                            (*pcRam_?)(pvVar9,bVar5);
-                            return;
+                              (*pcRam_?)(pvVar9,bVar5);
+                              return;
+                            }
                           }
                         }
                       }

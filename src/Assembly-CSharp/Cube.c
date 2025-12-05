@@ -5703,14 +5703,16 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal(Vector3 *__return_sto
     uVar2 = func_?(&TypeInfo__System__NotImplementedException);
     this = (NotImplementedException *)func_?(uVar2);
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this,(MethodInfo *)0x0);
-    uVar3 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
-    uRam_? = FUN_?(this);
-    uVar4 = in(uVar3);
-    *unaff_RDI = uVar4;
-    pcVar5 = (code *)swi(3);
-    uRam_? = uRam_?;
-    pVVar6 = (Vector3 *)(*pcVar5)(extraout_XMM0_Da,(char)uVar3 * '\x02');
-    return pVVar6;
+    lVar3 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
+    uVar4 = FUN_?();
+    *unaff_RSI = *unaff_RSI + (char)((ulonglong)this >> 8);
+    pcVar5 = (char *)((uVar4 | 0xa6) - 0x5a);
+    *pcVar5 = *pcVar5 + (char)lVar3;
+    *(char *)(lVar3 + -0x5a) = *(char *)(lVar3 + -0x5a) + (char)((ulonglong)lVar3 >> 8);
+    unaff_RSI[(ulonglong)((uStack_6 & 0x400) != 0) * -2 + -0x5961ff62] = unaff_RSI[(ulonglong)((uStack_6 & 0x400) != 0) * -2 + -0x5961ff62] + (char)lVar3;
+    pcVar7 = (code *)swi(3);
+    pVVar8 = (Vector3 *)(*pcVar7)();
+    return pVVar8;
   }
   __return_storage_ptr__->x = (float)(int)(ulonglong)uVar1;
   __return_storage_ptr__->y = (float)(int)((ulonglong)uVar1 >> 0x20);

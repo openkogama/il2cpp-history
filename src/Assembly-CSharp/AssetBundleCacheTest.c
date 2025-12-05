@@ -84,13 +84,13 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_DownloadTes
       }
       FUN_?(args,0,pSVar11);
       if (cRam_? == '\0') {
-        FUN_?(&StringLiteral__version_587658698);
+        FUN_?(&StringLiteral__version_587814385);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      pSVar13 = StringLiteral__version_587658698;
-      if ((StringLiteral__version_587658698 != (String *)0x0) && (lVar12 = FUN_?(StringLiteral__version_587658698,(args->klass->_0).element_class), lVar12 == 0)) {
+      pSVar13 = StringLiteral__version_587814385;
+      if ((StringLiteral__version_587814385 != (String *)0x0) && (lVar12 = FUN_?(StringLiteral__version_587814385,(args->klass->_0).element_class), lVar12 == 0)) {
         uVar9 = FUN_?();
         FUN_?(uVar9,0);
         pcVar7 = (code *)swi(3);
@@ -98,7 +98,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_DownloadTes
         return;
       }
       FUN_?(args,1,pSVar13);
-      auStackX_8[0] = 0x2306f5ca;
+      auStackX_8[0] = 0x230955f1;
       lVar12 = FUN_?(uRam_?,auStackX_8);
       if ((lVar12 != 0) && (lVar12 = FUN_?(lVar12,(args->klass->_0).element_class), lVar12 == 0)) {
         uVar9 = FUN_?();
@@ -408,15 +408,15 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnFirstDown
       FUN_?(args,0,pSVar2);
       if (cRam_? == '\0') {
         PStackY_58._args = (Object__Array *)&UNK_?;
-        FUN_?(&StringLiteral__version_587658698);
+        FUN_?(&StringLiteral__version_587814385);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      pSVar3 = StringLiteral__version_587658698;
-      if (StringLiteral__version_587658698 != (String *)0x0) {
+      pSVar3 = StringLiteral__version_587814385;
+      if (StringLiteral__version_587814385 != (String *)0x0) {
         PStackY_58._args = (Object__Array *)&UNK_?;
-        lVar15 = FUN_?(StringLiteral__version_587658698,(args->klass->_0).element_class);
+        lVar15 = FUN_?(StringLiteral__version_587814385,(args->klass->_0).element_class);
         if (lVar15 == 0) {
           PStackY_58._args = (Object__Array *)&UNK_?;
           uVar4 = FUN_?();
@@ -429,7 +429,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_OnFirstDown
       }
       PStackY_58._args = (Object__Array *)&UNK_?;
       FUN_?(args,1,pSVar3);
-      afStackX_8[0] = 7.3162024e-18;
+      afStackX_8[0] = 7.444984e-18;
       PStackY_58._args = (Object__Array *)&UNK_?;
       lVar15 = FUN_?(uRam_?,afStackX_8);
       if (lVar15 != 0) {
@@ -776,7 +776,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_Run(int32_t
       } while (!bVar3);
     }
     pcVar8 = pcRam_?;
-    *(undefined4 *)((longlong)&pOVar2[1].monitor + 4) = 0x2306f5ca;
+    *(undefined4 *)((longlong)&pOVar2[1].monitor + 4) = 0x230955f1;
     pcVar9 = pcRam_?;
     if ((pcVar8 == (code *)0x0) && (pcVar8 = (code *)FUN_?(&UNK_?), pcVar9 = pcVar8, pcVar8 == (code *)0x0)) {
       uVar10 = func_?(&UNK_?);
@@ -804,13 +804,13 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_Run(int32_t
       }
       FUN_?(args,0,pSVar12);
       if (cRam_? == '\0') {
-        FUN_?(&StringLiteral__version_587658698);
+        FUN_?(&StringLiteral__version_587814385);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      pSVar14 = StringLiteral__version_587658698;
-      if ((StringLiteral__version_587658698 != (String *)0x0) && (lVar13 = FUN_?(StringLiteral__version_587658698,(args->klass->_0).element_class), lVar13 == 0)) {
+      pSVar14 = StringLiteral__version_587814385;
+      if ((StringLiteral__version_587814385 != (String *)0x0) && (lVar13 = FUN_?(StringLiteral__version_587814385,(args->klass->_0).element_class), lVar13 == 0)) {
         uVar10 = FUN_?();
         FUN_?(uVar10,0);
         pcVar8 = (code *)swi(3);
@@ -818,7 +818,7 @@ void Assembly-CSharp.dll::AssetBundleCacheTest::AssetBundleCacheTest_Run(int32_t
         return;
       }
       FUN_?(args,1,pSVar14);
-      auStackX_8[0] = 0x2306f5ca;
+      auStackX_8[0] = 0x230955f1;
       lVar13 = FUN_?(uRam_?,auStackX_8);
       if ((lVar13 != 0) && (lVar13 = FUN_?(lVar13,(args->klass->_0).element_class), lVar13 == 0)) {
         uVar10 = FUN_?();

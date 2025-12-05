@@ -14,7 +14,7 @@ using UnityEngine;
 public class RegionConfigManager : ScriptableObject
 {
 	// Fields
-	private string region;
+	private RegionConfigNamePair.RegionConfigType regionConfigType;
 	[SerializeField]
 	private List<RegionConfigNamePair> expectedRegionValues;
 
@@ -22,27 +22,24 @@ public class RegionConfigManager : ScriptableObject
 	public RegionConfig RegionConfig { get; }
 
 	// Nested types
-	[Serializable]
 	[CompilerGenerated]
-	private sealed class __c
+	private sealed class __c__DisplayClass4_0
 	{
 		// Fields
-		public static readonly __c __9;
-		public static Func<RegionConfigNamePair, bool> __9__4_0;
+		public RegionConfigNamePair.RegionConfigType regionFromSessionData;
 
 		// Constructors
-		static __c();
-		public __c();
+		public __c__DisplayClass4_0();
 
 		// Methods
-		internal bool _DetectRegionFromEnvironment_b__4_0(RegionConfigNamePair p);
+		internal bool _DetectRegionFromEnvironment_b__0(RegionConfigNamePair p);
 	}
 
 	// Constructors
 	public RegionConfigManager();
 
 	// Methods
-	private string DetectRegionFromEnvironment();
+	private RegionConfigNamePair.RegionConfigType DetectRegionFromEnvironment();
 	[CompilerGenerated]
 	private bool _get_RegionConfig_b__3_0(RegionConfigNamePair p);
 }
