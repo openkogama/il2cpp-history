@@ -51,6 +51,19 @@ public class MVTeamManager
 		internal bool _GetPlayersInTeam_b__0(MVPlayer player);
 	}
 
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass32_0
+	{
+		// Fields
+		public MVTeam team;
+
+		// Constructors
+		public __c__DisplayClass32_0();
+
+		// Methods
+		internal bool _GetNoOfPlayersInTeamWithoutLocalPlayer_g__predicate_0(MVPlayer player);
+	}
+
 	// Constructors
 	public MVTeamManager();
 
@@ -74,6 +87,7 @@ public class MVTeamManager
 	public List<MVPlayer> GetPlayersInTeam(MVTeam team);
 	public MVTeam GetTeamFromActorNr(int actorNumber);
 	public int GetNoOfPlayersInTeam(MVTeam team);
+	public int GetNoOfPlayersInTeamWithoutLocalPlayer(MVTeam team);
 	public override string ToString();
 }
 

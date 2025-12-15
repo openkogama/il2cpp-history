@@ -16,6 +16,7 @@ public class ShortcutManager : MonoBehaviour, IShortcutKeyRegister, IShortcutKey
 {
 	// Fields
 	private Dictionary<KogamaControls, Stack<ShortcutKey>> shortCutKeys;
+	private readonly HashSet<KogamaControls> alwaysActiveControls;
 
 	// Nested types
 	private class ShortcutKey : IEquatable<ShortcutKey>
