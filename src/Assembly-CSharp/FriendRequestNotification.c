@@ -83,7 +83,7 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_I
     pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(data,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     pOVar1 = (Object *)0x0;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182dbbc60) {
+      if (pOVar2->klass == pORam0000000182dbdde0) {
         pOVar1 = pOVar2;
       }
       if (pOVar1 == (Object *)0x0) {

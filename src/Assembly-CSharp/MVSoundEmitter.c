@@ -457,7 +457,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_Initialize(MVSoundEmitt
               pDVar12 = (this->fields)._._._.data;
               if ((pDVar12 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pLVar13 = (List_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar12,(Object *)StringLiteral_url,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pLVar13 == (List_1_System_Object_ *)0x0)) goto code_?;
               pLVar14 = value;
-              if (pLVar13->klass == pLRam0000000182dbbc60) {
+              if (pLVar13->klass == pLRam0000000182dbdde0) {
                 pLVar14 = pLVar13;
               }
               if (pLVar14 == (List_1_System_Object_ *)0x0) {
@@ -467,7 +467,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_Initialize(MVSoundEmitt
                 return;
               }
               pLVar14 = value;
-              if (pLVar13->klass == pLRam0000000182dbbc60) {
+              if (pLVar13->klass == pLRam0000000182dbdde0) {
                 pLVar14 = pLVar13;
               }
               if (*(int *)&(pLVar14->fields)._items < 1) {
@@ -477,7 +477,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_Initialize(MVSoundEmitt
               pSVar10 = (this->fields).soundLoader;
               if ((pDVar12 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_, pLVar13 = (List_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar12,(Object *)StringLiteral_url,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar10 == (SoundLoader *)0x0)) goto code_?;
               if (pLVar13 != (List_1_System_Object_ *)0x0) {
-                if (pLVar13->klass == pLRam0000000182dbbc60) {
+                if (pLVar13->klass == pLRam0000000182dbdde0) {
                   value = pLVar13;
                 }
                 if (value == (List_1_System_Object_ *)0x0) {
@@ -629,7 +629,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_OnDataUpdate(MVSoundEmi
     if ((pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pLVar9 = (List_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar8,(Object *)StringLiteral_url,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pLVar9 == (List_1_System_Object_ *)0x0)) goto code_?;
     value = (List_1_System_Object_ *)0x0;
     pLVar10 = value;
-    if (pLVar9->klass == pLRam0000000182dbbc60) {
+    if (pLVar9->klass == pLRam0000000182dbdde0) {
       pLVar10 = pLVar9;
     }
     if (pLVar10 == (List_1_System_Object_ *)0x0) {
@@ -639,14 +639,14 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_OnDataUpdate(MVSoundEmi
       return;
     }
     pLVar10 = (List_1_System_Object_ *)0x0;
-    if (pLVar9->klass == pLRam0000000182dbbc60) {
+    if (pLVar9->klass == pLRam0000000182dbdde0) {
       pLVar10 = pLVar9;
     }
     pDVar8 = (this->fields)._._._.data;
     if (*(int *)&(pLVar10->fields)._items < 1) {
       if ((pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar8,(Object *)StringLiteral_url,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pOVar12 == (Object *)0x0)) goto code_?;
       pOVar13 = (Object *)0x0;
-      if ((List_1_System_Object___Class *)pOVar12->klass == pLRam0000000182dbbc60) {
+      if ((List_1_System_Object___Class *)pOVar12->klass == pLRam0000000182dbdde0) {
         pOVar13 = pOVar12;
       }
       if (pOVar13 == (Object *)0x0) {
@@ -656,7 +656,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_OnDataUpdate(MVSoundEmi
         return;
       }
       pOVar13 = (Object *)0x0;
-      if ((List_1_System_Object___Class *)pOVar12->klass == pLRam0000000182dbbc60) {
+      if ((List_1_System_Object___Class *)pOVar12->klass == pLRam0000000182dbdde0) {
         pOVar13 = pOVar12;
       }
       if (0 < *(int *)&pOVar13[1].klass) {
@@ -669,7 +669,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_OnDataUpdate(MVSoundEmi
       pSVar2 = (this->fields).soundLoader;
       if ((pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_, pLVar9 = (List_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar8,(Object *)StringLiteral_url,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar2 == (SoundLoader *)0x0)) goto code_?;
       if (pLVar9 != (List_1_System_Object_ *)0x0) {
-        if (pLVar9->klass == pLRam0000000182dbbc60) {
+        if (pLVar9->klass == pLRam0000000182dbdde0) {
           value = pLVar9;
         }
         if (value == (List_1_System_Object_ *)0x0) {
@@ -684,7 +684,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_OnDataUpdate(MVSoundEmi
       pSVar2 = (this->fields).soundLoader;
       if ((pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_, pLVar9 = (List_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar8,(Object *)StringLiteral_url,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar2 == (SoundLoader *)0x0)) goto code_?;
       if (pLVar9 != (List_1_System_Object_ *)0x0) {
-        if (pLVar9->klass == pLRam0000000182dbbc60) {
+        if (pLVar9->klass == pLRam0000000182dbdde0) {
           value = pLVar9;
         }
         if (value == (List_1_System_Object_ *)0x0) {

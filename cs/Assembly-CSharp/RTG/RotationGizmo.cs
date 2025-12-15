@@ -23,24 +23,19 @@ namespace RTG
 		private GizmoDblAxisRotationDrag3D _camXYRotationDrag;
 		private GizmoPlaneSlider2D _camLookSlider;
 		[SerializeField]
-		private RotationGizmoHotkeys _hotkeys;
-		[SerializeField]
 		private RotationGizmoSettings3D _settings3D;
 		[SerializeField]
 		private RotationGizmoLookAndFeel3D _lookAndFeel3D;
 		[SerializeField]
 		private bool _useSnapEnableHotkey;
-		private RotationGizmoHotkeys _sharedHotkeys;
 		private RotationGizmoSettings3D _sharedSettings3D;
 		private RotationGizmoLookAndFeel3D _sharedLookAndFeel3D;
 	
 		// Properties
 		public RotationGizmoSettings3D Settings3D { get; }
 		public RotationGizmoLookAndFeel3D LookAndFeel3D { get; }
-		public RotationGizmoHotkeys Hotkeys { get; }
 		public RotationGizmoSettings3D SharedSettings3D { get; set; }
 		public RotationGizmoLookAndFeel3D SharedLookAndFeel3D { get; set; }
-		public RotationGizmoHotkeys SharedHotkeys { get; set; }
 		public bool UseSnapEnableHotkey { get; set; }
 	
 		// Constructors

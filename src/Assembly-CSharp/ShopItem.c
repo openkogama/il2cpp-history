@@ -161,7 +161,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor(ShopItem *this,int32_t key,Di
               }
               else {
                 pSVar7 = pSVar6;
-                if (pSVar5->klass == pSRam0000000182dbbc60) {
+                if (pSVar5->klass == pSRam0000000182dbdde0) {
                   pSVar7 = pSVar5;
                 }
                 if (pSVar7 == (String *)0x0) {
@@ -172,7 +172,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor(ShopItem *this,int32_t key,Di
                 }
                 (this->fields).name = pSVar7;
                 pSVar7 = pSVar6;
-                if (pSVar5->klass == pSRam0000000182dbbc60) {
+                if (pSVar5->klass == pSRam0000000182dbdde0) {
                   pSVar7 = pSVar5;
                 }
                 if (pSVar7 == (String *)0x0) {
@@ -215,7 +215,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor(ShopItem *this,int32_t key,Di
                 }
                 else {
                   pSVar7 = pSVar6;
-                  if (pSVar5->klass == pSRam0000000182dbbc60) {
+                  if (pSVar5->klass == pSRam0000000182dbdde0) {
                     pSVar7 = pSVar5;
                   }
                   if (pSVar7 == (String *)0x0) {
@@ -225,7 +225,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor(ShopItem *this,int32_t key,Di
                     return;
                   }
                   (this->fields).description = pSVar7;
-                  if (pSVar5->klass == pSRam0000000182dbbc60) {
+                  if (pSVar5->klass == pSRam0000000182dbdde0) {
                     pSVar6 = pSVar5;
                   }
                   if (pSVar6 == (String *)0x0) {

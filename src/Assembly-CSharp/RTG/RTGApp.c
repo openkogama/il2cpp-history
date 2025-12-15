@@ -545,10 +545,10 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_OnRenderObject(RTGApp *this,Method
         FUN_?(&TypeInfo__System__Collections__Generic__List<RTG::Gizmo>);
         LOCK();
         UNLOCK();
-        FUN_?(&MethodInfo__RTG__RTGizmosEngine____c__DisplayClass106_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_);
+        FUN_?(&MethodInfo__RTG__RTGizmosEngine____c__DisplayClass103_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_);
         LOCK();
         UNLOCK();
-        FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass106_0);
+        FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass103_0);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
@@ -606,7 +606,7 @@ code_?:
             }
           }
           else {
-            pOVar8 = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass106_0);
+            pOVar8 = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass103_0);
             this_00 = RTGizmosEngine::RTGizmosEngine_get_RenderStageCamera(this_05,(MethodInfo *)0x0);
             if ((this_00 != (Camera *)0x0) && (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
               if (cRam_? == '\0') {
@@ -647,7 +647,7 @@ code_?:
                 this_01 = (List_1_RTG_Gizmo_ *)FUN_?(TypeInfo__System__Collections__Generic__List<RTG::Gizmo>);
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object___ctor_1((List_1_System_Object_ *)this_01,(IEnumerable_1_System_Object_ *)pLVar12,MethodInfo__System__Collections__Generic__List<RTG::Gizmo>__List_System__Collections__Generic__IEnumerable<RTG::Gizmo>_);
                 this_02 = (Func_3_Object_Object_Int32_ *)FUN_?(TypeInfo__System__Comparison<RTG::Gizmo>);
-                mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor(this_02,pOVar8,MethodInfo__RTG__RTGizmosEngine____c__DisplayClass106_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_,(MethodInfo *)0x0);
+                mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor(this_02,pOVar8,MethodInfo__RTG__RTGizmosEngine____c__DisplayClass103_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_,(MethodInfo *)0x0);
                 if (this_01 != (List_1_RTG_Gizmo_ *)0x0) {
                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Sort_1((List_1_System_Object_ *)this_01,(Comparison_1_Object_ *)this_02,MethodInfo__System__Collections__Generic__List<RTG::Gizmo>__Sort_System__Comparison<RTG::Gizmo>_);
                   pPVar11 = CameraViewVolume::CameraViewVolume_GetCameraWorldPlanes(pCVar2,(MethodInfo *)0x0);
@@ -2154,7 +2154,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar2;
-                while (pcVar16 = (char *)((longlong)ppMVar15 + 0xADDR), ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *pcVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

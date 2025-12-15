@@ -895,7 +895,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_AttachCubes(MVBody *this,MethodInfo *me
     while (bVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&pDStack_17,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__), bVar18 != 0) {
       boneName = obj;
       if (pSStack_14 != (String *)0x0) {
-        if (pSStack_14->klass == pSRam0000000182dbbc60) {
+        if (pSStack_14->klass == pSRam0000000182dbdde0) {
           boneName = pSStack_14;
         }
         if (boneName == (String *)0x0) {
@@ -2106,7 +2106,7 @@ IModelingConstraint * Assembly-CSharp.dll::MVBody::MVBody_GetModelConstaint(MVBo
         if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
           if (pOVar1 != (Object *)0x0) {
-            if (pOVar1->klass == pORam0000000182dbbc60) {
+            if (pOVar1->klass == pORam0000000182dbdde0) {
               key = pOVar1;
             }
             if (key == (Object *)0x0) {
@@ -2865,7 +2865,7 @@ code_?:
   pOVar5 = (Object__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)newAnimationData,(Object *)StringLiteral_state,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   pOVar6 = (Object__Class *)0x0;
   if (pOVar5 != (Object__Class *)0x0) {
-    if ((pOVar5->_0).image == pIRam0000000182dbbc60) {
+    if ((pOVar5->_0).image == pIRam0000000182dbdde0) {
       pOVar6 = pOVar5;
     }
     if (pOVar6 == (Object__Class *)0x0) {

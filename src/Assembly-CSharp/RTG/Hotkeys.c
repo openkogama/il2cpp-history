@@ -250,9 +250,6 @@ List_1_UnityEngine_KeyCode_ * Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_GetAllU
     }
     if ((this->fields)._lShift != 0) {
       FUN_?(this_00,0x130);
-    }
-    if ((this->fields)._lCtrl != 0) {
-      FUN_?(this_00,0x132);
       return this_00;
     }
   }
@@ -337,14 +334,10 @@ int32_t Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_GetNumModifiers(Hotkeys *this
 {
   bVar1 = (this->fields)._lAlt != 0;
   uVar2 = bVar1 + 1;
-  if ((this->fields)._lCtrl == 0) {
+  if ((this->fields)._lShift == 0) {
     uVar2 = (uint)bVar1;
   }
-  uVar3 = uVar2 + 1;
-  if ((this->fields)._lShift == 0) {
-    uVar3 = uVar2;
-  }
-  return uVar3;
+  return uVar2;
 }
 
 
@@ -371,7 +364,7 @@ int32_t Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_GetNumMouseButtons(Hotkeys *t
 bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_HasNoModifiers(Hotkeys *this,MethodInfo *method)
 
 {
-  if ((((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) && ((this->fields)._lCtrl == 0)) {
+  if (((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) {
     return (this->fields)._lShift == 0;
   }
   return 0;
@@ -414,7 +407,7 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsActive(Hotkeys *this,bool chec
     return 0;
   }
   if ((this->fields)._key == 0) {
-    if (((((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) && ((this->fields)._lCtrl == 0)) && ((this->fields)._lShift == 0)) {
+    if ((((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) && ((this->fields)._lShift == 0)) {
       if (((this->fields)._lMouseBtn == 0) && ((this->fields)._rMouseBtn == 0)) {
         bVar1 = (this->fields)._mMouseBtn == 0;
       }
@@ -434,25 +427,22 @@ code_?:
       return 0;
     }
   }
-  if ((((this->fields)._useStrictModifierCheck == 0) || ((this->fields)._lAlt != 0)) || ((this->fields)._lCmd != 0)) {
+  if (((this->fields)._useStrictModifierCheck == 0) || ((this->fields)._lAlt != 0)) {
 code_?:
-    if ((this->fields)._lCtrl != 0) goto code_?;
+    if ((this->fields)._lCmd != 0) goto code_?;
   }
   else {
-    if ((this->fields)._lCtrl == 0) {
+    if ((this->fields)._lCmd == 0) {
       if (((this->fields)._lShift == 0) && (bVar2 = Hotkeys_IsAnyModifierKeyPressed(this,(MethodInfo *)0x0), bVar2 != 0)) {
         return 0;
       }
       goto code_?;
     }
 code_?:
-    bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftControl,(MethodInfo *)0x0);
+    bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftApple,(MethodInfo *)0x0);
     if (bVar2 == 0) {
       return 0;
     }
-  }
-  if (((this->fields)._lCmd != 0) && (bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftApple,(MethodInfo *)0x0), bVar2 == 0)) {
-    return 0;
   }
   if (((this->fields)._lAlt != 0) && (bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftAlt,(MethodInfo *)0x0), bVar2 == 0)) {
     return 0;
@@ -549,7 +539,7 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsActiveInFrame(Hotkeys *this,bo
     return 0;
   }
   if ((this->fields)._key == 0) {
-    if (((((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) && ((this->fields)._lCtrl == 0)) && ((this->fields)._lShift == 0)) {
+    if ((((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) && ((this->fields)._lShift == 0)) {
       if (((this->fields)._lMouseBtn == 0) && ((this->fields)._rMouseBtn == 0)) {
         bVar1 = (this->fields)._mMouseBtn == 0;
       }
@@ -569,25 +559,22 @@ code_?:
       return 0;
     }
   }
-  if ((((this->fields)._useStrictModifierCheck == 0) || ((this->fields)._lAlt != 0)) || ((this->fields)._lCmd != 0)) {
+  if (((this->fields)._useStrictModifierCheck == 0) || ((this->fields)._lAlt != 0)) {
 code_?:
-    if ((this->fields)._lCtrl != 0) goto code_?;
+    if ((this->fields)._lCmd != 0) goto code_?;
   }
   else {
-    if ((this->fields)._lCtrl == 0) {
+    if ((this->fields)._lCmd == 0) {
       if (((this->fields)._lShift == 0) && (bVar2 = Hotkeys_IsAnyModifierKeyPressed(this,(MethodInfo *)0x0), bVar2 != 0)) {
         return 0;
       }
       goto code_?;
     }
 code_?:
-    bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftControl,(MethodInfo *)0x0);
+    bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftApple,(MethodInfo *)0x0);
     if (bVar2 == 0) {
       return 0;
     }
-  }
-  if (((this->fields)._lCmd != 0) && (bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftApple,(MethodInfo *)0x0), bVar2 == 0)) {
-    return 0;
   }
   if (((this->fields)._lAlt != 0) && (bVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey(KeyCode__Enum_LeftAlt,(MethodInfo *)0x0), bVar2 == 0)) {
     return 0;
@@ -784,7 +771,7 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsAnyMouseButtonPressed(Hotkeys 
 bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsEmpty(Hotkeys *this,MethodInfo *method)
 
 {
-  if (((((this->fields)._key == 0) && ((this->fields)._lAlt == 0)) && ((this->fields)._lCmd == 0)) && ((((this->fields)._lCtrl == 0 && ((this->fields)._lShift == 0)) && (((this->fields)._lMouseBtn == 0 && ((this->fields)._rMouseBtn == 0)))))) {
+  if (((((this->fields)._key == 0) && ((this->fields)._lAlt == 0)) && ((this->fields)._lCmd == 0)) && ((((this->fields)._lShift == 0 && ((this->fields)._lMouseBtn == 0)) && ((this->fields)._rMouseBtn == 0)))) {
     return (this->fields)._mMouseBtn == 0;
   }
   return 0;
@@ -798,49 +785,41 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsOverlappedBy(Hotkeys *this,Hot
 {
   if ((hotkeys != (Hotkeys *)0x0) && (hotkeys != this)) {
     bVar1 = (this->fields)._lAlt != 0;
-    bVar2 = bVar1 + 1;
-    if ((this->fields)._lCtrl == 0) {
-      bVar2 = bVar1;
-    }
-    bVar1 = (hotkeys->fields)._lAlt != 0;
-    bVar3 = bVar1 + 1;
-    if ((hotkeys->fields)._lCtrl == 0) {
-      bVar3 = bVar1;
-    }
-    bVar4 = bVar3 + 1;
-    if ((hotkeys->fields)._lShift == 0) {
-      bVar4 = bVar3;
-    }
+    bVar2 = (hotkeys->fields)._lAlt != 0;
     bVar3 = bVar2 + 1;
-    if ((this->fields)._lShift == 0) {
+    if ((hotkeys->fields)._lShift == 0) {
       bVar3 = bVar2;
     }
-    if (bVar3 <= bVar4) {
+    bVar4 = bVar1 + 1;
+    if ((this->fields)._lShift == 0) {
+      bVar4 = bVar1;
+    }
+    if (bVar4 <= bVar3) {
       bVar1 = (this->fields)._lMouseBtn != 0;
-      bVar2 = bVar1 + 1;
-      if ((this->fields)._rMouseBtn == 0) {
-        bVar2 = bVar1;
-      }
-      bVar1 = (hotkeys->fields)._lMouseBtn != 0;
       bVar3 = bVar1 + 1;
-      if ((hotkeys->fields)._rMouseBtn == 0) {
+      if ((this->fields)._rMouseBtn == 0) {
         bVar3 = bVar1;
       }
-      bVar4 = bVar3 + 1;
+      bVar1 = (hotkeys->fields)._lMouseBtn != 0;
+      bVar4 = bVar1 + 1;
+      if ((hotkeys->fields)._rMouseBtn == 0) {
+        bVar4 = bVar1;
+      }
+      bVar5 = bVar4 + 1;
       if ((hotkeys->fields)._mMouseBtn == 0) {
+        bVar5 = bVar4;
+      }
+      bVar4 = bVar3 + 1;
+      if ((this->fields)._mMouseBtn == 0) {
         bVar4 = bVar3;
       }
-      bVar3 = bVar2 + 1;
-      if ((this->fields)._mMouseBtn == 0) {
-        bVar3 = bVar2;
-      }
-      if ((bVar3 <= bVar4) && ((hotkeys->fields)._key == (this->fields)._key)) {
+      if ((bVar4 <= bVar5) && ((hotkeys->fields)._key == (this->fields)._key)) {
         modifiers = Hotkeys_GetAllUsedModifiers(this,(MethodInfo *)0x0);
-        bVar5 = Hotkeys_UsesModifiers(hotkeys,modifiers,(MethodInfo *)0x0);
-        if (bVar5 != 0) {
+        bVar6 = Hotkeys_UsesModifiers(hotkeys,modifiers,(MethodInfo *)0x0);
+        if (bVar6 != 0) {
           buttons = Hotkeys_GetAllUsedMouseButtons(this,(MethodInfo *)0x0);
-          bVar5 = Hotkeys_UsesMouseButtons(hotkeys,buttons,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
+          bVar6 = Hotkeys_UsesMouseButtons(hotkeys,buttons,(MethodInfo *)0x0);
+          if (bVar6 != 0) {
             return 1;
           }
         }
@@ -1537,15 +1516,6 @@ List_1_UnityEngine_KeyCode_ * Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_get_Ava
 }
 
 
-/* Boolean get_LShift() */
-
-bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_get_LShift(Hotkeys *this,MethodInfo *method)
-
-{
-  return (this->fields)._lShift;
-}
-
-
 /* Boolean get_MMouseButton() */
 
 bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_get_MMouseButton(Hotkeys *this,MethodInfo *method)
@@ -1555,12 +1525,21 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_get_MMouseButton(Hotkeys *this,M
 }
 
 
-/* Boolean get_RMouseButton() */
+/* Boolean get_UseStrictModifierCheck() */
 
-bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_get_RMouseButton(Hotkeys *this,MethodInfo *method)
+bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_get_UseStrictModifierCheck(Hotkeys *this,MethodInfo *method)
 
 {
-  return (this->fields)._rMouseBtn;
+  return (this->fields)._useStrictModifierCheck;
+}
+
+
+/* Boolean get_UseStrictMouseCheck() */
+
+bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_get_UseStrictMouseCheck(Hotkeys *this,MethodInfo *method)
+
+{
+  return (this->fields)._useStrictMouseCheck;
 }
 
 
@@ -1598,16 +1577,6 @@ void Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_set_Key(Hotkeys *this,KeyCode__E
 }
 
 
-/* Void set_LMouseButton(Boolean) */
-
-void Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_set_LMouseButton(Hotkeys *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._lMouseBtn = value;
-  return;
-}
-
-
 /* Void set_MMouseButton(Boolean) */
 
 void Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_set_MMouseButton(Hotkeys *this,bool value,MethodInfo *method)
@@ -1624,6 +1593,16 @@ void Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_set_RMouseButton(Hotkeys *this,b
 
 {
   (this->fields)._rMouseBtn = value;
+  return;
+}
+
+
+/* Void set_UseStrictMouseCheck(Boolean) */
+
+void Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_set_UseStrictMouseCheck(Hotkeys *this,bool value,MethodInfo *method)
+
+{
+  (this->fields)._useStrictMouseCheck = value;
   return;
 }
 

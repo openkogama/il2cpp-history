@@ -233,7 +233,7 @@ code_?:
         pSVar23 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)pSVar20,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pSVar20 = (String *)0x0;
         if (pSVar23 != (String *)0x0) {
-          if (pSVar23->klass == pSRam0000000182dbbc60) {
+          if (pSVar23->klass == pSRam0000000182dbdde0) {
             pSVar20 = pSVar23;
           }
           if (pSVar20 == (String *)0x0) {
@@ -444,7 +444,7 @@ code_?:
         pSVar21 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)pSVar19,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pSVar19 = (String *)0x0;
         if (pSVar21 != (String *)0x0) {
-          if (pSVar21->klass == pSRam0000000182dbbc60) {
+          if (pSVar21->klass == pSRam0000000182dbdde0) {
             pSVar19 = pSVar21;
           }
           if (pSVar19 == (String *)0x0) {
@@ -591,7 +591,7 @@ code_?:
         pSVar21 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)pSVar19,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pSVar19 = (String *)0x0;
         if (pSVar21 != (String *)0x0) {
-          if (pSVar21->klass == pSRam0000000182dbbc60) {
+          if (pSVar21->klass == pSRam0000000182dbdde0) {
             pSVar19 = pSVar21;
           }
           if (pSVar19 == (String *)0x0) {

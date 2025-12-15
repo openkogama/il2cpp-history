@@ -36,7 +36,7 @@ code_?:
   pOVar3 = (Object__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)animData,(Object *)StringLiteral_state,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   pOVar4 = (Object__Class *)0x0;
   if (pOVar3 != (Object__Class *)0x0) {
-    if ((Object__Class *)(pOVar3->_0).image == pORam0000000182dbbc60) {
+    if ((Object__Class *)(pOVar3->_0).image == pORam0000000182dbdde0) {
       pOVar4 = pOVar3;
     }
     if (pOVar4 == (Object__Class *)0x0) {
@@ -672,7 +672,7 @@ void Assembly-CSharp.dll::BoneAnimation::BoneAnimation_ComputeBlendAnimation(Bon
     pSVar1 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(animData,(Object *)StringLiteral_state,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     pSVar2 = (String *)0x0;
     if (pSVar1 != (String *)0x0) {
-      if (pSVar1->klass == pSRam0000000182dbbc60) {
+      if (pSVar1->klass == pSRam0000000182dbdde0) {
         pSVar2 = pSVar1;
       }
       if (pSVar2 == (String *)0x0) {

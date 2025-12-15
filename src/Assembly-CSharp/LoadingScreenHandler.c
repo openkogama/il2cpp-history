@@ -241,11 +241,11 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler_OnGameMessa
     pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(gameMsgData,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (pOVar1 != (Object *)0x0) {
       pOVar2 = (Object *)0x0;
-      if (pOVar1->klass == pORam0000000182dbbc60) {
+      if (pOVar1->klass == pORam0000000182dbdde0) {
         pOVar2 = pOVar1;
       }
       if (pOVar2 == (Object *)0x0) {
-        FUN_?(pOVar1,pORam0000000182dbbc60);
+        FUN_?(pOVar1,pORam0000000182dbdde0);
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
         return;

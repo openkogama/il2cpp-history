@@ -32,78 +32,102 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_Initialize(MVTextMsg *this,Method
     FUN_?(&MethodInfo__MVTextMsg__InputStateUpdateCallback_LogicInputState__LogicObjectManager_);
     LOCK();
     UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  pMVar1 = (this->fields).msgObject;
-  if (pMVar1 != (MVTextMsgObject *)0x0) {
-    MVLogicObject::MVLogicObject_SetupCulling((MVLogicObject *)this,(pMVar1->fields).visualObject,2.0,(MethodInfo *)0x0);
+  pDVar1 = (this->fields)._._._.data;
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pDVar1 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::MvTextMsgData_MigrateDataBasedOnVersion(pDVar1,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
+  (this->fields)._._._.data = pDVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._._._.data >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  pMVar7 = (this->fields).msgObject;
+  if (pMVar7 != (MVTextMsgObject *)0x0) {
+    MVLogicObject::MVLogicObject_SetupCulling((MVLogicObject *)this,(pMVar7->fields).visualObject,2.0,(MethodInfo *)0x0);
     MVTextMsg_UpdateTextMessageSettings(this,(MethodInfo *)0x0);
-    pMVar1 = (this->fields).msgObject;
-    if ((pMVar1 != (MVTextMsgObject *)0x0) && (pTVar2 = (pMVar1->fields).textMesh, pTVar2 != (TextMeshProUGUI *)0x0)) {
-      (*(pTVar2->klass->vtable).ForceMeshUpdate.methodPtr)(pTVar2,0,0);
+    pMVar7 = (this->fields).msgObject;
+    if ((pMVar7 != (MVTextMsgObject *)0x0) && (pTVar8 = (pMVar7->fields).textMesh, pTVar8 != (TextMeshProUGUI *)0x0)) {
+      (*(pTVar8->klass->vtable).ForceMeshUpdate.methodPtr)(pTVar8,0,0);
       this_00 = (Action_2_Int32Enum_Object_ *)FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
       mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor(this_00,(Object *)this,MethodInfo__MVTextMsg__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
-      pIVar3 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-      bVar4 = iRam_? != 0;
-      (this->fields)._InputSignalReceiver_k__BackingField = pIVar3;
-      if (bVar4) {
-        uVar5 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
-        uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+      pIVar9 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
+      bVar2 = iRam_? != 0;
+      (this->fields)._InputSignalReceiver_k__BackingField = pIVar9;
+      if (bVar2) {
+        uVar3 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
+        uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
         do {
-          uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
-          puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
           LOCK();
-          bVar4 = uVar7 == *puVar8;
-          if (bVar4) {
-            *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+          bVar2 = uVar5 == *puVar6;
+          if (bVar2) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
           }
           UNLOCK();
-        } while (!bVar4);
+        } while (!bVar2);
       }
       if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
-        uVar9 = FUN_?(1,TypeInfo__IInputSignalReceiver);
-        pMVar1 = (this->fields).msgObject;
-        if ((pMVar1 != (MVTextMsgObject *)0x0) && (obj = (pMVar1->fields).visualObject, obj != (GameObject *)0x0)) {
+        uVar10 = FUN_?(1,TypeInfo__IInputSignalReceiver);
+        pMVar7 = (this->fields).msgObject;
+        if ((pMVar7 != (MVTextMsgObject *)0x0) && (obj = (pMVar7->fields).visualObject, obj != (GameObject *)0x0)) {
           if (cRam_? == '\0') {
-            FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,uVar9,0);
+            FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_,uVar10,0);
             LOCK();
             UNLOCK();
             cRam_? = '\x01';
           }
           if (obj == (GameObject *)0x0) {
             FUN_?();
-            pcVar10 = (code *)swi(3);
-            (*pcVar10)();
+            pcVar11 = (code *)swi(3);
+            (*pcVar11)();
             return;
           }
-          pvVar11 = (obj->fields)._.m_CachedPtr;
-          if (pvVar11 == (void *)0x0) {
+          pvVar12 = (obj->fields)._.m_CachedPtr;
+          if (pvVar12 == (void *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-            pcVar10 = (code *)swi(3);
-            (*pcVar10)();
+            pcVar11 = (code *)swi(3);
+            (*pcVar11)();
             return;
           }
-          pcVar10 = pcRam_?;
-          if ((pcRam_? == (code *)0x0) && (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
-            uVar12 = func_?(&UNK_?);
-            FUN_?(uVar12,0);
-            pcVar10 = (code *)swi(3);
-            (*pcVar10)();
+          pcVar11 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) && (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+            uVar13 = func_?(&UNK_?);
+            FUN_?(uVar13,0);
+            pcVar11 = (code *)swi(3);
+            (*pcVar11)();
             return;
           }
-          pcRam_? = pcVar10;
+          pcRam_? = pcVar11;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-          (*pcRam_?)(pvVar11,uVar9);
+          (*pcRam_?)(pvVar12,uVar10);
           return;
         }
       }
     }
   }
   FUN_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -349,7 +373,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
     FUN_?(&TypeInfo__Extensions);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__MessageBoxSettings);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_fontSelection);
@@ -397,10 +421,10 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields)._._._.data;
-  if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-    FUN_?(TypeInfo__MessageBoxSettings);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
   }
-  pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+  pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
   if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_fontSelection,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -429,7 +453,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
         if ((pMVar5 != (MVTextMsgObject *)0x0) && (pTVar7 = (pMVar5->fields).textMesh, pTVar7 != (TextMeshProUGUI *)0x0)) {
           this_02 = (Material *)(*(pTVar7->klass->vtable).GetMaterial.methodPtr)(pTVar7,(pTVar7->fields)._.m_sharedMaterial,(pTVar7->klass->vtable).GetMaterial.method);
           pDVar1 = (this->fields)._._._.data;
-          pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+          pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
           if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
             pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_textSize,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
             if (pOVar3 != (Object *)0x0) {
@@ -444,7 +468,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
               if ((pMVar5 != (MVTextMsgObject *)0x0) && (pTVar7 = (pMVar5->fields).textMesh, pTVar7 != (TextMeshProUGUI *)0x0)) {
                 Unity.TextMeshPro.dll::TMPro::TMP_Text::TMP_Text_set_fontSize((TMP_Text *)pTVar7,fVar8 * 1.625,(MethodInfo *)0x0);
                 pDVar1 = (this->fields)._._._.data;
-                pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                 if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                   pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_textThickness,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                   if (pOVar3 != (Object *)0x0) {
@@ -463,7 +487,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
                         (*(pTVar7->klass->vtable).UpdateMeshPadding.methodPtr)(pTVar7,(pTVar7->klass->vtable).UpdateMeshPadding.method);
                         pSVar6 = StringLiteral_textColor;
                         pDVar1 = (this->fields)._._._.data;
-                        pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                        pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                         if (cRam_? == '\0') {
                           FUN_?(&TypeInfo__Extensions);
                           LOCK();
@@ -489,7 +513,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
                         CStack_10.a = pCVar11->a;
                         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor(this_02,StringLiteral__FaceColor,&CStack_10,(MethodInfo *)0x0);
                         pDVar1 = (this->fields)._._._.data;
-                        pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                        pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                         if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                           pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_textOutline,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                           if (pOVar3 != (Object *)0x0) {
@@ -510,10 +534,10 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
                                 UnityEngine.CoreModule.dll::UnityEngine::Material::Material_EnableKeyword(this_02,StringLiteral_OUTLINE_ON,(MethodInfo *)0x0);
                               }
                               pDVar1 = (this->fields)._._._.data;
-                              if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-                                FUN_?(TypeInfo__MessageBoxSettings);
+                              if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+                                FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
                               }
-                              pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                              pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                               if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                 pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_textOutlineThickness,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                                 if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -531,7 +555,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
                                   UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloatImpl(this_02,iVar9,fVar8,(MethodInfo *)0x0);
                                   pSVar6 = StringLiteral_textOutlineColor;
                                   pDVar1 = (this->fields)._._._.data;
-                                  pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                                  pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                                   if (cRam_? == '\0') {
                                     FUN_?(&TypeInfo__Extensions);
                                     LOCK();
@@ -557,7 +581,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
                                   CStack_10.a = pCVar11->a;
                                   UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor(this_02,StringLiteral__OutlineColor,&CStack_10,(MethodInfo *)0x0);
                                   pDVar1 = (this->fields)._._._.data;
-                                  pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                                  pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                                   if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                     pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_textItalic,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                                     if (pOVar3 != (Object *)0x0) {
@@ -572,7 +596,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateFontSettings(MVTextMsg *thi
                                       if (pMVar5 != (MVTextMsgObject *)0x0) {
                                         MVTextMsgObject::MVTextMsgObject_SetFontStyle(pMVar5,bVar13,FontStyles__Enum_Italic,(MethodInfo *)0x0);
                                         pDVar1 = (this->fields)._._._.data;
-                                        pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                                        pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                                         if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                           pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_textUnderscored,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                                           if (pOVar3 != (Object *)0x0) {
@@ -657,7 +681,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateText(MVTextMsg *this,Method
     FUN_?(&TypeInfo__Extensions);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__MessageBoxSettings);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_text);
@@ -669,10 +693,10 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateText(MVTextMsg *this,Method
   if (pMVar1 != (MVTextMsgObject *)0x0) {
     pTVar2 = (pMVar1->fields).textMesh;
     hashtable = (this->fields)._._._.data;
-    if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-      FUN_?(TypeInfo__MessageBoxSettings);
+    if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     }
-    this_00 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+    this_00 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
     if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_00,(Object *)StringLiteral_text,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
       if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -680,7 +704,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateText(MVTextMsg *this,Method
       }
       defaultValue = (Object *)0x0;
       if (pOVar3 != (Object *)0x0) {
-        if (pOVar3->klass == pORam0000000182dbbc60) {
+        if (pOVar3->klass == pORam0000000182dbdde0) {
           defaultValue = pOVar3;
         }
         if (defaultValue == (Object *)0x0) {
@@ -823,7 +847,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
     FUN_?(&TypeInfo__Extensions);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__MessageBoxSettings);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_backgroundWidth);
@@ -853,10 +877,10 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields)._._._.data;
-  if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-    FUN_?(TypeInfo__MessageBoxSettings);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
   }
-  pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+  pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
   if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_background,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -876,7 +900,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
         if (this_01 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,bVar5,(MethodInfo *)0x0);
           pDVar1 = (this->fields)._._._.data;
-          pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+          pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
           if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
             pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_textSize,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
             if (pOVar3 != (Object *)0x0) {
@@ -888,7 +912,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
               }
               fVar8 = Extensions::Extensions_GetValueOrDefault_4(pDVar1,StringLiteral_textSize,*(float *)&pOVar3[1].klass,float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_);
               pDVar1 = (this->fields)._._._.data;
-              pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+              pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
               if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                 pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_backgroundWidth,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                 if (pOVar3 != (Object *)0x0) {
@@ -928,10 +952,10 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
                           }
                           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta((RectTransform *)pTVar11,value,(MethodInfo *)0x0);
                           pDVar1 = (this->fields)._._._.data;
-                          if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-                            FUN_?(TypeInfo__MessageBoxSettings);
+                          if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+                            FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
                           }
-                          pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                          pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                           if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                             pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_backgroundRadius,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                             if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -949,7 +973,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
                               if ((pMVar6 != (MVTextMsgObject *)0x0) && (pRVar7 = (pMVar6->fields).background, pRVar7 != (RoundedRectangle *)0x0)) {
                                 (pRVar7->fields).radius = fVar8 / 10.0;
                                 pDVar1 = (this->fields)._._._.data;
-                                pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                                pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                                 if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                   pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_backgroundOutline,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                                   if (pOVar3 != (Object *)0x0) {
@@ -961,7 +985,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
                                     }
                                     bVar5 = Extensions::Extensions_GetValueOrDefault(pDVar1,StringLiteral_backgroundOutline,*(bool *)&pOVar3[1].klass,bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_);
                                     pDVar1 = (this->fields)._._._.data;
-                                    pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                                    pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                                     if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                                       pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_backgroundOutlineThickness,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
                                       if (pOVar3 != (Object *)0x0) {
@@ -979,10 +1003,10 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
                                         if ((pMVar6 != (MVTextMsgObject *)0x0) && (pRVar7 = (pMVar6->fields).background, pRVar7 != (RoundedRectangle *)0x0)) {
                                           (pRVar7->fields).borderThickness = fVar8 / 10.0;
                                           pDVar1 = (this->fields)._._._.data;
-                                          if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-                                            FUN_?(TypeInfo__MessageBoxSettings);
+                                          if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+                                            FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
                                           }
-                                          pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                                          pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                                           if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
                                             FUN_?();
                                           }
@@ -1015,7 +1039,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageBackground(MVTex
                                             (*(pRVar7->klass->vtable).set_color.methodPtr)(pRVar7,&CStack_13,(pRVar7->klass->vtable).set_color.method);
                                             pSVar12 = StringLiteral_backgroundOutlineColor;
                                             pDVar1 = (this->fields)._._._.data;
-                                            pDVar2 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+                                            pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
                                             if (cRam_? == '\0') {
                                               FUN_?(&TypeInfo__Extensions);
                                               LOCK();
@@ -1098,7 +1122,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextMessageSettings(MVTextM
     FUN_?(&TypeInfo__Extensions);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__MessageBoxSettings);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_text);
@@ -1116,10 +1140,10 @@ code_?:
   }
   pTVar3 = (pMVar1->fields).textMesh;
   pDVar4 = (this->fields)._._._.data;
-  if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-    FUN_?(TypeInfo__MessageBoxSettings);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
   }
-  pDVar5 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+  pDVar5 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
   if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
   pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar5,(Object *)StringLiteral_text,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -1127,7 +1151,7 @@ code_?:
   }
   defaultValue = (Object *)0x0;
   if (pOVar6 != (Object *)0x0) {
-    if (pOVar6->klass == pORam0000000182dbbc60) {
+    if (pOVar6->klass == pORam0000000182dbdde0) {
       defaultValue = pOVar6;
     }
     if (defaultValue == (Object *)0x0) {
@@ -1152,7 +1176,7 @@ code_?:
     FUN_?(&TypeInfo__Extensions);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__MessageBoxSettings);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_billboard);
@@ -1161,10 +1185,10 @@ code_?:
     cRam_? = '\x01';
   }
   pDVar4 = (this->fields)._._._.data;
-  if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-    FUN_?(TypeInfo__MessageBoxSettings);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
   }
-  pDVar5 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+  pDVar5 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
   if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
   pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar5,(Object *)StringLiteral_billboard,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
@@ -1287,7 +1311,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextObjectBillboardSettings
     FUN_?(&TypeInfo__Extensions);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__MessageBoxSettings);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_billboard);
@@ -1296,10 +1320,10 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateTextObjectBillboardSettings
     cRam_? = '\x01';
   }
   hashtable = (this->fields)._._._.data;
-  if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-    FUN_?(TypeInfo__MessageBoxSettings);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
   }
-  this_00 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+  this_00 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->static_fields->DefaultData;
   if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_00,(Object *)StringLiteral_billboard,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
     if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {

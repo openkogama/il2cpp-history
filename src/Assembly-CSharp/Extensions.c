@@ -224,7 +224,7 @@ code_?:
           }
           if (this != (StringBuilder *)0x0) {
             pSVar14 = pSVar1;
-            if (this->klass == pSRam0000000182dbbc60) {
+            if (this->klass == pSRam0000000182dbdde0) {
               pSVar14 = this;
             }
             if (pSVar14 != (StringBuilder *)0x0) goto code_?;
@@ -634,7 +634,7 @@ float Assembly-CSharp.dll::Extensions::Extensions_ConvertToSingle(String *s,Meth
     fVar1 = 0.0;
   }
   else {
-    fVar1 = mscorlib.dll::System::Single::Single_Parse_1(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)provider,(MethodInfo *)0x0);
+    fVar1 = mscorlib.dll::System::Single::Single_Parse_2(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)provider,(MethodInfo *)0x0);
   }
   return fVar1;
 }
@@ -1104,12 +1104,12 @@ bool Assembly-CSharp.dll::Extensions::Extensions_GetBool(Dictionary_2_System_Obj
     bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(hashtable,(Object *)key,&pOStackX_8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182dbbbf8) {
+      if (pOStackX_8->klass == pORam0000000182dbdd78) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbbf8->_0).element_class) {
-          FUN_?(pOStackX_8,pORam0000000182dbbbf8);
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbdd78->_0).element_class) {
+          FUN_?(pOStackX_8,pORam0000000182dbdd78);
           pcVar3 = (code *)swi(3);
           bVar1 = (*pcVar3)();
           return bVar1;
@@ -1145,11 +1145,11 @@ float Assembly-CSharp.dll::Extensions::Extensions_GetClampedFloat(Dictionary_2_S
     bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(hashtable,(Object *)key,&pOStackX_8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182dbbc48) {
+      if (pOStackX_8->klass == pORam0000000182dbddc8) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbc48->_0).element_class) {
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbddc8->_0).element_class) {
           FUN_?(pOStackX_8);
           pcVar3 = (code *)swi(3);
           fVar4 = (float)(*pcVar3)();
@@ -1190,11 +1190,11 @@ int32_t Assembly-CSharp.dll::Extensions::Extensions_GetClampedInt(Dictionary_2_S
     bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(hashtable,(Object *)key,&pOStackX_8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
     if ((bVar1 != 0) && (pOStackX_8 != (Object *)0x0)) {
       pOVar2 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182dbbc18) {
+      if (pOStackX_8->klass == pORam0000000182dbdd98) {
         pOVar2 = pOStackX_8;
       }
       if (pOVar2 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbc18->_0).element_class) {
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbdd98->_0).element_class) {
           FUN_?(pOStackX_8);
           pcVar3 = (code *)swi(3);
           iVar4 = (*pcVar3)();
@@ -1421,7 +1421,7 @@ code_?:
           return defaultValue;
         }
         pOVar9 = pOVar5;
-        if (pOVar2->klass == pORam0000000182dbbc18) {
+        if (pOVar2->klass == pORam0000000182dbdd98) {
           pOVar9 = pOVar2;
         }
         if (pOVar9 == (Object *)0x0) {
@@ -1662,7 +1662,7 @@ bool Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault(Dictionary_2_
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182dbbc18) {
+    if (pOVar2->klass == pORam0000000182dbdd98) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -1737,7 +1737,7 @@ Int32Enum__Enum Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_2(
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182dbbc18) {
+    if (pOVar2->klass == pORam0000000182dbdd98) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -1826,7 +1826,7 @@ code_?:
           return defaultValue;
         }
         pOVar9 = pOVar5;
-        if (pOVar2->klass == pORam0000000182dbbc18) {
+        if (pOVar2->klass == pORam0000000182dbdd98) {
           pOVar9 = pOVar2;
         }
         if (pOVar9 == (Object *)0x0) {
@@ -1890,7 +1890,7 @@ float Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_4(Dictionary
       return defaultValue;
     }
     pOVar7 = (Object *)0x0;
-    if (pOVar2->klass == pORam0000000182dbbc18) {
+    if (pOVar2->klass == pORam0000000182dbdd98) {
       pOVar7 = pOVar2;
     }
     if (pOVar7 == (Object *)0x0) {
@@ -1989,7 +1989,7 @@ _Il2CppFullySharedGenericType * Assembly-CSharp.dll::Extensions::Extensions_GetV
     cVar13 = (*pcVar11)(plVar10,uVar12);
     if ((cVar13 != '\0') && (pOVar7 != (Object *)0x0)) {
       pOVar14 = pOVar9;
-      if (pOVar7->klass == pORam0000000182dbbc18) {
+      if (pOVar7->klass == pORam0000000182dbdd98) {
         pOVar14 = pOVar7;
       }
       if (pOVar14 != (Object *)0x0) goto code_?;

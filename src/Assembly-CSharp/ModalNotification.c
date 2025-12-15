@@ -26,11 +26,11 @@ void Assembly-CSharp.dll::ModalNotification::ModalNotification_Initialize(ModalN
   if ((data != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(data,pOVar2,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pTVar1 != (Text *)0x0)) {
     pOVar3 = (Object *)0x0;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182dbbc60) {
+      if (pOVar2->klass == pORam0000000182dbdde0) {
         pOVar3 = pOVar2;
       }
       if (pOVar3 == (Object *)0x0) {
-        FUN_?(pOVar2,pORam0000000182dbbc60);
+        FUN_?(pOVar2,pORam0000000182dbdde0);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;

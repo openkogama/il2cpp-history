@@ -134,7 +134,7 @@ code_?:
                   FUN_?();
                   goto code_?;
                 }
-                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbbc48[4].klass) {
+                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -173,7 +173,7 @@ code_?:
                   FUN_?();
                   goto code_?;
                 }
-                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbbc48[4].klass) {
+                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -212,7 +212,7 @@ code_?:
                   FUN_?();
                   goto code_?;
                 }
-                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbbc48[4].klass) {
+                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -251,7 +251,7 @@ code_?:
                   FUN_?();
                   goto code_?;
                 }
-                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbbc48[4].klass) {
+                if ((pOVar5->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -339,9 +339,9 @@ code_?:
                 }
                 pSVar3 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_thrustersColor,pSVar3,(MethodInfo *)0x0);
                 pOVar24 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(dict,(Object *)pSVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                pOVar5 = pORam0000000182dbbc48;
+                pOVar5 = pORam0000000182dbddc8;
                 if (pOVar24 == (Object *)0x0) break;
-                if ((pOVar24->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbbc48[4].klass) goto code_?;
+                if ((pOVar24->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbddc8[4].klass) goto code_?;
                 fVar12 = *(float *)&pOVar24[1].klass;
                 if (cRam_? == '\0') {
                   FUN_?(&TypeInfo__System__Number);
@@ -371,9 +371,9 @@ code_?:
                 }
                 pSVar3 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_thrustersColor,pSVar3,(MethodInfo *)0x0);
                 pOVar24 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(dict,(Object *)pSVar3,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                pOVar5 = pORam0000000182dbbc48;
+                pOVar5 = pORam0000000182dbddc8;
                 if (pOVar24 == (Object *)0x0) goto code_?;
-                if ((pOVar24->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbbc48[4].klass) goto code_?;
+                if ((pOVar24->klass->_0).element_class != (Il2CppClass *)pORam0000000182dbddc8[4].klass) goto code_?;
                 fVar13 = *(float *)&pOVar24[1].klass;
                 if (pTVar6 == (ThrustersColorAlphaKey__Array *)0x0) goto code_?;
                 if ((uint)pTVar6->max_length <= uVar4) goto code_?;

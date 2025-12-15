@@ -361,7 +361,7 @@ GameMessages_PlayerLeftMessage * Assembly-CSharp.dll::GameMessages::GameMessages
     }
     else {
       pSVar11 = pSVar2;
-      if (pSVar3->klass == pSRam0000000182dbbc60) {
+      if (pSVar3->klass == pSRam0000000182dbdde0) {
         pSVar11 = pSVar3;
       }
       if (pSVar11 == (String *)0x0) {
@@ -371,7 +371,7 @@ GameMessages_PlayerLeftMessage * Assembly-CSharp.dll::GameMessages::GameMessages
         return pGVar10;
       }
       __return_storage_ptr__->userName = pSVar11;
-      if (pSVar3->klass == pSRam0000000182dbbc60) {
+      if (pSVar3->klass == pSRam0000000182dbdde0) {
         pSVar2 = pSVar3;
       }
       if (pSVar2 == (String *)0x0) {

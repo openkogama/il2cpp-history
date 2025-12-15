@@ -1546,7 +1546,7 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_OnDataUpdate(MVGhostI
         (this->fields).speed = 0.0;
       }
       else {
-        fVar17 = mscorlib.dll::System::Single::Single_Parse_1(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
+        fVar17 = mscorlib.dll::System::Single::Single_Parse_2(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
         (this->fields).speed = fVar17;
       }
     }
@@ -1562,7 +1562,7 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_OnDataUpdate(MVGhostI
         (this->fields).distance = 0.0;
       }
       else {
-        fVar17 = mscorlib.dll::System::Single::Single_Parse_1(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
+        fVar17 = mscorlib.dll::System::Single::Single_Parse_2(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
         (this->fields).distance = fVar17;
       }
     }
@@ -1803,7 +1803,7 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_ReadWOData(MVGhostIns
         (this->fields).speed = 0.0;
       }
       else {
-        fVar17 = mscorlib.dll::System::Single::Single_Parse_1(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
+        fVar17 = mscorlib.dll::System::Single::Single_Parse_2(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
         (this->fields).speed = fVar17;
       }
     }
@@ -1819,7 +1819,7 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_ReadWOData(MVGhostIns
         (this->fields).distance = 0.0;
       }
       else {
-        fVar17 = mscorlib.dll::System::Single::Single_Parse_1(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
+        fVar17 = mscorlib.dll::System::Single::Single_Parse_2(s,NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,(IFormatProvider *)pCVar16,(MethodInfo *)0x0);
         (this->fields).distance = fVar17;
       }
     }

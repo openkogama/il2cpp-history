@@ -71,7 +71,7 @@ void Assembly-CSharp.dll::PlayerJoinedNotification::PlayerJoinedNotification_Ini
         pSVar7 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(data,key,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pSVar8 = (String *)0x0;
         if (pSVar7 != (String *)0x0) {
-          if (pSVar7->klass == pSRam0000000182dbbc60) {
+          if (pSVar7->klass == pSRam0000000182dbdde0) {
             pSVar8 = pSVar7;
           }
           if (pSVar8 == (String *)0x0) {

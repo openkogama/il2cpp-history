@@ -113,7 +113,7 @@ code_?:
       if ((this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pSVar18 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)key,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), inputField != (SettingsInputField *)0x0)) {
         value = (String *)0x0;
         if (pSVar18 != (String *)0x0) {
-          if (pSVar18->klass == pSRam0000000182dbbc60) {
+          if (pSVar18->klass == pSRam0000000182dbdde0) {
             value = pSVar18;
           }
           if (value == (String *)0x0) {
@@ -230,7 +230,7 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_OnSettingChange
   enumType = (Type *)0x0;
   if (value != (Object *)0x0) {
     pTVar3 = enumType;
-    if (value->klass == pORam0000000182dbbc60) {
+    if (value->klass == pORam0000000182dbdde0) {
       pTVar3 = (Type *)value;
     }
     if (pTVar3 == (Type *)0x0) {
@@ -241,14 +241,14 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_OnSettingChange
     }
     if (((String__Fields *)&pTVar3->fields)->_stringLength != 0) {
       pTVar3 = enumType;
-      if (value->klass == pORam0000000182dbbc60) {
+      if (value->klass == pORam0000000182dbdde0) {
         pTVar3 = (Type *)value;
       }
       pSVar5 = mscorlib.dll::System::String::String_TrimWhiteSpaceHelper((String *)pTVar3,String_TrimType__Enum_Both,(MethodInfo *)0x0);
       if (pSVar5 == (String *)0x0) goto code_?;
       if ((pSVar5->fields)._stringLength != 0) {
         if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          if (value->klass == pORam0000000182dbbc60) {
+          if (value->klass == pORam0000000182dbdde0) {
             enumType = (Type *)value;
           }
           if (enumType == (Type *)0x0) {
@@ -611,7 +611,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (pcVar16 = (char *)((longlong)ppMVar15 + 0xADDR), ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *pcVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

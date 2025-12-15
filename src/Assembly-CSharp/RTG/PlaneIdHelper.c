@@ -1039,7 +1039,7 @@ PlaneId__Enum__Array * Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_ge
         return pPVar2;
       }
       pPVar7 = (PlaneId__Enum__Array *)0x0;
-      if (pPVar3 == pPRam0000000182dbbbe0) {
+      if (pPVar3 == pPRam0000000182dbdd60) {
         pPVar7 = pPVar2;
       }
       return pPVar7;
