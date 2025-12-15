@@ -283,12 +283,12 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
               (this_01,MVUtils_MethodInfo__UnityEngine__GameObject__AddComponent<MVUtils>__);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral_Build_Info___Version__3_2_10_0__);
+      FUN_?(&StringLiteral_Build_Info___Version__3_5_13_0__);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    message = StringLiteral_Build_Info___Version__3_2_10_0__;
+    message = StringLiteral_Build_Info___Version__3_5_13_0__;
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }

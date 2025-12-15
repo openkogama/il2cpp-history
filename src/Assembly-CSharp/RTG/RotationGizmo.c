@@ -11,9 +11,9 @@ float Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_GetZoomFactor
     UNLOCK();
     cRam_? = '\x01';
   }
-  lVar1 = 0x68;
+  lVar1 = 0x60;
   if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-    lVar1 = 0x88;
+    lVar1 = 0x78;
   }
   lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
   if ((lVar1 != 0) && (lVar1 = *(longlong *)(lVar1 + 0x30), lVar1 != 0)) {
@@ -52,9 +52,9 @@ float Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_GetZoomFactor_1
     UNLOCK();
     cRam_? = '\x01';
   }
-  lVar1 = 0x68;
+  lVar1 = 0x60;
   if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-    lVar1 = 0x88;
+    lVar1 = 0x78;
   }
   lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
   if ((lVar1 != 0) && (lVar1 = *(longlong *)(lVar1 + 0x30), lVar1 != 0)) {
@@ -312,11 +312,11 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_OnAttached
                                   (*(pGVar21->vtable).OnVisibilityStateChanged.methodPtr)();
                                   RotationGizmo_SetupSharedLookAndFeel(this,(MethodInfo *)0x0);
                                   iVar22 = iRam_?;
-                                  lVar23 = 0x60;
-                                  lVar24 = 0x60;
+                                  lVar23 = 0x58;
+                                  lVar24 = 0x58;
                                   if ((this->fields)._sharedSettings3D !=
                                       (RotationGizmoSettings3D *)0x0) {
-                                    lVar24 = 0x80;
+                                    lVar24 = 0x70;
                                   }
                                   lVar24 = *(longlong *)((longlong)&this->klass + lVar24);
                                   if (lVar24 != 0) {
@@ -350,10 +350,10 @@ code_?:
                                             iVar22 = iRam_?;
                                           } while (!bVar3);
                                         }
-                                        lVar24 = 0x60;
+                                        lVar24 = 0x58;
                                         if ((this->fields)._sharedSettings3D !=
                                             (RotationGizmoSettings3D *)0x0) {
-                                          lVar24 = 0x80;
+                                          lVar24 = 0x70;
                                         }
                                         lVar24 = *(longlong *)((longlong)&this->klass + lVar24);
                                         if (lVar24 != 0) {
@@ -383,10 +383,10 @@ code_?:
                                                   iVar25 = iRam_?;
                                                 } while (!bVar3);
                                               }
-                                              lVar24 = 0x60;
+                                              lVar24 = 0x58;
                                               if ((this->fields)._sharedSettings3D !=
                                                   (RotationGizmoSettings3D *)0x0) {
-                                                lVar24 = 0x80;
+                                                lVar24 = 0x70;
                                               }
                                               lVar24 = *(longlong *)
                                                         ((longlong)&this->klass + lVar24);
@@ -423,7 +423,7 @@ code_?:
                                                     }
                                                     if ((this->fields)._sharedSettings3D !=
                                                         (RotationGizmoSettings3D *)0x0) {
-                                                      lVar23 = 0x80;
+                                                      lVar23 = 0x70;
                                                     }
                                                     lVar24 = *(longlong *)
                                                               ((longlong)&this->klass + lVar23);
@@ -828,9 +828,9 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_OnGizmoAttemptHandle
         VStack_12.x = (pVVar15->upVector).x;
         VStack_12.y = (pVVar15->upVector).y;
         VStack_12.z = (pVVar15->upVector).z;
-        lVar18 = 0x60;
+        lVar18 = 0x58;
         if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-          lVar18 = 0x80;
+          lVar18 = 0x70;
         }
         lVar18 = *(longlong *)((longlong)&this->klass + lVar18);
         fStack_19 = VStack_12.x;
@@ -844,16 +844,16 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_OnGizmoAttemptHandle
           }
           if (*(longlong *)(lVar18 + 0x20) != 0) {
             uStack_22 = *(undefined4 *)(*(longlong *)(lVar18 + 0x20) + 0x34);
-            uVar23 = 0x60;
+            uVar23 = 0x58;
             if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-              uVar23 = 0x80;
+              uVar23 = 0x70;
             }
             lVar18 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar23);
             if (lVar18 != 0) {
               uStack_24 = *(undefined4 *)(lVar18 + 0x2c);
-              lVar18 = 0x60;
+              lVar18 = 0x58;
               if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-                lVar18 = 0x80;
+                lVar18 = 0x70;
               }
               lVar18 = *(longlong *)((longlong)&this->klass + lVar18);
               if (lVar18 != 0) {
@@ -1021,9 +1021,9 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_OnGizmoTransformChan
         fVar8 = (pGVar6->fields)._position3D.z;
         if (pGVar4 != (GizmoCap3D *)0x0) {
           fVar9 = GizmoCap3D::GizmoCap3D_GetRealSphereRadius(pGVar4,zoomFactor,(MethodInfo *)0x0);
-          lVar5 = 0x68;
+          lVar5 = 0x60;
           if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-            lVar5 = 0x88;
+            lVar5 = 0x78;
           }
           lVar5 = *(longlong *)((longlong)&this->klass + lVar5);
           if ((lVar5 != 0) && (this_01 != (GizmoPlaneSlider2D *)0x0)) {
@@ -1052,109 +1052,89 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_OnGizmoUpdateBegin
                (RotationGizmo *this,MethodInfo *method)
 
 {
-  if ((this->fields)._useSnapEnableHotkey != 0) {
-    lVar1 = 0x58;
-    if ((this->fields)._sharedHotkeys != (RotationGizmoHotkeys *)0x0) {
-      lVar1 = 0x78;
-    }
-    lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
-    if ((lVar1 == 0) || (this_00 = *(Hotkeys **)(lVar1 + 0x28), this_00 == (Hotkeys *)0x0))
-    goto code_?;
-    bVar2 = Hotkeys::Hotkeys_IsActive(this_00,1,(MethodInfo *)0x0);
-    this_01 = (this->fields)._axesSliders;
-    if (this_01 == (GizmoPlaneSlider3DCollection *)0x0) goto code_?;
-    GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_SetSnapEnabled
-              (this_01,bVar2,(MethodInfo *)0x0);
-    pGVar3 = (this->fields)._camXYRotationDrag;
-    if (pGVar3 == (GizmoDblAxisRotationDrag3D *)0x0) goto code_?;
-    (pGVar3->fields)._._isSnapEnabled = bVar2;
-    pGVar4 = (this->fields)._camLookSlider;
-    if (pGVar4 == (GizmoPlaneSlider2D *)0x0) goto code_?;
-    (*(pGVar4->klass->vtable).SetSnapEnabled_1.methodPtr)(pGVar4,(ulonglong)bVar2);
-  }
-  lVar5 = 0x68;
-  lVar1 = 0x68;
+  lVar1 = 0x60;
+  lVar2 = 0x60;
   if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-    lVar1 = 0x88;
+    lVar2 = 0x78;
   }
-  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
-  if ((lVar1 != 0) && (pGVar6 = (this->fields)._midCap, pGVar6 != (GizmoCap3D *)0x0)) {
-    bVar2 = *(bool *)(lVar1 + 0x28);
-    if ((pGVar6->fields)._._isVisible != bVar2) {
-      pGVar7 = pGVar6->klass;
-      (pGVar6->fields)._._isVisible = bVar2;
-      (*(pGVar7->vtable).OnVisibilityStateChanged.methodPtr)
-                (pGVar6,(pGVar7->vtable).OnVisibilityStateChanged.method);
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if ((lVar2 != 0) && (pGVar3 = (this->fields)._midCap, pGVar3 != (GizmoCap3D *)0x0)) {
+    bVar4 = *(bool *)(lVar2 + 0x28);
+    if ((pGVar3->fields)._._isVisible != bVar4) {
+      pGVar5 = pGVar3->klass;
+      (pGVar3->fields)._._isVisible = bVar4;
+      (*(pGVar5->vtable).OnVisibilityStateChanged.methodPtr)
+                (pGVar3,(pGVar5->vtable).OnVisibilityStateChanged.method);
     }
-    pGVar3 = (this->fields)._camXYRotationDrag;
-    lVar1 = 0x60;
+    pGVar6 = (this->fields)._camXYRotationDrag;
+    lVar2 = 0x58;
     if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-      lVar1 = 0x80;
+      lVar2 = 0x70;
     }
-    lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
-    if ((lVar1 != 0) && (lVar1 = *(longlong *)(lVar1 + 0x30), lVar1 != 0)) {
-      if (*(int *)(lVar1 + 0x18) == 0) {
+    lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+    if ((lVar2 != 0) && (lVar2 = *(longlong *)(lVar2 + 0x30), lVar2 != 0)) {
+      if (*(int *)(lVar2 + 0x18) == 0) {
 code_?:
         FUN_?();
-        pcVar8 = (code *)swi(3);
-        (*pcVar8)();
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
         return;
       }
-      if ((*(longlong *)(lVar1 + 0x20) != 0) && (pGVar3 != (GizmoDblAxisRotationDrag3D *)0x0)) {
-        fVar9 = *(float *)(*(longlong *)(lVar1 + 0x20) + 0x4c);
-        fVar10 = _UNK_?;
-        if (_UNK_? <= fVar9) {
-          fVar10 = fVar9;
+      if ((*(longlong *)(lVar2 + 0x20) != 0) && (pGVar6 != (GizmoDblAxisRotationDrag3D *)0x0)) {
+        fVar8 = *(float *)(*(longlong *)(lVar2 + 0x20) + 0x4c);
+        fVar9 = _UNK_?;
+        if (_UNK_? <= fVar8) {
+          fVar9 = fVar8;
         }
-        (pGVar3->fields)._._sensitivity = fVar10;
-        pGVar11 = (this->fields)._xSlider;
-        lVar1 = 0x68;
+        (pGVar6->fields)._._sensitivity = fVar9;
+        pGVar10 = (this->fields)._xSlider;
+        lVar2 = 0x60;
         if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-          lVar1 = 0x88;
+          lVar2 = 0x78;
         }
-        lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
-        if ((lVar1 != 0) && (lVar1 = *(longlong *)(lVar1 + 0x38), lVar1 != 0)) {
-          if (*(int *)(lVar1 + 0x18) == 0) goto code_?;
-          if (pGVar11 != (GizmoPlaneSlider3D *)0x0) {
+        lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+        if ((lVar2 != 0) && (lVar2 = *(longlong *)(lVar2 + 0x38), lVar2 != 0)) {
+          if (*(int *)(lVar2 + 0x18) == 0) goto code_?;
+          if (pGVar10 != (GizmoPlaneSlider3D *)0x0) {
             GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderVisible
-                      (pGVar11,*(char *)(lVar1 + 0x20) != '\0',(MethodInfo *)0x0);
-            pGVar11 = (this->fields)._ySlider;
-            lVar1 = 0x68;
+                      (pGVar10,*(char *)(lVar2 + 0x20) != '\0',(MethodInfo *)0x0);
+            pGVar10 = (this->fields)._ySlider;
+            lVar2 = 0x60;
             if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-              lVar1 = 0x88;
+              lVar2 = 0x78;
             }
-            lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
-            if ((lVar1 != 0) && (lVar1 = *(longlong *)(lVar1 + 0x38), lVar1 != 0)) {
-              if (*(uint *)(lVar1 + 0x18) < 2) goto code_?;
-              if (pGVar11 != (GizmoPlaneSlider3D *)0x0) {
+            lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+            if ((lVar2 != 0) && (lVar2 = *(longlong *)(lVar2 + 0x38), lVar2 != 0)) {
+              if (*(uint *)(lVar2 + 0x18) < 2) goto code_?;
+              if (pGVar10 != (GizmoPlaneSlider3D *)0x0) {
                 GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderVisible
-                          (pGVar11,*(char *)(lVar1 + 0x21) != '\0',(MethodInfo *)0x0);
-                pGVar11 = (this->fields)._zSlider;
-                lVar1 = 0x68;
+                          (pGVar10,*(char *)(lVar2 + 0x21) != '\0',(MethodInfo *)0x0);
+                pGVar10 = (this->fields)._zSlider;
+                lVar2 = 0x60;
                 if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-                  lVar1 = 0x88;
+                  lVar2 = 0x78;
                 }
-                lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
-                if ((lVar1 != 0) && (lVar1 = *(longlong *)(lVar1 + 0x38), lVar1 != 0)) {
-                  if (*(uint *)(lVar1 + 0x18) < 3) goto code_?;
-                  if (pGVar11 != (GizmoPlaneSlider3D *)0x0) {
+                lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+                if ((lVar2 != 0) && (lVar2 = *(longlong *)(lVar2 + 0x38), lVar2 != 0)) {
+                  if (*(uint *)(lVar2 + 0x18) < 3) goto code_?;
+                  if (pGVar10 != (GizmoPlaneSlider3D *)0x0) {
                     GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderVisible
-                              (pGVar11,*(char *)(lVar1 + 0x22) != '\0',(MethodInfo *)0x0);
+                              (pGVar10,*(char *)(lVar2 + 0x22) != '\0',(MethodInfo *)0x0);
                     if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-                      lVar5 = 0x88;
+                      lVar1 = 0x78;
                     }
-                    lVar1 = *(longlong *)((longlong)&this->klass + lVar5);
-                    if ((lVar1 != 0) &&
-                       (pGVar4 = (this->fields)._camLookSlider, pGVar4 != (GizmoPlaneSlider2D *)0x0)
+                    lVar2 = *(longlong *)((longlong)&this->klass + lVar1);
+                    if ((lVar2 != 0) &&
+                       (pGVar11 = (this->fields)._camLookSlider, pGVar11 != (GizmoPlaneSlider2D *)0x0)
                        ) {
                       GizmoPlaneSlider2D::GizmoPlaneSlider2D_SetBorderVisible
-                                (pGVar4,*(bool *)(lVar1 + 0x48),(MethodInfo *)0x0);
-                      pGVar4 = (this->fields)._camLookSlider;
-                      if (pGVar4 != (GizmoPlaneSlider2D *)0x0) {
-                        if ((pGVar4->fields)._isBorderVisible != 0) {
-                          this_02 = (this->fields)._._gizmo;
-                          if (this_02 == (Gizmo *)0x0) goto code_?;
-                          camera = Gizmo::Gizmo_get_FocusCamera(this_02,(MethodInfo *)0x0);
+                                (pGVar11,*(bool *)(lVar2 + 0x48),(MethodInfo *)0x0);
+                      pGVar11 = (this->fields)._camLookSlider;
+                      if (pGVar11 != (GizmoPlaneSlider2D *)0x0) {
+                        if ((pGVar11->fields)._isBorderVisible != 0) {
+                          this_00 = (this->fields)._._gizmo;
+                          if (this_00 == (Gizmo *)0x0) goto code_?;
+                          camera = Gizmo::Gizmo_get_FocusCamera(this_00,(MethodInfo *)0x0);
                           RotationGizmo_UpdateCamLookSlider(this,camera,(MethodInfo *)0x0);
                         }
                         return;
@@ -1171,8 +1151,8 @@ code_?:
   }
 code_?:
   FUN_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1265,10 +1245,10 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_SetupSharedLookAndFe
 
 {
   iVar1 = iRam_?;
-  lVar2 = 0x68;
-  lVar3 = 0x68;
+  lVar2 = 0x60;
+  lVar3 = 0x60;
   if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-    lVar3 = 0x88;
+    lVar3 = 0x78;
   }
   lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
   if (lVar3 != 0) {
@@ -1299,9 +1279,9 @@ code_?:
             iVar1 = iRam_?;
           } while (!bVar9);
         }
-        lVar3 = 0x68;
+        lVar3 = 0x60;
         if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-          lVar3 = 0x88;
+          lVar3 = 0x78;
         }
         lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
         if (lVar3 != 0) {
@@ -1328,9 +1308,9 @@ code_?:
                   iVar10 = iRam_?;
                 } while (!bVar9);
               }
-              lVar3 = 0x68;
+              lVar3 = 0x60;
               if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-                lVar3 = 0x88;
+                lVar3 = 0x78;
               }
               lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
               if (lVar3 != 0) {
@@ -1357,9 +1337,9 @@ code_?:
                         iVar1 = iRam_?;
                       } while (!bVar9);
                     }
-                    lVar3 = 0x68;
+                    lVar3 = 0x60;
                     if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-                      lVar3 = 0x88;
+                      lVar3 = 0x78;
                     }
                     lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
                     if ((lVar3 != 0) &&
@@ -1385,7 +1365,7 @@ code_?:
                       }
                       if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0)
                       {
-                        lVar2 = 0x88;
+                        lVar2 = 0x78;
                       }
                       lVar3 = *(longlong *)((longlong)&this->klass + lVar2);
                       if ((lVar3 != 0) &&
@@ -1432,10 +1412,10 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_SetupSharedSettings
 
 {
   iVar1 = iRam_?;
-  lVar2 = 0x60;
-  lVar3 = 0x60;
+  lVar2 = 0x58;
+  lVar3 = 0x58;
   if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-    lVar3 = 0x80;
+    lVar3 = 0x70;
   }
   lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
   if (lVar3 != 0) {
@@ -1466,9 +1446,9 @@ code_?:
             iVar1 = iRam_?;
           } while (!bVar9);
         }
-        lVar3 = 0x60;
+        lVar3 = 0x58;
         if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-          lVar3 = 0x80;
+          lVar3 = 0x70;
         }
         lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
         if (lVar3 != 0) {
@@ -1494,9 +1474,9 @@ code_?:
                   iVar10 = iRam_?;
                 } while (!bVar9);
               }
-              lVar3 = 0x60;
+              lVar3 = 0x58;
               if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-                lVar3 = 0x80;
+                lVar3 = 0x70;
               }
               lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
               if (lVar3 != 0) {
@@ -1524,7 +1504,7 @@ code_?:
                       } while (!bVar9);
                     }
                     if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-                      lVar2 = 0x80;
+                      lVar2 = 0x70;
                     }
                     lVar3 = *(longlong *)((longlong)&this->klass + lVar2);
                     if ((lVar3 != 0) &&
@@ -1594,9 +1574,9 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_UpdateCamLookSlider
         fVar6 = (pGVar4->fields)._position3D.z;
         if (pGVar1 != (GizmoCap3D *)0x0) {
           fVar7 = GizmoCap3D::GizmoCap3D_GetRealSphereRadius(pGVar1,zoomFactor,(MethodInfo *)0x0);
-          lVar2 = 0x68;
+          lVar2 = 0x60;
           if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-            lVar2 = 0x88;
+            lVar2 = 0x78;
           }
           lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
           if ((lVar2 != 0) && (this_01 != (GizmoPlaneSlider2D *)0x0)) {
@@ -1630,9 +1610,6 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo__ctor
     LOCK();
     UNLOCK();
     FUN_?(&TypeInfo__RTG__GizmoPlaneSlider3DCollection);
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__RTG__RotationGizmoHotkeys);
     LOCK();
     UNLOCK();
     FUN_?(&TypeInfo__RTG__RotationGizmoLookAndFeel3D);
@@ -1681,28 +1658,10 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo__ctor
       UNLOCK();
     } while (!bVar1);
   }
-  this_02 = (RotationGizmoHotkeys *)FUN_?(TypeInfo__RTG__RotationGizmoHotkeys);
-  RotationGizmoHotkeys::RotationGizmoHotkeys__ctor(this_02,(MethodInfo *)0x0);
+  this_02 = (RotationGizmoSettings3D *)FUN_?(TypeInfo__RTG__RotationGizmoSettings3D);
+  RotationGizmoSettings3D::RotationGizmoSettings3D__ctor(this_02,(MethodInfo *)0x0);
   bVar1 = iRam_? != 0;
-  (this->fields)._hotkeys = this_02;
-  if (bVar1) {
-    uVar2 = (uint)((ulonglong)&(this->fields)._hotkeys >> 0xc);
-    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
-    do {
-      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
-      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
-      LOCK();
-      bVar1 = uVar4 == *puVar5;
-      if (bVar1) {
-        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
-      }
-      UNLOCK();
-    } while (!bVar1);
-  }
-  this_03 = (RotationGizmoSettings3D *)FUN_?(TypeInfo__RTG__RotationGizmoSettings3D);
-  RotationGizmoSettings3D::RotationGizmoSettings3D__ctor(this_03,(MethodInfo *)0x0);
-  bVar1 = iRam_? != 0;
-  (this->fields)._settings3D = this_03;
+  (this->fields)._settings3D = this_02;
   if (bVar1) {
     uVar2 = (uint)((ulonglong)&(this->fields)._settings3D >> 0xc);
     uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
@@ -1717,10 +1676,10 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo__ctor
       UNLOCK();
     } while (!bVar1);
   }
-  this_04 = (RotationGizmoLookAndFeel3D *)FUN_?(TypeInfo__RTG__RotationGizmoLookAndFeel3D);
-  RotationGizmoLookAndFeel3D::RotationGizmoLookAndFeel3D__ctor(this_04,(MethodInfo *)0x0);
+  this_03 = (RotationGizmoLookAndFeel3D *)FUN_?(TypeInfo__RTG__RotationGizmoLookAndFeel3D);
+  RotationGizmoLookAndFeel3D::RotationGizmoLookAndFeel3D__ctor(this_03,(MethodInfo *)0x0);
   bVar1 = iRam_? != 0;
-  (this->fields)._lookAndFeel3D = this_04;
+  (this->fields)._lookAndFeel3D = this_03;
   if (bVar1) {
     uVar2 = (uint)((ulonglong)&(this->fields)._lookAndFeel3D >> 0xc);
     uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
@@ -1738,20 +1697,6 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo__ctor
   (this->fields)._._isEnabled = 1;
   (this->fields)._useSnapEnableHotkey = 1;
   return;
-}
-
-
-/* RotationGizmoHotkeys get_Hotkeys() */
-
-RotationGizmoHotkeys *
-Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_get_Hotkeys
-          (RotationGizmo *this,MethodInfo *method)
-
-{
-  if ((this->fields)._sharedHotkeys == (RotationGizmoHotkeys *)0x0) {
-    return (this->fields)._hotkeys;
-  }
-  return (this->fields)._sharedHotkeys;
 }
 
 
@@ -1806,10 +1751,10 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_set_SharedLookAndFee
     } while (uVar4 != uVar5);
   }
   uVar2 = uRam_?;
-  lVar6 = 0x68;
-  lVar7 = 0x68;
+  lVar6 = 0x60;
+  lVar7 = 0x60;
   if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-    lVar7 = 0x88;
+    lVar7 = 0x78;
   }
   lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
   if (lVar7 != 0) {
@@ -1842,9 +1787,9 @@ code_?:
           } while (!bVar1);
         }
         pRVar9 = (RotationGizmo *)(ulonglong)uVar2;
-        lVar7 = 0x68;
+        lVar7 = 0x60;
         if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-          lVar7 = 0x88;
+          lVar7 = 0x78;
         }
         lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
         if (lVar7 != 0) {
@@ -1870,9 +1815,9 @@ code_?:
                 } while (!bVar1);
                 pRVar9 = (RotationGizmo *)(ulonglong)uRam_?;
               }
-              lVar7 = 0x68;
+              lVar7 = 0x60;
               if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-                lVar7 = 0x88;
+                lVar7 = 0x78;
               }
               lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
               if (lVar7 != 0) {
@@ -1898,9 +1843,9 @@ code_?:
                       } while (!bVar1);
                       pRVar9 = (RotationGizmo *)(ulonglong)uRam_?;
                     }
-                    lVar7 = 0x68;
+                    lVar7 = 0x60;
                     if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0) {
-                      lVar7 = 0x88;
+                      lVar7 = 0x78;
                     }
                     lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
                     if ((lVar7 != 0) &&
@@ -1926,7 +1871,7 @@ code_?:
                       }
                       if ((this->fields)._sharedLookAndFeel3D != (RotationGizmoLookAndFeel3D *)0x0)
                       {
-                        lVar6 = 0x88;
+                        lVar6 = 0x78;
                       }
                       lVar7 = *(longlong *)((longlong)&this->klass + lVar6);
                       if ((lVar7 != 0) &&
@@ -1989,10 +1934,10 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_set_SharedSettings3D
     } while (uVar4 != uVar5);
   }
   uVar2 = uRam_?;
-  lVar6 = 0x60;
-  lVar7 = 0x60;
+  lVar6 = 0x58;
+  lVar7 = 0x58;
   if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-    lVar7 = 0x80;
+    lVar7 = 0x70;
   }
   lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
   if (lVar7 != 0) {
@@ -2025,9 +1970,9 @@ code_?:
           } while (!bVar1);
         }
         pRVar9 = (RotationGizmo *)(ulonglong)uVar2;
-        lVar7 = 0x60;
+        lVar7 = 0x58;
         if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-          lVar7 = 0x80;
+          lVar7 = 0x70;
         }
         lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
         if (lVar7 != 0) {
@@ -2052,9 +1997,9 @@ code_?:
                 } while (!bVar1);
                 pRVar9 = (RotationGizmo *)(ulonglong)uRam_?;
               }
-              lVar7 = 0x60;
+              lVar7 = 0x58;
               if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-                lVar7 = 0x80;
+                lVar7 = 0x70;
               }
               lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
               if (lVar7 != 0) {
@@ -2081,7 +2026,7 @@ code_?:
                       pRVar9 = (RotationGizmo *)(ulonglong)uRam_?;
                     }
                     if ((this->fields)._sharedSettings3D != (RotationGizmoSettings3D *)0x0) {
-                      lVar6 = 0x80;
+                      lVar6 = 0x70;
                     }
                     lVar7 = *(longlong *)((longlong)&this->klass + lVar6);
                     if ((lVar7 != 0) &&

@@ -32,7 +32,7 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize
     FUN_?(&MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__MessageBoxSettings);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_fontSelection);
@@ -97,10 +97,12 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize
     SettingsBase::SettingsBase_Initialize
               (this_00,woID,root,MVWorldObjectDocumentationType__Enum_Text,(MethodInfo *)0x0);
     if (woID == -1) {
-      if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-        FUN_?(TypeInfo__MessageBoxSettings);
+      if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).
+                   field_0x1c == 0) {
+        FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
       }
-      dictionary = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+      dictionary = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->
+                   static_fields->DefaultData;
       pDVar2 = (Dictionary_2_System_Object_System_Object_ *)
                 FUN_?(
                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
@@ -142,7 +144,7 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize
                             ), this_01 != (SettingsInputField *)0x0)) {
       value_01 = pSVar1;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dbbc60) {
+        if (pSVar8->klass == pSRam0000000182dbdde0) {
           value_01 = pSVar8;
         }
         if (value_01 == (String *)0x0) {
@@ -213,7 +215,12 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize
             uVar4 = (this_05->fields)._size;
             if (uVar4 < (uint)pUVar15->max_length) {
               (this_05->fields)._size = uVar4 + 1;
-              if ((uint)pUVar15->max_length <= uVar4) goto code_?;
+              if ((uint)pUVar15->max_length <= uVar4) {
+                FUN_?();
+                pcVar9 = (code *)swi(3);
+                (*pcVar9)();
+                return;
+              }
               pUVar15->vector[(int)uVar4] = item;
               pSVar1 = (String *)(ulonglong)(item + 1);
             }
@@ -237,214 +244,349 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize
                        (String__Array *)options,(List_1_System_Int32_ *)this_05,(MethodInfo *)0x0);
             pSVar16 = (this->fields).fontSizeSlider;
             pDVar2 = (this->fields).data;
-            if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
+            if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1)
+                         .field_0x1c == 0) {
               FUN_?();
             }
-            pSVar17 = TypeInfo__MessageBoxSettings->static_fields->FontSizeMinMax;
-            if (pSVar17 != (Single__Array *)0x0) {
-              if (((int)pSVar17->max_length == 0) || ((uint)pSVar17->max_length < 2)) {
-code_?:
-                FUN_?();
-                pcVar9 = (code *)swi(3);
-                (*pcVar9)();
-                return;
-              }
+            fVar17 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                     MvTextMsgData_MinValue(StringLiteral_textSize,(MethodInfo *)0x0);
+            fVar18 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                     MvTextMsgData_MaxValue(StringLiteral_textSize,(MethodInfo *)0x0);
+            if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
+              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                        (pSVar16,StringLiteral_textSize,pDVar2,fVar17,fVar18,_UNK_?,
+                         (MethodInfo *)0x0);
+              pSVar16 = (this->fields).textThicknessSlider;
+              pDVar2 = (this->fields).data;
+              fVar18 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                       MvTextMsgData_MinValue(StringLiteral_textThickness,(MethodInfo *)0x0);
+              fVar19 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                       MvTextMsgData_MaxValue(StringLiteral_textThickness,(MethodInfo *)0x0);
+              fVar17 = _UNK_?;
               if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
                 SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                          (pSVar16,StringLiteral_textSize,pDVar2,pSVar17->vector[0],pSVar17->vector[1]
-                           ,_UNK_?,(MethodInfo *)0x0);
-                conversionValue = _UNK_?;
-                pSVar16 = (this->fields).textThicknessSlider;
-                pSVar17 = TypeInfo__MessageBoxSettings->static_fields->TextThicknessMinMax;
-                if (pSVar17 != (Single__Array *)0x0) {
-                  if (((int)pSVar17->max_length == 0) || ((uint)pSVar17->max_length < 2))
-                  goto code_?;
+                          (pSVar16,StringLiteral_textThickness,pDVar2,fVar18,fVar19,_UNK_?,
+                           (MethodInfo *)0x0);
+                pSVar16 = (this->fields).textOutlineThicknessSlider;
+                pDVar2 = (this->fields).data;
+                fVar18 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                         MvTextMsgData_MinValue
+                                   (StringLiteral_textOutlineThickness,(MethodInfo *)0x0);
+                fVar19 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                         MvTextMsgData_MaxValue
+                                   (StringLiteral_textOutlineThickness,(MethodInfo *)0x0);
+                if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                            (pSVar16,StringLiteral_textOutlineThickness,pDVar2,fVar18,fVar19,fVar17,
+                             (MethodInfo *)0x0);
+                  pSVar16 = (this->fields).bakgroundWidthSlider;
+                  pDVar2 = (this->fields).data;
+                  fVar18 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                           MvTextMsgData_MinValue(StringLiteral_backgroundWidth,(MethodInfo *)0x0);
+                  fVar19 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                           MvTextMsgData_MaxValue(StringLiteral_backgroundWidth,(MethodInfo *)0x0);
                   if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
                     SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                              (pSVar16,StringLiteral_textThickness,(this->fields).data,
-                               pSVar17->vector[0],pSVar17->vector[1],_UNK_?,(MethodInfo *)0x0)
-                    ;
-                    pSVar16 = (this->fields).textOutlineThicknessSlider;
-                    pSVar17 = TypeInfo__MessageBoxSettings->static_fields->TextOutlineThicknessMinMax
-                    ;
-                    if (pSVar17 != (Single__Array *)0x0) {
-                      if (((int)pSVar17->max_length == 0) || ((uint)pSVar17->max_length < 2))
-                      goto code_?;
+                              (pSVar16,StringLiteral_backgroundWidth,pDVar2,fVar18,fVar19,fVar17,
+                               (MethodInfo *)0x0);
+                    pSVar16 = (this->fields).backgroundRadiusSlider;
+                    pDVar2 = (this->fields).data;
+                    fVar18 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                             MvTextMsgData_MinValue
+                                       (StringLiteral_backgroundRadius,(MethodInfo *)0x0);
+                    fVar19 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                             MvTextMsgData_MaxValue
+                                       (StringLiteral_backgroundRadius,(MethodInfo *)0x0);
+                    if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
+                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                                (pSVar16,StringLiteral_backgroundRadius,pDVar2,fVar18,fVar19,fVar17,
+                                 (MethodInfo *)0x0);
+                      pSVar16 = (this->fields).backgroundOutlineThicknessSlider;
+                      pDVar2 = (this->fields).data;
+                      fVar18 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                               MvTextMsgData_MinValue
+                                         (StringLiteral_backgroundOutlineThickness,(MethodInfo *)0x0
+                                         );
+                      fVar19 = Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextMsgData::
+                               MvTextMsgData_MaxValue
+                                         (StringLiteral_backgroundOutlineThickness,(MethodInfo *)0x0
+                                         );
                       if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
                         SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                                  (pSVar16,StringLiteral_textOutlineThickness,(this->fields).data,
-                                   pSVar17->vector[0],pSVar17->vector[1],conversionValue,
-                                   (MethodInfo *)0x0);
-                        pSVar16 = (this->fields).bakgroundWidthSlider;
-                        pSVar17 = TypeInfo__MessageBoxSettings->static_fields->BackgroundWidthMinMax;
-                        if (pSVar17 != (Single__Array *)0x0) {
-                          if (((int)pSVar17->max_length == 0) || ((uint)pSVar17->max_length < 2))
-                          goto code_?;
-                          if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                                      (pSVar16,StringLiteral_backgroundWidth,(this->fields).data,
-                                       pSVar17->vector[0],pSVar17->vector[1],conversionValue,
+                                  (pSVar16,StringLiteral_backgroundOutlineThickness,pDVar2,fVar18,
+                                   fVar19,fVar17,(MethodInfo *)0x0);
+                        pDVar2 = (this->fields).data;
+                        pSVar20 = (this->fields).billboardToggle;
+                        if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+                            (pOVar11 = mscorlib.dll::System::Collections::Generic::
+                                       Dictionary`2[System::Object,System::Object]::
+                                       Dictionary_2_System_Object_System_Object__get_Item
+                                                 (pDVar2,(Object *)StringLiteral_billboard,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                                 ), pSVar20 != (SettingsToggle *)0x0)) &&
+                           (pOVar11 != (Object *)0x0)) {
+                          if ((pOVar11->klass->_0).element_class !=
+                              *(Il2CppClass **)(lRam_? + 0x40)) {
+                            FUN_?(pOVar11,lRam_?);
+                            pcVar9 = (code *)swi(3);
+                            (*pcVar9)();
+                            return;
+                          }
+                          SettingsToggle::SettingsToggle_Initialize
+                                    (pSVar20,StringLiteral_billboard,*(bool *)&pOVar11[1].klass,
+                                     (MethodInfo *)0x0);
+                          pDVar2 = (this->fields).data;
+                          pSVar20 = (this->fields).textOutlineToggle;
+                          if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+                              (pOVar11 = mscorlib.dll::System::Collections::Generic::
+                                         Dictionary`2[System::Object,System::Object]::
+                                         Dictionary_2_System_Object_System_Object__get_Item
+                                                   (pDVar2,(Object *)StringLiteral_textOutline,
+                                                                                                        
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                                  ), pSVar20 != (SettingsToggle *)0x0)) &&
+                             (pOVar11 != (Object *)0x0)) {
+                            if ((pOVar11->klass->_0).element_class !=
+                                *(Il2CppClass **)(lRam_? + 0x40)) {
+                              FUN_?(pOVar11,lRam_?);
+                              pcVar9 = (code *)swi(3);
+                              (*pcVar9)();
+                              return;
+                            }
+                            SettingsToggle::SettingsToggle_Initialize
+                                      (pSVar20,StringLiteral_textOutline,*(bool *)&pOVar11[1].klass,
                                        (MethodInfo *)0x0);
-                            pSVar16 = (this->fields).backgroundRadiusSlider;
-                            pSVar17 = TypeInfo__MessageBoxSettings->static_fields->
-                                     BackgroundRadiusMinMax;
-                            if (pSVar17 != (Single__Array *)0x0) {
-                              if (((int)pSVar17->max_length == 0) || ((uint)pSVar17->max_length < 2))
-                              goto code_?;
-                              if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
-                                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                                          (pSVar16,StringLiteral_backgroundRadius,(this->fields).data
-                                           ,pSVar17->vector[0],pSVar17->vector[1],conversionValue,
-                                           (MethodInfo *)0x0);
-                                pSVar16 = (this->fields).backgroundOutlineThicknessSlider;
-                                pSVar17 = TypeInfo__MessageBoxSettings->static_fields->
-                                         BackgroundOutlineThicknessMinMax;
-                                if (pSVar17 != (Single__Array *)0x0) {
-                                  if (((int)pSVar17->max_length == 0) ||
-                                     ((uint)pSVar17->max_length < 2)) goto code_?;
-                                  if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
-                                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                                              (pSVar16,StringLiteral_backgroundOutlineThickness,
-                                               (this->fields).data,pSVar17->vector[0],
-                                               pSVar17->vector[1],conversionValue,(MethodInfo *)0x0);
-                                    pDVar2 = (this->fields).data;
-                                    pSVar18 = (this->fields).billboardToggle;
-                                    if (((pDVar2 !=
-                                          (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-                                        (pOVar11 = mscorlib.dll::System::Collections::Generic::
-                                                   Dictionary`2[System::Object,System::Object]::
-                                                                                                      
-                                                  Dictionary_2_System_Object_System_Object__get_Item
-                                                            (pDVar2,(Object *)
-                                                                     StringLiteral_billboard,
-                                                                                                                          
+                            pDVar2 = (this->fields).data;
+                            pSVar20 = (this->fields).textItalicToggle;
+                            if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+                                (pOVar11 = mscorlib.dll::System::Collections::Generic::
+                                           Dictionary`2[System::Object,System::Object]::
+                                           Dictionary_2_System_Object_System_Object__get_Item
+                                                     (pDVar2,(Object *)StringLiteral_textItalic,
+                                                                                                            
                                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  ), pSVar18 != (SettingsToggle *)0x0)) &&
-                                       (pOVar11 != (Object *)0x0)) {
-                                      if ((pOVar11->klass->_0).element_class !=
-                                          *(Il2CppClass **)(lRam_? + 0x40)) {
-                                        FUN_?(pOVar11,lRam_?);
-                                        pcVar9 = (code *)swi(3);
-                                        (*pcVar9)();
-                                        return;
-                                      }
-                                      SettingsToggle::SettingsToggle_Initialize
-                                                (pSVar18,StringLiteral_billboard,
-                                                 *(bool *)&pOVar11[1].klass,(MethodInfo *)0x0);
-                                      pDVar2 = (this->fields).data;
-                                      pSVar18 = (this->fields).textOutlineToggle;
-                                      if (((pDVar2 !=
-                                            (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-                                          (pOVar11 = mscorlib.dll::System::Collections::Generic::
-                                                     Dictionary`2[System::Object,System::Object]::
-                                                                                                          
-                                                  Dictionary_2_System_Object_System_Object__get_Item
-                                                            (pDVar2,(Object *)
-                                                                     StringLiteral_textOutline,
-                                                                                                                          
+                                                  ), pSVar20 != (SettingsToggle *)0x0)) &&
+                               (pOVar11 != (Object *)0x0)) {
+                              if ((pOVar11->klass->_0).element_class !=
+                                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                                FUN_?(pOVar11,lRam_?);
+                                pcVar9 = (code *)swi(3);
+                                (*pcVar9)();
+                                return;
+                              }
+                              SettingsToggle::SettingsToggle_Initialize
+                                        (pSVar20,StringLiteral_textItalic,*(bool *)&pOVar11[1].klass,
+                                         (MethodInfo *)0x0);
+                              pDVar2 = (this->fields).data;
+                              pSVar20 = (this->fields).textUnderscoredToggle;
+                              if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+                                  (pOVar11 = mscorlib.dll::System::Collections::Generic::
+                                             Dictionary`2[System::Object,System::Object]::
+                                             Dictionary_2_System_Object_System_Object__get_Item
+                                                       (pDVar2,(Object *)
+                                                                StringLiteral_textUnderscored,
+                                                                                                                
                                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  ), pSVar18 != (SettingsToggle *)0x0)) &&
-                                         (pOVar11 != (Object *)0x0)) {
-                                        if ((pOVar11->klass->_0).element_class !=
-                                            *(Il2CppClass **)(lRam_? + 0x40)) {
-                                          FUN_?(pOVar11,lRam_?);
-                                          pcVar9 = (code *)swi(3);
-                                          (*pcVar9)();
-                                          return;
-                                        }
-                                        SettingsToggle::SettingsToggle_Initialize
-                                                  (pSVar18,StringLiteral_textOutline,
-                                                   *(bool *)&pOVar11[1].klass,(MethodInfo *)0x0);
-                                        pDVar2 = (this->fields).data;
-                                        pSVar18 = (this->fields).textItalicToggle;
-                                        if (((pDVar2 !=
-                                              (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-                                            (pOVar11 = mscorlib.dll::System::Collections::Generic::
-                                                       Dictionary`2[System::Object,System::Object]::
-                                                                                                              
-                                                  Dictionary_2_System_Object_System_Object__get_Item
-                                                            (pDVar2,(Object *)
-                                                                     StringLiteral_textItalic,
-                                                                                                                          
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  ), pSVar18 != (SettingsToggle *)0x0)) &&
-                                           (pOVar11 != (Object *)0x0)) {
-                                          if ((pOVar11->klass->_0).element_class !=
-                                              *(Il2CppClass **)(lRam_? + 0x40)) {
-                                            FUN_?(pOVar11,lRam_?);
-                                            pcVar9 = (code *)swi(3);
-                                            (*pcVar9)();
-                                            return;
-                                          }
-                                          SettingsToggle::SettingsToggle_Initialize
-                                                    (pSVar18,StringLiteral_textItalic,
-                                                     *(bool *)&pOVar11[1].klass,(MethodInfo *)0x0);
-                                          pDVar2 = (this->fields).data;
-                                          pSVar18 = (this->fields).textUnderscoredToggle;
-                                          if (((pDVar2 !=
-                                                (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-                                              (pOVar11 = mscorlib.dll::System::Collections::Generic
-                                                         ::Dictionary`2[System::Object,System::
-                                                         Object]::
-                                                  Dictionary_2_System_Object_System_Object__get_Item
-                                                            (pDVar2,(Object *)
-                                                                     StringLiteral_textUnderscored,
-                                                                                                                          
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  ), pSVar18 != (SettingsToggle *)0x0)) &&
-                                             (pOVar11 != (Object *)0x0)) {
-                                            if ((pOVar11->klass->_0).element_class !=
-                                                *(Il2CppClass **)(lRam_? + 0x40)) {
-                                              FUN_?(pOVar11,lRam_?);
-                                              pcVar9 = (code *)swi(3);
-                                              (*pcVar9)();
-                                              return;
-                                            }
-                                            SettingsToggle::SettingsToggle_Initialize
-                                                      (pSVar18,StringLiteral_textUnderscored,
-                                                       *(bool *)&pOVar11[1].klass,(MethodInfo *)0x0)
-                                            ;
-                                            pDVar2 = (this->fields).data;
-                                            pSVar18 = (this->fields).backgroundToggle;
-                                            if (((pDVar2 !=
-                                                  (Dictionary_2_System_Object_System_Object_ *)0x0)
-                                                && (pOVar11 = mscorlib.dll::System::Collections::
-                                                              Generic::Dictionary`2[System::
-                                                              Object,System::Object]::
-                                                                                                                            
+                                                  ), pSVar20 != (SettingsToggle *)0x0)) &&
+                                 (pOVar11 != (Object *)0x0)) {
+                                if ((pOVar11->klass->_0).element_class !=
+                                    *(Il2CppClass **)(lRam_? + 0x40)) {
+                                  FUN_?(pOVar11,lRam_?);
+                                  pcVar9 = (code *)swi(3);
+                                  (*pcVar9)();
+                                  return;
+                                }
+                                SettingsToggle::SettingsToggle_Initialize
+                                          (pSVar20,StringLiteral_textUnderscored,
+                                           *(bool *)&pOVar11[1].klass,(MethodInfo *)0x0);
+                                pDVar2 = (this->fields).data;
+                                pSVar20 = (this->fields).backgroundToggle;
+                                if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0)
+                                    && (pOVar11 = mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::Object,System::Object]::
                                                   Dictionary_2_System_Object_System_Object__get_Item
                                                             (pDVar2,(Object *)
                                                                      StringLiteral_background,
                                                                                                                           
                                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  ), pSVar18 != (SettingsToggle *)0x0)) &&
-                                               (pOVar11 != (Object *)0x0)) {
-                                              if ((pOVar11->klass->_0).element_class !=
-                                                  *(Il2CppClass **)(lRam_? + 0x40)) {
-                                                FUN_?(pOVar11,lRam_?);
-                                                pcVar9 = (code *)swi(3);
-                                                (*pcVar9)();
-                                                return;
-                                              }
-                                              SettingsToggle::SettingsToggle_Initialize
-                                                        (pSVar18,StringLiteral_background,
-                                                         *(bool *)&pOVar11[1].klass,
-                                                         (MethodInfo *)0x0);
-                                              pDVar2 = (this->fields).data;
-                                              pSVar18 = (this->fields).backgroundOutlineToggle;
-                                              if (((pDVar2 !=
-                                                    (Dictionary_2_System_Object_System_Object_ *)0x0
-                                                   ) && (pOVar11 = mscorlib.dll::System::Collections
-                                                                   ::Generic::Dictionary`2[System::
-                                                                   Object,System::Object]::
-                                                                                                                                      
+                                                  ), pSVar20 != (SettingsToggle *)0x0)) &&
+                                   (pOVar11 != (Object *)0x0)) {
+                                  if ((pOVar11->klass->_0).element_class !=
+                                      *(Il2CppClass **)(lRam_? + 0x40)) {
+                                    FUN_?(pOVar11,lRam_?);
+                                    pcVar9 = (code *)swi(3);
+                                    (*pcVar9)();
+                                    return;
+                                  }
+                                  SettingsToggle::SettingsToggle_Initialize
+                                            (pSVar20,StringLiteral_background,
+                                             *(bool *)&pOVar11[1].klass,(MethodInfo *)0x0);
+                                  pDVar2 = (this->fields).data;
+                                  pSVar20 = (this->fields).backgroundOutlineToggle;
+                                  if (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0)
+                                      && (pOVar11 = mscorlib.dll::System::Collections::Generic::
+                                                    Dictionary`2[System::Object,System::Object]::
+                                                                                                        
                                                   Dictionary_2_System_Object_System_Object__get_Item
                                                             (pDVar2,(Object *)
                                                                      StringLiteral_backgroundOutline
                                                              ,
                                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  ), pSVar18 != (SettingsToggle *)0x0)) &&
-                                                 (pOVar11 != (Object *)0x0)) {
+                                                  ), pSVar20 != (SettingsToggle *)0x0)) &&
+                                     (pOVar11 != (Object *)0x0)) {
+                                    if ((pOVar11->klass->_0).element_class !=
+                                        *(Il2CppClass **)(lRam_? + 0x40)) {
+                                      FUN_?(pOVar11,lRam_?);
+                                      pcVar9 = (code *)swi(3);
+                                      (*pcVar9)();
+                                      return;
+                                    }
+                                    SettingsToggle::SettingsToggle_Initialize
+                                              (pSVar20,StringLiteral_backgroundOutline,
+                                               *(bool *)&pOVar11[1].klass,(MethodInfo *)0x0);
+                                    pSVar1 = StringLiteral_textColor;
+                                    pIVar21 = (this->fields).textColorPreview;
+                                    pDVar2 = (this->fields).data;
+                                    if (cRam_? == '\0') {
+                                      FUN_?(&TypeInfo__Extensions);
+                                      LOCK();
+                                      UNLOCK();
+                                      cRam_? = '\x01';
+                                    }
+                                    if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                                      FUN_?();
+                                    }
+                                    CStack_22.r = 0.0;
+                                    CStack_22.g = 0.0;
+                                    CStack_22.b = 0.0;
+                                    CStack_22.a = 0.0;
+                                    pCVar23 = Extensions::Extensions_GetColorOrDefault
+                                                        (aCStack_24,pDVar2,pSVar1,&CStack_22,
+                                                         (MethodInfo *)0x0);
+                                    if (pIVar21 != (Image *)0x0) {
+                                      CStack_22.r = pCVar23->r;
+                                      CStack_22.g = pCVar23->g;
+                                      CStack_22.b = pCVar23->b;
+                                      CStack_22.a = pCVar23->a;
+                                      (*(pIVar21->klass->vtable).set_color.methodPtr)
+                                                (pIVar21,&CStack_22,
+                                                 (pIVar21->klass->vtable).set_color.method);
+                                      pSVar1 = StringLiteral_textOutlineColor;
+                                      pIVar21 = (this->fields).textOutlineColorPreview;
+                                      pDVar2 = (this->fields).data;
+                                      if (cRam_? == '\0') {
+                                        FUN_?(&TypeInfo__Extensions);
+                                        LOCK();
+                                        UNLOCK();
+                                        cRam_? = '\x01';
+                                      }
+                                      if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                                        FUN_?();
+                                      }
+                                      CStack_22.r = 0.0;
+                                      CStack_22.g = 0.0;
+                                      CStack_22.b = 0.0;
+                                      CStack_22.a = 0.0;
+                                      pCVar23 = Extensions::Extensions_GetColorOrDefault
+                                                          (aCStack_24,pDVar2,pSVar1,&CStack_22,
+                                                           (MethodInfo *)0x0);
+                                      if (pIVar21 != (Image *)0x0) {
+                                        CStack_22.r = pCVar23->r;
+                                        CStack_22.g = pCVar23->g;
+                                        CStack_22.b = pCVar23->b;
+                                        CStack_22.a = pCVar23->a;
+                                        (*(pIVar21->klass->vtable).set_color.methodPtr)
+                                                  (pIVar21,&CStack_22,
+                                                   (pIVar21->klass->vtable).set_color.method);
+                                        pSVar1 = StringLiteral_backgroundColor;
+                                        pIVar21 = (this->fields).backgroundColorPreview;
+                                        pDVar2 = (this->fields).data;
+                                        if (cRam_? == '\0') {
+                                          FUN_?(&TypeInfo__Extensions);
+                                          LOCK();
+                                          UNLOCK();
+                                          cRam_? = '\x01';
+                                        }
+                                        if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                                          FUN_?();
+                                        }
+                                        CStack_22.r = 0.0;
+                                        CStack_22.g = 0.0;
+                                        CStack_22.b = 0.0;
+                                        CStack_22.a = 0.0;
+                                        pCVar23 = Extensions::Extensions_GetColorOrDefault
+                                                            (aCStack_24,pDVar2,pSVar1,&CStack_22,
+                                                             (MethodInfo *)0x0);
+                                        if (pIVar21 != (Image *)0x0) {
+                                          CStack_22.r = pCVar23->r;
+                                          CStack_22.g = pCVar23->g;
+                                          CStack_22.b = pCVar23->b;
+                                          CStack_22.a = pCVar23->a;
+                                          (*(pIVar21->klass->vtable).set_color.methodPtr)
+                                                    (pIVar21,&CStack_22,
+                                                     (pIVar21->klass->vtable).set_color.method);
+                                          pSVar1 = StringLiteral_backgroundOutlineColor;
+                                          pIVar21 = (this->fields).backgroundOutlineColorPreview;
+                                          pDVar2 = (this->fields).data;
+                                          if (cRam_? == '\0') {
+                                            FUN_?(&TypeInfo__Extensions);
+                                            LOCK();
+                                            UNLOCK();
+                                            cRam_? = '\x01';
+                                          }
+                                          if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                                            FUN_?();
+                                          }
+                                          CStack_22.r = 0.0;
+                                          CStack_22.g = 0.0;
+                                          CStack_22.b = 0.0;
+                                          CStack_22.a = 0.0;
+                                          pCVar23 = Extensions::Extensions_GetColorOrDefault
+                                                              (aCStack_24,pDVar2,pSVar1,&CStack_22
+                                                               ,(MethodInfo *)0x0);
+                                          if (pIVar21 != (Image *)0x0) {
+                                            CStack_22.r = pCVar23->r;
+                                            CStack_22.g = pCVar23->g;
+                                            CStack_22.b = pCVar23->b;
+                                            CStack_22.a = pCVar23->a;
+                                            (*(pIVar21->klass->vtable).set_color.methodPtr)
+                                                      (pIVar21,&CStack_22,
+                                                       (pIVar21->klass->vtable).set_color.method);
+                                            if (cRam_? == '\0') {
+                                              FUN_?(&
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                                  ,0);
+                                              LOCK();
+                                              UNLOCK();
+                                              FUN_?(&StringLiteral_fontSelection);
+                                              LOCK();
+                                              UNLOCK();
+                                              FUN_?(&StringLiteral_backgroundOutline);
+                                              LOCK();
+                                              UNLOCK();
+                                              FUN_?(&StringLiteral_textOutline);
+                                              LOCK();
+                                              UNLOCK();
+                                              FUN_?(&StringLiteral_background);
+                                              LOCK();
+                                              UNLOCK();
+                                              cRam_? = '\x01';
+                                            }
+                                            pDVar2 = (this->fields).data;
+                                            receiver = (this->fields).selectedFontItem;
+                                            if (pDVar2 !=
+                                                (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                              pOVar11 = mscorlib.dll::System::Collections::Generic::
+                                                        Dictionary`2[System::Object,System::Object]
+                                                        ::
+                                                  Dictionary_2_System_Object_System_Object__get_Item
+                                                            (pDVar2,(Object *)
+                                                                     StringLiteral_fontSelection,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                                  );
+                                              if ((receiver != (TMPSettingsDropdownItemFont *)0x0)
+                                                 && (pOVar11 != (Object *)0x0)) {
                                                 if ((pOVar11->klass->_0).element_class !=
                                                     *(Il2CppClass **)(lRam_? + 0x40))
                                                 {
@@ -453,186 +595,13 @@ code_?:
                                                   (*pcVar9)();
                                                   return;
                                                 }
-                                                SettingsToggle::SettingsToggle_Initialize
-                                                          (pSVar18,StringLiteral_backgroundOutline,
-                                                           *(bool *)&pOVar11[1].klass,
-                                                           (MethodInfo *)0x0);
-                                                pSVar1 = StringLiteral_textColor;
-                                                pIVar19 = (this->fields).textColorPreview;
-                                                pDVar2 = (this->fields).data;
-                                                if (cRam_? == '\0') {
-                                                  FUN_?(&TypeInfo__Extensions);
-                                                  LOCK();
-                                                  UNLOCK();
-                                                  cRam_? = '\x01';
-                                                }
-                                                if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c
-                                                    == 0) {
-                                                  FUN_?();
-                                                }
-                                                CStack_20.r = 0.0;
-                                                CStack_20.g = 0.0;
-                                                CStack_20.b = 0.0;
-                                                CStack_20.a = 0.0;
-                                                pCVar21 = Extensions::Extensions_GetColorOrDefault
-                                                                    (&CStack_22,pDVar2,pSVar1,
-                                                                     &CStack_20,(MethodInfo *)0x0);
-                                                if (pIVar19 != (Image *)0x0) {
-                                                  CStack_20.r = pCVar21->r;
-                                                  CStack_20.g = pCVar21->g;
-                                                  CStack_20.b = pCVar21->b;
-                                                  CStack_20.a = pCVar21->a;
-                                                  (*(pIVar19->klass->vtable).set_color.methodPtr)
-                                                            (pIVar19,&CStack_20,
-                                                             (pIVar19->klass->vtable).set_color.
-                                                             method);
-                                                  pSVar1 = StringLiteral_textOutlineColor;
-                                                  pIVar19 = (this->fields).textOutlineColorPreview;
-                                                  pDVar2 = (this->fields).data;
-                                                  if (cRam_? == '\0') {
-                                                    FUN_?(&TypeInfo__Extensions);
-                                                    LOCK();
-                                                    UNLOCK();
-                                                    cRam_? = '\x01';
-                                                  }
-                                                  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c
-                                                      == 0) {
-                                                    FUN_?();
-                                                  }
-                                                  CStack_20.r = 0.0;
-                                                  CStack_20.g = 0.0;
-                                                  CStack_20.b = 0.0;
-                                                  CStack_20.a = 0.0;
-                                                  pCVar21 = Extensions::Extensions_GetColorOrDefault
-                                                                      (&CStack_22,pDVar2,pSVar1,
-                                                                       &CStack_20,(MethodInfo *)0x0)
-                                                  ;
-                                                  if (pIVar19 != (Image *)0x0) {
-                                                    CStack_20.r = pCVar21->r;
-                                                    CStack_20.g = pCVar21->g;
-                                                    CStack_20.b = pCVar21->b;
-                                                    CStack_20.a = pCVar21->a;
-                                                    (*(pIVar19->klass->vtable).set_color.methodPtr)
-                                                              (pIVar19,&CStack_20,
-                                                               (pIVar19->klass->vtable).set_color.
-                                                               method);
-                                                    pSVar1 = StringLiteral_backgroundColor;
-                                                    pIVar19 = (this->fields).backgroundColorPreview;
-                                                    pDVar2 = (this->fields).data;
-                                                    if (cRam_? == '\0') {
-                                                      FUN_?(&TypeInfo__Extensions);
-                                                      LOCK();
-                                                      UNLOCK();
-                                                      cRam_? = '\x01';
-                                                    }
-                                                    if (*(int *)&(TypeInfo__Extensions->_1).
-                                                                 field_0x1c == 0) {
-                                                      FUN_?();
-                                                    }
-                                                    CStack_20.r = 0.0;
-                                                    CStack_20.g = 0.0;
-                                                    CStack_20.b = 0.0;
-                                                    CStack_20.a = 0.0;
-                                                    pCVar21 = Extensions::
-                                                              Extensions_GetColorOrDefault
-                                                                        (&CStack_22,pDVar2,pSVar1,
-                                                                         &CStack_20,
-                                                                         (MethodInfo *)0x0);
-                                                    if (pIVar19 != (Image *)0x0) {
-                                                      CStack_20.r = pCVar21->r;
-                                                      CStack_20.g = pCVar21->g;
-                                                      CStack_20.b = pCVar21->b;
-                                                      CStack_20.a = pCVar21->a;
-                                                      (*(pIVar19->klass->vtable).set_color.methodPtr
-                                                      )(pIVar19,&CStack_20,
-                                                        (pIVar19->klass->vtable).set_color.method);
-                                                      pSVar1 = StringLiteral_backgroundOutlineColor
-                                                      ;
-                                                      pIVar19 = (this->fields).
-                                                                backgroundOutlineColorPreview;
-                                                      pDVar2 = (this->fields).data;
-                                                      if (cRam_? == '\0') {
-                                                        FUN_?(&TypeInfo__Extensions);
-                                                        LOCK();
-                                                        UNLOCK();
-                                                        cRam_? = '\x01';
-                                                      }
-                                                      if (*(int *)&(TypeInfo__Extensions->_1).
-                                                                   field_0x1c == 0) {
-                                                        FUN_?();
-                                                      }
-                                                      CStack_20.r = 0.0;
-                                                      CStack_20.g = 0.0;
-                                                      CStack_20.b = 0.0;
-                                                      CStack_20.a = 0.0;
-                                                      pCVar21 = Extensions::
-                                                                Extensions_GetColorOrDefault
-                                                                          (&CStack_22,pDVar2,
-                                                                           pSVar1,&CStack_20,
-                                                                           (MethodInfo *)0x0);
-                                                      if (pIVar19 != (Image *)0x0) {
-                                                        CStack_20.r = pCVar21->r;
-                                                        CStack_20.g = pCVar21->g;
-                                                        CStack_20.b = pCVar21->b;
-                                                        CStack_20.a = pCVar21->a;
-                                                        (*(pIVar19->klass->vtable).set_color.
-                                                          methodPtr)(pIVar19,&CStack_20,
-                                                                     (pIVar19->klass->vtable).
-                                                                     set_color.method);
-                                                        if (cRam_? == '\0') {
-                                                          FUN_?(&
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  ,0);
-                                                  LOCK();
-                                                  UNLOCK();
-                                                  FUN_?(&StringLiteral_fontSelection);
-                                                  LOCK();
-                                                  UNLOCK();
-                                                  FUN_?(&StringLiteral_backgroundOutline);
-                                                  LOCK();
-                                                  UNLOCK();
-                                                  FUN_?(&StringLiteral_textOutline);
-                                                  LOCK();
-                                                  UNLOCK();
-                                                  FUN_?(&StringLiteral_background);
-                                                  LOCK();
-                                                  UNLOCK();
-                                                  cRam_? = '\x01';
-                                                  }
-                                                  pDVar2 = (this->fields).data;
-                                                  receiver = (this->fields).selectedFontItem;
-                                                  if (pDVar2 !=
-                                                      (Dictionary_2_System_Object_System_Object_ *)
-                                                      0x0) {
-                                                    pOVar11 = mscorlib.dll::System::Collections::
-                                                              Generic::Dictionary`2[System::
-                                                              Object,System::Object]::
-                                                                                                                            
-                                                  Dictionary_2_System_Object_System_Object__get_Item
-                                                            (pDVar2,(Object *)
-                                                                     StringLiteral_fontSelection,
-                                                                                                                          
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  );
-                                                  if ((receiver !=
-                                                       (TMPSettingsDropdownItemFont *)0x0) &&
-                                                     (pOVar11 != (Object *)0x0)) {
-                                                    if ((pOVar11->klass->_0).element_class !=
-                                                        *(Il2CppClass **)
-                                                         (lRam_? + 0x40)) {
-                                                      FUN_?(pOVar11,lRam_?);
-                                                      pcVar9 = (code *)swi(3);
-                                                      (*pcVar9)();
-                                                      return;
-                                                    }
-                                                    pSVar10 = (receiver->fields).fontList;
-                                                    if (pSVar10 != (StreamedTextMeshProFontList *)0x0
-                                                       ) {
-                                                      pSVar1 = StreamedTextMeshProFontList::
-                                                                                                                                
-                                                  StreamedTextMeshProFontList_GetFontUrl
-                                                            (pSVar10,*(int32_t *)&pOVar11[1].klass,
-                                                             (MethodInfo *)0x0);
+                                                pSVar10 = (receiver->fields).fontList;
+                                                if (pSVar10 != (StreamedTextMeshProFontList *)0x0) {
+                                                  pSVar1 = StreamedTextMeshProFontList::
+                                                            StreamedTextMeshProFontList_GetFontUrl
+                                                                      (pSVar10,*(int32_t *)
+                                                                               &pOVar11[1].klass,
+                                                                       (MethodInfo *)0x0);
                                                   this_03 = (receiver->fields).fontStream;
                                                   if (this_03 !=
                                                       (StreamedTextMeshProFontTriggered *)0x0) {
@@ -714,219 +683,219 @@ code_?:
                                                     }
                                                     pSVar16 = (this->fields).
                                                              textOutlineThicknessSlider;
-                                                    bVar23 = *(byte *)&pOVar11[1].klass;
+                                                    bVar25 = *(byte *)&pOVar11[1].klass;
                                                     if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
-                                                      pTVar24 = UnityEngine.CoreModule.dll::
+                                                      pTVar26 = UnityEngine.CoreModule.dll::
                                                                 UnityEngine::Component::
                                                                 Component_get_transform
                                                                           ((Component *)pSVar16,
                                                                            (MethodInfo *)0x0);
-                                                      if (pTVar24 != (Transform *)0x0) {
-                                                        pTVar24 = UnityEngine.CoreModule.dll::
+                                                      if (pTVar26 != (Transform *)0x0) {
+                                                        pTVar26 = UnityEngine.CoreModule.dll::
                                                                   UnityEngine::Transform::
-                                                                  Transform_GetParent(pTVar24,(
+                                                                  Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pGVar25 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pGVar27 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Component::
                                                               Component_get_gameObject
-                                                                        ((Component *)pTVar24,
+                                                                        ((Component *)pTVar26,
                                                                          (MethodInfo *)0x0);
-                                                    if (pGVar25 != (GameObject *)0x0) {
+                                                    if (pGVar27 != (GameObject *)0x0) {
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_SetActive
-                                                                (pGVar25,value,(MethodInfo *)0x0);
-                                                      pIVar19 = (this->fields).
-                                                                textOutlineColorPreview;
-                                                      if (pIVar19 != (Image *)0x0) {
-                                                        pTVar24 = UnityEngine.CoreModule.dll::
+                                                                (pGVar27,value,(MethodInfo *)0x0);
+                                                      pIVar21 = (this->fields).
+                                                               textOutlineColorPreview;
+                                                      if (pIVar21 != (Image *)0x0) {
+                                                        pTVar26 = UnityEngine.CoreModule.dll::
                                                                   UnityEngine::Component::
                                                                   Component_get_transform
-                                                                            ((Component *)pIVar19,
+                                                                            ((Component *)pIVar21,
                                                                              (MethodInfo *)0x0);
-                                                        if (pTVar24 != (Transform *)0x0) {
-                                                          pTVar24 = UnityEngine.CoreModule.dll::
+                                                        if (pTVar26 != (Transform *)0x0) {
+                                                          pTVar26 = UnityEngine.CoreModule.dll::
                                                                     UnityEngine::Transform::
-                                                                    Transform_GetParent(pTVar24,(
+                                                                    Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pTVar24 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pTVar26 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
-                                                              Transform_GetParent(pTVar24,(
+                                                              Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pGVar25 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pGVar27 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Component::
                                                               Component_get_gameObject
-                                                                        ((Component *)pTVar24,
+                                                                        ((Component *)pTVar26,
                                                                          (MethodInfo *)0x0);
-                                                    if (pGVar25 != (GameObject *)0x0) {
+                                                    if (pGVar27 != (GameObject *)0x0) {
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_SetActive
-                                                                (pGVar25,value,(MethodInfo *)0x0);
+                                                                (pGVar27,value,(MethodInfo *)0x0);
                                                       pSVar16 = (this->fields).bakgroundWidthSlider;
                                                       if (pSVar16 != (SettingsInputFieldSlider *)0x0)
                                                       {
-                                                        pTVar24 = UnityEngine.CoreModule.dll::
+                                                        pTVar26 = UnityEngine.CoreModule.dll::
                                                                   UnityEngine::Component::
                                                                   Component_get_transform
                                                                             ((Component *)pSVar16,
                                                                              (MethodInfo *)0x0);
-                                                        if (pTVar24 != (Transform *)0x0) {
-                                                          pTVar24 = UnityEngine.CoreModule.dll::
+                                                        if (pTVar26 != (Transform *)0x0) {
+                                                          pTVar26 = UnityEngine.CoreModule.dll::
                                                                     UnityEngine::Transform::
-                                                                    Transform_GetParent(pTVar24,(
+                                                                    Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pGVar25 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pGVar27 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Component::
                                                               Component_get_gameObject
-                                                                        ((Component *)pTVar24,
+                                                                        ((Component *)pTVar26,
                                                                          (MethodInfo *)0x0);
-                                                    if (pGVar25 != (GameObject *)0x0) {
+                                                    if (pGVar27 != (GameObject *)0x0) {
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_SetActive
-                                                                (pGVar25,value_00,(MethodInfo *)0x0)
+                                                                (pGVar27,value_00,(MethodInfo *)0x0)
                                                       ;
                                                       pSVar16 = (this->fields).backgroundRadiusSlider
                                                       ;
                                                       if (pSVar16 != (SettingsInputFieldSlider *)0x0)
                                                       {
-                                                        pTVar24 = UnityEngine.CoreModule.dll::
+                                                        pTVar26 = UnityEngine.CoreModule.dll::
                                                                   UnityEngine::Component::
                                                                   Component_get_transform
                                                                             ((Component *)pSVar16,
                                                                              (MethodInfo *)0x0);
-                                                        if (pTVar24 != (Transform *)0x0) {
-                                                          pTVar24 = UnityEngine.CoreModule.dll::
+                                                        if (pTVar26 != (Transform *)0x0) {
+                                                          pTVar26 = UnityEngine.CoreModule.dll::
                                                                     UnityEngine::Transform::
-                                                                    Transform_GetParent(pTVar24,(
+                                                                    Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pGVar25 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pGVar27 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Component::
                                                               Component_get_gameObject
-                                                                        ((Component *)pTVar24,
+                                                                        ((Component *)pTVar26,
                                                                          (MethodInfo *)0x0);
-                                                    if (pGVar25 != (GameObject *)0x0) {
+                                                    if (pGVar27 != (GameObject *)0x0) {
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_SetActive
-                                                                (pGVar25,value_00,(MethodInfo *)0x0)
+                                                                (pGVar27,value_00,(MethodInfo *)0x0)
                                                       ;
-                                                      pSVar18 = (this->fields).
+                                                      pSVar20 = (this->fields).
                                                                backgroundOutlineToggle;
-                                                      if (pSVar18 != (SettingsToggle *)0x0) {
-                                                        pGVar25 = UnityEngine.CoreModule.dll::
+                                                      if (pSVar20 != (SettingsToggle *)0x0) {
+                                                        pGVar27 = UnityEngine.CoreModule.dll::
                                                                   UnityEngine::Component::
                                                                   Component_get_gameObject
-                                                                            ((Component *)pSVar18,
+                                                                            ((Component *)pSVar20,
                                                                              (MethodInfo *)0x0);
-                                                        if (pGVar25 != (GameObject *)0x0) {
+                                                        if (pGVar27 != (GameObject *)0x0) {
                                                           UnityEngine.CoreModule.dll::UnityEngine::
                                                           GameObject::GameObject_SetActive
-                                                                    (pGVar25,value_00,
+                                                                    (pGVar27,value_00,
                                                                      (MethodInfo *)0x0);
                                                           pSVar16 = (this->fields).
                                                                    backgroundOutlineThicknessSlider;
                                                           if (pSVar16 != (SettingsInputFieldSlider *)
                                                                         0x0) {
-                                                            pTVar24 = UnityEngine.CoreModule.dll::
+                                                            pTVar26 = UnityEngine.CoreModule.dll::
                                                                       UnityEngine::Component::
                                                                       Component_get_transform
                                                                                 ((Component *)pSVar16
                                                                                  ,(MethodInfo *)0x0)
                                                             ;
-                                                            if (pTVar24 != (Transform *)0x0) {
-                                                              pTVar24 = UnityEngine.CoreModule.dll::
+                                                            if (pTVar26 != (Transform *)0x0) {
+                                                              pTVar26 = UnityEngine.CoreModule.dll::
                                                                         UnityEngine::Transform::
-                                                                        Transform_GetParent(pTVar24,
+                                                                        Transform_GetParent(pTVar26,
                                                   (MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pGVar25 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pGVar27 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Component::
                                                               Component_get_gameObject
-                                                                        ((Component *)pTVar24,
+                                                                        ((Component *)pTVar26,
                                                                          (MethodInfo *)0x0);
-                                                    if (pGVar25 != (GameObject *)0x0) {
+                                                    if (pGVar27 != (GameObject *)0x0) {
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_SetActive
-                                                                (pGVar25,bVar23 & value_00,
+                                                                (pGVar27,bVar25 & value_00,
                                                                  (MethodInfo *)0x0);
-                                                      pIVar19 = (this->fields).
-                                                                backgroundColorPreview;
-                                                      if (pIVar19 != (Image *)0x0) {
-                                                        pTVar24 = UnityEngine.CoreModule.dll::
+                                                      pIVar21 = (this->fields).backgroundColorPreview
+                                                      ;
+                                                      if (pIVar21 != (Image *)0x0) {
+                                                        pTVar26 = UnityEngine.CoreModule.dll::
                                                                   UnityEngine::Component::
                                                                   Component_get_transform
-                                                                            ((Component *)pIVar19,
+                                                                            ((Component *)pIVar21,
                                                                              (MethodInfo *)0x0);
-                                                        if (pTVar24 != (Transform *)0x0) {
-                                                          pTVar24 = UnityEngine.CoreModule.dll::
+                                                        if (pTVar26 != (Transform *)0x0) {
+                                                          pTVar26 = UnityEngine.CoreModule.dll::
                                                                     UnityEngine::Transform::
-                                                                    Transform_GetParent(pTVar24,(
+                                                                    Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pTVar24 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pTVar26 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
-                                                              Transform_GetParent(pTVar24,(
+                                                              Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pGVar25 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pGVar27 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Component::
                                                               Component_get_gameObject
-                                                                        ((Component *)pTVar24,
+                                                                        ((Component *)pTVar26,
                                                                          (MethodInfo *)0x0);
-                                                    if (pGVar25 != (GameObject *)0x0) {
+                                                    if (pGVar27 != (GameObject *)0x0) {
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_SetActive
-                                                                (pGVar25,value_00,(MethodInfo *)0x0)
+                                                                (pGVar27,value_00,(MethodInfo *)0x0)
                                                       ;
-                                                      pIVar19 = (this->fields).
-                                                                backgroundOutlineColorPreview;
-                                                      if (pIVar19 != (Image *)0x0) {
-                                                        pTVar24 = UnityEngine.CoreModule.dll::
+                                                      pIVar21 = (this->fields).
+                                                               backgroundOutlineColorPreview;
+                                                      if (pIVar21 != (Image *)0x0) {
+                                                        pTVar26 = UnityEngine.CoreModule.dll::
                                                                   UnityEngine::Component::
                                                                   Component_get_transform
-                                                                            ((Component *)pIVar19,
+                                                                            ((Component *)pIVar21,
                                                                              (MethodInfo *)0x0);
-                                                        if (pTVar24 != (Transform *)0x0) {
-                                                          pTVar24 = UnityEngine.CoreModule.dll::
+                                                        if (pTVar26 != (Transform *)0x0) {
+                                                          pTVar26 = UnityEngine.CoreModule.dll::
                                                                     UnityEngine::Transform::
-                                                                    Transform_GetParent(pTVar24,(
+                                                                    Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pTVar24 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pTVar26 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
-                                                              Transform_GetParent(pTVar24,(
+                                                              Transform_GetParent(pTVar26,(
                                                   MethodInfo *)0x0);
-                                                  if (pTVar24 != (Transform *)0x0) {
-                                                    pGVar25 = UnityEngine.CoreModule.dll::
+                                                  if (pTVar26 != (Transform *)0x0) {
+                                                    pGVar27 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Component::
                                                               Component_get_gameObject
-                                                                        ((Component *)pTVar24,
+                                                                        ((Component *)pTVar26,
                                                                          (MethodInfo *)0x0);
-                                                    if (pGVar25 != (GameObject *)0x0) {
-                                                      bVar23 = bVar23 & value_00;
+                                                    if (pGVar27 != (GameObject *)0x0) {
+                                                      bVar25 = bVar25 & value_00;
                                                       if (cRam_? == '\0') {
                                                         FUN_?(&
                                                   void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
-                                                  ,bVar23,0);
+                                                  ,bVar25,0);
                                                   LOCK();
                                                   UNLOCK();
                                                   cRam_? = '\x01';
                                                   }
-                                                  if (pGVar25 == (GameObject *)0x0) {
+                                                  if (pGVar27 == (GameObject *)0x0) {
                                                     FUN_?();
                                                     pcVar9 = (code *)swi(3);
                                                     (*pcVar9)();
                                                     return;
                                                   }
-                                                  pvVar26 = (pGVar25->fields)._.m_CachedPtr;
-                                                  if (pvVar26 == (void *)0x0) {
+                                                  pvVar28 = (pGVar27->fields)._.m_CachedPtr;
+                                                  if (pvVar28 == (void *)0x0) {
                                                     UnityEngine.CoreModule.dll::UnityEngine::
                                                     Bindings::ThrowHelper::
                                                     ThrowHelper_2_ThrowNullReferenceException
-                                                              ((Object *)pGVar25,(MethodInfo *)0x0);
+                                                              ((Object *)pGVar27,(MethodInfo *)0x0);
                                                     pcVar9 = (code *)swi(3);
                                                     (*pcVar9)();
                                                     return;
@@ -935,8 +904,8 @@ code_?:
                                                   if (pcRam_? == (code *)0x0) {
                                                     pcVar9 = (code *)FUN_?(&UNK_?);
                                                     if (pcVar9 == (code *)0x0) {
-                                                      uVar27 = func_?(&UNK_?);
-                                                      FUN_?(uVar27,0);
+                                                      uVar29 = func_?(&UNK_?);
+                                                      FUN_?(uVar29,0);
                                                       pcVar9 = (code *)swi(3);
                                                       (*pcVar9)();
                                                       return;
@@ -945,7 +914,7 @@ code_?:
                                                   pcRam_? = pcVar9;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                                                  (*pcRam_?)(pvVar26,bVar23);
+                                                  (*pcRam_?)(pvVar28,bVar25);
                                                   return;
                                                   }
                                                   }
@@ -984,22 +953,16 @@ code_?:
                                                   }
                                                   }
                                                   }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  FUN_?();
-                                                  pcVar9 = (code *)swi(3);
-                                                  (*pcVar9)();
-                                                  return;
                                                   }
                                                   }
                                                   }
                                                 }
                                               }
                                             }
+                                            FUN_?();
+                                            pcVar9 = (code *)swi(3);
+                                            (*pcVar9)();
+                                            return;
                                           }
                                         }
                                       }
@@ -1221,6 +1184,9 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_OnColorPressed
     FUN_?(&TypeInfo__MessageBoxSettings);
     LOCK();
     UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
+    LOCK();
+    UNLOCK();
     FUN_?(&StringLiteral_colorB);
     LOCK();
     UNLOCK();
@@ -1236,10 +1202,12 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_OnColorPressed
     cRam_? = '\x01';
   }
   hashtable = (this->fields).data;
-  if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-    FUN_?(TypeInfo__MessageBoxSettings);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).
+               field_0x1c == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
   }
-  hashtable_00 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
+  hashtable_00 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->
+                 static_fields->DefaultData;
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
     FUN_?();
   }
@@ -1348,6 +1316,9 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_OnColorPressed
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                                 (pGVar14,1,(MethodInfo *)0x0);
                       this_00 = (this->fields).canvas;
+                      if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
+                        FUN_?(TypeInfo__MessageBoxSettings);
+                      }
                       if (this_00 != (RectTransform *)0x0) {
                         value.y = (TypeInfo__MessageBoxSettings->static_fields->
                                   ColorEditingCanvasSize).y;
@@ -1708,6 +1679,16 @@ Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_ReadData
     LOCK();
     UNLOCK();
     FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
                  );
     LOCK();
@@ -1718,8 +1699,26 @@ Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_ReadData
     LOCK();
     UNLOCK();
     FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::Object,_System::Object>__get_Current__
                  );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
     LOCK();
     UNLOCK();
     FUN_?(&
@@ -1727,121 +1726,260 @@ Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_ReadData
                  );
     LOCK();
     UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<System::String>__GetEnumerator__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
+    LOCK();
+    UNLOCK();
     FUN_?();
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
+  LStack_1._list = (List_1_System_Object_ *)0x0;
+  LStack_1._index = 0;
+  LStack_1._version = 0;
+  LStack_1._current = (Object *)0x0;
   this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_02 != (MVWorldObjectClientManager *)0x0) &&
-     (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
-                         (this_02,woID,(MethodInfo *)0x0), pMVar1 != (MVWorldObjectClient *)0x0)) {
-    pDVar2 = (pMVar1->fields)._.data;
-    if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-      FUN_?(TypeInfo__MessageBoxSettings);
+     (pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                         (this_02,woID,(MethodInfo *)0x0), pMVar2 != (MVWorldObjectClient *)0x0)) {
+    pDVar3 = (pMVar2->fields)._.data;
+    pDStack_4 = pDVar3;
+    if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
-               *)TypeInfo__MessageBoxSettings->static_fields->DefaultData;
-    if ((this_00 !=
-         (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
-         0x0) && (pDVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
-                           UIElements::TypeConverterRegistry+ConverterKey,System::Object]::
-                           Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Keys
-                                     (this_00,
-                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Keys__
-                                     ),
-                 pDVar3 != (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
-                            *)0x0)) {
-      uStack_4 = (pDVar3->fields)._dictionary;
-      puStack_5 = (undefined4 *)0x0;
-      uStack_6 = 0;
-      if (iRam_? != 0) {
-        uVar7 = (uint)((ulonglong)&uStack_4 >> 0xc);
-        puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
-        do {
-          uVar9 = *puVar8;
-          LOCK();
-          uVar10 = *puVar8;
-          if (uVar9 == uVar10) {
-            *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
-          }
-          UNLOCK();
-        } while (uVar9 != uVar10);
+    pMVar5 = 
+    int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+    ;
+    IVar6 = Extensions::Extensions_GetValueOrDefault_2
+                      (pDVar3,StringLiteral_version,1,
+                       int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+                      );
+    aIStackX_10[0] = IVar6;
+    pOVar7 = (Object *)FUN_?(uRam_?,aIStackX_10);
+    if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar3,(Object *)StringLiteral_version,pOVar7,
+                 (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar5 >> 8),1),
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).
+                   field_0x1c == 0) {
+        FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
       }
-      if (uStack_4 ==
-          (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
-          0x0) {
-        FUN_?();
-        pcVar11 = (code *)swi(3);
-        pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar11)();
-        return pDVar2;
-      }
-      iStack_12 = (uStack_4->fields)._version;
-      uStack_6 = 0;
-      uStack_4._4_4_ = (undefined4)((ulonglong)uStack_4 >> 0x20);
-      uStack_13 = (undefined4)uStack_4;
-      uStack_14 = uStack_4._4_4_;
-      uStack_15 = 0;
-      apOStack_16[0] = (Object *)0x0;
-      uStack_4 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
-                   *)0x0;
-      puStack_5 = &uStack_13;
-      while (lVar17 = CONCAT44(uStack_14,uStack_13), lVar17 != 0) {
-        if (iStack_12 != *(int *)(lVar17 + 0x2c)) goto code_?;
-        do {
-          if (lVar17 == 0) goto code_?;
-          if (*(uint *)(lVar17 + 0x20) <= uStack_15) {
-            return pDVar2;
-          }
-          lVar18 = *(longlong *)(lVar17 + 0x18);
-          lVar19 = (longlong)(int)uStack_15;
-          uVar7 = uStack_15 + 1;
-          if (lVar18 == 0) goto code_?;
-          bVar20 = *(uint *)(lVar18 + 0x18) <= uStack_15;
-          uStack_15 = uVar7;
-          if (bVar20) goto code_?;
-        } while (*(int *)(lVar18 + 0x20 + lVar19 * 0x18) < 0);
-        apOStack_16[0] = *(Object **)(lVar18 + 0x28 + lVar19 * 0x18);
-        func_?(apOStack_16);
-        key = (Object *)0x0;
-        if (apOStack_16[0] != (Object *)0x0) {
-          if (apOStack_16[0]->klass == pORam0000000182dbbc60) {
-            key = apOStack_16[0];
-          }
-          if (key == (Object *)0x0) goto code_?;
+      pDVar8 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 *)TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->
+                   static_fields->DefaultData;
+      if ((pDVar8 !=
+           (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+           0x0) && (pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                             UIElements::TypeConverterRegistry+ConverterKey,System::Object]::
+                             Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Keys
+                                       (pDVar8,
+                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Keys__
+                                       ),
+                   pDVar9 != (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                              *)0x0)) {
+        pDVar8 = (pDVar9->fields)._dictionary;
+        pLStack_10 = (List_1_T_Enumerator_System_Object_ *)0x0;
+        uStack_11 = 0;
+        if (iRam_? != 0) {
+          uVar12 = (uint)((ulonglong)&uStack_13 >> 0xc);
+          lVar14 = (ulonglong)((uVar12 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar15 = *(ulonglong *)(lVar14 + 0xADDR);
+            puVar16 = (ulonglong *)(lVar14 + 0xADDR);
+            LOCK();
+            bVar17 = uVar15 == *puVar16;
+            if (bVar17) {
+              *puVar16 = uVar15 | 1L << (uVar12 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar17);
         }
-        if (*(int *)&(TypeInfo__MessageBoxSettings->_1).field_0x1c == 0) {
-          FUN_?(TypeInfo__MessageBoxSettings);
+        if (pDVar8 ==
+            (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *
+            )0x0) {
+          uStack_13 = pDVar8;
+          FUN_?();
+          pcVar18 = (code *)swi(3);
+          pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar18)();
+          return pDVar3;
         }
-        this_01 = TypeInfo__MessageBoxSettings->static_fields->DefaultData;
-        if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
-                          (this_01,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__TryInsert
-                  (pDVar2,key,value,InsertionBehavior__Enum_None,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-                   ->klass->rgctx_data[0x22].method);
+        LStack_19._version = (pDVar8->fields)._version;
+        uStack_11 = 0;
+        uStack_13._0_4_ = SUB84(pDVar8,0);
+        uStack_13._4_4_ = (undefined4)((ulonglong)pDVar8 >> 0x20);
+        LStack_19._list._0_4_ = (undefined4)uStack_13;
+        LStack_19._list._4_4_ = uStack_13._4_4_;
+        LStack_19._index = 0;
+        LStack_19._current = (Object *)0x0;
+        uStack_13 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                     *)0x0;
+        pLStack_10 = &LStack_19;
+        while (lVar14 = CONCAT44(LStack_19._list._4_4_,LStack_19._list._0_4_), lVar14 != 0) {
+          if (LStack_19._version != *(int *)(lVar14 + 0x2c)) goto code_?;
+          do {
+            if (lVar14 == 0) goto code_?;
+            if (*(uint *)(lVar14 + 0x20) <= (uint)LStack_19._index) {
+              LStack_19._index = *(int *)(lVar14 + 0x20) + 1;
+              LStack_19._current = (Object *)0x0;
+              if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->
+                           _1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&
+                              MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&TypeInfo__System__Collections__Generic__List<System::String>);
+                LOCK();
+                UNLOCK();
+                FUN_?(&TypeInfo__System__String);
+                LOCK();
+                UNLOCK();
+                FUN_?(&StringLiteral_text);
+                LOCK();
+                UNLOCK();
+                FUN_?(&StringLiteral_version);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (IVar6 == 2) {
+                return pDVar3;
+              }
+              collection = (IEnumerable_1_System_Object_ *)FUN_?(TypeInfo__System__String,1)
+              ;
+              if (collection == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
+              FUN_?(collection,0,StringLiteral_version);
+              this_03 = (List_1_System_Object_ *)
+                        FUN_?(TypeInfo__System__Collections__Generic__List<System::String>);
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object___ctor_1
+                        (this_03,collection,
+                         MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
+                        );
+              if (IVar6 == 1) {
+                if (this_03 == (List_1_System_Object_ *)0x0) goto code_?;
+                FUN_?(this_03,StringLiteral_text,
+                              MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                             );
+              }
+              else if (this_03 == (List_1_System_Object_ *)0x0) {
+                return pDVar3;
+              }
+              aIStackX_10[0] = 2;
+              pOVar7 = (Object *)FUN_?(uRam_?,aIStackX_10);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        (pDVar3,(Object *)StringLiteral_version,pOVar7,
+                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pDVar8 >> 8),1),
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              if (iRam_? != 0) {
+                uVar12 = (uint)((ulonglong)&uStack_13 >> 0xc);
+                lVar14 = (ulonglong)((uVar12 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar15 = *(ulonglong *)(lVar14 + 0xADDR);
+                  puVar16 = (ulonglong *)(lVar14 + 0xADDR);
+                  LOCK();
+                  bVar17 = uVar15 == *puVar16;
+                  if (bVar17) {
+                    *puVar16 = uVar15 | 1L << (uVar12 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar17);
+              }
+              pLStack_10 = (List_1_T_Enumerator_System_Object_ *)
+                           ((ulonglong)(uint)(this_03->fields)._version << 0x20);
+              uStack_11 = 0;
+              LStack_1._8_8_ = pLStack_10;
+              LStack_1._current = (Object *)0x0;
+              uStack_13 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                           *)0x0;
+              pLStack_10 = &LStack_1;
+              LStack_1._list = this_03;
+              while( true ) {
+                bVar20 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                        Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                  (&LStack_1,
+                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__MoveNext__
+                                  );
+                pOVar7 = LStack_1._current;
+                if (bVar20 == 0) {
+                  return pDVar3;
+                }
+                this_01 = (this->fields).settingsBase;
+                pOVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                    (pDVar3,LStack_1._current,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                    );
+                if (this_01 == (SettingsBase *)0x0) break;
+                SettingsBase::SettingsBase_OnSettingChanged
+                          (this_01,(String *)pOVar7,pOVar21,(MethodInfo *)0x0);
+              }
+              goto code_?;
+            }
+            pDVar8 = *(Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                        **)(lVar14 + 0x18);
+            lVar22 = (longlong)LStack_19._index;
+            uVar12 = LStack_19._index + 1;
+            if (pDVar8 ==
+                (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 *)0x0) goto code_?;
+            bVar17 = *(uint *)&(pDVar8->fields)._entries <= (uint)LStack_19._index;
+            LStack_19._index = uVar12;
+            if (bVar17) goto code_?;
+          } while ((&(pDVar8->fields)._count)[lVar22 * 6] < 0);
+          LStack_19._current = *(Object **)(&(pDVar8->fields)._freeCount + lVar22 * 6);
+          func_?(&LStack_19._current);
+          pOVar7 = LStack_19._current;
+          if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->_1).
+                       field_0x1c == 0) {
+            FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData);
+          }
+          this_00 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVTextMsg__MvTextMsgData->
+                    static_fields->DefaultData;
+          if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0)
+          goto code_?;
+          pOVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__get_Item
+                              (this_00,pOVar7,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              );
+          pDVar8 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                     *)0x0;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    (pDVar3,pOVar7,pOVar21,InsertionBehavior__Enum_None,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+        }
+        goto code_?;
       }
-      goto code_?;
     }
   }
-  FUN_?();
 code_?:
   FUN_?();
 code_?:
   FUN_?();
 code_?:
   FUN_?();
+  uVar12 = LStack_19._index;
 code_?:
-  FUN_?();
-  uVar7 = uStack_15;
-code_?:
-  uStack_15 = uVar7;
+  LStack_19._index = uVar12;
   FUN_?();
 code_?:
   FUN_?();
@@ -1852,9 +1990,12 @@ code_?:
 code_?:
   FUN_?();
   FUN_?();
-  pcVar11 = (code *)swi(3);
-  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar11)();
-  return pDVar2;
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar18)();
+  return pDVar3;
 }
 
 
@@ -1885,7 +2026,7 @@ Object * Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_RemoveQuadF
                            (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 != 0)
        ))) && (val != (Object *)0x0)) {
     pSVar2 = (String *)0x0;
-    if (val->klass == pORam0000000182dbbc60) {
+    if (val->klass == pORam0000000182dbdde0) {
       pSVar2 = (String *)val;
     }
     if (pSVar2 != (String *)0x0) {
@@ -2483,733 +2624,17 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings__cctor(MethodIn
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                 );
-    LOCK();
-    UNLOCK();
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                 );
-    LOCK();
-    UNLOCK();
-    FUN_?(&
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 );
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MessageBoxSettings);
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__System__Single);
-    LOCK();
-    UNLOCK();
-    FUN_?(&_13AC5D639E46A8417678C76D1EADC8C36ADC8114D496430ED3E78AD584C3EB36_Field);
-    LOCK();
-    UNLOCK();
-    FUN_?(&F6BB1294DA2F78CD935B01C7656280DF5EAA0439E9D97BC03775825A41A508E4_Field);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_fontSelection);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textColor);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textOutlineColor);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_billboard);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_backgroundWidth);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textUnderscored);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_backgroundOutlineColor);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_backgroundColor);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_backgroundOutline);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_backgroundRadius);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_backgroundOutlineThickness);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textOutline);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_test);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textOutlineThickness);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_text);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textItalic);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textSize);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_textThickness);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_background);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,4);
-  mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
-            ((Array *)pSVar1,_F6BB1294DA2F78CD935B01C7656280DF5EAA0439E9D97BC03775825A41A508E4_Field
-             ,(MethodInfo *)0x0);
-  bVar2 = iRam_? != 0;
-  TypeInfo__MessageBoxSettings->static_fields->DefaultTextColor = pSVar1;
-  if (bVar2) {
-    uVar3 = (uint)((ulonglong)TypeInfo__MessageBoxSettings->static_fields >> 0xc);
-    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-    do {
-      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-      LOCK();
-      bVar2 = uVar5 == *puVar6;
-      if (bVar2) {
-        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-      }
-      UNLOCK();
-    } while (!bVar2);
-  }
-  pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,4);
-  if (pSVar1 != (Single__Array *)0x0) {
-    if ((uint)pSVar1->max_length < 4) {
-code_?:
-      FUN_?();
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
-      return;
-    }
-    pSVar1->vector[3] = 1.0;
-    TypeInfo__MessageBoxSettings->static_fields->DefaultTextOutlineColor = pSVar1;
-    if (iRam_? != 0) {
-      uVar3 = (uint)((ulonglong)
-                      &TypeInfo__MessageBoxSettings->static_fields->DefaultTextOutlineColor >> 0xc);
-      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-      do {
-        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-        LOCK();
-        bVar2 = uVar5 == *puVar6;
-        if (bVar2) {
-          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-        }
-        UNLOCK();
-      } while (!bVar2);
-    }
-    pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,4);
-    if (pSVar1 != (Single__Array *)0x0) {
-      if ((uint)pSVar1->max_length < 4) goto code_?;
-      pSVar1->vector[3] = 0.5;
-      TypeInfo__MessageBoxSettings->static_fields->DefaultBackgroundColor = pSVar1;
-      if (iRam_? != 0) {
-        uVar3 = (uint)((ulonglong)
-                        &TypeInfo__MessageBoxSettings->static_fields->DefaultBackgroundColor >> 0xc)
-        ;
-        uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-        in_R9 = (ulonglong)(uVar3 & 0x3f);
-        do {
-          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-          LOCK();
-          bVar2 = uVar5 == *puVar6;
-          if (bVar2) {
-            *puVar6 = uVar5 | 1L << in_R9;
-          }
-          UNLOCK();
-        } while (!bVar2);
-      }
-      pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,4);
-      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-      RuntimeHelpers_InitializeArray_1
-                ((Array *)pSVar1,
-                 __13AC5D639E46A8417678C76D1EADC8C36ADC8114D496430ED3E78AD584C3EB36_Field,
-                 (MethodInfo *)0x0);
-      bVar2 = iRam_? != 0;
-      TypeInfo__MessageBoxSettings->static_fields->DefaultBackgroundOutlineColor = pSVar1;
-      if (bVar2) {
-        uVar3 = (uint)((ulonglong)
-                        &TypeInfo__MessageBoxSettings->static_fields->DefaultBackgroundOutlineColor
-                       >> 0xc);
-        uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-        do {
-          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-          LOCK();
-          bVar2 = uVar5 == *puVar6;
-          if (bVar2) {
-            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-          }
-          UNLOCK();
-        } while (!bVar2);
-      }
-      pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,2);
-      if (pSVar1 != (Single__Array *)0x0) {
-        if (((int)pSVar1->max_length == 0) ||
-           (pSVar1->vector[0] = 1.0, (uint)pSVar1->max_length < 2)) goto code_?;
-        pSVar1->vector[1] = 200.0;
-        TypeInfo__MessageBoxSettings->static_fields->FontSizeMinMax = pSVar1;
-        if (iRam_? != 0) {
-          uVar3 = (uint)((ulonglong)&TypeInfo__MessageBoxSettings->static_fields->FontSizeMinMax >>
-                         0xc);
-          uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-          do {
-            uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-            puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-            LOCK();
-            bVar2 = uVar5 == *puVar6;
-            if (bVar2) {
-              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar2);
-        }
-        pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,2);
-        if (pSVar1 != (Single__Array *)0x0) {
-          if (((int)pSVar1->max_length == 0) ||
-             (pSVar1->vector[0] = -1.0, (uint)pSVar1->max_length < 2)) goto code_?;
-          pSVar1->vector[1] = 1.0;
-          TypeInfo__MessageBoxSettings->static_fields->TextThicknessMinMax = pSVar1;
-          if (iRam_? != 0) {
-            uVar3 = (uint)((ulonglong)
-                            &TypeInfo__MessageBoxSettings->static_fields->TextThicknessMinMax >> 0xc
-                           );
-            uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-            do {
-              uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-              puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-              LOCK();
-              bVar2 = uVar5 == *puVar6;
-              if (bVar2) {
-                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-              }
-              UNLOCK();
-            } while (!bVar2);
-          }
-          pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,2);
-          if (pSVar1 != (Single__Array *)0x0) {
-            if (((int)pSVar1->max_length == 0) ||
-               (pSVar1->vector[0] = 1.0, (uint)pSVar1->max_length < 2)) goto code_?;
-            pSVar1->vector[1] = 150.0;
-            TypeInfo__MessageBoxSettings->static_fields->BackgroundWidthMinMax = pSVar1;
-            if (iRam_? != 0) {
-              uVar3 = (uint)((ulonglong)
-                              &TypeInfo__MessageBoxSettings->static_fields->BackgroundWidthMinMax >>
-                             0xc);
-              uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-              do {
-                uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-                puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-                LOCK();
-                bVar2 = uVar5 == *puVar6;
-                if (bVar2) {
-                  *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-                }
-                UNLOCK();
-              } while (!bVar2);
-            }
-            pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,2);
-            if (pSVar1 != (Single__Array *)0x0) {
-              if (((int)pSVar1->max_length == 0) ||
-                 (pSVar1->vector[0] = 0.01, (uint)pSVar1->max_length < 2))
-              goto code_?;
-              pSVar1->vector[1] = 0.25;
-              TypeInfo__MessageBoxSettings->static_fields->TextOutlineThicknessMinMax = pSVar1;
-              if (iRam_? != 0) {
-                uVar3 = (uint)((ulonglong)
-                                &TypeInfo__MessageBoxSettings->static_fields->
-                                 TextOutlineThicknessMinMax >> 0xc);
-                uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                do {
-                  uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-                  puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-                  LOCK();
-                  bVar2 = uVar5 == *puVar6;
-                  if (bVar2) {
-                    *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-                  }
-                  UNLOCK();
-                } while (!bVar2);
-              }
-              pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,2);
-              if (pSVar1 != (Single__Array *)0x0) {
-                if ((uint)pSVar1->max_length < 2) goto code_?;
-                pSVar1->vector[1] = 100.0;
-                TypeInfo__MessageBoxSettings->static_fields->BackgroundRadiusMinMax = pSVar1;
-                if (iRam_? != 0) {
-                  uVar3 = (uint)((ulonglong)
-                                  &TypeInfo__MessageBoxSettings->static_fields->
-                                   BackgroundRadiusMinMax >> 0xc);
-                  uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                  in_R9 = (ulonglong)(uVar3 & 0x3f);
-                  do {
-                    uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-                    puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-                    LOCK();
-                    bVar2 = uVar5 == *puVar6;
-                    if (bVar2) {
-                      *puVar6 = uVar5 | 1L << in_R9;
-                    }
-                    UNLOCK();
-                  } while (!bVar2);
-                }
-                pSVar1 = (Single__Array *)FUN_?(TypeInfo__System__Single,2);
-                if (pSVar1 != (Single__Array *)0x0) {
-                  if (((int)pSVar1->max_length == 0) ||
-                     (pSVar1->vector[0] = 0.1, (uint)pSVar1->max_length < 2))
-                  goto code_?;
-                  pSVar1->vector[1] = 20.0;
-                  TypeInfo__MessageBoxSettings->static_fields->BackgroundOutlineThicknessMinMax =
-                       pSVar1;
-                  if (iRam_? != 0) {
-                    uVar3 = (uint)((ulonglong)
-                                    &TypeInfo__MessageBoxSettings->static_fields->
-                                     BackgroundOutlineThicknessMinMax >> 0xc);
-                    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                    do {
-                      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-                      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-                      LOCK();
-                      bVar2 = uVar5 == *puVar6;
-                      if (bVar2) {
-                        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-                      }
-                      UNLOCK();
-                    } while (!bVar2);
-                  }
-                  pMVar8 = TypeInfo__MessageBoxSettings->static_fields;
-                  (pMVar8->NormalCanvasSize).x = 1270.0;
-                  (pMVar8->NormalCanvasSize).y = 1070.0;
-                  pMVar8 = TypeInfo__MessageBoxSettings->static_fields;
-                  (pMVar8->ColorEditingCanvasSize).x = 800.0;
-                  (pMVar8->ColorEditingCanvasSize).y = 750.0;
-                  this = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-                          *)FUN_?(
-                                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                         );
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
-                            (this,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                            );
-                  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-                               *)0x0) {
-                    uVar4 = CONCAT71((int7)(in_R9 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_text,(Object *)StringLiteral_test,
-                               (InsertionBehavior__Enum)uVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    lVar9 = lRam_?;
-                    value = (Object *)0x0;
-                    uStackX_10 = 0;
-                    if (*(int *)(lRam_? + 0x28) < 0) {
-                      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
-                         (pOVar10 = value, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
-                        pOVar10 = (Object *)FUN_?(lRam_?);
-                        FUN_?(pOVar10 + 1,&uStackX_10,
-                                      (longlong)*(int *)(lVar9 + 0xf8) + -0x10);
-                        if (iRam_? != 0) {
-                          uVar3 = (uint)((ulonglong)(pOVar10 + 1) >> 0xc);
-                          uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                          uVar4 = (ulonglong)(uVar3 & 0x3f);
-                          do {
-                            uVar11 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
-                            puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
-                            LOCK();
-                            bVar2 = uVar11 == *puVar6;
-                            if (bVar2) {
-                              *puVar6 = uVar11 | 1L << uVar4;
-                            }
-                            UNLOCK();
-                          } while (!bVar2);
-                        }
-                      }
-                    }
-                    else {
-                      pOVar10 = (Object *)((ulonglong)uStackX_14 << 0x20);
-                    }
-                    uVar12 = CONCAT71((int7)(uVar4 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_fontSelection,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uStackX_10 = 0x3f000000;
-                    pOVar10 = (Object *)FUN_?(uRam_?,&uStackX_10);
-                    uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textSize,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uStackX_10 = 0;
-                    pOVar10 = (Object *)FUN_?(uRam_?,&uStackX_10);
-                    uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textThickness,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar4 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textColor,
-                               (Object *)
-                               TypeInfo__MessageBoxSettings->static_fields->DefaultTextColor,
-                               (InsertionBehavior__Enum)uVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar3 = uStackX_10;
-                    lVar9 = lRam_?;
-                    uStackX_10 = uStackX_10 & 0xffffff00;
-                    if (*(int *)(lRam_? + 0x28) < 0) {
-                      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
-                         (pOVar10 = value, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
-                        pOVar10 = (Object *)FUN_?(lRam_?);
-                        FUN_?(pOVar10 + 1,&uStackX_10,
-                                      (longlong)*(int *)(lVar9 + 0xf8) + -0x10);
-                        if (iRam_? != 0) {
-                          uVar3 = (uint)((ulonglong)(pOVar10 + 1) >> 0xc);
-                          uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                          uVar4 = (ulonglong)(uVar3 & 0x3f);
-                          do {
-                            uVar11 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
-                            puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
-                            LOCK();
-                            bVar2 = uVar11 == *puVar6;
-                            if (bVar2) {
-                              *puVar6 = uVar11 | 1L << uVar4;
-                            }
-                            UNLOCK();
-                          } while (!bVar2);
-                        }
-                      }
-                    }
-                    else {
-                      pOVar10 = (Object *)(CONCAT44(uStackX_14,uVar3) & 0xffffffffffffff00);
-                    }
-                    uVar12 = CONCAT71((int7)(uVar4 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textOutline,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uStackX_10 = 0x3dcccccd;
-                    pOVar10 = (Object *)FUN_?(uRam_?,&uStackX_10);
-                    uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textOutlineThickness,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar4 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textOutlineColor,
-                               (Object *)
-                               TypeInfo__MessageBoxSettings->static_fields->DefaultTextOutlineColor,
-                               (InsertionBehavior__Enum)uVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar3 = uStackX_10;
-                    lVar9 = lRam_?;
-                    uStackX_10 = uStackX_10 & 0xffffff00;
-                    if (*(int *)(lRam_? + 0x28) < 0) {
-                      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
-                         (pOVar10 = value, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
-                        pOVar10 = (Object *)FUN_?(lRam_?);
-                        FUN_?(pOVar10 + 1,&uStackX_10,
-                                      (longlong)*(int *)(lVar9 + 0xf8) + -0x10);
-                        if (iRam_? != 0) {
-                          uVar3 = (uint)((ulonglong)(pOVar10 + 1) >> 0xc);
-                          uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                          uVar4 = (ulonglong)(uVar3 & 0x3f);
-                          do {
-                            uVar11 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
-                            puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
-                            LOCK();
-                            bVar2 = uVar11 == *puVar6;
-                            if (bVar2) {
-                              *puVar6 = uVar11 | 1L << uVar4;
-                            }
-                            UNLOCK();
-                          } while (!bVar2);
-                        }
-                      }
-                    }
-                    else {
-                      pOVar10 = (Object *)(CONCAT44(uStackX_14,uVar3) & 0xffffffffffffff00);
-                    }
-                    uVar4 = CONCAT71((int7)(uVar4 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textItalic,pOVar10,
-                               (InsertionBehavior__Enum)uVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar3 = uStackX_10;
-                    lVar9 = lRam_?;
-                    uStackX_10 = uStackX_10 & 0xffffff00;
-                    if (*(int *)(lRam_? + 0x28) < 0) {
-                      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
-                         (pOVar10 = value, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
-                        pOVar10 = (Object *)FUN_?(lRam_?);
-                        FUN_?(pOVar10 + 1,&uStackX_10,
-                                      (longlong)*(int *)(lVar9 + 0xf8) + -0x10);
-                        if (iRam_? != 0) {
-                          uVar3 = (uint)((ulonglong)(pOVar10 + 1) >> 0xc);
-                          uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                          uVar4 = (ulonglong)(uVar3 & 0x3f);
-                          do {
-                            uVar11 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
-                            puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
-                            LOCK();
-                            bVar2 = uVar11 == *puVar6;
-                            if (bVar2) {
-                              *puVar6 = uVar11 | 1L << uVar4;
-                            }
-                            UNLOCK();
-                          } while (!bVar2);
-                        }
-                      }
-                    }
-                    else {
-                      pOVar10 = (Object *)(CONCAT44(uStackX_14,uVar3) & 0xffffffffffffff00);
-                    }
-                    uVar4 = CONCAT71((int7)(uVar4 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_textUnderscored,pOVar10,
-                               (InsertionBehavior__Enum)uVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar3 = uStackX_10;
-                    lVar9 = lRam_?;
-                    uStackX_10 = uStackX_10 & 0xffffff00;
-                    if (*(int *)(lRam_? + 0x28) < 0) {
-                      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
-                         (pOVar10 = value, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
-                        pOVar10 = (Object *)FUN_?(lRam_?);
-                        FUN_?(pOVar10 + 1,&uStackX_10,
-                                      (longlong)*(int *)(lVar9 + 0xf8) + -0x10);
-                        if (iRam_? != 0) {
-                          uVar3 = (uint)((ulonglong)(pOVar10 + 1) >> 0xc);
-                          uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                          uVar4 = (ulonglong)(uVar3 & 0x3f);
-                          do {
-                            uVar11 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
-                            puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
-                            LOCK();
-                            bVar2 = uVar11 == *puVar6;
-                            if (bVar2) {
-                              *puVar6 = uVar11 | 1L << uVar4;
-                            }
-                            UNLOCK();
-                          } while (!bVar2);
-                        }
-                      }
-                    }
-                    else {
-                      pOVar10 = (Object *)(CONCAT44(uStackX_14,uVar3) & 0xffffffffffffff00);
-                    }
-                    uVar12 = CONCAT71((int7)(uVar4 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_background,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uStackX_10 = 0x41f00000;
-                    pOVar10 = (Object *)FUN_?(uRam_?,&uStackX_10);
-                    uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_backgroundWidth,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_backgroundColor,
-                               (Object *)
-                               TypeInfo__MessageBoxSettings->static_fields->DefaultBackgroundColor,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uStackX_10 = 0x41200000;
-                    pOVar10 = (Object *)FUN_?(uRam_?,&uStackX_10);
-                    uVar4 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_backgroundRadius,pOVar10,
-                               (InsertionBehavior__Enum)uVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar3 = uStackX_10;
-                    lVar9 = lRam_?;
-                    uStackX_10 = uStackX_10 & 0xffffff00;
-                    if (*(int *)(lRam_? + 0x28) < 0) {
-                      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
-                         (pOVar10 = value, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
-                        pOVar10 = (Object *)FUN_?(lRam_?);
-                        FUN_?(pOVar10 + 1,&uStackX_10,
-                                      (longlong)*(int *)(lVar9 + 0xf8) + -0x10);
-                        if (iRam_? != 0) {
-                          uVar3 = (uint)((ulonglong)(pOVar10 + 1) >> 0xc);
-                          uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                          uVar4 = (ulonglong)(uVar3 & 0x3f);
-                          do {
-                            uVar11 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
-                            puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
-                            LOCK();
-                            bVar2 = uVar11 == *puVar6;
-                            if (bVar2) {
-                              *puVar6 = uVar11 | 1L << uVar4;
-                            }
-                            UNLOCK();
-                          } while (!bVar2);
-                        }
-                      }
-                    }
-                    else {
-                      pOVar10 = (Object *)(CONCAT44(uStackX_14,uVar3) & 0xffffffffffffff00);
-                    }
-                    uVar12 = CONCAT71((int7)(uVar4 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_backgroundOutline,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uStackX_10 = 0x40000000;
-                    pOVar10 = (Object *)FUN_?(uRam_?,&uStackX_10);
-                    uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_backgroundOutlineThickness,pOVar10,
-                               (InsertionBehavior__Enum)uVar12,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar4 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_backgroundOutlineColor,
-                               (Object *)
-                               TypeInfo__MessageBoxSettings->static_fields->
-                               DefaultBackgroundOutlineColor,(InsertionBehavior__Enum)uVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    uVar3 = uStackX_10;
-                    lVar9 = lRam_?;
-                    uStackX_10 = uStackX_10 & 0xffffff00;
-                    if (*(int *)(lRam_? + 0x28) < 0) {
-                      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
-                         ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
-                        value = (Object *)FUN_?(lRam_?);
-                        FUN_?(value + 1,&uStackX_10,(longlong)*(int *)(lVar9 + 0xf8) + -0x10
-                                     );
-                        if (iRam_? != 0) {
-                          uVar3 = (uint)((ulonglong)(value + 1) >> 0xc);
-                          uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                          uVar4 = (ulonglong)(uVar3 & 0x3f);
-                          do {
-                            uVar11 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
-                            puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
-                            LOCK();
-                            bVar2 = uVar11 == *puVar6;
-                            if (bVar2) {
-                              *puVar6 = uVar11 | 1L << uVar4;
-                            }
-                            UNLOCK();
-                          } while (!bVar2);
-                        }
-                      }
-                    }
-                    else {
-                      value = (Object *)(CONCAT44(uStackX_14,uVar3) & 0xffffffffffffff00);
-                    }
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                              ((Dictionary_2_System_Object_System_Object_ *)this,
-                               (Object *)StringLiteral_billboard,value,
-                               (InsertionBehavior__Enum)CONCAT71((int7)(uVar4 >> 8),2),
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                               ->klass->rgctx_data[0x22].method);
-                    TypeInfo__MessageBoxSettings->static_fields->DefaultData =
-                         (Dictionary_2_System_Object_System_Object_ *)this;
-                    if (iRam_? != 0) {
-                      uVar3 = (uint)((ulonglong)
-                                      &TypeInfo__MessageBoxSettings->static_fields->DefaultData >>
-                                     0xc);
-                      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-                      do {
-                        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-                        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-                        LOCK();
-                        bVar2 = uVar5 == *puVar6;
-                        if (bVar2) {
-                          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-                        }
-                        UNLOCK();
-                      } while (!bVar2);
-                    }
-                    return;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  FUN_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pMVar1 = TypeInfo__MessageBoxSettings->static_fields;
+  (pMVar1->NormalCanvasSize).x = 1270.0;
+  (pMVar1->NormalCanvasSize).y = 1070.0;
+  pMVar1 = TypeInfo__MessageBoxSettings->static_fields;
+  (pMVar1->ColorEditingCanvasSize).x = 800.0;
+  (pMVar1->ColorEditingCanvasSize).y = 750.0;
   return;
 }
 

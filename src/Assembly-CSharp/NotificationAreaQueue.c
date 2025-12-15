@@ -321,8 +321,8 @@ code_?:
           this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                      *)QStack_12._currentElement[1].monitor;
           auStack_16[0] = 1;
-          ppMVar1 = (MethodInfo **)pNRam0000000182dbbbe8;
-          pOVar17 = (Object *)FUN_?(pNRam0000000182dbbbe8,auStack_16);
+          ppMVar1 = (MethodInfo **)pNRam0000000182dbdd68;
+          pOVar17 = (Object *)FUN_?(pNRam0000000182dbdd68,auStack_16);
           if (this_00 ==
               (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)0x0) goto code_?;
@@ -335,8 +335,8 @@ code_?:
         } while (iVar18 < 0);
         this_01 = (Dictionary_2_System_Object_System_Object_ *)pOVar15[1].monitor;
         auStack_16[0] = 1;
-        ppMVar1 = (MethodInfo **)pNRam0000000182dbbbe8;
-        pOVar15 = (Object *)FUN_?(pNRam0000000182dbbbe8,auStack_16);
+        ppMVar1 = (MethodInfo **)pNRam0000000182dbdd68;
+        pOVar15 = (Object *)FUN_?(pNRam0000000182dbdd68,auStack_16);
         if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           pOVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                     Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -344,8 +344,8 @@ code_?:
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                               );
           auStack_16[0] = 1;
-          ppMVar1 = (MethodInfo **)pNRam0000000182dbbbe8;
-          pOVar17 = (Object *)FUN_?(pNRam0000000182dbbbe8,auStack_16);
+          ppMVar1 = (MethodInfo **)pNRam0000000182dbdd68;
+          pOVar17 = (Object *)FUN_?(pNRam0000000182dbdd68,auStack_16);
           if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
           goto code_?;
         }

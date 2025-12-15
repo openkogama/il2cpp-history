@@ -107,7 +107,7 @@ void Assembly-CSharp.dll::MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_Initial
                          (this_00,(Object *)StringLiteral_health,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          ), pOVar1 != (Object *)0x0)) {
-    if ((pOVar1->klass->_0).element_class != (pORam0000000182dbbc48->_0).element_class) {
+    if ((pOVar1->klass->_0).element_class != (pORam0000000182dbddc8->_0).element_class) {
       FUN_?(pOVar1);
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
@@ -122,11 +122,11 @@ void Assembly-CSharp.dll::MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_Initial
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                            ), bVar3 != 0)) && (pOStackX_8 != (Object *)0x0)) {
       pOVar1 = (Object *)0x0;
-      if (pOStackX_8->klass == pORam0000000182dbbc48) {
+      if (pOStackX_8->klass == pORam0000000182dbddc8) {
         pOVar1 = pOStackX_8;
       }
       if (pOVar1 != (Object *)0x0) {
-        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbbc48->_0).element_class) {
+        if ((pOStackX_8->klass->_0).element_class != (pORam0000000182dbddc8->_0).element_class) {
           FUN_?(pOStackX_8);
           pcVar2 = (code *)swi(3);
           (*pcVar2)();

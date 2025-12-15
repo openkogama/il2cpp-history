@@ -87,31 +87,31 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__76_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__77_1;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _DeleteWoid_b__76_1(IUIStack handler, BaseEventData data);
+		internal void _DeleteWoid_b__77_1(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass76_0
+	private sealed class __c__DisplayClass77_0
 	{
 		// Fields
 		public string errorText;
 
 		// Constructors
-		public __c__DisplayClass76_0();
+		public __c__DisplayClass77_0();
 
 		// Methods
 		internal void _DeleteWoid_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _HandleCursorVisible_d__67 : IEnumerator<object>
+	private sealed class _HandleCursorVisible_d__68 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -123,7 +123,7 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 
 		// Constructors
 		[DebuggerHidden]
-		public _HandleCursorVisible_d__67(int __1__state);
+		public _HandleCursorVisible_d__68(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -140,6 +140,7 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	private void Awake();
 	protected void OnDestroy();
 	private void Start();
+	private void OnStackChanged();
 	private void HandleFocusInputSuppress();
 	private void Update();
 	private void HandleInput();
@@ -160,7 +161,7 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	public void SetState(EditorEvent editorEvent);
 	public void SetState(PlayModeOnlyEvent playModeOnlyEvent);
 	public void ClearStateStack();
-	[IteratorStateMachine(typeof(_HandleCursorVisible_d__67))]
+	[IteratorStateMachine(typeof(_HandleCursorVisible_d__68))]
 	private IEnumerator HandleCursorVisible();
 	public bool IsGridSnap();
 	public void Set(bool snap);
@@ -170,10 +171,10 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	public void DeleteWoid(int woid);
 	public void SetUIReady();
 	[CompilerGenerated]
-	private void _HandleInput_b__49_0(IUIStack x, BaseEventData y);
+	private void _HandleInput_b__50_0(IUIStack x, BaseEventData y);
 	[CompilerGenerated]
-	private void _RegisterShortcuts_b__73_0(IShortcutKeyRegister x, BaseEventData y);
+	private void _RegisterShortcuts_b__74_0(IShortcutKeyRegister x, BaseEventData y);
 	[CompilerGenerated]
-	private void _RegisterShortcuts_b__73_1(IShortcutKeyRegister x, BaseEventData y);
+	private void _RegisterShortcuts_b__74_1(IShortcutKeyRegister x, BaseEventData y);
 }
 

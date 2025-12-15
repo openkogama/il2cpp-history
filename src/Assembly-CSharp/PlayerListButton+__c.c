@@ -1,7 +1,7 @@
 
-/* Void <CreatePlayerList>b__13_0(IUIStack, BaseEventData) */
+/* Void <CreatePlayerList>b__17_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::PlayerListButton+<>c::PlayerListButton_c__CreatePlayerList_b__13_0
+void Assembly-CSharp.dll::PlayerListButton+<>c::PlayerListButton_c__CreatePlayerList_b__17_0
                (PlayerListButton_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {

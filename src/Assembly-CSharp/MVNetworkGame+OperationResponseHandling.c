@@ -218,7 +218,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
             }
             pSVar9 = (String *)0x0;
             if (pSVar8 != (String *)0x0) {
-              if (pSVar8->klass == pSRam0000000182dbbc60) {
+              if (pSVar8->klass == pSRam0000000182dbdde0) {
                 pSVar9 = pSVar8;
               }
               if (pSVar9 == (String *)0x0) {
@@ -267,7 +267,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::
             }
             pSVar9 = (String *)0x0;
             if (pSVar8 != (String *)0x0) {
-              if (pSVar8->klass == pSRam0000000182dbbc60) {
+              if (pSVar8->klass == pSRam0000000182dbdde0) {
                 pSVar9 = pSVar8;
               }
               if (pSVar9 == (String *)0x0) {

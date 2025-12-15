@@ -1969,9 +1969,9 @@ code_?:
                 if (pMVar23 != (MethodInfo *)0x0) {
                   if ((*pMVar23->name == '.') && ((pMVar23->flags & 0x800) != 0)) {
                     ppMVar24 = ppMVar15;
-                    while (pcVar25 = (char *)((longlong)ppMVar24 + 0xADDR),
+                    while (ppMVar25 = ppMVar24 + 0x3052a1b1,
                           ppMVar24 = (MethodInfo **)((longlong)ppMVar24 + 1),
-                          *pcVar25 == (pMVar23->name + -1)[(longlong)ppMVar24]) {
+                          *(char *)ppMVar25 == (pMVar23->name + -1)[(longlong)ppMVar24]) {
                       if (ppMVar24 == (MethodInfo **)0x7) {
                         FUN_?(pMVar23,0,0,&stack0x00000010);
                         goto code_?;

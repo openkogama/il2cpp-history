@@ -18,13 +18,10 @@ namespace RTG
 		[SerializeField]
 		private Hotkeys _enable2DMode;
 		[SerializeField]
-		private Hotkeys _enableSnapping;
-		[SerializeField]
 		private Hotkeys _enableVertexSnapping;
 	
 		// Properties
 		public Hotkeys Enable2DMode { get; }
-		public Hotkeys EnableSnapping { get; }
 		public Hotkeys EnableVertexSnapping { get; }
 	
 		// Constructors

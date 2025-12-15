@@ -16,12 +16,9 @@ namespace RTG
 	{
 		// Fields
 		[SerializeField]
-		private Hotkeys _enableSnapping;
-		[SerializeField]
 		private Hotkeys _changeMultiAxisMode;
 	
 		// Properties
-		public Hotkeys EnableSnapping { get; }
 		public Hotkeys ChangeMultiAxisMode { get; }
 	
 		// Constructors

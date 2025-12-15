@@ -50,7 +50,7 @@ code_?:
                       );
   pSVar3 = (String *)0x0;
   if (pSVar4 != (String *)0x0) {
-    if (pSVar4->klass == pSRam0000000182dbbc60) {
+    if (pSVar4->klass == pSRam0000000182dbdde0) {
       pSVar3 = pSVar4;
     }
     if (pSVar3 == (String *)0x0) {
@@ -265,7 +265,7 @@ code_?:
       if ((pSVar3 != (String *)0x0) && ((pSVar3->fields)._stringLength != 0)) {
         return pSVar3;
       }
-      return *(String **)pSRam0000000182dbbc60->static_fields;
+      return *(String **)pSRam0000000182dbdde0->static_fields;
     }
     if ((pSVar3 == (String *)0x0) || ((pSVar3->fields)._stringLength == 0)) {
       return pSVar4;
@@ -1009,7 +1009,7 @@ void Assembly-CSharp.dll::KillNotification::KillNotification_Initialize
                                           );
                       pSVar31 = (String *)0x0;
                       if (pSVar30 != (String *)0x0) {
-                        if (pSVar30->klass == pSRam0000000182dbbc60) {
+                        if (pSVar30->klass == pSRam0000000182dbdde0) {
                           pSVar31 = pSVar30;
                         }
                         if (pSVar31 == (String *)0x0) {

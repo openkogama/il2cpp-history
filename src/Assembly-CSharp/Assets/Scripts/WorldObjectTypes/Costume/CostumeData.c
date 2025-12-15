@@ -362,7 +362,7 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::CostumeDa
       return fVar2;
     }
     pOVar9 = (Object *)0x0;
-    if (pOVar4->klass == pORam0000000182dbbc18) {
+    if (pOVar4->klass == pORam0000000182dbdd98) {
       pOVar9 = pOVar4;
     }
     if (pOVar9 == (Object *)0x0) {
@@ -558,7 +558,7 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::CostumeDa
       return 0.0;
     }
     pOVar8 = (Object *)0x0;
-    if (pOVar3->klass == pORam0000000182dbbc18) {
+    if (pOVar3->klass == pORam0000000182dbdd98) {
       pOVar8 = pOVar3;
     }
     if (pOVar8 == (Object *)0x0) {

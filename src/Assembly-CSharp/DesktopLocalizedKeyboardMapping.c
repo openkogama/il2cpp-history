@@ -136,11 +136,10 @@ void Assembly-CSharp.dll::DesktopLocalizedKeyboardMapping::DesktopLocalizedKeybo
                  (InsertionBehavior__Enum)uVar8,
                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                  ->klass->rgctx_data[0x22].method);
-      pOVar12 = (Object *)FUN_?(TypeInfo__UnityEngine__KeyCode,2);
+      pOVar12 = (Object *)FUN_?(TypeInfo__UnityEngine__KeyCode,1);
       if (pOVar12 != (Object *)0x0) {
-        if ((*(int *)&pOVar12[1].monitor != 0) &&
-           (*(undefined4 *)&pOVar12[2].klass = 99, 1 < *(uint *)&pOVar12[1].monitor)) {
-          *(undefined4 *)((longlong)&pOVar12[2].klass + 4) = 0x132;
+        if (*(int *)&pOVar12[1].monitor != 0) {
+          *(undefined4 *)&pOVar12[2].klass = 99;
           uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),2);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
           ::Dictionary_2_System_Int32Enum_System_Object__TryInsert
@@ -208,7 +207,7 @@ void Assembly-CSharp.dll::DesktopLocalizedKeyboardMapping::DesktopLocalizedKeybo
                     pOVar12 = (Object *)FUN_?(TypeInfo__UnityEngine__KeyCode,1);
                     if (pOVar12 == (Object *)0x0) goto code_?;
                     if (*(int *)&pOVar12[1].monitor != 0) {
-                      *(undefined4 *)&pOVar12[2].klass = 0x118;
+                      *(undefined4 *)&pOVar12[2].klass = 0x7a;
                       uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),2);
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Int32Enum,System::Object]::
@@ -220,7 +219,7 @@ void Assembly-CSharp.dll::DesktopLocalizedKeyboardMapping::DesktopLocalizedKeybo
                       pOVar12 = (Object *)FUN_?(TypeInfo__UnityEngine__KeyCode,1);
                       if (pOVar12 == (Object *)0x0) goto code_?;
                       if (*(int *)&pOVar12[1].monitor != 0) {
-                        *(undefined4 *)&pOVar12[2].klass = 0x119;
+                        *(undefined4 *)&pOVar12[2].klass = 0x78;
                         uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),2);
                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32Enum,System::Object]::

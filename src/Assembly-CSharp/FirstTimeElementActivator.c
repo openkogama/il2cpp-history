@@ -651,49 +651,47 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
   NavMesh_OnNavMeshPreUpdate__ctor
             (pNVar2,(Object *)this,MethodInfo__FirstTimeElementActivator__OnXPRewarded__,
              (MethodInfo *)0x0);
-  pAVar3 = (Action *)
+  pAVar1 = (Action *)
            mscorlib.dll::System::Delegate::Delegate_Remove
                      ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
-  pAVar1 = (Action *)0x0;
-  if (pAVar3 == (Action *)0x0) {
+  if (pAVar1 == (Action *)0x0) {
     TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = (Action *)0x0;
   }
   else {
-    pAVar4 = pAVar1;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
     }
-    if (pAVar4 == (Action *)0x0) {
-      FUN_?(pAVar3,TypeInfo__System__Action);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar4;
-    pAVar4 = pAVar1;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar3;
+    TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
     }
-    if (pAVar4 == (Action *)0x0) {
-      FUN_?(pAVar3);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
   }
   if (iRam_? != 0) {
-    uVar6 = (uint)((ulonglong)&TypeInfo__FirstTimeEventManager->static_fields->XPRewarded >> 0xc);
-    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    uVar5 = (uint)((ulonglong)&TypeInfo__FirstTimeEventManager->static_fields->XPRewarded >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
     do {
-      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      uVar7 = *puVar6;
       LOCK();
-      bVar10 = uVar8 == *puVar9;
-      if (bVar10) {
-        *puVar9 = uVar8 | 1L << (ulonglong)(uVar6 & 0x3f);
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (ulonglong)(uVar5 & 0x3f);
       }
       UNLOCK();
-    } while (!bVar10);
+    } while (uVar7 != uVar8);
   }
   this_00 = (UnityAction_2_System_Object_System_Int32_ *)
             FUN_?(
@@ -707,16 +705,16 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
   FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
             ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
               *)this_00,(MethodInfo *)0x0);
-  pUVar11 = (this->fields).uiStack;
+  pUVar9 = (this->fields).uiStack;
   pNVar2 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (pNVar2,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,
              (MethodInfo *)0x0);
-  if (pUVar11 == (UIStack *)0x0) {
+  if (pUVar9 == (UIStack *)0x0) {
     FUN_?();
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
   if (cRam_? == '\0') {
@@ -725,48 +723,48 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
     UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar3 = (Action *)
+  pAVar1 = (Action *)
            mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)(pUVar11->fields).uiStackChangedPublisher,(Delegate *)pNVar2,
+                     ((Delegate *)(pUVar9->fields).uiStackChangedPublisher,(Delegate *)pNVar2,
                       (MethodInfo *)0x0);
-  if (pAVar3 == (Action *)0x0) {
-    (pUVar11->fields).uiStackChangedPublisher = (Action *)0x0;
+  if (pAVar1 == (Action *)0x0) {
+    (pUVar9->fields).uiStackChangedPublisher = (Action *)0x0;
   }
   else {
-    pAVar4 = pAVar1;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
     }
-    if (pAVar4 == (Action *)0x0) {
-      FUN_?(pAVar3);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    (pUVar11->fields).uiStackChangedPublisher = pAVar4;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar1 = pAVar3;
+    (pUVar9->fields).uiStackChangedPublisher = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
     }
-    if (pAVar1 == (Action *)0x0) {
-      FUN_?(pAVar3);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?(pAVar1);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
   }
   if (iRam_? != 0) {
-    uVar6 = (uint)((ulonglong)&(pUVar11->fields).uiStackChangedPublisher >> 0xc);
-    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    uVar5 = (uint)((ulonglong)&(pUVar9->fields).uiStackChangedPublisher >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
     do {
-      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      uVar7 = *puVar6;
       LOCK();
-      bVar10 = uVar8 == *puVar9;
-      if (bVar10) {
-        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
       }
       UNLOCK();
-    } while (!bVar10);
+    } while (uVar7 != uVar8);
   }
   return;
 }
@@ -1287,15 +1285,15 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_S
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar1 != (MVGameControllerBase *)0x0) {
     pAVar2 = (pMVar1->fields).onJoinStateChanged;
-    this_00 = (UnityAction_1_System_Int32Enum_ *)
+    this_01 = (UnityAction_1_System_Int32Enum_ *)
               FUN_?(TypeInfo__System__Action<MVJoinState>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,
+              (this_01,(Object *)this,
                MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_,
                (MethodInfo *)0x0);
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
     pAVar4 = TypeInfo__System__Action<MVJoinState>;
     pAVar5 = (Action *)0x0;
     pAVar2 = (Action_1_MVJoinState_ *)pAVar5;
@@ -1308,124 +1306,74 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_S
       return;
     }
     MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar2,(MethodInfo *)0x0);
-    pUVar7 = (this->fields).uiStack;
-    pNVar8 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+    this_00 = (this->fields).uiStack;
+    pNVar7 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar8,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,
+              (pNVar7,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,
                (MethodInfo *)0x0);
-    if (pUVar7 != (UIStack *)0x0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__System__Action);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pAVar9 = (Action *)
-                mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)(pUVar7->fields).uiStackChangedPublisher,(Delegate *)pNVar8,
-                           (MethodInfo *)0x0);
-      if (pAVar9 == (Action *)0x0) {
-        (pUVar7->fields).uiStackChangedPublisher = (Action *)0x0;
-      }
-      else {
-        pAVar10 = pAVar5;
-        if (pAVar9->klass == TypeInfo__System__Action) {
-          pAVar10 = pAVar9;
-        }
-        if (pAVar10 == (Action *)0x0) {
-          FUN_?();
-          pcVar6 = (code *)swi(3);
-          (*pcVar6)();
-          return;
-        }
-        (pUVar7->fields).uiStackChangedPublisher = pAVar10;
-        pAVar10 = pAVar5;
-        if (pAVar9->klass == TypeInfo__System__Action) {
-          pAVar10 = pAVar9;
-        }
-        if (pAVar10 == (Action *)0x0) {
-          FUN_?();
-          pcVar6 = (code *)swi(3);
-          (*pcVar6)();
-          return;
-        }
-      }
-      if (iRam_? != 0) {
-        uVar11 = (uint)((ulonglong)&(pUVar7->fields).uiStackChangedPublisher >> 0xc);
-        lVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6) * 8;
-        do {
-          uVar13 = *(ulonglong *)(lVar12 + 0xADDR);
-          puVar14 = (ulonglong *)(lVar12 + 0xADDR);
-          LOCK();
-          bVar15 = uVar13 == *puVar14;
-          if (bVar15) {
-            *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
-          }
-          UNLOCK();
-        } while (!bVar15);
-      }
-      this_01 = (UnityAction_2_System_Object_System_Int32_ *)
+    if (this_00 != (UIStack *)0x0) {
+      UIStack::UIStack_SubscribeToStackChanges(this_00,(Action *)pNVar7,(MethodInfo *)0x0);
+      this_02 = (UnityAction_2_System_Object_System_Int32_ *)
                 FUN_?(
                              TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                              );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Int32]::
       UnityAction_2_System_Object_System_Int32___ctor
-                (this_01,(Object *)this,
+                (this_02,(Object *)this,
                  MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
                  ,(MethodInfo *)0x0);
       FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
                 ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                  *)this_01,(MethodInfo *)0x0);
+                  *)this_02,(MethodInfo *)0x0);
       (this->fields).evaluateActivatableElements = 1;
-      pAVar9 = TypeInfo__FirstTimeEventManager->static_fields->XPRewarded;
-      pNVar8 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+      pAVar8 = TypeInfo__FirstTimeEventManager->static_fields->XPRewarded;
+      pNVar7 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar8,(Object *)this,MethodInfo__FirstTimeElementActivator__OnXPRewarded__,
+                (pNVar7,(Object *)this,MethodInfo__FirstTimeElementActivator__OnXPRewarded__,
                  (MethodInfo *)0x0);
-      pAVar9 = (Action *)
+      pAVar8 = (Action *)
                 mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar9,(Delegate *)pNVar8,(MethodInfo *)0x0);
-      if (pAVar9 == (Action *)0x0) {
+                          ((Delegate *)pAVar8,(Delegate *)pNVar7,(MethodInfo *)0x0);
+      if (pAVar8 == (Action *)0x0) {
         TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = (Action *)0x0;
       }
       else {
-        pAVar10 = pAVar5;
-        if (pAVar9->klass == TypeInfo__System__Action) {
-          pAVar10 = pAVar9;
+        pAVar9 = pAVar5;
+        if (pAVar8->klass == TypeInfo__System__Action) {
+          pAVar9 = pAVar8;
         }
-        if (pAVar10 == (Action *)0x0) {
-          FUN_?(pAVar9,TypeInfo__System__Action);
+        if (pAVar9 == (Action *)0x0) {
+          FUN_?(pAVar8,TypeInfo__System__Action);
           pcVar6 = (code *)swi(3);
           (*pcVar6)();
           return;
         }
-        TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar10;
-        if (pAVar9->klass == TypeInfo__System__Action) {
-          pAVar5 = pAVar9;
+        TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar9;
+        if (pAVar8->klass == TypeInfo__System__Action) {
+          pAVar5 = pAVar8;
         }
         if (pAVar5 == (Action *)0x0) {
-          FUN_?(pAVar9);
+          FUN_?(pAVar8);
           pcVar6 = (code *)swi(3);
           (*pcVar6)();
           return;
         }
       }
       if (iRam_? != 0) {
-        uVar11 = (uint)((ulonglong)&TypeInfo__FirstTimeEventManager->static_fields->XPRewarded >>
+        uVar10 = (uint)((ulonglong)&TypeInfo__FirstTimeEventManager->static_fields->XPRewarded >>
                        0xc);
-        lVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6) * 8;
+        puVar11 = (ulonglong *)((ulonglong)((uVar10 & 0x1fffff) >> 6) * 8 + 0xADDR);
         do {
-          uVar13 = *(ulonglong *)(lVar12 + 0xADDR);
-          puVar14 = (ulonglong *)(lVar12 + 0xADDR);
+          uVar12 = *puVar11;
           LOCK();
-          bVar15 = uVar13 == *puVar14;
-          if (bVar15) {
-            *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+          uVar13 = *puVar11;
+          if (uVar12 == uVar13) {
+            *puVar11 = uVar12 | 1L << (uVar10 & 0x3f);
           }
           UNLOCK();
-        } while (!bVar15);
+        } while (uVar12 != uVar13);
       }
       return;
     }

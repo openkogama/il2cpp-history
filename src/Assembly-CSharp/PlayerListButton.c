@@ -772,12 +772,12 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_CreatePlayerList
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__PlayerListButton___CreatePlayerList_b__13_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                  MethodInfo__PlayerListButton___CreatePlayerList_b__17_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  );
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__PlayerListButton____c___CreatePlayerList_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                  MethodInfo__PlayerListButton____c___CreatePlayerList_b__17_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  );
     LOCK();
     UNLOCK();
@@ -996,7 +996,7 @@ code_?:
                   if (*(int *)&(TypeInfo__PlayerListButton____c->_1).field_0x1c == 0) {
                     FUN_?(TypeInfo__PlayerListButton____c);
                   }
-                  this_03 = TypeInfo__PlayerListButton____c->static_fields->__9__13_0;
+                  this_03 = TypeInfo__PlayerListButton____c->static_fields->__9__17_0;
                   if (this_03 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
                     if (*(int *)&(TypeInfo__PlayerListButton____c->_1).field_0x1c == 0) {
                       FUN_?(TypeInfo__PlayerListButton____c);
@@ -1011,12 +1011,12 @@ code_?:
                     ExecuteEvents_EventFunction_1_System_Object___ctor
                               ((ExecuteEvents_EventFunction_1_System_Object_ *)this_03,
                                (Object *)object,
-                               MethodInfo__PlayerListButton____c___CreatePlayerList_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                               MethodInfo__PlayerListButton____c___CreatePlayerList_b__17_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                                ,(MethodInfo *)0x0);
-                    TypeInfo__PlayerListButton____c->static_fields->__9__13_0 = this_03;
+                    TypeInfo__PlayerListButton____c->static_fields->__9__17_0 = this_03;
                     if (iRam_? != 0) {
                       uVar1 = (uint)((ulonglong)
-                                      &TypeInfo__PlayerListButton____c->static_fields->__9__13_0 >>
+                                      &TypeInfo__PlayerListButton____c->static_fields->__9__17_0 >>
                                      0xc);
                       lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
                       do {
@@ -1093,7 +1093,7 @@ code_?:
                 UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System
                 ::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
                           ((ExecuteEvents_EventFunction_1_System_Object_ *)this_03,(Object *)this,
-                           MethodInfo__PlayerListButton___CreatePlayerList_b__13_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                           MethodInfo__PlayerListButton___CreatePlayerList_b__17_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                            ,(MethodInfo *)0x0);
                 if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c ==
                     0) {
@@ -2209,6 +2209,12 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor
 
 {
   if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__UI__ColorBlock);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     FUN_?(&TypeInfo__Styles);
     LOCK();
     UNLOCK();
@@ -2235,20 +2241,6 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor
     pDVar4 = (pMVar3->fields).teams;
     if (pDVar4 != (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0) {
       if ((pDVar4->fields)._count - (pDVar4->fields)._freeCount < 2) {
-        if ((this->fields).useColorStyle == 0) {
-          pBVar5 = (this->fields).button;
-          if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          Styles::Styles_SetStyle_4
-                    (pBVar5,ButtonStyle__Enum_RegularButton,MVTeam__Enum_None,
-                     SoundStyle__Enum_NoSound,(MethodInfo *)0x0);
-          return;
-        }
-        pCVar6 = (this->fields).colorStyleObject;
-        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
-          FUN_?();
-        }
         team = MVTeam__Enum_None;
       }
       else {
@@ -2262,80 +2254,184 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor
         if (((pMVar1 == (MVGameControllerBase *)0x0) ||
             (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
            ((this_00 = (pMVar2->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0 ||
-            (pMVar7 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
-                                (this_00,(MethodInfo *)0x0), pMVar7 == (MVLocalPlayer *)0x0))))
+            (pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                 (this_00,(MethodInfo *)0x0), pMVar5 == (MVLocalPlayer *)0x0))))
         goto code_?;
-        team = (pMVar7->fields)._._Team_k__BackingField;
-        if ((this->fields).useColorStyle == 0) {
-          pBVar5 = (this->fields).button;
-          if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          Styles::Styles_SetStyle_4
-                    (pBVar5,ButtonStyle__Enum_RegularButton,team,SoundStyle__Enum_NoSound,
-                     (MethodInfo *)0x0);
-          return;
-        }
-        pCVar6 = (this->fields).colorStyleObject;
+        team = (pMVar5->fields)._._Team_k__BackingField;
+      }
+      if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      colorStyle = Styles::Styles_GetTeamColorStyle(team,0,0,(MethodInfo *)0x0);
+      pCVar6 = Styles::Styles_GetColor(&CStack_7,colorStyle,(MethodInfo *)0x0);
+      fVar8 = pCVar6->r;
+      fVar9 = pCVar6->g;
+      uVar10._0_4_ = pCVar6->r;
+      uVar10._4_4_ = pCVar6->g;
+      fVar11 = pCVar6->b;
+      fVar12 = pCVar6->a;
+      uVar13._0_4_ = pCVar6->b;
+      uVar13._4_4_ = pCVar6->a;
+      if ((this->fields).useColorStyle == 0) {
+        pBVar14 = (this->fields).button;
         if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
           FUN_?();
         }
+        Styles::Styles_SetStyle_4
+                  (pBVar14,ButtonStyle__Enum_RegularButton,team,SoundStyle__Enum_NoSound,
+                   (MethodInfo *)0x0);
       }
-      key = Styles::Styles_GetTeamColorStyle(team,0,0,(MethodInfo *)0x0);
-      if (pCVar6 != (ColorStyleObject *)0x0) {
+      else {
+        this_01 = (this->fields).colorStyleObject;
+        if (this_01 == (ColorStyleObject *)0x0) goto code_?;
+        ColorStyleObject::ColorStyleObject_UpdateColorStyle(this_01,colorStyle,(MethodInfo *)0x0);
+      }
+      if ((this->fields).updateGradient != 0) {
+        pGVar15 = (this->fields).gradientEffect;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
         if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__Styles);
+          FUN_?(&TypeInfo__UnityEngine__Object);
           LOCK();
           UNLOCK();
           cRam_? = '\x01';
         }
-        pGVar8 = (pCVar6->fields).graphic;
-        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
           FUN_?();
         }
         if (cRam_? == '\0') {
-          FUN_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
-                        ,key,0);
-          LOCK();
-          UNLOCK();
-          FUN_?(&TypeInfo__Styles);
+          FUN_?(&TypeInfo__UnityEngine__Object);
           LOCK();
           UNLOCK();
           cRam_? = '\x01';
         }
-        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+        if (pGVar15 != (GradientEffect *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if ((pGVar15->fields)._._._._._._.m_CachedPtr != (void *)0x0) {
+            pGVar15 = (this->fields).gradientEffect;
+            if (pGVar15 == (GradientEffect *)0x0) goto code_?;
+            (pGVar15->fields).top.r = fVar8;
+            (pGVar15->fields).top.g = fVar9;
+            (pGVar15->fields).top.b = fVar11;
+            (pGVar15->fields).top.a = fVar12;
+            pGVar15 = (this->fields).gradientEffect;
+            CStack_7.a = (this->fields).gradientDarkenAmount;
+            CStack_7.r = fVar8 * CStack_7.a;
+            CStack_7.g = fVar9 * CStack_7.a;
+            CStack_7.b = fVar11 * CStack_7.a;
+            CStack_7.a = fVar12 * CStack_7.a;
+            if (pGVar15 == (GradientEffect *)0x0) goto code_?;
+            (pGVar15->fields).bottom.r = CStack_7.r;
+            (pGVar15->fields).bottom.g = CStack_7.g;
+            (pGVar15->fields).bottom.b = CStack_7.b;
+            (pGVar15->fields).bottom.a = CStack_7.a;
+          }
+        }
+      }
+      if ((this->fields).updateButtonColors != 0) {
+        pBVar14 = (this->fields).button;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
           FUN_?();
         }
-        bVar9 = Styles::Styles_HandleUnInitalized((MethodInfo *)0x0);
-        if (bVar9 != 0) {
-          if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
-            FUN_?(TypeInfo__Styles);
-          }
-          this_01 = TypeInfo__Styles->static_fields->colorStylesDictionary;
-          if (((this_01 == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) ||
-              (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Int32Enum,System::Object]::
-                         Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,key,
-                                    MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
-                                   ), pOVar10 == (Object *)0x0)) || (pGVar8 == (Graphic *)0x0)) {
-            FUN_?();
-            pcVar11 = (code *)swi(3);
-            (*pcVar11)();
-            return;
-          }
-          (*(pGVar8->klass->vtable).set_color.methodPtr)
-                    (pGVar8,&stack0xffffffffffffffe8,(pGVar8->klass->vtable).set_color.method);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        return;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pBVar14 != (Button *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if ((pBVar14->fields)._._._._._._.m_CachedPtr != (void *)0x0) {
+            pBVar14 = (this->fields).button;
+            if (pBVar14 != (Button *)0x0) {
+              CStack_16.r = (pBVar14->fields)._.m_Colors.m_NormalColor.r;
+              CStack_16.g = (pBVar14->fields)._.m_Colors.m_NormalColor.g;
+              CStack_16.b = (pBVar14->fields)._.m_Colors.m_NormalColor.b;
+              CStack_16.a = (pBVar14->fields)._.m_Colors.m_NormalColor.a;
+              CStack_17.r = (pBVar14->fields)._.m_Colors.m_HighlightedColor.r;
+              CStack_17.g = (pBVar14->fields)._.m_Colors.m_HighlightedColor.g;
+              CStack_17.b = (pBVar14->fields)._.m_Colors.m_HighlightedColor.b;
+              CStack_17.a = (pBVar14->fields)._.m_Colors.m_HighlightedColor.a;
+              uVar18._0_4_ = (pBVar14->fields)._.m_Colors.m_DisabledColor.r;
+              uVar18._4_4_ = (pBVar14->fields)._.m_Colors.m_DisabledColor.g;
+              uVar19._0_4_ = (pBVar14->fields)._.m_Colors.m_DisabledColor.b;
+              uVar19._4_4_ = (pBVar14->fields)._.m_Colors.m_DisabledColor.a;
+              uVar20._0_4_ = (pBVar14->fields)._.m_Colors.m_ColorMultiplier;
+              uVar20._4_4_ = (pBVar14->fields)._.m_Colors.m_FadeDuration;
+              fStack_21 = (pBVar14->fields)._.m_Colors.m_PressedColor.r;
+              fStack_22 = (pBVar14->fields)._.m_Colors.m_PressedColor.g;
+              fStack_23 = (pBVar14->fields)._.m_Colors.m_PressedColor.b;
+              fStack_24 = (pBVar14->fields)._.m_Colors.m_PressedColor.a;
+              fStack_25 = (pBVar14->fields)._.m_Colors.m_SelectedColor.r;
+              fStack_26 = (pBVar14->fields)._.m_Colors.m_SelectedColor.g;
+              fStack_27 = (pBVar14->fields)._.m_Colors.m_SelectedColor.b;
+              fStack_28 = (pBVar14->fields)._.m_Colors.m_SelectedColor.a;
+              if (*(int *)&(TypeInfo__UnityEngine__UI__ColorBlock->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              CStack_17.g = fVar9 * _UNK_?;
+              CStack_17.r = fVar8 * _UNK_?;
+              CStack_17.a = fVar12 * _UNK_?;
+              CStack_17.b = fVar11 * _UNK_?;
+              fStack_21 = fVar8 * _UNK_?;
+              fStack_22 = fVar9 * _UNK_?;
+              fStack_23 = fVar11 * _UNK_?;
+              fStack_24 = fVar12 * _UNK_?;
+              pBVar14 = (this->fields).button;
+              fStack_25 = fVar8 * _UNK_?;
+              fStack_26 = fVar9 * _UNK_?;
+              fStack_27 = fVar11 * _UNK_?;
+              fStack_28 = fVar12 * _UNK_?;
+              CStack_16._0_8_ = uVar10;
+              CStack_16._8_8_ = uVar13;
+              if (pBVar14 != (Button *)0x0) {
+                aCStack_29[0].m_PressedColor.g = fStack_22;
+                aCStack_29[0].m_PressedColor.r = fStack_21;
+                aCStack_29[0].m_PressedColor.a = fStack_24;
+                aCStack_29[0].m_PressedColor.b = fStack_23;
+                aCStack_29[0].m_HighlightedColor.r = fVar8 * _UNK_?;
+                aCStack_29[0].m_HighlightedColor.g = fVar9 * _UNK_?;
+                aCStack_29[0].m_HighlightedColor.b = fVar11 * _UNK_?;
+                aCStack_29[0].m_HighlightedColor.a = fVar12 * _UNK_?;
+                aCStack_29[0].m_SelectedColor.g = fStack_26;
+                aCStack_29[0].m_SelectedColor.r = fStack_25;
+                aCStack_29[0].m_SelectedColor.a = fStack_28;
+                aCStack_29[0].m_SelectedColor.b = fStack_27;
+                aCStack_29[0].m_NormalColor._0_8_ = uVar10;
+                aCStack_29[0].m_NormalColor._8_8_ = uVar13;
+                aCStack_29[0].m_DisabledColor._0_8_ = uVar18;
+                aCStack_29[0].m_DisabledColor._8_8_ = uVar19;
+                aCStack_29[0]._80_8_ = uVar20;
+                UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_colors
+                          ((Selectable *)pBVar14,aCStack_29,(MethodInfo *)0x0);
+                return;
+              }
+            }
+            goto code_?;
+          }
+        }
       }
+      return;
     }
   }
 code_?:
   FUN_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar30 = (code *)swi(3);
+  (*pcVar30)();
   return;
 }
 
@@ -2394,9 +2490,9 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_ViewNotification
 }
 
 
-/* Void <CreatePlayerList>b__13_1(IUIStack, BaseEventData) */
+/* Void <CreatePlayerList>b__17_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::PlayerListButton::PlayerListButton__CreatePlayerList_b__13_1
+void Assembly-CSharp.dll::PlayerListButton::PlayerListButton__CreatePlayerList_b__17_1
                (PlayerListButton *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -2433,6 +2529,9 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton__ctor
     UNLOCK();
     cRam_? = '\x01';
   }
+  (this->fields).updateGradient = 1;
+  (this->fields).updateButtonColors = 1;
+  (this->fields).gradientDarkenAmount = 0.86;
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
             )FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
@@ -2444,16 +2543,17 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton__ctor
   (this->fields).prevPlayerListState = (Dictionary_2_System_Int32_MVPlayer_ *)this_00;
   if (bVar1) {
     uVar2 = (uint)((ulonglong)&(this->fields).prevPlayerListState >> 0xc);
-    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
     do {
-      uVar4 = *puVar3;
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
       LOCK();
-      uVar5 = *puVar3;
-      if (uVar4 == uVar5) {
-        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
       }
       UNLOCK();
-    } while (uVar4 != uVar5);
+    } while (!bVar1);
   }
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__UnityEngine__Object);

@@ -626,11 +626,11 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_OnRenderObject(RTGApp *this,Method
         LOCK();
         UNLOCK();
         FUN_?(&
-                      MethodInfo__RTG__RTGizmosEngine____c__DisplayClass106_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
+                      MethodInfo__RTG__RTGizmosEngine____c__DisplayClass103_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
                      );
         LOCK();
         UNLOCK();
-        FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass106_0);
+        FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass103_0);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
@@ -697,7 +697,7 @@ code_?:
             }
           }
           else {
-            pOVar8 = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass106_0)
+            pOVar8 = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass103_0)
             ;
             this_00 = RTGizmosEngine::RTGizmosEngine_get_RenderStageCamera
                                 (this_05,(MethodInfo *)0x0);
@@ -756,7 +756,7 @@ code_?:
                           FUN_?(TypeInfo__System__Comparison<RTG::Gizmo>);
                 mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor
                           (this_02,pOVar8,
-                           MethodInfo__RTG__RTGizmosEngine____c__DisplayClass106_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
+                           MethodInfo__RTG__RTGizmosEngine____c__DisplayClass103_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
                            ,(MethodInfo *)0x0);
                 if (this_01 != (List_1_RTG_Gizmo_ *)0x0) {
                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -2482,9 +2482,9 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar2;
-                while (pcVar16 = (char *)((longlong)ppMVar15 + 0xADDR),
+                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
-                      *pcVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                      *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

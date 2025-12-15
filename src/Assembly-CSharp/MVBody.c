@@ -1113,7 +1113,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_AttachCubes(MVBody *this,MethodInfo *me
                              ), bVar18 != 0) {
       boneName = obj;
       if (pSStack_14 != (String *)0x0) {
-        if (pSStack_14->klass == pSRam0000000182dbbc60) {
+        if (pSStack_14->klass == pSRam0000000182dbdde0) {
           boneName = pSStack_14;
         }
         if (boneName == (String *)0x0) {
@@ -2592,7 +2592,7 @@ Assembly-CSharp.dll::MVBody::MVBody_GetModelConstaint
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                               );
           if (pOVar1 != (Object *)0x0) {
-            if (pOVar1->klass == pORam0000000182dbbc60) {
+            if (pOVar1->klass == pORam0000000182dbdde0) {
               key = pOVar1;
             }
             if (key == (Object *)0x0) {
@@ -3530,7 +3530,7 @@ code_?:
                       );
   pOVar6 = (Object__Class *)0x0;
   if (pOVar5 != (Object__Class *)0x0) {
-    if ((pOVar5->_0).image == pIRam0000000182dbbc60) {
+    if ((pOVar5->_0).image == pIRam0000000182dbdde0) {
       pOVar6 = pOVar5;
     }
     if (pOVar6 == (Object__Class *)0x0) {

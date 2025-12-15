@@ -836,6 +836,64 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Start
 }
 
 
+/* Void UnregisterEditModeController() */
+
+void Assembly-CSharp.dll::MVGameControllerDesktop::
+     MVGameControllerDesktop_UnregisterEditModeController(MethodInfo *method)
+
+{
+  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return;
+  }
+  pMVar2 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
+  if (pMVar2 == (MVGameControllerDesktop *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  bVar4 = iRam_? != 0;
+  (pMVar2->fields)._.modeController = (ModeControllerBase *)0x0;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&(pMVar2->fields)._.modeController >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField = (IEditModeUI *)0x0;
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)
+                   &TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField >>
+                  0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  return;
+}
+
+
 /* Void UpdateInternal() */
 
 void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_UpdateInternal

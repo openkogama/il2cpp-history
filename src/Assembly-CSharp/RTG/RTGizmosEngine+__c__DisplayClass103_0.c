@@ -1,9 +1,9 @@
 
 /* Int32 <Render_SystemCall>b__0(Gizmo, Gizmo) */
 
-int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass106_0::
-        RTGizmosEngine_c_DisplayClass106_0__Render_SystemCall_b__0
-                  (RTGizmosEngine_c_DisplayClass106_0 *this,Gizmo *g0,Gizmo *g1,MethodInfo *method)
+int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass103_0::
+        RTGizmosEngine_c_DisplayClass103_0__Render_SystemCall_b__0
+                  (RTGizmosEngine_c_DisplayClass103_0 *this,Gizmo *g0,Gizmo *g1,MethodInfo *method)
 
 {
   if ((((g0 == (Gizmo *)0x0) || (pGVar1 = (g0->fields)._transform, pGVar1 == (GizmoTransform *)0x0))

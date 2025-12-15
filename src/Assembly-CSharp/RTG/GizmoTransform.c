@@ -1485,7 +1485,7 @@ Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetAxes2D
         return pVVar2;
       }
       pVVar7 = (Vector2__Array *)0x0;
-      if (pVVar3 == pVRam0000000182dbbbe0) {
+      if (pVVar3 == pVRam0000000182dbdd60) {
         pVVar7 = pVVar2;
       }
       return pVVar7;
@@ -1531,7 +1531,7 @@ Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetAxes3D
         return pVVar2;
       }
       pVVar7 = (Vector3__Array *)0x0;
-      if (pVVar3 == pVRam0000000182dbbbe0) {
+      if (pVVar3 == pVRam0000000182dbdd60) {
         pVVar7 = pVVar2;
       }
       return pVVar7;

@@ -247,7 +247,7 @@ DAT_?:
     if (pDVar3 == (Dictionary_2_System_String_LoggerManager_Logger_ *)0x0) goto DAT_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__TryInsert
-              ((Dictionary_2_System_Object_System_Object_ *)pDVar3,key,apOStackX_10[0],0x82dcb702,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar3,key,apOStackX_10[0],0x82dcd802,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_LoggerManager::Logger>__Add_System__String__LoggerManager__Logger_
                ->klass->rgctx_data[0x22].method);
   }
@@ -330,7 +330,7 @@ code_?:
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)name,pOStackX_8,
-               0x82dcb702,
+               0x82dcd802,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_LoggerManager::Logger>__Add_System__String__LoggerManager__Logger_
                ->klass->rgctx_data[0x22].method);
   }

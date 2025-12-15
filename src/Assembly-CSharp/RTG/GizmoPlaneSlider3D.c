@@ -1398,7 +1398,7 @@ code_?:
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                  (**ppIVar13)(pIVar9,*ppIVar13,(MethodInfo *)ppIVar13[1]);
+                  (**ppIVar13)(pIVar9,fVar5,(MethodInfo *)ppIVar13[1]);
                   return;
                 }
               }
@@ -1535,7 +1535,7 @@ code_?:
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                        (**ppIVar18)(pIVar14,*ppIVar18,(MethodInfo *)ppIVar18[1]);
+                        (**ppIVar18)(pIVar14,fVar6,(MethodInfo *)ppIVar18[1]);
                         return;
                       }
                     }
@@ -1774,7 +1774,7 @@ code_?:
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                  (**ppIVar13)(pIVar9,*ppIVar13,(MethodInfo *)ppIVar13[1]);
+                  (**ppIVar13)(pIVar9,fVar7,(MethodInfo *)ppIVar13[1]);
                   return;
                 }
               }

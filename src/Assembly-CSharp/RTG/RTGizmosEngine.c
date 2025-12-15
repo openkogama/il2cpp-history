@@ -252,48 +252,104 @@ Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_CreateObjectRotationGiz
     UNLOCK();
     cRam_? = '\x01';
   }
-  pRVar1 = RTGizmosEngine_CreateRotationGizmo(this,(MethodInfo *)0x0);
-  pMVar2 = 
-  RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__;
-  if ((pRVar1 != (RotationGizmo *)0x0) &&
-     (pGVar3 = (pRVar1->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-    if ((RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__
-        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
-      FUN_?(
-                   RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__
-                   );
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__RTG__RotationGizmo);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__RTG__Gizmo);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = (Gizmo *)FUN_?(TypeInfo__RTG__Gizmo);
+  Gizmo::Gizmo__ctor(pGVar1,(MethodInfo *)0x0);
+  RTGizmosEngine_RegisterGizmo(this,pGVar1,(MethodInfo *)0x0);
+  this_00 = (RotationGizmo *)FUN_?(TypeInfo__RTG__RotationGizmo);
+  RotationGizmo::RotationGizmo__ctor(this_00,(MethodInfo *)0x0);
+  if ((pGVar1 != (Gizmo *)0x0) &&
+     (Gizmo::Gizmo_AddBehaviour(pGVar1,(IGizmoBehaviour *)this_00,(MethodInfo *)0x0),
+     this_00 != (RotationGizmo *)0x0)) {
+    bVar2 = iRam_? != 0;
+    (this_00->fields)._sharedLookAndFeel3D = (this->fields)._rotationGizmoLookAndFeel3D;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(this_00->fields)._sharedLookAndFeel3D >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
     }
-    pOVar4 = (ObjectTransformGizmo *)
-             mscorlib.dll::System::Activator::Activator_CreateInstance_24
-                       (((pMVar2->field7_0x38).rgctx_data)->method);
-    Gizmo::Gizmo_AddBehaviour(pGVar3,(IGizmoBehaviour *)pOVar4,(MethodInfo *)0x0);
-    if ((pOVar4 != (ObjectTransformGizmo *)0x0) &&
-       (pGVar3 = (pOVar4->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-      if ((pGVar3->fields)._dragInfo._isDragged == 0) {
-        (pOVar4->fields)._transformChannelFlags = 2;
+    RotationGizmo::RotationGizmo_SetupSharedLookAndFeel(this_00,(MethodInfo *)0x0);
+    bVar2 = iRam_? != 0;
+    (this_00->fields)._sharedSettings3D = (this->fields)._rotationGizmoSettings3D;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(this_00->fields)._sharedSettings3D >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    RotationGizmo::RotationGizmo_SetupSharedSettings(this_00,(MethodInfo *)0x0);
+    pMVar7 = 
+    RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__;
+    pGVar1 = (this_00->fields)._._gizmo;
+    if (pGVar1 != (Gizmo *)0x0) {
+      if ((
+          RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__
+                     );
       }
-      bVar5 = iRam_? != 0;
-      (pOVar4->fields)._sharedSettings = (this->fields)._objectRotationGizmoSettings;
-      if (bVar5) {
-        uVar6 = (uint)((ulonglong)&(pOVar4->fields)._sharedSettings >> 0xc);
-        puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
-        do {
-          uVar8 = *puVar7;
-          LOCK();
-          uVar9 = *puVar7;
-          if (uVar8 == uVar9) {
-            *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
-          }
-          UNLOCK();
-        } while (uVar8 != uVar9);
+      pOVar8 = (ObjectTransformGizmo *)
+               mscorlib.dll::System::Activator::Activator_CreateInstance_24
+                         (((pMVar7->field7_0x38).rgctx_data)->method);
+      Gizmo::Gizmo_AddBehaviour(pGVar1,(IGizmoBehaviour *)pOVar8,(MethodInfo *)0x0);
+      if ((pOVar8 != (ObjectTransformGizmo *)0x0) &&
+         (pGVar1 = (pOVar8->fields)._._gizmo, pGVar1 != (Gizmo *)0x0)) {
+        if ((pGVar1->fields)._dragInfo._isDragged == 0) {
+          (pOVar8->fields)._transformChannelFlags = 2;
+        }
+        bVar2 = iRam_? != 0;
+        (pOVar8->fields)._sharedSettings = (this->fields)._objectRotationGizmoSettings;
+        if (bVar2) {
+          uVar3 = (uint)((ulonglong)&(pOVar8->fields)._sharedSettings >> 0xc);
+          lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+            puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+            LOCK();
+            bVar2 = uVar5 == *puVar6;
+            if (bVar2) {
+              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar2);
+        }
+        return pOVar8;
       }
-      return pOVar4;
     }
   }
   FUN_?();
-  pcVar10 = (code *)swi(3);
-  pOVar4 = (ObjectTransformGizmo *)(*pcVar10)();
-  return pOVar4;
+  pcVar9 = (code *)swi(3);
+  pOVar8 = (ObjectTransformGizmo *)(*pcVar9)();
+  return pOVar8;
 }
 
 
@@ -452,60 +508,45 @@ Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_CreateRotationGizmo
   if ((this_00 != (Gizmo *)0x0) &&
      (Gizmo::Gizmo_AddBehaviour(this_00,(IGizmoBehaviour *)pRVar1,(MethodInfo *)0x0),
      pRVar1 != (RotationGizmo *)0x0)) {
-    (pRVar1->fields)._sharedHotkeys = (this->fields)._rotationGizmoHotkeys;
-    if (iRam_? != 0) {
-      uVar2 = (uint)((ulonglong)&(pRVar1->fields)._sharedHotkeys >> 0xc);
-      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
-      do {
-        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
-        LOCK();
-        bVar6 = uVar4 == *puVar5;
-        if (bVar6) {
-          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
-        }
-        UNLOCK();
-      } while (!bVar6);
-    }
-    iVar7 = iRam_?;
+    bVar2 = iRam_? != 0;
     (pRVar1->fields)._sharedLookAndFeel3D = (this->fields)._rotationGizmoLookAndFeel3D;
-    if (iVar7 != 0) {
-      uVar2 = (uint)((ulonglong)&(pRVar1->fields)._sharedLookAndFeel3D >> 0xc);
-      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(pRVar1->fields)._sharedLookAndFeel3D >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
       do {
-        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
         LOCK();
-        bVar6 = uVar4 == *puVar5;
-        if (bVar6) {
-          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
         }
         UNLOCK();
-      } while (!bVar6);
+      } while (!bVar2);
     }
     RotationGizmo::RotationGizmo_SetupSharedLookAndFeel(pRVar1,(MethodInfo *)0x0);
-    bVar6 = iRam_? != 0;
+    bVar2 = iRam_? != 0;
     (pRVar1->fields)._sharedSettings3D = (this->fields)._rotationGizmoSettings3D;
-    if (bVar6) {
-      uVar2 = (uint)((ulonglong)&(pRVar1->fields)._sharedSettings3D >> 0xc);
-      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(pRVar1->fields)._sharedSettings3D >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
       do {
-        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
-        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
         LOCK();
-        bVar6 = uVar4 == *puVar5;
-        if (bVar6) {
-          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
         }
         UNLOCK();
-      } while (!bVar6);
+      } while (!bVar2);
     }
     RotationGizmo::RotationGizmo_SetupSharedSettings(pRVar1,(MethodInfo *)0x0);
     return pRVar1;
   }
   FUN_?();
-  pcVar8 = (code *)swi(3);
-  pRVar1 = (RotationGizmo *)(*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  pRVar1 = (RotationGizmo *)(*pcVar7)();
   return pRVar1;
 }
 
@@ -772,16 +813,16 @@ Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_GetGizmoHandleHoverData
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__RTG__RTGizmosEngine____c__DisplayClass105_0___GetGizmoHandleHoverData_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
+                  MethodInfo__RTG__RTGizmosEngine____c__DisplayClass102_0___GetGizmoHandleHoverData_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
                  );
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass105_0);
+    FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass102_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  object = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass105_0);
+  object = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass102_0);
   if (object != (Object *)0x0) {
     bVar1 = iRam_? != 0;
     object[1].klass = (Object__Class *)gizmo;
@@ -855,7 +896,7 @@ Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_GetGizmoHandleHoverData
                       FUN_?(TypeInfo__System__Comparison<RTG::GizmoHandleHoverData>);
             mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor
                       (this_02,object,
-                       MethodInfo__RTG__RTGizmosEngine____c__DisplayClass105_0___GetGizmoHandleHoverData_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
+                       MethodInfo__RTG__RTGizmosEngine____c__DisplayClass102_0___GetGizmoHandleHoverData_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
                        ,(MethodInfo *)0x0);
             if (this_01 != (List_1_RTG_GizmoHandleHoverData_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -1448,11 +1489,11 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_Render_SystemCall
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__RTG__RTGizmosEngine____c__DisplayClass106_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
+                  MethodInfo__RTG__RTGizmosEngine____c__DisplayClass103_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
                  );
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass106_0);
+    FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass103_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -1519,7 +1560,7 @@ code_?:
         }
       }
       else {
-        object = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass106_0);
+        object = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass103_0);
         this_00 = RTGizmosEngine_get_RenderStageCamera(this,(MethodInfo *)0x0);
         if ((this_00 != (Camera *)0x0) &&
            (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -1575,7 +1616,7 @@ code_?:
                       FUN_?(TypeInfo__System__Comparison<RTG::Gizmo>);
             mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor
                       (this_02,object,
-                       MethodInfo__RTG__RTGizmosEngine____c__DisplayClass106_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
+                       MethodInfo__RTG__RTGizmosEngine____c__DisplayClass103_0___Render_SystemCall_b__0_RTG__Gizmo__RTG__Gizmo_
                        ,(MethodInfo *)0x0);
             if (this_01 != (List_1_RTG_Gizmo_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -1657,16 +1698,16 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_SortHandleHoverDat
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__RTG__RTGizmosEngine____c__DisplayClass107_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
+                  MethodInfo__RTG__RTGizmosEngine____c__DisplayClass104_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
                  );
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass107_0);
+    FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass104_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  object = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass107_0);
+  object = (Object *)FUN_?(TypeInfo__RTG__RTGizmosEngine____c__DisplayClass104_0);
   if (object != (Object *)0x0) {
     fVar1 = inputDevicePos->z;
     object[1].klass = *(Object__Class **)inputDevicePos;
@@ -1698,7 +1739,7 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_SortHandleHoverDat
                     FUN_?(TypeInfo__System__Comparison<RTG::GizmoHandleHoverData>);
           mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor
                     (this_00,object,
-                     MethodInfo__RTG__RTGizmosEngine____c__DisplayClass107_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
+                     MethodInfo__RTG__RTGizmosEngine____c__DisplayClass104_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
                      ,(MethodInfo *)0x0);
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Sort_1
@@ -2221,11 +2262,11 @@ code_?:
         LOCK();
         UNLOCK();
         FUN_?(&
-                      MethodInfo__RTG__RTGizmosEngine____c__DisplayClass107_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
+                      MethodInfo__RTG__RTGizmosEngine____c__DisplayClass104_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
                      );
         LOCK();
         UNLOCK();
-        FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass107_0);
+        FUN_?(&TypeInfo__RTG__RTGizmosEngine____c__DisplayClass104_0);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
@@ -2254,7 +2295,7 @@ code_?:
                   FUN_?(TypeInfo__System__Comparison<RTG::GizmoHandleHoverData>);
         mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor
                   (this_02,pOVar4,
-                   MethodInfo__RTG__RTGizmosEngine____c__DisplayClass107_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
+                   MethodInfo__RTG__RTGizmosEngine____c__DisplayClass104_0___SortHandleHoverDataCollection_b__0_RTG__GizmoHandleHoverData__RTG__GizmoHandleHoverData_
                    ,(MethodInfo *)0x0);
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Sort_1
@@ -2461,9 +2502,6 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine__ctor
     FUN_?(&TypeInfo__RTG__ObjectTransformGizmoSettings);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__RTG__RotationGizmoHotkeys);
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__RTG__RotationGizmoLookAndFeel3D);
     LOCK();
     UNLOCK();
@@ -2618,13 +2656,39 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine__ctor
     pEVar6 = (EditorToolbar *)FUN_?(TypeInfo__RTG__EditorToolbar);
     uVar7 = _UNK_?;
     uVar4 = _UNK_?;
+    bVar8 = iRam_? != 0;
+    uVar9 = _UNK_?;
+    (pEVar6->fields)._activeTabColor.r = (float)_UNK_?;
+    uVar10 = _UNK_?;
+    (pEVar6->fields)._activeTabColor.g = (float)uVar9;
+    _UNK_? = (undefined4)uVar7;
+    _UNK_? = SUB84(uVar7,4);
+    uVar9 = _UNK_?;
+    (pEVar6->fields)._activeTabColor.b = (float)_UNK_?;
+    _UNK_? = uVar10;
+    (pEVar6->fields)._activeTabColor.a = (float)uVar9;
     (pEVar6->fields)._numTabsPerRow = 3;
-    uVar8 = _UNK_?;
+    (pEVar6->fields)._tabs = pEVar1;
+    if (bVar8) {
+      uVar11 = (uint)((ulonglong)&(pEVar6->fields)._tabs >> 0xc);
+      uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+      do {
+        uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+        puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+        LOCK();
+        bVar8 = uVar13 == *puVar14;
+        if (bVar8) {
+          *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    uVar10 = _UNK_?;
     _UNK_? = (undefined4)uVar4;
     _UNK_? = SUB84(uVar4,4);
     uVar9 = _UNK_?;
     (pEVar6->fields)._activeTabColor.r = (float)_UNK_?;
-    _UNK_? = uVar8;
+    _UNK_? = uVar10;
     uVar4 = _UNK_?;
     (pEVar6->fields)._activeTabColor.g = (float)uVar9;
     _UNK_? = (undefined4)uVar7;
@@ -2633,12 +2697,6 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine__ctor
     (pEVar6->fields)._activeTabColor.b = (float)_UNK_?;
     _UNK_? = uVar4;
     (pEVar6->fields)._activeTabColor.a = (float)uVar9;
-    (pEVar6->fields)._tabs = pEVar1;
-    uVar4 = func_?(&(pEVar6->fields)._tabs);
-    (pEVar6->fields)._activeTabColor.r = (float)(int)uVar4;
-    (pEVar6->fields)._activeTabColor.g = (float)(int)((ulonglong)uVar4 >> 0x20);
-    (pEVar6->fields)._activeTabColor.b = (float)(int)extraout_XMM0_Qb;
-    (pEVar6->fields)._activeTabColor.a = (float)(int)((ulonglong)extraout_XMM0_Qb >> 0x20);
     (pEVar6->fields)._numTabsPerRow = 6;
     (this->fields)._mainToolbar = pEVar6;
     func_?(&(this->fields)._mainToolbar);
@@ -2695,13 +2753,13 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine__ctor
               (this_07->fields)._._isExpanded = 0;
               (this->fields)._moveGizmoHotkeys = this_07;
               func_?(&(this->fields)._moveGizmoHotkeys);
-              pOVar10 = (ObjectTransformGizmoSettings *)
+              pOVar15 = (ObjectTransformGizmoSettings *)
                         FUN_?(TypeInfo__RTG__ObjectTransformGizmoSettings);
               ObjectTransformGizmoSettings::ObjectTransformGizmoSettings__ctor
-                        (pOVar10,(MethodInfo *)0x0);
-              if (pOVar10 != (ObjectTransformGizmoSettings *)0x0) {
-                (pOVar10->fields)._._isExpanded = 0;
-                (this->fields)._objectMoveGizmoSettings = pOVar10;
+                        (pOVar15,(MethodInfo *)0x0);
+              if (pOVar15 != (ObjectTransformGizmoSettings *)0x0) {
+                (pOVar15->fields)._._isExpanded = 0;
+                (this->fields)._objectMoveGizmoSettings = pOVar15;
                 func_?(&(this->fields)._objectMoveGizmoSettings);
                 this_08 = (RotationGizmoSettings3D *)
                           FUN_?(TypeInfo__RTG__RotationGizmoSettings3D);
@@ -2718,254 +2776,227 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine__ctor
                     (this_09->fields)._._isExpanded = 0;
                     (this->fields)._rotationGizmoLookAndFeel3D = this_09;
                     func_?(&(this->fields)._rotationGizmoLookAndFeel3D);
-                    this_10 = (RotationGizmoHotkeys *)
-                              FUN_?(TypeInfo__RTG__RotationGizmoHotkeys);
-                    RotationGizmoHotkeys::RotationGizmoHotkeys__ctor(this_10,(MethodInfo *)0x0);
-                    if (this_10 != (RotationGizmoHotkeys *)0x0) {
-                      (this_10->fields)._._isExpanded = 0;
-                      (this->fields)._rotationGizmoHotkeys = this_10;
-                      func_?(&(this->fields)._rotationGizmoHotkeys);
-                      pOVar10 = (ObjectTransformGizmoSettings *)
-                                FUN_?(TypeInfo__RTG__ObjectTransformGizmoSettings);
-                      ObjectTransformGizmoSettings::ObjectTransformGizmoSettings__ctor
-                                (pOVar10,(MethodInfo *)0x0);
-                      if (pOVar10 != (ObjectTransformGizmoSettings *)0x0) {
-                        (pOVar10->fields)._._isExpanded = 0;
-                        (this->fields)._objectRotationGizmoSettings = pOVar10;
-                        func_?(&(this->fields)._objectRotationGizmoSettings);
-                        this_11 = (ScaleGizmoSettings3D *)
-                                  FUN_?(TypeInfo__RTG__ScaleGizmoSettings3D);
-                        ScaleGizmoSettings3D::ScaleGizmoSettings3D__ctor(this_11,(MethodInfo *)0x0);
-                        if (this_11 != (ScaleGizmoSettings3D *)0x0) {
+                    pOVar15 = (ObjectTransformGizmoSettings *)
+                              FUN_?(TypeInfo__RTG__ObjectTransformGizmoSettings);
+                    ObjectTransformGizmoSettings::ObjectTransformGizmoSettings__ctor
+                              (pOVar15,(MethodInfo *)0x0);
+                    if (pOVar15 != (ObjectTransformGizmoSettings *)0x0) {
+                      (pOVar15->fields)._._isExpanded = 0;
+                      (this->fields)._objectRotationGizmoSettings = pOVar15;
+                      func_?(&(this->fields)._objectRotationGizmoSettings);
+                      this_10 = (ScaleGizmoSettings3D *)
+                                FUN_?(TypeInfo__RTG__ScaleGizmoSettings3D);
+                      ScaleGizmoSettings3D::ScaleGizmoSettings3D__ctor(this_10,(MethodInfo *)0x0);
+                      if (this_10 != (ScaleGizmoSettings3D *)0x0) {
+                        (this_10->fields)._._isExpanded = 0;
+                        (this->fields)._scaleGizmoSettings3D = this_10;
+                        func_?(&(this->fields)._scaleGizmoSettings3D);
+                        this_11 = (ScaleGizmoLookAndFeel3D *)
+                                  FUN_?(TypeInfo__RTG__ScaleGizmoLookAndFeel3D);
+                        ScaleGizmoLookAndFeel3D::ScaleGizmoLookAndFeel3D__ctor
+                                  (this_11,(MethodInfo *)0x0);
+                        if (this_11 != (ScaleGizmoLookAndFeel3D *)0x0) {
                           (this_11->fields)._._isExpanded = 0;
-                          (this->fields)._scaleGizmoSettings3D = this_11;
-                          func_?(&(this->fields)._scaleGizmoSettings3D);
-                          this_12 = (ScaleGizmoLookAndFeel3D *)
-                                    FUN_?(TypeInfo__RTG__ScaleGizmoLookAndFeel3D);
-                          ScaleGizmoLookAndFeel3D::ScaleGizmoLookAndFeel3D__ctor
-                                    (this_12,(MethodInfo *)0x0);
-                          if (this_12 != (ScaleGizmoLookAndFeel3D *)0x0) {
+                          (this->fields)._scaleGizmoLookAndFeel3D = this_11;
+                          func_?(&(this->fields)._scaleGizmoLookAndFeel3D);
+                          this_12 = (ScaleGizmoHotkeys *)
+                                    FUN_?(TypeInfo__RTG__ScaleGizmoHotkeys);
+                          ScaleGizmoHotkeys::ScaleGizmoHotkeys__ctor(this_12,(MethodInfo *)0x0);
+                          if (this_12 != (ScaleGizmoHotkeys *)0x0) {
                             (this_12->fields)._._isExpanded = 0;
-                            (this->fields)._scaleGizmoLookAndFeel3D = this_12;
-                            func_?(&(this->fields)._scaleGizmoLookAndFeel3D);
-                            this_13 = (ScaleGizmoHotkeys *)
-                                      FUN_?(TypeInfo__RTG__ScaleGizmoHotkeys);
-                            ScaleGizmoHotkeys::ScaleGizmoHotkeys__ctor(this_13,(MethodInfo *)0x0);
-                            if (this_13 != (ScaleGizmoHotkeys *)0x0) {
-                              (this_13->fields)._._isExpanded = 0;
-                              (this->fields)._scaleGizmoHotkeys = this_13;
-                              func_?(&(this->fields)._scaleGizmoHotkeys);
-                              pOVar10 = (ObjectTransformGizmoSettings *)
-                                        FUN_?(TypeInfo__RTG__ObjectTransformGizmoSettings);
-                              ObjectTransformGizmoSettings::ObjectTransformGizmoSettings__ctor
-                                        (pOVar10,(MethodInfo *)0x0);
-                              if (pOVar10 != (ObjectTransformGizmoSettings *)0x0) {
-                                bVar11 = iRam_? != 0;
-                                (pOVar10->fields)._._isExpanded = 0;
-                                (this->fields)._objectScaleGizmoSettings = pOVar10;
-                                if (bVar11) {
-                                  uVar12 = (uint)((ulonglong)
-                                                  &(this->fields)._objectScaleGizmoSettings >> 0xc);
-                                  uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
-                                  do {
-                                    uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                    puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
-                                    LOCK();
-                                    bVar11 = uVar14 == *puVar15;
-                                    if (bVar11) {
-                                      *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
-                                    }
-                                    UNLOCK();
-                                  } while (!bVar11);
-                                }
-                                this_14 = (UniversalGizmoConfig *)
-                                          FUN_?(TypeInfo__RTG__UniversalGizmoConfig);
-                                (this_14->fields)._inheritType = 3;
-                                Settings::Settings__ctor((Settings *)this_14,(MethodInfo *)0x0);
-                                bVar11 = iRam_? != 0;
-                                (this->fields)._universalGizmoConfig = this_14;
-                                if (bVar11) {
-                                  uVar12 = (uint)((ulonglong)&(this->fields)._universalGizmoConfig
-                                                 >> 0xc);
-                                  uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
-                                  do {
-                                    uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                    puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
-                                    LOCK();
-                                    bVar11 = uVar14 == *puVar15;
-                                    if (bVar11) {
-                                      *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
-                                    }
-                                    UNLOCK();
-                                  } while (!bVar11);
-                                }
-                                this_15 = (UniversalGizmoSettings2D *)
-                                          FUN_?(TypeInfo__RTG__UniversalGizmoSettings2D);
-                                UniversalGizmoSettings2D::UniversalGizmoSettings2D__ctor
-                                          (this_15,(MethodInfo *)0x0);
-                                if (this_15 != (UniversalGizmoSettings2D *)0x0) {
-                                  bVar11 = iRam_? != 0;
-                                  (this_15->fields)._._isExpanded = 0;
-                                  (this->fields)._universalGizmoSettings2D = this_15;
-                                  if (bVar11) {
-                                    uVar12 = (uint)((ulonglong)
-                                                    &(this->fields)._universalGizmoSettings2D >> 0xc
-                                                   );
-                                    uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
-                                    do {
-                                      uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                      puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
-                                      LOCK();
-                                      bVar11 = uVar14 == *puVar15;
-                                      if (bVar11) {
-                                        *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
-                                      }
-                                      UNLOCK();
-                                    } while (!bVar11);
+                            (this->fields)._scaleGizmoHotkeys = this_12;
+                            func_?(&(this->fields)._scaleGizmoHotkeys);
+                            pOVar15 = (ObjectTransformGizmoSettings *)
+                                      FUN_?(TypeInfo__RTG__ObjectTransformGizmoSettings);
+                            ObjectTransformGizmoSettings::ObjectTransformGizmoSettings__ctor
+                                      (pOVar15,(MethodInfo *)0x0);
+                            if (pOVar15 != (ObjectTransformGizmoSettings *)0x0) {
+                              bVar8 = iRam_? != 0;
+                              (pOVar15->fields)._._isExpanded = 0;
+                              (this->fields)._objectScaleGizmoSettings = pOVar15;
+                              if (bVar8) {
+                                uVar11 = (uint)((ulonglong)&(this->fields)._objectScaleGizmoSettings
+                                               >> 0xc);
+                                uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+                                do {
+                                  uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                                  puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+                                  LOCK();
+                                  bVar8 = uVar13 == *puVar14;
+                                  if (bVar8) {
+                                    *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
                                   }
-                                  this_16 = (UniversalGizmoSettings3D *)
-                                            FUN_?(TypeInfo__RTG__UniversalGizmoSettings3D);
-                                  UniversalGizmoSettings3D::UniversalGizmoSettings3D__ctor
+                                  UNLOCK();
+                                } while (!bVar8);
+                              }
+                              this_13 = (UniversalGizmoConfig *)
+                                        FUN_?(TypeInfo__RTG__UniversalGizmoConfig);
+                              (this_13->fields)._inheritType = 3;
+                              Settings::Settings__ctor((Settings *)this_13,(MethodInfo *)0x0);
+                              bVar8 = iRam_? != 0;
+                              (this->fields)._universalGizmoConfig = this_13;
+                              if (bVar8) {
+                                uVar11 = (uint)((ulonglong)&(this->fields)._universalGizmoConfig >>
+                                               0xc);
+                                uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+                                do {
+                                  uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                                  puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+                                  LOCK();
+                                  bVar8 = uVar13 == *puVar14;
+                                  if (bVar8) {
+                                    *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+                                  }
+                                  UNLOCK();
+                                } while (!bVar8);
+                              }
+                              this_14 = (UniversalGizmoSettings2D *)
+                                        FUN_?(TypeInfo__RTG__UniversalGizmoSettings2D);
+                              UniversalGizmoSettings2D::UniversalGizmoSettings2D__ctor
+                                        (this_14,(MethodInfo *)0x0);
+                              if (this_14 != (UniversalGizmoSettings2D *)0x0) {
+                                bVar8 = iRam_? != 0;
+                                (this_14->fields)._._isExpanded = 0;
+                                (this->fields)._universalGizmoSettings2D = this_14;
+                                if (bVar8) {
+                                  uVar11 = (uint)((ulonglong)
+                                                  &(this->fields)._universalGizmoSettings2D >> 0xc);
+                                  uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+                                  do {
+                                    uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                                    puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+                                    LOCK();
+                                    bVar8 = uVar13 == *puVar14;
+                                    if (bVar8) {
+                                      *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+                                    }
+                                    UNLOCK();
+                                  } while (!bVar8);
+                                }
+                                this_15 = (UniversalGizmoSettings3D *)
+                                          FUN_?(TypeInfo__RTG__UniversalGizmoSettings3D);
+                                UniversalGizmoSettings3D::UniversalGizmoSettings3D__ctor
+                                          (this_15,(MethodInfo *)0x0);
+                                if (this_15 != (UniversalGizmoSettings3D *)0x0) {
+                                  (this_15->fields)._._isExpanded = 0;
+                                  (this->fields)._universalGizmoSettings3D = this_15;
+                                  func_?(&(this->fields)._universalGizmoSettings3D);
+                                  this_16 = (UniversalGizmoLookAndFeel2D *)
+                                            FUN_?(TypeInfo__RTG__UniversalGizmoLookAndFeel2D
+                                                         );
+                                  UniversalGizmoLookAndFeel2D::UniversalGizmoLookAndFeel2D__ctor
                                             (this_16,(MethodInfo *)0x0);
-                                  if (this_16 != (UniversalGizmoSettings3D *)0x0) {
-                                    bVar11 = iRam_? != 0;
+                                  if (this_16 != (UniversalGizmoLookAndFeel2D *)0x0) {
+                                    bVar8 = iRam_? != 0;
                                     (this_16->fields)._._isExpanded = 0;
-                                    (this->fields)._universalGizmoSettings3D = this_16;
-                                    if (bVar11) {
-                                      uVar12 = (uint)((ulonglong)
-                                                      &(this->fields)._universalGizmoSettings3D >>
-                                                     0xc);
-                                      uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
+                                    (this->fields)._universalGizmoLookAndFeel2D = this_16;
+                                    if (bVar8) {
+                                      uVar11 = (uint)((ulonglong)
+                                                      &(this->fields)._universalGizmoLookAndFeel2D
+                                                     >> 0xc);
+                                      uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
                                       do {
-                                        uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                        puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
+                                        uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                                        puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
                                         LOCK();
-                                        bVar11 = uVar14 == *puVar15;
-                                        if (bVar11) {
-                                          *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+                                        bVar8 = uVar13 == *puVar14;
+                                        if (bVar8) {
+                                          *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
                                         }
                                         UNLOCK();
-                                      } while (!bVar11);
+                                      } while (!bVar8);
                                     }
-                                    this_17 = (UniversalGizmoLookAndFeel2D *)
+                                    this_17 = (UniversalGizmoLookAndFeel3D *)
                                               FUN_?(
-                                                  TypeInfo__RTG__UniversalGizmoLookAndFeel2D);
-                                    UniversalGizmoLookAndFeel2D::UniversalGizmoLookAndFeel2D__ctor
+                                                  TypeInfo__RTG__UniversalGizmoLookAndFeel3D);
+                                    UniversalGizmoLookAndFeel3D::UniversalGizmoLookAndFeel3D__ctor
                                               (this_17,(MethodInfo *)0x0);
-                                    if (this_17 != (UniversalGizmoLookAndFeel2D *)0x0) {
-                                      bVar11 = iRam_? != 0;
+                                    if (this_17 != (UniversalGizmoLookAndFeel3D *)0x0) {
+                                      bVar8 = iRam_? != 0;
                                       (this_17->fields)._._isExpanded = 0;
-                                      (this->fields)._universalGizmoLookAndFeel2D = this_17;
-                                      if (bVar11) {
-                                        uVar12 = (uint)((ulonglong)
-                                                        &(this->fields)._universalGizmoLookAndFeel2D
+                                      (this->fields)._universalGizmoLookAndFeel3D = this_17;
+                                      if (bVar8) {
+                                        uVar11 = (uint)((ulonglong)
+                                                        &(this->fields)._universalGizmoLookAndFeel3D
                                                        >> 0xc);
-                                        uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
+                                        uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
                                         do {
-                                          uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                          puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
+                                          uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                                          puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
                                           LOCK();
-                                          bVar11 = uVar14 == *puVar15;
-                                          if (bVar11) {
-                                            *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+                                          bVar8 = uVar13 == *puVar14;
+                                          if (bVar8) {
+                                            *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
                                           }
                                           UNLOCK();
-                                        } while (!bVar11);
+                                        } while (!bVar8);
                                       }
-                                      this_18 = (UniversalGizmoLookAndFeel3D *)
-                                                FUN_?(
-                                                  TypeInfo__RTG__UniversalGizmoLookAndFeel3D);
-                                      UniversalGizmoLookAndFeel3D::UniversalGizmoLookAndFeel3D__ctor
+                                      this_18 = (UniversalGizmoHotkeys *)
+                                                FUN_?(TypeInfo__RTG__UniversalGizmoHotkeys);
+                                      UniversalGizmoHotkeys::UniversalGizmoHotkeys__ctor
                                                 (this_18,(MethodInfo *)0x0);
-                                      if (this_18 != (UniversalGizmoLookAndFeel3D *)0x0) {
-                                        bVar11 = iRam_? != 0;
+                                      if (this_18 != (UniversalGizmoHotkeys *)0x0) {
+                                        bVar8 = iRam_? != 0;
                                         (this_18->fields)._._isExpanded = 0;
-                                        (this->fields)._universalGizmoLookAndFeel3D = this_18;
-                                        if (bVar11) {
-                                          uVar12 = (uint)((ulonglong)
-                                                          &(this->fields).
-                                                           _universalGizmoLookAndFeel3D >> 0xc);
-                                          uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
+                                        (this->fields)._universalGizmoHotkeys = this_18;
+                                        if (bVar8) {
+                                          uVar11 = (uint)((ulonglong)
+                                                          &(this->fields)._universalGizmoHotkeys >>
+                                                         0xc);
+                                          uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
                                           do {
-                                            uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                            puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
+                                            uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                                            puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
                                             LOCK();
-                                            bVar11 = uVar14 == *puVar15;
-                                            if (bVar11) {
-                                              *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+                                            bVar8 = uVar13 == *puVar14;
+                                            if (bVar8) {
+                                              *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
                                             }
                                             UNLOCK();
-                                          } while (!bVar11);
+                                          } while (!bVar8);
                                         }
-                                        this_19 = (UniversalGizmoHotkeys *)
-                                                  FUN_?(TypeInfo__RTG__UniversalGizmoHotkeys
-                                                               );
-                                        UniversalGizmoHotkeys::UniversalGizmoHotkeys__ctor
-                                                  (this_19,(MethodInfo *)0x0);
-                                        if (this_19 != (UniversalGizmoHotkeys *)0x0) {
-                                          bVar11 = iRam_? != 0;
-                                          (this_19->fields)._._isExpanded = 0;
-                                          (this->fields)._universalGizmoHotkeys = this_19;
-                                          if (bVar11) {
-                                            uVar12 = (uint)((ulonglong)
-                                                            &(this->fields)._universalGizmoHotkeys
-                                                           >> 0xc);
-                                            uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
+                                        pOVar15 = (ObjectTransformGizmoSettings *)
+                                                  FUN_?(
+                                                  TypeInfo__RTG__ObjectTransformGizmoSettings);
+                                        ObjectTransformGizmoSettings::
+                                        ObjectTransformGizmoSettings__ctor
+                                                  (pOVar15,(MethodInfo *)0x0);
+                                        if (pOVar15 != (ObjectTransformGizmoSettings *)0x0) {
+                                          bVar8 = iRam_? != 0;
+                                          (pOVar15->fields)._._isExpanded = 0;
+                                          (this->fields)._objectUniversalGizmoSettings = pOVar15;
+                                          if (bVar8) {
+                                            uVar11 = (uint)((ulonglong)
+                                                            &(this->fields).
+                                                             _objectUniversalGizmoSettings >> 0xc);
+                                            uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
                                             do {
-                                              uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                              puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
+                                              uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                                              puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
                                               LOCK();
-                                              bVar11 = uVar14 == *puVar15;
-                                              if (bVar11) {
-                                                *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+                                              bVar8 = uVar13 == *puVar14;
+                                              if (bVar8) {
+                                                *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
                                               }
                                               UNLOCK();
-                                            } while (!bVar11);
+                                            } while (!bVar8);
                                           }
-                                          pOVar10 = (ObjectTransformGizmoSettings *)
-                                                    FUN_?(
-                                                  TypeInfo__RTG__ObjectTransformGizmoSettings);
-                                          ObjectTransformGizmoSettings::
-                                          ObjectTransformGizmoSettings__ctor
-                                                    (pOVar10,(MethodInfo *)0x0);
-                                          if (pOVar10 != (ObjectTransformGizmoSettings *)0x0) {
-                                            bVar11 = iRam_? != 0;
-                                            (pOVar10->fields)._._isExpanded = 0;
-                                            (this->fields)._objectUniversalGizmoSettings = pOVar10;
-                                            if (bVar11) {
-                                              uVar12 = (uint)((ulonglong)
-                                                              &(this->fields).
-                                                               _objectUniversalGizmoSettings >> 0xc)
-                                              ;
-                                              uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
-                                              do {
-                                                uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
-                                                puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
-                                                LOCK();
-                                                bVar11 = uVar14 == *puVar15;
-                                                if (bVar11) {
-                                                  *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
-                                                }
-                                                UNLOCK();
-                                              } while (!bVar11);
-                                            }
-                                            if (*(int *)&(
+                                          if (*(int *)&(
                                                   TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>
                                                   ->_1).field_0x1c == 0) {
-                                              FUN_?();
-                                            }
-                                            if (cRam_? == '\0') {
-                                              FUN_?(&TypeInfo__UnityEngine__Object);
-                                              LOCK();
-                                              UNLOCK();
-                                              cRam_? = '\x01';
-                                            }
-                                            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).
-                                                         field_0x1c == 0) {
-                                              FUN_?();
-                                            }
-                                            return;
+                                            FUN_?();
                                           }
+                                          if (cRam_? == '\0') {
+                                            FUN_?(&TypeInfo__UnityEngine__Object);
+                                            LOCK();
+                                            UNLOCK();
+                                            cRam_? = '\x01';
+                                          }
+                                          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).
+                                                       field_0x1c == 0) {
+                                            FUN_?();
+                                          }
+                                          return;
                                         }
                                       }
                                     }

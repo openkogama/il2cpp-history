@@ -1,9 +1,9 @@
 
 /* Int32 <SortHandleHoverDataCollection>b__0(GizmoHandleHoverData, GizmoHandleHoverData) */
 
-int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass107_0::
-        RTGizmosEngine_c_DisplayClass107_0__SortHandleHoverDataCollection_b__0
-                  (RTGizmosEngine_c_DisplayClass107_0 *this,GizmoHandleHoverData *h0,
+int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass104_0::
+        RTGizmosEngine_c_DisplayClass104_0__SortHandleHoverDataCollection_b__0
+                  (RTGizmosEngine_c_DisplayClass104_0 *this,GizmoHandleHoverData *h0,
                   GizmoHandleHoverData *h1,MethodInfo *method)
 
 {
@@ -51,7 +51,7 @@ int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass107_0::
       }
       else {
         if ((((pGVar1 == (Gizmo *)0x0) ||
-             (this = (RTGizmosEngine_c_DisplayClass107_0 *)(h1->fields)._gizmo,
+             (this = (RTGizmosEngine_c_DisplayClass104_0 *)(h1->fields)._gizmo,
              (Gizmo *)this == (Gizmo *)0x0)) ||
             (method = (MethodInfo *)(pGVar1->fields)._hoverPriority3D,
             (Gizmo *)method == (Gizmo *)0x0)) ||

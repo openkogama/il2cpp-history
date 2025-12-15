@@ -24,8 +24,6 @@ namespace RTG
 		[SerializeField]
 		private KeyCode _key;
 		[SerializeField]
-		private bool _lCtrl;
-		[SerializeField]
 		private bool _lCmd;
 		[SerializeField]
 		private bool _lAlt;
@@ -54,7 +52,6 @@ namespace RTG
 		public bool IsEnabled { get; set; }
 		public string Name { get; }
 		public KeyCode Key { get; set; }
-		public bool LCtrl { get; set; }
 		public bool LCmd { get; set; }
 		public bool LAlt { get; set; }
 		public bool LShift { get; set; }

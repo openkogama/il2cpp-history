@@ -325,7 +325,7 @@ MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectShared
   ;
   value = (String *)0x0;
   if (pSVar3 != (String *)0x0) {
-    if (pSVar3->klass == pSRam0000000182dbbc60) {
+    if (pSVar3->klass == pSRam0000000182dbdde0) {
       value = pSVar3;
     }
     if (value == (String *)0x0) {

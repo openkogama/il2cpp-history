@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Gamestrap;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -25,6 +26,16 @@ public class PlayerListButton : MonoBehaviour
 	private Image notification;
 	[SerializeField]
 	private ColorStyleObject colorStyleObject;
+	[SerializeField]
+	private GradientEffect gradientEffect;
+	[Header("Team Color Integration")]
+	[SerializeField]
+	private bool updateGradient;
+	[SerializeField]
+	private bool updateButtonColors;
+	[Range(0f, 1f)]
+	[SerializeField]
+	private float gradientDarkenAmount;
 	private GameObject currPlayerLists;
 	private Dictionary<int, MVPlayer> prevPlayerListState;
 	private bool useColorStyle;
@@ -36,14 +47,14 @@ public class PlayerListButton : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__13_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__17_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _CreatePlayerList_b__13_0(IUIStack handler, BaseEventData data);
+		internal void _CreatePlayerList_b__17_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -60,6 +71,6 @@ public class PlayerListButton : MonoBehaviour
 	private void UpdatePlayersCount();
 	private void UpdateTeamColor();
 	[CompilerGenerated]
-	private void _CreatePlayerList_b__13_1(IUIStack x, BaseEventData y);
+	private void _CreatePlayerList_b__17_1(IUIStack x, BaseEventData y);
 }
 

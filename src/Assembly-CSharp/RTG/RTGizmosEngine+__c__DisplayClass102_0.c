@@ -1,9 +1,9 @@
 
 /* Int32 <GetGizmoHandleHoverData>b__0(GizmoHandleHoverData, GizmoHandleHoverData) */
 
-int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass105_0::
-        RTGizmosEngine_c_DisplayClass105_0__GetGizmoHandleHoverData_b__0
-                  (RTGizmosEngine_c_DisplayClass105_0 *this,GizmoHandleHoverData *h0,
+int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass102_0::
+        RTGizmosEngine_c_DisplayClass102_0__GetGizmoHandleHoverData_b__0
+                  (RTGizmosEngine_c_DisplayClass102_0 *this,GizmoHandleHoverData *h0,
                   GizmoHandleHoverData *h1,MethodInfo *method)
 
 {

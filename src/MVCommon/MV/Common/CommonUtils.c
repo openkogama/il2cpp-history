@@ -844,7 +844,7 @@ bool MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PruneEmptyDictionaries
             if (this == (List_1_System_Object_ *)0x0) goto code_?;
             if (pOVar14 != (Object *)0x0) {
               pOVar17 = (Object *)0x0;
-              if (pOVar14->klass == pORam0000000182dbbc60) {
+              if (pOVar14->klass == pORam0000000182dbdde0) {
                 pOVar17 = pOVar14;
               }
               if (pOVar17 == (Object *)0x0) goto code_?;

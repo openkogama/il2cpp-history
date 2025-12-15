@@ -113,11 +113,10 @@ int32_t Assembly-CSharp.dll::SubscribableVariableBase`1[System::Single]::
   pEVar1 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Single]::
            EqualityComparer_1_System_Single__get_Default(method->klass->rgctx_data[2].method);
   if (pEVar1 != (EqualityComparer_1_System_Single_ *)0x0) {
-    UNRECOVERED_JUMPTABLE = (pEVar1->klass->vtable).__unknown_1.methodPtr;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    iVar2 = (*UNRECOVERED_JUMPTABLE)
-                      (pEVar1,UNRECOVERED_JUMPTABLE,(pEVar1->klass->vtable).__unknown_1.method);
+    iVar2 = (*(pEVar1->klass->vtable).__unknown_1.methodPtr)
+                      (pEVar1,(this->fields).value,(pEVar1->klass->vtable).__unknown_1.method);
     return iVar2;
   }
   FUN_?();

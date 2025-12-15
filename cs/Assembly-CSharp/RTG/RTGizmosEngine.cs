@@ -45,8 +45,6 @@ namespace RTG
 		[SerializeField]
 		private RotationGizmoLookAndFeel3D _rotationGizmoLookAndFeel3D;
 		[SerializeField]
-		private RotationGizmoHotkeys _rotationGizmoHotkeys;
-		[SerializeField]
 		private ObjectTransformGizmoSettings _objectRotationGizmoSettings;
 		[SerializeField]
 		private ScaleGizmoSettings3D _scaleGizmoSettings3D;
@@ -89,7 +87,6 @@ namespace RTG
 		public ObjectTransformGizmoSettings ObjectMoveGizmoSettings { get; }
 		public RotationGizmoSettings3D RotationGizmoSettings3D { get; }
 		public RotationGizmoLookAndFeel3D RotationGizmoLookAndFeel3D { get; }
-		public RotationGizmoHotkeys RotationGizmoHotkeys { get; }
 		public ObjectTransformGizmoSettings ObjectRotationGizmoSettings { get; }
 		public ScaleGizmoSettings3D ScaleGizmoSettings3D { get; }
 		public ScaleGizmoLookAndFeel3D ScaleGizmoLookAndFeel3D { get; }
@@ -110,41 +107,41 @@ namespace RTG
 	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass105_0
+		private sealed class __c__DisplayClass102_0
 		{
 			// Fields
 			public Gizmo gizmo;
 			public Vector3 screenRayOrigin;
 	
 			// Constructors
-			public __c__DisplayClass105_0();
+			public __c__DisplayClass102_0();
 	
 			// Methods
 			internal int _GetGizmoHandleHoverData_b__0(GizmoHandleHoverData h0, GizmoHandleHoverData h1);
 		}
 	
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass106_0
+		private sealed class __c__DisplayClass103_0
 		{
 			// Fields
 			public Vector3 camPos;
 	
 			// Constructors
-			public __c__DisplayClass106_0();
+			public __c__DisplayClass103_0();
 	
 			// Methods
 			internal int _Render_SystemCall_b__0(Gizmo g0, Gizmo g1);
 		}
 	
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass107_0
+		private sealed class __c__DisplayClass104_0
 		{
 			// Fields
 			public Vector3 inputDevicePos;
 			public Ray hoverRay;
 	
 			// Constructors
-			public __c__DisplayClass107_0();
+			public __c__DisplayClass104_0();
 	
 			// Methods
 			internal int _SortHandleHoverDataCollection_b__0(GizmoHandleHoverData h0, GizmoHandleHoverData h1);

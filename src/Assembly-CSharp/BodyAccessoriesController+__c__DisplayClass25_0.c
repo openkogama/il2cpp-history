@@ -125,11 +125,11 @@ void Assembly-CSharp.dll::BodyAccessoriesController+<>c__DisplayClass25_0::
                               );
           pSVar5 = (String *)0x0;
           if (pSVar8 != (String *)0x0) {
-            if (pSVar8->klass == pSRam0000000182dbbc60) {
+            if (pSVar8->klass == pSRam0000000182dbdde0) {
               pSVar5 = pSVar8;
             }
             if (pSVar5 == (String *)0x0) {
-              FUN_?(pSVar8,pSRam0000000182dbbc60);
+              FUN_?(pSVar8,pSRam0000000182dbdde0);
               pcVar1 = (code *)swi(3);
               (*pcVar1)();
               return;

@@ -3020,7 +3020,7 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_Update
                          );
       pSVar3 = (String *)0x0;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dbbc60) {
+        if (pSVar8->klass == pSRam0000000182dbdde0) {
           pSVar3 = pSVar8;
         }
         if (pSVar3 == (String *)0x0) {
@@ -3266,7 +3266,7 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_UpdatePrefValuesIfCha
                          );
       pSVar3 = (String *)0x0;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dbbc60) {
+        if (pSVar8->klass == pSRam0000000182dbdde0) {
           pSVar3 = pSVar8;
         }
         if (pSVar3 == (String *)0x0) {

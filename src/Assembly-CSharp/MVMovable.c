@@ -1159,10 +1159,10 @@ code_?:
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                 );
             if (pOVar2 == (Object *)0x0) goto code_?;
-            in_R8 = pMRam0000000182dbbc18;
+            in_R8 = pMRam0000000182dbdd98;
             if ((pOVar2->klass->_0).element_class !=
                 (Il2CppClass *)
-                ((_union_155 *)&(pMRam0000000182dbbc18->fields)._._._.position)->genericMethod)
+                ((_union_155 *)&(pMRam0000000182dbdd98->fields)._._._.position)->genericMethod)
             goto code_?;
             aIStackX_18[0].m_value = *(int32_t *)&pOVar2[1].klass;
             in_R8 = (MVCubeModelInstance *)
@@ -1328,11 +1328,11 @@ code_?:
                           (pDVar1,(Object *)key,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-      in_R8 = pMRam0000000182dbbc48;
+      in_R8 = pMRam0000000182dbddc8;
       if (pOVar2 == (Object *)0x0) goto code_?;
       if ((pOVar2->klass->_0).element_class !=
           (Il2CppClass *)
-          ((_union_155 *)&(pMRam0000000182dbbc48->fields)._._._.position)->genericMethod)
+          ((_union_155 *)&(pMRam0000000182dbddc8->fields)._._._.position)->genericMethod)
       goto code_?;
       (this->fields).angularSpeed = *(float *)&pOVar2[1].klass;
       goto code_?;
@@ -1379,7 +1379,7 @@ code_?:
         (this->fields).distance = 0.0;
       }
       else {
-        fVar36 = mscorlib.dll::System::Single::Single_Parse_1
+        fVar36 = mscorlib.dll::System::Single::Single_Parse_2
                            (pSVar24,NumberStyles__Enum_AllowExponent|
                                     NumberStyles__Enum_AllowThousands|
                                     NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,
@@ -1828,10 +1828,10 @@ code_?:
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                 );
             if (pOVar2 == (Object *)0x0) goto code_?;
-            in_R8 = pMRam0000000182dbbc18;
+            in_R8 = pMRam0000000182dbdd98;
             if ((pOVar2->klass->_0).element_class !=
                 (Il2CppClass *)
-                ((_union_155 *)&(pMRam0000000182dbbc18->fields)._._._.position)->genericMethod)
+                ((_union_155 *)&(pMRam0000000182dbdd98->fields)._._._.position)->genericMethod)
             goto code_?;
             aIStackX_18[0].m_value = *(int32_t *)&pOVar2[1].klass;
             in_R8 = (MVCubeModelInstance *)
@@ -1997,11 +1997,11 @@ code_?:
                           (pDVar1,(Object *)key,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-      in_R8 = pMRam0000000182dbbc48;
+      in_R8 = pMRam0000000182dbddc8;
       if (pOVar2 == (Object *)0x0) goto code_?;
       if ((pOVar2->klass->_0).element_class !=
           (Il2CppClass *)
-          ((_union_155 *)&(pMRam0000000182dbbc48->fields)._._._.position)->genericMethod)
+          ((_union_155 *)&(pMRam0000000182dbddc8->fields)._._._.position)->genericMethod)
       goto code_?;
       (this->fields).angularSpeed = *(float *)&pOVar2[1].klass;
       goto code_?;
@@ -2048,7 +2048,7 @@ code_?:
         (this->fields).distance = 0.0;
       }
       else {
-        fVar36 = mscorlib.dll::System::Single::Single_Parse_1
+        fVar36 = mscorlib.dll::System::Single::Single_Parse_2
                            (pSVar24,NumberStyles__Enum_AllowExponent|
                                     NumberStyles__Enum_AllowThousands|
                                     NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,

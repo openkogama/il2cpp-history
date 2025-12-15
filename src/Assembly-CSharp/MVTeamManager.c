@@ -69,6 +69,101 @@ int32_t Assembly-CSharp.dll::MVTeamManager::MVTeamManager_GetNoOfPlayersInTeam
 }
 
 
+/* Int32 GetNoOfPlayersInTeamWithoutLocalPlayer(MVTeam) */
+
+int32_t Assembly-CSharp.dll::MVTeamManager::MVTeamManager_GetNoOfPlayersInTeamWithoutLocalPlayer
+                  (MVTeamManager *this,MVTeam__Enum team,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  System__Collections__Generic__List<MVPlayer>_MethodInfo__System__Linq__Enumerable__ToList<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<MVPlayer>_MethodInfo__System__Linq__Enumerable__Where<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_bool>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<MVPlayer,_bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MVTeamManager____c__DisplayClass32_0___GetNoOfPlayersInTeamWithoutLocalPlayer_g__predicate_0_MVPlayer_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVTeamManager____c__DisplayClass32_0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  object = (Object *)FUN_?(TypeInfo__MVTeamManager____c__DisplayClass32_0);
+  if (object != (Object *)0x0) {
+    bVar1 = cRam_? == '\0';
+    *(MVTeam__Enum *)&object[1].klass = team;
+    if (bVar1) {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+        (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+       (this_00 = (pMVar3->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+      source = MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
+      this_01 = (Predicate_1_Object_ *)FUN_?(TypeInfo__System__Func<MVPlayer,_bool>);
+      mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                (this_01,object,
+                 MethodInfo__MVTeamManager____c__DisplayClass32_0___GetNoOfPlayersInTeamWithoutLocalPlayer_g__predicate_0_MVPlayer_
+                 ,(MethodInfo *)0x0);
+      collection = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_1
+                             ((IEnumerable_1_System_Object_ *)source,
+                              (Func_2_Object_Boolean_ *)this_01,
+                              System__Collections__Generic__IEnumerable<MVPlayer>_MethodInfo__System__Linq__Enumerable__Where<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_bool>_
+                             );
+      pMVar4 = 
+      System__Collections__Generic__List<MVPlayer>_MethodInfo__System__Linq__Enumerable__ToList<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>_
+      ;
+      if ((
+          System__Collections__Generic__List<MVPlayer>_MethodInfo__System__Linq__Enumerable__ToList<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>_
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     System__Collections__Generic__List<MVPlayer>_MethodInfo__System__Linq__Enumerable__ToList<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>_
+                     );
+      }
+      if (collection == (IEnumerable_1_System_Object_ *)0x0) {
+        s = (String *)func_?(&StringLiteral_source);
+        pEVar5 = System.Core.dll::System::Linq::Error::Error_1_ArgumentNull(s,(MethodInfo *)0x0);
+        FUN_?(pEVar5,pMVar4);
+        pcVar6 = (code *)swi(3);
+        iVar7 = (*pcVar6)();
+        return iVar7;
+      }
+      pvVar8 = (pMVar4->field7_0x38).rgctx_data[1].rgctxDataDummy;
+      if ((*(byte *)((longlong)pvVar8 + 0x135) & 1) == 0) {
+        pvVar8 = (void *)FUN_?(pvVar8);
+      }
+      this_02 = (List_1_System_Object_ *)FUN_?(pvVar8);
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object___ctor_1(this_02,collection,(pMVar4->field7_0x38).rgctx_data[2].method);
+      if (this_02 != (List_1_System_Object_ *)0x0) {
+        return (this_02->fields)._size;
+      }
+    }
+  }
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  iVar7 = (*pcVar6)();
+  return iVar7;
+}
+
+
 /* List`1[MVWorldObjectClient] GetOnlySpawnPointsForTeam(MVTeam) */
 
 List_1_MVWorldObjectClient_ *

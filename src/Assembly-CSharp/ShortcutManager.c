@@ -326,6 +326,16 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager_Update
     LOCK();
     UNLOCK();
     FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__Contains_KogamaControls_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
                   MethodInfo__System__Collections__Generic__KeyValuePair<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>__get_Value__
                  );
     LOCK();
@@ -344,6 +354,52 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager_Update
   SStack_1._version = 0;
   SStack_1._index = 0;
   SStack_1._currentElement = (Object *)0x0;
+  pDStack_2 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).shortCutKeys;
+  if (pDStack_2 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&pDStack_2 >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  uStack_8 = (ulonglong)(uint)(pDStack_2->fields)._version;
+  uStack_9 = 2;
+  uStack_10 = 0;
+  uStack_11 = 0;
+  aDStack_12[0]._version = (undefined4)uStack_8;
+  aDStack_12[0]._index = uStack_8._4_4_;
+  aDStack_12[0]._current.key = 0;
+  aDStack_12[0]._current._4_4_ = 0;
+  aDStack_12[0]._current.value = (Object *)0x0;
+  aDStack_12[0]._getEnumeratorRetType = 2;
+  aDStack_12[0]._36_4_ = 0;
+  uStack_13 = 0;
+  pDStack_14 = aDStack_12;
+  aDStack_12[0]._dictionary = pDStack_2;
+code_?:
+  bVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
+          UInt32,System::Object]::
+          Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                    (aDStack_12,
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>__MoveNext__
+                    );
+  pDVar16 = (Dictionary_2_System_UInt32_System_Object_ *)aDStack_12[0]._current.value;
+  if (bVar15 == 0) {
+    return;
+  }
+  item = (Int32Enum__Enum)aDStack_12[0]._current._0_8_;
   if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
     FUN_?();
   }
@@ -356,157 +412,108 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager_Update
   if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
     FUN_?();
   }
-  pMVar2 = TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed;
-  if (pMVar2 == (MVInputWrapper_InputSuppression *)0x0) {
+  pMVar17 = TypeInfo__MVInputWrapper->static_fields->isShortcutKeysSuppressed;
+  if (pMVar17 == (MVInputWrapper_InputSuppression *)0x0) goto code_?;
+  cVar18 = (*(pMVar17->klass->vtable).get_IsSuppressed.methodPtr)
+                     (pMVar17,(pMVar17->klass->vtable).get_IsSuppressed.method);
+  if (cVar18 == '\0') {
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar15 = MVInputWrapper::MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
+    if (bVar15 != 0) goto code_?;
+    goto code_?;
+  }
 code_?:
+  this_00 = (HashSet_1_System_Int32Enum_ *)(this->fields).alwaysActiveControls;
+  if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) goto code_?;
+  goto code_?;
+code_?:
+  bVar15 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+          HashSet_1_System_Int32Enum__Contains
+                    (this_00,item,
+                     MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__Contains_KogamaControls_
+                    );
+  if (bVar15 != 0) {
+code_?:
+    if (pDVar16 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+      uStack_8 = 0;
+      uStack_10 = 0;
+      pDStack_2 = pDVar16;
+      func_?(&pDStack_2);
+      SStack_1._version = *(undefined4 *)((longlong)&(pDVar16->fields)._entries + 4);
+      uStack_8 = CONCAT44(0xfffffffe,SStack_1._version);
+      uStack_10 = 0;
+      SStack_1._stack = (Stack_1_System_Object_ *)pDStack_2;
+      SStack_1._index = 0xfffffffe;
+      SStack_1._currentElement = (Object *)0x0;
+      uStack_19 = 0;
+      pSStack_20 = &SStack_1;
+code_?:
+      do {
+        bVar15 = mscorlib.dll::System::Collections::Generic::Stack`1[T]+Enumerator[System::Object]::
+                Stack_1_T_Enumerator_System_Object__MoveNext
+                          (&SStack_1,
+                           MethodInfo__System__Collections__Generic__Stack_1_T___Enumerator<ShortcutManager::ShortcutKey>__MoveNext__
+                          );
+        pOVar21 = SStack_1._currentElement;
+        if (bVar15 == 0) goto code_?;
+        pMVar22 = 
+        MethodInfo__System__Collections__Generic__Stack_1_T___Enumerator<ShortcutManager::ShortcutKey>__get_Current__
+        ;
+        if ((longlong)SStack_1._8_8_ < 0) goto code_?;
+        if (SStack_1._currentElement == (Object *)0x0) goto code_?;
+        iVar23 = *(int *)((longlong)&SStack_1._currentElement[1].klass + 4);
+        if (iVar23 == 0) {
+          KVar24 = *(KogamaControls__Enum *)&SStack_1._currentElement[1].klass;
+          if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar15 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp(KVar24,(MethodInfo *)0x0);
+        }
+        else if (iVar23 == 1) {
+          KVar24 = *(KogamaControls__Enum *)&SStack_1._currentElement[1].klass;
+          if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar15 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown(KVar24,(MethodInfo *)0x0);
+        }
+        else {
+          if (iVar23 != 2) goto code_?;
+          KVar24 = *(KogamaControls__Enum *)&SStack_1._currentElement[1].klass;
+          if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar15 = MVInputWrapper::MVInputWrapper_GetBooleanControl(KVar24,(MethodInfo *)0x0);
+        }
+      } while (bVar15 == 0);
+      pMVar22 = (MethodInfo *)pOVar21[1].monitor;
+      if (pMVar22 != (MethodInfo *)0x0) {
+        (*(code *)pMVar22->name)((pMVar22->field8_0x40).genericMethod,pMVar22->return_type);
+code_?:
+        SStack_1._index = 0xffffffff;
+        goto code_?;
+      }
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      lVar25 = func_?(pMVar22->klass);
+      uVar26 = func_?(*(undefined8 *)(lVar25 + 0xc0),4);
+      FUN_?(&SStack_1,uVar26);
+      FUN_?();
+    }
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
     FUN_?();
     pcVar3 = (code *)swi(3);
     (*pcVar3)();
     return;
   }
-  cVar4 = (*(pMVar2->klass->vtable).get_IsSuppressed.methodPtr)
-                    (pMVar2,(pMVar2->klass->vtable).get_IsSuppressed.method);
-  if (cVar4 == '\0') {
-    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
-      FUN_?();
-    }
-    bVar5 = MVInputWrapper::MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
-    if (bVar5 == 0) {
-      pDStack_6 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).shortCutKeys;
-      if (pDStack_6 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) goto code_?;
-      if (iRam_? != 0) {
-        uVar7 = (uint)((ulonglong)&pDStack_6 >> 0xc);
-        lVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-        do {
-          uVar9 = *(ulonglong *)(lVar8 + 0xADDR);
-          puVar10 = (ulonglong *)(lVar8 + 0xADDR);
-          LOCK();
-          bVar11 = uVar9 == *puVar10;
-          if (bVar11) {
-            *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
-          }
-          UNLOCK();
-        } while (!bVar11);
-      }
-      uStack_12 = (ulonglong)(uint)(pDStack_6->fields)._version;
-      uStack_13 = 2;
-      uStack_14 = 0;
-      uStack_15 = 0;
-      DStack_16._version = (undefined4)uStack_12;
-      DStack_16._index = uStack_12._4_4_;
-      DStack_16._current.key = 0;
-      DStack_16._current._4_4_ = 0;
-      DStack_16._current.value = (Object *)0x0;
-      DStack_16._getEnumeratorRetType = 2;
-      DStack_16._36_4_ = 0;
-      uStack_17 = 0;
-      pDStack_18 = &DStack_16;
-      DStack_16._dictionary = pDStack_6;
-      while (bVar5 = mscorlib.dll::System::Collections::Generic::
-                     Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-                     Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                               (&DStack_16,
-                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>__MoveNext__
-                               ), bVar5 != 0) {
-        if ((Dictionary_2_System_UInt32_System_Object_ *)DStack_16._current.value ==
-            (Dictionary_2_System_UInt32_System_Object_ *)0x0) goto code_?;
-        uStack_12 = 0;
-        uStack_14 = 0;
-        pDStack_6 = (Dictionary_2_System_UInt32_System_Object_ *)DStack_16._current.value;
-        if (iRam_? != 0) {
-          uVar7 = (uint)((ulonglong)&pDStack_6 >> 0xc);
-          lVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-          do {
-            uVar9 = *(ulonglong *)(lVar8 + 0xADDR);
-            puVar10 = (ulonglong *)(lVar8 + 0xADDR);
-            LOCK();
-            bVar11 = uVar9 == *puVar10;
-            if (bVar11) {
-              *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar11);
-        }
-        if ((Dictionary_2_System_UInt32_System_Object_ *)DStack_16._current.value ==
-            (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-code_?:
-          FUN_?();
-code_?:
-          FUN_?();
-          FUN_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
-          return;
-        }
-        SStack_1._version =
-             *(undefined4 *)
-              ((longlong)
-               &((Dictionary_2_System_UInt32_System_Object___Fields *)
-                ((longlong)DStack_16._current.value + 0x10))->_entries + 4);
-        uStack_12 = CONCAT44(0xfffffffe,SStack_1._version);
-        uStack_14 = 0;
-        SStack_1._stack = (Stack_1_System_Object_ *)DStack_16._current.value;
-        SStack_1._index = 0xfffffffe;
-        SStack_1._currentElement = (Object *)0x0;
-        uStack_19 = 0;
-        pSStack_20 = &SStack_1;
-code_?:
-        do {
-          bVar5 = mscorlib.dll::System::Collections::Generic::Stack`1[T]+Enumerator[System::Object]
-                  ::Stack_1_T_Enumerator_System_Object__MoveNext
-                            (&SStack_1,
-                             MethodInfo__System__Collections__Generic__Stack_1_T___Enumerator<ShortcutManager::ShortcutKey>__MoveNext__
-                            );
-          pOVar21 = SStack_1._currentElement;
-          if (bVar5 == 0) goto code_?;
-          pMVar22 = 
-          MethodInfo__System__Collections__Generic__Stack_1_T___Enumerator<ShortcutManager::ShortcutKey>__get_Current__
-          ;
-          if ((longlong)SStack_1._8_8_ < 0) goto code_?;
-          if (SStack_1._currentElement == (Object *)0x0) goto code_?;
-          iVar23 = *(int *)((longlong)&SStack_1._currentElement[1].klass + 4);
-          if (iVar23 == 0) {
-            KVar24 = *(KogamaControls__Enum *)&SStack_1._currentElement[1].klass;
-            if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
-              FUN_?();
-            }
-            bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp(KVar24,(MethodInfo *)0x0);
-          }
-          else if (iVar23 == 1) {
-            KVar24 = *(KogamaControls__Enum *)&SStack_1._currentElement[1].klass;
-            if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
-              FUN_?();
-            }
-            bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown(KVar24,(MethodInfo *)0x0);
-          }
-          else {
-            if (iVar23 != 2) goto code_?;
-            KVar24 = *(KogamaControls__Enum *)&SStack_1._currentElement[1].klass;
-            if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
-              FUN_?();
-            }
-            bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl(KVar24,(MethodInfo *)0x0);
-          }
-        } while (bVar5 == 0);
-        pMVar22 = (MethodInfo *)pOVar21[1].monitor;
-        if (pMVar22 == (MethodInfo *)0x0) {
-          FUN_?();
-code_?:
-          FUN_?();
-code_?:
-          lVar8 = func_?(pMVar22->klass);
-          uVar25 = func_?(*(undefined8 *)(lVar8 + 0xc0),4);
-          FUN_?(&SStack_1,uVar25);
-          FUN_?();
-          goto code_?;
-        }
-        (*(code *)pMVar22->name)((pMVar22->field8_0x40).genericMethod,pMVar22->return_type);
-code_?:
-        SStack_1._index = 0xffffffff;
-      }
-    }
-  }
-  return;
+  goto code_?;
 }
 
 
@@ -527,6 +534,17 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager__ctor
                  );
     LOCK();
     UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__Add_KogamaControls_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<KogamaControls>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
@@ -544,16 +562,59 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager__ctor
        (Dictionary_2_KogamaControls_Stack_1_ShortcutManager_ShortcutKey_ *)this_00;
   if (bVar1) {
     uVar2 = (uint)((ulonglong)&(this->fields).shortCutKeys >> 0xc);
-    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
     do {
-      uVar4 = *puVar3;
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
       LOCK();
-      uVar5 = *puVar3;
-      if (uVar4 == uVar5) {
-        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
       }
       UNLOCK();
-    } while (uVar4 != uVar5);
+    } while (!bVar1);
+  }
+  this_01 = (HashSet_1_System_Int32Enum_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__HashSet<KogamaControls>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+  HashSet_1_System_Int32Enum___ctor
+            (this_01,MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__HashSet__);
+  if (this_01 == (HashSet_1_System_Int32Enum_ *)0x0) {
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+  HashSet_1_System_Int32Enum__AddIfNotPresent
+            (this_01,0xf,
+             MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__Add_KogamaControls_
+             ->klass->rgctx_data[0x15].method);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+  HashSet_1_System_Int32Enum__AddIfNotPresent
+            (this_01,0x2a,
+             MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__Add_KogamaControls_
+             ->klass->rgctx_data[0x15].method);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+  HashSet_1_System_Int32Enum__AddIfNotPresent
+            (this_01,0x29,
+             MethodInfo__System__Collections__Generic__HashSet<KogamaControls>__Add_KogamaControls_
+             ->klass->rgctx_data[0x15].method);
+  bVar1 = iRam_? != 0;
+  (this->fields).alwaysActiveControls = (HashSet_1_KogamaControls_ *)this_01;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).alwaysActiveControls >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
   }
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__UnityEngine__Object);
