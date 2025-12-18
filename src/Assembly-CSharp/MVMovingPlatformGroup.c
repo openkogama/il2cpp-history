@@ -574,9 +574,9 @@ code_?:
           FUN_?();
         }
         uVar3 = mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar20,(MethodInfo *)0x0);
-        pDVar2 = pDRam0000000182dbdd98;
+        pDVar2 = pDRam0000000182dc5078;
         if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
-        if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) goto code_?;
+        if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) goto code_?;
         aIStackX_18[0].m_value = (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)->_).id;
         pMVar18 = (MVWorldObjectClient__Class *)0x0;
         unaff_RBX = (MVWorldObjectClient__Class *)MVGroup::MVGroup_GetChild((MVGroup *)this,aIStackX_18[0].m_value,(MethodInfo *)0x0);
@@ -679,8 +679,8 @@ code_?:
         key_00 = mscorlib.dll::System::Int32::Int32_Parse_2(pSVar20,(IFormatProvider *)provider,(MethodInfo *)0x0);
       }
       if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
-      pDVar2 = pDRam0000000182dbdd98;
-      if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) goto code_?;
+      pDVar2 = pDRam0000000182dc5078;
+      if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) goto code_?;
       key = (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)->_).id;
       pDVar22 = (this->fields).nodeIdToWoMap;
       if (pDVar22 == (Dictionary_2_System_Int32_MVMovingPlatformNode_ *)0x0) goto code_?;
@@ -728,7 +728,7 @@ code_?:
     }
     this_01 = (this->fields)._.blueprintData;
     if ((this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pMVar18 = (MVWorldObjectClient__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_StartNode,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pMVar18 != (MVWorldObjectClient__Class *)0x0)) {
-      if ((((MVWorldObjectClient__Class *)(pMVar18->_0).image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) {
+      if ((((MVWorldObjectClient__Class *)(pMVar18->_0).image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) {
         FUN_?(pMVar18);
 code_?:
         FUN_?();
@@ -1190,9 +1190,9 @@ code_?:
           FUN_?();
         }
         uVar3 = mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar20,(MethodInfo *)0x0);
-        pDVar2 = pDRam0000000182dbdd98;
+        pDVar2 = pDRam0000000182dc5078;
         if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
-        if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) goto code_?;
+        if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) goto code_?;
         aIStackX_18[0].m_value = (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)->_).id;
         pMVar18 = (MVWorldObjectClient__Class *)0x0;
         unaff_RBX = (MVWorldObjectClient__Class *)MVGroup::MVGroup_GetChild((MVGroup *)this,aIStackX_18[0].m_value,(MethodInfo *)0x0);
@@ -1295,8 +1295,8 @@ code_?:
         key_00 = mscorlib.dll::System::Int32::Int32_Parse_2(pSVar20,(IFormatProvider *)provider,(MethodInfo *)0x0);
       }
       if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
-      pDVar2 = pDRam0000000182dbdd98;
-      if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) goto code_?;
+      pDVar2 = pDRam0000000182dc5078;
+      if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) goto code_?;
       key = (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)->_).id;
       pDVar22 = (this->fields).nodeIdToWoMap;
       if (pDVar22 == (Dictionary_2_System_Int32_MVMovingPlatformNode_ *)0x0) goto code_?;
@@ -1344,7 +1344,7 @@ code_?:
     }
     this_01 = (this->fields)._.blueprintData;
     if ((this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pMVar18 = (MVWorldObjectClient__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_StartNode,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pMVar18 != (MVWorldObjectClient__Class *)0x0)) {
-      if ((((MVWorldObjectClient__Class *)(pMVar18->_0).image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) {
+      if ((((MVWorldObjectClient__Class *)(pMVar18->_0).image)->_0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) {
         FUN_?(pMVar18);
 code_?:
         FUN_?();
@@ -2130,7 +2130,7 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::MVMovingPlatformGroup_WorldObje
     (*pcVar1)();
     return;
   }
-  uStack_2._0_4_ = 0x804b949c;
+  uStack_2._0_4_ = 0x804b9d3c;
   uStack_2._4_4_ = 1;
   MVMovingPlatform::MVMovingPlatform_RecalculateMovement(this_00,(MethodInfo *)0x0);
   if (cRam_? == '\0') {

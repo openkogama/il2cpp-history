@@ -3,10 +3,8 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using MV.Common;
 using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -22,7 +20,7 @@ public class MainCameraManager : MonoBehaviour
 	public static float DistanceToAvatarBase;
 	public static CameraType DefaultCameraType;
 	public static bool IsCameraForcedFirstPerson;
-	private static Dictionary<MVGameType, ICameraSettings> cameraSettings;
+	private static ICameraSettings cameraSettings;
 	private static float baseVolume;
 	private static bool isMuted;
 	private static bool isTemporarilyMuted;
@@ -101,9 +99,9 @@ public class MainCameraManager : MonoBehaviour
 	private void RenderLogic(bool renderLogic);
 	protected void OnDestroy();
 	public static void TemporaryMute(bool muteTemporarily);
-	public static void RegisterCameraWithSettings(MVGameType gameType, ICameraSettings camSettings);
-	public static void UnRegisterCameraWithSettings(MVGameType gameType);
-	public static ICameraSettings GetSettings(MVGameType gameType);
-	public static bool HasSetting(MVGameType gameType);
+	public static void RegisterCameraWithSettings(ICameraSettings camSettings);
+	public static void UnRegisterCameraWithSettings();
+	public static ICameraSettings GetSettings();
+	public static bool HasSetting();
 }
 

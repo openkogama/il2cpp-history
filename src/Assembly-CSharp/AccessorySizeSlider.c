@@ -312,14 +312,14 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_SyncScale(Acc
     pOVar6 = (Object *)FUN_?(uRam_?,&stack0x00000008);
     if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       uVar4 = CONCAT71((int7)((ulonglong)uVar4 >> 8),1);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x7e,pOVar6,(InsertionBehavior__Enum)uVar4,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x81,pOVar6,(InsertionBehavior__Enum)uVar4,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
       pOVar6 = (Object *)FUN_?(uRam_?,&stack0x00000008);
       uVar7 = CONCAT71((int7)((ulonglong)uVar4 >> 8),1);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x71,pOVar6,(InsertionBehavior__Enum)uVar7,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x74,pOVar6,(InsertionBehavior__Enum)uVar7,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
       pOVar6 = (Object *)FUN_?(uRam_?,&stack0x00000008);
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x22);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x22,pOVar6,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),1),method_00);
+      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x23);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x23,pOVar6,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),1),method_00);
       pPVar8 = (pMVar5->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
         FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);

@@ -34,9 +34,12 @@ public class ToggleButtonAnimation : MonoBehaviour
 	private float interpolateToggleButtonNewPositionX;
 	private float interpolationStartTime;
 	private bool isInitialized;
+	[CompilerGenerated]
+	private bool _IsInteractable_k__BackingField;
 
 	// Properties
 	public bool IsToggleOn { get; }
+	public bool IsInteractable { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Constructors
 	public ToggleButtonAnimation();

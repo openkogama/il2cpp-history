@@ -25,9 +25,20 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_AddLine(ChatCon
   }
   pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar4 != (GameSessionData *)0x0) {
-    if ((pGVar4->fields).gameMode == 1) {
-      (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
+    if ((pGVar4->fields).gameMode != 1) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar4->fields).gameMode != 3) {
+        return;
+      }
     }
+    (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
     return;
   }
 code_?:
@@ -84,27 +95,19 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_ChatFocusChange
       if (pIVar4 == (InputField *)0x0) goto code_?;
       UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField(pIVar4,(MethodInfo *)0x0);
       pRVar5 = (this->fields).inputAreaDeactivated;
-      if (pRVar5 == (RectTransform *)0x0) goto code_?;
-      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0);
-      if (pGVar6 == (GameObject *)0x0) goto code_?;
+      if ((pRVar5 == (RectTransform *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,bVar1 ^ 1,(MethodInfo *)0x0);
       pRVar5 = (this->fields)._._InputAreaRoot_k__BackingField;
-      if (pRVar5 == (RectTransform *)0x0) goto code_?;
-      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0);
-      if (pGVar6 == (GameObject *)0x0) goto code_?;
+      if ((pRVar5 == (RectTransform *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,bVar1,(MethodInfo *)0x0);
     }
   }
   else {
     pRVar5 = (this->fields)._._InputAreaRoot_k__BackingField;
-    if (pRVar5 == (RectTransform *)0x0) goto code_?;
-    pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0);
-    if (pGVar6 == (GameObject *)0x0) goto code_?;
+    if ((pRVar5 == (RectTransform *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
     pRVar5 = (this->fields).inputAreaDeactivated;
-    if (pRVar5 == (RectTransform *)0x0) goto code_?;
-    pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0);
-    if (pGVar6 == (GameObject *)0x0) goto code_?;
+    if ((pRVar5 == (RectTransform *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,(this->fields)._.chatLocked,(MethodInfo *)0x0);
     pIVar4 = (this->fields).inputField;
     if (pIVar4 == (InputField *)0x0) goto code_?;
@@ -125,9 +128,20 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_ChatFocusChange
   }
   pGVar7 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar7 != (GameSessionData *)0x0) {
-    if ((pGVar7->fields).gameMode == 1) {
-      (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
+    if ((pGVar7->fields).gameMode != 1) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar7 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar7 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar7->fields).gameMode != 3) {
+        return;
+      }
     }
+    (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
     return;
   }
 code_?:
@@ -150,52 +164,64 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_ChatHotkeyPress
     (*pcVar2)();
     return;
   }
-  if ((pIVar1->fields).m_AllowInput == 0) {
-    ChatControllerBase::ChatControllerBase_PromptRegisterForChatIfApplicable((ChatControllerBase *)this,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__IEditModeUI);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pRVar3 = (this->fields)._._InputAreaRoot_k__BackingField;
+  if ((pIVar1->fields).m_AllowInput != 0) {
+    return;
+  }
+  ChatControllerBase::ChatControllerBase_PromptRegisterForChatIfApplicable((ChatControllerBase *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__IEditModeUI);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pRVar3 = (this->fields)._._InputAreaRoot_k__BackingField;
+  if ((pRVar3 != (RectTransform *)0x0) && (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar3,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0)) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
+    pRVar3 = (this->fields).inputAreaDeactivated;
     if ((pRVar3 != (RectTransform *)0x0) && (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar3,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
-      pRVar3 = (this->fields).inputAreaDeactivated;
-      if ((pRVar3 != (RectTransform *)0x0) && (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar3,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,(this->fields)._.chatLocked,(MethodInfo *)0x0);
-        pIVar1 = (this->fields).inputField;
-        if (pIVar1 != (InputField *)0x0) {
-          UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar1,(MethodInfo *)0x0);
-          this_00 = (this->fields)._._MessageController_k__BackingField;
-          if (this_00 != (SendMessageControl *)0x0) {
-            if ((this_00->fields).selectedChat == 9) {
-              SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_00,1,(MethodInfo *)0x0);
-            }
-            (this->fields).shouldUpdateFade = 1;
-            ChatControllerUGUI_UpdateFadeTime(this,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              FUN_?(&TypeInfo__MVGameControllerBase);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-            if (pGVar5 != (GameSessionData *)0x0) {
-              if ((pGVar5->fields).gameMode == 1) {
-                (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,(this->fields)._.chatLocked,(MethodInfo *)0x0);
+      pIVar1 = (this->fields).inputField;
+      if (pIVar1 != (InputField *)0x0) {
+        UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar1,(MethodInfo *)0x0);
+        this_00 = (this->fields)._._MessageController_k__BackingField;
+        if (this_00 != (SendMessageControl *)0x0) {
+          if ((this_00->fields).selectedChat == 9) {
+            SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_00,1,(MethodInfo *)0x0);
+          }
+          (this->fields).shouldUpdateFade = 1;
+          ChatControllerUGUI_UpdateFadeTime(this,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar5 != (GameSessionData *)0x0) {
+            if ((pGVar5->fields).gameMode != 1) {
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__MVGameControllerBase);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
               }
-              return;
+              pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+              if (pGVar5 == (GameSessionData *)0x0) goto code_?;
+              if ((pGVar5->fields).gameMode != 3) {
+                return;
+              }
             }
+            (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
+            return;
           }
         }
       }
     }
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
   }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -452,30 +478,42 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_Initialize(Chat
   }
   (this->fields).waitForLocalPlayerReady = 0;
   obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-  if (obj != (Transform *)0x0) {
-    if (cRam_? == '\0') {
-      FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pvVar6 = (obj->fields)._._.m_CachedPtr;
-    if (pvVar6 == (void *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
-    }
-    pcVar5 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) && (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
-      uVar7 = func_?(&UNK_?);
-      FUN_?(uVar7,0);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
-    }
-    pcRam_? = pcVar5;
-    (*pcRam_?)(pvVar6);
+  if (obj == (Transform *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar6 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar6 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pcVar5 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pcRam_? = pcVar5;
+  (*pcRam_?)(pvVar6);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar8->fields).gameMode == 0) {
+    bVar1 = false;
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -483,88 +521,99 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_Initialize(Chat
       cRam_? = '\x01';
     }
     pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar8 != (GameSessionData *)0x0) {
-      ChatControllerUGUI_ChatFocusChanged(this,(pGVar8->fields).gameMode != 0,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar8 != (GameSessionData *)0x0) {
-        if ((pGVar8->fields).gameMode == 1) {
-          pIVar9 = (this->fields).inputField;
-          (this->fields).shouldUpdateFade = 0;
-          if (pIVar9 == (InputField *)0x0) goto code_?;
-          UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar9,(MethodInfo *)0x0);
-        }
-        (*(this->klass->vtable).UpdateLockedState.methodPtr)(this);
-        bVar1 = cRam_? == '\0';
-        (this->fields).currentlyInLobbyState = 1;
-        if (bVar1) {
-          FUN_?(&TypeInfo__MVGameControllerBase);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if (pGVar8 != (GameSessionData *)0x0) {
-          if ((pGVar8->fields).gameMode != 0) {
+    if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+    bVar1 = (pGVar8->fields).gameMode != 4;
+  }
+  ChatControllerUGUI_ChatFocusChanged(this,bVar1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar8->fields).gameMode == 1) {
 code_?:
-            pAVar10 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
-            this_02 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_02,(Object *)this,MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
-            pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar10,(Delegate *)this_02,(MethodInfo *)0x0);
-            pAVar12 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
-            if (pDVar11 == (Delegate *)0x0) {
-              TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
-            }
-            else {
-              pAVar10 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)FUN_?(pDVar11,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-              if (pAVar10 == (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
-                FUN_?(pDVar11,pAVar12);
-                pcVar5 = (code *)swi(3);
-                (*pcVar5)();
-                return;
-              }
-              TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = pAVar10;
-              pAVar12 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
-              lVar13 = FUN_?(pDVar11,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-              if (lVar13 == 0) {
-                FUN_?(pDVar11,pAVar12);
-                pcVar5 = (code *)swi(3);
-                (*pcVar5)();
-                return;
-              }
-            }
-            if (iRam_? != 0) {
-              uVar14 = (uint)((ulonglong)&TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard >> 0xc);
-              puVar15 = (ulonglong *)((ulonglong)((uVar14 & 0x1fffff) >> 6) * 8 + 0xADDR);
-              do {
-                uVar16 = *puVar15;
-                LOCK();
-                uVar17 = *puVar15;
-                if (uVar16 == uVar17) {
-                  *puVar15 = uVar16 | 1L << (uVar14 & 0x3f);
-                }
-                UNLOCK();
-              } while (uVar16 != uVar17);
-            }
-            return;
-          }
-          pIVar9 = (this->fields).inputField;
-          if (pIVar9 != (InputField *)0x0) {
-            UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField(pIVar9,(MethodInfo *)0x0);
-            this_01 = (this->fields)._._MessageController_k__BackingField;
-            if (this_01 != (SendMessageControl *)0x0) {
-              if ((this_01->fields).selectedChat == 9) {
-                SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_01,0,(MethodInfo *)0x0);
-              }
-              goto code_?;
-            }
-          }
+    pIVar9 = (this->fields).inputField;
+    (this->fields).shouldUpdateFade = 0;
+    if (pIVar9 == (InputField *)0x0) goto code_?;
+    UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar9,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar8->fields).gameMode == 3) goto code_?;
+  }
+  (*(this->klass->vtable).UpdateLockedState.methodPtr)(this);
+  bVar1 = cRam_? == '\0';
+  (this->fields).currentlyInLobbyState = 1;
+  if (bVar1) {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar8 != (GameSessionData *)0x0) {
+    if ((pGVar8->fields).gameMode != 0) {
+code_?:
+      pAVar10 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
+      this_02 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_02,(Object *)this,MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
+      pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar10,(Delegate *)this_02,(MethodInfo *)0x0);
+      pAVar12 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
+      if (pDVar11 == (Delegate *)0x0) {
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
+      }
+      else {
+        pAVar10 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)FUN_?(pDVar11,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+        if (pAVar10 == (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
+          FUN_?(pDVar11,pAVar12);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = pAVar10;
+        pAVar12 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
+        lVar13 = FUN_?(pDVar11,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+        if (lVar13 == 0) {
+          FUN_?(pDVar11,pAVar12);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar14 = (uint)((ulonglong)&TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard >> 0xc);
+        puVar15 = (ulonglong *)((ulonglong)((uVar14 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar16 = *puVar15;
+          LOCK();
+          uVar17 = *puVar15;
+          if (uVar16 == uVar17) {
+            *puVar15 = uVar16 | 1L << (uVar14 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar16 != uVar17);
+      }
+      return;
+    }
+    pIVar9 = (this->fields).inputField;
+    if (pIVar9 != (InputField *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField(pIVar9,(MethodInfo *)0x0);
+      this_01 = (this->fields)._._MessageController_k__BackingField;
+      if (this_01 != (SendMessageControl *)0x0) {
+        if ((this_01->fields).selectedChat == 9) {
+          SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_01,0,(MethodInfo *)0x0);
+        }
+        goto code_?;
       }
     }
   }
@@ -595,30 +644,42 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_InitializeReady
   }
   (this->fields).waitForLocalPlayerReady = 0;
   obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-  if (obj != (Transform *)0x0) {
-    if (cRam_? == '\0') {
-      FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pvVar1 = (obj->fields)._._.m_CachedPtr;
-    if (pvVar1 == (void *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    pcVar2 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-      uVar3 = func_?(&UNK_?);
-      FUN_?(uVar3,0);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    pcRam_? = pcVar2;
-    (*pcRam_?)(pvVar1);
+  if (obj == (Transform *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar1 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar1 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar1);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar4->fields).gameMode == 0) {
+    bVar5 = false;
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -626,88 +687,99 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_InitializeReady
       cRam_? = '\x01';
     }
     pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar4 != (GameSessionData *)0x0) {
-      ChatControllerUGUI_ChatFocusChanged(this,(pGVar4->fields).gameMode != 0,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar4 != (GameSessionData *)0x0) {
-        if ((pGVar4->fields).gameMode == 1) {
-          pIVar5 = (this->fields).inputField;
-          (this->fields).shouldUpdateFade = 0;
-          if (pIVar5 == (InputField *)0x0) goto code_?;
-          UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar5,(MethodInfo *)0x0);
-        }
-        (*(this->klass->vtable).UpdateLockedState.methodPtr)(this);
-        bVar6 = cRam_? == '\0';
-        (this->fields).currentlyInLobbyState = 1;
-        if (bVar6) {
-          FUN_?(&TypeInfo__MVGameControllerBase);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if (pGVar4 != (GameSessionData *)0x0) {
-          if ((pGVar4->fields).gameMode != 0) {
+    if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+    bVar5 = (pGVar4->fields).gameMode != 4;
+  }
+  ChatControllerUGUI_ChatFocusChanged(this,bVar5,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar4->fields).gameMode == 1) {
 code_?:
-            pAVar7 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
-            this_01 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
-            pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar7,(Delegate *)this_01,(MethodInfo *)0x0);
-            pAVar9 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
-            if (pDVar8 == (Delegate *)0x0) {
-              TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
-            }
-            else {
-              pAVar7 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)FUN_?(pDVar8,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-              if (pAVar7 == (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
-                FUN_?(pDVar8,pAVar9);
-                pcVar2 = (code *)swi(3);
-                (*pcVar2)();
-                return;
-              }
-              TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = pAVar7;
-              pAVar9 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
-              lVar10 = FUN_?(pDVar8,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-              if (lVar10 == 0) {
-                FUN_?(pDVar8,pAVar9);
-                pcVar2 = (code *)swi(3);
-                (*pcVar2)();
-                return;
-              }
-            }
-            if (iRam_? != 0) {
-              uVar11 = (uint)((ulonglong)&TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard >> 0xc);
-              puVar12 = (ulonglong *)((ulonglong)((uVar11 & 0x1fffff) >> 6) * 8 + 0xADDR);
-              do {
-                uVar13 = *puVar12;
-                LOCK();
-                uVar14 = *puVar12;
-                if (uVar13 == uVar14) {
-                  *puVar12 = uVar13 | 1L << (uVar11 & 0x3f);
-                }
-                UNLOCK();
-              } while (uVar13 != uVar14);
-            }
-            return;
-          }
-          pIVar5 = (this->fields).inputField;
-          if (pIVar5 != (InputField *)0x0) {
-            UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField(pIVar5,(MethodInfo *)0x0);
-            this_00 = (this->fields)._._MessageController_k__BackingField;
-            if (this_00 != (SendMessageControl *)0x0) {
-              if ((this_00->fields).selectedChat == 9) {
-                SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_00,0,(MethodInfo *)0x0);
-              }
-              goto code_?;
-            }
-          }
+    pIVar6 = (this->fields).inputField;
+    (this->fields).shouldUpdateFade = 0;
+    if (pIVar6 == (InputField *)0x0) goto code_?;
+    UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar6,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar4->fields).gameMode == 3) goto code_?;
+  }
+  (*(this->klass->vtable).UpdateLockedState.methodPtr)(this);
+  bVar5 = cRam_? == '\0';
+  (this->fields).currentlyInLobbyState = 1;
+  if (bVar5) {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar4 != (GameSessionData *)0x0) {
+    if ((pGVar4->fields).gameMode != 0) {
+code_?:
+      pAVar7 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
+      this_01 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
+      pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar7,(Delegate *)this_01,(MethodInfo *)0x0);
+      pAVar9 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
+      if (pDVar8 == (Delegate *)0x0) {
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
+      }
+      else {
+        pAVar7 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)FUN_?(pDVar8,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+        if (pAVar7 == (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
+          FUN_?(pDVar8,pAVar9);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
         }
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = pAVar7;
+        pAVar9 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
+        lVar10 = FUN_?(pDVar8,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+        if (lVar10 == 0) {
+          FUN_?(pDVar8,pAVar9);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar11 = (uint)((ulonglong)&TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard >> 0xc);
+        puVar12 = (ulonglong *)((ulonglong)((uVar11 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar13 = *puVar12;
+          LOCK();
+          uVar14 = *puVar12;
+          if (uVar13 == uVar14) {
+            *puVar12 = uVar13 | 1L << (uVar11 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar13 != uVar14);
+      }
+      return;
+    }
+    pIVar6 = (this->fields).inputField;
+    if (pIVar6 != (InputField *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField(pIVar6,(MethodInfo *)0x0);
+      this_00 = (this->fields)._._MessageController_k__BackingField;
+      if (this_00 != (SendMessageControl *)0x0) {
+        if ((this_00->fields).selectedChat == 9) {
+          SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_00,0,(MethodInfo *)0x0);
+        }
+        goto code_?;
       }
     }
   }
@@ -852,91 +924,101 @@ code_?:
 void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_ScrollbarChanged(ChatControllerUGUI *this,Vector2 value,MethodInfo *method)
 
 {
-  bVar1 = cRam_? == '\0';
   (this->fields).shouldUpdateFade = 1;
-  if (bVar1) {
+  if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar2 == (GameSessionData *)0x0) {
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 == (GameSessionData *)0x0) {
+code_?:
     FUN_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  if ((pGVar2->fields).gameMode == 1) {
-    (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
+  if ((pGVar1->fields).gameMode != 1) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode != 3) goto Assembly_CSharp_dll_ChatControllerUGUI_ChatControllerUGUI_UpdateFadeTime;
   }
+  (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
+Assembly_CSharp_dll_ChatControllerUGUI_ChatControllerUGUI_UpdateFadeTime:
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase,0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if (pMVar4 != (MVGameControllerBase *)0x0) {
-    if ((pMVar4->fields)._joinState != 3) {
+  pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (pMVar3 != (MVGameControllerBase *)0x0) {
+    if ((pMVar3->fields)._joinState != 3) {
       return;
     }
-    pCVar5 = (this->fields).canvasGroup;
-    if (pCVar5 != (CanvasGroup *)0x0) {
-      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar5,1.0,(MethodInfo *)0x0);
-      pcVar3 = pcRam_?;
+    pCVar4 = (this->fields).canvasGroup;
+    if (pCVar4 != (CanvasGroup *)0x0) {
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar4,1.0,(MethodInfo *)0x0);
+      pcVar2 = pcRam_?;
       (this->fields).currFade = 0.0;
-      pcVar6 = pcRam_?;
-      if ((pcVar3 == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar6 = pcVar3, pcVar3 == (code *)0x0)) {
-        uVar7 = func_?(&UNK_?);
-        FUN_?(uVar7,0);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      pcVar5 = pcRam_?;
+      if ((pcVar2 == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar5 = pcVar2, pcVar2 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      pcRam_? = pcVar6;
-      fVar8 = (float)(*pcVar3)();
-      pCVar5 = (this->fields).canvasGroup;
-      (this->fields).startTime = fVar8;
-      if (pCVar5 != (CanvasGroup *)0x0) {
+      pcRam_? = pcVar5;
+      fVar7 = (float)(*pcVar2)();
+      pCVar4 = (this->fields).canvasGroup;
+      (this->fields).startTime = fVar7;
+      if (pCVar4 != (CanvasGroup *)0x0) {
         if (cRam_? == '\0') {
           FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_,1,0);
           LOCK();
           UNLOCK();
           cRam_? = '\x01';
         }
-        if (pCVar5 == (CanvasGroup *)0x0) {
+        if (pCVar4 == (CanvasGroup *)0x0) {
           FUN_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
           return;
         }
-        pvVar9 = (pCVar5->fields)._._._.m_CachedPtr;
-        if (pvVar9 == (void *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar5,(MethodInfo *)0x0);
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
+        pvVar8 = (pCVar4->fields)._._._.m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar4,(MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
           return;
         }
-        pcVar3 = pcRam_?;
-        if ((pcRam_? == (code *)0x0) && (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
-          uVar7 = func_?(&UNK_?);
-          FUN_?(uVar7,0);
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar6 = func_?(&UNK_?);
+          FUN_?(uVar6,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
           return;
         }
-        pcRam_? = pcVar3;
+        pcRam_? = pcVar2;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (*pcRam_?)(pvVar9,1);
+        (*pcRam_?)(pvVar8,1);
         return;
       }
     }
   }
   FUN_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1016,41 +1098,125 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_Update(ChatCont
       if ((pIVar1->fields).m_AllowInput != 0) {
         ChatControllerUGUI_UpdateFadeTime(this,(MethodInfo *)0x0);
       }
-      if ((this->fields).shouldUpdateFade != 0) {
-        pcVar2 = pcRam_?;
-        if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(), pcVar2 == (code *)0x0)) {
-          uVar3 = func_?(&UNK_?);
-          FUN_?(uVar3,0);
-          pcVar2 = (code *)swi(3);
-          (*pcVar2)();
+      if ((this->fields).shouldUpdateFade == 0) {
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      fVar4 = (float)(*pcRam_?)();
+      if (fVar4 - (this->fields).startTime < 10.0) {
+        return;
+      }
+      fVar4 = (this->fields).currFade;
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+      pCVar6 = (this->fields).canvasGroup;
+      fVar5 = fVar5 + fVar4;
+      (this->fields).currFade = fVar5;
+      if (fVar5 < 0.0) {
+        fVar5 = 0.0;
+      }
+      else if (1.0 < fVar5) {
+        fVar5 = 1.0;
+      }
+      if (pCVar6 != (CanvasGroup *)0x0) {
+        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar6,fVar5 * -1.0 + 1.0,(MethodInfo *)0x0);
+        if ((this->fields).currFade < 1.0) {
           return;
         }
-        pcRam_? = pcVar2;
-        fVar4 = (float)(*pcRam_?)();
-        if (10.0 <= fVar4 - (this->fields).startTime) {
-          fVar4 = (this->fields).currFade;
-          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-          pCVar6 = (this->fields).canvasGroup;
-          fVar5 = fVar5 + fVar4;
-          (this->fields).currFade = fVar5;
-          if (fVar5 < 0.0) {
-            fVar5 = 0.0;
-          }
-          else if (1.0 < fVar5) {
-            fVar5 = 1.0;
-          }
-          if (pCVar6 == (CanvasGroup *)0x0) goto code_?;
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar6,fVar5 * -1.0 + 1.0,(MethodInfo *)0x0);
-          if (1.0 <= (this->fields).currFade) {
-            pCVar6 = (this->fields).canvasGroup;
-            (this->fields).shouldUpdateFade = 0;
-            if (pCVar6 == (CanvasGroup *)0x0) goto code_?;
-            UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_blocksRaycasts(pCVar6,0,(MethodInfo *)0x0);
-          }
+        pCVar6 = (this->fields).canvasGroup;
+        (this->fields).shouldUpdateFade = 0;
+        if (pCVar6 != (CanvasGroup *)0x0) {
+          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_blocksRaycasts(pCVar6,0,(MethodInfo *)0x0);
+          return;
         }
       }
+    }
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar7 == (MVGameControllerBase *)0x0) || (pMVar8 = (pMVar7->fields).game, pMVar8 == (MVNetworkGame *)0x0)) || (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0)) || (pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar9,(MethodInfo *)0x0), pMVar10 == (MVLocalPlayer *)0x0)) goto code_?;
+  if ((pMVar10->fields)._.playerState != 1) {
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar8 == (MVNetworkGame *)0x0) || (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0)) || (pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar9,(MethodInfo *)0x0), pMVar10 == (MVLocalPlayer *)0x0)) goto code_?;
+    if ((pMVar10->fields)._._ProfileID_k__BackingField < 1) {
       return;
     }
+    pUVar11 = (pMVar10->fields)._._UserProfileData_k__BackingField;
+    if (pUVar11 == (UserProfileData *)0x0) goto code_?;
+    if ((pUVar11->fields).IsAdmin == 0) {
+      return;
+    }
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar8 == (MVNetworkGame *)0x0) || (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0)) || (pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar9,(MethodInfo *)0x0), pMVar10 == (MVLocalPlayer *)0x0)) goto code_?;
+    if ((pMVar10->fields)._.playerState != 3) {
+      return;
+    }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SayChatBubbleVisibilityManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  (this->fields).waitForLocalPlayerReady = 0;
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+  if (obj == (Transform *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar12 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar12 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar12);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar13 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar13->fields).gameMode == 0) {
+    bVar14 = false;
   }
   else {
     if (cRam_? == '\0') {
@@ -1059,160 +1225,101 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_Update(ChatCont
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((((pMVar7 != (MVGameControllerBase *)0x0) && (pMVar8 = (pMVar7->fields).game, pMVar8 != (MVNetworkGame *)0x0)) && (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 != (MVPlayerContainer *)0x0)) && (pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar9,(MethodInfo *)0x0), pMVar10 != (MVLocalPlayer *)0x0)) {
-      if ((pMVar10->fields)._.playerState != 1) {
-        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (((pMVar8 == (MVNetworkGame *)0x0) || (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0)) || (pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar9,(MethodInfo *)0x0), pMVar10 == (MVLocalPlayer *)0x0)) goto code_?;
-        if ((pMVar10->fields)._._ProfileID_k__BackingField < 1) {
-          return;
-        }
-        pUVar11 = (pMVar10->fields)._._UserProfileData_k__BackingField;
-        if (pUVar11 == (UserProfileData *)0x0) goto code_?;
-        if ((pUVar11->fields).IsAdmin == 0) {
-          return;
-        }
-        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (((pMVar8 == (MVNetworkGame *)0x0) || (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0)) || (pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar9,(MethodInfo *)0x0), pMVar10 == (MVLocalPlayer *)0x0)) goto code_?;
-        if ((pMVar10->fields)._.playerState != 3) {
-          return;
-        }
+    pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar13 == (GameSessionData *)0x0) goto code_?;
+    bVar14 = (pGVar13->fields).gameMode != 4;
+  }
+  ChatControllerUGUI_ChatFocusChanged(this,bVar14,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar13 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar13->fields).gameMode == 1) {
+code_?:
+    pIVar1 = (this->fields).inputField;
+    (this->fields).shouldUpdateFade = 0;
+    if (pIVar1 == (InputField *)0x0) goto code_?;
+    UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar1,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar13 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar13->fields).gameMode == 3) goto code_?;
+  }
+  (*(this->klass->vtable).UpdateLockedState.methodPtr)(this);
+  bVar14 = cRam_? == '\0';
+  (this->fields).currentlyInLobbyState = 1;
+  if (bVar14) {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar13 != (GameSessionData *)0x0) {
+    if ((pGVar13->fields).gameMode != 0) {
+code_?:
+      pAVar15 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
+      this_01 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
+      pDVar16 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar15,(Delegate *)this_01,(MethodInfo *)0x0);
+      pAVar17 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
+      if (pDVar16 == (Delegate *)0x0) {
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
       }
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-        LOCK();
-        UNLOCK();
-        FUN_?(&MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_);
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__SayChatBubbleVisibilityManager);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      (this->fields).waitForLocalPlayerReady = 0;
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-      if (obj != (Transform *)0x0) {
-        if (cRam_? == '\0') {
-          FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pvVar12 = (obj->fields)._._.m_CachedPtr;
-        if (pvVar12 == (void *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      else {
+        pAVar15 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)FUN_?(pDVar16,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+        if (pAVar15 == (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
+          FUN_?(pDVar16,pAVar17);
           pcVar2 = (code *)swi(3);
           (*pcVar2)();
           return;
         }
-        pcVar2 = pcRam_?;
-        if ((pcRam_? == (code *)0x0) && (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-          uVar3 = func_?(&UNK_?);
-          FUN_?(uVar3,0);
+        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = pAVar15;
+        pAVar17 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
+        lVar18 = FUN_?(pDVar16,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
+        if (lVar18 == 0) {
+          FUN_?(pDVar16,pAVar17);
           pcVar2 = (code *)swi(3);
           (*pcVar2)();
           return;
         }
-        pcRam_? = pcVar2;
-        (*pcRam_?)(pvVar12);
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__MVGameControllerBase);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if (pGVar13 != (GameSessionData *)0x0) {
-          ChatControllerUGUI_ChatFocusChanged(this,(pGVar13->fields).gameMode != 0,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__MVGameControllerBase);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-          if (pGVar13 != (GameSessionData *)0x0) {
-            if ((pGVar13->fields).gameMode == 1) {
-              pIVar1 = (this->fields).inputField;
-              (this->fields).shouldUpdateFade = 0;
-              if (pIVar1 == (InputField *)0x0) goto code_?;
-              UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField(pIVar1,(MethodInfo *)0x0);
-            }
-            (*(this->klass->vtable).UpdateLockedState.methodPtr)(this);
-            bVar14 = cRam_? == '\0';
-            (this->fields).currentlyInLobbyState = 1;
-            if (bVar14) {
-              FUN_?(&TypeInfo__MVGameControllerBase);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-            if (pGVar13 != (GameSessionData *)0x0) {
-              if ((pGVar13->fields).gameMode != 0) {
-code_?:
-                pAVar15 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
-                this_01 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
-                pDVar16 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar15,(Delegate *)this_01,(MethodInfo *)0x0);
-                pAVar17 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
-                if (pDVar16 == (Delegate *)0x0) {
-                  TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
-                }
-                else {
-                  pAVar15 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)FUN_?(pDVar16,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-                  if (pAVar15 == (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
-                    FUN_?(pDVar16,pAVar17);
-                    pcVar2 = (code *)swi(3);
-                    (*pcVar2)();
-                    return;
-                  }
-                  TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = pAVar15;
-                  pAVar17 = TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>;
-                  lVar18 = FUN_?(pDVar16,TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>);
-                  if (lVar18 == 0) {
-                    FUN_?(pDVar16,pAVar17);
-                    pcVar2 = (code *)swi(3);
-                    (*pcVar2)();
-                    return;
-                  }
-                }
-                if (iRam_? != 0) {
-                  uVar19 = (uint)((ulonglong)&TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard >> 0xc);
-                  puVar20 = (ulonglong *)((ulonglong)((uVar19 & 0x1fffff) >> 6) * 8 + 0xADDR);
-                  do {
-                    uVar21 = *puVar20;
-                    LOCK();
-                    uVar22 = *puVar20;
-                    if (uVar21 == uVar22) {
-                      *puVar20 = uVar21 | 1L << (uVar19 & 0x3f);
-                    }
-                    UNLOCK();
-                  } while (uVar21 != uVar22);
-                }
-                return;
-              }
-              pIVar1 = (this->fields).inputField;
-              if (pIVar1 != (InputField *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField(pIVar1,(MethodInfo *)0x0);
-                this_00 = (this->fields)._._MessageController_k__BackingField;
-                if (this_00 != (SendMessageControl *)0x0) {
-                  if ((this_00->fields).selectedChat == 9) {
-                    SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_00,0,(MethodInfo *)0x0);
-                  }
-                  goto code_?;
-                }
-              }
-            }
-          }
-        }
       }
-code_?:
-      FUN_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      if (iRam_? != 0) {
+        uVar19 = (uint)((ulonglong)&TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard >> 0xc);
+        puVar20 = (ulonglong *)((ulonglong)((uVar19 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar21 = *puVar20;
+          LOCK();
+          uVar22 = *puVar20;
+          if (uVar21 == uVar22) {
+            *puVar20 = uVar21 | 1L << (uVar19 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar21 != uVar22);
+      }
       return;
+    }
+    pIVar1 = (this->fields).inputField;
+    if (pIVar1 != (InputField *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField(pIVar1,(MethodInfo *)0x0);
+      this_00 = (this->fields)._._MessageController_k__BackingField;
+      if (this_00 != (SendMessageControl *)0x0) {
+        if ((this_00->fields).selectedChat == 9) {
+          SendMessageControl::SendMessageControl_SetSayChatBubbleVisible(this_00,0,(MethodInfo *)0x0);
+        }
+        goto code_?;
+      }
     }
   }
 code_?:

@@ -68,7 +68,7 @@ ScreenShotGenerator * Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenera
         return pSVar3;
       }
       pSVar9 = (ScreenShotGenerator *)0x0;
-      if (pIVar6 == pIRam0000000182dbdd60) {
+      if (pIVar6 == pIRam0000000182dc5040) {
         pSVar9 = pSVar3;
       }
       return pSVar9;
@@ -1284,7 +1284,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052af3c, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

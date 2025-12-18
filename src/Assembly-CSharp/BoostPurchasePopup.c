@@ -606,15 +606,15 @@ void Assembly-CSharp.dll::BoostPurchasePopup::BoostPurchasePopup_Purchase(BoostP
             uVar16 = CONCAT71((int7)((ulonglong)uVar15 >> 8),2);
             pMVar14 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
             uVar17 = (undefined7)((ulonglong)pMVar14 >> 8);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x5e,pOVar13,(InsertionBehavior__Enum)uVar16,pMVar14);
-            uVar15 = CONCAT71(uVar17,0x5f);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x5f,(Object *)this_02,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar16 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x61,pOVar13,(InsertionBehavior__Enum)uVar16,pMVar14);
+            uVar15 = CONCAT71(uVar17,0x62);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x62,(Object *)this_02,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar16 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
             pPVar18 = (pMVar12->fields).peer;
             if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
             }
             if (pPVar18 != (PhotonPeer *)0x0) {
-              (*(pPVar18->klass->vtable).SendOperation.methodPtr)(pPVar18,CONCAT71((int7)((ulonglong)uVar15 >> 8),0x23),this_03,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar18->klass->vtable).SendOperation.method);
+              (*(pPVar18->klass->vtable).SendOperation.methodPtr)(pPVar18,CONCAT71((int7)((ulonglong)uVar15 >> 8),0x24),this_03,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar18->klass->vtable).SendOperation.method);
               return;
             }
           }

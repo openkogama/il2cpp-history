@@ -118,7 +118,7 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize(Mess
     if ((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pSVar8 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_text,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), this_01 != (SettingsInputField *)0x0)) {
       value_01 = pSVar1;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dbdde0) {
+        if (pSVar8->klass == pSRam0000000182dc50c0) {
           value_01 = pSVar8;
         }
         if (value_01 == (String *)0x0) {
@@ -1417,7 +1417,7 @@ Object * Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_RemoveQuadF
   }
   if (((key == StringLiteral_text) || ((((key != (String *)0x0 && (StringLiteral_text != (String *)0x0)) && ((key->fields)._stringLength == (StringLiteral_text->fields)._stringLength)) && (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual((uint8_t *)&(key->fields)._firstChar,(uint8_t *)&(StringLiteral_text->fields)._firstChar,(longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 != 0)))) && (val != (Object *)0x0)) {
     pSVar2 = (String *)0x0;
-    if (val->klass == pORam0000000182dbdde0) {
+    if (val->klass == pORam0000000182dc50c0) {
       pSVar2 = (String *)val;
     }
     if (pSVar2 != (String *)0x0) {

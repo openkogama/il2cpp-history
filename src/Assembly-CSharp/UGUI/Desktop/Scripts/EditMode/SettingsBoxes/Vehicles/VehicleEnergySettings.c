@@ -428,7 +428,7 @@ code_?:
   pDVar13 = (this->fields).vehicleEnergyBpData;
   if ((pDVar13 == (Dictionary_2_System_Object_System_Object_ *)0x0) || (pSVar14 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar13,(Object *)StringLiteral_VehicleEnergyName,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), this_02 == (SettingsInputField *)0x0)) goto code_?;
   if (pSVar14 != (String *)0x0) {
-    if (pSVar14->klass == pSRam0000000182dbdde0) {
+    if (pSVar14->klass == pSRam0000000182dc50c0) {
       pSVar4 = pSVar14;
     }
     if (pSVar4 == (String *)0x0) {
@@ -624,7 +624,7 @@ code_?:
       goto code_?;
     }
   }
-  pSVar4 = mscorlib.dll::System::String::String_Replace_1(pSVar4,::StringLiteral__,*(String **)pSRam0000000182dbdde0->static_fields,(MethodInfo *)0x0);
+  pSVar4 = mscorlib.dll::System::String::String_Replace_1(pSVar4,::StringLiteral__,*(String **)pSRam0000000182dc50c0->static_fields,(MethodInfo *)0x0);
   if ((this_00->fields).m_LineType == 0) {
     if ((pSVar4 == (String *)0x0) || (pSVar4 = mscorlib.dll::System::String::String_Replace_1(pSVar4,StringLiteral_u000A,::StringLiteral__,(MethodInfo *)0x0), pSVar4 == (String *)0x0)) goto DAT_?;
     pSVar4 = mscorlib.dll::System::String::String_Replace_1(pSVar4,StringLiteral_u0009,::StringLiteral__,(MethodInfo *)0x0);

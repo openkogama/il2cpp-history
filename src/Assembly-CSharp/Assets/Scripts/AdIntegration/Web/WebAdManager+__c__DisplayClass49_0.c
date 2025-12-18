@@ -94,8 +94,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
           goto code_?;
         }
       }
-      message = StringLiteral_Embedded_sdk_not_available___all;
-      pSVar1 = StringLiteral_Embedded_sdk_not_available___don;
+      message = StringLiteral_Embedded_sdk_not_available___don;
+      pSVar1 = StringLiteral_Embedded_sdk_not_available___all;
       pWVar2 = (this->fields).__4__this;
       if (pWVar2 != (WebAdManager *)0x0) {
         if ((pWVar2->fields).siteData.allowsFallbackAds == 0) {
@@ -108,7 +108,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
           if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
             FUN_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0);
           pWVar2 = (this->fields).__4__this;
           if ((pWVar2 != (WebAdManager *)0x0) && (pIVar5 = (pWVar2->fields).adUIManager, pIVar5 != (IAdUIManager *)0x0)) {
             FUN_?(3,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar5,3);
@@ -125,7 +125,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
           if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
             FUN_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
           pWVar2 = (this->fields).__4__this;
           if (pWVar2 != (WebAdManager *)0x0) {
             WebAdManager::WebAdManager_RequestNonEmbeddedInterstitialAd(pWVar2,(MethodInfo *)0x0);

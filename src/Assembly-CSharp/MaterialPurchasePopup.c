@@ -288,7 +288,7 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup_OnConfirm
       }
       this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor(this_04,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-      auStackX_10[0] = CONCAT31(auStackX_10[0]._1_3_,0x67);
+      auStackX_10[0] = CONCAT31(auStackX_10[0]._1_3_,0x6a);
       key = (Object *)FUN_?(uRam_?,auStackX_10);
       auStackX_10[0] = (uint)bVar15;
       value = (Object *)FUN_?(uRam_?,auStackX_10);

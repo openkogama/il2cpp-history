@@ -364,7 +364,7 @@ code_?:
                   if ((pPVar21->fields)._RecievedPlanetOwnershipData_k__BackingField == 0) {
                     return;
                   }
-                  LocationIndicatorsManager_SetIndicatorsOwnership(this,(MethodInfo *)0x0);
+                  LocationIndicatorsManager_SetIndicatorsPermissions(this,(MethodInfo *)0x0);
                   return;
                 }
                 goto code_?;
@@ -512,7 +512,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>);
+    FUN_?(&TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_);
@@ -533,7 +533,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_LocationIndicator>__GetEnumerator__);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_);
+    FUN_?(&MethodInfo__LocationIndicatorsManager__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_);
     LOCK();
     UNLOCK();
     FUN_?();
@@ -559,10 +559,10 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
         cRam_? = '\x01';
       }
       unaff_RBX = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
-      this_02 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_02,(Object *)this,MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_,(MethodInfo *)0x0);
+      this_02 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_02,(Object *)this,MethodInfo__LocationIndicatorsManager__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_,(MethodInfo *)0x0);
       if (unaff_RBX == (PlanetOwnershipsManager *)0x0) goto code_?;
-      PlanetOwnershipsManager::PlanetOwnershipsManager_remove_OnReceivedPlanetOwnershipData(unaff_RBX,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *)this_02,(MethodInfo *)0x0);
+      PlanetOwnershipsManager::PlanetOwnershipsManager_remove_OnReceivedPlanetPermissionsData(unaff_RBX,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_List_1_System_Int32_ *)this_02,(MethodInfo *)0x0);
     }
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine((MonoBehaviour *)this,(this->fields).updateCoroutine,(MethodInfo *)0x0);
@@ -699,19 +699,25 @@ code_?:
 }
 
 
-/* Void RecievedPlanetOwnershipsDataCallback(Dictionary`2[System.Int32,MV.WorldObject.OwnershipData.PlanetOwnershipsEntry]) */
+/* Void ReceivedPlanetPermissionsDataCallback(Dictionary`2[System.Int32,List`1[System.Int32]]) */
 
-void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_RecievedPlanetOwnershipsDataCallback(LocationIndicatorsManager *this,Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *data,MethodInfo *method)
+void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_ReceivedPlanetPermissionsDataCallback(LocationIndicatorsManager *this,Dictionary_2_System_Int32_List_1_System_Int32_ *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__ContainsKey_int_,0);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__ContainsKey_int_,0);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__GetEnumerator__);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__Select<int,_MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<int>__System__Func<int,_MV::Common::PlanetPermissionType>_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&System__Collections__Generic__List<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__ToList<MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__Dispose__);
@@ -723,10 +729,19 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_R
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__get_Current__);
     LOCK();
     UNLOCK();
+    FUN_?(&TypeInfo__System__Func<int,_MV::Common::PlanetPermissionType>);
+    LOCK();
+    UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_LocationIndicator>__get_Key__);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_LocationIndicator>__get_Value__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__LocationIndicatorsManager____c___SetIndicatorsPermissions_b__12_0_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__LocationIndicatorsManager____c);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -739,7 +754,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_R
   }
   pPVar1 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
   if (pPVar1 != (PlanetOwnershipsManager *)0x0) {
-    this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pPVar1->fields)._PlanetOwnershipsEntries_k__BackingField;
+    this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pPVar1->fields)._PlanetPermissionsEntries_k__BackingField;
     pDStack_2 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).indicators;
     if (pDStack_2 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
       uStack_3 = 0;
@@ -767,24 +782,36 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_R
       DStack_11._getEnumeratorRetType = 2;
       DStack_11._36_4_ = 0;
       DStack_11._dictionary = pDStack_2;
-code_?:
-      do {
-        bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_11,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__MoveNext__);
-        this_01 = DStack_11._current.value;
-        if (bVar12 == 0) {
-          return;
+      while( true ) {
+        do {
+          bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_11,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__MoveNext__);
+          this_01 = DStack_11._current.value;
+          if (bVar12 == 0) {
+            return;
+          }
+          key = DStack_11._current.key;
+          if (this_00 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) goto code_?;
+          iVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__ContainsKey_int_->klass->rgctx_data[0x21].method);
+        } while (iVar13 < 0);
+        source = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__get_Item_int_);
+        if (*(int *)&(TypeInfo__LocationIndicatorsManager____c->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        key = DStack_11._current.key;
-        if (this_00 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) goto code_?;
-        iVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__ContainsKey_int_->klass->rgctx_data[0x21].method);
-      } while (iVar13 < 0);
-      pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__get_Item_int_);
-      if (pOVar14 != (Object *)0x0) {
-        if ((LocationIndicator *)this_01 != (LocationIndicator *)0x0) {
-          LocationIndicator::LocationIndicator_SetOwnership((LocationIndicator *)this_01,(uint)*(byte *)((longlong)&pOVar14[1].klass + 4),(MethodInfo *)0x0);
-          goto code_?;
+        this_02 = TypeInfo__LocationIndicatorsManager____c->static_fields->__9__12_0;
+        if (this_02 == (Func_2_Int32_MV_Common_PlanetPermissionType_ *)0x0) {
+          if (*(int *)&(TypeInfo__LocationIndicatorsManager____c->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          object = TypeInfo__LocationIndicatorsManager____c->static_fields->__9;
+          this_02 = (Func_2_Int32_MV_Common_PlanetPermissionType_ *)FUN_?(TypeInfo__System__Func<int,_MV::Common::PlanetPermissionType>);
+          mscorlib.dll::System::Predicate`1[UInt32Enum]::Predicate_1_UInt32Enum___ctor((Predicate_1_UInt32Enum_ *)this_02,(Object *)object,MethodInfo__LocationIndicatorsManager____c___SetIndicatorsPermissions_b__12_0_int_,(MethodInfo *)0x0);
+          TypeInfo__LocationIndicatorsManager____c->static_fields->__9__12_0 = this_02;
+          func_?(&TypeInfo__LocationIndicatorsManager____c->static_fields->__9__12_0);
         }
-        FUN_?();
+        pIVar14 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5((IEnumerable_1_UnityEngine_UIElements_StyleSelectorPart_ *)source,(Func_2_UnityEngine_UIElements_StyleSelectorPart_Object_ *)this_02,System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__Select<int,_MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<int>__System__Func<int,_MV::Common::PlanetPermissionType>_);
+        permissions = (List_1_MV_Common_PlanetPermissionType_ *)FUN_?(pIVar14);
+        if ((LocationIndicator *)this_01 == (LocationIndicator *)0x0) break;
+        LocationIndicator::LocationIndicator_SetPermisisons((LocationIndicator *)this_01,permissions,(MethodInfo *)0x0);
       }
       FUN_?();
 code_?:
@@ -802,19 +829,25 @@ code_?:
 }
 
 
-/* Void SetIndicatorsOwnership() */
+/* Void SetIndicatorsPermissions() */
 
-void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_SetIndicatorsOwnership(LocationIndicatorsManager *this,MethodInfo *method)
+void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_SetIndicatorsPermissions(LocationIndicatorsManager *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__ContainsKey_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__ContainsKey_int_);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__GetEnumerator__);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__Select<int,_MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<int>__System__Func<int,_MV::Common::PlanetPermissionType>_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&System__Collections__Generic__List<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__ToList<MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__Dispose__);
@@ -826,10 +859,19 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__get_Current__);
     LOCK();
     UNLOCK();
+    FUN_?(&TypeInfo__System__Func<int,_MV::Common::PlanetPermissionType>);
+    LOCK();
+    UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_LocationIndicator>__get_Key__);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_LocationIndicator>__get_Value__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__LocationIndicatorsManager____c___SetIndicatorsPermissions_b__12_0_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__LocationIndicatorsManager____c);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -842,7 +884,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
   }
   pPVar1 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
   if (pPVar1 != (PlanetOwnershipsManager *)0x0) {
-    this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pPVar1->fields)._PlanetOwnershipsEntries_k__BackingField;
+    this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pPVar1->fields)._PlanetPermissionsEntries_k__BackingField;
     pDStack_2 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).indicators;
     if (pDStack_2 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
       uStack_3 = 0;
@@ -870,24 +912,36 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
       DStack_11._getEnumeratorRetType = 2;
       DStack_11._36_4_ = 0;
       DStack_11._dictionary = pDStack_2;
-code_?:
-      do {
-        bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_11,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__MoveNext__);
-        this_01 = DStack_11._current.value;
-        if (bVar12 == 0) {
-          return;
+      while( true ) {
+        do {
+          bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_11,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_LocationIndicator>__MoveNext__);
+          this_01 = DStack_11._current.value;
+          if (bVar12 == 0) {
+            return;
+          }
+          key = DStack_11._current.key;
+          if (this_00 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) goto code_?;
+          iVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__ContainsKey_int_->klass->rgctx_data[0x21].method);
+        } while (iVar13 < 0);
+        source = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__get_Item_int_);
+        if (*(int *)&(TypeInfo__LocationIndicatorsManager____c->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        key = DStack_11._current.key;
-        if (this_00 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) goto code_?;
-        iVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry(this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__ContainsKey_int_->klass->rgctx_data[0x21].method);
-      } while (iVar13 < 0);
-      pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__get_Item_int_);
-      if (pOVar14 != (Object *)0x0) {
-        if ((LocationIndicator *)this_01 != (LocationIndicator *)0x0) {
-          LocationIndicator::LocationIndicator_SetOwnership((LocationIndicator *)this_01,(uint)*(byte *)((longlong)&pOVar14[1].klass + 4),(MethodInfo *)0x0);
-          goto code_?;
+        this_02 = TypeInfo__LocationIndicatorsManager____c->static_fields->__9__12_0;
+        if (this_02 == (Func_2_Int32_MV_Common_PlanetPermissionType_ *)0x0) {
+          if (*(int *)&(TypeInfo__LocationIndicatorsManager____c->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          object = TypeInfo__LocationIndicatorsManager____c->static_fields->__9;
+          this_02 = (Func_2_Int32_MV_Common_PlanetPermissionType_ *)FUN_?(TypeInfo__System__Func<int,_MV::Common::PlanetPermissionType>);
+          mscorlib.dll::System::Predicate`1[UInt32Enum]::Predicate_1_UInt32Enum___ctor((Predicate_1_UInt32Enum_ *)this_02,(Object *)object,MethodInfo__LocationIndicatorsManager____c___SetIndicatorsPermissions_b__12_0_int_,(MethodInfo *)0x0);
+          TypeInfo__LocationIndicatorsManager____c->static_fields->__9__12_0 = this_02;
+          func_?(&TypeInfo__LocationIndicatorsManager____c->static_fields->__9__12_0);
         }
-        FUN_?();
+        pIVar14 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5((IEnumerable_1_UnityEngine_UIElements_StyleSelectorPart_ *)source,(Func_2_UnityEngine_UIElements_StyleSelectorPart_Object_ *)this_02,System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__Select<int,_MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<int>__System__Func<int,_MV::Common::PlanetPermissionType>_);
+        permissions = (List_1_MV_Common_PlanetPermissionType_ *)FUN_?(pIVar14);
+        if ((LocationIndicator *)this_01 == (LocationIndicator *)0x0) break;
+        LocationIndicator::LocationIndicator_SetPermisisons((LocationIndicator *)this_01,permissions,(MethodInfo *)0x0);
       }
       FUN_?();
 code_?:
@@ -911,7 +965,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>);
+    FUN_?(&TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__Dictionary__);
@@ -920,7 +974,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
     FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_);
+    FUN_?(&MethodInfo__LocationIndicatorsManager__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -976,7 +1030,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
     }
     pPVar9 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
     if (pPVar9 != (PlanetOwnershipsManager *)0x0) {
-      if ((pPVar9->fields)._RecievedPlanetOwnershipData_k__BackingField == 0) {
+      if ((pPVar9->fields)._ReceivedPlanetPermissionsData_k__BackingField == 0) {
         if (cRam_? == '\0') {
           FUN_?(&TypeInfo__PlanetOwnershipsManager);
           LOCK();
@@ -984,13 +1038,13 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
           cRam_? = '\x01';
         }
         pPVar9 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
-        this_01 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_,(MethodInfo *)0x0);
+        this_01 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__LocationIndicatorsManager__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_,(MethodInfo *)0x0);
         if (pPVar9 == (PlanetOwnershipsManager *)0x0) goto code_?;
-        PlanetOwnershipsManager::PlanetOwnershipsManager_add_OnReceivedPlanetOwnershipData(pPVar9,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *)this_01,(MethodInfo *)0x0);
+        PlanetOwnershipsManager::PlanetOwnershipsManager_add_OnReceivedPlanetPermissionsData(pPVar9,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_List_1_System_Int32_ *)this_01,(MethodInfo *)0x0);
       }
       else {
-        LocationIndicatorsManager_SetIndicatorsOwnership(this,(MethodInfo *)0x0);
+        LocationIndicatorsManager_SetIndicatorsPermissions(this,(MethodInfo *)0x0);
       }
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__LocationIndicatorsManager___UpdateCoroutine_d__13);

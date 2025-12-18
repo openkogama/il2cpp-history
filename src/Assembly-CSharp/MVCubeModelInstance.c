@@ -1057,6 +1057,7 @@ Vector3__Array * Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_G
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 == (GameSessionData *)0x0) goto DAT_?;
   if ((pGVar1->fields).gameMode == 0) {
+code_?:
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -1069,6 +1070,15 @@ Vector3__Array * Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_G
     fVar3 = 1.0;
   }
   else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto DAT_?;
+    if ((pGVar1->fields).gameMode == 4) goto code_?;
 code_?:
     fVar3 = 0.0625;
   }

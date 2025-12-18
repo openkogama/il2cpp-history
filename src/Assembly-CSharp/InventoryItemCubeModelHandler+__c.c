@@ -1,7 +1,7 @@
 
-/* Void <OnDeleteConfirmation>b__7_0(IUIStack, BaseEventData) */
+/* Void <OnDeleteConfirmation>b__9_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c::InventoryItemCubeModelHandler_c__OnDeleteConfirmation_b__7_0(InventoryItemCubeModelHandler_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c::InventoryItemCubeModelHandler_c__OnDeleteConfirmation_b__9_0(InventoryItemCubeModelHandler_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -41,9 +41,9 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c::InventoryItemCubeMo
 }
 
 
-/* Void <OnSellClicked>b__3_0(IModalPopupCreator, BaseEventData) */
+/* Void <OnSellClicked>b__5_0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c::InventoryItemCubeModelHandler_c__OnSellClicked_b__3_0(InventoryItemCubeModelHandler_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c::InventoryItemCubeModelHandler_c__OnSellClicked_b__5_0(InventoryItemCubeModelHandler_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

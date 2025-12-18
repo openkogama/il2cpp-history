@@ -4022,46 +4022,45 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_OnCameraScale(MVAvatarLoc
     UNLOCK();
     cRam_? = '\x01';
   }
+  if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((pMVar1 != (MVGameControllerBase *)0x0) && (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
-    gameType = (pMVar2->fields)._GameType_k__BackingField;
-    if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
-      FUN_?();
-    }
-    pIVar3 = MainCameraManager::MainCameraManager_GetSettings(gameType,(MethodInfo *)0x0);
-    if ((args != (ScaleArgs *)0x0) && (pIVar3 != (ICameraSettings *)0x0)) {
-      fVar4 = (args->fields).scale;
-      pIVar5 = pIVar3->klass;
-      uVar6 = 0;
-      uVar7._0_1_ = (pIVar5->_1).rank;
-      uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
-      if (uVar7 != 0) {
-        do {
-          if (pIVar5->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__ICameraSettings) {
-            pVVar8 = &(pIVar5->vtable).UpdateFromCameraSettings + (pIVar5->interfaceOffsets[uVar6].offset + 2);
-            goto code_?;
-          }
-          uVar9 = (short)uVar6 + 1;
-          uVar6 = (ulonglong)uVar9;
-        } while (uVar9 < uVar7);
+  if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar1 = TypeInfo__MainCameraManager->static_fields->cameraSettings;
+  if ((args == (ScaleArgs *)0x0) || (pIVar1 == (ICameraSettings *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  fVar3 = (args->fields).scale;
+  pIVar4 = pIVar1->klass;
+  uVar5 = 0;
+  uVar6._0_1_ = (pIVar4->_1).rank;
+  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+  if (uVar6 != 0) {
+    do {
+      if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ICameraSettings) {
+        pVVar7 = &(pIVar4->vtable).UpdateFromCameraSettings + (pIVar4->interfaceOffsets[uVar5].offset + 2);
+        goto code_?;
       }
-      pVVar8 = (VirtualInvokeData *)FUN_?(pIVar3,TypeInfo__ICameraSettings,2);
+      uVar8 = (short)uVar5 + 1;
+      uVar5 = (ulonglong)uVar8;
+    } while (uVar8 < uVar6);
+  }
+  pVVar7 = (VirtualInvokeData *)FUN_?(pIVar1,TypeInfo__ICameraSettings,2);
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      (*pVVar8->methodPtr)(pIVar3,fVar4,pVVar8->method);
-      return;
-    }
-  }
-  FUN_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  (*pVVar7->methodPtr)(pIVar1,fVar3,pVVar7->method);
   return;
 }
 
@@ -9453,11 +9452,11 @@ code_?:
       pSVar17 = (pKVar2->fields).key;
       pSVar18 = (String *)0x0;
       if ((String *)auStack_14._16_8_ != (String *)0x0) {
-        if (*(String__Class **)auStack_14._16_8_ == pSRam0000000182dbdde0) {
+        if (*(String__Class **)auStack_14._16_8_ == pSRam0000000182dc50c0) {
           pSVar18 = (String *)auStack_14._16_8_;
         }
         pSVar4 = (String *)auStack_14._16_8_;
-        pSVar3 = pSRam0000000182dbdde0;
+        pSVar3 = pSRam0000000182dc50c0;
         if (pSVar18 == (String *)0x0) goto code_?;
       }
       if ((pSVar18 == pSVar17) || ((((pSVar18 != (String *)0x0 && (pSVar17 != (String *)0x0)) && ((pSVar18->fields)._stringLength == (pSVar17->fields)._stringLength)) && (bVar16 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual((uint8_t *)&(pSVar18->fields)._firstChar,(uint8_t *)&(pSVar17->fields)._firstChar,(longlong)(pSVar18->fields)._stringLength * 2,(MethodInfo *)0x0), bVar16 != 0)))) {

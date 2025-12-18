@@ -59,9 +59,9 @@ void Assembly-CSharp.dll::ThemeWorldObject::ThemeWorldObject_CommitSettings(Them
           uVar7 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
           uVar8 = (undefined7)((ulonglong)method_00 >> 8);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x16,value_00,(InsertionBehavior__Enum)uVar7,method_00);
-          uVar6 = CONCAT71(uVar8,0x12);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x12,(Object *)this_00,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x17,value_00,(InsertionBehavior__Enum)uVar7,method_00);
+          uVar6 = CONCAT71(uVar8,0x13);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x13,(Object *)this_00,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
           pPVar9 = (pMVar3->fields).peer;
           if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
             FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -553,7 +553,7 @@ String * Assembly-CSharp.dll::ThemeWorldObject::ThemeWorldObject_get_Identifier(
   pSVar2 = pSVar3;
   if (pSVar3 != (String *)0x0) {
     pSVar2 = (String *)0x0;
-    if (pSVar3->klass == pSRam0000000182dbdde0) {
+    if (pSVar3->klass == pSRam0000000182dc50c0) {
       pSVar2 = pSVar3;
     }
     if (pSVar2 == (String *)0x0) {

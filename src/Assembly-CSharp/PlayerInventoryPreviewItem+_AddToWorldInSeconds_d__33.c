@@ -48,7 +48,7 @@ bool Assembly-CSharp.dll::PlayerInventoryPreviewItem+<AddToWorldInSeconds>d__33:
       UNLOCK();
       cRam_? = '\x01';
     }
-    if (((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField == (IEditModeUI *)0x0) || (lVar8 = FUN_?(), lVar8 == 0)) || (*(undefined4 *)(lVar8 + 0x30) = 0xff7fffff, this_00 == (PlayerInventoryPreviewItem *)0x0)) {
+    if (((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField == (IEditModeUI *)0x0) || (lVar8 = FUN_?(), lVar8 == 0)) || (*(undefined4 *)(lVar8 + 0x38) = 0xff7fffff, this_00 == (PlayerInventoryPreviewItem *)0x0)) {
       FUN_?();
       pcVar9 = (code *)swi(3);
       bVar10 = (*pcVar9)();

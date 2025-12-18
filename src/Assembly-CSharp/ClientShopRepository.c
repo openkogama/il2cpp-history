@@ -688,7 +688,7 @@ code_?:
         func_?(&TypeInfo__ClientShopRepository____c->static_fields->__9__11_0);
       }
       source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderBy_5(source,(Func_2_Object_Int32_ *)this_01,System__Linq__IOrderedEnumerable<ShopItem>_MethodInfo__System__Linq__Enumerable__OrderBy<ShopItem,_int>_System__Collections__Generic__IEnumerable<ShopItem>__System__Func<ShopItem,_int>_);
-      pLVar16 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_10((IEnumerable_1_System_Object_ *)source_00,System__Collections__Generic__List<ShopItem>_MethodInfo__System__Linq__Enumerable__ToList<ShopItem>_System__Collections__Generic__IEnumerable<ShopItem>_);
+      pLVar16 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_11((IEnumerable_1_System_Object_ *)source_00,System__Collections__Generic__List<ShopItem>_MethodInfo__System__Linq__Enumerable__ToList<ShopItem>_System__Collections__Generic__IEnumerable<ShopItem>_);
       iVar17 = 0;
       if (pLVar16 != (List_1_System_Object_ *)0x0) goto code_?;
       goto code_?;

@@ -399,7 +399,7 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
     (*pcVar6)();
     return;
   }
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__AddIfNotPresent(this_01,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass >> 8),0x6a),MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass->rgctx_data[0x15].method);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__AddIfNotPresent(this_01,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass >> 8),0x6b),MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass->rgctx_data[0x15].method);
   bVar1 = iRam_? != 0;
   (this->fields).eventsHandledByDynamicEventCallbackManager = (HashSet_1_MV_Common_MVEventCodes_ *)this_01;
   if (bVar1) {

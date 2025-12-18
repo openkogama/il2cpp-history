@@ -107,14 +107,14 @@ code_?:
       pOVar5 = (Object *)FUN_?(uRam_?,auStackX_18);
       if (this != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb2);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb2,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb4);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb4,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar13 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar13 != (PhotonPeer *)0x0) {
-          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x39),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
+          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x3a),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
           pPVar13 = (pMVar3->fields).peer;
           if (pPVar13 != (PhotonPeer *)0x0) {
             (*(pPVar13->klass->vtable).SendOutgoingCommands.methodPtr)();
@@ -239,14 +239,14 @@ code_?:
       pOVar5 = (Object *)FUN_?(uRam_?,auStackX_18);
       if (this != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb2);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb2,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb4);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb4,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar13 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar13 != (PhotonPeer *)0x0) {
-          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x39),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
+          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x3a),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
           pPVar13 = (pMVar3->fields).peer;
           if (pPVar13 != (PhotonPeer *)0x0) {
             (*(pPVar13->klass->vtable).SendOutgoingCommands.methodPtr)();
@@ -533,14 +533,14 @@ code_?:
       pOVar5 = (Object *)FUN_?(uRam_?,auStackX_18);
       if (this != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb2);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb2,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb4);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb4,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar13 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar13 != (PhotonPeer *)0x0) {
-          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x39),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
+          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x3a),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
           pPVar13 = (pMVar3->fields).peer;
           if (pPVar13 != (PhotonPeer *)0x0) {
             (*(pPVar13->klass->vtable).SendOutgoingCommands.methodPtr)();
@@ -665,14 +665,14 @@ code_?:
       pOVar5 = (Object *)FUN_?(uRam_?,auStackX_18);
       if (this != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb2);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb2,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb4);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb4,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar13 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar13 != (PhotonPeer *)0x0) {
-          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x39),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
+          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x3a),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
           pPVar13 = (pMVar3->fields).peer;
           if (pPVar13 != (PhotonPeer *)0x0) {
             (*(pPVar13->klass->vtable).SendOutgoingCommands.methodPtr)();
@@ -797,14 +797,14 @@ code_?:
       pOVar5 = (Object *)FUN_?(uRam_?,auStackX_18);
       if (this != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb2);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb2,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+        uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb4);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xb4,pOVar5,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar13 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar13 != (PhotonPeer *)0x0) {
-          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x39),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
+          (*(pPVar13->klass->vtable).SendOperation.methodPtr)(pPVar13,CONCAT71((int7)((ulonglong)uVar12 >> 8),0x3a),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar13->klass->vtable).SendOperation.method);
           pPVar13 = (pMVar3->fields).peer;
           if (pPVar13 != (PhotonPeer *)0x0) {
             (*(pPVar13->klass->vtable).SendOutgoingCommands.methodPtr)();

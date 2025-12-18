@@ -111,7 +111,7 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextM
       return INFINITY;
     }
     pOVar8 = (Object *)0x0;
-    if (pOVar3->klass == pORam0000000182dbdd98) {
+    if (pOVar3->klass == pORam0000000182dc5078) {
       pOVar8 = pOVar3;
     }
     if (pOVar8 == (Object *)0x0) {
@@ -224,7 +224,7 @@ code_?:
       }
       defaultValue = (Object *)0x0;
       if (pOVar9 != (Object *)0x0) {
-        if (pOVar9->klass == pORam0000000182dbdde0) {
+        if (pOVar9->klass == pORam0000000182dc50c0) {
           defaultValue = pOVar9;
         }
         if (defaultValue == (Object *)0x0) {
@@ -366,7 +366,7 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVTextMsg::MvTextM
       return 0.0;
     }
     pOVar8 = (Object *)0x0;
-    if (pOVar3->klass == pORam0000000182dbdd98) {
+    if (pOVar3->klass == pORam0000000182dc5078) {
       pOVar8 = pOVar3;
     }
     if (pOVar8 == (Object *)0x0) {

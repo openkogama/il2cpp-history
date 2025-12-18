@@ -116,12 +116,12 @@ code_?:
                   return;
                 }
                 if (cRam_? == '\0') {
-                  FUN_?(&StringLiteral__3_5_13_0);
+                  FUN_?(&StringLiteral__3_5_14_0);
                   LOCK();
                   UNLOCK();
                   cRam_? = '\x01';
                 }
-                pSVar4 = mscorlib.dll::System::String::String_Concat_5(StringLiteral_u000Au000A,StringLiteral__3_5_13_0,StringLiteral_u000Au000A,(MethodInfo *)0x0);
+                pSVar4 = mscorlib.dll::System::String::String_Concat_5(StringLiteral_u000Au000A,StringLiteral__3_5_14_0,StringLiteral_u000Au000A,(MethodInfo *)0x0);
                 MVGameControllerBase::MVGameControllerBase_PostGameMsg_1(MVGameMsgType__Enum_JoinFlowStatus,pSVar4,(MethodInfo *)0x0);
                 if (*(int *)&(TypeInfo__HackingToolDetector->_1).field_0x1c == 0) {
                   FUN_?();
@@ -268,11 +268,11 @@ void Assembly-CSharp.dll::JoinStatusInfo::JoinStatusInfo__cctor(MethodInfo *meth
     (*pcVar1)();
     return;
   }
-  uVar2 = CONCAT71((int7)((ulonglong)MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass >> 8),0x65);
+  uVar2 = CONCAT71((int7)((ulonglong)MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass >> 8),0x66);
   System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__AddIfNotPresent(this,(ByteEnum__Enum)uVar2,MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass->rgctx_data[0x15].method);
-  uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),0x66);
+  uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),0x67);
   System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__AddIfNotPresent(this,(ByteEnum__Enum)uVar2,MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass->rgctx_data[0x15].method);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__AddIfNotPresent(this,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),0x3d),MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass->rgctx_data[0x15].method);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__AddIfNotPresent(this,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),0x3e),MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_->klass->rgctx_data[0x15].method);
   TypeInfo__JoinStatusInfo->static_fields->createGameSnapshotEvents = (HashSet_1_MV_Common_MVEventCodes_ *)this;
   if (iRam_? != 0) {
     uVar3 = (uint)((ulonglong)TypeInfo__JoinStatusInfo->static_fields >> 0xc);
@@ -298,7 +298,7 @@ void Assembly-CSharp.dll::JoinStatusInfo::JoinStatusInfo__ctor(JoinStatusInfo *t
 
 {
   bVar1 = cRam_? == '\0';
-  (this->fields).prevGameState = 0x24;
+  (this->fields).prevGameState = 0x25;
   if (bVar1) {
     FUN_?(&TypeInfo__UnityEngine__Object);
     LOCK();
@@ -463,7 +463,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052af3c, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

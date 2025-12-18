@@ -28,7 +28,7 @@ code_?:
     PVar2 = (*pcVar1)();
     return PVar2;
   }
-  lVar4 = extraout_RAX[0x20];
+  lVar4 = extraout_RAX[0x21];
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
@@ -289,8 +289,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Ent
                 value_00 = (Object *)FUN_?(uRam_?,&stack0x00000010);
                 if (this_02 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                   pMVar2 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-                  uVar14 = CONCAT71((int7)((ulonglong)pMVar2 >> 8),0xbf);
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_02,0xbf,value_00,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar10 >> 8),2),pMVar2);
+                  uVar14 = CONCAT71((int7)((ulonglong)pMVar2 >> 8),0xc1);
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_02,0xc1,value_00,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar10 >> 8),2),pMVar2);
                   pPVar16 = (pMVar15->fields).peer;
                   if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
                     FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -330,7 +330,7 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Ent
             (*pcVar8)();
             return;
           }
-          spawnRoleId = (int32_t)((ulonglong)extraout_RAX_00[0x20] >> 0x20);
+          spawnRoleId = (int32_t)((ulonglong)extraout_RAX_00[0x21] >> 0x20);
 code_?:
           PMOWaitForPlayModeAvatar_SpawnAsSelectedSpawnRole(this,spawnRoleId,(MethodInfo *)0x0);
           return;
@@ -469,8 +469,8 @@ code_?:
             (*pcVar5)();
             return;
           }
-          uVar13 = (undefined4)extraout_RAX[0x21];
-          uStack_14 = (undefined4)extraout_RAX[0x20];
+          uVar13 = (undefined4)extraout_RAX[0x22];
+          uStack_14 = (undefined4)extraout_RAX[0x21];
           MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar8,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
           if (extraout_RAX_00 == (longlong *)0x0) goto code_?;
           bVar8 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
@@ -505,8 +505,8 @@ code_?:
       (*pcVar5)();
       return;
     }
-    lVar17 = extraout_RAX_01[0x20];
-    uVar13 = (undefined4)extraout_RAX_01[0x21];
+    lVar17 = extraout_RAX_01[0x21];
+    uVar13 = (undefined4)extraout_RAX_01[0x22];
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar8,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_02 != 0) {
       if (cRam_? == '\0') {
@@ -538,8 +538,8 @@ code_?:
             return;
           }
 code_?:
-          plVar16[0x20] = CONCAT44(IStack_7,uStack_15);
-          *(undefined4 *)(plVar16 + 0x21) = uVar13;
+          plVar16[0x21] = CONCAT44(IStack_7,uStack_15);
+          *(undefined4 *)(plVar16 + 0x22) = uVar13;
           return;
         }
       }
@@ -668,8 +668,8 @@ code_?:
             value = (Object *)FUN_?(uRam_?,&stack0x00000010);
             if (this_03 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
               pMVar17 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-              uVar15 = CONCAT71((int7)((ulonglong)pMVar17 >> 8),0xbf);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar9 >> 8),2),pMVar17);
+              uVar15 = CONCAT71((int7)((ulonglong)pMVar17 >> 8),0xc1);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar9 >> 8),2),pMVar17);
               pPVar18 = (pMVar16->fields).peer;
               if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
                 FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -709,7 +709,7 @@ code_?:
       (*pcVar5)();
       return;
     }
-    pMVar7 = (MVPlayer *)((ulonglong)extraout_RAX[0x20] >> 0x20);
+    pMVar7 = (MVPlayer *)((ulonglong)extraout_RAX[0x21] >> 0x20);
   }
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVLocalPlayerBuilder);
@@ -768,8 +768,8 @@ code_?:
             (*pcVar5)();
             return;
           }
-          lVar9 = extraout_RAX_00[0x20];
-          uVar21 = (undefined4)extraout_RAX_00[0x21];
+          lVar9 = extraout_RAX_00[0x21];
+          uVar21 = (undefined4)extraout_RAX_00[0x22];
           MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar10,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
           if (extraout_RAX_01 == (longlong *)0x0) goto code_?;
           bVar10 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
@@ -804,8 +804,8 @@ code_?:
       (*pcVar5)();
       return;
     }
-    lVar9 = extraout_RAX_02[0x20];
-    uVar21 = (undefined4)extraout_RAX_02[0x21];
+    lVar9 = extraout_RAX_02[0x21];
+    uVar21 = (undefined4)extraout_RAX_02[0x22];
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar10,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_03 != 0) {
       if (cRam_? == '\0') {
@@ -836,8 +836,8 @@ code_?:
             return;
           }
 code_?:
-          plVar22[0x20] = lVar9;
-          *(undefined4 *)(plVar22 + 0x21) = uVar21;
+          plVar22[0x21] = lVar9;
+          *(undefined4 *)(plVar22 + 0x22) = uVar21;
           return;
         }
       }
@@ -927,8 +927,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Han
           value = (Object *)FUN_?(uRam_?,aIStackX_10);
           if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-            uVar8 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar3 >> 8),2),method_00);
+            uVar8 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar3 >> 8),2),method_00);
             pPVar10 = (pMVar9->fields).peer;
             if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -978,7 +978,7 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Han
     (*pcVar1)();
     return;
   }
-  uVar3 = extraout_RAX[0x20];
+  uVar3 = extraout_RAX[0x21];
   pMVar4 = (MVPlayer *)(uVar3 >> 0x20);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVLocalPlayerBuilder);
@@ -1037,8 +1037,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Han
             (*pcVar1)();
             return;
           }
-          lVar10 = extraout_RAX_00[0x20];
-          uVar11 = (undefined4)extraout_RAX_00[0x21];
+          lVar10 = extraout_RAX_00[0x21];
+          uVar11 = (undefined4)extraout_RAX_00[0x22];
           MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar2,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
           if (extraout_RAX_01 == (longlong *)0x0) goto code_?;
           bVar2 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
@@ -1073,8 +1073,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Han
       (*pcVar1)();
       return;
     }
-    lVar10 = extraout_RAX_02[0x20];
-    uVar11 = (undefined4)extraout_RAX_02[0x21];
+    lVar10 = extraout_RAX_02[0x21];
+    uVar11 = (undefined4)extraout_RAX_02[0x22];
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar2,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_03 != 0) {
       if (cRam_? == '\0') {
@@ -1105,8 +1105,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Han
             return;
           }
 code_?:
-          plVar13[0x20] = lStack_12;
-          *(undefined4 *)(plVar13 + 0x21) = uVar11;
+          plVar13[0x21] = lStack_12;
+          *(undefined4 *)(plVar13 + 0x22) = uVar11;
           return;
         }
       }
@@ -1254,8 +1254,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Spa
           value = (Object *)FUN_?(uRam_?,aIStackX_10);
           if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-            uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar2 >> 8),2),method_00);
+            uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)lVar2 >> 8),2),method_00);
             pPVar9 = (pMVar8->fields).peer;
             if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -1342,8 +1342,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Spa
             (*pcVar8)();
             return;
           }
-          uVar9 = (undefined4)extraout_RAX[0x21];
-          uStack_10 = (undefined4)extraout_RAX[0x20];
+          uVar9 = (undefined4)extraout_RAX[0x22];
+          uStack_10 = (undefined4)extraout_RAX[0x21];
           MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar3,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
           if (extraout_RAX_00 == (longlong *)0x0) goto code_?;
           bVar3 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
@@ -1378,8 +1378,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Spa
       (*pcVar8)();
       return;
     }
-    lVar14 = extraout_RAX_01[0x20];
-    uVar9 = (undefined4)extraout_RAX_01[0x21];
+    lVar14 = extraout_RAX_01[0x21];
+    uVar9 = (undefined4)extraout_RAX_01[0x22];
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar3,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_02 != 0) {
       if (cRam_? == '\0') {
@@ -1411,8 +1411,8 @@ void Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::PMOWaitForPlayModeAvatar_Spa
             return;
           }
 code_?:
-          plVar12[0x20] = CONCAT44(IStack_13,uStack_11);
-          *(undefined4 *)(plVar12 + 0x21) = uVar9;
+          plVar12[0x21] = CONCAT44(IStack_13,uStack_11);
+          *(undefined4 *)(plVar12 + 0x22) = uVar9;
           return;
         }
       }

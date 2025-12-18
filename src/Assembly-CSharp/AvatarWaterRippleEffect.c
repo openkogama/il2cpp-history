@@ -82,14 +82,18 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
           UNLOCK();
           cRam_? = '\x01';
         }
-        pMVar18 = TypeInfo__MVGameControllerBase->static_fields->instance;
-        if ((pMVar18 == (MVGameControllerBase *)0x0) || (this_00 = (pMVar18->fields).waterPlaneManager, this_00 == (WaterPlaneManager *)0x0)) goto code_?;
-        bVar19 = WaterPlaneManager::WaterPlaneManager_get_IsActive(this_00,(MethodInfo *)0x0);
-        if (bVar19 == 0) {
-          return;
+        pGVar17 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar17 == (GameSessionData *)0x0) goto code_?;
+        if ((pGVar17->fields).gameMode != 4) {
+          this_01 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
+          if (this_01 == (WaterPlaneManager *)0x0) goto code_?;
+          bVar18 = WaterPlaneManager::WaterPlaneManager_get_IsActive(this_01,(MethodInfo *)0x0);
+          if (bVar18 == 0) {
+            return;
+          }
         }
       }
-      pGVar20 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+      pGVar19 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
       name = StringLiteral_AirBubbleCollitionPlane;
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__UnityEngine__Object);
@@ -100,13 +104,13 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
       if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
         FUN_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject(pGVar20,name,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject(pGVar19,name,(MethodInfo *)0x0);
       if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
         FUN_?();
       }
-      pGVar20 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar20,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
+      pGVar19 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar19,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
       bVar1 = iRam_? != 0;
-      (this->fields).airBubbleCollitionPlane = pGVar20;
+      (this->fields).airBubbleCollitionPlane = pGVar19;
       if (bVar1) {
         uVar2 = (uint)((ulonglong)&(this->fields).airBubbleCollitionPlane >> 0xc);
         uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
@@ -121,15 +125,15 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
           UNLOCK();
         } while (!bVar1);
       }
-      pGVar20 = (this->fields).airBubbleCollitionPlane;
-      if ((pGVar20 != (GameObject *)0x0) && (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar20,(MethodInfo *)0x0), pTVar21 != (Transform *)0x0)) {
+      pGVar19 = (this->fields).airBubbleCollitionPlane;
+      if ((pGVar19 != (GameObject *)0x0) && (pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar19,(MethodInfo *)0x0), pTVar20 != (Transform *)0x0)) {
         VStack_16.x = 180.0;
         VStack_16.y = 0.0;
         VStack_16.z = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate(pTVar21,&VStack_16,Space__Enum_Self,(MethodInfo *)0x0);
-        pPVar22 = (ParticleSystem *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)(this->fields).airBubbleParticlesPrefab,UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_);
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate(pTVar20,&VStack_16,Space__Enum_Self,(MethodInfo *)0x0);
+        pPVar21 = (ParticleSystem *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)(this->fields).airBubbleParticlesPrefab,UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_);
         bVar1 = iRam_? != 0;
-        (this->fields).airBubbleParticles = pPVar22;
+        (this->fields).airBubbleParticles = pPVar21;
         if (bVar1) {
           uVar2 = (uint)((ulonglong)&(this->fields).airBubbleParticles >> 0xc);
           uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
@@ -144,40 +148,40 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
             UNLOCK();
           } while (!bVar1);
         }
-        pPVar22 = (this->fields).airBubbleParticles;
-        if (pPVar22 != (ParticleSystem *)0x0) {
-          pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pPVar22,(MethodInfo *)0x0);
-          this_01 = (this->fields).avatar;
-          if ((this_01 != (Avatar *)0x0) && (parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0), pTVar21 != (Transform *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1(pTVar21,parent,1,(MethodInfo *)0x0);
-            pPVar22 = (this->fields).airBubbleParticles;
-            if ((pPVar22 != (ParticleSystem *)0x0) && (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pPVar22,(MethodInfo *)0x0), pTVar21 != (Transform *)0x0)) {
+        pPVar21 = (this->fields).airBubbleParticles;
+        if (pPVar21 != (ParticleSystem *)0x0) {
+          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pPVar21,(MethodInfo *)0x0);
+          this_00 = (this->fields).avatar;
+          if ((this_00 != (Avatar *)0x0) && (parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0), pTVar20 != (Transform *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1(pTVar20,parent,1,(MethodInfo *)0x0);
+            pPVar21 = (this->fields).airBubbleParticles;
+            if ((pPVar21 != (ParticleSystem *)0x0) && (pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pPVar21,(MethodInfo *)0x0), pTVar20 != (Transform *)0x0)) {
               uStack_7._0_4_ = (this->fields).airBubbleOffset.x;
               uStack_7._4_4_ = (this->fields).airBubbleOffset.y;
-              fStack_23 = (this->fields).airBubbleOffset.z;
+              fStack_22 = (this->fields).airBubbleOffset.z;
               if (cRam_? == '\0') {
                 FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_);
                 LOCK();
                 UNLOCK();
                 cRam_? = '\x01';
               }
-              pvVar24 = (pTVar21->fields)._._.m_CachedPtr;
-              if (pvVar24 == (void *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar21,(MethodInfo *)0x0);
-                pcVar25 = (code *)swi(3);
-                (*pcVar25)();
+              pvVar23 = (pTVar20->fields)._._.m_CachedPtr;
+              if (pvVar23 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar20,(MethodInfo *)0x0);
+                pcVar24 = (code *)swi(3);
+                (*pcVar24)();
                 return;
               }
-              pcVar25 = pcRam_?;
-              if ((pcRam_? == (code *)0x0) && (pcVar25 = (code *)FUN_?(&UNK_?), pcVar25 == (code *)0x0)) {
-                uVar26 = func_?(&UNK_?);
-                FUN_?(uVar26,0);
-                pcVar25 = (code *)swi(3);
-                (*pcVar25)();
+              pcVar24 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) && (pcVar24 = (code *)FUN_?(&UNK_?), pcVar24 == (code *)0x0)) {
+                uVar25 = func_?(&UNK_?);
+                FUN_?(uVar25,0);
+                pcVar24 = (code *)swi(3);
+                (*pcVar24)();
                 return;
               }
-              pcRam_? = pcVar25;
-              (*pcRam_?)(pvVar24);
+              pcRam_? = pcVar24;
+              (*pcRam_?)(pvVar23);
               pPStackX_8 = (this->fields).airBubbleParticles;
               if (pPStackX_8 != (ParticleSystem *)0x0) {
                 if (iRam_? != 0) {
@@ -194,10 +198,10 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
                     UNLOCK();
                   } while (!bVar1);
                 }
-                pGVar20 = (this->fields).airBubbleCollitionPlane;
+                pGVar19 = (this->fields).airBubbleCollitionPlane;
                 pPStackX_10 = pPStackX_8;
-                if (pGVar20 != (GameObject *)0x0) {
-                  pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar20,(MethodInfo *)0x0);
+                if (pGVar19 != (GameObject *)0x0) {
+                  pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar19,(MethodInfo *)0x0);
                   if (cRam_? == '\0') {
                     FUN_?(&void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Transform>_UnityEngine__Transform_);
                     LOCK();
@@ -207,20 +211,20 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
                   if ((void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Transform>_UnityEngine__Transform_->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
                     FUN_?();
                   }
-                  pvVar24 = (void *)0x0;
-                  if (pTVar21 != (Transform *)0x0) {
-                    pvVar24 = (pTVar21->fields)._._.m_CachedPtr;
+                  pvVar23 = (void *)0x0;
+                  if (pTVar20 != (Transform *)0x0) {
+                    pvVar23 = (pTVar20->fields)._._.m_CachedPtr;
                   }
-                  pcVar25 = pcRam_?;
-                  if ((pcRam_? == (code *)0x0) && (pcVar25 = (code *)FUN_?(&UNK_?), pcVar25 == (code *)0x0)) {
-                    uVar26 = func_?(&UNK_?);
-                    FUN_?(uVar26,0);
-                    pcVar25 = (code *)swi(3);
-                    (*pcVar25)();
+                  pcVar24 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) && (pcVar24 = (code *)FUN_?(&UNK_?), pcVar24 == (code *)0x0)) {
+                    uVar25 = func_?(&UNK_?);
+                    FUN_?(uVar25,0);
+                    pcVar24 = (code *)swi(3);
+                    (*pcVar24)();
                     return;
                   }
-                  pcRam_? = pcVar25;
-                  (*pcRam_?)(&pPStackX_10,0,pvVar24);
+                  pcRam_? = pcVar24;
+                  (*pcRam_?)(&pPStackX_10,0,pvVar23);
                   (this->fields).isInitialized = 1;
                   return;
                 }
@@ -231,15 +235,15 @@ void Assembly-CSharp.dll::AvatarWaterRippleEffect::AvatarWaterRippleEffect_Initi
         }
       }
       FUN_?();
-      pcVar25 = (code *)swi(3);
-      (*pcVar25)();
+      pcVar24 = (code *)swi(3);
+      (*pcVar24)();
       return;
     }
   }
 code_?:
   FUN_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -705,7 +709,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052af3c, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

@@ -431,10 +431,13 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
     FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     LOCK();
     UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_);
+    LOCK();
+    UNLOCK();
     FUN_?(&TypeInfo__NotificationController);
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral_You_must_be_the_owner_in_order_t);
+    FUN_?(&StringLiteral_You_must_have_CanPublish_permiss);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -446,20 +449,19 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((((pMVar1 == (MVGameControllerBase *)0x0) || (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) || (this_00 = (pMVar2->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) || (this_03 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0), this_03 == (MVLocalPlayer *)0x0)) {
+  if ((((pMVar1 == (MVGameControllerBase *)0x0) || (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) || (this_00 = (pMVar2->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) || ((this_03 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0), this_03 == (MVLocalPlayer *)0x0 || (pLVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_03,(MethodInfo *)0x0), pLVar3 == (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) {
     FUN_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_03,(MethodInfo *)0x0);
-  if ((char)PVar4 != '\x02') {
-    value_00 = TM::TM__(StringLiteral_You_must_be_the_owner_in_order_t,(MethodInfo *)0x0);
+  if (((pLVar3->fields)._size == 0) || (iVar5 = FUN_?(pLVar3,CONCAT71((int7)((ulonglong)MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_->klass >> 8),0x14),MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_->klass->rgctx_data[0x17].rgctxDataDummy), iVar5 == -1)) {
+    value_00 = TM::TM__(StringLiteral_You_must_have_CanPublish_permiss,(MethodInfo *)0x0);
     value = (this->fields).errorSprite;
     if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
       FUN_?();
     }
-    uVar5 = 0;
+    uVar6 = 0;
     if (cRam_? == '\0') {
       FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_,value,3,0);
       LOCK();
@@ -489,14 +491,14 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
     }
     this_05 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor(this_05,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-    pOVar6 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+    pOVar7 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
     if (this_05 != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)0x0) {
-      uVar5 = CONCAT71((int7)((ulonglong)uVar5 >> 8),2);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar6,(Object *)value_00,(InsertionBehavior__Enum)uVar5,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
-      pOVar6 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+      uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar7,(Object *)value_00,(InsertionBehavior__Enum)uVar6,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
+      pOVar7 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
       value_01 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffec);
-      uVar5 = CONCAT71((int7)((ulonglong)uVar5 >> 8),2);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar6,value_01,(InsertionBehavior__Enum)uVar5,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
+      uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar7,value_01,(InsertionBehavior__Enum)uVar6,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
       if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
         FUN_?();
       }
@@ -520,8 +522,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
           FUN_?();
         }
         if ((value->fields)._.m_CachedPtr != (void *)0x0) {
-          pOVar6 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar6,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
+          pOVar7 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar7,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
         }
       }
       if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
@@ -540,17 +542,17 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
       }
     }
     FUN_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+  pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   this_04 = (ExecuteEvents_EventFunction_1_System_Object_ *)FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor(this_04,(Object *)this,MethodInfo__DesktopCubeModelingController___PublishGame_b__10_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
   if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
     FUN_?();
   }
-  pMVar8 = UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_;
+  pMVar9 = UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_;
   if ((UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
     FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     LOCK();
@@ -561,60 +563,60 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
     FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_);
     LOCK();
     UNLOCK();
-    if ((pMVar8->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
-      FUN_?(pMVar8);
+    if ((pMVar9->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar9);
     }
   }
   if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain(pGVar7,(IList_1_UnityEngine_Transform_ *)TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->s_InternalTransformList,(MethodInfo *)0x0);
-  pLVar9 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->s_InternalTransformList;
-  if (pLVar9 != (List_1_UnityEngine_Transform_ *)0x0) {
-    lVar10 = (longlong)(pLVar9->fields)._size;
-    uVar11 = 0;
-    if (0 < lVar10) {
-      lVar12 = 0;
-      lVar13 = 0x20;
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain(pGVar8,(IList_1_UnityEngine_Transform_ *)TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->s_InternalTransformList;
+  if (pLVar10 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar11 = (longlong)(pLVar10->fields)._size;
+    uVar12 = 0;
+    if (0 < lVar11) {
+      lVar13 = 0;
+      lVar14 = 0x20;
       do {
         if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
           FUN_?();
         }
-        pLVar9 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->s_InternalTransformList;
-        if (pLVar9 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
-        if ((uint)(pLVar9->fields)._size <= uVar11) {
+        pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->s_InternalTransformList;
+        if (pLVar10 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar10->fields)._size <= uVar12) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
           return;
         }
-        pTVar14 = (pLVar9->fields)._items;
-        if (pTVar14 == (Transform__Array *)0x0) goto code_?;
-        if ((uint)pTVar14->max_length <= uVar11) {
+        pTVar15 = (pLVar10->fields)._items;
+        if (pTVar15 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar15->max_length <= uVar12) {
           FUN_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
           return;
         }
-        this_02 = *(Component **)((longlong)pTVar14->vector + lVar13 + -0x20);
+        this_02 = *(Component **)((longlong)pTVar15->vector + lVar14 + -0x20);
         if (this_02 == (Component *)0x0) goto code_?;
-        pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_02,(MethodInfo *)0x0);
-        bVar15 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18(pGVar7,(BaseEventData *)0x0,this_04,(pMVar8->field7_0x38).rgctx_data[1].method);
-        if (bVar15 != 0) {
+        pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_02,(MethodInfo *)0x0);
+        bVar16 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18(pGVar8,(BaseEventData *)0x0,this_04,(pMVar9->field7_0x38).rgctx_data[1].method);
+        if (bVar16 != 0) {
           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_02,(MethodInfo *)0x0);
           return;
         }
-        uVar11 = uVar11 + 1;
-        lVar12 = lVar12 + 1;
-        lVar13 = lVar13 + 8;
-      } while (lVar12 < lVar10);
+        uVar12 = uVar12 + 1;
+        lVar13 = lVar13 + 1;
+        lVar14 = lVar14 + 8;
+      } while (lVar13 < lVar11);
     }
     return;
   }
 code_?:
   FUN_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

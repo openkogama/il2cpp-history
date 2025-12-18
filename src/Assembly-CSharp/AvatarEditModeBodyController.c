@@ -189,14 +189,14 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::AvatarEditModeBodyContro
         value = (Object *)FUN_?(uRam_?,aiStackX_18);
         if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-          uVar17 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x7e);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x7e,value,(InsertionBehavior__Enum)CONCAT71((int7)(uVar5 >> 8),2),method_00);
+          uVar17 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x81);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x81,value,(InsertionBehavior__Enum)CONCAT71((int7)(uVar5 >> 8),2),method_00);
           pPVar18 = (pMVar14->fields).peer;
           if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
             FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
           }
           if (pPVar18 != (PhotonPeer *)0x0) {
-            (*(pPVar18->klass->vtable).SendOperation.methodPtr)(pPVar18,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x2a),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar18->klass->vtable).SendOperation.method);
+            (*(pPVar18->klass->vtable).SendOperation.methodPtr)(pPVar18,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x2b),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar18->klass->vtable).SendOperation.method);
             return;
           }
         }
@@ -2225,7 +2225,7 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::AvatarEditModeBodyContro
           }
           this_05 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor(this_05,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-          aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x7e);
+          aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x81);
           pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_10);
           aiStackX_10[0] = iVar20;
           value = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -2982,8 +2982,8 @@ code_?:
           pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_20);
           if (this_03 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-            uVar19 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x16,pOVar1,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar17 >> 8),2),method_00);
+            uVar19 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x17,pOVar1,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar17 >> 8),2),method_00);
             pPVar20 = (pMVar18->fields).peer;
             if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);

@@ -302,6 +302,7 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_Initialize(MVGameMode__Enum m
   }
   if (mode != MVGameMode__Enum_Edit) {
     if (mode == MVGameMode__Enum_Play) {
+code_?:
       pAVar1 = TypeInfo__AwayMonitor->static_fields->instance;
       pAVar8 = (AwayMonitor_IdleKickTimes *)FUN_?(TypeInfo__AwayMonitor__IdleKickTimes);
       AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__ctor(pAVar8,5,0xf,(MethodInfo *)0x0);
@@ -328,16 +329,19 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_Initialize(MVGameMode__Enum m
       goto code_?;
     }
     if (mode != MVGameMode__Enum_CharacterEditor) {
-      EStack_9.klass = (Enum__Class *)TypeInfo__MV__Common__MVGameMode;
-      EStack_9.monitor = (MonitorData *)0xffffffffffffffff;
-      MStack_10 = mode;
-      pSVar11 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_9,(MethodInfo *)0x0);
-      pSVar11 = mscorlib.dll::System::String::String_Concat_5(StringLiteral_GameMode__,pSVar11,StringLiteral___is_not_accounted,(MethodInfo *)0x0);
-      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
-        FUN_?();
+      if (mode == MVGameMode__Enum_SpacePlay) goto code_?;
+      if (mode != MVGameMode__Enum_SpaceEdit) {
+        EStack_9.klass = (Enum__Class *)TypeInfo__MV__Common__MVGameMode;
+        EStack_9.monitor = (MonitorData *)0xffffffffffffffff;
+        MStack_10 = mode;
+        pSVar11 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_9,(MethodInfo *)0x0);
+        pSVar11 = mscorlib.dll::System::String::String_Concat_5(StringLiteral_GameMode__,pSVar11,StringLiteral___is_not_accounted,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar11,(MethodInfo *)0x0);
+        return;
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar11,(MethodInfo *)0x0);
-      return;
     }
   }
   pAVar1 = TypeInfo__AwayMonitor->static_fields->instance;

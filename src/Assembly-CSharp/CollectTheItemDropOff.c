@@ -67,14 +67,9 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Destroy(C
     cRam_? = '\x01';
   }
   pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar6 == (GameSessionData *)0x0) {
-code_?:
-    FUN_?();
-    pcVar7 = (code *)swi(3);
-    (*pcVar7)();
-    return;
-  }
+  if (pGVar6 == (GameSessionData *)0x0) goto code_?;
   if ((pGVar6->fields).gameMode == 0) {
+code_?:
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -82,43 +77,54 @@ code_?:
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField == (IEditModeUI *)0x0) goto code_?;
-    pDVar8 = (Delegate *)FUN_?();
+    pDVar7 = (Delegate *)FUN_?();
     value = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
     FUN_?(value,this);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar8,value,(MethodInfo *)0x0);
-    pAVar9 = TypeInfo__System__Action<EditModeChangeArgs>;
-    if ((pDVar8 != (Delegate *)0x0) && (lVar3 = FUN_?(pDVar8,TypeInfo__System__Action<EditModeChangeArgs>), lVar3 == 0)) {
-      FUN_?(pDVar8,pAVar9);
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
+    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar7,value,(MethodInfo *)0x0);
+    pAVar8 = TypeInfo__System__Action<EditModeChangeArgs>;
+    if ((pDVar7 != (Delegate *)0x0) && (lVar3 = FUN_?(pDVar7,TypeInfo__System__Action<EditModeChangeArgs>), lVar3 == 0)) {
+      FUN_?(pDVar7,pAVar8);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
     FUN_?();
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar6->fields).gameMode == 4) goto code_?;
   }
   if ((this->fields).cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
     pUVar10 = (this->fields)._._._.PositionChanged;
     this_02 = (UnityAction_2_System_Object_System_Object_ *)FUN_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__CollectTheItemDropOff__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pUVar10,(Delegate *)this_02,(MethodInfo *)0x0);
+    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pUVar10,(Delegate *)this_02,(MethodInfo *)0x0);
     pUVar11 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-    if (pDVar8 == (Delegate *)0x0) {
+    if (pDVar7 == (Delegate *)0x0) {
       (this->fields)._._._.PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
     }
     else {
-      pUVar10 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)FUN_?(pDVar8,TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
+      pUVar10 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)FUN_?(pDVar7,TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
       if (pUVar10 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        FUN_?(pDVar8,pUVar11);
-        pcVar7 = (code *)swi(3);
-        (*pcVar7)();
+        FUN_?(pDVar7,pUVar11);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
         return;
       }
       (this->fields)._._._.PositionChanged = pUVar10;
       pUVar11 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
       lVar3 = FUN_?();
       if (lVar3 == 0) {
-        FUN_?(pDVar8,pUVar11);
-        pcVar7 = (code *)swi(3);
-        (*pcVar7)();
+        FUN_?(pDVar7,pUVar11);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
         return;
       }
     }
@@ -137,7 +143,13 @@ code_?:
       } while (!bVar1);
     }
     this_00 = (this->fields).cullingSubscriberBase;
-    if (this_00 == (CullingSubscriberBase *)0x0) goto code_?;
+    if (this_00 == (CullingSubscriberBase *)0x0) {
+code_?:
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
     CullingSubscriberBase::CullingSubscriberBase_Destroy(this_00,(MethodInfo *)0x0);
     bVar1 = iRam_? != 0;
     (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
@@ -236,8 +248,8 @@ code_?:
   }
 DAT_?:
   FUN_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -839,19 +851,21 @@ code_?:
       UNLOCK();
     } while (!bVar10);
   }
+  cVar34 = cRam_?;
   pCVar11 = (this->fields).triggerObject;
   if ((pCVar11 == (CollectTheItemDropOffObject *)0x0) || (pCVar32 = (pCVar11->fields).blinker, pCVar32 == (CollectTheItemBlinker *)0x0)) goto code_?;
-  bVar10 = cRam_? == '\0';
   (pCVar32->fields)._.visible = 1;
-  if (bVar10) {
+  if (cVar34 == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
     UNLOCK();
+    cVar34 = '\x01';
     cRam_? = '\x01';
   }
-  pGVar34 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar34 == (GameSessionData *)0x0) goto code_?;
-  if ((pGVar34->fields).gameMode == 0) {
+  pGVar35 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar35 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar35->fields).gameMode == 0) {
+code_?:
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -863,9 +877,9 @@ code_?:
     b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
     FUN_?(b,this);
     pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar2,b,(MethodInfo *)0x0);
-    pAVar35 = TypeInfo__System__Action<EditModeChangeArgs>;
+    pAVar36 = TypeInfo__System__Action<EditModeChangeArgs>;
     if ((pDVar2 != (Delegate *)0x0) && (lVar5 = FUN_?(pDVar2,TypeInfo__System__Action<EditModeChangeArgs>), lVar5 == 0)) {
-      FUN_?(pDVar2,pAVar35);
+      FUN_?(pDVar2,pAVar36);
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
@@ -882,15 +896,26 @@ code_?:
     if (pMVar19 == (MVCubeModelInstance *)0x0) goto code_?;
     MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged((MVCubeModelBase *)pMVar19,(EventHandler_1_EditStateEventArgs_ *)pUVar12,(MethodInfo *)0x0);
   }
-  bVar36 = CollectTheItemDropOff_get_DoOnce(this,(MethodInfo *)0x0);
-  if (bVar36 == 0) {
+  else {
+    if (cVar34 == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar35 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar35 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar35->fields).gameMode == 4) goto code_?;
+  }
+  bVar37 = CollectTheItemDropOff_get_DoOnce(this,(MethodInfo *)0x0);
+  if (bVar37 == 0) {
 code_?:
     CollectTheItemDropOff_SetupCulling(this,(MethodInfo *)0x0);
     signalCallback = (Action_3_Boolean_Boolean_LogicObjectManager_ *)FUN_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
     FUN_?(signalCallback,this,MethodInfo__CollectTheItemDropOff__SignalCallback_bool__bool__LogicObjectManager_);
-    pIVar37 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver((MVWorldObject *)this,0,signalCallback,(MethodInfo *)0x0);
+    pIVar38 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver((MVWorldObject *)this,0,signalCallback,(MethodInfo *)0x0);
     bVar10 = iRam_? != 0;
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar37;
+    (this->fields)._InputSignalReceiver_k__BackingField = pIVar38;
     if (bVar10) {
       uVar6 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
       uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
@@ -906,10 +931,10 @@ code_?:
       } while (!bVar10);
     }
     iVar28 = (this->fields)._._._._.id;
-    pOVar38 = (OutputSignalTransmitter *)FUN_?(TypeInfo__OutputSignalTransmitter);
+    pOVar39 = (OutputSignalTransmitter *)FUN_?(TypeInfo__OutputSignalTransmitter);
     bVar10 = iRam_? != 0;
-    (pOVar38->fields).woId = iVar28;
-    (this->fields).outputSignalTransmitter = pOVar38;
+    (pOVar39->fields).woId = iVar28;
+    (this->fields).outputSignalTransmitter = pOVar39;
     if (bVar10) {
       uVar6 = (uint)((ulonglong)&(this->fields).outputSignalTransmitter >> 0xc);
       uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
@@ -943,19 +968,19 @@ code_?:
   if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
     FUN_?();
   }
-  pOVar39 = Extensions::Extensions_GetObscuredType(hashtable,StringLiteral_isActive,(MethodInfo *)0x0);
+  pOVar40 = Extensions::Extensions_GetObscuredType(hashtable,StringLiteral_isActive,(MethodInfo *)0x0);
   if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).field_0x1c == 0) {
     FUN_?();
   }
-  if (pOVar39 != (Object *)0x0) {
-    if ((pOVar39->klass->_0).element_class != (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_0).element_class) {
-      FUN_?(pOVar39,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
+  if (pOVar40 != (Object *)0x0) {
+    if ((pOVar40->klass->_0).element_class != (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_0).element_class) {
+      FUN_?(pOVar40,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    pOStack_15 = pOVar39[1].klass;
-    uStack_16 = *(undefined4 *)&pOVar39[1].monitor;
+    pOStack_15 = pOVar40[1].klass;
+    uStack_16 = *(undefined4 *)&pOVar40[1].monitor;
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
       LOCK();
@@ -965,9 +990,9 @@ code_?:
     if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).field_0x1c == 0) {
       FUN_?();
     }
-    bVar36 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::ObscuredBool_InternalDecrypt((ObscuredBool *)&pOStack_15,(MethodInfo *)0x0);
+    bVar37 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::ObscuredBool_InternalDecrypt((ObscuredBool *)&pOStack_15,(MethodInfo *)0x0);
     if (pAVar1 != (Action_1_Boolean_ *)0x0) {
-      (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,bVar36,(pAVar1->fields)._._.method);
+      (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,bVar37,(pAVar1->fields)._._.method);
       goto code_?;
     }
   }
@@ -1055,10 +1080,21 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_OnCollect
         }
         pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
         if (pGVar2 != (GameSessionData *)0x0) {
-          if ((pGVar2->fields).gameMode != 0) {
-            shouldbeActiveOnCollect = 1;
+          if ((pGVar2->fields).gameMode == 0) {
+            bVar3 = false;
           }
-          if (shouldbeActiveOnCollect == 0) {
+          else {
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+            if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+            bVar3 = (pGVar2->fields).gameMode != 4;
+          }
+          if (shouldbeActiveOnCollect == 0 && !bVar3) {
             pCVar1 = (this->fields).triggerObject;
             if ((pCVar1 == (CollectTheItemDropOffObject *)0x0) || (this_03 = (pCVar1->fields).greyout, this_03 == (GreyOutObjectScript *)0x0)) goto code_?;
             GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_03,(MethodInfo *)0x0);
@@ -1070,8 +1106,8 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_OnCollect
   }
 code_?:
   FUN_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1334,7 +1370,17 @@ void Assembly-CSharp.dll::CollectTheItemDropOff::CollectTheItemDropOff_Reset(Col
       pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar2 != (GameSessionData *)0x0) {
         if ((pGVar2->fields).gameMode != 0) {
-          return;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+          if ((pGVar2->fields).gameMode != 4) {
+            return;
+          }
         }
         pCVar1 = (this->fields).triggerObject;
         if ((pCVar1 != (CollectTheItemDropOffObject *)0x0) && (this_04 = (pCVar1->fields).greyout, this_04 != (GreyOutObjectScript *)0x0)) {
@@ -1466,6 +1512,7 @@ code_?:
       }
     }
   }
+code_?:
   FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();

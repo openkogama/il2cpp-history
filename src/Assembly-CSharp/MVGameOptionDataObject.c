@@ -41,9 +41,9 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Partial
     uVar6 = CONCAT71((int7)((ulonglong)uVar5 >> 8),2);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
     uVar7 = (undefined7)((ulonglong)method_00 >> 8);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x16,value,(InsertionBehavior__Enum)uVar6,method_00);
-    uVar5 = CONCAT71(uVar7,0x12);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x12,(Object *)arg2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x17,value,(InsertionBehavior__Enum)uVar6,method_00);
+    uVar5 = CONCAT71(uVar7,0x13);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x13,(Object *)arg2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
     pPVar8 = (pMVar3->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
       FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -411,7 +411,7 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Submit(
             if (this_02 == (List_1_System_Object_ *)0x0) goto code_?;
             if (pOVar15 != (Object *)0x0) {
               pOVar18 = (Object *)0x0;
-              if (pOVar15->klass == pORam0000000182dbdde0) {
+              if (pOVar15->klass == pORam0000000182dc50c0) {
                 pOVar18 = pOVar15;
               }
               if (pOVar18 == (Object *)0x0) goto code_?;

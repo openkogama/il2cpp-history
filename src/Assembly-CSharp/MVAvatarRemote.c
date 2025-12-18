@@ -1772,7 +1772,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_OnAnimationChange(MVAva
       animationName = (String *)0x0;
       pSVar7 = animationName;
       if (pSVar6 != (String *)0x0) {
-        if (pSVar6->klass == pSRam0000000182dbdde0) {
+        if (pSVar6->klass == pSRam0000000182dc50c0) {
           pSVar7 = pSVar6;
         }
         if (pSVar7 == (String *)0x0) {
@@ -1815,7 +1815,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_OnAnimationChange(MVAva
             pSVar7 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)newAnimationData,(Object *)StringLiteral_state,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
             if (pBVar3 != (BoneAnimation *)0x0) {
               if (pSVar7 != (String *)0x0) {
-                if (pSVar7->klass == pSRam0000000182dbdde0) {
+                if (pSVar7->klass == pSRam0000000182dc50c0) {
                   animationName = pSVar7;
                 }
                 if (animationName == (String *)0x0) {

@@ -174,14 +174,14 @@ void Assembly-CSharp.dll::PlayerElementState+<>c__DisplayClass11_0::PlayerElemen
   value = (Object *)FUN_?(uRam_?,aiStackX_10);
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-    uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x34);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x34,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+    uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x37);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_00,0x37,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
     pPVar8 = (pMVar4->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
       FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
     }
     if (pPVar8 != (PhotonPeer *)0x0) {
-      (*(pPVar8->klass->vtable).SendOperation.methodPtr)(pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x11),this_00,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar8->klass->vtable).SendOperation.method);
+      (*(pPVar8->klass->vtable).SendOperation.methodPtr)(pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x12),this_00,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar8->klass->vtable).SendOperation.method);
       return;
     }
   }

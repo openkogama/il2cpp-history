@@ -39,6 +39,7 @@ public class DesktopDefaultKeyboardMapping : IKogamaInputMap
 
 	// Methods
 	public void Reset();
+	private static Dictionary<KogamaControls, KeyCode[]> ModifiedEmbeddedKeyBindings(Dictionary<KogamaControls, KeyCode[]> keyBindings);
 	public bool GetBooleanControl(KogamaControls control, KeyState keyState);
 	private bool KeyDown(KogamaControls control);
 	private bool KeyUp(KogamaControls control);

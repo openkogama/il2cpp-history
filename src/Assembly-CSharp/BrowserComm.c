@@ -24,7 +24,17 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
     pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar2 != (GameSessionData *)0x0) {
       if ((pGVar2->fields).gameMode != 0) {
-        return;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+        if ((pGVar2->fields).gameMode != 4) {
+          return;
+        }
       }
       object = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (object != (MVNetworkGame_OperationRequests *)0x0) {
@@ -35,10 +45,13 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
           FUN_?(&TypeInfo__UnityEngine__Debug);
           LOCK();
           UNLOCK();
+          FUN_?(&MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_);
+          LOCK();
+          UNLOCK();
           FUN_?(&MethodInfo__MVNetworkGame__OperationRequests__HandleUploadScreenShotData_System__Byte____);
           LOCK();
           UNLOCK();
-          FUN_?(&StringLiteral_No_screen_shot_when_not_planet_o);
+          FUN_?(&StringLiteral_No_screen_shot_when_no_photo_edi);
           LOCK();
           UNLOCK();
           FUN_?(&StringLiteral_Texture_is_already_being_generat);
@@ -53,9 +66,15 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
           cRam_? = '\x01';
         }
         pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-        if ((((pMVar1 != (MVGameControllerBase *)0x0) && (pMVar3 = (pMVar1->fields).game, pMVar3 != (MVNetworkGame *)0x0)) && (this_00 = (pMVar3->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) && (this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0), this_01 != (MVLocalPlayer *)0x0)) {
-          PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-          if ((char)PVar4 == '\x02') {
+        if ((((pMVar1 != (MVGameControllerBase *)0x0) && (pMVar3 = (pMVar1->fields).game, pMVar3 != (MVNetworkGame *)0x0)) && (this_00 = (pMVar3->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) && ((this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0), this_01 != (MVLocalPlayer *)0x0 && (pLVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_01,(MethodInfo *)0x0), pLVar4 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) {
+          if (((pLVar4->fields)._size == 0) || (iVar5 = FUN_?(pLVar4,CONCAT71((int7)((ulonglong)MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_->klass >> 8),0xe),MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_->klass->rgctx_data[0x17].rgctxDataDummy), iVar5 == -1)) {
+            pSVar6 = StringLiteral_No_screen_shot_when_no_photo_edi;
+            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+              FUN_?();
+              pSVar6 = StringLiteral_No_screen_shot_when_no_photo_edi;
+            }
+          }
+          else {
             if (cRam_? == '\0') {
               FUN_?(&TypeInfo__GenerateTextureData);
               LOCK();
@@ -77,7 +96,7 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
                 UNLOCK();
                 cRam_? = '\x01';
               }
-              pGVar5 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+              pGVar7 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
               pSVar6 = StringLiteral_GenerateTexture;
               if (cRam_? == '\0') {
                 FUN_?(&TypeInfo__UnityEngine__Object);
@@ -88,8 +107,8 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
               if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
                 FUN_?();
               }
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject(pGVar5,pSVar6,(MethodInfo *)0x0);
-              if ((pGVar5 != (GameObject *)0x0) && (this_03 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar5,GenerateTextureData_MethodInfo__UnityEngine__GameObject__AddComponent<GenerateTextureData>__), this_03 != (Component *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject(pGVar7,pSVar6,(MethodInfo *)0x0);
+              if ((pGVar7 != (GameObject *)0x0) && (this_03 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar7,GenerateTextureData_MethodInfo__UnityEngine__GameObject__AddComponent<GenerateTextureData>__), this_03 != (Component *)0x0)) {
                 if (cRam_? == '\0') {
                   FUN_?(&TypeInfo__UnityEngine__Debug);
                   LOCK();
@@ -109,7 +128,7 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
                   cRam_? = '\x01';
                 }
                 if (TypeInfo__GenerateTextureData->static_fields->_IsCreatingScreenShot_k__BackingField != 0) {
-                  pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_03,(MethodInfo *)0x0);
+                  pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_03,(MethodInfo *)0x0);
                   if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
                     FUN_?();
                   }
@@ -122,7 +141,7 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
                   if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
                     FUN_?();
                   }
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy((Object_1 *)pGVar5,0.0,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy((Object_1 *)pGVar7,0.0,(MethodInfo *)0x0);
                   if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
                     FUN_?();
                   }
@@ -148,14 +167,14 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
                   if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
                     FUN_?();
                   }
-                  pIVar7 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-                  if (pIVar7 != (ILogger_1 *)0x0) {
-                    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar7,0,pSVar6);
+                  pIVar8 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+                  if (pIVar8 != (ILogger_1 *)0x0) {
+                    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar8,0,pSVar6);
                     return;
                   }
                   FUN_?();
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
+                  pcVar9 = (code *)swi(3);
+                  (*pcVar9)();
                   return;
                 }
                 if (cRam_? == '\0') {
@@ -164,48 +183,48 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
                   UNLOCK();
                   cRam_? = '\x01';
                 }
-                lVar9 = FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
-                *(undefined4 *)(lVar9 + 0x10) = 0;
-                *(Component **)(lVar9 + 0x28) = this_03;
+                lVar10 = FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+                *(undefined4 *)(lVar10 + 0x10) = 0;
+                *(Component **)(lVar10 + 0x28) = this_03;
                 if (iRam_? != 0) {
-                  uVar10 = (uint)(lVar9 + 0x28U >> 0xc);
-                  uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+                  uVar11 = (uint)(lVar10 + 0x28U >> 0xc);
+                  uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
                   do {
-                    uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
-                    puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+                    uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                    puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
                     LOCK();
-                    bVar14 = uVar12 == *puVar13;
-                    if (bVar14) {
-                      *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                    bVar15 = uVar13 == *puVar14;
+                    if (bVar15) {
+                      *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
                     }
                     UNLOCK();
-                  } while (!bVar14);
+                  } while (!bVar15);
                 }
-                iVar15 = iRam_?;
-                *(UnityAction_1_System_Object_ **)(lVar9 + 0x20) = this_02;
-                if (iVar15 != 0) {
-                  uVar10 = (uint)(lVar9 + 0x20U >> 0xc);
-                  uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+                iVar5 = iRam_?;
+                *(UnityAction_1_System_Object_ **)(lVar10 + 0x20) = this_02;
+                if (iVar5 != 0) {
+                  uVar11 = (uint)(lVar10 + 0x20U >> 0xc);
+                  uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
                   do {
-                    uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
-                    puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+                    uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+                    puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
                     LOCK();
-                    bVar14 = uVar12 == *puVar13;
-                    if (bVar14) {
-                      *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                    bVar15 = uVar13 == *puVar14;
+                    if (bVar15) {
+                      *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
                     }
                     UNLOCK();
-                  } while (!bVar14);
+                  } while (!bVar15);
                 }
-                if (lVar9 == 0) {
+                if (lVar10 == 0) {
                   uVar16 = func_?(&TypeInfo__System__NullReferenceException,0,0,0,unaff_RSI);
                   this_04 = (NullReferenceException *)func_?(uVar16);
                   pSVar6 = (String *)func_?(&StringLiteral_routine_is_null);
                   mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1(this_04,pSVar6,(MethodInfo *)0x0);
                   uVar16 = func_?(&MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_);
                   FUN_?(this_04,uVar16);
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
+                  pcVar9 = (code *)swi(3);
+                  (*pcVar9)();
                   return;
                 }
                 bVar17 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_IsObjectMonoBehaviour((Object_1 *)this_03,(MethodInfo *)0x0);
@@ -216,8 +235,8 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
                   System.dll::System::ComponentModel::InvalidEnumArgumentException::InvalidEnumArgumentException__ctor_1(this_05,pSVar6,(MethodInfo *)0x0);
                   uVar16 = func_?(&MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_);
                   FUN_?(this_05,uVar16);
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
+                  pcVar9 = (code *)swi(3);
+                  (*pcVar9)();
                   return;
                 }
                 if (cRam_? == '\0') {
@@ -228,29 +247,29 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
                 }
                 if (this_03 == (Component *)0x0) {
                   FUN_?();
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
+                  pcVar9 = (code *)swi(3);
+                  (*pcVar9)();
                   return;
                 }
                 pvVar18 = (this_03->fields)._.m_CachedPtr;
                 if (pvVar18 == (void *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::ThrowHelper_2_ThrowNullReferenceException((Object *)this_03,(MethodInfo *)0x0);
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
+                  pcVar9 = (code *)swi(3);
+                  (*pcVar9)();
                   return;
                 }
-                pcVar8 = pcRam_?;
-                if ((pcRam_? == (code *)0x0) && (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                pcVar9 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) && (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
                   uVar16 = func_?(&UNK_?);
                   FUN_?(uVar16,0);
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
+                  pcVar9 = (code *)swi(3);
+                  (*pcVar9)();
                   return;
                 }
-                pcRam_? = pcVar8;
+                pcRam_? = pcVar9;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                (*pcRam_?)(pvVar18,lVar9);
+                (*pcRam_?)(pvVar18,lVar10);
                 return;
               }
               goto code_?;
@@ -259,13 +278,6 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
             if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
               FUN_?();
               pSVar6 = StringLiteral_Texture_is_already_being_generat;
-            }
-          }
-          else {
-            pSVar6 = StringLiteral_No_screen_shot_when_not_planet_o;
-            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
-              FUN_?();
-              pSVar6 = StringLiteral_No_screen_shot_when_not_planet_o;
             }
           }
           if (cRam_? == '\0') {
@@ -289,27 +301,28 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_CreatePlanetScreenshot(Browse
           if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
             FUN_?();
           }
-          pIVar7 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-          if (pIVar7 != (ILogger_1 *)0x0) {
-            FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar7,2,pSVar6);
+          pIVar8 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+          if (pIVar8 != (ILogger_1 *)0x0) {
+            FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar8,2,pSVar6);
             return;
           }
           FUN_?();
-          pcVar8 = (code *)swi(3);
-          (*pcVar8)();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
           return;
         }
 code_?:
         FUN_?();
-        pcVar8 = (code *)swi(3);
-        (*pcVar8)();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
         return;
       }
     }
   }
+code_?:
   FUN_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -663,15 +676,15 @@ code_?:
   if (*(int *)&(TypeInfo__BrowserComm____c->_1).field_0x1c == 0) {
     FUN_?();
   }
-  this_05 = TypeInfo__BrowserComm____c->static_fields->__9__12_0;
-  if (this_05 == (Action_1_String_ *)0x0) {
+  this_04 = TypeInfo__BrowserComm____c->static_fields->__9__12_0;
+  if (this_04 == (Action_1_String_ *)0x0) {
     if (*(int *)&(TypeInfo__BrowserComm____c->_1).field_0x1c == 0) {
       FUN_?();
     }
     object = TypeInfo__BrowserComm____c->static_fields->__9;
-    this_05 = (Action_1_String_ *)FUN_?(TypeInfo__System__Action<System::String>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor((UnityAction_1_System_Object_ *)this_05,(Object *)object,MethodInfo__BrowserComm____c___PublishPlanetFromWeb_b__12_0_System__String_,(MethodInfo *)0x0);
-    TypeInfo__BrowserComm____c->static_fields->__9__12_0 = this_05;
+    this_04 = (Action_1_String_ *)FUN_?(TypeInfo__System__Action<System::String>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor((UnityAction_1_System_Object_ *)this_04,(Object *)object,MethodInfo__BrowserComm____c___PublishPlanetFromWeb_b__12_0_System__String_,(MethodInfo *)0x0);
+    TypeInfo__BrowserComm____c->static_fields->__9__12_0 = this_04;
     if (iRam_? != 0) {
       uVar3 = (uint)((ulonglong)&TypeInfo__BrowserComm____c->static_fields->__9__12_0 >> 0xc);
       puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
@@ -688,7 +701,10 @@ code_?:
   }
   if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__UnityEngine__Debug,this_05,0);
+    FUN_?(&TypeInfo__UnityEngine__Debug,this_04,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_);
     LOCK();
     UNLOCK();
     FUN_?(&TypeInfo__NotificationController);
@@ -706,6 +722,9 @@ code_?:
     FUN_?(&StringLiteral_Error_publishing_game__try_again);
     LOCK();
     UNLOCK();
+    FUN_?(&StringLiteral_You_are_not_authorized_to_publis);
+    LOCK();
+    UNLOCK();
     FUN_?(&StringLiteral_Remember_that_you_need_to_play_i);
     LOCK();
     UNLOCK();
@@ -721,61 +740,63 @@ code_?:
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if (pMVar1 == (MVGameControllerBase *)0x0) goto code_?;
-  pSVar7 = StringLiteral_Error_publishing_game__try_again;
-  if ((pMVar1->fields).game != (MVNetworkGame *)0x0) {
-    if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__MVGameControllerBase);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (pMVar1 == (MVGameControllerBase *)0x0) goto code_?;
-    pSVar7 = StringLiteral_Error_publishing_game__try_again;
-    if ((pMVar1->fields)._joinState == 3) {
+  if ((((pMVar1 == (MVGameControllerBase *)0x0) || (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) || (pMVar7 = (pMVar2->fields).playerContainer, pMVar7 == (MVPlayerContainer *)0x0)) || ((pMVar8 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVLocalPlayer *)0x0 || (pLVar9 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(pMVar8,(MethodInfo *)0x0), pLVar9 == (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) goto code_?;
+  pSVar10 = StringLiteral_You_are_not_authorized_to_publis;
+  if ((pLVar9->fields)._size != 0) {
+    uVar11 = CONCAT71((int7)((ulonglong)MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_ >> 8),0x14);
+    iVar12 = FUN_?(pLVar9,uVar11,MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_->klass->rgctx_data[0x17].rgctxDataDummy);
+    pSVar10 = StringLiteral_You_are_not_authorized_to_publis;
+    if (iVar12 != -1) {
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__MVGameControllerBase);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar8 == (GameSessionData *)0x0) goto code_?;
-      pSVar7 = StringLiteral_Error_publishing_game__try_again;
-      if ((pGVar8->fields).gameMode == 0) {
-        pOVar9 = (this_01->fields).operationResponsePendingManager;
-        if (pOVar9 == (OperationResponsePendingManager *)0x0) goto code_?;
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (pMVar1 == (MVGameControllerBase *)0x0) goto code_?;
+      pSVar10 = StringLiteral_Error_publishing_game__try_again;
+      if (((pMVar1->fields).game != (MVNetworkGame *)0x0) && (MVar13 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0), pSVar10 = StringLiteral_Error_publishing_game__try_again, MVar13 == MVJoinState__Enum_Playing)) {
+        lVar14 = FUN_?();
+        if (lVar14 == 0) goto code_?;
+        if (*(int *)(lVar14 + 0x20) != 0) {
+          lVar14 = FUN_?();
+          if (lVar14 == 0) goto code_?;
+          pSVar10 = StringLiteral_Error_publishing_game__try_again;
+          if (*(int *)(lVar14 + 0x20) != 4) goto code_?;
+        }
+        pOVar15 = (this_01->fields).operationResponsePendingManager;
+        if (pOVar15 == (OperationResponsePendingManager *)0x0) goto code_?;
         if (cRam_? == '\0') {
           FUN_?(&MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_);
           LOCK();
           UNLOCK();
           cRam_? = '\x01';
         }
-        this_02 = (HashSet_1_System_ByteEnum_ *)(pOVar9->fields).pendingOperations;
+        this_02 = (HashSet_1_System_ByteEnum_ *)(pOVar15->fields).pendingOperations;
         if (this_02 == (HashSet_1_System_ByteEnum_ *)0x0) goto code_?;
-        bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__Contains(this_02,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)pMVar1 >> 8),0xb),MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_);
-        if (bVar10 == 0) {
+        bVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__Contains(this_02,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)uVar11 >> 8),0xb),MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_);
+        if (bVar16 == 0) {
           pMVar2 = (this_01->fields).networkGame;
-          if ((((pMVar2 == (MVNetworkGame *)0x0) || (this_03 = (pMVar2->fields).playerContainer, this_03 == (MVPlayerContainer *)0x0)) || (pMVar11 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_03,(MethodInfo *)0x0), pMVar11 == (MVLocalPlayer *)0x0)) || (pMVar2 = (this_01->fields).networkGame, pMVar2 == (MVNetworkGame *)0x0)) goto code_?;
-          if ((pMVar11->fields)._.level < (pMVar2->fields)._PublishLevel_k__BackingField) {
+          if ((((pMVar2 == (MVNetworkGame *)0x0) || (pMVar7 = (pMVar2->fields).playerContainer, pMVar7 == (MVPlayerContainer *)0x0)) || (pMVar8 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVLocalPlayer *)0x0)) || (pMVar2 = (this_01->fields).networkGame, pMVar2 == (MVNetworkGame *)0x0)) goto code_?;
+          if ((pMVar8->fields)._.level < (pMVar2->fields)._PublishLevel_k__BackingField) {
             uStackX_20 = CONCAT44(uStackX_20._4_4_,(pMVar2->fields)._PublishLevel_k__BackingField);
-            pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&uStackX_20,(MethodInfo *)0x0);
-            pSVar7 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_You_can_not_publish_game_before_,pSVar7,(MethodInfo *)0x0);
+            pSVar10 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&uStackX_20,(MethodInfo *)0x0);
+            pSVar10 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_You_can_not_publish_game_before_,pSVar10,(MethodInfo *)0x0);
           }
           else {
             if ((pMVar2->fields).isPublished != 0) {
-              MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet_1(this_01,0,this_05,(MethodInfo *)0x0);
+              MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet_1(this_01,0,this_04,(MethodInfo *)0x0);
               return;
             }
-            cVar12 = FUN_?();
-            if (cVar12 == '\0') {
-              uVar13 = 0;
-              bVar10 = MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet_1(this_01,0,this_05,(MethodInfo *)0x0);
-              if (bVar10 == 0) {
+            cVar17 = FUN_?();
+            if (cVar17 == '\0') {
+              uVar11 = 0;
+              bVar16 = MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet_1(this_01,0,this_04,(MethodInfo *)0x0);
+              if (bVar16 == 0) {
                 return;
               }
-              pSVar7 = TM::TM__(StringLiteral_Remember_that_you_need_to_play_i,(MethodInfo *)0x0);
+              pSVar10 = TM::TM__(StringLiteral_Remember_that_you_need_to_play_i,(MethodInfo *)0x0);
               if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
                 FUN_?();
               }
@@ -795,23 +816,23 @@ code_?:
                 UNLOCK();
                 cRam_? = '\x01';
               }
-              this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor(this_04,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-              pOVar14 = (Object *)FUN_?(uRam_?,&stack0x00000008);
-              if (this_04 == (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)0x0) {
+              this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor(this_03,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+              pOVar18 = (Object *)FUN_?(uRam_?,&stack0x00000008);
+              if (this_03 == (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)0x0) {
                 FUN_?();
                 UNRECOVERED_JUMPTABLE = (code *)swi(3);
                 (*UNRECOVERED_JUMPTABLE)();
                 return;
               }
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_04,pOVar14,(Object *)pSVar7,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar13 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_03,pOVar18,(Object *)pSVar10,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar11 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
               if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
                 FUN_?();
               }
-              uVar13 = 0;
+              uVar11 = 0;
               uStackX_20 = uStackX_18;
               if (cRam_? == '\0') {
-                FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_,this_04,8,0);
+                FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_,this_03,8,0);
                 LOCK();
                 UNLOCK();
                 FUN_?(&TypeInfo__NotificationController);
@@ -823,11 +844,11 @@ code_?:
                 cRam_? = '\x01';
               }
               uStackX_18 = CONCAT71(uStackX_18._1_7_,2);
-              pOVar14 = (Object *)FUN_?(uRam_?,&uStackX_18);
+              pOVar18 = (Object *)FUN_?(uRam_?,&uStackX_18);
               uStackX_18 = CONCAT44(uStackX_18._4_4_,8);
               value = (Object *)FUN_?(TypeInfo__NotificationLifetime,&uStackX_18);
-              if (this_04 != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)0x0) {
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_04,pOVar14,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar13 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
+              if (this_03 != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)0x0) {
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_03,pOVar18,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar11 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
                 if (cRam_? == '\0') {
                   FUN_?(&TypeInfo__NotificationsManager);
                   LOCK();
@@ -846,7 +867,7 @@ code_?:
                   }
                   this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
                   if (this_00 == (NotificationsManager *)0x0) goto code_?;
-                  NotificationsManager::NotificationsManager_InstantiateNotification(this_00,NotificationType__Enum_FirstTimeXPRewarded,(Dictionary_2_System_Object_System_Object_ *)this_04,(MethodInfo *)0x0);
+                  NotificationsManager::NotificationsManager_InstantiateNotification(this_00,NotificationType__Enum_FirstTimeXPRewarded,(Dictionary_2_System_Object_System_Object_ *)this_03,(MethodInfo *)0x0);
                 }
                 return;
               }
@@ -860,7 +881,7 @@ code_?:
               FUN_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Texture_is_already_being_generat,(MethodInfo *)0x0);
-            pSVar7 = StringLiteral_You_are_already_publishing_plane;
+            pSVar10 = StringLiteral_You_are_already_publishing_plane;
           }
         }
         else {
@@ -868,17 +889,18 @@ code_?:
             FUN_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Publish_planet_operation_is_pend,(MethodInfo *)0x0);
-          pSVar7 = StringLiteral_You_are_already_publishing_plane;
+          pSVar10 = StringLiteral_You_are_already_publishing_plane;
         }
       }
     }
   }
-  pSVar7 = TM::TM__(pSVar7,(MethodInfo *)0x0);
-  if (this_05 != (Action_1_String_ *)0x0) {
-    UNRECOVERED_JUMPTABLE = (this_05->fields)._._.invoke_impl;
+code_?:
+  pSVar10 = TM::TM__(pSVar10,(MethodInfo *)0x0);
+  if (this_04 != (Action_1_String_ *)0x0) {
+    UNRECOVERED_JUMPTABLE = (this_04->fields)._._.invoke_impl;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (*UNRECOVERED_JUMPTABLE)((this_05->fields)._._.method_code,pSVar7,(this_05->fields)._._.method,UNRECOVERED_JUMPTABLE);
+    (*UNRECOVERED_JUMPTABLE)((this_04->fields)._._.method_code,pSVar10,(this_04->fields)._._.method,UNRECOVERED_JUMPTABLE);
     return;
   }
 code_?:

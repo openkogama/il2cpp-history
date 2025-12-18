@@ -447,18 +447,18 @@ PickupItemEditable_EditableItemConfiguration * Assembly-CSharp.dll::Assets::Scri
     }
     else {
       pSVar3 = (String *)0x0;
-      if (pSVar2->klass == pSRam0000000182dbdde0) {
+      if (pSVar2->klass == pSRam0000000182dc50c0) {
         pSVar3 = pSVar2;
       }
       if (pSVar3 == (String *)0x0) {
-        FUN_?(pSVar2,pSRam0000000182dbdde0);
+        FUN_?(pSVar2,pSRam0000000182dc50c0);
         pcVar4 = (code *)swi(3);
         pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
         return pPVar1;
       }
       (pPVar1->fields).name = pSVar3;
       pSVar3 = (String *)0x0;
-      if (pSVar2->klass == pSRam0000000182dbdde0) {
+      if (pSVar2->klass == pSRam0000000182dc50c0) {
         pSVar3 = pSVar2;
       }
       if (pSVar3 == (String *)0x0) {
@@ -5574,7 +5574,7 @@ code_?:
             if (pMVar24 != (MethodInfo *)0x0) {
               if ((*pMVar24->name == '.') && ((pMVar24->flags & 0x800) != 0)) {
                 ppMVar25 = ppMVar14;
-                while (ppMVar26 = ppMVar25 + 0x3052a1b1, ppMVar25 = (MethodInfo **)((longlong)ppMVar25 + 1), *(char *)ppMVar26 == (pMVar24->name + -1)[(longlong)ppMVar25]) {
+                while (ppMVar26 = ppMVar25 + 0x3052af3c, ppMVar25 = (MethodInfo **)((longlong)ppMVar25 + 1), *(char *)ppMVar26 == (pMVar24->name + -1)[(longlong)ppMVar25]) {
                   if (ppMVar25 == (MethodInfo **)0x7) {
                     FUN_?(pMVar24,0,0,alStackX_10);
                     goto code_?;

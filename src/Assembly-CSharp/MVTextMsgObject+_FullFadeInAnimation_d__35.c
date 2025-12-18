@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::MVTextMsgObject+<FullFadeInAnimation>d__33::MVTextMsgObject_FullFadeInAnimation_d_33_MoveNext(MVTextMsgObject_FullFadeInAnimation_d_33 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::MVTextMsgObject+<FullFadeInAnimation>d__35::MVTextMsgObject_FullFadeInAnimation_d_35_MoveNext(MVTextMsgObject_FullFadeInAnimation_d_35 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -120,13 +120,13 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::MVTextMsgObject+<FullFadeInAnimation>d__33::MVTextMsgObject_FullFadeInAnimation_d_33_System_Collections_IEnumerator_Reset(MVTextMsgObject_FullFadeInAnimation_d_33 *this,MethodInfo *method)
+void Assembly-CSharp.dll::MVTextMsgObject+<FullFadeInAnimation>d__35::MVTextMsgObject_FullFadeInAnimation_d_35_System_Collections_IEnumerator_Reset(MVTextMsgObject_FullFadeInAnimation_d_35 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  uVar1 = func_?(&MethodInfo__MVTextMsgObject___FullFadeInAnimation_d__33__System_Collections_IEnumerator_Reset__);
+  uVar1 = func_?(&MethodInfo__MVTextMsgObject___FullFadeInAnimation_d__35__System_Collections_IEnumerator_Reset__);
   FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

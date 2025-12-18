@@ -686,7 +686,7 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRuntimeEv
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar4 != (PhotonPeer *)0x0) {
-          (*(pPVar4->klass->vtable).SendOperation.methodPtr)(pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x34),this_00,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar4->klass->vtable).SendOperation.method);
+          (*(pPVar4->klass->vtable).SendOperation.methodPtr)(pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x35),this_00,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar4->klass->vtable).SendOperation.method);
           return;
         }
       }

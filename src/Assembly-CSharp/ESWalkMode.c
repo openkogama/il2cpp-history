@@ -22,7 +22,7 @@ ESWalkMode_EnterPlayFromEditState__Enum Assembly-CSharp.dll::ESWalkMode::ESWalkM
       EVar3 = (*pcVar2)();
       return EVar3;
     }
-    lVar4 = extraout_RAX[0x20];
+    lVar4 = extraout_RAX[0x21];
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar1,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_00 != (longlong *)0x0) {
       bVar1 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
@@ -32,7 +32,7 @@ ESWalkMode_EnterPlayFromEditState__Enum Assembly-CSharp.dll::ESWalkMode::ESWalkM
         EVar3 = (*pcVar2)();
         return EVar3;
       }
-      uVar5 = extraout_RAX_00[0x20];
+      uVar5 = extraout_RAX_00[0x21];
       player = (MVPlayer *)(uVar5 >> 0x20);
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__MVGameControllerBase);
@@ -115,7 +115,7 @@ code_?:
                       EVar3 = (*pcVar2)();
                       return EVar3;
                     }
-                    IVar20 = *(Int32Enum__Enum *)(extraout_RAX_01 + 0x21);
+                    IVar20 = *(Int32Enum__Enum *)(extraout_RAX_01 + 0x22);
                     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar1,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
                     if (extraout_RAX_02 != 0) {
                       if (cRam_? == '\0') {
@@ -495,8 +495,8 @@ void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_OnNewSpawnRoleSelected(ESWalkMo
       (*pcVar2)();
       return;
     }
-    lVar3 = extraout_RAX[0x21];
-    uStack_4 = (undefined4)extraout_RAX[0x20];
+    lVar3 = extraout_RAX[0x22];
+    uStack_4 = (undefined4)extraout_RAX[0x21];
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar1,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_00 != (longlong *)0x0) {
       bVar1 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
@@ -508,8 +508,8 @@ void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_OnNewSpawnRoleSelected(ESWalkMo
       }
       bVar1 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
       if ((bVar1 <= *(byte *)(*extraout_RAX_00 + 0x130)) && (*(MVLocalPlayerBuilder__Class **)(*(longlong *)(*extraout_RAX_00 + 200) + -8 + (ulonglong)bVar1 * 8) == TypeInfo__MVLocalPlayerBuilder)) {
-        extraout_RAX_00[0x20] = CONCAT44(newSpawnRoleId,uStack_4);
-        *(int *)(extraout_RAX_00 + 0x21) = (int)lVar3;
+        extraout_RAX_00[0x21] = CONCAT44(newSpawnRoleId,uStack_4);
+        *(int *)(extraout_RAX_00 + 0x22) = (int)lVar3;
         return;
       }
       FUN_?(extraout_RAX_00,TypeInfo__MVLocalPlayerBuilder);
@@ -550,7 +550,7 @@ bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_ShouldSelectTeamOrSpawnRole(ESW
       bVar3 = (*pcVar2)();
       return bVar3;
     }
-    IVar4 = *(Int32Enum__Enum *)(extraout_RAX + 0x21);
+    IVar4 = *(Int32Enum__Enum *)(extraout_RAX + 0x22);
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar1,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_00 != 0) {
       if (cRam_? == '\0') {
@@ -596,7 +596,7 @@ bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_WasPlayingAsDefaultAvatar(ESWal
       bVar3 = (*pcVar2)();
       return bVar3;
     }
-    IVar4 = *(Int32Enum__Enum *)(extraout_RAX + 0x21);
+    IVar4 = *(Int32Enum__Enum *)(extraout_RAX + 0x22);
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar1,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
     if (extraout_RAX_00 != 0) {
       if (cRam_? == '\0') {

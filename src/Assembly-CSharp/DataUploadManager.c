@@ -178,7 +178,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
                 uVar14 = CONCAT71((int7)((ulonglong)pBVar1 >> 8),2);
                 method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
                 uVar15 = (undefined7)((ulonglong)method_00 >> 8);
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xbf,value_00,(InsertionBehavior__Enum)uVar14,method_00);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xc1,value_00,(InsertionBehavior__Enum)uVar14,method_00);
                 uVar16 = CONCAT71(uVar15,0xf5);
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xf5,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar14 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
                 pPVar17 = (pMVar12->fields).peer;
@@ -186,7 +186,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
                   FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
                 }
                 if (pPVar17 != (PhotonPeer *)0x0) {
-                  (*(pPVar17->klass->vtable).SendOperation.methodPtr)(pPVar17,CONCAT71((int7)((ulonglong)uVar16 >> 8),0x3e),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar17->klass->vtable).SendOperation.method);
+                  (*(pPVar17->klass->vtable).SendOperation.methodPtr)(pPVar17,CONCAT71((int7)((ulonglong)uVar16 >> 8),0x3f),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar17->klass->vtable).SendOperation.method);
                   return;
                 }
               }
@@ -325,7 +325,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
               uVar8 = CONCAT71((int7)((ulonglong)pBVar1 >> 8),2);
               method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
               uVar9 = (undefined7)((ulonglong)method_00 >> 8);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xbf,value_00,(InsertionBehavior__Enum)uVar8,method_00);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xc1,value_00,(InsertionBehavior__Enum)uVar8,method_00);
               uVar10 = CONCAT71(uVar9,0xf5);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this,0xf5,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar8 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
               pPVar11 = (pMVar6->fields).peer;
@@ -333,7 +333,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
                 FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
               }
               if (pPVar11 != (PhotonPeer *)0x0) {
-                (*(pPVar11->klass->vtable).SendOperation.methodPtr)(pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x3e),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar11->klass->vtable).SendOperation.method);
+                (*(pPVar11->klass->vtable).SendOperation.methodPtr)(pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x3f),this,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar11->klass->vtable).SendOperation.method);
                 return;
               }
             }

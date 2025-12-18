@@ -17,19 +17,31 @@ public class PlanetOwnershipsManager : MonoBehaviour
 	[CompilerGenerated]
 	private Action<Dictionary<int, PlanetOwnershipsEntry>> OnReceivedPlanetOwnershipData;
 	[CompilerGenerated]
+	private Action<Dictionary<int, List<int>>> OnReceivedPlanetPermissionsData;
+	[CompilerGenerated]
 	private static PlanetOwnershipsManager _Instance_k__BackingField;
 	[CompilerGenerated]
 	private Dictionary<int, PlanetOwnershipsEntry> _PlanetOwnershipsEntries_k__BackingField;
 	[CompilerGenerated]
+	private Dictionary<int, List<int>> _PlanetPermissionsEntries_k__BackingField;
+	[CompilerGenerated]
 	private bool _RecievedPlanetOwnershipData_k__BackingField;
+	[CompilerGenerated]
+	private bool _ReceivedPlanetPermissionsData_k__BackingField;
 
 	// Properties
 	public static PlanetOwnershipsManager Instance { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public Dictionary<int, PlanetOwnershipsEntry> PlanetOwnershipsEntries { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public Dictionary<int, List<int>> PlanetPermissionsEntries { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public bool RecievedPlanetOwnershipData { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public bool ReceivedPlanetPermissionsData { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Events
 	public event Action<Dictionary<int, PlanetOwnershipsEntry>> OnReceivedPlanetOwnershipData {
+		add;
+		remove;
+	}
+	public event Action<Dictionary<int, List<int>>> OnReceivedPlanetPermissionsData {
 		add;
 		remove;
 	}
@@ -40,9 +52,10 @@ public class PlanetOwnershipsManager : MonoBehaviour
 	// Methods
 	private void Awake();
 	public void RecievedPlanetOwnershipsDataCallback(PlanetOwnershipsData data);
+	private void ReceivedPlanetPermissionsDataCallback(Dictionary<int, List<int>> data);
 	private void JSON_Unstripper();
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _Awake_b__15_0();
+	private void _Awake_b__26_0();
 }
 

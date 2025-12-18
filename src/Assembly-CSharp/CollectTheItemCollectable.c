@@ -32,7 +32,7 @@ void Assembly-CSharp.dll::CollectTheItemCollectable::CollectTheItemCollectable_C
       auStack_4[0] = 1;
       value = (Object *)FUN_?(uRam_?,auStack_4);
       if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xcb,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xcd,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
         QStack_5.x = position->x;
         QStack_5.y = position->y;
         QStack_5.z = position->z;
@@ -48,7 +48,7 @@ void Assembly-CSharp.dll::CollectTheItemCollectable::CollectTheItemCollectable_C
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar7 != (PhotonPeer *)0x0) {
-          (*(pPVar7->klass->vtable).SendOperation.methodPtr)(pPVar7,CONCAT71((int7)((ulonglong)pDVar6 >> 8),0x41),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar7->klass->vtable).SendOperation.method);
+          (*(pPVar7->klass->vtable).SendOperation.methodPtr)(pPVar7,CONCAT71((int7)((ulonglong)pDVar6 >> 8),0x42),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar7->klass->vtable).SendOperation.method);
           return;
         }
       }
@@ -771,7 +771,17 @@ void Assembly-CSharp.dll::CollectTheItemCollectable::CollectTheItemCollectable_S
             pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
             if (pGVar14 != (GameSessionData *)0x0) {
               if ((pGVar14->fields).gameMode != 0) {
-                return;
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__MVGameControllerBase);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+                if (pGVar14 == (GameSessionData *)0x0) goto code_?;
+                if ((pGVar14->fields).gameMode != 4) {
+                  return;
+                }
               }
               pCVar1 = (this->fields).collectableInstance;
               if (pCVar1 != (CollectTheItemCollectableInstance *)0x0) {

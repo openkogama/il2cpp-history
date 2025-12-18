@@ -1,7 +1,7 @@
 
 /* Void <OnDeleteConfirmation>b__1(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c__DisplayClass7_0::InventoryItemCubeModelHandler_c_DisplayClass7_0__OnDeleteConfirmation_b__1(InventoryItemCubeModelHandler_c_DisplayClass7_0 *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c__DisplayClass9_0::InventoryItemCubeModelHandler_c_DisplayClass9_0__OnDeleteConfirmation_b__1(InventoryItemCubeModelHandler_c_DisplayClass9_0 *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

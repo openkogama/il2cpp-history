@@ -385,7 +385,7 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnSayChatMe
       pSVar2 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(data,key,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
       text = (String *)0x0;
       if (pSVar2 != (String *)0x0) {
-        if (pSVar2->klass == pSRam0000000182dbdde0) {
+        if (pSVar2->klass == pSRam0000000182dc50c0) {
           text = pSVar2;
         }
         if (text == (String *)0x0) {

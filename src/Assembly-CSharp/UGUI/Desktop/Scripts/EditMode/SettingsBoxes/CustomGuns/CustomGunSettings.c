@@ -371,7 +371,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                 this_01 = (this->fields).nameInputField;
                 if ((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pSVar16 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar2,(Object *)StringLiteral_Name,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), this_01 != (SettingsInputField *)0x0)) {
                   if (pSVar16 != (String *)0x0) {
-                    if (pSVar16->klass == pSRam0000000182dbdde0) {
+                    if (pSVar16->klass == pSRam0000000182dc50c0) {
                       pSVar1 = pSVar16;
                     }
                     if (pSVar1 == (String *)0x0) {

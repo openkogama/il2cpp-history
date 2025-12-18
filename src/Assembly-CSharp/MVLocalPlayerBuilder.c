@@ -52,8 +52,8 @@ void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToBuildM
           value = (Object *)FUN_?(uRam_?,aIStackX_10);
           if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-            uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+            uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
             pPVar8 = (pMVar7->fields).peer;
             if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -131,8 +131,8 @@ void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToDefaul
           value = (Object *)FUN_?(uRam_?,aIStackX_10);
           if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-            uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+            uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
             pPVar8 = (pMVar7->fields).peer;
             if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -157,12 +157,12 @@ void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToDefaul
 }
 
 
-/* MVLocalPlayerBuilder(Int32, Int32, String, Int32, UserProfileData) */
+/* MVLocalPlayerBuilder(Int32, Int32, String, Int32, List`1[System.Int32], UserProfileData) */
 
-void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder__ctor(MVLocalPlayerBuilder *this,int32_t actorNumber,int32_t profileID,String *regionCode,int32_t planetOwnershipTypeID,UserProfileData *userProfileData,MethodInfo *method)
+void Assembly-CSharp.dll::MVLocalPlayerBuilder::MVLocalPlayerBuilder__ctor(MVLocalPlayerBuilder *this,int32_t actorNumber,int32_t profileID,String *regionCode,int32_t planetOwnershipTypeID,List_1_System_Int32_ *planetPermissionIDs,UserProfileData *userProfileData,MethodInfo *method)
 
 {
-  MVLocalPlayer::MVLocalPlayer__ctor((MVLocalPlayer *)this,actorNumber,profileID,regionCode,planetOwnershipTypeID,userProfileData,(MethodInfo *)0x0);
+  MVLocalPlayer::MVLocalPlayer__ctor((MVLocalPlayer *)this,actorNumber,profileID,regionCode,planetOwnershipTypeID,planetPermissionIDs,userProfileData,(MethodInfo *)0x0);
   (this->fields).enterPlayStateData.selectedTeam = 5;
   (this->fields).enterPlayStateData.selectedSpawnRoleCreator = -1;
   (this->fields).enterPlayStateData.previousSpawnRoleId = -1;

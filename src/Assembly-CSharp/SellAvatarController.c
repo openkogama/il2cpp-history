@@ -546,15 +546,15 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnImageUplo
             uVar7 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
             uVar8 = (undefined7)((ulonglong)method_00 >> 8);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x16,value_00,(InsertionBehavior__Enum)uVar7,method_00);
-            uVar9 = CONCAT71(uVar8,0xa6);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xa6,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x17,value_00,(InsertionBehavior__Enum)uVar7,method_00);
+            uVar9 = CONCAT71(uVar8,0xa9);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xa9,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
             pPVar10 = (pMVar5->fields).peer;
             if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
             }
             if (pPVar10 != (PhotonPeer *)0x0) {
-              (*(pPVar10->klass->vtable).SendOperation.methodPtr)(pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x36),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar10->klass->vtable).SendOperation.method);
+              (*(pPVar10->klass->vtable).SendOperation.methodPtr)(pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x37),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar10->klass->vtable).SendOperation.method);
               return;
             }
           }
@@ -1102,14 +1102,14 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnRemovePre
         value = (Object *)FUN_?(uRam_?,aiStackX_18);
         if (this_02 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-          uVar14 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_02,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)(uVar3 >> 8),2),method_00);
+          uVar14 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_02,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)(uVar3 >> 8),2),method_00);
           pPVar15 = (pMVar12->fields).peer;
           if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
             FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
           }
           if (pPVar15 != (PhotonPeer *)0x0) {
-            (*(pPVar15->klass->vtable).SendOperation.methodPtr)(pPVar15,CONCAT71((int7)((ulonglong)uVar14 >> 8),0x37),this_02,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar15->klass->vtable).SendOperation.method);
+            (*(pPVar15->klass->vtable).SendOperation.methodPtr)(pPVar15,CONCAT71((int7)((ulonglong)uVar14 >> 8),0x38),this_02,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar15->klass->vtable).SendOperation.method);
             return;
           }
         }
@@ -1320,15 +1320,15 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_ScreenShotC
           uVar15 = CONCAT71((int7)((ulonglong)pMVar11 >> 8),2);
           pMVar11 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
           uVar16 = (undefined7)((ulonglong)pMVar11 >> 8);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x16,value_00,(InsertionBehavior__Enum)uVar15,pMVar11);
-          uVar17 = CONCAT71(uVar16,0xa6);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0xa6,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar15 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0x17,value_00,(InsertionBehavior__Enum)uVar15,pMVar11);
+          uVar17 = CONCAT71(uVar16,0xa9);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_03,0xa9,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar15 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
           pPVar18 = (pMVar13->fields).peer;
           if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
             FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
           }
           if (pPVar18 != (PhotonPeer *)0x0) {
-            (*(pPVar18->klass->vtable).SendOperation.methodPtr)(pPVar18,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x36),this_03,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar18->klass->vtable).SendOperation.method);
+            (*(pPVar18->klass->vtable).SendOperation.methodPtr)(pPVar18,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x37),this_03,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar18->klass->vtable).SendOperation.method);
             return;
           }
         }
@@ -1513,7 +1513,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052af3c, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

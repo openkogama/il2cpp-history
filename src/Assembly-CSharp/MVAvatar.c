@@ -1426,7 +1426,7 @@ code_?:
       }
       pSVar28 = (String *)0x0;
       if (pSStack_13 != (String *)0x0) {
-        if (pSStack_13->klass == pSRam0000000182dbdde0) {
+        if (pSStack_13->klass == pSRam0000000182dc50c0) {
           pSVar28 = pSStack_13;
         }
         if (pSVar28 == (String *)0x0) goto code_?;
@@ -1533,9 +1533,9 @@ code_?:
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar34,IVar33,(Object *)this_05,(InsertionBehavior__Enum)uVar46,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Add_AvatarModifierPackageType__AvatarModifier_->klass->rgctx_data[0x22].method);
             pDVar53 = (owner->fields).currentModifierByteState;
             if (pDVar53 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-            method_01 = pDRam0000000182dbdd68;
+            method_01 = pDRam0000000182dc5048;
             if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbdd68->vector + 1))->genericMethod) goto code_?;
+            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar53,IVar33,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar46 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Add_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method);
             *(undefined1 *)&this_05->vector[0].next = 1;
             (**(code **)&((Il2CppClass_0 *)&this_05->klass)->image[5].token)(this_05,owner);
@@ -1563,9 +1563,9 @@ code_?:
         pDVar53 = (owner->fields).currentModifierByteState;
         if (pDVar53 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
         cVar50 = FUN_?(pDVar53,IVar33);
-        method_01 = pDRam0000000182dbdd68;
+        method_01 = pDRam0000000182dc5048;
         if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbdd68->vector + 1))->genericMethod) goto code_?;
+        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
         if (*(char *)&(value->fields)._items != cVar50) {
           pDVar34 = (owner->fields).modifiers;
           if (pDVar34 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) goto code_?;
@@ -1576,7 +1576,7 @@ code_?:
           (*(code *)method_01)(pOVar35,pOVar35->klass[1]._0.namespaze);
           pDVar53 = (owner->fields).currentModifierByteState;
           if (pDVar53 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbdd68->vector + 1))->genericMethod) goto code_?;
+          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__set_Item_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar53,IVar33,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),method_00);
         }
@@ -1655,7 +1655,7 @@ code_?:
   pOVar6 = (Object__Class *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)newAnimationData,(Object *)StringLiteral_state,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
   pOVar7 = (Object__Class *)0x0;
   if (pOVar6 != (Object__Class *)0x0) {
-    if ((Object__Class *)(pOVar6->_0).image == pORam0000000182dbdde0) {
+    if ((Object__Class *)(pOVar6->_0).image == pORam0000000182dc50c0) {
       pOVar7 = pOVar6;
     }
     if (pOVar7 == (Object__Class *)0x0) {
@@ -3226,7 +3226,7 @@ code_?:
       }
       pSVar23 = (String *)0x0;
       if (pSStack_5 != (String *)0x0) {
-        if (pSStack_5->klass == pSRam0000000182dbdde0) {
+        if (pSStack_5->klass == pSRam0000000182dc50c0) {
           pSVar23 = pSStack_5;
         }
         if (pSVar23 == (String *)0x0) goto code_?;
@@ -3333,9 +3333,9 @@ code_?:
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar29,IVar28,(Object *)this_04,(InsertionBehavior__Enum)uVar41,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Add_AvatarModifierPackageType__AvatarModifier_->klass->rgctx_data[0x22].method);
             pDVar49 = (owner->fields).currentModifierByteState;
             if (pDVar49 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-            method_01 = pDRam0000000182dbdd68;
+            method_01 = pDRam0000000182dc5048;
             if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbdd68->vector + 1))->genericMethod) goto code_?;
+            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar49,IVar28,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar41 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Add_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method);
             *(undefined1 *)&this_04->vector[0].next = 1;
             (**(code **)&((Il2CppClass_0 *)&this_04->klass)->image[5].token)(this_04,owner);
@@ -3363,9 +3363,9 @@ code_?:
         pDVar49 = (owner->fields).currentModifierByteState;
         if (pDVar49 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
         cVar46 = FUN_?(pDVar49,IVar28);
-        method_01 = pDRam0000000182dbdd68;
+        method_01 = pDRam0000000182dc5048;
         if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbdd68->vector + 1))->genericMethod) goto code_?;
+        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
         if (*(char *)&(value->fields)._items != cVar46) {
           pDVar29 = (owner->fields).modifiers;
           if (pDVar29 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) goto code_?;
@@ -3376,7 +3376,7 @@ code_?:
           (*(code *)method_01)(pOVar30,pOVar30->klass[1]._0.namespaze);
           pDVar49 = (owner->fields).currentModifierByteState;
           if (pDVar49 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dbdd68->vector + 1))->genericMethod) goto code_?;
+          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__set_Item_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar49,IVar28,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),method_00);
         }

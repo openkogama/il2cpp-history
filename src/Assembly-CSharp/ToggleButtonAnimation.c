@@ -1127,6 +1127,9 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Start(Tog
 void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Toggle(ToggleButtonAnimation *this,MethodInfo *method)
 
 {
+  if ((this->fields)._IsInteractable_k__BackingField == 0) {
+    return;
+  }
   (this->fields).isToggleOn = (this->fields).isToggleOn == 0;
   pcVar1 = pcRam_?;
   if ((pcRam_? == (code *)0x0) && (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
@@ -1284,7 +1287,7 @@ code_?:
 void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_ToggleOff(ToggleButtonAnimation *this,MethodInfo *method)
 
 {
-  if ((this->fields).isToggleOn == 0) {
+  if (((this->fields).isToggleOn == 0) || ((this->fields)._IsInteractable_k__BackingField == 0)) {
     return;
   }
   (this->fields).isToggleOn = 0;
@@ -1444,7 +1447,7 @@ code_?:
 void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_ToggleOn(ToggleButtonAnimation *this,MethodInfo *method)
 
 {
-  if ((this->fields).isToggleOn != 0) {
+  if (((this->fields).isToggleOn != 0) || ((this->fields)._IsInteractable_k__BackingField == 0)) {
     return;
   }
   (this->fields).isToggleOn = 1;
@@ -1847,6 +1850,7 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation__ctor(Tog
   bVar1 = cRam_? == '\0';
   (this->fields).toggleInterpolationDuration = 0.1;
   (this->fields).toggleButtonMoveAmount = 131.0;
+  (this->fields)._IsInteractable_k__BackingField = 1;
   if (bVar1) {
     FUN_?(&TypeInfo__UnityEngine__Object);
     LOCK();
@@ -2011,7 +2015,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052af3c, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

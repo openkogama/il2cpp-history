@@ -189,8 +189,8 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
                   pOVar1 = (Object *)FUN_?(uRam_?,&stack0x00000008);
                   if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-                    uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xbf,pOVar1,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar13 >> 8),2),method_00);
+                    uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xc1,pOVar1,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar13 >> 8),2),method_00);
                     pPVar21 = (pMVar20->fields).peer;
                     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
                       FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);

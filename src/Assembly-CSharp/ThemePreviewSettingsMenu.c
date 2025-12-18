@@ -1197,13 +1197,13 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_OnT
             }
             this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor(this_02,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-            aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xbf);
+            aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xc1);
             pOVar16 = (Object *)FUN_?(uRam_?,aiStackX_10);
             aiStackX_10[0] = iVar14;
             value_00 = (Object *)FUN_?(uRam_?,aiStackX_10);
             if (this_02 != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_02,pOVar16,value_00,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar9 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method);
-              aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xcf);
+              aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xd1);
               pOVar16 = (Object *)FUN_?(uRam_?,aiStackX_10);
               method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_->klass->rgctx_data[0x22].method;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this_02,pOVar16,(Object *)value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),2),method_00);

@@ -15,21 +15,21 @@ namespace BuildSystem
 		// Fields
 		public const int VERSION_MAJOR = 3;
 		public const int VERSION_MINOR = 5;
-		public const int VERSION_MICRO = 13;
+		public const int VERSION_MICRO = 14;
 		public const int VERSION_BUILD = 0;
-		public const string VERSION_GUID = "db5da633-f2c0-4a37-bd12-7b2538b1dab2";
-		public const int VERSION_CODE = 305013;
-		public const string VERSION_STRING = "3.5.13.0";
-		public const string VERSION_STRING_NO_BUILD = "3.5.13";
-		public const string BRANCH_NAME = "release/2025-12-11Maintenance";
-		public const string BUILD_TIME_STRING = "2025-12-15T09:00:12.0000000";
+		public const string VERSION_GUID = "989b14cd-4b84-4331-86f6-27695d47f998";
+		public const int VERSION_CODE = 305014;
+		public const string VERSION_STRING = "3.5.14.0";
+		public const string VERSION_STRING_NO_BUILD = "3.5.14";
+		public const string BRANCH_NAME = "release/2025-12-17Maintenance";
+		public const string BUILD_TIME_STRING = "2025-12-17T07:56:21.0000000";
 		public const string RELEASE_NAME = "Maintenance";
 		public const bool SHOW_DEBUG_LOGIN = false;
-		public const int STREAMING_ASSETS_VERSION = 589205516;
-		public const string URL_CACHE_ASSET_VERSION_ARGUMENT = "?version=589205516";
-		public const string BUILD_TIME_FORMATTED = "12/15/2025 9:00:12 AM";
+		public const int STREAMING_ASSETS_VERSION = 589463061;
+		public const string URL_CACHE_ASSET_VERSION_ARGUMENT = "?version=589463061";
+		public const string BUILD_TIME_FORMATTED = "12/17/2025 7:56:21 AM";
 		private static System.DateTime? _buildDateTime;
-		public const string BUILD_INFO_STRING = "Build Info - Version: 3.5.13.0, Release: Maintenance, Branch: release/2025-12-11Maintenance, Time: 12/15/2025 9:00:12 AM";
+		public const string BUILD_INFO_STRING = "Build Info - Version: 3.5.14.0, Release: Maintenance, Branch: release/2025-12-17Maintenance, Time: 12/17/2025 7:56:21 AM";
 	
 		// Properties
 		public static System.DateTime BuildDateTime { get; }

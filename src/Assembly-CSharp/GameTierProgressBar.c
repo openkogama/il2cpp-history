@@ -384,7 +384,21 @@ bool Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_CanShowFreeTr
     }
     pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar3 != (GameSessionData *)0x0) {
-      iVar4 = (pGVar3->fields).gameMode;
+      bVar4 = true;
+      if ((pGVar3->fields).gameMode == 0) {
+        bVar5 = true;
+      }
+      else {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar3 == (GameSessionData *)0x0) goto code_?;
+        bVar5 = (pGVar3->fields).gameMode == 4;
+      }
       if (uVar2 != 3) {
         if (cRam_? == '\0') {
           FUN_?(&TypeInfo__GamePassesManager);
@@ -394,18 +408,23 @@ bool Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_CanShowFreeTr
         }
         pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
         if (pPVar1 == (PlayerPlanetData *)0x0) goto code_?;
-        if ((iVar4 != 0 && (pPVar1->fields).previewGamePassTier == 0) && (bVar5 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0), bVar5 != 0)) {
-          return 1;
-        }
+        bVar4 = (pPVar1->fields).previewGamePassTier != 0;
       }
-      return 0;
+      if (bVar4 || bVar5) {
+        return 0;
+      }
+      bVar6 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+      if (bVar6 == 0) {
+        return 0;
+      }
+      return 1;
     }
   }
 code_?:
   FUN_?();
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  pcVar7 = (code *)swi(3);
+  bVar6 = (*pcVar7)();
+  return bVar6;
 }
 
 
@@ -1244,7 +1263,61 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_HandleShowTip
   }
   TypeInfo__GameTierProgressBar->static_fields->haveShownTips = 1;
   bVar1 = GameTierProgressBar_ShowFreeTryTextBubble(this,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if (bVar1 != 0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar2->fields).gameMode == 0) {
+code_?:
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__GamePassesManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if ((pPVar3 == (PlayerPlanetData *)0x0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
+    uVar5 = (pPVar3->fields).gamePassTier - 1;
+    if ((int)uVar5 < 0) {
+      uVar5 = 0;
+    }
+    else if ((pLVar4->fields)._size < (int)uVar5) goto code_?;
+    if ((uint)(pLVar4->fields)._size <= uVar5) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pGVar7 = (pLVar4->fields)._items;
+    if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+    if ((uint)pGVar7->max_length <= uVar5) {
+code_?:
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pGVar8 = pGVar7->vector[(int)uVar5].disabledBarTextBubble;
+    if (pGVar8 == (GamePassesTextBubble *)0x0) goto code_?;
+    GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,StringLiteral_Progression_is_disabled_in_build,(MethodInfo *)0x0);
+    pLVar4 = (this->fields).tierProgressDataList;
+    if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+    if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
+    pGVar7 = (pLVar4->fields)._items;
+    if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+    if ((uint)pGVar7->max_length <= uVar5) goto code_?;
+    pGVar8 = pGVar7->vector[(int)uVar5].progressBarTextBubble;
+    textBubbleText = StringLiteral_Progression_is_disabled_in_build;
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -1253,106 +1326,63 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_HandleShowTip
     }
     pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar2 == (GameSessionData *)0x0) goto code_?;
-    if ((pGVar2->fields).gameMode == 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__GamePassesManager);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-      if ((pPVar3 == (PlayerPlanetData *)0x0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
-      uVar5 = (pPVar3->fields).gamePassTier - 1;
+    if ((pGVar2->fields).gameMode == 4) goto code_?;
+    bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      lVar9 = FUN_?();
+      if ((lVar9 == 0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
+      uVar5 = *(byte *)(lVar9 + 0x28) - 1;
       if ((int)uVar5 < 0) {
         uVar5 = 0;
       }
       else if ((pLVar4->fields)._size < (int)uVar5) goto code_?;
       if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-      pGVar6 = (pLVar4->fields)._items;
-      if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-      if ((uint)pGVar6->max_length <= uVar5) goto code_?;
-      pGVar7 = pGVar6->vector[(int)uVar5].disabledBarTextBubble;
-      if (pGVar7 == (GamePassesTextBubble *)0x0) goto code_?;
-      GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,StringLiteral_Progression_is_disabled_in_build,(MethodInfo *)0x0);
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((uint)pGVar7->max_length <= uVar5) goto code_?;
+      pGVar8 = pGVar7->vector[(int)uVar5].disabledBarTextBubble;
+      if (pGVar8 == (GamePassesTextBubble *)0x0) goto code_?;
+      GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,StringLiteral_Progression_is_disabled_in_stand,(MethodInfo *)0x0);
       pLVar4 = (this->fields).tierProgressDataList;
       if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
       if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-      pGVar6 = (pLVar4->fields)._items;
-      if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-      if ((uint)pGVar6->max_length <= uVar5) goto code_?;
-      pGVar7 = pGVar6->vector[(int)uVar5].progressBarTextBubble;
-      textBubbleText = StringLiteral_Progression_is_disabled_in_build;
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((uint)pGVar7->max_length <= uVar5) goto code_?;
+      pGVar8 = pGVar7->vector[(int)uVar5].progressBarTextBubble;
+      textBubbleText = StringLiteral_Progression_is_disabled_in_stand;
     }
     else {
-      bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        lVar8 = FUN_?();
-        if ((lVar8 == 0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
-        uVar5 = *(byte *)(lVar8 + 0x28) - 1;
-        if ((int)uVar5 < 0) {
-          uVar5 = 0;
-        }
-        else if ((pLVar4->fields)._size < (int)uVar5) goto code_?;
-        if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((uint)pGVar6->max_length <= uVar5) {
-code_?:
-          FUN_?();
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
-          return;
-        }
-        pGVar7 = pGVar6->vector[(int)uVar5].disabledBarTextBubble;
-        if (pGVar7 == (GamePassesTextBubble *)0x0) goto code_?;
-        GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,StringLiteral_Progression_is_disabled_in_stand,(MethodInfo *)0x0);
-        pLVar4 = (this->fields).tierProgressDataList;
-        if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((uint)pGVar6->max_length <= uVar5) goto code_?;
-        pGVar7 = pGVar6->vector[(int)uVar5].progressBarTextBubble;
-        textBubbleText = StringLiteral_Progression_is_disabled_in_stand;
+      if ((this->fields).hideSignUp != 0) {
+        return;
       }
-      else {
-        if ((this->fields).hideSignUp != 0) {
-          return;
-        }
-        pLVar4 = (this->fields).tierProgressDataList;
-        if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((pLVar4->fields)._size == 0) {
-code_?:
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
-          return;
-        }
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((int)pGVar6->max_length == 0) goto code_?;
-        pGVar7 = pGVar6->vector[0].disabledBarTextBubble;
-        if (pGVar7 == (GamePassesTextBubble *)0x0) goto code_?;
-        GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,StringLiteral_Sign_up_to_be_able_to_save_progr,(MethodInfo *)0x0);
-        pLVar4 = (this->fields).tierProgressDataList;
-        if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((pLVar4->fields)._size == 0) goto code_?;
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((int)pGVar6->max_length == 0) goto code_?;
-        pGVar7 = pGVar6->vector[0].progressBarTextBubble;
-        textBubbleText = StringLiteral_Sign_up_to_be_able_to_save_progr;
-      }
+      pLVar4 = (this->fields).tierProgressDataList;
+      if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+      if ((pLVar4->fields)._size == 0) goto code_?;
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((int)pGVar7->max_length == 0) goto code_?;
+      pGVar8 = pGVar7->vector[0].disabledBarTextBubble;
+      if (pGVar8 == (GamePassesTextBubble *)0x0) goto code_?;
+      GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,StringLiteral_Sign_up_to_be_able_to_save_progr,(MethodInfo *)0x0);
+      pLVar4 = (this->fields).tierProgressDataList;
+      if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+      if ((pLVar4->fields)._size == 0) goto code_?;
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((int)pGVar7->max_length == 0) goto code_?;
+      pGVar8 = pGVar7->vector[0].progressBarTextBubble;
+      textBubbleText = StringLiteral_Sign_up_to_be_able_to_save_progr;
     }
-    if (pGVar7 == (GamePassesTextBubble *)0x0) {
-code_?:
-      FUN_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
-      return;
-    }
-    GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,textBubbleText,(MethodInfo *)0x0);
   }
+  if (pGVar8 != (GamePassesTextBubble *)0x0) {
+    GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,textBubbleText,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -2252,18 +2282,23 @@ code_?:
     }
     if ((pGVar1->fields).gameMode != 0) {
       if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__GamePassesManager);
+        FUN_?(&TypeInfo__MVGameControllerBase);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      if ((TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator != (PlayerTierStateCalculator *)0x0) && ((TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator->fields).gamePassRewardsActivated != 0)) {
-        (this->fields).previousProgressValue = (this->fields).interpolateTowardsProgressValue;
-        lVar3 = FUN_?();
-        if (lVar3 == 0) goto code_?;
-        playerGamePoints = *(int32_t *)(lVar3 + 0x18);
-        GameTierProgressBar_UpdateProgressBars(this,playerGamePoints,(MethodInfo *)0x0);
-        GameTierProgressBar_UpdateDividerVisibility(this,playerGamePoints,(MethodInfo *)0x0);
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        bVar3 = GameTierProgressBar_IsProgressBarEnabled(this,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          (this->fields).previousProgressValue = (this->fields).interpolateTowardsProgressValue;
+          lVar4 = FUN_?();
+          if (lVar4 == 0) goto code_?;
+          playerGamePoints = *(int32_t *)(lVar4 + 0x18);
+          GameTierProgressBar_UpdateProgressBars(this,playerGamePoints,(MethodInfo *)0x0);
+          GameTierProgressBar_UpdateDividerVisibility(this,playerGamePoints,(MethodInfo *)0x0);
+        }
       }
     }
   }
@@ -2328,22 +2363,26 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_OnEnable(Game
       }
       pGVar7 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar7 == (GameSessionData *)0x0) goto DAT_?;
-      if (((pGVar7->fields).gameMode != 0) && (bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0), bVar8 == 0)) {
-        (this->fields).hasShownRankTip = 1;
-        lVar9 = FUN_?();
-        if (lVar9 == 0) {
+      if ((pGVar7->fields).gameMode != 0) {
+        lVar8 = FUN_?();
+        if (lVar8 == 0) goto DAT_?;
+        if ((*(int *)(lVar8 + 0x20) != 4) && (bVar9 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0), bVar9 == 0)) {
+          (this->fields).hasShownRankTip = 1;
+          lVar8 = FUN_?();
+          if (lVar8 == 0) {
 DAT_?:
-          FUN_?();
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+            FUN_?();
+            pcVar1 = (code *)swi(3);
+            (*pcVar1)();
+            return;
+          }
+          this_00 = (this->fields).highScoreTipTextBubble;
+          aIStackX_18[0].m_value = *(undefined4 *)(lVar8 + 0x14);
+          pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_18,(MethodInfo *)0x0);
+          pSVar10 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_Ranku000A,pSVar10,(MethodInfo *)0x0);
+          if (this_00 == (GamePassesTextBubble *)0x0) goto DAT_?;
+          GamePassesTextBubble::GamePassesTextBubble_Activate(this_00,pSVar10,(MethodInfo *)0x0);
         }
-        this_00 = (this->fields).highScoreTipTextBubble;
-        aIStackX_18[0].m_value = *(undefined4 *)(lVar9 + 0x14);
-        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_18,(MethodInfo *)0x0);
-        pSVar10 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_Ranku000A,pSVar10,(MethodInfo *)0x0);
-        if (this_00 == (GamePassesTextBubble *)0x0) goto DAT_?;
-        GamePassesTextBubble::GamePassesTextBubble_Activate(this_00,pSVar10,(MethodInfo *)0x0);
       }
     }
     if (cRam_? == '\0') {
@@ -2402,8 +2441,8 @@ code_?:
         if (bVar16 == 3) {
           return;
         }
-        bVar8 = GameTierProgressBar_HasTempTier(this,bVar16 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
-        if (bVar8 != 0) {
+        bVar9 = GameTierProgressBar_HasTempTier(this,bVar16 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
+        if (bVar9 != 0) {
           return;
         }
         pLVar12 = (this->fields).tierProgressDataList;
@@ -2461,15 +2500,15 @@ code_?:
     pGVar17 = (pLVar12->fields)._items;
     if (pGVar17 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
     if ((uint)pGVar17->max_length <= uVar15) goto code_?;
-    lVar9 = *(longlong *)((longlong)&pGVar17->vector[0].hoverInputHandler + uVar13);
-    if (lVar9 == 0) goto code_?;
+    lVar8 = *(longlong *)((longlong)&pGVar17->vector[0].hoverInputHandler + uVar13);
+    if (lVar8 == 0) goto code_?;
     if (cRam_? == '\0') {
       FUN_?(&MethodInfo__System__Collections__Generic__List<HoverInputReceiver>__Remove_HoverInputReceiver_);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pLVar20 = *(List_1_System_Object_ **)(lVar9 + 0x20);
+    pLVar20 = *(List_1_System_Object_ **)(lVar8 + 0x20);
     if (pLVar20 == (List_1_System_Object_ *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Remove(pLVar20,(Object *)this,MethodInfo__System__Collections__Generic__List<HoverInputReceiver>__Remove_HoverInputReceiver_);
     pLVar12 = (this->fields).tierProgressDataList;
@@ -2837,82 +2876,91 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_OnHoverEnter(
       }
       pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar4 != (GameSessionData *)0x0) {
-        iVar5 = (pGVar4->fields).gameMode;
-        if (uVar3 == 3) {
-          return;
+        bVar5 = true;
+        if ((pGVar4->fields).gameMode == 0) {
+          bVar6 = true;
         }
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__GamePassesManager);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-        if (pPVar1 != (PlayerPlanetData *)0x0) {
-          if (iVar5 == 0 || (pPVar1->fields).previewGamePassTier != 0) {
-            return;
-          }
-          bVar6 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
-          if (bVar6 == 0) {
-            return;
-          }
+        else {
           if (cRam_? == '\0') {
             FUN_?(&TypeInfo__MVGameControllerBase);
             LOCK();
             UNLOCK();
             cRam_? = '\x01';
           }
-          pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
-          if (((pMVar7 != (MVGameControllerBase *)0x0) && (pMVar8 = (pMVar7->fields).game, pMVar8 != (MVNetworkGame *)0x0)) && (this_00 = (pMVar8->fields)._GameTierShopRepository_k__BackingField, this_00 != (GameTierShopRepository *)0x0)) {
-            pDVar9 = GameTierShopRepository::GameTierShopRepository_GetTierItemData(this_00,bVar2 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
-            if (pDVar9 == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0) {
+          pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+          bVar6 = (pGVar4->fields).gameMode == 4;
+        }
+        if (uVar3 != 3) {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__GamePassesManager);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+          if (pPVar1 == (PlayerPlanetData *)0x0) goto code_?;
+          bVar5 = (pPVar1->fields).previewGamePassTier != 0;
+        }
+        if ((bVar5 || bVar6) || (bVar7 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0), bVar7 == 0)) {
+          return;
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar8 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar8 != (MVGameControllerBase *)0x0) && (pMVar9 = (pMVar8->fields).game, pMVar9 != (MVNetworkGame *)0x0)) && (this_00 = (pMVar9->fields)._GameTierShopRepository_k__BackingField, this_00 != (GameTierShopRepository *)0x0)) {
+          pDVar10 = GameTierShopRepository::GameTierShopRepository_GetTierItemData(this_00,bVar2 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
+          if (pDVar10 == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0) {
+            return;
+          }
+          pLVar11 = (this->fields).tierProgressDataList;
+          if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+            if ((uint)(pLVar11->fields)._size <= (uint)bVar2) {
+code_?:
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
               return;
             }
-            pLVar10 = (this->fields).tierProgressDataList;
-            if (pLVar10 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-              if ((uint)(pLVar10->fields)._size <= (uint)bVar2) {
+            pGVar13 = (pLVar11->fields)._items;
+            if (pGVar13 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
+              if ((uint)pGVar13->max_length <= (uint)bVar2) {
 code_?:
-                mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
-                pcVar11 = (code *)swi(3);
-                (*pcVar11)();
+                FUN_?();
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
                 return;
               }
-              pGVar12 = (pLVar10->fields)._items;
-              if (pGVar12 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
-                if ((uint)pGVar12->max_length <= (uint)bVar2) {
-code_?:
-                  FUN_?();
-                  pcVar11 = (code *)swi(3);
-                  (*pcVar11)();
+              uVar14 = (uint)bVar2;
+              pGVar15 = pGVar13->vector[(int)uVar14].freeTryTextBubble;
+              if (pGVar15 != (GamePassesTextBubble *)0x0) {
+                if ((pGVar15->fields).isActive != 0) {
                   return;
                 }
-                uVar13 = (uint)bVar2;
-                pGVar14 = pGVar12->vector[(int)uVar13].freeTryTextBubble;
-                if (pGVar14 != (GamePassesTextBubble *)0x0) {
-                  if ((pGVar14->fields).isActive != 0) {
-                    return;
-                  }
-                  pLVar10 = (this->fields).tierProgressDataList;
-                  if (pLVar10 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                    if ((uint)(pLVar10->fields)._size <= uVar13) goto code_?;
-                    pGVar12 = (pLVar10->fields)._items;
-                    if (pGVar12 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
-                      if ((uint)pGVar12->max_length <= uVar13) goto code_?;
-                      pGVar14 = pGVar12->vector[(int)uVar13].freeTryTextBubble;
-                      if ((pGVar14 != (GamePassesTextBubble *)0x0) && (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pGVar14,(MethodInfo *)0x0), this_01 != (GameObject *)0x0)) {
-                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,1,(MethodInfo *)0x0);
-                        pLVar10 = (this->fields).tierProgressDataList;
-                        if (pLVar10 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                          if ((uint)(pLVar10->fields)._size <= (uint)bVar2) goto code_?;
-                          pGVar12 = (pLVar10->fields)._items;
-                          if (pGVar12 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
-                            if ((uint)pGVar12->max_length <= (uint)bVar2) goto code_?;
-                            pGVar14 = pGVar12->vector[bVar2].freeTryTextBubble;
-                            textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
-                            if (pGVar14 != (GamePassesTextBubble *)0x0) {
-                              GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar14,textBubbleText,(MethodInfo *)0x0);
-                              return;
-                            }
+                pLVar11 = (this->fields).tierProgressDataList;
+                if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                  if ((uint)(pLVar11->fields)._size <= uVar14) goto code_?;
+                  pGVar13 = (pLVar11->fields)._items;
+                  if (pGVar13 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
+                    if ((uint)pGVar13->max_length <= uVar14) goto code_?;
+                    pGVar15 = pGVar13->vector[(int)uVar14].freeTryTextBubble;
+                    if ((pGVar15 != (GamePassesTextBubble *)0x0) && (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pGVar15,(MethodInfo *)0x0), this_01 != (GameObject *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,1,(MethodInfo *)0x0);
+                      pLVar11 = (this->fields).tierProgressDataList;
+                      if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                        if ((uint)(pLVar11->fields)._size <= (uint)bVar2) goto code_?;
+                        pGVar13 = (pLVar11->fields)._items;
+                        if (pGVar13 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
+                          if ((uint)pGVar13->max_length <= (uint)bVar2) goto code_?;
+                          pGVar15 = pGVar13->vector[bVar2].freeTryTextBubble;
+                          textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
+                          if (pGVar15 != (GamePassesTextBubble *)0x0) {
+                            GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar15,textBubbleText,(MethodInfo *)0x0);
+                            return;
                           }
                         }
                       }
@@ -2926,9 +2974,10 @@ code_?:
       }
     }
   }
+code_?:
   FUN_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -3018,154 +3067,157 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_OnPlayerPlane
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 == (GameSessionData *)0x0) {
-code_?:
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  if ((pGVar1->fields).gameMode == 0) {
+  if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar1->fields).gameMode != 0) {
     if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__GamePassesManager);
+      FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar3 == (PlayerPlanetData *)0x0) goto code_?;
-    bVar4 = (pPVar3->fields).gamePassTier;
-    iVar5 = 2;
-    do {
-      if ((int)(bVar4 - 1) < iVar5) {
-        GameTierProgressBar_DeactivateBar(this,iVar5,(MethodInfo *)0x0);
-      }
-      else {
-        GameTierProgressBar_ActivateBar(this,iVar5,(MethodInfo *)0x0);
-      }
-      iVar5 = iVar5 + -1;
-    } while (-1 < iVar5);
-  }
-  else {
-    bVar6 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__GamePassesManager);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator != (PlayerTierStateCalculator *)0x0) && ((TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator->fields).gamePassRewardsActivated != 0)) {
-        lVar7 = FUN_?();
-        if (lVar7 != 0) {
-          fVar8 = GameTierProgressBar_CalculateTotalProgressValue(this,*(int32_t *)(lVar7 + 0x18),(MethodInfo *)0x0);
-          (this->fields).interpolateTowardsProgressValue = fVar8;
-          if ((this->fields).previousProgressValue != fVar8) {
-            (this->fields).shouldInterpolate = 1;
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode != 4) {
+      bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
+      if ((bVar2 == 0) || (bVar2 = GameTierProgressBar_IsProgressBarEnabled(this,(MethodInfo *)0x0), bVar2 == 0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        uVar3 = 0;
+        do {
+          bVar2 = GameTierProgressBar_IsTierUnlocked(this,uVar3 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
+          if (bVar2 != 0) {
+            pLVar4 = (this->fields).tierProgressDataList;
+            if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+            if ((uint)(pLVar4->fields)._size <= uVar3) {
+code_?:
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+              pcVar5 = (code *)swi(3);
+              (*pcVar5)();
+              return;
+            }
+            pGVar6 = (pLVar4->fields)._items;
+            if ((pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) || (FUN_?(pGVar6,apPStack_7), pPStack_8 == (ProgressBarAndroid *)0x0)) goto code_?;
+            ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPStack_8,1.0,(MethodInfo *)0x0);
+            pLVar4 = (this->fields).tierProgressDataList;
+            if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+            if ((uint)(pLVar4->fields)._size <= uVar3) goto code_?;
+            pGVar6 = (pLVar4->fields)._items;
+            if ((pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) || (FUN_?(pGVar6,apPStack_7), apPStack_7[0] == (ProgressBarAndroid *)0x0)) goto code_?;
+            ProgressBarAndroid::ProgressBarAndroid_set_Progress(apPStack_7[0],1.0,(MethodInfo *)0x0);
+            GameTierProgressBar_ActivateBar(this,uVar3,(MethodInfo *)0x0);
           }
-          if ((this->fields).tierProgressDataList != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-            iVar5 = FUN_?();
-            uVar9 = (ulonglong)iVar5;
-            if (((this->fields).shouldInterpolate != 0) && (fVar8 = (this->fields).interpolateTowardsProgressValue - (float)iVar5, 0.0 < fVar8)) {
-              lVar7 = uVar9 * 0x90;
-              do {
-                pLVar10 = (this->fields).tierProgressDataList;
-                if (pLVar10 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-                uVar11 = (uint)uVar9;
-                if ((uint)(pLVar10->fields)._size <= uVar11) goto code_?;
-                pGVar12 = (pLVar10->fields)._items;
-                if (pGVar12 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-                if ((uint)pGVar12->max_length <= uVar11) {
-                  FUN_?();
-                  pcVar2 = (code *)swi(3);
-                  (*pcVar2)();
-                  return;
-                }
-                lVar13 = *(longlong *)((longlong)&pGVar12->vector[0].endResultProgressBar + lVar7);
-                if (fVar8 < 0.0) {
-                  value = 0.0;
-                }
-                else {
-                  value = fVar8;
-                  if (1.0 < fVar8) {
-                    value = 1.0;
-                  }
-                }
-                if (lVar13 == 0) goto code_?;
-                if (value < 0.0) {
-                  value = 0.0;
-                }
-                else if (1.0 < value) {
+          iVar9 = uVar3 + 2;
+          uVar3 = uVar3 + 1;
+          if (3 < iVar9) {
+            return;
+          }
+        } while( true );
+      }
+      lVar10 = FUN_?();
+      if (lVar10 != 0) {
+        fVar11 = GameTierProgressBar_CalculateTotalProgressValue(this,*(int32_t *)(lVar10 + 0x18),(MethodInfo *)0x0);
+        (this->fields).interpolateTowardsProgressValue = fVar11;
+        if ((this->fields).previousProgressValue != fVar11) {
+          (this->fields).shouldInterpolate = 1;
+        }
+        if ((this->fields).tierProgressDataList != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+          iVar9 = FUN_?();
+          uVar12 = (ulonglong)iVar9;
+          if (((this->fields).shouldInterpolate != 0) && (fVar11 = (this->fields).interpolateTowardsProgressValue - (float)iVar9, 0.0 < fVar11)) {
+            lVar10 = uVar12 * 0x90;
+            do {
+              pLVar4 = (this->fields).tierProgressDataList;
+              if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+              uVar3 = (uint)uVar12;
+              if ((uint)(pLVar4->fields)._size <= uVar3) goto code_?;
+              pGVar6 = (pLVar4->fields)._items;
+              if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+              if ((uint)pGVar6->max_length <= uVar3) {
+                FUN_?();
+                pcVar5 = (code *)swi(3);
+                (*pcVar5)();
+                return;
+              }
+              lVar13 = *(longlong *)((longlong)&pGVar6->vector[0].endResultProgressBar + lVar10);
+              if (fVar11 < 0.0) {
+                value = 0.0;
+              }
+              else {
+                value = fVar11;
+                if (1.0 < fVar11) {
                   value = 1.0;
                 }
-                *(float *)(lVar13 + 0x28) = value;
-                if (*(Scrollbar **)(lVar13 + 0x20) == (Scrollbar *)0x0) goto code_?;
-                UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size(*(Scrollbar **)(lVar13 + 0x20),value,(MethodInfo *)0x0);
-                fVar8 = fVar8 + -1.0;
-                uVar9 = (ulonglong)(uVar11 + 1);
-                lVar7 = lVar7 + 0x90;
-              } while (0.0 < fVar8);
-            }
+              }
+              if (lVar13 == 0) goto code_?;
+              if (value < 0.0) {
+                value = 0.0;
+              }
+              else if (1.0 < value) {
+                value = 1.0;
+              }
+              *(float *)(lVar13 + 0x28) = value;
+              if (*(Scrollbar **)(lVar13 + 0x20) == (Scrollbar *)0x0) goto code_?;
+              UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size(*(Scrollbar **)(lVar13 + 0x20),value,(MethodInfo *)0x0);
+              fVar11 = fVar11 + -1.0;
+              uVar12 = (ulonglong)(uVar3 + 1);
+              lVar10 = lVar10 + 0x90;
+            } while (0.0 < fVar11);
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__GamePassesManager);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pPVar14 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+          if (pPVar14 != (PlayerPlanetData *)0x0) {
+            GameTierProgressBar_UpdateProgressBars(this,(pPVar14->fields).progressionGamePoints,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               FUN_?(&TypeInfo__GamePassesManager);
               LOCK();
               UNLOCK();
               cRam_? = '\x01';
             }
-            pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-            if (pPVar3 != (PlayerPlanetData *)0x0) {
-              GameTierProgressBar_UpdateProgressBars(this,(pPVar3->fields).progressionGamePoints,(MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                FUN_?(&TypeInfo__GamePassesManager);
-                LOCK();
-                UNLOCK();
-                cRam_? = '\x01';
-              }
-              pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-              if (pPVar3 != (PlayerPlanetData *)0x0) {
-                GameTierProgressBar_UpdateDividerVisibility(this,(pPVar3->fields).progressionGamePoints,(MethodInfo *)0x0);
-                return;
-              }
+            pPVar14 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+            if (pPVar14 != (PlayerPlanetData *)0x0) {
+              GameTierProgressBar_UpdateDividerVisibility(this,(pPVar14->fields).progressionGamePoints,(MethodInfo *)0x0);
+              return;
             }
           }
         }
-        goto code_?;
       }
+      goto code_?;
     }
-    if (cRam_? == '\0') {
-      FUN_?(&MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    uVar11 = 0;
-    do {
-      bVar6 = GameTierProgressBar_IsTierUnlocked(this,uVar11 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
-      if (bVar6 != 0) {
-        pLVar10 = (this->fields).tierProgressDataList;
-        if (pLVar10 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((uint)(pLVar10->fields)._size <= uVar11) {
-code_?:
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
-          pcVar2 = (code *)swi(3);
-          (*pcVar2)();
-          return;
-        }
-        pGVar12 = (pLVar10->fields)._items;
-        if ((pGVar12 == (GameTierProgressBar_TierProgressData__Array *)0x0) || (FUN_?(pGVar12,apPStack_14), pPStack_15 == (ProgressBarAndroid *)0x0)) goto code_?;
-        ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPStack_15,1.0,(MethodInfo *)0x0);
-        pLVar10 = (this->fields).tierProgressDataList;
-        if (pLVar10 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((uint)(pLVar10->fields)._size <= uVar11) goto code_?;
-        pGVar12 = (pLVar10->fields)._items;
-        if ((pGVar12 == (GameTierProgressBar_TierProgressData__Array *)0x0) || (FUN_?(pGVar12,apPStack_14), apPStack_14[0] == (ProgressBarAndroid *)0x0)) goto code_?;
-        ProgressBarAndroid::ProgressBarAndroid_set_Progress(apPStack_14[0],1.0,(MethodInfo *)0x0);
-        GameTierProgressBar_ActivateBar(this,uVar11,(MethodInfo *)0x0);
-      }
-      iVar5 = uVar11 + 2;
-      uVar11 = uVar11 + 1;
-    } while (iVar5 < 4);
   }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__GamePassesManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pPVar14 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+  if (pPVar14 != (PlayerPlanetData *)0x0) {
+    bVar15 = (pPVar14->fields).gamePassTier;
+    iVar9 = 2;
+    do {
+      if ((int)(bVar15 - 1) < iVar9) {
+        GameTierProgressBar_DeactivateBar(this,iVar9,(MethodInfo *)0x0);
+      }
+      else {
+        GameTierProgressBar_ActivateBar(this,iVar9,(MethodInfo *)0x0);
+      }
+      iVar9 = iVar9 + -1;
+    } while (-1 < iVar9);
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -3404,82 +3456,91 @@ bool Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_ShowFreeTryTe
       }
       pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar4 != (GameSessionData *)0x0) {
-        iVar5 = (pGVar4->fields).gameMode;
-        if (uVar3 == 3) {
-          return 0;
+        bVar5 = true;
+        if ((pGVar4->fields).gameMode == 0) {
+          bVar6 = true;
         }
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__GamePassesManager);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-        if (pPVar1 != (PlayerPlanetData *)0x0) {
-          if (iVar5 == 0 || (pPVar1->fields).previewGamePassTier != 0) {
-            return 0;
-          }
-          bVar6 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
-          if (bVar6 == 0) {
-            return 0;
-          }
+        else {
           if (cRam_? == '\0') {
             FUN_?(&TypeInfo__MVGameControllerBase);
             LOCK();
             UNLOCK();
             cRam_? = '\x01';
           }
-          pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
-          if (((pMVar7 != (MVGameControllerBase *)0x0) && (pMVar8 = (pMVar7->fields).game, pMVar8 != (MVNetworkGame *)0x0)) && (this_00 = (pMVar8->fields)._GameTierShopRepository_k__BackingField, this_00 != (GameTierShopRepository *)0x0)) {
-            pDVar9 = GameTierShopRepository::GameTierShopRepository_GetTierItemData(this_00,bVar2 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
-            if (pDVar9 == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0) {
-              return 0;
+          pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+          bVar6 = (pGVar4->fields).gameMode == 4;
+        }
+        if (uVar3 != 3) {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__GamePassesManager);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+          if (pPVar1 == (PlayerPlanetData *)0x0) goto code_?;
+          bVar5 = (pPVar1->fields).previewGamePassTier != 0;
+        }
+        if ((bVar5 || bVar6) || (bVar7 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0), bVar7 == 0)) {
+          return 0;
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar8 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar8 != (MVGameControllerBase *)0x0) && (pMVar9 = (pMVar8->fields).game, pMVar9 != (MVNetworkGame *)0x0)) && (this_00 = (pMVar9->fields)._GameTierShopRepository_k__BackingField, this_00 != (GameTierShopRepository *)0x0)) {
+          pDVar10 = GameTierShopRepository::GameTierShopRepository_GetTierItemData(this_00,bVar2 + GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
+          if (pDVar10 == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0) {
+            return 0;
+          }
+          pLVar11 = (this->fields).tierProgressDataList;
+          if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+            if ((uint)(pLVar11->fields)._size <= (uint)bVar2) {
+code_?:
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+              pcVar12 = (code *)swi(3);
+              bVar7 = (*pcVar12)();
+              return bVar7;
             }
-            pLVar10 = (this->fields).tierProgressDataList;
-            if (pLVar10 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-              if ((uint)(pLVar10->fields)._size <= (uint)bVar2) {
+            pGVar13 = (pLVar11->fields)._items;
+            if (pGVar13 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
+              if ((uint)pGVar13->max_length <= (uint)bVar2) {
 code_?:
-                mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
-                pcVar11 = (code *)swi(3);
-                bVar6 = (*pcVar11)();
-                return bVar6;
+                FUN_?();
+                pcVar12 = (code *)swi(3);
+                bVar7 = (*pcVar12)();
+                return bVar7;
               }
-              pGVar12 = (pLVar10->fields)._items;
-              if (pGVar12 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
-                if ((uint)pGVar12->max_length <= (uint)bVar2) {
-code_?:
-                  FUN_?();
-                  pcVar11 = (code *)swi(3);
-                  bVar6 = (*pcVar11)();
-                  return bVar6;
+              uVar14 = (uint)bVar2;
+              pGVar15 = pGVar13->vector[(int)uVar14].freeTryTextBubble;
+              if (pGVar15 != (GamePassesTextBubble *)0x0) {
+                if ((pGVar15->fields).isActive != 0) {
+                  return 1;
                 }
-                uVar13 = (uint)bVar2;
-                pGVar14 = pGVar12->vector[(int)uVar13].freeTryTextBubble;
-                if (pGVar14 != (GamePassesTextBubble *)0x0) {
-                  if ((pGVar14->fields).isActive != 0) {
-                    return 1;
-                  }
-                  pLVar10 = (this->fields).tierProgressDataList;
-                  if (pLVar10 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                    if ((uint)(pLVar10->fields)._size <= uVar13) goto code_?;
-                    pGVar12 = (pLVar10->fields)._items;
-                    if (pGVar12 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
-                      if ((uint)pGVar12->max_length <= uVar13) goto code_?;
-                      pGVar14 = pGVar12->vector[(int)uVar13].freeTryTextBubble;
-                      if ((pGVar14 != (GamePassesTextBubble *)0x0) && (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pGVar14,(MethodInfo *)0x0), this_01 != (GameObject *)0x0)) {
-                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,1,(MethodInfo *)0x0);
-                        pLVar10 = (this->fields).tierProgressDataList;
-                        if (pLVar10 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                          if ((uint)(pLVar10->fields)._size <= (uint)bVar2) goto code_?;
-                          pGVar12 = (pLVar10->fields)._items;
-                          if (pGVar12 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
-                            if ((uint)pGVar12->max_length <= (uint)bVar2) goto code_?;
-                            pGVar14 = pGVar12->vector[bVar2].freeTryTextBubble;
-                            textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
-                            if (pGVar14 != (GamePassesTextBubble *)0x0) {
-                              GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar14,textBubbleText,(MethodInfo *)0x0);
-                              return 1;
-                            }
+                pLVar11 = (this->fields).tierProgressDataList;
+                if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                  if ((uint)(pLVar11->fields)._size <= uVar14) goto code_?;
+                  pGVar13 = (pLVar11->fields)._items;
+                  if (pGVar13 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
+                    if ((uint)pGVar13->max_length <= uVar14) goto code_?;
+                    pGVar15 = pGVar13->vector[(int)uVar14].freeTryTextBubble;
+                    if ((pGVar15 != (GamePassesTextBubble *)0x0) && (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pGVar15,(MethodInfo *)0x0), this_01 != (GameObject *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,1,(MethodInfo *)0x0);
+                      pLVar11 = (this->fields).tierProgressDataList;
+                      if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                        if ((uint)(pLVar11->fields)._size <= (uint)bVar2) goto code_?;
+                        pGVar13 = (pLVar11->fields)._items;
+                        if (pGVar13 != (GameTierProgressBar_TierProgressData__Array *)0x0) {
+                          if ((uint)pGVar13->max_length <= (uint)bVar2) goto code_?;
+                          pGVar15 = pGVar13->vector[bVar2].freeTryTextBubble;
+                          textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
+                          if (pGVar15 != (GamePassesTextBubble *)0x0) {
+                            GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar15,textBubbleText,(MethodInfo *)0x0);
+                            return 1;
                           }
                         }
                       }
@@ -3493,10 +3554,11 @@ code_?:
       }
     }
   }
+code_?:
   FUN_?();
-  pcVar11 = (code *)swi(3);
-  bVar6 = (*pcVar11)();
-  return bVar6;
+  pcVar12 = (code *)swi(3);
+  bVar7 = (*pcVar12)();
+  return bVar7;
 }
 
 
@@ -3540,7 +3602,61 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_Start(GameTie
   }
   TypeInfo__GameTierProgressBar->static_fields->haveShownTips = 1;
   bVar1 = GameTierProgressBar_ShowFreeTryTextBubble(this,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if (bVar1 != 0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar2->fields).gameMode == 0) {
+code_?:
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__GamePassesManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if ((pPVar3 == (PlayerPlanetData *)0x0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
+    uVar5 = (pPVar3->fields).gamePassTier - 1;
+    if ((int)uVar5 < 0) {
+      uVar5 = 0;
+    }
+    else if ((pLVar4->fields)._size < (int)uVar5) goto code_?;
+    if ((uint)(pLVar4->fields)._size <= uVar5) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pGVar7 = (pLVar4->fields)._items;
+    if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+    if ((uint)pGVar7->max_length <= uVar5) {
+code_?:
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pGVar8 = pGVar7->vector[(int)uVar5].disabledBarTextBubble;
+    if (pGVar8 == (GamePassesTextBubble *)0x0) goto code_?;
+    GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,StringLiteral_Progression_is_disabled_in_build,(MethodInfo *)0x0);
+    pLVar4 = (this->fields).tierProgressDataList;
+    if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+    if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
+    pGVar7 = (pLVar4->fields)._items;
+    if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+    if ((uint)pGVar7->max_length <= uVar5) goto code_?;
+    pGVar8 = pGVar7->vector[(int)uVar5].progressBarTextBubble;
+    textBubbleText = StringLiteral_Progression_is_disabled_in_build;
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -3549,106 +3665,63 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_Start(GameTie
     }
     pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar2 == (GameSessionData *)0x0) goto code_?;
-    if ((pGVar2->fields).gameMode == 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__GamePassesManager);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-      if ((pPVar3 == (PlayerPlanetData *)0x0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
-      uVar5 = (pPVar3->fields).gamePassTier - 1;
+    if ((pGVar2->fields).gameMode == 4) goto code_?;
+    bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      lVar9 = FUN_?();
+      if ((lVar9 == 0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
+      uVar5 = *(byte *)(lVar9 + 0x28) - 1;
       if ((int)uVar5 < 0) {
         uVar5 = 0;
       }
       else if ((pLVar4->fields)._size < (int)uVar5) goto code_?;
       if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-      pGVar6 = (pLVar4->fields)._items;
-      if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-      if ((uint)pGVar6->max_length <= uVar5) goto code_?;
-      pGVar7 = pGVar6->vector[(int)uVar5].disabledBarTextBubble;
-      if (pGVar7 == (GamePassesTextBubble *)0x0) goto code_?;
-      GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,StringLiteral_Progression_is_disabled_in_build,(MethodInfo *)0x0);
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((uint)pGVar7->max_length <= uVar5) goto code_?;
+      pGVar8 = pGVar7->vector[(int)uVar5].disabledBarTextBubble;
+      if (pGVar8 == (GamePassesTextBubble *)0x0) goto code_?;
+      GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,StringLiteral_Progression_is_disabled_in_stand,(MethodInfo *)0x0);
       pLVar4 = (this->fields).tierProgressDataList;
       if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
       if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-      pGVar6 = (pLVar4->fields)._items;
-      if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-      if ((uint)pGVar6->max_length <= uVar5) goto code_?;
-      pGVar7 = pGVar6->vector[(int)uVar5].progressBarTextBubble;
-      textBubbleText = StringLiteral_Progression_is_disabled_in_build;
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((uint)pGVar7->max_length <= uVar5) goto code_?;
+      pGVar8 = pGVar7->vector[(int)uVar5].progressBarTextBubble;
+      textBubbleText = StringLiteral_Progression_is_disabled_in_stand;
     }
     else {
-      bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        lVar8 = FUN_?();
-        if ((lVar8 == 0) || (pLVar4 = (this->fields).tierProgressDataList, pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0)) goto code_?;
-        uVar5 = *(byte *)(lVar8 + 0x28) - 1;
-        if ((int)uVar5 < 0) {
-          uVar5 = 0;
-        }
-        else if ((pLVar4->fields)._size < (int)uVar5) goto code_?;
-        if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((uint)pGVar6->max_length <= uVar5) {
-code_?:
-          FUN_?();
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
-          return;
-        }
-        pGVar7 = pGVar6->vector[(int)uVar5].disabledBarTextBubble;
-        if (pGVar7 == (GamePassesTextBubble *)0x0) goto code_?;
-        GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,StringLiteral_Progression_is_disabled_in_stand,(MethodInfo *)0x0);
-        pLVar4 = (this->fields).tierProgressDataList;
-        if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((uint)(pLVar4->fields)._size <= uVar5) goto code_?;
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((uint)pGVar6->max_length <= uVar5) goto code_?;
-        pGVar7 = pGVar6->vector[(int)uVar5].progressBarTextBubble;
-        textBubbleText = StringLiteral_Progression_is_disabled_in_stand;
+      if ((this->fields).hideSignUp != 0) {
+        return;
       }
-      else {
-        if ((this->fields).hideSignUp != 0) {
-          return;
-        }
-        pLVar4 = (this->fields).tierProgressDataList;
-        if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((pLVar4->fields)._size == 0) {
-code_?:
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
-          return;
-        }
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((int)pGVar6->max_length == 0) goto code_?;
-        pGVar7 = pGVar6->vector[0].disabledBarTextBubble;
-        if (pGVar7 == (GamePassesTextBubble *)0x0) goto code_?;
-        GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,StringLiteral_Sign_up_to_be_able_to_save_progr,(MethodInfo *)0x0);
-        pLVar4 = (this->fields).tierProgressDataList;
-        if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
-        if ((pLVar4->fields)._size == 0) goto code_?;
-        pGVar6 = (pLVar4->fields)._items;
-        if (pGVar6 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
-        if ((int)pGVar6->max_length == 0) goto code_?;
-        pGVar7 = pGVar6->vector[0].progressBarTextBubble;
-        textBubbleText = StringLiteral_Sign_up_to_be_able_to_save_progr;
-      }
+      pLVar4 = (this->fields).tierProgressDataList;
+      if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+      if ((pLVar4->fields)._size == 0) goto code_?;
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((int)pGVar7->max_length == 0) goto code_?;
+      pGVar8 = pGVar7->vector[0].disabledBarTextBubble;
+      if (pGVar8 == (GamePassesTextBubble *)0x0) goto code_?;
+      GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,StringLiteral_Sign_up_to_be_able_to_save_progr,(MethodInfo *)0x0);
+      pLVar4 = (this->fields).tierProgressDataList;
+      if (pLVar4 == (List_1_GameTierProgressBar_TierProgressData_ *)0x0) goto code_?;
+      if ((pLVar4->fields)._size == 0) goto code_?;
+      pGVar7 = (pLVar4->fields)._items;
+      if (pGVar7 == (GameTierProgressBar_TierProgressData__Array *)0x0) goto code_?;
+      if ((int)pGVar7->max_length == 0) goto code_?;
+      pGVar8 = pGVar7->vector[0].progressBarTextBubble;
+      textBubbleText = StringLiteral_Sign_up_to_be_able_to_save_progr;
     }
-    if (pGVar7 == (GamePassesTextBubble *)0x0) {
-code_?:
-      FUN_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
-      return;
-    }
-    GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar7,textBubbleText,(MethodInfo *)0x0);
   }
+  if (pGVar8 != (GamePassesTextBubble *)0x0) {
+    GamePassesTextBubble::GamePassesTextBubble_Activate(pGVar8,textBubbleText,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

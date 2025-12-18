@@ -83,7 +83,9 @@ public class GUILoginHandler : MonoBehaviour
 	public void ComboboxChanged(int index);
 	public void UIDropdownChanged(int index);
 	public void EnterPlayOnClick();
+	public void EnterSpacesPlayOnClick();
 	public void EnterEditOnClick();
+	public void EnterSpacesEditOnClick();
 	public void EnterCharacterEditOnClick();
 	public void Caching();
 	public void TouchMode();

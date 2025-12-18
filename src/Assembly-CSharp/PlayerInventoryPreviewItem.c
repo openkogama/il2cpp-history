@@ -904,12 +904,12 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
         cRam_? = '\x01';
       }
       if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) && (lVar2 = FUN_?(), lVar2 != 0)) {
-        pDVar3 = *(Delegate **)(lVar2 + 0x20);
+        pDVar3 = *(Delegate **)(lVar2 + 0x28);
         this_02 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_02,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemFailedToLoad__,(MethodInfo *)0x0);
         pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar3,(Delegate *)this_02,(MethodInfo *)0x0);
         if (pDVar3 == (Delegate *)0x0) {
-          *(undefined8 *)(lVar2 + 0x20) = 0;
+          *(undefined8 *)(lVar2 + 0x28) = 0;
         }
         else {
           pDVar4 = (Delegate *)0x0;
@@ -922,7 +922,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
             (*pcVar5)();
             return;
           }
-          *(Delegate **)(lVar2 + 0x20) = pDVar4;
+          *(Delegate **)(lVar2 + 0x28) = pDVar4;
           pDVar4 = (Delegate *)0x0;
           if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
             pDVar4 = pDVar3;
@@ -935,7 +935,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
           }
         }
         if (iRam_? != 0) {
-          uVar6 = (uint)(lVar2 + 0x20U >> 0xc);
+          uVar6 = (uint)(lVar2 + 0x28U >> 0xc);
           uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
           do {
             uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
@@ -1061,12 +1061,12 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
         cRam_? = '\x01';
       }
       if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) && (lVar2 = FUN_?(), lVar2 != 0)) {
-        pDVar3 = *(Delegate **)(lVar2 + 0x20);
+        pDVar3 = *(Delegate **)(lVar2 + 0x28);
         this_04 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_04,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemFailedToLoad__,(MethodInfo *)0x0);
         pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar3,(Delegate *)this_04,(MethodInfo *)0x0);
         if (pDVar3 == (Delegate *)0x0) {
-          *(undefined8 *)(lVar2 + 0x20) = 0;
+          *(undefined8 *)(lVar2 + 0x28) = 0;
         }
         else {
           pDVar4 = (Delegate *)0x0;
@@ -1079,7 +1079,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
             (*pcVar5)();
             return;
           }
-          *(Delegate **)(lVar2 + 0x20) = pDVar4;
+          *(Delegate **)(lVar2 + 0x28) = pDVar4;
           pDVar4 = (Delegate *)0x0;
           if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
             pDVar4 = pDVar3;
@@ -1092,7 +1092,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
           }
         }
         if (iRam_? != 0) {
-          uVar6 = (uint)(lVar2 + 0x20U >> 0xc);
+          uVar6 = (uint)(lVar2 + 0x28U >> 0xc);
           uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
           do {
             uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
@@ -1115,7 +1115,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
             cRam_? = '\x01';
           }
           if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) && (lVar2 = FUN_?(), lVar2 != 0)) {
-            *(undefined4 *)(lVar2 + 0x30) = 0xff7fffff;
+            *(undefined4 *)(lVar2 + 0x38) = 0xff7fffff;
             pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
             if (*(int *)&(TypeInfo__PlayerInventoryPreviewItem____c->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__PlayerInventoryPreviewItem____c);
@@ -1280,12 +1280,12 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
         cRam_? = '\x01';
       }
       if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) && (lVar2 = FUN_?(), lVar2 != 0)) {
-        pDVar3 = *(Delegate **)(lVar2 + 0x20);
+        pDVar3 = *(Delegate **)(lVar2 + 0x28);
         this_02 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_02,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemFailedToLoad__,(MethodInfo *)0x0);
         pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar3,(Delegate *)this_02,(MethodInfo *)0x0);
         if (pDVar3 == (Delegate *)0x0) {
-          *(undefined8 *)(lVar2 + 0x20) = 0;
+          *(undefined8 *)(lVar2 + 0x28) = 0;
         }
         else {
           pDVar4 = (Delegate *)0x0;
@@ -1298,7 +1298,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
             (*pcVar5)();
             return;
           }
-          *(Delegate **)(lVar2 + 0x20) = pDVar4;
+          *(Delegate **)(lVar2 + 0x28) = pDVar4;
           pDVar4 = (Delegate *)0x0;
           if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
             pDVar4 = pDVar3;
@@ -1311,7 +1311,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
           }
         }
         if (iRam_? != 0) {
-          uVar6 = (uint)(lVar2 + 0x20U >> 0xc);
+          uVar6 = (uint)(lVar2 + 0x28U >> 0xc);
           lVar2 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
           do {
             uVar7 = *(ulonglong *)(lVar2 + 0xADDR);
@@ -1363,8 +1363,8 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
                 pIVar11 = (this->fields).item;
                 if ((pIVar11 != (InventoryItem *)0x0) && (lVar2 != 0)) {
                   pBVar13 = (pIVar11->fields).data;
-                  if (*(PlayerInventoryRepository **)(lVar2 + 0x40) != (PlayerInventoryRepository *)0x0) {
-                    pIVar11 = PlayerInventoryRepository::PlayerInventoryRepository_GetInventoryItem(*(PlayerInventoryRepository **)(lVar2 + 0x40),(pIVar11->fields).itemID,(pIVar11->fields).itemCategoryID,(MethodInfo *)0x0);
+                  if (*(PlayerInventoryRepository **)(lVar2 + 0x48) != (PlayerInventoryRepository *)0x0) {
+                    pIVar11 = PlayerInventoryRepository::PlayerInventoryRepository_GetInventoryItem(*(PlayerInventoryRepository **)(lVar2 + 0x48),(pIVar11->fields).itemID,(pIVar11->fields).itemCategoryID,(MethodInfo *)0x0);
                     if (pIVar11 != (InventoryItem *)0x0) {
                       bVar9 = iRam_? != 0;
                       (pIVar11->fields).data = pBVar13;
@@ -1697,7 +1697,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
     cRam_? = '\x01';
   }
   if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) && (lVar4 = FUN_?(), lVar4 != 0)) {
-    if (30.0 <= fVar3 - *(float *)(lVar4 + 0x30)) {
+    if (30.0 <= fVar3 - *(float *)(lVar4 + 0x38)) {
       if ((this->fields).requiresUnlocking == 0) {
         pIVar5 = (this->fields).item;
         if (pIVar5 != (InventoryItem *)0x0) {
@@ -1715,16 +1715,16 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
               MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery(this_02,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_03,(MethodInfo *)0x0);
               lVar4 = FUN_?();
               if ((lVar4 != 0) && (lVar4 = FUN_?(), lVar4 != 0)) {
-                *(float *)(lVar4 + 0x30) = fVar3;
+                *(float *)(lVar4 + 0x38) = fVar3;
                 lVar4 = FUN_?();
                 if ((lVar4 != 0) && (lVar4 = FUN_?(), lVar4 != 0)) {
-                  pDVar6 = *(Delegate **)(lVar4 + 0x20);
+                  pDVar6 = *(Delegate **)(lVar4 + 0x28);
                   this_04 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
                   uVar2 = 0;
                   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_04,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemFailedToLoad__,(MethodInfo *)0x0);
                   pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar6,(Delegate *)this_04,(MethodInfo *)0x0);
                   if (pDVar6 == (Delegate *)0x0) {
-                    *(undefined8 *)(lVar4 + 0x20) = 0;
+                    *(undefined8 *)(lVar4 + 0x28) = 0;
                   }
                   else {
                     pDVar7 = (Delegate *)0x0;
@@ -1737,7 +1737,7 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
                       (*pcVar1)();
                       return;
                     }
-                    *(Delegate **)(lVar4 + 0x20) = pDVar7;
+                    *(Delegate **)(lVar4 + 0x28) = pDVar7;
                     pDVar7 = (Delegate *)0x0;
                     if ((Action__Class *)pDVar6->klass == TypeInfo__System__Action) {
                       pDVar7 = pDVar6;
@@ -1774,8 +1774,8 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
                     value = (Object *)FUN_?(uRam_?,aiStackX_18);
                     if (this_05 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-                      uVar10 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x28);
-                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_05,0x28,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
+                      uVar10 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x29);
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_05,0x29,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
                       pPVar11 = (pMVar8->fields).peer;
                       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
                         FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);

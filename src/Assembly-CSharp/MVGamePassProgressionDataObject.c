@@ -274,7 +274,7 @@ GamePassProgressionDataObjectShared * Assembly-CSharp.dll::MVGamePassProgression
   pMVar4 = MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectShared_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectShared>_System__String_;
   value = (String *)0x0;
   if (pSVar3 != (String *)0x0) {
-    if (pSVar3->klass == pSRam0000000182dbdde0) {
+    if (pSVar3->klass == pSRam0000000182dc50c0) {
       value = pSVar3;
     }
     if (value == (String *)0x0) {
@@ -523,9 +523,9 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::MVGamePassProgression
         uVar5 = CONCAT71((int7)((ulonglong)uVar4 >> 8),2);
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
         uVar6 = (undefined7)((ulonglong)method_00 >> 8);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x16,value_01,(InsertionBehavior__Enum)uVar5,method_00);
-        uVar4 = CONCAT71(uVar6,0x12);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x12,(Object *)this_00,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x17,value_01,(InsertionBehavior__Enum)uVar5,method_00);
+        uVar4 = CONCAT71(uVar6,0x13);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x13,(Object *)this_00,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method);
         pPVar7 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);

@@ -4,6 +4,12 @@
 void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_Initialize(ItemInventoryDeleteTab *this,RawImage *image,InventoryItem *item,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
   bVar1 = iRam_? != 0;
   (this->fields).previewedItem = item;
   if (bVar1) {
@@ -20,14 +26,131 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_Initial
     } while (uVar4 != uVar5);
   }
   if ((((image != (RawImage *)0x0) && (this_00 = (this->fields).preview, this_00 != (RawImage *)0x0)) && (UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(this_00,(image->fields).m_Texture,(MethodInfo *)0x0), item != (InventoryItem *)0x0)) && (pTVar6 = (this->fields).itemName, pTVar6 != (Text *)0x0)) {
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    (*(pTVar6->klass->vtable).set_text.methodPtr)(pTVar6,(item->fields).name,(pTVar6->klass->vtable).set_text.method);
-    return;
+    pTVar7 = pTVar6->klass;
+    player = (MVPlayer *)(item->fields).name;
+    method_00 = (pTVar7->vtable).set_text.method;
+    (*(pTVar7->vtable).set_text.methodPtr)();
+    this_01 = (this->fields).deleteButton;
+    MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,method_00);
+    if ((this_02 != (MVLocalPlayer *)0x0) && (pLVar8 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_02,(MethodInfo *)0x0), pLVar8 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)) {
+      if ((pLVar8->fields)._size != 0) {
+        FUN_?(pLVar8,0x13);
+      }
+      if (this_01 != (Button *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          FUN_?(&bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        cVar9 = FUN_?(&(this_01->fields)._.m_Interactable);
+        if (cVar9 == '\0') {
+          return;
+        }
+        if ((this_01->fields)._.m_Interactable == 0) {
+          if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pEVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current((MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pEVar10 != (EventSystem *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if ((pEVar10->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+              if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              pEVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current((MethodInfo *)0x0);
+              if (pEVar10 != (EventSystem *)0x0) {
+                pGVar11 = (pEVar10->fields).m_CurrentSelected;
+                pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__UnityEngine__Object);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__UnityEngine__Object);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (pGVar12 != (GameObject *)0x0 || pGVar11 != (GameObject *)0x0) {
+                  if (pGVar12 == (GameObject *)0x0) {
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    if (pGVar11 == (GameObject *)0x0) goto DAT_?;
+                    bVar1 = (pGVar11->fields)._.m_CachedPtr == (void *)0x0;
+                  }
+                  else if (pGVar11 == (GameObject *)0x0) {
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    bVar1 = (pGVar12->fields)._.m_CachedPtr == (void *)0x0;
+                  }
+                  else {
+                    bVar1 = pGVar11 == pGVar12;
+                  }
+                  if (!bVar1) goto code_?;
+                }
+                if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                pEVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current((MethodInfo *)0x0);
+                if (pEVar10 != (EventSystem *)0x0) {
+                  UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_SetSelectedGameObject_1(pEVar10,(GameObject *)0x0,(MethodInfo *)0x0);
+                  goto code_?;
+                }
+              }
+DAT_?:
+              FUN_?();
+              pcVar13 = (code *)swi(3);
+              (*pcVar13)();
+              return;
+            }
+          }
+        }
+code_?:
+        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_OnSetProperty((Selectable *)this_01,(MethodInfo *)0x0);
+        return;
+      }
+    }
   }
   FUN_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -56,13 +179,13 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_OnConfi
     FUN_?(&TypeInfo__IEditModeUI);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__ItemInventoryDeleteTab____c___OnConfirmation_b__5_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    FUN_?(&MethodInfo__ItemInventoryDeleteTab____c___OnConfirmation_b__6_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__ItemInventoryDeleteTab____c__DisplayClass5_0___OnConfirmation_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
+    FUN_?(&MethodInfo__ItemInventoryDeleteTab____c__DisplayClass6_0___OnConfirmation_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
     LOCK();
     UNLOCK();
-    FUN_?(&TypeInfo__ItemInventoryDeleteTab____c__DisplayClass5_0);
+    FUN_?(&TypeInfo__ItemInventoryDeleteTab____c__DisplayClass6_0);
     LOCK();
     UNLOCK();
     FUN_?(&TypeInfo__ItemInventoryDeleteTab____c);
@@ -82,17 +205,17 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_OnConfi
     if (*(int *)&(TypeInfo__ItemInventoryDeleteTab____c->_1).field_0x1c == 0) {
       FUN_?(TypeInfo__ItemInventoryDeleteTab____c);
     }
-    this_00 = TypeInfo__ItemInventoryDeleteTab____c->static_fields->__9__5_0;
+    this_00 = TypeInfo__ItemInventoryDeleteTab____c->static_fields->__9__6_0;
     if (this_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if (*(int *)&(TypeInfo__ItemInventoryDeleteTab____c->_1).field_0x1c == 0) {
         FUN_?(TypeInfo__ItemInventoryDeleteTab____c);
       }
       object = TypeInfo__ItemInventoryDeleteTab____c->static_fields->__9;
       this_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor((ExecuteEvents_EventFunction_1_System_Object_ *)this_00,(Object *)object,MethodInfo__ItemInventoryDeleteTab____c___OnConfirmation_b__5_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-      TypeInfo__ItemInventoryDeleteTab____c->static_fields->__9__5_0 = this_00;
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor((ExecuteEvents_EventFunction_1_System_Object_ *)this_00,(Object *)object,MethodInfo__ItemInventoryDeleteTab____c___OnConfirmation_b__6_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      TypeInfo__ItemInventoryDeleteTab____c->static_fields->__9__6_0 = this_00;
       if (iRam_? != 0) {
-        uVar2 = (uint)((ulonglong)&TypeInfo__ItemInventoryDeleteTab____c->static_fields->__9__5_0 >> 0xc);
+        uVar2 = (uint)((ulonglong)&TypeInfo__ItemInventoryDeleteTab____c->static_fields->__9__6_0 >> 0xc);
         lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
         do {
           uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
@@ -163,7 +286,7 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_OnConfi
             }
             pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
             this_03 = (ExecuteEvents_EventFunction_1_System_Object_ *)FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor(this_03,object_00,MethodInfo__ItemInventoryDeleteTab____c__DisplayClass5_0___OnConfirmation_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor(this_03,object_00,MethodInfo__ItemInventoryDeleteTab____c__DisplayClass6_0___OnConfirmation_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
             if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
               FUN_?();
             }
@@ -196,14 +319,14 @@ void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab_OnRemov
     FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     LOCK();
     UNLOCK();
-    FUN_?(&MethodInfo__ItemInventoryDeleteTab___OnRemoveFromInventory_b__4_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
+    FUN_?(&MethodInfo__ItemInventoryDeleteTab___OnRemoveFromInventory_b__5_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__ItemInventoryDeleteTab___OnRemoveFromInventory_b__4_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::ExecuteEvents_EventFunction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__ItemInventoryDeleteTab___OnRemoveFromInventory_b__5_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
   if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
     FUN_?();
   }
@@ -276,9 +399,9 @@ code_?:
 }
 
 
-/* Void <OnRemoveFromInventory>b__4_0(IModalPopupCreator, BaseEventData) */
+/* Void <OnRemoveFromInventory>b__5_0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab__OnRemoveFromInventory_b__4_0(ItemInventoryDeleteTab *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ItemInventoryDeleteTab::ItemInventoryDeleteTab__OnRemoveFromInventory_b__5_0(ItemInventoryDeleteTab *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

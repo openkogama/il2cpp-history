@@ -400,8 +400,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::FirstTimeA
         pOVar1 = (Object *)FUN_?(uRam_?,&stack0x00000008);
         if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-          uVar16 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xbf,pOVar1,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar10 >> 8),2),method_00);
+          uVar16 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0xc1,pOVar1,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar10 >> 8),2),method_00);
           pPVar17 = (pMVar15->fields).peer;
           if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
             FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -966,7 +966,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052af3c, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

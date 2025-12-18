@@ -362,12 +362,24 @@ void Assembly-CSharp.dll::UseLever::UseLever_Initialize(UseLever *this,MethodInf
   pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar5 == (GameSessionData *)0x0) goto code_?;
   if ((pGVar5->fields).gameMode == 0) {
+code_?:
     pUVar6 = (this->fields).useLeverObject;
     if ((pUVar6 == (UseLeverObject *)0x0) || (pCVar7 = (pUVar6->fields).editCollider, pCVar7 == (Collider *)0x0)) goto code_?;
     UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar7,1,(MethodInfo *)0x0);
     pUVar6 = (this->fields).useLeverObject;
     if ((pUVar6 == (UseLeverObject *)0x0) || (pCVar7 = (pUVar6->fields).leverCollider, pCVar7 == (Collider *)0x0)) goto code_?;
     UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(pCVar7,0,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar5 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar5->fields).gameMode == 4) goto code_?;
   }
   pUVar6 = (this->fields).useLeverObject;
   if (((pUVar6 != (UseLeverObject *)0x0) && (pUVar8 = (pUVar6->fields).useInteractor, pUVar8 != (UseInteractor *)0x0)) && (this_00 = (pUVar8->fields).useInteractorVisuals, this_00 != (UseInteractorVisualization *)0x0)) {

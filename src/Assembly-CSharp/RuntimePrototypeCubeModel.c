@@ -4464,83 +4464,82 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_U
     if ((pGVar1->fields).gameMode == 1) {
       return;
     }
-    pHStack_2 = (this->fields).instances;
-    if (pHStack_2 != (HashSet_1_System_Int32_ *)0x0) {
-      if (iRam_? != 0) {
-        uVar3 = (uint)((ulonglong)&pHStack_2 >> 0xc);
-        uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-        do {
-          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-          LOCK();
-          bVar7 = uVar5 == *puVar6;
-          if (bVar7) {
-            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-          }
-          UNLOCK();
-        } while (!bVar7);
-      }
-      lStack_8 = (ulonglong)(uint)(pHStack_2->fields)._version << 0x20;
-      uStack_9 = 0;
-      lStack_10 = lStack_8;
-      uStack_11 = 0;
-      pHStack_12 = pHStack_2;
-code_?:
-      cVar13 = FUN_?(&pHStack_12,MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__);
-      if (cVar13 == '\0') {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      if ((pGVar1->fields).gameMode == 3) {
         return;
       }
-      key = (int32_t)uStack_11;
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if (pMVar14 == (MVGameControllerBase *)0x0) goto code_?;
-      pMVar15 = (pMVar14->fields).game;
-      if (pMVar15 != (MVNetworkGame *)0x0) {
-        if (((pMVar15->fields).worldNetwork != (WorldNetwork *)0x0) && (pMVar16 = (((pMVar15->fields).worldNetwork)->fields)._.worldObjectClientManager, pMVar16 != (MVWorldObjectClientManagerNetwork *)0x0)) {
-          if (cRam_? == '\0') {
-            FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__);
+      pHStack_2 = (this->fields).instances;
+      if (pHStack_2 != (HashSet_1_System_Int32_ *)0x0) {
+        if (iRam_? != 0) {
+          uVar3 = (uint)((ulonglong)&pHStack_2 >> 0xc);
+          uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+          do {
+            uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+            puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
             LOCK();
+            bVar7 = uVar5 == *puVar6;
+            if (bVar7) {
+              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
             UNLOCK();
-            cRam_? = '\x01';
-          }
-          pOStackX_10 = (Object *)0x0;
-          this_00 = (pMVar16->fields)._.worldObjects;
-          if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryGetValue((Dictionary_2_System_Int32_System_Object_ *)this_00,key,&pOStackX_10,MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__);
-            pOVar17 = pOStackX_10;
-            if (pOStackX_10 != (Object *)0x0) goto code_?;
-            goto code_?;
-          }
+          } while (!bVar7);
+        }
+        lStack_8 = (ulonglong)(uint)(pHStack_2->fields)._version << 0x20;
+        uStack_9 = 0;
+        lStack_10 = lStack_8;
+        uStack_11 = 0;
+        pHStack_12 = pHStack_2;
+code_?:
+        cVar13 = FUN_?(&pHStack_12,MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__);
+        if (cVar13 == '\0') {
+          return;
+        }
+        key = (int32_t)uStack_11;
+        pMVar14 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if (pMVar14 == (MVWorldObjectClientManager *)0x0) goto code_?;
+        if (cRam_? == '\0') {
+          FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pOStackX_10 = (Object *)0x0;
+        this_00 = (pMVar14->fields).worldObjects;
+        if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryGetValue((Dictionary_2_System_Int32_System_Object_ *)this_00,key,&pOStackX_10,MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__);
+          pOVar15 = pOStackX_10;
+          if (pOStackX_10 != (Object *)0x0) goto code_?;
           goto code_?;
         }
         goto code_?;
       }
-      goto code_?;
     }
   }
   FUN_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 code_?:
   if (*(int *)&pOStackX_10[3].monitor != 0) {
-    iVar19 = *(int *)&pOStackX_10[3].monitor;
-    pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar15 != (MVNetworkGame *)0x0) {
-      this_01 = (pMVar15->fields).playerContainer;
+    iVar17 = *(int *)&pOStackX_10[3].monitor;
+    pMVar18 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar18 != (MVNetworkGame *)0x0) {
+      this_01 = (pMVar18->fields).playerContainer;
       if (this_01 != (MVPlayerContainer *)0x0) {
-        pMVar20 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-        if (pMVar20 != (MVLocalPlayer *)0x0) {
-          if (iVar19 != (pMVar20->fields)._._ActorNr_k__BackingField) {
-            pOVar21 = pOVar17->klass;
+        pMVar19 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+        if (pMVar19 != (MVLocalPlayer *)0x0) {
+          if (iVar17 != (pMVar19->fields)._._ActorNr_k__BackingField) {
+            pOVar20 = pOVar15->klass;
             pHStack_2 = (HashSet_1_System_Int32_ *)0x0;
             lStack_8 = 0x3f8000003f800000;
-            (**(code **)&pOVar21[3]._1.naturalAligment)(pOVar17,&pHStack_2,pOVar21[3].vtable.Equals.methodPtr);
+            (**(code **)&pOVar20[3]._1.naturalAligment)(pOVar15,&pHStack_2,pOVar20[3].vtable.Equals.methodPtr);
           }
           goto code_?;
         }
@@ -4555,13 +4554,9 @@ code_?:
     FUN_?();
 code_?:
     FUN_?();
-code_?:
     FUN_?();
-code_?:
-    FUN_?();
-    FUN_?();
-    pcVar18 = (code *)swi(3);
-    (*pcVar18)();
+    pcVar16 = (code *)swi(3);
+    (*pcVar16)();
     return;
   }
   goto code_?;

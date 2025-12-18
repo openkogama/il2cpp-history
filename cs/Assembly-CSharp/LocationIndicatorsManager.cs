@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using MV.WorldObject.OwnershipData;
+using MV.Common;
 using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -27,6 +27,22 @@ public class LocationIndicatorsManager : MonoBehaviour
 	public static LocationIndicatorsManager Instance { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<int, PlanetPermissionType> __9__12_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal PlanetPermissionType _SetIndicatorsPermissions_b__12_0(int i);
+	}
+
 	[CompilerGenerated]
 	private sealed class _UpdateCoroutine_d__13 : IEnumerator<object>
 	{
@@ -58,8 +74,8 @@ public class LocationIndicatorsManager : MonoBehaviour
 	private void Awake();
 	private void Start();
 	private void JSON_Unstripper();
-	public void RecievedPlanetOwnershipsDataCallback(Dictionary<int, PlanetOwnershipsEntry> data);
-	private void SetIndicatorsOwnership();
+	private void ReceivedPlanetPermissionsDataCallback(Dictionary<int, List<int>> data);
+	private void SetIndicatorsPermissions();
 	[IteratorStateMachine(typeof(_UpdateCoroutine_d__13))]
 	private IEnumerator UpdateCoroutine();
 	private void CreateOrDestroyIndicators();

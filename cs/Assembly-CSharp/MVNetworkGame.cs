@@ -33,6 +33,8 @@ public class MVNetworkGame : IPhotonPeerListener
 	private Action<string> ReceivedAccessoryData;
 	[CompilerGenerated]
 	private Action<PlanetOwnershipsData> ReceivedPlanetOwnershipData;
+	[CompilerGenerated]
+	private Action<Dictionary<int, List<int>>> ReceivedPlanetPermissionsData;
 	private readonly Dictionary<Region, float> timeZoneMap;
 	private bool isPublished;
 	private MVConnState connState;
@@ -45,8 +47,6 @@ public class MVNetworkGame : IPhotonPeerListener
 	private float prevServiceCallTime;
 	[CompilerGenerated]
 	private LogicObjectManagerClient _LogicObjectManager_k__BackingField;
-	[CompilerGenerated]
-	private MVGameType _GameType_k__BackingField;
 	[CompilerGenerated]
 	private Region _Region_k__BackingField;
 	[CompilerGenerated]
@@ -124,7 +124,6 @@ public class MVNetworkGame : IPhotonPeerListener
 
 	// Properties
 	public LogicObjectManagerClient LogicObjectManager { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	public MVGameType GameType { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public Region Region { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public float TimeZone { get; }
 	public MVItemBusinessLogic ItemBusinessLogic { get; }
@@ -180,6 +179,10 @@ public class MVNetworkGame : IPhotonPeerListener
 		remove;
 	}
 	public event Action<PlanetOwnershipsData> ReceivedPlanetOwnershipData {
+		add;
+		remove;
+	}
+	public event Action<Dictionary<int, List<int>>> ReceivedPlanetPermissionsData {
 		add;
 		remove;
 	}
@@ -397,6 +400,7 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void CustomDevCommands();
 		public void GetAvatarBodies();
 		public void GetActorsPlanetOwnerships(int profileId);
+		public void GetAllPlanetPermissions(int profileID);
 		public void CreateSpawnRole(int avatarSpawnerWoId);
 		public void ClaimGamePointWelcomeReward();
 		public void AddObjectLink(ObjectLink link);
@@ -511,7 +515,7 @@ public class MVNetworkGame : IPhotonPeerListener
 		public void GetInventoryItemData(int itemID);
 		public void AdAction(AdType adType, AdActionType actionType, AdContext adContext = AdContext.None);
 		[CompilerGenerated]
-		private void _HandleUploadScreenShotData_b__26_0();
+		private void _HandleUploadScreenShotData_b__27_0();
 	}
 
 	private class OperationResponseHandling
@@ -617,7 +621,7 @@ public class MVNetworkGame : IPhotonPeerListener
 	public void AddCloneToWorldObjects(MVWorldObjectClient wo);
 	private Dictionary<byte, object> GetAttachWorldObjectToSeatData(VehicleSeatBase seatBase);
 	private void OnJoinResponse(Dictionary<byte, object> returnValues);
-	private MVLocalPlayer CreateLocalPlayer(int actorNr, int planetOwnershipTypeID, UserProfileData userProfileData);
+	private MVLocalPlayer CreateLocalPlayer(int actorNr, int planetOwnershipTypeID, List<int> planetPermissionIDs, UserProfileData userProfileData);
 	private void InitializeManagers();
 	private void OnRequestMaterialsResponse(Dictionary<object, object> materialList);
 	private void CreatePlayersFromUserList(Dictionary<object, object> userList);
@@ -628,6 +632,7 @@ public class MVNetworkGame : IPhotonPeerListener
 	private void OnTransferOwnershipResponse(Dictionary<byte, object> returnValues, int returnCode);
 	private void OnLockHierarchyResponse(Dictionary<byte, object> returnValues, int returnCode);
 	private void OnRequestWoUniquePrototypeFailed(Dictionary<byte, object> returnValues);
+	private void OnInventoryChange(Dictionary<object, object> inventory, long inventoryVersion);
 	private void OnLockHierarchyEvent(ExitGames.Client.Photon.EventData eventData);
 	private void OnUnregisterWorldObjectEvent(int worldObjectID);
 	private void OnUpdateWorldObjectEvent(ExitGames.Client.Photon.EventData photonEvent);

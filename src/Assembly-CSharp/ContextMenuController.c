@@ -973,8 +973,8 @@ code_?:
       pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
       if (pDVar6 == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
       pMVar8 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-      uVar9 = CONCAT71((int7)((ulonglong)pMVar8 >> 8),0x3a);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(pDVar6,0x3a,pOVar7,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),pMVar8);
+      uVar9 = CONCAT71((int7)((ulonglong)pMVar8 >> 8),0x3d);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(pDVar6,0x3d,pOVar7,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),pMVar8);
       pPVar10 = (pMVar1->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
         FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
@@ -1022,14 +1022,14 @@ code_?:
       pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
       if (pDVar6 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         pMVar8 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar9 = CONCAT71((int7)((ulonglong)pMVar8 >> 8),0x3a);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(pDVar6,0x3a,pOVar7,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),pMVar8);
+        uVar9 = CONCAT71((int7)((ulonglong)pMVar8 >> 8),0x3d);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(pDVar6,0x3d,pOVar7,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),pMVar8);
         pPVar10 = (pMVar1->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar10 != (PhotonPeer *)0x0) {
-          (*(pPVar10->klass->vtable).SendOperation.methodPtr)(pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x1f),pDVar6,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar10->klass->vtable).SendOperation.method);
+          (*(pPVar10->klass->vtable).SendOperation.methodPtr)(pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x20),pDVar6,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar10->klass->vtable).SendOperation.method);
           goto code_?;
         }
       }
@@ -1252,8 +1252,8 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_EnterPlay
             (*pcVar4)();
             return;
           }
-          lVar5 = extraout_RAX[0x20];
-          lVar6 = extraout_RAX[0x21];
+          lVar5 = extraout_RAX[0x21];
+          lVar6 = extraout_RAX[0x22];
           iVar7 = (this->fields).woID;
           MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)(ulonglong)bVar3,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
           if (extraout_RAX_00 == (longlong *)0x0) goto code_?;
@@ -1271,8 +1271,8 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_EnterPlay
             (*pcVar4)();
             return;
           }
-          extraout_RAX_00[0x20] = CONCAT44(iVar7,(int)lVar5);
-          *(int *)(extraout_RAX_00 + 0x21) = (int)lVar6;
+          extraout_RAX_00[0x21] = CONCAT44(iVar7,(int)lVar5);
+          *(int *)(extraout_RAX_00 + 0x22) = (int)lVar6;
           if (this_01 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
           bVar3 = (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment;
           if (((this_01->klass->_1).naturalAligment < bVar3) || ((MVAvatarSpawnRoleCreator__Class *)(this_01->klass->_1).typeHierarchy[(ulonglong)bVar3 - 1] != TypeInfo__MVAvatarSpawnRoleCreator)) {
@@ -1458,12 +1458,12 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
     (*pcVar6)();
     return;
   }
-  pDVar7 = *(Delegate **)(lVar3 + 0x10);
+  pDVar7 = *(Delegate **)(lVar3 + 0x18);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__ContextMenuController__OnFailedToAddItem__,(MethodInfo *)0x0);
   pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar7,(Delegate *)this_00,(MethodInfo *)0x0);
   if (pDVar7 == (Delegate *)0x0) {
-    *(undefined8 *)(lVar3 + 0x10) = 0;
+    *(undefined8 *)(lVar3 + 0x18) = 0;
   }
   else {
     pDVar8 = (Delegate *)0x0;
@@ -1476,7 +1476,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
       (*pcVar6)();
       return;
     }
-    *(Delegate **)(lVar3 + 0x10) = pDVar8;
+    *(Delegate **)(lVar3 + 0x18) = pDVar8;
     pDVar8 = (Delegate *)0x0;
     if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
       pDVar8 = pDVar7;
@@ -1489,7 +1489,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
     }
   }
   if (iRam_? != 0) {
-    uVar2 = (uint)(lVar3 + 0x10U >> 0xc);
+    uVar2 = (uint)(lVar3 + 0x18U >> 0xc);
     lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
     do {
       uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
@@ -1572,14 +1572,14 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ItemImage
       value = (Object *)FUN_?(uRam_?,aiStackX_20);
       if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
+        uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar6 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar6 != (PhotonPeer *)0x0) {
-          (*(pPVar6->klass->vtable).SendOperation.methodPtr)(pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x27),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar6->klass->vtable).SendOperation.method);
+          (*(pPVar6->klass->vtable).SendOperation.methodPtr)(pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x28),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar6->klass->vtable).SendOperation.method);
           return;
         }
       }
@@ -1685,14 +1685,14 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_OnClosedS
       value = (Object *)FUN_?(uRam_?,aiStackX_10);
       if (this_02 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar10 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_02,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),method_00);
+        uVar10 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_02,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),method_00);
         pPVar11 = (pMVar8->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar11 != (PhotonPeer *)0x0) {
-          (*(pPVar11->klass->vtable).SendOperation.methodPtr)(pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x27),this_02,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar11->klass->vtable).SendOperation.method);
+          (*(pPVar11->klass->vtable).SendOperation.methodPtr)(pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x28),this_02,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar11->klass->vtable).SendOperation.method);
           return;
         }
       }
@@ -2036,14 +2036,14 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ResetLogi
       value = (Object *)FUN_?(uRam_?,aiStackX_18);
       if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_->klass->rgctx_data[0x22].method;
-        uVar10 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar5 >> 8),2),method_00);
+        uVar10 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert(this_01,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar5 >> 8),2),method_00);
         pPVar11 = (pMVar8->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
           FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
         }
         if (pPVar11 != (PhotonPeer *)0x0) {
-          (*(pPVar11->klass->vtable).SendOperation.methodPtr)(pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x18),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar11->klass->vtable).SendOperation.method);
+          (*(pPVar11->klass->vtable).SendOperation.methodPtr)(pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x19),this_01,TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,(pPVar11->klass->vtable).SendOperation.method);
           return;
         }
       }
@@ -4746,7 +4746,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGloba
             }
             else {
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182dbdde0) {
+              if ((pCVar11->_0).image == pIRam0000000182dc50c0) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {
@@ -4757,7 +4757,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGloba
               }
               this_08[5].klass = pCVar12;
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182dbdde0) {
+              if ((pCVar11->_0).image == pIRam0000000182dc50c0) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {
@@ -7252,7 +7252,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSound
             }
             else {
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182dbdde0) {
+              if ((pCVar11->_0).image == pIRam0000000182dc50c0) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {
@@ -7263,7 +7263,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSound
               }
               this_08[5].klass = pCVar12;
               pCVar12 = pCVar8;
-              if ((pCVar11->_0).image == pIRam0000000182dbdde0) {
+              if ((pCVar11->_0).image == pIRam0000000182dc50c0) {
                 pCVar12 = pCVar11;
               }
               if (pCVar12 == (Component__Class *)0x0) {
