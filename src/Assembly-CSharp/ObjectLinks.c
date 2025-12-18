@@ -53,7 +53,17 @@ bool Assembly-CSharp.dll::ObjectLinks::ObjectLinks_AddObjectLink
       pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar2 != (GameSessionData *)0x0) {
         if ((pGVar2->fields).gameMode != 0) {
-          return 1;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+          if ((pGVar2->fields).gameMode != 4) {
+            return 1;
+          }
         }
         if (cRam_? == '\0') {
           FUN_?(&TypeInfo__PrefabPool);
@@ -105,6 +115,7 @@ bool Assembly-CSharp.dll::ObjectLinks::ObjectLinks_AddObjectLink
       }
     }
   }
+code_?:
   FUN_?();
   pcVar6 = (code *)swi(3);
   bVar7 = (*pcVar6)();
@@ -302,7 +313,17 @@ bool Assembly-CSharp.dll::ObjectLinks::ObjectLinks_RemoveObjectLink
       pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar2 != (GameSessionData *)0x0) {
         if ((pGVar2->fields).gameMode != 0) {
-          return 1;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+          if ((pGVar2->fields).gameMode != 4) {
+            return 1;
+          }
         }
         pDVar3 = (this->fields).objectLinkObjects;
         if ((pDVar3 != (Dictionary_2_System_Int32_ObjectLinkObjectScript_ *)0x0) &&
@@ -342,6 +363,7 @@ bool Assembly-CSharp.dll::ObjectLinks::ObjectLinks_RemoveObjectLink
       }
     }
   }
+code_?:
   FUN_?();
   pcVar4 = (code *)swi(3);
   bVar5 = (*pcVar4)();
@@ -396,7 +418,17 @@ void Assembly-CSharp.dll::ObjectLinks::ObjectLinks_Update(ObjectLinks *this,Meth
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     if ((pGVar1->fields).gameMode != 0) {
-      return;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        return;
+      }
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (pMVar2 != (MainCameraManager *)0x0) {
@@ -520,6 +552,7 @@ code_?:
       }
     }
   }
+code_?:
   FUN_?();
   pcVar11 = (code *)swi(3);
   (*pcVar11)();

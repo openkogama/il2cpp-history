@@ -3362,7 +3362,7 @@ void Assembly-CSharp.dll::BundleView::BundleView_OnPurchaseBundleConfirmation
                 (this_03,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xbf);
+      aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xc1);
       key = (Object *)FUN_?(uRam_?,aiStackX_10);
       aiStackX_10[0] = iVar15;
       value = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -3682,7 +3682,7 @@ void Assembly-CSharp.dll::BundleView::BundleView_ProductPurchaseResponseHandler
               UNLOCK();
             } while (!bVar2);
           }
-          auStack_16[0] = 0x6c;
+          auStack_16[0] = 0x6f;
           pOVar1 = (Object *)FUN_?(uRam_?,auStack_16);
           if (purchaseResponseData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
             pSVar17 = (String *)
@@ -3696,7 +3696,7 @@ void Assembly-CSharp.dll::BundleView::BundleView_ProductPurchaseResponseHandler
             }
             value = pSVar12;
             if (pSVar17 != (String *)0x0) {
-              if (pSVar17->klass == pSRam0000000182dbdde0) {
+              if (pSVar17->klass == pSRam0000000182dc50c0) {
                 value = pSVar17;
               }
               if (value == (String *)0x0) {

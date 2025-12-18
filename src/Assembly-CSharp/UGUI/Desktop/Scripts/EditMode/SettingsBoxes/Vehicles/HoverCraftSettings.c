@@ -1127,7 +1127,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                                               ThrustersColorSerializer::
                                                               ThrustersColorSerializer_Deserialize
                                                                         ((ThrustersColor *)
-                                                                         &fStack_11,
+                                                                         auStack_11,
                                                                          (this->fields)._.
                                                                          bluePrintData,
                                                                          (MethodInfo *)0x0);
@@ -1152,14 +1152,15 @@ code_?:
                                                                   0x0) {
                                                       if ((int)pTVar13->max_length == 0)
                                                       goto code_?;
-                                                      fVar7 = pTVar13->vector[0].color.b;
                                                       if (pIVar12 != (Image *)0x0) {
-                                                        fStack_11 = pTVar13->vector[0].color.r;
-                                                        fStack_15 = pTVar13->vector[0].color.g;
-                                                        fStack_16 = fVar7;
-                                                        fStack_17 = pTVar14->vector[0].alpha;
+                                                        auStack_11._0_4_ = pTVar13->vector[0].color.r
+                                                        ;
+                                                        auStack_11._4_4_ = pTVar13->vector[0].color.g
+                                                        ;
+                                                        fStack_15 = pTVar13->vector[0].color.b;
+                                                        fStack_16 = pTVar14->vector[0].alpha;
                                                         (*(pIVar12->klass->vtable).set_color.
-                                                          methodPtr)(pIVar12,fVar7,
+                                                          methodPtr)(pIVar12,auStack_11,
                                                                      (pIVar12->klass->vtable).
                                                                      set_color.method);
                                                         pIVar12 = (this->fields).thrustersColorImage2
@@ -1172,28 +1173,28 @@ code_?:
                                                   ThrustersColorColorKey__Array *)0x0) {
                                                     if ((uint)pTVar13->max_length < 2)
                                                     goto code_?;
-                                                    fVar7 = pTVar13->vector[1].color.b;
                                                     if (pIVar12 != (Image *)0x0) {
-                                                      fStack_11 = pTVar13->vector[1].color.r;
-                                                      fStack_15 = pTVar13->vector[1].color.g;
-                                                      fStack_16 = fVar7;
-                                                      fStack_17 = pTVar14->vector[1].alpha;
+                                                      auStack_11._0_4_ = pTVar13->vector[1].color.r;
+                                                      auStack_11._4_4_ = pTVar13->vector[1].color.g;
+                                                      fStack_15 = pTVar13->vector[1].color.b;
+                                                      fStack_16 = pTVar14->vector[1].alpha;
                                                       (*(pIVar12->klass->vtable).set_color.methodPtr)
-                                                                (pIVar12,fVar7,
+                                                                (pIVar12,auStack_11,
                                                                  (pIVar12->klass->vtable).set_color.
                                                                  method);
                                                       pIVar12 = (this->fields).thrustersColorImage3;
                                                       if (((uint)pTVar14->max_length < 3) ||
                                                          ((uint)pTVar13->max_length < 3))
                                                       goto code_?;
-                                                      fVar7 = pTVar13->vector[2].color.b;
                                                       if (pIVar12 != (Image *)0x0) {
-                                                        fStack_11 = pTVar13->vector[2].color.r;
-                                                        fStack_15 = pTVar13->vector[2].color.g;
-                                                        fStack_16 = fVar7;
-                                                        fStack_17 = pTVar14->vector[2].alpha;
+                                                        auStack_11._0_4_ = pTVar13->vector[2].color.r
+                                                        ;
+                                                        auStack_11._4_4_ = pTVar13->vector[2].color.g
+                                                        ;
+                                                        fStack_15 = pTVar13->vector[2].color.b;
+                                                        fStack_16 = pTVar14->vector[2].alpha;
                                                         (*(pIVar12->klass->vtable).set_color.
-                                                          methodPtr)(pIVar12,fVar7,
+                                                          methodPtr)(pIVar12,auStack_11,
                                                                      (pIVar12->klass->vtable).
                                                                      set_color.method);
                                                         pIVar12 = (this->fields).thrustersColorImage4
@@ -1201,14 +1202,15 @@ code_?:
                                                         if (((uint)pTVar14->max_length < 4) ||
                                                            ((uint)pTVar13->max_length < 4))
                                                         goto code_?;
-                                                        fVar7 = pTVar13->vector[3].color.b;
                                                         if (pIVar12 != (Image *)0x0) {
-                                                          fStack_11 = pTVar13->vector[3].color.r;
-                                                          fStack_15 = pTVar13->vector[3].color.g;
-                                                          fStack_16 = fVar7;
-                                                          fStack_17 = pTVar14->vector[3].alpha;
+                                                          auStack_11._0_4_ =
+                                                               pTVar13->vector[3].color.r;
+                                                          auStack_11._4_4_ =
+                                                               pTVar13->vector[3].color.g;
+                                                          fStack_15 = pTVar13->vector[3].color.b;
+                                                          fStack_16 = pTVar14->vector[3].alpha;
                                                           (*(pIVar12->klass->vtable).set_color.
-                                                            methodPtr)(pIVar12,fVar7,
+                                                            methodPtr)(pIVar12,auStack_11,
                                                                        (pIVar12->klass->vtable).
                                                                        set_color.method);
                                                           return;
@@ -1453,7 +1455,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                             worldObjectID = (this->fields)._.vehicleWoID;
                             str1 = (String *)0x0;
                             if (pSVar34 != (String *)0x0) {
-                              if (pSVar34->klass == pSRam0000000182dbdde0) {
+                              if (pSVar34->klass == pSRam0000000182dc50c0) {
                                 str1 = pSVar34;
                               }
                               if (str1 == (String *)0x0) goto code_?;
@@ -2244,7 +2246,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
+                while (ppMVar16 = ppMVar15 + 0x3052af3c,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

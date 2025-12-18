@@ -1113,7 +1113,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_AttachCubes(MVBody *this,MethodInfo *me
                              ), bVar18 != 0) {
       boneName = obj;
       if (pSStack_14 != (String *)0x0) {
-        if (pSStack_14->klass == pSRam0000000182dbdde0) {
+        if (pSStack_14->klass == pSRam0000000182dc50c0) {
           boneName = pSStack_14;
         }
         if (boneName == (String *)0x0) {
@@ -2592,7 +2592,7 @@ Assembly-CSharp.dll::MVBody::MVBody_GetModelConstaint
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                               );
           if (pOVar1 != (Object *)0x0) {
-            if (pOVar1->klass == pORam0000000182dbdde0) {
+            if (pOVar1->klass == pORam0000000182dc50c0) {
               key = pOVar1;
             }
             if (key == (Object *)0x0) {
@@ -3530,7 +3530,7 @@ code_?:
                       );
   pOVar6 = (Object__Class *)0x0;
   if (pOVar5 != (Object__Class *)0x0) {
-    if ((pOVar5->_0).image == pIRam0000000182dbdde0) {
+    if ((pOVar5->_0).image == pIRam0000000182dc50c0) {
       pOVar6 = pOVar5;
     }
     if (pOVar6 == (Object__Class *)0x0) {
@@ -5193,7 +5193,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_SyncOffset
       uVar4 = CONCAT71((int7)((ulonglong)method >> 8),1);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x7e,pOVar3,(InsertionBehavior__Enum)uVar4,
+                (this_00,0x81,pOVar3,(InsertionBehavior__Enum)uVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       afStackX_8[0] = (float)slot;
@@ -5201,17 +5201,17 @@ void Assembly-CSharp.dll::MVBody::MVBody_SyncOffset
       uVar5 = CONCAT71((int7)((ulonglong)uVar4 >> 8),1);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x71,pOVar3,(InsertionBehavior__Enum)uVar5,
+                (this_00,0x74,pOVar3,(InsertionBehavior__Enum)uVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       afStackX_8[0] = offset;
       pOVar3 = (Object *)FUN_?(uRam_?,afStackX_8);
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x72);
+      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x75);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x72,pOVar3,
+                (this_00,0x75,pOVar3,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),1),method_00);
       pPVar6 = (pMVar1->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -5219,7 +5219,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_SyncOffset
       }
       if (pPVar6 != (PhotonPeer *)0x0) {
         (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                  (pPVar6,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x33),this_00,
+                  (pPVar6,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x34),this_00,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar6->klass->vtable).SendOperation.method);
         return;
@@ -5281,7 +5281,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_SyncScale
       uVar4 = CONCAT71((int7)((ulonglong)method >> 8),1);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x7e,pOVar3,(InsertionBehavior__Enum)uVar4,
+                (this_00,0x81,pOVar3,(InsertionBehavior__Enum)uVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       afStackX_8[0] = (float)slot;
@@ -5289,17 +5289,17 @@ void Assembly-CSharp.dll::MVBody::MVBody_SyncScale
       uVar5 = CONCAT71((int7)((ulonglong)uVar4 >> 8),1);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x71,pOVar3,(InsertionBehavior__Enum)uVar5,
+                (this_00,0x74,pOVar3,(InsertionBehavior__Enum)uVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       afStackX_8[0] = scale;
       pOVar3 = (Object *)FUN_?(uRam_?,afStackX_8);
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x22);
+      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x23);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x22,pOVar3,
+                (this_00,0x23,pOVar3,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),1),method_00);
       pPVar6 = (pMVar1->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {

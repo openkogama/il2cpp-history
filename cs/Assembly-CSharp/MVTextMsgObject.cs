@@ -40,13 +40,14 @@ public class MVTextMsgObject : ObjectPrefab, StreamedTextMeshProFont.IReceiver
 
 	// Properties
 	public GameObject VisualObject { get; }
+	public GameObject TextMessageParentObject { get; }
 	public TextMeshProUGUI TextMesh { get; }
 	public RoundedRectangle Background { get; }
 	public StreamedTextMeshProFontList FontList { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _FullFadeInAnimation_d__33 : IEnumerator<object>
+	private sealed class _FullFadeInAnimation_d__35 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -61,7 +62,7 @@ public class MVTextMsgObject : ObjectPrefab, StreamedTextMeshProFont.IReceiver
 
 		// Constructors
 		[DebuggerHidden]
-		public _FullFadeInAnimation_d__33(int __1__state);
+		public _FullFadeInAnimation_d__35(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -72,7 +73,7 @@ public class MVTextMsgObject : ObjectPrefab, StreamedTextMeshProFont.IReceiver
 	}
 
 	[CompilerGenerated]
-	private sealed class _SwitchFadeAnimation_d__34 : IEnumerator<object>
+	private sealed class _SwitchFadeAnimation_d__36 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -90,7 +91,7 @@ public class MVTextMsgObject : ObjectPrefab, StreamedTextMeshProFont.IReceiver
 
 		// Constructors
 		[DebuggerHidden]
-		public _SwitchFadeAnimation_d__34(int __1__state);
+		public _SwitchFadeAnimation_d__36(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -101,7 +102,7 @@ public class MVTextMsgObject : ObjectPrefab, StreamedTextMeshProFont.IReceiver
 	}
 
 	[CompilerGenerated]
-	private sealed class _TimeoutRoutine_d__31 : IEnumerator<object>
+	private sealed class _TimeoutRoutine_d__33 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -114,7 +115,7 @@ public class MVTextMsgObject : ObjectPrefab, StreamedTextMeshProFont.IReceiver
 
 		// Constructors
 		[DebuggerHidden]
-		public _TimeoutRoutine_d__31(int __1__state);
+		public _TimeoutRoutine_d__33(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -136,12 +137,12 @@ public class MVTextMsgObject : ObjectPrefab, StreamedTextMeshProFont.IReceiver
 	public void SetFontIndex(int fontIndex);
 	public void SetFontStyle(bool isSet, FontStyles style);
 	public void SetFontHasOutline(bool hasOutline);
-	[IteratorStateMachine(typeof(_TimeoutRoutine_d__31))]
+	[IteratorStateMachine(typeof(_TimeoutRoutine_d__33))]
 	private IEnumerator TimeoutRoutine();
 	public void OnFontReceived(TMP_FontAsset fontAsset);
-	[IteratorStateMachine(typeof(_FullFadeInAnimation_d__33))]
+	[IteratorStateMachine(typeof(_FullFadeInAnimation_d__35))]
 	private IEnumerator FullFadeInAnimation(TMP_FontAsset fontAsset = null);
-	[IteratorStateMachine(typeof(_SwitchFadeAnimation_d__34))]
+	[IteratorStateMachine(typeof(_SwitchFadeAnimation_d__36))]
 	private IEnumerator SwitchFadeAnimation(TMP_FontAsset fontAsset);
 	private void SetFont(TMP_FontAsset fontAsset);
 }

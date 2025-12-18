@@ -86,6 +86,7 @@ Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_GetPrese
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 == (GameSessionData *)0x0) goto code_?;
   if ((pGVar1->fields).gameMode == 0) {
+code_?:
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -109,17 +110,7 @@ Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_GetPrese
       return UpdateCondition__Enum_EDITOR_PLAYMODE;
     }
   }
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVGameControllerBase);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      return UpdateCondition__Enum_EDITOR;
-    }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -127,15 +118,42 @@ Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_GetPrese
       cRam_? = '\x01';
     }
     pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar1 != (GameSessionData *)0x0) {
-      return ((pGVar1->fields).gameMode == 1) + UpdateCondition__Enum_ALLWAYS;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode == 4) goto code_?;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 == (GameSessionData *)0x0) {
+code_?:
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    UVar5 = (*pcVar4)();
+    return UVar5;
+  }
+  if ((pGVar1->fields).gameMode != 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode != 4) {
+      MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar6 == MVGameMode__Enum_Play) {
+        return UpdateCondition__Enum_INGAME;
+      }
+      MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      return (MVar6 == MVGameMode__Enum_SpacePlay) + UpdateCondition__Enum_ALLWAYS;
     }
   }
-code_?:
-  FUN_?();
-  pcVar4 = (code *)swi(3);
-  UVar5 = (*pcVar4)();
-  return UVar5;
+  return UpdateCondition__Enum_EDITOR;
 }
 
 

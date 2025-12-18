@@ -126,10 +126,10 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_CreateSpawnRole
     if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x16,value,
+                (this_00,0x17,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
       pPVar5 = (pMVar3->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -793,10 +793,10 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_OnLevelChangedLocal
     if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xa9);
+      uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xac);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0xa9,pOVar4,
+                (this_00,0xac,pOVar4,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
       pPVar6 = (pMVar3->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -805,7 +805,7 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_OnLevelChangedLocal
       if (pPVar6 != (PhotonPeer *)0x0) {
         SVar7 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable;
         (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                  (pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x38),this_00,SVar7,
+                  (pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x39),this_00,SVar7,
                    (pPVar6->klass->vtable).SendOperation.method);
         if ((this->fields).oldLevel != 0) {
           this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
@@ -1047,10 +1047,10 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole
       if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                     ->klass->rgctx_data[0x22].method;
-        uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+        uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0xbf,value,
+                  (this_00,0xc1,value,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar6 = (pMVar5->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1457,11 +1457,12 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_UnSuspendCurrentSpawnRole
 }
 
 
-/* MVLocalPlayer(Int32, Int32, String, Int32, UserProfileData) */
+/* MVLocalPlayer(Int32, Int32, String, Int32, List`1[System.Int32], UserProfileData) */
 
 void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer__ctor
                (MVLocalPlayer *this,int32_t actorNumber,int32_t profileID,String *regionCode,
-               int32_t planetOwnershipTypeID,UserProfileData *userProfileData,MethodInfo *method)
+               int32_t planetOwnershipTypeID,List_1_System_Int32_ *planetPermissionIDs,
+               UserProfileData *userProfileData,MethodInfo *method)
 
 {
   pSVar1 = regionCode;
@@ -1564,8 +1565,9 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer__ctor
     } while (!bVar2);
   }
   pWVar11 = (WorldObjectUseRequirementTracker *)
-           FUN_?(TypeInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker
-                        );
+            FUN_?(
+                         TypeInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker
+                         );
   if (cRam_? == '\0') {
     FUN_?(&
                   MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__Add_UseRequirementType__float_
@@ -1682,17 +1684,32 @@ void Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer__ctor
         UNLOCK();
       } while (!bVar2);
     }
-    bVar2 = cRam_? == '\0';
+    iVar17 = iRam_?;
     (this->fields).planetOwnershipTypeID = planetOwnershipTypeID;
-    if (bVar2) {
+    (this->fields).planetPermissionIDs = planetPermissionIDs;
+    if (iVar17 != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields).planetPermissionIDs >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar17 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((pMVar17 != (MVGameControllerBase *)0x0) &&
-       (this_00 = (pMVar17->fields).game, this_00 != (MVNetworkGame *)0x0)) {
+    pMVar18 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar18 != (MVGameControllerBase *)0x0) &&
+       (this_00 = (pMVar18->fields).game, this_00 != (MVNetworkGame *)0x0)) {
       iVar7 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
       (this->fields).joinTime = iVar7;
       return;
@@ -1946,19 +1963,30 @@ Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      return (PlanetOwnershipType__Enum)(byte)(this->fields).planetOwnershipTypeID;
+    if ((pGVar1->fields).gameMode != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        uVar2 = func_?(&TypeInfo__System__Exception);
+        this_00 = (Exception *)func_?(uVar2);
+        message = (String *)func_?(&StringLiteral_There_are_currently_no_way_to_ac);
+        mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+        uVar2 = func_?(&MethodInfo__MVLocalPlayer__get_PlanetOwnershipTypeID__);
+        FUN_?(this_00,uVar2);
+        pcVar3 = (code *)swi(3);
+        PVar4 = (*pcVar3)();
+        return PVar4;
+      }
     }
-    uVar2 = func_?(&TypeInfo__System__Exception);
-    this_00 = (Exception *)func_?(uVar2);
-    message = (String *)func_?(&StringLiteral_There_are_currently_no_way_to_ac);
-    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
-    uVar2 = func_?(&MethodInfo__MVLocalPlayer__get_PlanetOwnershipTypeID__);
-    FUN_?(this_00,uVar2);
-    pcVar3 = (code *)swi(3);
-    PVar4 = (*pcVar3)();
-    return PVar4;
+    return (PlanetOwnershipType__Enum)(byte)(this->fields).planetOwnershipTypeID;
   }
+code_?:
   FUN_?();
   pcVar3 = (code *)swi(3);
   PVar4 = (*pcVar3)();
@@ -1980,23 +2008,130 @@ int32_t Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_PlanetOwnershipTyp
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      return (this->fields).planetOwnershipTypeID;
+    if ((pGVar1->fields).gameMode != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        uVar2 = func_?(&TypeInfo__System__Exception);
+        this_00 = (Exception *)func_?(uVar2);
+        message = (String *)func_?(&StringLiteral_There_are_currently_no_way_to_ac);
+        mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+        uVar2 = func_?(&MethodInfo__MVLocalPlayer__get_PlanetOwnershipTypeID__);
+        FUN_?(this_00,uVar2);
+        pcVar3 = (code *)swi(3);
+        iVar4 = (*pcVar3)();
+        return iVar4;
+      }
     }
-    uVar2 = func_?(&TypeInfo__System__Exception);
-    this_00 = (Exception *)func_?(uVar2);
-    message = (String *)func_?(&StringLiteral_There_are_currently_no_way_to_ac);
-    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
-    uVar2 = func_?(&MethodInfo__MVLocalPlayer__get_PlanetOwnershipTypeID__);
-    FUN_?(this_00,uVar2);
-    pcVar3 = (code *)swi(3);
-    iVar4 = (*pcVar3)();
-    return iVar4;
+    return (this->fields).planetOwnershipTypeID;
   }
+code_?:
   FUN_?();
   pcVar3 = (code *)swi(3);
   iVar4 = (*pcVar3)();
   return iVar4;
+}
+
+
+/* List`1[MV.Common.PlanetPermissionType] get_PlanetPermissions() */
+
+List_1_MV_Common_PlanetPermissionType_ *
+Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions
+          (MVLocalPlayer *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__Select<int,_MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<int>__System__Func<int,_MV::Common::PlanetPermissionType>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__List<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__ToList<MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<int,_MV::Common::PlanetPermissionType>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVLocalPlayer____c___get_PlanetPermissions_b__35_0_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVLocalPlayer____c);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  source = (this->fields).planetPermissionIDs;
+  if (*(int *)&(TypeInfo__MVLocalPlayer____c->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  this_00 = TypeInfo__MVLocalPlayer____c->static_fields->__9__35_0;
+  if (this_00 == (Func_2_Int32_MV_Common_PlanetPermissionType_ *)0x0) {
+    if (*(int *)&(TypeInfo__MVLocalPlayer____c->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    object = TypeInfo__MVLocalPlayer____c->static_fields->__9;
+    this_00 = (Func_2_Int32_MV_Common_PlanetPermissionType_ *)
+              FUN_?(TypeInfo__System__Func<int,_MV::Common::PlanetPermissionType>);
+    mscorlib.dll::System::Predicate`1[UInt32Enum]::Predicate_1_UInt32Enum___ctor
+              ((Predicate_1_UInt32Enum_ *)this_00,(Object *)object,
+               MethodInfo__MVLocalPlayer____c___get_PlanetPermissions_b__35_0_int_,(MethodInfo *)0x0
+              );
+    TypeInfo__MVLocalPlayer____c->static_fields->__9__35_0 = this_00;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&TypeInfo__MVLocalPlayer____c->static_fields->__9__35_0 >> 0xc);
+      puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar3 = *puVar2;
+        LOCK();
+        uVar4 = *puVar2;
+        if (uVar3 == uVar4) {
+          *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar3 != uVar4);
+    }
+  }
+  collection = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5
+                         ((IEnumerable_1_UnityEngine_UIElements_StyleSelectorPart_ *)source,
+                          (Func_2_UnityEngine_UIElements_StyleSelectorPart_Object_ *)this_00,
+                          System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__Select<int,_MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<int>__System__Func<int,_MV::Common::PlanetPermissionType>_
+                         );
+  pMVar5 = 
+  System__Collections__Generic__List<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__ToList<MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_
+  ;
+  if ((
+      System__Collections__Generic__List<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__ToList<MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(
+                 System__Collections__Generic__List<MV::Common::PlanetPermissionType>_MethodInfo__System__Linq__Enumerable__ToList<MV::Common::PlanetPermissionType>_System__Collections__Generic__IEnumerable<MV::Common::PlanetPermissionType>_
+                 );
+  }
+  if (collection == (IEnumerable_1_System_Object_ *)0x0) {
+    s = (String *)func_?(&StringLiteral_source);
+    pEVar6 = System.Core.dll::System::Linq::Error::Error_1_ArgumentNull(s,(MethodInfo *)0x0);
+    FUN_?(pEVar6,pMVar5);
+    pcVar7 = (code *)swi(3);
+    pLVar8 = (List_1_MV_Common_PlanetPermissionType_ *)(*pcVar7)();
+    return pLVar8;
+  }
+  pvVar9 = (pMVar5->field7_0x38).rgctx_data[1].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar9 + 0x135) & 1) == 0) {
+    pvVar9 = (void *)FUN_?(pvVar9);
+  }
+  this_01 = (List_1_System_ByteEnum_ *)FUN_?(pvVar9);
+  mscorlib.dll::System::Collections::Generic::List`1[System::ByteEnum]::
+  List_1_System_ByteEnum___ctor_1
+            (this_01,(IEnumerable_1_System_ByteEnum_ *)collection,
+             (pMVar5->field7_0x38).rgctx_data[2].method);
+  return (List_1_MV_Common_PlanetPermissionType_ *)this_01;
 }
 
 
@@ -2007,16 +2142,6 @@ float Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_RespawnDuration
 
 {
   return _UNK_?;
-}
-
-
-/* Single get_RespawnTime() */
-
-float Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_RespawnTime
-                (MVLocalPlayer *this,MethodInfo *method)
-
-{
-  return (this->fields).respawnTime;
 }
 
 

@@ -130,7 +130,7 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::EditorWorldObjectCreation_C
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
             (*(pPVar16->klass->vtable).SendOperation.methodPtr)
-                      (pPVar16,CONCAT71((int7)((ulonglong)original >> 8),0x21),pDVar15,
+                      (pPVar16,CONCAT71((int7)((ulonglong)original >> 8),0x22),pDVar15,
                        TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable
                       );
             return;
@@ -169,8 +169,17 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::
     UNLOCK();
     cRam_? = '\x01';
   }
-  if (e != (CloneWorldObjectTreeResponseEventArgs *)0x0) {
-    if ((e->fields).Success == 0) {
+  if (e == (CloneWorldObjectTreeResponseEventArgs *)0x0) goto code_?;
+  if ((e->fields).Success == 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode != 0) {
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__MVGameControllerBase);
         LOCK();
@@ -179,75 +188,73 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::
       }
       pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar1 == (GameSessionData *)0x0) goto code_?;
-      if ((pGVar1->fields).gameMode == 0) {
-        pEVar2 = (this->fields).esm;
-        auStackX_18[0] = 0x2f;
-        value = (Object *)FUN_?(TypeInfo__EditorEvent,auStackX_18);
-        if (pEVar2 == (EditorStateMachine *)0x0) goto code_?;
-        FSMEntity::FSMEntity_set_Event((FSMEntity *)pEVar2,value,(MethodInfo *)0x0);
-      }
+      if ((pGVar1->fields).gameMode != 4) goto code_?;
     }
-    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar3 != (MVWorldObjectClientManager *)0x0) {
-      pEVar4 = (pMVar3->fields).CloneWorldObjectTreeResponse;
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)
-                FUN_?(TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>)
+    pEVar2 = (this->fields).esm;
+    auStackX_18[0] = 0x2f;
+    value = (Object *)FUN_?(TypeInfo__EditorEvent,auStackX_18);
+    if (pEVar2 == (EditorStateMachine *)0x0) goto code_?;
+    FSMEntity::FSMEntity_set_Event((FSMEntity *)pEVar2,value,(MethodInfo *)0x0);
+  }
+code_?:
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (pMVar3 != (MVWorldObjectClientManager *)0x0) {
+    pEVar4 = (pMVar3->fields).CloneWorldObjectTreeResponse;
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)
+              FUN_?(TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__EditorWorldObjectCreation__CloneWorldObjectTreeResponseHandler_System__Object__CloneWorldObjectTreeResponseEventArgs_
+               ,(MethodInfo *)0x0);
+    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pEVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+    pEVar6 = TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>;
+    if (pDVar5 == (Delegate *)0x0) {
+      (pMVar3->fields).CloneWorldObjectTreeResponse =
+           (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)0x0;
+    }
+    else {
+      pEVar4 = (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)
+                FUN_?(pDVar5,
+                              TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>)
       ;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__EditorWorldObjectCreation__CloneWorldObjectTreeResponseHandler_System__Object__CloneWorldObjectTreeResponseEventArgs_
-                 ,(MethodInfo *)0x0);
-      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pEVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-      pEVar6 = TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>;
-      if (pDVar5 == (Delegate *)0x0) {
-        (pMVar3->fields).CloneWorldObjectTreeResponse =
-             (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)0x0;
-      }
-      else {
-        pEVar4 = (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)
-                  FUN_?(pDVar5,
-                                TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>
-                               );
-        if (pEVar4 == (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)0x0) {
-          FUN_?(pDVar5,pEVar6);
-          pcVar7 = (code *)swi(3);
-          (*pcVar7)();
-          return;
-        }
-        (pMVar3->fields).CloneWorldObjectTreeResponse = pEVar4;
-        pEVar6 = TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>;
-        lVar8 = FUN_?(pDVar5,
-                               TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>
-                              );
-        if (lVar8 == 0) {
-          FUN_?(pDVar5,pEVar6);
-          pcVar7 = (code *)swi(3);
-          (*pcVar7)();
-          return;
-        }
-      }
-      if (iRam_? != 0) {
-        uVar9 = (uint)((ulonglong)&(pMVar3->fields).CloneWorldObjectTreeResponse >> 0xc);
-        puVar10 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
-        do {
-          uVar11 = *puVar10;
-          LOCK();
-          uVar12 = *puVar10;
-          if (uVar11 == uVar12) {
-            *puVar10 = uVar11 | 1L << (uVar9 & 0x3f);
-          }
-          UNLOCK();
-        } while (uVar11 != uVar12);
-      }
-      pEVar2 = (this->fields).esm;
-      if ((pEVar2 != (EditorStateMachine *)0x0) &&
-         (this_00 = (pEVar2->fields).selectionController, this_00 != (SelectionController *)0x0)) {
-        SelectionController::SelectionController_SelectWO
-                  (this_00,(e->fields).RootId,0,1,(MethodInfo *)0x0);
+      if (pEVar4 == (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)0x0) {
+        FUN_?(pDVar5,pEVar6);
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
         return;
       }
+      (pMVar3->fields).CloneWorldObjectTreeResponse = pEVar4;
+      pEVar6 = TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>;
+      lVar8 = FUN_?(pDVar5,
+                             TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>);
+      if (lVar8 == 0) {
+        FUN_?(pDVar5,pEVar6);
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar9 = (uint)((ulonglong)&(pMVar3->fields).CloneWorldObjectTreeResponse >> 0xc);
+      puVar10 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar11 = *puVar10;
+        LOCK();
+        uVar12 = *puVar10;
+        if (uVar11 == uVar12) {
+          *puVar10 = uVar11 | 1L << (uVar9 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar11 != uVar12);
+    }
+    pEVar2 = (this->fields).esm;
+    if ((pEVar2 != (EditorStateMachine *)0x0) &&
+       (this_00 = (pEVar2->fields).selectionController, this_00 != (SelectionController *)0x0)) {
+      SelectionController::SelectionController_SelectWO
+                (this_00,(e->fields).RootId,0,1,(MethodInfo *)0x0);
+      return;
     }
   }
 code_?:

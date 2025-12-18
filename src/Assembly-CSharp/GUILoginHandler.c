@@ -1330,6 +1330,682 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_EnterPlayOnClick
 }
 
 
+/* Void EnterSpacesEditOnClick() */
+
+void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_EnterSpacesEditOnClick
+               (GUILoginHandler *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,4,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GameSessionData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_System::Object>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_System::Object>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__MVGameMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Text__StringBuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_GameSessionData_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gsm);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Base);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_DesktopBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Desktop___Starting_scene_Desktop);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0_____1_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_referrer);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_serverIP);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_language);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_WebPlay_as_touch___Starting_scen);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gameMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_en_US);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pDVar1 = (this->fields).gameSessionData;
+  auStackX_10[0] = 4;
+  pOVar2 = (Object *)FUN_?(TypeInfo__MV__Common__MVGameMode,auStackX_10);
+  if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+    uVar3 = CONCAT71((int7)((ulonglong)in_R9 >> 8),1);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_gameMode,
+               pOVar2,(InsertionBehavior__Enum)uVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    pDVar1 = (this->fields).gameSessionData;
+    if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+      uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),1);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_language,(Object *)StringLiteral_en_US,
+                 (InsertionBehavior__Enum)uVar3,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      pDVar1 = (this->fields).gameSessionData;
+      if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+        uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),1);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_referrer,(Object *)StringLiteral_gsm,
+                   (InsertionBehavior__Enum)uVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+        pDVar1 = (this->fields).gameSessionData;
+        pIVar4 = (this->fields).serverIp;
+        if ((pIVar4 != (InputField *)0x0) &&
+           (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0)) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                     (Object *)StringLiteral_serverIP,(Object *)(pIVar4->fields).m_Text,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),1),
+                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+          pDVar1 = (this->fields).gameSessionData;
+          this_00 = (GameSessionData *)FUN_?(TypeInfo__GameSessionData);
+          GameSessionData::GameSessionData__ctor_1(this_00,pDVar1,(MethodInfo *)0x0);
+          pGStackX_20 = this_00;
+          this_01 = (StringBuilder *)FUN_?(TypeInfo__System__Text__StringBuilder);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__System__Char);
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__System__Math);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          (this_01->fields).m_MaxCapacity = 0x7fffffff;
+          pCVar5 = (Char__Array *)FUN_?(TypeInfo__System__Char,0x100);
+          (this_01->fields).m_ChunkChars = pCVar5;
+          func_?(&this_01->fields);
+          pSStack_6 = this_01;
+          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                    (this_01,StringLiteral_GameSessionData_u000A,(MethodInfo *)0x0);
+          pDVar1 = (this->fields).gameSessionData;
+          if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+            if (iRam_? != 0) {
+              uVar7 = (uint)((ulonglong)&PStack_8 >> 0xc);
+              puVar9 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+              do {
+                uVar10 = *puVar9;
+                LOCK();
+                uVar11 = *puVar9;
+                if (uVar10 == uVar11) {
+                  *puVar9 = uVar10 | 1L << (uVar7 & 0x3f);
+                }
+                UNLOCK();
+              } while (uVar10 != uVar11);
+            }
+            PStack_8._arg1 = (Object *)(ulonglong)(uint)(pDVar1->fields)._version;
+            uStack_12 = 2;
+            PStack_8._arg2 = (Object *)0x0;
+            PStack_8._args = (Object__Array *)0x0;
+            auStack_13._8_8_ = PStack_8._arg1;
+            pOStack_14 = (Object *)0x0;
+            pOStack_15 = (Object *)0x0;
+            uStack_16._0_4_ = 2;
+            uStack_16._4_4_ = 0;
+            uStack_17 = 0;
+            puStack_18 = auStack_13;
+            PStack_8._arg0 = (Object *)pDVar1;
+            auStack_13._0_8_ = pDVar1;
+            while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                           Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                           Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                                     ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
+                                       *)auStack_13,
+                                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__MoveNext__
+                                     ), pSVar20 = StringLiteral__0_____1_u000A, bVar19 != 0) {
+              PStack_21._arg0 = (Object *)0x0;
+              PStack_21._arg1 = (Object *)0x0;
+              PStack_21._arg2 = (Object *)0x0;
+              PStack_21._args = (Object__Array *)0x0;
+              mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1
+                        (&PStack_21,pOStack_14,pOStack_15,(MethodInfo *)0x0);
+              PStack_8._arg0 = PStack_21._arg0;
+              PStack_8._arg1 = PStack_21._arg1;
+              PStack_8._arg2 = PStack_21._arg2;
+              PStack_8._args = PStack_21._args;
+              mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormatHelper
+                        (this_01,(IFormatProvider *)0x0,pSVar20,&PStack_8,(MethodInfo *)0x0);
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)this_01,(MethodInfo *)0x0);
+            FUN_?(this_00);
+            PlayerPrefsManager::PlayerPrefsManager_Initialize(this_00,(MethodInfo *)0x0);
+            if (this_00 != (GameSessionData *)0x0) {
+              AwayMonitor::AwayMonitor_Initialize((this_00->fields).gameMode,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&
+                              UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (this != (GUILoginHandler *)0x0) {
+                pvVar22 = (this->fields)._._._._.m_CachedPtr;
+                if (pvVar22 == (void *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                  ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+                  pcVar23 = (code *)swi(3);
+                  (*pcVar23)();
+                  return;
+                }
+                pcVar23 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar23 = (code *)FUN_?(&UNK_?), pcVar23 == (code *)0x0)) {
+                  uVar3 = func_?(&UNK_?);
+                  FUN_?(uVar3,0);
+                  pcVar23 = (code *)swi(3);
+                  (*pcVar23)();
+                  return;
+                }
+                pcRam_? = pcVar23;
+                pvVar22 = (void *)(*pcRam_?)(pvVar22);
+                pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                         Unmarshal_UnmarshalUnityObject
+                                   (pvVar22,
+                                    UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                                   );
+                if (pOVar2 != (Object *)0x0) {
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                                 );
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pOVar24 = pOVar2[1].klass;
+                  if (pOVar24 == (Object__Class *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException(pOVar2,(MethodInfo *)0x0);
+                    pcVar23 = (code *)swi(3);
+                    (*pcVar23)();
+                    return;
+                  }
+                  pcVar23 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar23 = (code *)FUN_?(&UNK_?), pcVar23 == (code *)0x0)) {
+                    uVar3 = func_?(&UNK_?);
+                    FUN_?(uVar3,0);
+                    pcVar23 = (code *)swi(3);
+                    (*pcVar23)();
+                    return;
+                  }
+                  pcRam_? = pcVar23;
+                  (*pcRam_?)(pOVar24);
+                  pTVar25 = (this->fields).touchToggle;
+                  if (pTVar25 != (Toggle *)0x0) {
+                    if ((pTVar25->fields).m_IsOn == 0) {
+                      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                        FUN_?();
+                      }
+                      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                                ((Object *)StringLiteral_Desktop___Starting_scene_Desktop,
+                                 (MethodInfo *)0x0);
+                      pSVar20 = StringLiteral_DesktopBase;
+                      if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).
+                                   field_0x1c == 0) {
+                        FUN_?();
+                        pSVar20 = StringLiteral_DesktopBase;
+                      }
+                    }
+                    else {
+                      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                        FUN_?();
+                      }
+                      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                                ((Object *)StringLiteral_WebPlay_as_touch___Starting_scen,
+                                 (MethodInfo *)0x0);
+                      if (cRam_? == '\0') {
+                        FUN_?(&TypeInfo__MVGameControllerBase);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField
+                           = 1;
+                      pSVar20 = StringLiteral_Base;
+                      if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).
+                                   field_0x1c == 0) {
+                        FUN_?();
+                        pSVar20 = StringLiteral_Base;
+                      }
+                    }
+                    UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
+                    SceneManager_LoadScene(pSVar20,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  FUN_?();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
+  return;
+}
+
+
+/* Void EnterSpacesPlayOnClick() */
+
+void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_EnterSpacesPlayOnClick
+               (GUILoginHandler *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,3,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GameSessionData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_System::Object>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_System::Object>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__MVGameMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Text__StringBuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_GameSessionData_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gsm);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Base);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_DesktopBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Desktop___Starting_scene_Desktop);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0_____1_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_referrer);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_serverIP);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_language);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_WebPlay_as_touch___Starting_scen);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gameMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_en_US);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pDVar1 = (this->fields).gameSessionData;
+  auStackX_10[0] = 3;
+  pOVar2 = (Object *)FUN_?(TypeInfo__MV__Common__MVGameMode,auStackX_10);
+  if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+    uVar3 = CONCAT71((int7)((ulonglong)in_R9 >> 8),1);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_gameMode,
+               pOVar2,(InsertionBehavior__Enum)uVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    pDVar1 = (this->fields).gameSessionData;
+    if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+      uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),1);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_language,(Object *)StringLiteral_en_US,
+                 (InsertionBehavior__Enum)uVar3,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      pDVar1 = (this->fields).gameSessionData;
+      if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+        uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),1);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_referrer,(Object *)StringLiteral_gsm,
+                   (InsertionBehavior__Enum)uVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+        pDVar1 = (this->fields).gameSessionData;
+        pIVar4 = (this->fields).serverIp;
+        if ((pIVar4 != (InputField *)0x0) &&
+           (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0)) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                     (Object *)StringLiteral_serverIP,(Object *)(pIVar4->fields).m_Text,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),1),
+                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+          pDVar1 = (this->fields).gameSessionData;
+          this_00 = (GameSessionData *)FUN_?(TypeInfo__GameSessionData);
+          GameSessionData::GameSessionData__ctor_1(this_00,pDVar1,(MethodInfo *)0x0);
+          pGStackX_20 = this_00;
+          this_01 = (StringBuilder *)FUN_?(TypeInfo__System__Text__StringBuilder);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__System__Char);
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__System__Math);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          (this_01->fields).m_MaxCapacity = 0x7fffffff;
+          pCVar5 = (Char__Array *)FUN_?(TypeInfo__System__Char,0x100);
+          (this_01->fields).m_ChunkChars = pCVar5;
+          func_?(&this_01->fields);
+          pSStack_6 = this_01;
+          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                    (this_01,StringLiteral_GameSessionData_u000A,(MethodInfo *)0x0);
+          pDVar1 = (this->fields).gameSessionData;
+          if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+            if (iRam_? != 0) {
+              uVar7 = (uint)((ulonglong)&PStack_8 >> 0xc);
+              puVar9 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+              do {
+                uVar10 = *puVar9;
+                LOCK();
+                uVar11 = *puVar9;
+                if (uVar10 == uVar11) {
+                  *puVar9 = uVar10 | 1L << (uVar7 & 0x3f);
+                }
+                UNLOCK();
+              } while (uVar10 != uVar11);
+            }
+            PStack_8._arg1 = (Object *)(ulonglong)(uint)(pDVar1->fields)._version;
+            uStack_12 = 2;
+            PStack_8._arg2 = (Object *)0x0;
+            PStack_8._args = (Object__Array *)0x0;
+            auStack_13._8_8_ = PStack_8._arg1;
+            pOStack_14 = (Object *)0x0;
+            pOStack_15 = (Object *)0x0;
+            uStack_16._0_4_ = 2;
+            uStack_16._4_4_ = 0;
+            uStack_17 = 0;
+            puStack_18 = auStack_13;
+            PStack_8._arg0 = (Object *)pDVar1;
+            auStack_13._0_8_ = pDVar1;
+            while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                           Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                           Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                                     ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
+                                       *)auStack_13,
+                                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__MoveNext__
+                                     ), pSVar20 = StringLiteral__0_____1_u000A, bVar19 != 0) {
+              PStack_21._arg0 = (Object *)0x0;
+              PStack_21._arg1 = (Object *)0x0;
+              PStack_21._arg2 = (Object *)0x0;
+              PStack_21._args = (Object__Array *)0x0;
+              mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1
+                        (&PStack_21,pOStack_14,pOStack_15,(MethodInfo *)0x0);
+              PStack_8._arg0 = PStack_21._arg0;
+              PStack_8._arg1 = PStack_21._arg1;
+              PStack_8._arg2 = PStack_21._arg2;
+              PStack_8._args = PStack_21._args;
+              mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormatHelper
+                        (this_01,(IFormatProvider *)0x0,pSVar20,&PStack_8,(MethodInfo *)0x0);
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)this_01,(MethodInfo *)0x0);
+            FUN_?(this_00);
+            PlayerPrefsManager::PlayerPrefsManager_Initialize(this_00,(MethodInfo *)0x0);
+            if (this_00 != (GameSessionData *)0x0) {
+              AwayMonitor::AwayMonitor_Initialize((this_00->fields).gameMode,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&
+                              UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (this != (GUILoginHandler *)0x0) {
+                pvVar22 = (this->fields)._._._._.m_CachedPtr;
+                if (pvVar22 == (void *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                  ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+                  pcVar23 = (code *)swi(3);
+                  (*pcVar23)();
+                  return;
+                }
+                pcVar23 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar23 = (code *)FUN_?(&UNK_?), pcVar23 == (code *)0x0)) {
+                  uVar3 = func_?(&UNK_?);
+                  FUN_?(uVar3,0);
+                  pcVar23 = (code *)swi(3);
+                  (*pcVar23)();
+                  return;
+                }
+                pcRam_? = pcVar23;
+                pvVar22 = (void *)(*pcRam_?)(pvVar22);
+                pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                         Unmarshal_UnmarshalUnityObject
+                                   (pvVar22,
+                                    UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                                   );
+                if (pOVar2 != (Object *)0x0) {
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                                 );
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pOVar24 = pOVar2[1].klass;
+                  if (pOVar24 == (Object__Class *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException(pOVar2,(MethodInfo *)0x0);
+                    pcVar23 = (code *)swi(3);
+                    (*pcVar23)();
+                    return;
+                  }
+                  pcVar23 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar23 = (code *)FUN_?(&UNK_?), pcVar23 == (code *)0x0)) {
+                    uVar3 = func_?(&UNK_?);
+                    FUN_?(uVar3,0);
+                    pcVar23 = (code *)swi(3);
+                    (*pcVar23)();
+                    return;
+                  }
+                  pcRam_? = pcVar23;
+                  (*pcRam_?)(pOVar24);
+                  pTVar25 = (this->fields).touchToggle;
+                  if (pTVar25 != (Toggle *)0x0) {
+                    if ((pTVar25->fields).m_IsOn == 0) {
+                      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                        FUN_?();
+                      }
+                      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                                ((Object *)StringLiteral_Desktop___Starting_scene_Desktop,
+                                 (MethodInfo *)0x0);
+                      pSVar20 = StringLiteral_DesktopBase;
+                      if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).
+                                   field_0x1c == 0) {
+                        FUN_?();
+                        pSVar20 = StringLiteral_DesktopBase;
+                      }
+                    }
+                    else {
+                      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                        FUN_?();
+                      }
+                      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                                ((Object *)StringLiteral_WebPlay_as_touch___Starting_scen,
+                                 (MethodInfo *)0x0);
+                      if (cRam_? == '\0') {
+                        FUN_?(&TypeInfo__MVGameControllerBase);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField
+                           = 1;
+                      pSVar20 = StringLiteral_Base;
+                      if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).
+                                   field_0x1c == 0) {
+                        FUN_?();
+                        pSVar20 = StringLiteral_Base;
+                      }
+                    }
+                    UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
+                    SceneManager_LoadScene(pSVar20,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  FUN_?();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
+  return;
+}
+
+
 /* String GetIPFromDevServerTarget(GUILoginHandler+DevServerTarget) */
 
 String * Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_GetIPFromDevServerTarget
@@ -3020,7 +3696,7 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_Update
                          );
       pSVar3 = (String *)0x0;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dbdde0) {
+        if (pSVar8->klass == pSRam0000000182dc50c0) {
           pSVar3 = pSVar8;
         }
         if (pSVar3 == (String *)0x0) {
@@ -3266,7 +3942,7 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_UpdatePrefValuesIfCha
                          );
       pSVar3 = (String *)0x0;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dbdde0) {
+        if (pSVar8->klass == pSRam0000000182dc50c0) {
           pSVar3 = pSVar8;
         }
         if (pSVar3 == (String *)0x0) {

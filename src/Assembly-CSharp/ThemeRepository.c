@@ -552,7 +552,7 @@ String * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentThemeI
   pSVar3 = pSVar4;
   if (pSVar4 != (String *)0x0) {
     pSVar3 = (String *)0x0;
-    if (pSVar4->klass == pSRam0000000182dbdde0) {
+    if (pSVar4->klass == pSRam0000000182dc50c0) {
       pSVar3 = pSVar4;
     }
     if (pSVar3 == (String *)0x0) {

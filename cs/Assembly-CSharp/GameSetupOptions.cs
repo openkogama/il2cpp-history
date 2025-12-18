@@ -26,6 +26,7 @@ public class GameSetupOptions : MonoBehaviour
 
 	// Methods
 	private void Start();
+	private void UpdateToggleInteractability();
 	public void ToggleRevive();
 }
 

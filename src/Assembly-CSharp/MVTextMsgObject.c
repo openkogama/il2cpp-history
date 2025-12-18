@@ -171,12 +171,12 @@ Assembly-CSharp.dll::MVTextMsgObject::MVTextMsgObject_FullFadeInAnimation
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVTextMsgObject___FullFadeInAnimation_d__33);
+    FUN_?(&TypeInfo__MVTextMsgObject___FullFadeInAnimation_d__35);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___FullFadeInAnimation_d__33);
+  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___FullFadeInAnimation_d__35);
   *(undefined4 *)&pIVar1[1].klass = 0;
   pIVar1[2].monitor = (MonitorData *)this;
   if (iRam_? != 0) {
@@ -266,7 +266,7 @@ void Assembly-CSharp.dll::MVTextMsgObject::MVTextMsgObject_OnFontReceived
       }
       else {
         if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__MVTextMsgObject___SwitchFadeAnimation_d__34);
+          FUN_?(&TypeInfo__MVTextMsgObject___SwitchFadeAnimation_d__36);
           LOCK();
           UNLOCK();
           cRam_? = '\x01';
@@ -986,12 +986,12 @@ void Assembly-CSharp.dll::MVTextMsgObject::MVTextMsgObject_Start
 {
   if ((this->fields).isFontStreamed == 0) {
     if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__MVTextMsgObject___TimeoutRoutine_d__31);
+      FUN_?(&TypeInfo__MVTextMsgObject___TimeoutRoutine_d__33);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___TimeoutRoutine_d__31);
+    pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___TimeoutRoutine_d__33);
     bVar2 = iRam_? != 0;
     *(undefined4 *)&pIVar1[1].klass = 0;
     pIVar1[2].klass = (IEnumerator__Class *)this;
@@ -1107,12 +1107,12 @@ Assembly-CSharp.dll::MVTextMsgObject::MVTextMsgObject_SwitchFadeAnimation
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVTextMsgObject___SwitchFadeAnimation_d__34);
+    FUN_?(&TypeInfo__MVTextMsgObject___SwitchFadeAnimation_d__36);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___SwitchFadeAnimation_d__34);
+  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___SwitchFadeAnimation_d__36);
   *(undefined4 *)&pIVar1[1].klass = 0;
   pIVar1[2].klass = (IEnumerator__Class *)this;
   if (iRam_? != 0) {
@@ -1157,12 +1157,12 @@ Assembly-CSharp.dll::MVTextMsgObject::MVTextMsgObject_TimeoutRoutine
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVTextMsgObject___TimeoutRoutine_d__31);
+    FUN_?(&TypeInfo__MVTextMsgObject___TimeoutRoutine_d__33);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___TimeoutRoutine_d__31);
+  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__MVTextMsgObject___TimeoutRoutine_d__33);
   bVar2 = iRam_? != 0;
   *(undefined4 *)&pIVar1[1].klass = 0;
   pIVar1[2].klass = (IEnumerator__Class *)this;
@@ -1359,7 +1359,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
+                while (ppMVar16 = ppMVar15 + 0x3052af3c,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
@@ -1463,5 +1463,101 @@ code_?:
   pcVar25 = (code *)swi(3);
   (*pcVar25)();
   return;
+}
+
+
+/* GameObject get_TextMessageParentObject() */
+
+GameObject *
+Assembly-CSharp.dll::MVTextMsgObject::MVTextMsgObject_get_TextMessageParentObject
+          (MVTextMsgObject *this,MethodInfo *method)
+
+{
+  obj = (this->fields).canvas;
+  if (obj == (Canvas *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pGVar2 = (GameObject *)(*pcVar1)();
+    return pGVar2;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (obj == (Canvas *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pGVar2 = (GameObject *)(*pcVar1)();
+    return pGVar2;
+  }
+  pvVar3 = (obj->fields)._._._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    pGVar2 = (GameObject *)(*pcVar1)();
+    return pGVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    pGVar2 = (GameObject *)(*pcVar1)();
+    return pGVar2;
+  }
+  pcRam_? = pcVar1;
+  plVar5 = (longlong *)(*pcRam_?)(pvVar3);
+  pMVar6 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                 );
+  }
+  if (plVar5 != (longlong *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    System__Runtime__InteropServices__GCHandle__MethodInfo__Unity__Collections__LowLevel__Unsafe__UnsafeUtility__As<void*,_System::Runtime::InteropServices::GCHandle>_System__IntPtr__
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (((ulonglong)plVar5 & 1) == 0) {
+      lVar7 = *plVar5;
+    }
+    else {
+      lVar7 = FUN_?(plVar5);
+    }
+    pvVar3 = ((pMVar6->field7_0x38).rgctx_data)->rgctxDataDummy;
+    if ((*(byte *)((longlong)pvVar3 + 0x135) & 1) == 0) {
+      pvVar3 = (void *)FUN_?(pvVar3);
+    }
+    if (lVar7 != 0) {
+      pGVar2 = (GameObject *)FUN_?(lVar7,pvVar3,in_R8,in_R9,unaff_RDI);
+      if (pGVar2 != (GameObject *)0x0) {
+        return pGVar2;
+      }
+      FUN_?(lVar7,pvVar3);
+      pcVar1 = (code *)swi(3);
+      pGVar2 = (GameObject *)(*pcVar1)();
+      return pGVar2;
+    }
+  }
+  return (GameObject *)0x0;
 }
 

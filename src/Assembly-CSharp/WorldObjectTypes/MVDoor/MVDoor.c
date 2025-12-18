@@ -364,18 +364,18 @@ Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_CreateDefaultDoorC
   }
   else {
     pSVar2 = (String *)0x0;
-    if (pSVar1->klass == pSRam0000000182dbdde0) {
+    if (pSVar1->klass == pSRam0000000182dc50c0) {
       pSVar2 = pSVar1;
     }
     if (pSVar2 == (String *)0x0) {
-      FUN_?(pSVar1,pSRam0000000182dbdde0);
+      FUN_?(pSVar1,pSRam0000000182dc50c0);
       pcVar3 = (code *)swi(3);
       pMVar4 = (MVDoor_DoorConfiguration *)(*pcVar3)();
       return pMVar4;
     }
     __return_storage_ptr__->name = pSVar2;
     pSVar2 = (String *)0x0;
-    if (pSVar1->klass == pSRam0000000182dbdde0) {
+    if (pSVar1->klass == pSRam0000000182dc50c0) {
       pSVar2 = pSVar1;
     }
     if (pSVar2 == (String *)0x0) {
@@ -863,195 +863,310 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_Initialize
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
-      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
-     (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 != (GameEventManager *)0x0)) {
-    this_00 = (pGVar3->fields).AvatarCommandsPlayMode;
-    this_02 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_02,(Object *)this,MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CollisionCheck__
-               ,(MethodInfo *)0x0);
-    if (this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
-      GameEventManager+AvatarCommandsPlayModeManager::
-      GameEventManager_AvatarCommandsPlayModeManager_add_OnEnterPlaymode
-                (this_00,(Action *)this_02,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
+  if (((pMVar1 == (MVGameControllerBase *)0x0) ||
+      (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+     (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 == (GameEventManager *)0x0))
+  goto code_?;
+  this_00 = (pGVar3->fields).AvatarCommandsPlayMode;
+  this_02 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_02,(Object *)this,MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CollisionCheck__,
+             (MethodInfo *)0x0);
+  if (this_00 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0) goto code_?;
+  GameEventManager+AvatarCommandsPlayModeManager::
+  GameEventManager_AvatarCommandsPlayModeManager_add_OnEnterPlaymode
+            (this_00,(Action *)this_02,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+      (IEditModeUI *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+        (IEditModeUI *)0x0) goto code_?;
+    pDVar4 = (Delegate *)FUN_?();
+    b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
+    FUN_?(b,this);
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar4,b,(MethodInfo *)0x0);
+    pAVar5 = TypeInfo__System__Action<EditModeChangeArgs>;
+    if ((pDVar4 != (Delegate *)0x0) &&
+       (lVar6 = FUN_?(pDVar4,TypeInfo__System__Action<EditModeChangeArgs>), lVar6 == 0))
+    {
+      FUN_?(pDVar4,pAVar5);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar8->fields).gameMode == 0) {
+code_?:
+    pMVar9 = (this->fields).doorObject;
+    if (((pMVar9 == (MVDoorObject *)0x0) ||
+        (pCVar10 = (pMVar9->fields).useCollider, pCVar10 == (Collider *)0x0)) ||
+       (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pCVar10,(MethodInfo *)0x0), pGVar11 == (GameObject *)0x0))
+    goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar11,0,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar8->fields).gameMode == 4) goto code_?;
+  }
+  this_03 = (Action_2_Int32Enum_Object_ *)
+            FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+            (this_03,(Object *)this,
+             MethodInfo__WorldObjectTypes__MVDoor__MVDoor__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+             ,(MethodInfo *)0x0);
+  pIVar12 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                      ((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                       (Action_2_LogicInputState_LogicObjectManager_ *)this_03,(MethodInfo *)0x0);
+  bVar13 = iRam_? != 0;
+  (this->fields)._InputSignalReceiver_k__BackingField = pIVar12;
+  if (bVar13) {
+    uVar14 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
+    uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
+    do {
+      uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
+      puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
+      LOCK();
+      bVar13 = uVar16 == *puVar17;
+      if (bVar13) {
+        *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
       }
-      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
-          (IEditModeUI *)0x0) {
+      UNLOCK();
+    } while (!bVar13);
+  }
+  pMVar18 = MVDoor_ReadWorldObjectData(&MStack_19,this,(MethodInfo *)0x0);
+  bVar13 = iRam_? != 0;
+  uVar20 = *(undefined4 *)((longlong)&pMVar18->name + 4);
+  bVar21 = pMVar18->beginOpen;
+  bVar22 = pMVar18->playersCanOpen;
+  bVar23 = pMVar18->reverseOpenDirection;
+  uVar24 = pMVar18->field_0xb;
+  fVar25 = pMVar18->openValue;
+  fVar26 = pMVar18->closeValue;
+  fVar27 = pMVar18->toggleTime;
+  iVar28 = pMVar18->docType;
+  iVar29 = pMVar18->doorType;
+  *(undefined4 *)&(this->fields).doorConfig.name = *(undefined4 *)&pMVar18->name;
+  *(undefined4 *)((longlong)&(this->fields).doorConfig.name + 4) = uVar20;
+  (this->fields).doorConfig.beginOpen = bVar21;
+  (this->fields).doorConfig.playersCanOpen = bVar22;
+  (this->fields).doorConfig.reverseOpenDirection = bVar23;
+  (this->fields).doorConfig.field_0xb = uVar24;
+  (this->fields).doorConfig.openValue = fVar25;
+  (this->fields).doorConfig.closeValue = fVar26;
+  (this->fields).doorConfig.toggleTime = fVar27;
+  (this->fields).doorConfig.docType = iVar28;
+  (this->fields).doorConfig.doorType = iVar29;
+  if (bVar13) {
+    uVar14 = (uint)((ulonglong)&(this->fields).doorConfig >> 0xc);
+    uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
+    do {
+      uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
+      puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
+      LOCK();
+      bVar13 = uVar16 == *puVar17;
+      if (bVar13) {
+        *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar13);
+  }
+  (this->fields).storedReverseOpenDirection = (this->fields).doorConfig.reverseOpenDirection;
+  (this->fields).storedBeginOpen = (this->fields).doorConfig.beginOpen;
+  bVar21 = (this->fields).doorConfig.beginOpen;
+  (this->fields).localIsOpen = bVar21;
+  if (bVar21 != 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__WorldObjectTypes__MVDoor__MVDoor___BeginOpenCoroutine_d__62);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    routine = (IEnumerator *)
+              FUN_?(TypeInfo__WorldObjectTypes__MVDoor__MVDoor___BeginOpenCoroutine_d__62);
+    bVar13 = iRam_? != 0;
+    *(undefined4 *)&routine[1].klass = 0;
+    routine[2].klass = (IEnumerator__Class *)this;
+    if (bVar13) {
+      uVar14 = (uint)((ulonglong)(routine + 2) >> 0xc);
+      uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
+      do {
+        uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
+        puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
+        LOCK();
+        bVar13 = uVar16 == *puVar17;
+        if (bVar13) {
+          *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar13);
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__Coroutines);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    this_01 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
+    if (this_01 == (MonoBehaviour *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_2
+              (this_01,routine,(MethodInfo *)0x0);
+  }
+  if ((this->fields).doorConfig.doorType != 2) {
+    return;
+  }
+  pGVar11 = (this->fields)._._.inputConnectorObject;
+  if ((pGVar11 != (GameObject *)0x0) &&
+     (pTVar30 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar11,(MethodInfo *)0x0), pTVar30 != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar31 = (pTVar30->fields)._._.m_CachedPtr;
+    if (pvVar31 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar30,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar32 = func_?(&UNK_?);
+      FUN_?(uVar32,0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcRam_? = pcVar7;
+    (*pcRam_?)(pvVar31);
+    pGVar11 = (this->fields)._._.inputConnectorObject;
+    if (pGVar11 != (GameObject *)0x0) {
+      pTVar30 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar11,(MethodInfo *)0x0);
+      uStack_33 = 0;
+      uStack_34 = _UNK_?;
+      uStack_35 = 0;
+      uStack_36 = 0;
+      pcVar7 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+        uVar32 = func_?(&UNK_?);
+        FUN_?(uVar32,0);
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
+        return;
+      }
+      pcRam_? = pcVar7;
+      (*pcRam_?)(&uStack_33);
+      uVar32 = uStack_36;
+      if (pTVar30 != (Transform *)0x0) {
+        MStack_19.name._0_4_ = (undefined4)uStack_35;
+        MStack_19.name._4_4_ = uStack_35._4_4_;
+        MStack_19.beginOpen = (bool)uStack_36;
+        MStack_19.playersCanOpen = uStack_36._1_1_;
+        MStack_19.reverseOpenDirection = uStack_36._2_1_;
+        MStack_19._11_1_ = uStack_36._3_1_;
+        MStack_19.openValue = uStack_36._4_4_;
+        uStack_36 = uVar32;
         if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__MVGameControllerBase);
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
           LOCK();
           UNLOCK();
           cRam_? = '\x01';
         }
-        if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-            (IEditModeUI *)0x0) goto code_?;
-        pDVar4 = (Delegate *)FUN_?();
-        b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
-        FUN_?(b,this);
-        pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar4,b,(MethodInfo *)0x0);
-        pAVar5 = TypeInfo__System__Action<EditModeChangeArgs>;
-        if ((pDVar4 != (Delegate *)0x0) &&
-           (lVar6 = FUN_?(pDVar4,TypeInfo__System__Action<EditModeChangeArgs>),
-           lVar6 == 0)) {
-          FUN_?(pDVar4,pAVar5);
+        pvVar31 = (pTVar30->fields)._._.m_CachedPtr;
+        if (pvVar31 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar30,(MethodInfo *)0x0);
           pcVar7 = (code *)swi(3);
           (*pcVar7)();
           return;
         }
-        FUN_?();
-      }
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar8 != (GameSessionData *)0x0) {
-        if ((pGVar8->fields).gameMode == 0) {
-          pMVar9 = (this->fields).doorObject;
-          if (((pMVar9 == (MVDoorObject *)0x0) ||
-              (pCVar10 = (pMVar9->fields).useCollider, pCVar10 == (Collider *)0x0)) ||
-             (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)pCVar10,(MethodInfo *)0x0),
-             pGVar11 == (GameObject *)0x0)) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar11,0,(MethodInfo *)0x0);
-        }
-        this_03 = (Action_2_Int32Enum_Object_ *)
-                  FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-        mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                  (this_03,(Object *)this,
-                   MethodInfo__WorldObjectTypes__MVDoor__MVDoor__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-                   ,(MethodInfo *)0x0);
-        pIVar12 = LogicClientsideFactory::
-                  LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                            ((MVWorldObject *)this,0,
-                             (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                             (Action_2_LogicInputState_LogicObjectManager_ *)this_03,
-                             (MethodInfo *)0x0);
-        bVar13 = iRam_? != 0;
-        (this->fields)._InputSignalReceiver_k__BackingField = pIVar12;
-        if (bVar13) {
-          uVar14 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
-          uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
-          do {
-            uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
-            puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
-            LOCK();
-            bVar13 = uVar16 == *puVar17;
-            if (bVar13) {
-              *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar13);
-        }
-        pMVar18 = MVDoor_ReadWorldObjectData(&MStack_19,this,(MethodInfo *)0x0);
-        bVar13 = iRam_? != 0;
-        uVar20 = *(undefined4 *)((longlong)&pMVar18->name + 4);
-        bVar21 = pMVar18->beginOpen;
-        bVar22 = pMVar18->playersCanOpen;
-        bVar23 = pMVar18->reverseOpenDirection;
-        uVar24 = pMVar18->field_0xb;
-        fVar25 = pMVar18->openValue;
-        fVar26 = pMVar18->closeValue;
-        fVar27 = pMVar18->toggleTime;
-        iVar28 = pMVar18->docType;
-        iVar29 = pMVar18->doorType;
-        *(undefined4 *)&(this->fields).doorConfig.name = *(undefined4 *)&pMVar18->name;
-        *(undefined4 *)((longlong)&(this->fields).doorConfig.name + 4) = uVar20;
-        (this->fields).doorConfig.beginOpen = bVar21;
-        (this->fields).doorConfig.playersCanOpen = bVar22;
-        (this->fields).doorConfig.reverseOpenDirection = bVar23;
-        (this->fields).doorConfig.field_0xb = uVar24;
-        (this->fields).doorConfig.openValue = fVar25;
-        (this->fields).doorConfig.closeValue = fVar26;
-        (this->fields).doorConfig.toggleTime = fVar27;
-        (this->fields).doorConfig.docType = iVar28;
-        (this->fields).doorConfig.doorType = iVar29;
-        if (bVar13) {
-          uVar14 = (uint)((ulonglong)&(this->fields).doorConfig >> 0xc);
-          uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
-          do {
-            uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
-            puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
-            LOCK();
-            bVar13 = uVar16 == *puVar17;
-            if (bVar13) {
-              *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar13);
-        }
-        (this->fields).storedReverseOpenDirection = (this->fields).doorConfig.reverseOpenDirection;
-        (this->fields).storedBeginOpen = (this->fields).doorConfig.beginOpen;
-        bVar21 = (this->fields).doorConfig.beginOpen;
-        (this->fields).localIsOpen = bVar21;
-        if (bVar21 != 0) {
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__WorldObjectTypes__MVDoor__MVDoor___BeginOpenCoroutine_d__62);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          routine = (IEnumerator *)
-                    FUN_?(
-                                 TypeInfo__WorldObjectTypes__MVDoor__MVDoor___BeginOpenCoroutine_d__62
-                                 );
-          bVar13 = iRam_? != 0;
-          *(undefined4 *)&routine[1].klass = 0;
-          routine[2].klass = (IEnumerator__Class *)this;
-          if (bVar13) {
-            uVar14 = (uint)((ulonglong)(routine + 2) >> 0xc);
-            uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
-            do {
-              uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
-              puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
-              LOCK();
-              bVar13 = uVar16 == *puVar17;
-              if (bVar13) {
-                *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
-              }
-              UNLOCK();
-            } while (!bVar13);
-          }
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__Coroutines);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          this_01 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
-          if (this_01 == (MonoBehaviour *)0x0) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_2
-                    (this_01,routine,(MethodInfo *)0x0);
-        }
-        if ((this->fields).doorConfig.doorType != 2) {
+        pcVar7 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+          uVar32 = func_?(&UNK_?);
+          FUN_?(uVar32,0);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
           return;
         }
-        pGVar11 = (this->fields)._._.inputConnectorObject;
-        if ((pGVar11 != (GameObject *)0x0) &&
-           (pTVar30 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar11,(MethodInfo *)0x0), pTVar30 != (Transform *)0x0)) {
+        pcRam_? = pcVar7;
+        (*pcRam_?)(pvVar31,&MStack_19);
+        pMVar9 = (this->fields).doorObject;
+        if ((pMVar9 != (MVDoorObject *)0x0) &&
+           (pCVar10 = (pMVar9->fields).useCollider, pCVar10 != (Collider *)0x0)) {
+          pOVar37 = (Object__Class *)pCVar10->klass;
+          bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
+          if (((pOVar37->_1).naturalAligment < bVar38) ||
+             ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
+              (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
+            FUN_?(pCVar10);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
+          if (((pOVar37->_1).naturalAligment < bVar38) ||
+             ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
+              (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
+            FUN_?(pCVar10);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          uStack_33 = (ulonglong)_UNK_?;
+          uStack_34 = 0;
           if (cRam_? == '\0') {
             FUN_?(&
-                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::BoxCollider>_UnityEngine__BoxCollider_
                          );
             LOCK();
             UNLOCK();
             cRam_? = '\x01';
           }
-          pvVar31 = (pTVar30->fields)._._.m_CachedPtr;
+          pvVar31 = (pCVar10->fields)._._.m_CachedPtr;
           if (pvVar31 == (void *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar30,(MethodInfo *)0x0);
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar10,(MethodInfo *)0x0);
             pcVar7 = (code *)swi(3);
             (*pcVar7)();
             return;
@@ -1066,15 +1181,45 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_Initialize
             return;
           }
           pcRam_? = pcVar7;
-          (*pcRam_?)(pvVar31);
-          pGVar11 = (this->fields)._._.inputConnectorObject;
-          if (pGVar11 != (GameObject *)0x0) {
-            pTVar30 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar11,(MethodInfo *)0x0);
-            uStack_33 = 0;
-            uStack_34 = _UNK_?;
-            uStack_35 = 0;
-            uStack_36 = 0;
+          (*pcRam_?)(pvVar31,&uStack_33);
+          pMVar9 = (this->fields).doorObject;
+          if ((pMVar9 != (MVDoorObject *)0x0) &&
+             (pCVar10 = (pMVar9->fields).useCollider, pCVar10 != (Collider *)0x0)) {
+            pOVar37 = (Object__Class *)pCVar10->klass;
+            bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
+            if (((pOVar37->_1).naturalAligment < bVar38) ||
+               ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
+                (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
+              FUN_?(pCVar10);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
+            bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
+            if (((pOVar37->_1).naturalAligment < bVar38) ||
+               ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
+                (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
+              FUN_?(pCVar10);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::BoxCollider>_UnityEngine__BoxCollider_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar31 = (pCVar10->fields)._._.m_CachedPtr;
+            if (pvVar31 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar10,(MethodInfo *)0x0);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
             pcVar7 = pcRam_?;
             if ((pcRam_? == (code *)0x0) &&
                (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
@@ -1085,17 +1230,15 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_Initialize
               return;
             }
             pcRam_? = pcVar7;
-            (*pcRam_?)(&uStack_33);
-            uVar32 = uStack_36;
-            if (pTVar30 != (Transform *)0x0) {
-              MStack_19.name._0_4_ = (undefined4)uStack_35;
-              MStack_19.name._4_4_ = uStack_35._4_4_;
-              MStack_19.beginOpen = (bool)uStack_36;
-              MStack_19.playersCanOpen = uStack_36._1_1_;
-              MStack_19.reverseOpenDirection = uStack_36._2_1_;
-              MStack_19._11_1_ = uStack_36._3_1_;
-              MStack_19.openValue = uStack_36._4_4_;
-              uStack_36 = uVar32;
+            (*pcRam_?)(pvVar31);
+            pMVar9 = (this->fields).doorObject;
+            if (((pMVar9 != (MVDoorObject *)0x0) &&
+                (pGVar11 = (pMVar9->fields).useInteractionRotator, pGVar11 != (GameObject *)0x0)) &&
+               (pTVar30 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                          GameObject_get_transform(pGVar11,(MethodInfo *)0x0),
+               pTVar30 != (Transform *)0x0)) {
+              uStack_33 = CONCAT44(_UNK_?,_UNK_?);
+              uStack_34 = 0;
               if (cRam_? == '\0') {
                 FUN_?(&
                               void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
@@ -1105,64 +1248,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_Initialize
                 cRam_? = '\x01';
               }
               pvVar31 = (pTVar30->fields)._._.m_CachedPtr;
-              if (pvVar31 == (void *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar30,(MethodInfo *)0x0);
-                pcVar7 = (code *)swi(3);
-                (*pcVar7)();
-                return;
-              }
-              pcVar7 = pcRam_?;
-              if ((pcRam_? == (code *)0x0) &&
-                 (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
-                uVar32 = func_?(&UNK_?);
-                FUN_?(uVar32,0);
-                pcVar7 = (code *)swi(3);
-                (*pcVar7)();
-                return;
-              }
-              pcRam_? = pcVar7;
-              (*pcRam_?)(pvVar31,&MStack_19);
-              pMVar9 = (this->fields).doorObject;
-              if ((pMVar9 != (MVDoorObject *)0x0) &&
-                 (pCVar10 = (pMVar9->fields).useCollider, pCVar10 != (Collider *)0x0)) {
-                pOVar37 = (Object__Class *)pCVar10->klass;
-                bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
-                if (((pOVar37->_1).naturalAligment < bVar38) ||
-                   ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
-                    (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
-                  FUN_?(pCVar10);
-                  pcVar7 = (code *)swi(3);
-                  (*pcVar7)();
-                  return;
-                }
-                bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
-                if (((pOVar37->_1).naturalAligment < bVar38) ||
-                   ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
-                    (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
-                  FUN_?(pCVar10);
-                  pcVar7 = (code *)swi(3);
-                  (*pcVar7)();
-                  return;
-                }
-                uStack_33 = (ulonglong)_UNK_?;
-                uStack_34 = 0;
-                if (cRam_? == '\0') {
-                  FUN_?(&
-                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::BoxCollider>_UnityEngine__BoxCollider_
-                               );
-                  LOCK();
-                  UNLOCK();
-                  cRam_? = '\x01';
-                }
-                pvVar31 = (pCVar10->fields)._._.m_CachedPtr;
-                if (pvVar31 == (void *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                  ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar10,(MethodInfo *)0x0);
-                  pcVar7 = (code *)swi(3);
-                  (*pcVar7)();
-                  return;
-                }
+              if (pvVar31 != (void *)0x0) {
                 pcVar7 = pcRam_?;
                 if ((pcRam_? == (code *)0x0) &&
                    (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
@@ -1174,117 +1260,32 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_Initialize
                 }
                 pcRam_? = pcVar7;
                 (*pcRam_?)(pvVar31,&uStack_33);
-                pMVar9 = (this->fields).doorObject;
-                if ((pMVar9 != (MVDoorObject *)0x0) &&
-                   (pCVar10 = (pMVar9->fields).useCollider, pCVar10 != (Collider *)0x0)) {
-                  pOVar37 = (Object__Class *)pCVar10->klass;
-                  bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
-                  if (((pOVar37->_1).naturalAligment < bVar38) ||
-                     ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
-                      (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
-                    FUN_?(pCVar10);
-                    pcVar7 = (code *)swi(3);
-                    (*pcVar7)();
-                    return;
-                  }
-                  bVar38 = (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment;
-                  if (((pOVar37->_1).naturalAligment < bVar38) ||
-                     ((pOVar37->_1).typeHierarchy[(ulonglong)bVar38 - 1] !=
-                      (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) {
-                    FUN_?(pCVar10);
-                    pcVar7 = (code *)swi(3);
-                    (*pcVar7)();
-                    return;
-                  }
-                  if (cRam_? == '\0') {
-                    FUN_?(&
-                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::BoxCollider>_UnityEngine__BoxCollider_
-                                 );
-                    LOCK();
-                    UNLOCK();
-                    cRam_? = '\x01';
-                  }
-                  pvVar31 = (pCVar10->fields)._._.m_CachedPtr;
-                  if (pvVar31 != (void *)0x0) {
-                    pcVar7 = pcRam_?;
-                    if ((pcRam_? == (code *)0x0) &&
-                       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
-                      uVar32 = func_?(&UNK_?);
-                      FUN_?(uVar32,0);
-                      pcVar7 = (code *)swi(3);
-                      (*pcVar7)();
-                      return;
-                    }
-                    pcRam_? = pcVar7;
-                    (*pcRam_?)(pvVar31);
-                    pMVar9 = (this->fields).doorObject;
-                    if (((pMVar9 != (MVDoorObject *)0x0) &&
-                        (pGVar11 = (pMVar9->fields).useInteractionRotator,
-                        pGVar11 != (GameObject *)0x0)) &&
-                       (pTVar30 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform(pGVar11,(MethodInfo *)0x0),
-                       pTVar30 != (Transform *)0x0)) {
-                      uStack_33 = CONCAT44(_UNK_?,_UNK_?);
-                      uStack_34 = 0;
-                      if (cRam_? == '\0') {
-                        FUN_?(&
-                                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
-                                     );
-                        LOCK();
-                        UNLOCK();
-                        cRam_? = '\x01';
-                      }
-                      pvVar31 = (pTVar30->fields)._._.m_CachedPtr;
-                      if (pvVar31 != (void *)0x0) {
-                        pcVar7 = pcRam_?;
-                        if ((pcRam_? == (code *)0x0) &&
-                           (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)
-                           ) {
-                          uVar32 = func_?(&UNK_?);
-                          FUN_?(uVar32,0);
-                          pcVar7 = (code *)swi(3);
-                          (*pcVar7)();
-                          return;
-                        }
-                        pcRam_? = pcVar7;
-                        (*pcRam_?)(pvVar31,&uStack_33);
-                        return;
-                      }
-                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar30,(MethodInfo *)0x0)
-                      ;
-                      pcVar7 = (code *)swi(3);
-                      (*pcVar7)();
-                      return;
-                    }
-                    FUN_?();
-                    pcVar7 = (code *)swi(3);
-                    (*pcVar7)();
-                    return;
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                  ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar10,(MethodInfo *)0x0);
-                  pcVar7 = (code *)swi(3);
-                  (*pcVar7)();
-                  return;
-                }
-                goto code_?;
+                return;
               }
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar30,(MethodInfo *)0x0);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
             }
             FUN_?();
             pcVar7 = (code *)swi(3);
             (*pcVar7)();
             return;
           }
+code_?:
+          FUN_?();
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
         }
-        FUN_?();
-        pcVar7 = (code *)swi(3);
-        (*pcVar7)();
-        return;
       }
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
     }
   }
-code_?:
   FUN_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
@@ -2195,7 +2196,7 @@ Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_ReadWorldObjectDat
                        );
     if ((bVar6 != 0) && (pSStackX_8 != (String *)0x0)) {
       pSVar16 = pSVar1;
-      if (pSStackX_8->klass == pSRam0000000182dbdde0) {
+      if (pSStackX_8->klass == pSRam0000000182dc50c0) {
         pSVar16 = pSStackX_8;
       }
       if ((pSVar16 != (String *)0x0) &&
@@ -2228,11 +2229,11 @@ Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_ReadWorldObjectDat
                          );
       if ((bVar6 != 0) && (pSStackX_10 != (String *)0x0)) {
         pSVar16 = pSVar1;
-        if (pSStackX_10->klass == pSRam0000000182dbdd78) {
+        if (pSStackX_10->klass == pSRam0000000182dc5058) {
           pSVar16 = pSStackX_10;
         }
         if (pSVar16 != (String *)0x0) {
-          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182dbdd78->_0).element_class) {
+          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182dc5058->_0).element_class) {
             FUN_?(pSStackX_10);
             pcVar22 = (code *)swi(3);
             pMVar3 = (MVDoor_DoorConfiguration *)(*pcVar22)();
@@ -2256,11 +2257,11 @@ Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_ReadWorldObjectDat
                            );
         if ((bVar6 != 0) && (pSStackX_20 != (String *)0x0)) {
           pSVar16 = pSVar1;
-          if (pSStackX_20->klass == pSRam0000000182dbdd78) {
+          if (pSStackX_20->klass == pSRam0000000182dc5058) {
             pSVar16 = pSStackX_20;
           }
           if (pSVar16 != (String *)0x0) {
-            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182dbdd78->_0).element_class)
+            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182dc5058->_0).element_class)
             {
               FUN_?(pSStackX_20);
               pcVar22 = (code *)swi(3);
@@ -2284,11 +2285,11 @@ Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_ReadWorldObjectDat
                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                              );
           if ((bVar6 != 0) && (pSStack_2 != (String *)0x0)) {
-            if (pSStack_2->klass == pSRam0000000182dbdd78) {
+            if (pSStack_2->klass == pSRam0000000182dc5058) {
               pSVar1 = pSStack_2;
             }
             if (pSVar1 != (String *)0x0) {
-              if ((pSStack_2->klass->_0).element_class != (pSRam0000000182dbdd78->_0).element_class
+              if ((pSStack_2->klass->_0).element_class != (pSRam0000000182dc5058->_0).element_class
                  ) {
                 FUN_?(pSStack_2);
                 pcVar22 = (code *)swi(3);

@@ -42,6 +42,8 @@ public class PlayerInventoryRepository
 	public void UpdateShopInventoryID(int itemID, int shopInventoryID);
 	public List<InventoryItem> GetItemsInCategory(InventoryCategoryType category);
 	public List<InventoryItem> GetItemsInCategorySlow(string category);
+	public void ClearCategory(InventoryCategoryType category);
+	public void ClearAllCategories();
 	public bool GetItemByWorldObjectTypeInCategory(InventoryCategoryType inventoryCategory, WorldObjectType wo, out InventoryItem item);
 	public int CategoryItemCount(int category);
 	public int HighestSlotIndex(InventoryCategoryType category);

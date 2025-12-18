@@ -1742,10 +1742,15 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Heal
       return;
     }
     cVar7 = FUN_?();
-    if ((cVar7 != '\0') &&
-       (MVar8 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
-       MVar8 == MVGameMode__Enum_Edit)) {
-      return;
+    if (cVar7 != '\0') {
+      MVar8 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar8 == MVGameMode__Enum_Edit) {
+        return;
+      }
+      MVar8 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar8 == MVGameMode__Enum_SpaceEdit) {
+        return;
+      }
     }
     pMVar2 = (this->fields)._.health;
     if ((this->fields)._.maxHealth == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
@@ -2331,10 +2336,15 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamage
     return;
   }
   cVar3 = FUN_?();
-  if ((cVar3 != '\0') &&
-     (MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
-     MVar4 == MVGameMode__Enum_Edit)) {
-    return;
+  if (cVar3 != '\0') {
+    MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar4 == MVGameMode__Enum_Edit) {
+      return;
+    }
+    MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar4 == MVGameMode__Enum_SpaceEdit) {
+      return;
+    }
   }
   fVar5 = (float)(*(this->klass->vtable).HandleModifierEffect.methodPtr)(this,6,_UNK_?);
   fVar5 = fVar5 * amount * (this->fields).damageMultiplier;

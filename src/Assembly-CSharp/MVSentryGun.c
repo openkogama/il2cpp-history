@@ -897,13 +897,26 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
                 pGVar22 = TypeInfo__MVGameControllerBase->static_fields->
                          _GameSessionData_k__BackingField;
                 if (pGVar22 != (GameSessionData *)0x0) {
-                  if ((pGVar22->fields).gameMode == 0) {
-                    this_00 = (pSVar21->fields).rangeVisualization;
-                    if (this_00 == (SphereVolumeIndicator *)0x0) goto code_?;
+                  if ((pGVar22->fields).gameMode != 0) {
+                    if (cRam_? == '\0') {
+                      FUN_?(&TypeInfo__MVGameControllerBase);
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pGVar22 = TypeInfo__MVGameControllerBase->static_fields->
+                             _GameSessionData_k__BackingField;
+                    if (pGVar22 == (GameSessionData *)0x0) goto code_?;
+                    if ((pGVar22->fields).gameMode != 4) {
+                      return;
+                    }
+                  }
+                  this_00 = (pSVar21->fields).rangeVisualization;
+                  if (this_00 != (SphereVolumeIndicator *)0x0) {
                     SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
                               (this_00,fVar18,(MethodInfo *)0x0);
+                    return;
                   }
-                  return;
                 }
               }
             }

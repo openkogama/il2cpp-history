@@ -575,126 +575,31 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal::MVBuildModeAvatarLocal_Initial
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).avatarScriptObject;
-  if (pAVar1 == (AvatarLocalBuildMode *)0x0) goto code_?;
-  if (cRam_? == '\0') {
-    FUN_?(&
-                  AvatarCamerasDesktopBuildMode_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktopBuildMode>_AvatarCamerasDesktopBuildMode_
-                 );
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__UnityEngine__Object);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  pAVar2 = (pAVar1->fields).avatarCamerasDesktopPrefab;
-  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  pAVar2 = (AvatarCamerasDesktopBuildMode *)
-            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                      ((Object *)pAVar2,
-                       AvatarCamerasDesktopBuildMode_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktopBuildMode>_AvatarCamerasDesktopBuildMode_
-                      );
-  bVar3 = iRam_? != 0;
-  (pAVar1->fields).avatarCamerasDesktop = pAVar2;
-  if (bVar3) {
-    uVar4 = (uint)((ulonglong)&(pAVar1->fields).avatarCamerasDesktop >> 0xc);
-    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
-    do {
-      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
-      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
-      LOCK();
-      bVar3 = uVar6 == *puVar7;
-      if (bVar3) {
-        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
-      }
-      UNLOCK();
-    } while (!bVar3);
-  }
-  pAVar2 = (pAVar1->fields).avatarCamerasDesktop;
-  if (pAVar2 == (AvatarCamerasDesktopBuildMode *)0x0) goto code_?;
-  pMVar8 = this;
-  AvatarCamerasDesktopBuildMode::AvatarCamerasDesktopBuildMode_Initialize
-            (pAVar2,this,(MethodInfo *)0x0);
-  pMVar9 = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)
-            FUN_?(TypeInfo__MVBuildModeAvatarLocal__BuildModeAvatarLocalModes);
-  iVar10 = iRam_?;
-  (pMVar9->fields).avatar = this;
-  if (iVar10 != 0) {
-    uVar4 = (uint)((ulonglong)&(pMVar9->fields).avatar >> 0xc);
-    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
-    pMVar8 = (MVBuildModeAvatarLocal *)(lVar5 + 0xADDR);
-    do {
-      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
-      LOCK();
-      bVar3 = uVar6 == *(ulonglong *)(lVar5 + 0xADDR);
-      if (bVar3) {
-        *(ulonglong *)(lVar5 + 0xADDR) = uVar6 | 1L << (uVar4 & 0x3f);
-      }
-      UNLOCK();
-      iVar10 = iRam_?;
-    } while (!bVar3);
-  }
-  (this->fields).buildModeAvatarLocalModes = pMVar9;
-  if (iVar10 != 0) {
-    uVar4 = (uint)((ulonglong)&(this->fields).buildModeAvatarLocalModes >> 0xc);
-    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
-    pMVar8 = (MVBuildModeAvatarLocal *)(lVar5 + 0xADDR);
-    do {
-      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
-      LOCK();
-      bVar3 = uVar6 == *(ulonglong *)(lVar5 + 0xADDR);
-      if (bVar3) {
-        *(ulonglong *)(lVar5 + 0xADDR) = uVar6 | 1L << (uVar4 & 0x3f);
-      }
-      UNLOCK();
-    } while (!bVar3);
-  }
-  pMVar9 = (this->fields).buildModeAvatarLocalModes;
-  if (pMVar9 == (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)0x0) goto code_?;
-  MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
-  MVBuildModeAvatarLocal_BuildModeAvatarLocalModes_SetMode
-            (pMVar9,(MVBuildModeAvatarLocal_AvatarBuildModes__Enum)
-                     CONCAT71((int7)((ulonglong)pMVar8 >> 8),1),(MethodInfo *)0x0);
-  pMVar11 = (this->fields)._.body;
-  if ((pMVar11 == (MVBody *)0x0) ||
-     (this_00 = (pMVar11->fields)._._._.gameObject, this_00 == (GameObject *)0x0))
-  goto code_?;
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_00,0,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVGameControllerBase);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  pGVar12 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar12 == (GameSessionData *)0x0) goto code_?;
-  if ((pGVar12->fields).gameMode == 0) {
+  if (pAVar1 != (AvatarLocalBuildMode *)0x0) {
     if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__MVGameControllerBase);
+      FUN_?(&
+                    AvatarCamerasDesktopBuildMode_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktopBuildMode>_AvatarCamerasDesktopBuildMode_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__Object);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar13 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((((pMVar13 == (MVGameControllerBase *)0x0) ||
-         (pMVar14 = (pMVar13->fields).game, pMVar14 == (MVNetworkGame *)0x0)) ||
-        (pMVar15 = (pMVar14->fields).playerContainer, pMVar15 == (MVPlayerContainer *)0x0)) ||
-       (this_03 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar15,(MethodInfo *)0x0),
-       this_03 == (MVLocalPlayer *)0x0)) goto code_?;
-    PVar16 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_03,(MethodInfo *)0x0);
-    if ((byte)((char)PVar16 - 1U) < 2) goto code_?;
-  }
-  else {
-code_?:
-    pLVar17 = MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
-                        ((MVBuildModeAvatar *)this,1,(MethodInfo *)0x0);
+    pAVar2 = (pAVar1->fields).avatarCamerasDesktopPrefab;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pAVar2 = (AvatarCamerasDesktopBuildMode *)
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                        ((Object *)pAVar2,
+                         AvatarCamerasDesktopBuildMode_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktopBuildMode>_AvatarCamerasDesktopBuildMode_
+                        );
     bVar3 = iRam_? != 0;
-    (this->fields).laserPoint = pLVar17;
+    (pAVar1->fields).avatarCamerasDesktop = pAVar2;
     if (bVar3) {
-      uVar4 = (uint)((ulonglong)&(this->fields).laserPoint >> 0xc);
+      uVar4 = (uint)((ulonglong)&(pAVar1->fields).avatarCamerasDesktop >> 0xc);
       lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
       do {
         uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
@@ -707,219 +612,275 @@ code_?:
         UNLOCK();
       } while (!bVar3);
     }
-    pLVar17 = (this->fields).laserPoint;
-    if (pLVar17 == (LaserPointer *)0x0) goto code_?;
-    LaserPointer::LaserPointer_SubscribeToCommands(pLVar17,(MethodInfo *)0x0);
-  }
-  pUVar18 = (this->fields)._._._.PositionChanged;
-  pUVar19 = (UnityAction_2_System_Object_System_Object_ *)
-            FUN_?(
-                         TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                         );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            (pUVar19,(Object *)this,
-             MethodInfo__MVBuildModeAvatarLocal__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-             ,(MethodInfo *)0x0);
-  pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                      ((Delegate *)pUVar18,(Delegate *)pUVar19,(MethodInfo *)0x0);
-  pUVar21 = 
-  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-  if (pDVar20 == (Delegate *)0x0) {
-    (this->fields)._._._.PositionChanged =
-         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-  }
-  else {
-    pUVar18 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
-              FUN_?(pDVar20,
-                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                           );
-    if (pUVar18 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-      FUN_?(pDVar20,pUVar21);
-      pcVar22 = (code *)swi(3);
-      (*pcVar22)();
-      return;
-    }
-    (this->fields)._._._.PositionChanged = pUVar18;
-    pUVar21 = 
-    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-    lVar5 = FUN_?(pDVar20,
-                           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                          );
-    if (lVar5 == 0) {
-      FUN_?(pDVar20,pUVar21);
-      pcVar22 = (code *)swi(3);
-      (*pcVar22)();
-      return;
-    }
-  }
-  if (iRam_? != 0) {
-    uVar4 = (uint)((ulonglong)&(this->fields)._._._.PositionChanged >> 0xc);
-    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
-    do {
-      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
-      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
-      LOCK();
-      bVar3 = uVar6 == *puVar7;
-      if (bVar3) {
-        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+    pAVar2 = (pAVar1->fields).avatarCamerasDesktop;
+    if (pAVar2 != (AvatarCamerasDesktopBuildMode *)0x0) {
+      pMVar8 = this;
+      AvatarCamerasDesktopBuildMode::AvatarCamerasDesktopBuildMode_Initialize
+                (pAVar2,this,(MethodInfo *)0x0);
+      pMVar9 = (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)
+                FUN_?(TypeInfo__MVBuildModeAvatarLocal__BuildModeAvatarLocalModes);
+      iVar10 = iRam_?;
+      (pMVar9->fields).avatar = this;
+      if (iVar10 != 0) {
+        uVar4 = (uint)((ulonglong)&(pMVar9->fields).avatar >> 0xc);
+        lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+        pMVar8 = (MVBuildModeAvatarLocal *)(lVar5 + 0xADDR);
+        do {
+          uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+          LOCK();
+          bVar3 = uVar6 == *(ulonglong *)(lVar5 + 0xADDR);
+          if (bVar3) {
+            *(ulonglong *)(lVar5 + 0xADDR) = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+          iVar10 = iRam_?;
+        } while (!bVar3);
       }
-      UNLOCK();
-    } while (!bVar3);
-  }
-  pUVar23 = (this->fields)._._._.ScaleChanged;
-  pUVar19 = (UnityAction_2_System_Object_System_Object_ *)
-            FUN_?(
-                         TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>
-                         );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            (pUVar19,(Object *)this,
-             MethodInfo__MVBuildModeAvatarLocal__OnScaleChanged_MVWorldObjectClient__ScaleChangedEventArgs_
-             ,(MethodInfo *)0x0);
-  pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                      ((Delegate *)pUVar23,(Delegate *)pUVar19,(MethodInfo *)0x0);
-  pUVar24 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>;
-  if (pDVar20 == (Delegate *)0x0) {
-    (this->fields)._._._.ScaleChanged =
-         (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0;
-  }
-  else {
-    pUVar23 = (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)
-              FUN_?(pDVar20,
-                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>
-                           );
-    if (pUVar23 == (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0) {
-      FUN_?(pDVar20,pUVar24);
-      pcVar22 = (code *)swi(3);
-      (*pcVar22)();
-      return;
-    }
-    (this->fields)._._._.ScaleChanged = pUVar23;
-    pUVar24 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>
-    ;
-    lVar5 = FUN_?();
-    if (lVar5 == 0) {
-      FUN_?(pDVar20,pUVar24);
-      pcVar22 = (code *)swi(3);
-      (*pcVar22)();
-      return;
-    }
-  }
-  if (iRam_? != 0) {
-    uVar4 = (uint)((ulonglong)&(this->fields)._._._.ScaleChanged >> 0xc);
-    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
-    do {
-      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
-      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
-      LOCK();
-      bVar3 = uVar6 == *puVar7;
-      if (bVar3) {
-        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      (this->fields).buildModeAvatarLocalModes = pMVar9;
+      if (iVar10 != 0) {
+        uVar4 = (uint)((ulonglong)&(this->fields).buildModeAvatarLocalModes >> 0xc);
+        lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+        pMVar8 = (MVBuildModeAvatarLocal *)(lVar5 + 0xADDR);
+        do {
+          uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+          LOCK();
+          bVar3 = uVar6 == *(ulonglong *)(lVar5 + 0xADDR);
+          if (bVar3) {
+            *(ulonglong *)(lVar5 + 0xADDR) = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar3);
       }
-      UNLOCK();
-    } while (!bVar3);
-  }
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__UpdateController);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  MVGroup::MVGroup_Initialize((MVGroup *)this,(MethodInfo *)0x0);
-  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  UpdateController::UpdateController_AddLateUpdateObject
-            ((IUpdatecontrollerSubscriberLateUpdate *)this,
-             UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
-  pAVar25 = (AvatarLimbManager *)FUN_?(TypeInfo__AvatarLimbManagerLocal);
-  bVar3 = iRam_? != 0;
-  (this->fields)._.limbManager = pAVar25;
-  if (bVar3) {
-    uVar4 = (uint)((ulonglong)&(this->fields)._.limbManager >> 0xc);
-    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
-    do {
-      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
-      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
-      LOCK();
-      bVar3 = uVar6 == *puVar7;
-      if (bVar3) {
-        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
-      }
-      UNLOCK();
-    } while (!bVar3);
-  }
-  pAVar1 = (this->fields).avatarScriptObject;
-  if ((pAVar1 != (AvatarLocalBuildMode *)0x0) &&
-     (pAVar25 = (this->fields)._.limbManager, pAVar25 != (AvatarLimbManager *)0x0)) {
-    auStack_26._8_8_ = (pAVar25->klass->vtable).Initialize.method;
-    auStack_26._0_8_ = (this->fields)._.limbRotationRuntimeData;
-    (*(pAVar25->klass->vtable).Initialize.methodPtr)
-              (pAVar25,this,(this->fields)._.body,(pAVar1->fields).enabledChangeHandler);
-    if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__MVGameControllerBase);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pMVar13 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (((pMVar13 != (MVGameControllerBase *)0x0) &&
-        (pMVar14 = (pMVar13->fields).game, pMVar14 != (MVNetworkGame *)0x0)) &&
-       ((pMVar15 = (pMVar14->fields).playerContainer, pMVar15 != (MVPlayerContainer *)0x0 &&
-        (pMVar27 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                             (pMVar15,(this->fields)._._._._.ownerActorNr,(MethodInfo *)0x0),
-        pMVar27 != (MVPlayer *)0x0)))) {
-      iVar10 = (this->fields)._._._._.id;
-      this_01 = (pMVar27->fields).spawnRolesManager;
-      if ((this_01 != (SpawnRolesManager *)0x0) &&
-         (pSVar28 = (this_01->fields).spawnRolesRuntimeData, pSVar28 != (SpawnRolesRuntimeData *)0x0
-         )) {
-        if (iVar10 == (pSVar28->fields).activeSpawnRole) {
+      pMVar9 = (this->fields).buildModeAvatarLocalModes;
+      if (pMVar9 != (MVBuildModeAvatarLocal_BuildModeAvatarLocalModes *)0x0) {
+        MVBuildModeAvatarLocal+BuildModeAvatarLocalModes::
+        MVBuildModeAvatarLocal_BuildModeAvatarLocalModes_SetMode
+                  (pMVar9,(MVBuildModeAvatarLocal_AvatarBuildModes__Enum)
+                           CONCAT71((int7)((ulonglong)pMVar8 >> 8),1),(MethodInfo *)0x0);
+        pMVar11 = (this->fields)._.body;
+        if ((pMVar11 != (MVBody *)0x0) &&
+           (this_00 = (pMVar11->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (this_00,0,(MethodInfo *)0x0);
+          MVBuildModeAvatarLocal_InitializeLaserPointerAndEditCube(this,(MethodInfo *)0x0);
+          pUVar12 = (this->fields)._._._.PositionChanged;
+          pUVar13 = (UnityAction_2_System_Object_System_Object_ *)
+                    FUN_?(
+                                 TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                                 );
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (pUVar13,(Object *)this,
+                     MethodInfo__MVBuildModeAvatarLocal__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                     ,(MethodInfo *)0x0);
+          pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pUVar12,(Delegate *)pUVar13,(MethodInfo *)0x0);
+          pUVar15 = 
+          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+          if (pDVar14 == (Delegate *)0x0) {
+            (this->fields)._._._.PositionChanged =
+                 (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+          }
+          else {
+            pUVar12 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+                      FUN_?(pDVar14,
+                                    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                                   );
+            if (pUVar12 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+              FUN_?(pDVar14,pUVar15);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+            (this->fields)._._._.PositionChanged = pUVar12;
+            pUVar15 = 
+            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+            ;
+            lVar5 = FUN_?(pDVar14,
+                                   TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                                  );
+            if (lVar5 == 0) {
+              FUN_?(pDVar14,pUVar15);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+          }
+          if (iRam_? != 0) {
+            uVar4 = (uint)((ulonglong)&(this->fields)._._._.PositionChanged >> 0xc);
+            lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+              puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+              LOCK();
+              bVar3 = uVar6 == *puVar7;
+              if (bVar3) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar3);
+          }
+          pUVar17 = (this->fields)._._._.ScaleChanged;
+          pUVar13 = (UnityAction_2_System_Object_System_Object_ *)
+                    FUN_?(
+                                 TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>
+                                 );
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (pUVar13,(Object *)this,
+                     MethodInfo__MVBuildModeAvatarLocal__OnScaleChanged_MVWorldObjectClient__ScaleChangedEventArgs_
+                     ,(MethodInfo *)0x0);
+          pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pUVar17,(Delegate *)pUVar13,(MethodInfo *)0x0);
+          pUVar18 = 
+          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>;
+          if (pDVar14 == (Delegate *)0x0) {
+            (this->fields)._._._.ScaleChanged =
+                 (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0;
+          }
+          else {
+            pUVar17 = (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)
+                      FUN_?(pDVar14,
+                                    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>
+                                   );
+            if (pUVar17 == (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0) {
+              FUN_?(pDVar14,pUVar18);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+            (this->fields)._._._.ScaleChanged = pUVar17;
+            pUVar18 = 
+            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>;
+            lVar5 = FUN_?();
+            if (lVar5 == 0) {
+              FUN_?(pDVar14,pUVar18);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+          }
+          if (iRam_? != 0) {
+            uVar4 = (uint)((ulonglong)&(this->fields)._._._.ScaleChanged >> 0xc);
+            lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+              puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+              LOCK();
+              bVar3 = uVar6 == *puVar7;
+              if (bVar3) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar3);
+          }
           if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__MVGameControllerBase);
+            FUN_?(&TypeInfo__UpdateController);
             LOCK();
             UNLOCK();
             cRam_? = '\x01';
           }
-          pMVar13 = TypeInfo__MVGameControllerBase->static_fields->instance;
-          if ((((pMVar13 == (MVGameControllerBase *)0x0) ||
-               (pMVar14 = (pMVar13->fields).game, pMVar14 == (MVNetworkGame *)0x0)) ||
-              ((pMVar14->fields).worldNetwork == (WorldNetwork *)0x0)) ||
-             ((this_02 = (MVWorldObjectClientManager *)
-                         (((pMVar14->fields).worldNetwork)->fields)._.worldObjectClientManager,
-              this_02 == (MVWorldObjectClientManager *)0x0 ||
-              (pMVar29 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
-                                   (this_02,iVar10,(MethodInfo *)0x0),
-              pMVar29 == (MVWorldObjectClient *)0x0)))) goto code_?;
-          puVar30 = (undefined8 *)
-                    (*(pMVar29->klass->vtable).get_Position.methodPtr)
-                              (&VStack_31,pMVar29,(pMVar29->klass->vtable).get_Position.method);
-          uVar32 = *puVar30;
-          fVar33 = *(float *)(puVar30 + 1);
-          puVar30 = (undefined8 *)
-                    (*(pMVar29->klass->vtable).get_Rotation.methodPtr)
-                              (auStack_26,pMVar29,(pMVar29->klass->vtable).get_Rotation.method);
-          auStack_26._0_8_ = *puVar30;
-          auStack_26._8_8_ = puVar30[1];
-          VStack_31._0_8_ = uVar32;
-          VStack_31.z = fVar33;
-          SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
-                    (this_01,iVar10,&VStack_31,(Quaternion *)auStack_26,(MethodInfo *)0x0);
-        }
-        return;
-      }
+          MVGroup::MVGroup_Initialize((MVGroup *)this,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UpdateController::UpdateController_AddLateUpdateObject
+                    ((IUpdatecontrollerSubscriberLateUpdate *)this,
+                     UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
+          pAVar19 = (AvatarLimbManager *)FUN_?(TypeInfo__AvatarLimbManagerLocal);
+          bVar3 = iRam_? != 0;
+          (this->fields)._.limbManager = pAVar19;
+          if (bVar3) {
+            uVar4 = (uint)((ulonglong)&(this->fields)._.limbManager >> 0xc);
+            lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+              puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+              LOCK();
+              bVar3 = uVar6 == *puVar7;
+              if (bVar3) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar3);
+          }
+          pAVar1 = (this->fields).avatarScriptObject;
+          if ((pAVar1 != (AvatarLocalBuildMode *)0x0) &&
+             (pAVar19 = (this->fields)._.limbManager, pAVar19 != (AvatarLimbManager *)0x0)) {
+            auStack_20._8_8_ = (pAVar19->klass->vtable).Initialize.method;
+            auStack_20._0_8_ = (this->fields)._.limbRotationRuntimeData;
+            (*(pAVar19->klass->vtable).Initialize.methodPtr)
+                      (pAVar19,this,(this->fields)._.body,(pAVar1->fields).enabledChangeHandler);
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar21 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if ((((pMVar21 != (MVGameControllerBase *)0x0) &&
+                 (pMVar22 = (pMVar21->fields).game, pMVar22 != (MVNetworkGame *)0x0)) &&
+                (this_01 = (pMVar22->fields).playerContainer, this_01 != (MVPlayerContainer *)0x0))
+               && (pMVar23 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                                       (this_01,(this->fields)._._._._.ownerActorNr,
+                                        (MethodInfo *)0x0), pMVar23 != (MVPlayer *)0x0)) {
+              iVar10 = (this->fields)._._._._.id;
+              this_02 = (pMVar23->fields).spawnRolesManager;
+              if ((this_02 != (SpawnRolesManager *)0x0) &&
+                 (pSVar24 = (this_02->fields).spawnRolesRuntimeData,
+                 pSVar24 != (SpawnRolesRuntimeData *)0x0)) {
+                if (iVar10 == (pSVar24->fields).activeSpawnRole) {
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__MVGameControllerBase);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pMVar21 = TypeInfo__MVGameControllerBase->static_fields->instance;
+                  if (((pMVar21 == (MVGameControllerBase *)0x0) ||
+                      (pMVar22 = (pMVar21->fields).game, pMVar22 == (MVNetworkGame *)0x0)) ||
+                     (((pMVar22->fields).worldNetwork == (WorldNetwork *)0x0 ||
+                      ((this_03 = (MVWorldObjectClientManager *)
+                                  (((pMVar22->fields).worldNetwork)->fields)._.
+                                  worldObjectClientManager,
+                       this_03 == (MVWorldObjectClientManager *)0x0 ||
+                       (pMVar25 = MVWorldObjectClientManager::
+                                  MVWorldObjectClientManager_GetWorldObjectClient
+                                            (this_03,iVar10,(MethodInfo *)0x0),
+                       pMVar25 == (MVWorldObjectClient *)0x0)))))) goto code_?;
+                  puVar26 = (undefined8 *)
+                            (*(pMVar25->klass->vtable).get_Position.methodPtr)
+                                      (&VStack_27,pMVar25,
+                                       (pMVar25->klass->vtable).get_Position.method);
+                  uVar28 = *puVar26;
+                  fVar29 = *(float *)(puVar26 + 1);
+                  puVar26 = (undefined8 *)
+                            (*(pMVar25->klass->vtable).get_Rotation.methodPtr)
+                                      (auStack_20,pMVar25,
+                                       (pMVar25->klass->vtable).get_Rotation.method);
+                  auStack_20._0_8_ = *puVar26;
+                  auStack_20._8_8_ = puVar26[1];
+                  VStack_27._0_8_ = uVar28;
+                  VStack_27.z = fVar29;
+                  SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
+                            (this_02,iVar10,&VStack_27,(Quaternion *)auStack_20,(MethodInfo *)0x0);
+                }
+                return;
+              }
 code_?:
-      FUN_?();
-      pcVar22 = (code *)swi(3);
-      (*pcVar22)();
-      return;
+              FUN_?();
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+          }
+        }
+      }
     }
   }
-code_?:
   FUN_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -932,488 +893,510 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal::
 
 {
   if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if ((((pMVar2 == (MVGameControllerBase *)0x0) ||
-           (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
-          (this_00 = (pMVar3->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
-         (this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-         this_01 == (MVLocalPlayer *)0x0)) goto code_?;
-      PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-      if (1 < (byte)((char)PVar4 - 1U)) {
-        return;
-      }
+  if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar1->fields).gameMode == 0) {
+code_?:
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pLVar5 = MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
-                        ((MVBuildModeAvatar *)this,1,(MethodInfo *)0x0);
-    bVar6 = iRam_? != 0;
-    (this->fields).laserPoint = pLVar5;
-    if (bVar6) {
-      uVar7 = (uint)((ulonglong)&(this->fields).laserPoint >> 0xc);
-      puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
-      do {
-        uVar9 = *puVar8;
-        LOCK();
-        uVar10 = *puVar8;
-        if (uVar9 == uVar10) {
-          *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
-        }
-        UNLOCK();
-      } while (uVar9 != uVar10);
-    }
-    pLVar5 = (this->fields).laserPoint;
-    if (pLVar5 != (LaserPointer *)0x0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__System__Action<bool>,0);
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__System__Action<float>);
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__System__Action<LaserPointerState>);
-        LOCK();
-        UNLOCK();
-        FUN_?(&TypeInfo__System__Action<unsigned_char>);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if (((pMVar2 != (MVGameControllerBase *)0x0) &&
-          (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
-         ((pGVar11 = (pMVar3->fields).GameEventManager, pGVar11 != (GameEventManager *)0x0 &&
-          (pGVar12 = (pGVar11->fields).AvatarCommandsBuildMode,
-          pGVar12 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)))) {
-        pGVar13 = (pGVar12->fields).LaserCommands;
-        pDVar14 = (Delegate *)FUN_?(TypeInfo__System__Action<unsigned_char>);
-        if (pLVar5 != (LaserPointer *)0x0) {
-          bVar6 = iRam_? != 0;
-          pMVar15 = (pLVar5->klass->vtable).SetCurrentCubeMaterial.method;
-          (pDVar14->fields).method_ptr = pMVar15->virtualMethodPointer;
-          (pDVar14->fields).method = pMVar15;
-          (pDVar14->fields).m_target = (Object *)pLVar5;
-          if (bVar6) {
-            uVar7 = (uint)((ulonglong)&(pDVar14->fields).m_target >> 0xc);
-            lVar16 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-            do {
-              uVar10 = *(ulonglong *)(lVar16 + 0xADDR);
-              puVar8 = (ulonglong *)(lVar16 + 0xADDR);
-              LOCK();
-              bVar6 = uVar10 == *puVar8;
-              if (bVar6) {
-                *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
-              }
-              UNLOCK();
-            } while (!bVar6);
-          }
-          uVar17 = pMVar15->parameters_count;
-          (pDVar14->fields).method_code = pDVar14;
-          if (((pMVar15->flags & 0x10) == 0) || (uVar17 != 1)) {
-            (pDVar14->fields).method_code = (pDVar14->fields).m_target;
-            puVar18 = (pDVar14->fields).method_ptr;
-          }
-          else {
-            puVar18 = &UNK_?;
-          }
-          (pDVar14->fields).invoke_impl = puVar18;
-          (pDVar14->fields).extra_arg = FUN_?;
-          if (pGVar13 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0
-             ) {
-            if (cRam_? == '\0') {
-              FUN_?(&TypeInfo__System__Action<unsigned_char>);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            ppAVar19 = &(pGVar13->fields).OnCubeMaterialChanged;
-            a_03 = (pGVar13->fields).OnCubeMaterialChanged;
-            do {
-              pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                  ((Delegate *)a_03,pDVar14,(MethodInfo *)0x0);
-              pAVar21 = TypeInfo__System__Action<unsigned_char>;
-              if (pDVar20 == (Delegate *)0x0) {
-                pAVar22 = (Action_1_Byte__1 *)0x0;
-              }
-              else {
-                pAVar22 = (Action_1_Byte__1 *)
-                          FUN_?(pDVar20,TypeInfo__System__Action<unsigned_char>);
-                if (pAVar22 == (Action_1_Byte__1 *)0x0) {
-                  FUN_?(pDVar20,pAVar21);
-                  pcVar23 = (code *)swi(3);
-                  (*pcVar23)();
-                  return;
-                }
-              }
-              LOCK();
-              pAVar24 = *ppAVar19;
-              bVar6 = a_03 == pAVar24;
-              if (bVar6) {
-                *ppAVar19 = pAVar22;
-                pAVar24 = a_03;
-              }
-              UNLOCK();
-              pAVar22 = a_03;
-              if (!bVar6) {
-                pAVar22 = pAVar24;
-              }
-              if (iRam_? != 0) {
-                uVar7 = (uint)((ulonglong)ppAVar19 >> 0xc);
-                lVar16 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-                do {
-                  uVar10 = *(ulonglong *)(lVar16 + 0xADDR);
-                  puVar8 = (ulonglong *)(lVar16 + 0xADDR);
-                  LOCK();
-                  bVar6 = uVar10 == *puVar8;
-                  if (bVar6) {
-                    *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
-                  }
-                  UNLOCK();
-                } while (!bVar6);
-              }
-              bVar6 = pAVar22 != a_03;
-              a_03 = pAVar22;
-            } while (bVar6);
-            if (cRam_? == '\0') {
-              FUN_?(&TypeInfo__MVGameControllerBase);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-            if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
-                 (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
-                (pGVar11 = (pMVar3->fields).GameEventManager, pGVar11 != (GameEventManager *)0x0))
-               && (pGVar12 = (pGVar11->fields).AvatarCommandsBuildMode,
-                  pGVar12 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) {
-              pGVar13 = (pGVar12->fields).LaserCommands;
-              pDVar14 = (Delegate *)FUN_?(TypeInfo__System__Action<float>);
-              FUN_?(pDVar14,pLVar5);
-              if (pGVar13 !=
-                  (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0) {
-                if (cRam_? == '\0') {
-                  FUN_?(&TypeInfo__System__Action<float>);
-                  LOCK();
-                  UNLOCK();
-                  cRam_? = '\x01';
-                }
-                ppAVar25 = &(pGVar13->fields).OnActivateLaserForDuration;
-                a = (pGVar13->fields).OnActivateLaserForDuration;
-                do {
-                  pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                      ((Delegate *)a,pDVar14,(MethodInfo *)0x0);
-                  pAVar26 = TypeInfo__System__Action<float>;
-                  if (pDVar20 == (Delegate *)0x0) {
-                    pAVar27 = (Action_1_Single_ *)0x0;
-                  }
-                  else {
-                    pAVar27 = (Action_1_Single_ *)
-                              FUN_?(pDVar20,TypeInfo__System__Action<float>);
-                    if (pAVar27 == (Action_1_Single_ *)0x0) {
-                      FUN_?(pDVar20,pAVar26);
-                      pcVar23 = (code *)swi(3);
-                      (*pcVar23)();
-                      return;
-                    }
-                  }
-                  LOCK();
-                  pAVar28 = *ppAVar25;
-                  bVar6 = a == pAVar28;
-                  if (bVar6) {
-                    *ppAVar25 = pAVar27;
-                    pAVar28 = a;
-                  }
-                  UNLOCK();
-                  pAVar27 = a;
-                  if (!bVar6) {
-                    pAVar27 = pAVar28;
-                  }
-                  if (iRam_? != 0) {
-                    uVar7 = (uint)((ulonglong)ppAVar25 >> 0xc);
-                    lVar16 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-                    do {
-                      uVar10 = *(ulonglong *)(lVar16 + 0xADDR);
-                      puVar8 = (ulonglong *)(lVar16 + 0xADDR);
-                      LOCK();
-                      bVar6 = uVar10 == *puVar8;
-                      if (bVar6) {
-                        *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
-                      }
-                      UNLOCK();
-                    } while (!bVar6);
-                  }
-                  bVar6 = pAVar27 != a;
-                  a = pAVar27;
-                } while (bVar6);
-                if (cRam_? == '\0') {
-                  FUN_?(&TypeInfo__MVGameControllerBase);
-                  LOCK();
-                  UNLOCK();
-                  cRam_? = '\x01';
-                }
-                pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                if (((pMVar2 != (MVGameControllerBase *)0x0) &&
-                    (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
-                   ((pGVar11 = (pMVar3->fields).GameEventManager,
-                    pGVar11 != (GameEventManager *)0x0 &&
-                    (pGVar12 = (pGVar11->fields).AvatarCommandsBuildMode,
-                    pGVar12 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)))) {
-                  pGVar13 = (pGVar12->fields).LaserCommands;
-                  this_02 = (UnityAction_1_System_Int32Enum_ *)
-                            FUN_?(TypeInfo__System__Action<LaserPointerState>);
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]
-                  ::UnityAction_1_System_Int32Enum___ctor
-                            (this_02,(Object *)pLVar5,(pLVar5->klass->vtable).ChangeState.method,
-                             (MethodInfo *)0x0);
-                  if (pGVar13 !=
-                      (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0) {
-                    if (cRam_? == '\0') {
-                      FUN_?(&TypeInfo__System__Action<LaserPointerState>);
-                      LOCK();
-                      UNLOCK();
-                      cRam_? = '\x01';
-                    }
-                    ppAVar29 = &(pGVar13->fields).OnChangeState;
-                    a_00 = (pGVar13->fields).OnChangeState;
-                    do {
-                      pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                          ((Delegate *)a_00,(Delegate *)this_02,(MethodInfo *)0x0);
-                      pAVar30 = TypeInfo__System__Action<LaserPointerState>;
-                      if (pDVar14 == (Delegate *)0x0) {
-                        pAVar31 = (Action_1_LaserPointerState_ *)0x0;
-                      }
-                      else {
-                        pAVar31 = (Action_1_LaserPointerState_ *)
-                                  FUN_?(pDVar14,TypeInfo__System__Action<LaserPointerState>)
-                        ;
-                        if (pAVar31 == (Action_1_LaserPointerState_ *)0x0) {
-                          FUN_?(pDVar14,pAVar30);
-                          pcVar23 = (code *)swi(3);
-                          (*pcVar23)();
-                          return;
-                        }
-                      }
-                      LOCK();
-                      pAVar32 = *ppAVar29;
-                      bVar6 = a_00 == pAVar32;
-                      if (bVar6) {
-                        *ppAVar29 = pAVar31;
-                        pAVar32 = a_00;
-                      }
-                      UNLOCK();
-                      pAVar31 = a_00;
-                      if (!bVar6) {
-                        pAVar31 = pAVar32;
-                      }
-                      if (iRam_? != 0) {
-                        uVar7 = (uint)((ulonglong)ppAVar29 >> 0xc);
-                        lVar16 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-                        do {
-                          uVar10 = *(ulonglong *)(lVar16 + 0xADDR);
-                          puVar8 = (ulonglong *)(lVar16 + 0xADDR);
-                          LOCK();
-                          bVar6 = uVar10 == *puVar8;
-                          if (bVar6) {
-                            *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
-                          }
-                          UNLOCK();
-                        } while (!bVar6);
-                      }
-                      bVar6 = pAVar31 != a_00;
-                      a_00 = pAVar31;
-                    } while (bVar6);
-                    if (cRam_? == '\0') {
-                      FUN_?(&TypeInfo__MVGameControllerBase);
-                      LOCK();
-                      UNLOCK();
-                      cRam_? = '\x01';
-                    }
-                    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                    if (((pMVar2 != (MVGameControllerBase *)0x0) &&
-                        (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
-                       ((pGVar11 = (pMVar3->fields).GameEventManager,
-                        pGVar11 != (GameEventManager *)0x0 &&
-                        (pGVar12 = (pGVar11->fields).AvatarCommandsBuildMode,
-                        pGVar12 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)))) {
-                      pGVar13 = (pGVar12->fields).LaserCommands;
-                      pDVar14 = (Delegate *)FUN_?(TypeInfo__System__Action<bool>);
-                      FUN_?(pDVar14,pLVar5);
-                      if (pGVar13 !=
-                          (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)
-                          0x0) {
-                        if (cRam_? == '\0') {
-                          FUN_?(&TypeInfo__System__Action<bool>);
-                          LOCK();
-                          UNLOCK();
-                          cRam_? = '\x01';
-                        }
-                        pGVar33 = &pGVar13->fields;
-                        a_01 = (pGVar13->fields).OnLaserActiveChanged;
-                        do {
-                          pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                              ((Delegate *)a_01,pDVar14,(MethodInfo *)0x0);
-                          pAVar34 = TypeInfo__System__Action<bool>;
-                          if (pDVar20 == (Delegate *)0x0) {
-                            pAVar35 = (Action_1_Boolean_ *)0x0;
-                          }
-                          else {
-                            pAVar35 = (Action_1_Boolean_ *)
-                                      FUN_?(pDVar20,TypeInfo__System__Action<bool>);
-                            if (pAVar35 == (Action_1_Boolean_ *)0x0) {
-                              FUN_?(pDVar20,pAVar34);
-                              pcVar23 = (code *)swi(3);
-                              (*pcVar23)();
-                              return;
-                            }
-                          }
-                          LOCK();
-                          pAVar36 = pGVar33->OnLaserActiveChanged;
-                          bVar6 = a_01 == pAVar36;
-                          if (bVar6) {
-                            pGVar33->OnLaserActiveChanged = pAVar35;
-                            pAVar36 = a_01;
-                          }
-                          UNLOCK();
-                          pAVar35 = a_01;
-                          if (!bVar6) {
-                            pAVar35 = pAVar36;
-                          }
-                          if (iRam_? != 0) {
-                            uVar7 = (uint)((ulonglong)pGVar33 >> 0xc);
-                            lVar16 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-                            do {
-                              uVar10 = *(ulonglong *)(lVar16 + 0xADDR);
-                              puVar8 = (ulonglong *)(lVar16 + 0xADDR);
-                              LOCK();
-                              bVar6 = uVar10 == *puVar8;
-                              if (bVar6) {
-                                *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
-                              }
-                              UNLOCK();
-                            } while (!bVar6);
-                          }
-                          bVar6 = pAVar35 != a_01;
-                          a_01 = pAVar35;
-                        } while (bVar6);
-                        if (cRam_? == '\0') {
-                          FUN_?(&TypeInfo__MVGameControllerBase);
-                          LOCK();
-                          UNLOCK();
-                          cRam_? = '\x01';
-                        }
-                        pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                        if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
-                             (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
-                            (pGVar11 = (pMVar3->fields).GameEventManager,
-                            pGVar11 != (GameEventManager *)0x0)) &&
-                           (pGVar12 = (pGVar11->fields).AvatarCommandsBuildMode,
-                           pGVar12 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) {
-                          pGVar13 = (pGVar12->fields).LaserCommands;
-                          pDVar14 = (Delegate *)
-                                    FUN_?(TypeInfo__System__Action<UnityEngine::Vector3>);
-                          FUN_?(pDVar14,pLVar5);
-                          if (pGVar13 !=
-                              (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
-                               *)0x0) {
-                            if (cRam_? == '\0') {
-                              FUN_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
-                              LOCK();
-                              UNLOCK();
-                              cRam_? = '\x01';
-                            }
-                            a_02 = (pGVar13->fields).OnUpdatePosition;
-                            do {
-                              pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                                  ((Delegate *)a_02,pDVar14,(MethodInfo *)0x0);
-                              pAVar37 = TypeInfo__System__Action<UnityEngine::Vector3>;
-                              if (pDVar20 == (Delegate *)0x0) {
-                                pAVar38 = (Action_1_UnityEngine_Vector3_ *)0x0;
-                              }
-                              else {
-                                pAVar38 = (Action_1_UnityEngine_Vector3_ *)
-                                          FUN_?(pDVar20,
-                                                  TypeInfo__System__Action<UnityEngine::Vector3>);
-                                if (pAVar38 == (Action_1_UnityEngine_Vector3_ *)0x0) {
-                                  FUN_?(pDVar20,pAVar37);
-                                  pcVar23 = (code *)swi(3);
-                                  (*pcVar23)();
-                                  return;
-                                }
-                              }
-                              ppAVar39 = &(pGVar13->fields).OnUpdatePosition;
-                              LOCK();
-                              pAVar40 = *ppAVar39;
-                              bVar6 = a_02 == pAVar40;
-                              if (bVar6) {
-                                *ppAVar39 = pAVar38;
-                                pAVar40 = a_02;
-                              }
-                              UNLOCK();
-                              pAVar38 = a_02;
-                              if (!bVar6) {
-                                pAVar38 = pAVar40;
-                              }
-                              if (iRam_? != 0) {
-                                uVar7 = (uint)((ulonglong)&(pGVar13->fields).OnUpdatePosition >>
-                                               0xc);
-                                lVar16 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
-                                do {
-                                  uVar10 = *(ulonglong *)(lVar16 + 0xADDR);
-                                  puVar8 = (ulonglong *)(lVar16 + 0xADDR);
-                                  LOCK();
-                                  bVar6 = uVar10 == *puVar8;
-                                  if (bVar6) {
-                                    *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
-                                  }
-                                  UNLOCK();
-                                } while (!bVar6);
-                              }
-                              bVar6 = pAVar38 != a_02;
-                              a_02 = pAVar38;
-                            } while (bVar6);
-                            return;
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      FUN_?();
-      pcVar23 = (code *)swi(3);
-      (*pcVar23)();
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar2 == (MVGameControllerBase *)0x0) ||
+         (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+        (this_00 = (pMVar3->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
+       ((this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+        this_01 == (MVLocalPlayer *)0x0 ||
+        (pLVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_01,(MethodInfo *)0x0),
+        pLVar4 == (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) goto code_?;
+    if (((pLVar4->fields)._size == 0) ||
+       (iVar5 = FUN_?(pLVar4,CONCAT71((int7)((ulonglong)
+                                                                                                              
+                                                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                                                  ->klass >> 8),0x12)), iVar5 == -1)) {
       return;
     }
   }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode == 4) goto code_?;
+  }
+  pLVar6 = MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
+                      ((MVBuildModeAvatar *)this,1,(MethodInfo *)0x0);
+  bVar7 = iRam_? != 0;
+  (this->fields).laserPoint = pLVar6;
+  if (bVar7) {
+    uVar8 = (uint)((ulonglong)&(this->fields).laserPoint >> 0xc);
+    puVar9 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar10 = *puVar9;
+      LOCK();
+      uVar11 = *puVar9;
+      if (uVar10 == uVar11) {
+        *puVar9 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar10 != uVar11);
+  }
+  pLVar6 = (this->fields).laserPoint;
+  if (pLVar6 != (LaserPointer *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__Action<bool>,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__System__Action<float>);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__System__Action<LaserPointerState>);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__System__Action<unsigned_char>);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+        (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+       ((pGVar12 = (pMVar3->fields).GameEventManager, pGVar12 != (GameEventManager *)0x0 &&
+        (pGVar13 = (pGVar12->fields).AvatarCommandsBuildMode,
+        pGVar13 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)))) {
+      pGVar14 = (pGVar13->fields).LaserCommands;
+      pDVar15 = (Delegate *)FUN_?(TypeInfo__System__Action<unsigned_char>);
+      if (pLVar6 != (LaserPointer *)0x0) {
+        bVar7 = iRam_? != 0;
+        pMVar16 = (pLVar6->klass->vtable).SetCurrentCubeMaterial.method;
+        (pDVar15->fields).method_ptr = pMVar16->virtualMethodPointer;
+        (pDVar15->fields).method = pMVar16;
+        (pDVar15->fields).m_target = (Object *)pLVar6;
+        if (bVar7) {
+          uVar8 = (uint)((ulonglong)&(pDVar15->fields).m_target >> 0xc);
+          lVar17 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar11 = *(ulonglong *)(lVar17 + 0xADDR);
+            puVar9 = (ulonglong *)(lVar17 + 0xADDR);
+            LOCK();
+            bVar7 = uVar11 == *puVar9;
+            if (bVar7) {
+              *puVar9 = uVar11 | 1L << (uVar8 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar7);
+        }
+        uVar18 = pMVar16->parameters_count;
+        (pDVar15->fields).method_code = pDVar15;
+        if (((pMVar16->flags & 0x10) == 0) || (uVar18 != 1)) {
+          (pDVar15->fields).method_code = (pDVar15->fields).m_target;
+          puVar19 = (pDVar15->fields).method_ptr;
+        }
+        else {
+          puVar19 = &UNK_?;
+        }
+        (pDVar15->fields).invoke_impl = puVar19;
+        (pDVar15->fields).extra_arg = FUN_?;
+        if (pGVar14 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)
+        {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__System__Action<unsigned_char>);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          ppAVar20 = &(pGVar14->fields).OnCubeMaterialChanged;
+          a_03 = (pGVar14->fields).OnCubeMaterialChanged;
+          do {
+            pDVar21 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)a_03,pDVar15,(MethodInfo *)0x0);
+            pAVar22 = TypeInfo__System__Action<unsigned_char>;
+            if (pDVar21 == (Delegate *)0x0) {
+              pAVar23 = (Action_1_Byte__1 *)0x0;
+            }
+            else {
+              pAVar23 = (Action_1_Byte__1 *)
+                        FUN_?(pDVar21,TypeInfo__System__Action<unsigned_char>);
+              if (pAVar23 == (Action_1_Byte__1 *)0x0) {
+                FUN_?(pDVar21,pAVar22);
+                pcVar24 = (code *)swi(3);
+                (*pcVar24)();
+                return;
+              }
+            }
+            LOCK();
+            pAVar25 = *ppAVar20;
+            bVar7 = a_03 == pAVar25;
+            if (bVar7) {
+              *ppAVar20 = pAVar23;
+              pAVar25 = a_03;
+            }
+            UNLOCK();
+            pAVar23 = a_03;
+            if (!bVar7) {
+              pAVar23 = pAVar25;
+            }
+            if (iRam_? != 0) {
+              uVar8 = (uint)((ulonglong)ppAVar20 >> 0xc);
+              lVar17 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar11 = *(ulonglong *)(lVar17 + 0xADDR);
+                puVar9 = (ulonglong *)(lVar17 + 0xADDR);
+                LOCK();
+                bVar7 = uVar11 == *puVar9;
+                if (bVar7) {
+                  *puVar9 = uVar11 | 1L << (uVar8 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar7);
+            }
+            bVar7 = pAVar23 != a_03;
+            a_03 = pAVar23;
+          } while (bVar7);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+          if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+               (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+              (pGVar12 = (pMVar3->fields).GameEventManager, pGVar12 != (GameEventManager *)0x0)) &&
+             (pGVar13 = (pGVar12->fields).AvatarCommandsBuildMode,
+             pGVar13 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) {
+            pGVar14 = (pGVar13->fields).LaserCommands;
+            pDVar15 = (Delegate *)FUN_?(TypeInfo__System__Action<float>);
+            FUN_?(pDVar15,pLVar6);
+            if (pGVar14 !=
+                (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__System__Action<float>);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              ppAVar26 = &(pGVar14->fields).OnActivateLaserForDuration;
+              a = (pGVar14->fields).OnActivateLaserForDuration;
+              do {
+                pDVar21 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                    ((Delegate *)a,pDVar15,(MethodInfo *)0x0);
+                pAVar27 = TypeInfo__System__Action<float>;
+                if (pDVar21 == (Delegate *)0x0) {
+                  pAVar28 = (Action_1_Single_ *)0x0;
+                }
+                else {
+                  pAVar28 = (Action_1_Single_ *)
+                            FUN_?(pDVar21,TypeInfo__System__Action<float>);
+                  if (pAVar28 == (Action_1_Single_ *)0x0) {
+                    FUN_?(pDVar21,pAVar27);
+                    pcVar24 = (code *)swi(3);
+                    (*pcVar24)();
+                    return;
+                  }
+                }
+                LOCK();
+                pAVar29 = *ppAVar26;
+                bVar7 = a == pAVar29;
+                if (bVar7) {
+                  *ppAVar26 = pAVar28;
+                  pAVar29 = a;
+                }
+                UNLOCK();
+                pAVar28 = a;
+                if (!bVar7) {
+                  pAVar28 = pAVar29;
+                }
+                if (iRam_? != 0) {
+                  uVar8 = (uint)((ulonglong)ppAVar26 >> 0xc);
+                  lVar17 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+                  do {
+                    uVar11 = *(ulonglong *)(lVar17 + 0xADDR);
+                    puVar9 = (ulonglong *)(lVar17 + 0xADDR);
+                    LOCK();
+                    bVar7 = uVar11 == *puVar9;
+                    if (bVar7) {
+                      *puVar9 = uVar11 | 1L << (uVar8 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar7);
+                }
+                bVar7 = pAVar28 != a;
+                a = pAVar28;
+              } while (bVar7);
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__MVGameControllerBase);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+              if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+                  (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+                 ((pGVar12 = (pMVar3->fields).GameEventManager, pGVar12 != (GameEventManager *)0x0
+                  && (pGVar13 = (pGVar12->fields).AvatarCommandsBuildMode,
+                     pGVar13 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)))) {
+                pGVar14 = (pGVar13->fields).LaserCommands;
+                this_02 = (UnityAction_1_System_Int32Enum_ *)
+                          FUN_?(TypeInfo__System__Action<LaserPointerState>);
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+                UnityAction_1_System_Int32Enum___ctor
+                          (this_02,(Object *)pLVar6,(pLVar6->klass->vtable).ChangeState.method,
+                           (MethodInfo *)0x0);
+                if (pGVar14 !=
+                    (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0) {
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__System__Action<LaserPointerState>);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  ppAVar30 = &(pGVar14->fields).OnChangeState;
+                  a_00 = (pGVar14->fields).OnChangeState;
+                  do {
+                    pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                        ((Delegate *)a_00,(Delegate *)this_02,(MethodInfo *)0x0);
+                    pAVar31 = TypeInfo__System__Action<LaserPointerState>;
+                    if (pDVar15 == (Delegate *)0x0) {
+                      pAVar32 = (Action_1_LaserPointerState_ *)0x0;
+                    }
+                    else {
+                      pAVar32 = (Action_1_LaserPointerState_ *)
+                                FUN_?(pDVar15,TypeInfo__System__Action<LaserPointerState>);
+                      if (pAVar32 == (Action_1_LaserPointerState_ *)0x0) {
+                        FUN_?(pDVar15,pAVar31);
+                        pcVar24 = (code *)swi(3);
+                        (*pcVar24)();
+                        return;
+                      }
+                    }
+                    LOCK();
+                    pAVar33 = *ppAVar30;
+                    bVar7 = a_00 == pAVar33;
+                    if (bVar7) {
+                      *ppAVar30 = pAVar32;
+                      pAVar33 = a_00;
+                    }
+                    UNLOCK();
+                    pAVar32 = a_00;
+                    if (!bVar7) {
+                      pAVar32 = pAVar33;
+                    }
+                    if (iRam_? != 0) {
+                      uVar8 = (uint)((ulonglong)ppAVar30 >> 0xc);
+                      lVar17 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar11 = *(ulonglong *)(lVar17 + 0xADDR);
+                        puVar9 = (ulonglong *)(lVar17 + 0xADDR);
+                        LOCK();
+                        bVar7 = uVar11 == *puVar9;
+                        if (bVar7) {
+                          *puVar9 = uVar11 | 1L << (uVar8 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar7);
+                    }
+                    bVar7 = pAVar32 != a_00;
+                    a_00 = pAVar32;
+                  } while (bVar7);
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__MVGameControllerBase);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+                  if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+                      (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+                     ((pGVar12 = (pMVar3->fields).GameEventManager,
+                      pGVar12 != (GameEventManager *)0x0 &&
+                      (pGVar13 = (pGVar12->fields).AvatarCommandsBuildMode,
+                      pGVar13 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)))) {
+                    pGVar14 = (pGVar13->fields).LaserCommands;
+                    pDVar15 = (Delegate *)FUN_?(TypeInfo__System__Action<bool>);
+                    FUN_?(pDVar15,pLVar6);
+                    if (pGVar14 !=
+                        (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)
+                    {
+                      if (cRam_? == '\0') {
+                        FUN_?(&TypeInfo__System__Action<bool>);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      pGVar34 = &pGVar14->fields;
+                      a_01 = (pGVar14->fields).OnLaserActiveChanged;
+                      do {
+                        pDVar21 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                            ((Delegate *)a_01,pDVar15,(MethodInfo *)0x0);
+                        pAVar35 = TypeInfo__System__Action<bool>;
+                        if (pDVar21 == (Delegate *)0x0) {
+                          pAVar36 = (Action_1_Boolean_ *)0x0;
+                        }
+                        else {
+                          pAVar36 = (Action_1_Boolean_ *)
+                                    FUN_?(pDVar21,TypeInfo__System__Action<bool>);
+                          if (pAVar36 == (Action_1_Boolean_ *)0x0) {
+                            FUN_?(pDVar21,pAVar35);
+                            pcVar24 = (code *)swi(3);
+                            (*pcVar24)();
+                            return;
+                          }
+                        }
+                        LOCK();
+                        pAVar37 = pGVar34->OnLaserActiveChanged;
+                        bVar7 = a_01 == pAVar37;
+                        if (bVar7) {
+                          pGVar34->OnLaserActiveChanged = pAVar36;
+                          pAVar37 = a_01;
+                        }
+                        UNLOCK();
+                        pAVar36 = a_01;
+                        if (!bVar7) {
+                          pAVar36 = pAVar37;
+                        }
+                        if (iRam_? != 0) {
+                          uVar8 = (uint)((ulonglong)pGVar34 >> 0xc);
+                          lVar17 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+                          do {
+                            uVar11 = *(ulonglong *)(lVar17 + 0xADDR);
+                            puVar9 = (ulonglong *)(lVar17 + 0xADDR);
+                            LOCK();
+                            bVar7 = uVar11 == *puVar9;
+                            if (bVar7) {
+                              *puVar9 = uVar11 | 1L << (uVar8 & 0x3f);
+                            }
+                            UNLOCK();
+                          } while (!bVar7);
+                        }
+                        bVar7 = pAVar36 != a_01;
+                        a_01 = pAVar36;
+                      } while (bVar7);
+                      if (cRam_? == '\0') {
+                        FUN_?(&TypeInfo__MVGameControllerBase);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+                      if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+                           (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+                          (pGVar12 = (pMVar3->fields).GameEventManager,
+                          pGVar12 != (GameEventManager *)0x0)) &&
+                         (pGVar13 = (pGVar12->fields).AvatarCommandsBuildMode,
+                         pGVar13 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) {
+                        pGVar14 = (pGVar13->fields).LaserCommands;
+                        pDVar15 = (Delegate *)
+                                  FUN_?(TypeInfo__System__Action<UnityEngine::Vector3>);
+                        FUN_?(pDVar15,pLVar6);
+                        if (pGVar14 !=
+                            (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)
+                            0x0) {
+                          if (cRam_? == '\0') {
+                            FUN_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
+                            LOCK();
+                            UNLOCK();
+                            cRam_? = '\x01';
+                          }
+                          a_02 = (pGVar14->fields).OnUpdatePosition;
+                          do {
+                            pDVar21 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                                ((Delegate *)a_02,pDVar15,(MethodInfo *)0x0);
+                            pAVar38 = TypeInfo__System__Action<UnityEngine::Vector3>;
+                            if (pDVar21 == (Delegate *)0x0) {
+                              pAVar39 = (Action_1_UnityEngine_Vector3_ *)0x0;
+                            }
+                            else {
+                              pAVar39 = (Action_1_UnityEngine_Vector3_ *)
+                                        FUN_?(pDVar21,
+                                                  TypeInfo__System__Action<UnityEngine::Vector3>);
+                              if (pAVar39 == (Action_1_UnityEngine_Vector3_ *)0x0) {
+                                FUN_?(pDVar21,pAVar38);
+                                pcVar24 = (code *)swi(3);
+                                (*pcVar24)();
+                                return;
+                              }
+                            }
+                            ppAVar40 = &(pGVar14->fields).OnUpdatePosition;
+                            LOCK();
+                            pAVar41 = *ppAVar40;
+                            bVar7 = a_02 == pAVar41;
+                            if (bVar7) {
+                              *ppAVar40 = pAVar39;
+                              pAVar41 = a_02;
+                            }
+                            UNLOCK();
+                            pAVar39 = a_02;
+                            if (!bVar7) {
+                              pAVar39 = pAVar41;
+                            }
+                            if (iRam_? != 0) {
+                              uVar8 = (uint)((ulonglong)&(pGVar14->fields).OnUpdatePosition >> 0xc)
+                              ;
+                              lVar17 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+                              do {
+                                uVar11 = *(ulonglong *)(lVar17 + 0xADDR);
+                                puVar9 = (ulonglong *)(lVar17 + 0xADDR);
+                                LOCK();
+                                bVar7 = uVar11 == *puVar9;
+                                if (bVar7) {
+                                  *puVar9 = uVar11 | 1L << (uVar8 & 0x3f);
+                                }
+                                UNLOCK();
+                              } while (!bVar7);
+                            }
+                            bVar7 = pAVar39 != a_02;
+                            a_02 = pAVar39;
+                          } while (bVar7);
+                          return;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    FUN_?();
+    pcVar24 = (code *)swi(3);
+    (*pcVar24)();
+    return;
+  }
 code_?:
   FUN_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 

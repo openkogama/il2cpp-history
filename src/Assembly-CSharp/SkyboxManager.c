@@ -338,7 +338,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_ComputeSkyboxSettings
       } while (!bVar8);
     }
   }
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_4
+  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5
                         ((IEnumerable_1_UnityEngine_UIElements_StyleSelectorPart_ *)pIVar9,
                          (Func_2_UnityEngine_UIElements_StyleSelectorPart_Object_ *)pFVar16,
                          System__Collections__Generic__IEnumerable<float>_MethodInfo__System__Linq__Enumerable__Select<MVSkybox,_float>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_float>_
@@ -413,7 +413,7 @@ code_?:
           } while (!bVar8);
         }
       }
-      pIVar9 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_4
+      pIVar9 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5
                           ((IEnumerable_1_UnityEngine_UIElements_StyleSelectorPart_ *)pIVar9,
                            (Func_2_UnityEngine_UIElements_StyleSelectorPart_Object_ *)pFVar16,
                            System__Collections__Generic__IEnumerable<float>_MethodInfo__System__Linq__Enumerable__Select<MVSkybox,_float>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_float>_

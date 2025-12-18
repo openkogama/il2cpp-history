@@ -6105,17 +6105,15 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal
     this = (NotImplementedException *)func_?(uVar4);
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
               (this,(MethodInfo *)0x0);
-    uVar5 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
-    FUN_?(this);
-    in(uVar5);
-    cVar6 = (char)((ushort)uVar5 >> 8);
-    cRam_? = cRam_? + cVar6;
-    pcVar7 = (char *)(unaff_RDI * 4 + 0xb952003a);
-    *pcVar7 = *pcVar7 + cVar6;
-    *(char *)(unaff_RSI + -0x47) = *(char *)(unaff_RSI + -0x47) + (char)((ulonglong)unaff_RBX >> 8);
-    pcVar8 = (code *)swi(3);
-    pVVar9 = (Vector3 *)(*pcVar8)();
-    return pVVar9;
+    uVar4 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
+    lVar5 = FUN_?(this,uVar4);
+    *(char *)(unaff_RSI + -2) = *(char *)(unaff_RSI + -2) + unaff_BL;
+    *(char *)(lVar5 + -0x5dff6202) = *(char *)(lVar5 + -0x5dff6202) + (char)lVar5;
+    *(char *)(unaff_RBP + -0x62013c00) = *(char *)(unaff_RBP + -0x62013c00) + '\x01';
+    *(char *)(unaff_RBP + -0x33333400) = *(char *)(unaff_RBP + -0x33333400) + '\x01';
+    pcVar6 = (code *)swi(3);
+    pVVar7 = (Vector3 *)(*pcVar6)();
+    return pVVar7;
   }
   __return_storage_ptr__->x = (float)(int)(ulonglong)(uint)fVar2;
   __return_storage_ptr__->y = (float)(int)((ulonglong)(uint)fVar2 >> 0x20);

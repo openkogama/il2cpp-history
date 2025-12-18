@@ -268,247 +268,250 @@ void Assembly-CSharp.dll::MVFire::MVFire_Initialize(MVFire *this,MethodInfo *met
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   pFVar1 = (this->fields).fireObject;
-  if (pFVar1 != (FireObject *)0x0) {
-    this_00 = (pFVar1->fields).fireCollider;
+  if (pFVar1 == (FireObject *)0x0) goto code_?;
+  this_00 = (pFVar1->fields).fireCollider;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this_00 == (Collider *)0x0) goto code_?;
+  UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
+            (this_00,TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+                     (IEditModeUI *)0x0,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+      (IEditModeUI *)0x0) {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    if (this_00 != (Collider *)0x0) {
-      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                (this_00,TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField
-                         == (IEditModeUI *)0x0,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+        (IEditModeUI *)0x0) goto code_?;
+    pDVar2 = (Delegate *)FUN_?();
+    b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
+    FUN_?(b,this);
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar2,b,(MethodInfo *)0x0);
+    pAVar3 = TypeInfo__System__Action<EditModeChangeArgs>;
+    if ((pDVar2 != (Delegate *)0x0) &&
+       (lVar4 = FUN_?(pDVar2,TypeInfo__System__Action<EditModeChangeArgs>), lVar4 == 0)) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    FUN_?();
+  }
+  pFVar1 = (this->fields).fireObject;
+  if (pFVar1 == (FireObject *)0x0) goto code_?;
+  MVLogicObject::MVLogicObject_SetupCulling
+            ((MVLogicObject *)this,(pFVar1->fields).visualObject,TypeRef__System__Activator__T._0_4_
+             ,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar6->fields).gameMode == 0) {
+code_?:
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar7 == (PrefabPool *)0x0) goto code_?;
+    pSVar8 = (pPVar7->fields).rangeVisualizationObject;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pSVar8 = (SphereVolumeIndicator *)
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                        ((Object *)pSVar8,
+                         SphereVolumeIndicator_MethodInfo__UnityEngine__Object__Instantiate<SphereVolumeIndicator>_SphereVolumeIndicator_
+                        );
+    bVar9 = iRam_? != 0;
+    (this->fields).rangeVis = pSVar8;
+    if (bVar9) {
+      uVar10 = (uint)((ulonglong)&(this->fields).rangeVis >> 0xc);
+      uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+      do {
+        uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+        puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
         LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
-          (IEditModeUI *)0x0) {
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__MVGameControllerBase);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
+        bVar9 = uVar12 == *puVar13;
+        if (bVar9) {
+          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
         }
-        if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-            (IEditModeUI *)0x0) goto code_?;
-        pDVar2 = (Delegate *)FUN_?();
-        b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
-        FUN_?(b,this);
-        pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar2,b,(MethodInfo *)0x0);
-        pAVar3 = TypeInfo__System__Action<EditModeChangeArgs>;
-        if ((pDVar2 != (Delegate *)0x0) &&
-           (lVar4 = FUN_?(pDVar2,TypeInfo__System__Action<EditModeChangeArgs>), lVar4 == 0))
-        {
-          FUN_?(pDVar2,pAVar3);
+        UNLOCK();
+      } while (!bVar9);
+    }
+    pSVar8 = (this->fields).rangeVis;
+    if (pSVar8 == (SphereVolumeIndicator *)0x0) goto code_?;
+    pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pSVar8,(MethodInfo *)0x0);
+    pFVar1 = (this->fields).fireObject;
+    if ((pFVar1 == (FireObject *)0x0) ||
+       (value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pFVar1,(MethodInfo *)0x0), pTVar14 == (Transform *)0x0))
+    goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+              (pTVar14,value,(MethodInfo *)0x0);
+    pSVar8 = (this->fields).rangeVis;
+    if (pSVar8 == (SphereVolumeIndicator *)0x0) goto code_?;
+    pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pSVar8,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pTVar14 == (Transform *)0x0) {
+code_?:
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar15 = (pTVar14->fields)._._.m_CachedPtr;
+    if (pvVar15 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar14,(MethodInfo *)0x0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar16 = func_?(&UNK_?);
+      FUN_?(uVar16,0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)(pvVar15);
+    pSVar8 = (this->fields).rangeVis;
+    if (pSVar8 == (SphereVolumeIndicator *)0x0) goto code_?;
+    SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
+              (pSVar8,(this->fields).damageRadius,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar6->fields).gameMode == 4) goto code_?;
+  }
+  MVFire_SetFireToData(this,(MethodInfo *)0x0);
+  MVFire_SetFireHitBoxYOffset
+            (this,((this->fields).damageRadius / _UNK_?) * _UNK_? * _UNK_?,
+             (MethodInfo *)0x0);
+  this_01 = (Action_2_Int32Enum_Object_ *)
+            FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+            (this_01,(Object *)this,
+             MethodInfo__MVFire__OnInputStateUpdate_LogicInputState__LogicObjectManager_,
+             (MethodInfo *)0x0);
+  pIVar17 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                      ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                       (Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
+  bVar9 = iRam_? != 0;
+  (this->fields)._InputSignalReceiver_k__BackingField = pIVar17;
+  if (bVar9) {
+    uVar10 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
+    uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+    do {
+      uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+      puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+      LOCK();
+      bVar9 = uVar12 == *puVar13;
+      if (bVar9) {
+        *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
+    activeFlag = FUN_?(1,TypeInfo__IInputSignalReceiver);
+    MVFire_ToggleEmitter(this,activeFlag,(MethodInfo *)0x0);
+    pFVar1 = (this->fields).fireObject;
+    if (pFVar1 != (FireObject *)0x0) {
+      pAVar18 = (pFVar1->fields).OnFireObjectCreated;
+      this_02 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_02,(Object *)this,MethodInfo__MVFire__OnFireObjectPlaced__,(MethodInfo *)0x0);
+      pAVar18 = (Action *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar18,(Delegate *)this_02,(MethodInfo *)0x0);
+      if (pAVar18 == (Action *)0x0) {
+        (pFVar1->fields).OnFireObjectCreated = (Action *)0x0;
+      }
+      else {
+        pAVar19 = (Action *)0x0;
+        if (pAVar18->klass == TypeInfo__System__Action) {
+          pAVar19 = pAVar18;
+        }
+        if (pAVar19 == (Action *)0x0) {
+          FUN_?(pAVar18);
           pcVar5 = (code *)swi(3);
           (*pcVar5)();
           return;
         }
-        FUN_?();
+        (pFVar1->fields).OnFireObjectCreated = pAVar19;
+        pAVar19 = (Action *)0x0;
+        if (pAVar18->klass == TypeInfo__System__Action) {
+          pAVar19 = pAVar18;
+        }
+        if (pAVar19 == (Action *)0x0) {
+          FUN_?(pAVar18);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
       }
-      pFVar1 = (this->fields).fireObject;
-      if (pFVar1 != (FireObject *)0x0) {
-        MVLogicObject::MVLogicObject_SetupCulling
-                  ((MVLogicObject *)this,(pFVar1->fields).visualObject,
-                   TypeRef__System__Activator__T._0_4_,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__MVGameControllerBase);
+      if (iRam_? != 0) {
+        uVar10 = (uint)((ulonglong)&(pFVar1->fields).OnFireObjectCreated >> 0xc);
+        uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+        do {
+          uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+          puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
           LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if (pGVar6 != (GameSessionData *)0x0) {
-          if ((pGVar6->fields).gameMode == 0) {
-            if (cRam_? == '\0') {
-              FUN_?(&TypeInfo__PrefabPool);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
-            if (pPVar7 == (PrefabPool *)0x0) goto code_?;
-            pSVar8 = (pPVar7->fields).rangeVisualizationObject;
-            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-              FUN_?();
-            }
-            pSVar8 = (SphereVolumeIndicator *)
-                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                ((Object *)pSVar8,
-                                 SphereVolumeIndicator_MethodInfo__UnityEngine__Object__Instantiate<SphereVolumeIndicator>_SphereVolumeIndicator_
-                                );
-            bVar9 = iRam_? != 0;
-            (this->fields).rangeVis = pSVar8;
-            if (bVar9) {
-              uVar10 = (uint)((ulonglong)&(this->fields).rangeVis >> 0xc);
-              uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
-              do {
-                uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
-                puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
-                LOCK();
-                bVar9 = uVar12 == *puVar13;
-                if (bVar9) {
-                  *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
-                }
-                UNLOCK();
-              } while (!bVar9);
-            }
-            pSVar8 = (this->fields).rangeVis;
-            if (pSVar8 == (SphereVolumeIndicator *)0x0) goto code_?;
-            pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pSVar8,(MethodInfo *)0x0);
-            pFVar1 = (this->fields).fireObject;
-            if ((pFVar1 == (FireObject *)0x0) ||
-               (value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pFVar1,(MethodInfo *)0x0),
-               pTVar14 == (Transform *)0x0)) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                      (pTVar14,value,(MethodInfo *)0x0);
-            pSVar8 = (this->fields).rangeVis;
-            if (pSVar8 == (SphereVolumeIndicator *)0x0) goto code_?;
-            pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pSVar8,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              FUN_?(&TypeInfo__UnityEngine__Vector3);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            if (pTVar14 == (Transform *)0x0) {
-code_?:
-              FUN_?();
-              pcVar5 = (code *)swi(3);
-              (*pcVar5)();
-              return;
-            }
-            if (cRam_? == '\0') {
-              FUN_?(&
-                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
-                           );
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            pvVar15 = (pTVar14->fields)._._.m_CachedPtr;
-            if (pvVar15 == (void *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-              ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar14,(MethodInfo *)0x0);
-              pcVar5 = (code *)swi(3);
-              (*pcVar5)();
-              return;
-            }
-            pcVar5 = pcRam_?;
-            if ((pcRam_? == (code *)0x0) &&
-               (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
-              uVar16 = func_?(&UNK_?);
-              FUN_?(uVar16,0);
-              pcVar5 = (code *)swi(3);
-              (*pcVar5)();
-              return;
-            }
-            pcRam_? = pcVar5;
-            (*pcRam_?)(pvVar15);
-            pSVar8 = (this->fields).rangeVis;
-            if (pSVar8 == (SphereVolumeIndicator *)0x0) goto code_?;
-            SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
-                      (pSVar8,(this->fields).damageRadius,(MethodInfo *)0x0);
-          }
-          MVFire_SetFireToData(this,(MethodInfo *)0x0);
-          MVFire_SetFireHitBoxYOffset
-                    (this,((this->fields).damageRadius / _UNK_?) * _UNK_? *
-                          _UNK_?,(MethodInfo *)0x0);
-          this_01 = (Action_2_Int32Enum_Object_ *)
-                    FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-          mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVFire__OnInputStateUpdate_LogicInputState__LogicObjectManager_,
-                     (MethodInfo *)0x0);
-          pIVar17 = LogicClientsideFactory::
-                    LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                              ((MVWorldObject *)this,1,
-                               (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                               (Action_2_LogicInputState_LogicObjectManager_ *)this_01,
-                               (MethodInfo *)0x0);
-          bVar9 = iRam_? != 0;
-          (this->fields)._InputSignalReceiver_k__BackingField = pIVar17;
+          bVar9 = uVar12 == *puVar13;
           if (bVar9) {
-            uVar10 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
-            uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
-            do {
-              uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
-              puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
-              LOCK();
-              bVar9 = uVar12 == *puVar13;
-              if (bVar9) {
-                *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
-              }
-              UNLOCK();
-            } while (!bVar9);
+            *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
           }
-          if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
-            activeFlag = FUN_?(1,TypeInfo__IInputSignalReceiver);
-            MVFire_ToggleEmitter(this,activeFlag,(MethodInfo *)0x0);
-            pFVar1 = (this->fields).fireObject;
-            if (pFVar1 != (FireObject *)0x0) {
-              pAVar18 = (pFVar1->fields).OnFireObjectCreated;
-              this_02 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
-              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-              NavMesh_OnNavMeshPreUpdate__ctor
-                        (this_02,(Object *)this,MethodInfo__MVFire__OnFireObjectPlaced__,
-                         (MethodInfo *)0x0);
-              pAVar18 = (Action *)
-                        mscorlib.dll::System::Delegate::Delegate_Combine
-                                  ((Delegate *)pAVar18,(Delegate *)this_02,(MethodInfo *)0x0);
-              if (pAVar18 == (Action *)0x0) {
-                (pFVar1->fields).OnFireObjectCreated = (Action *)0x0;
-              }
-              else {
-                pAVar19 = (Action *)0x0;
-                if (pAVar18->klass == TypeInfo__System__Action) {
-                  pAVar19 = pAVar18;
-                }
-                if (pAVar19 == (Action *)0x0) {
-                  FUN_?(pAVar18);
-                  pcVar5 = (code *)swi(3);
-                  (*pcVar5)();
-                  return;
-                }
-                (pFVar1->fields).OnFireObjectCreated = pAVar19;
-                pAVar19 = (Action *)0x0;
-                if (pAVar18->klass == TypeInfo__System__Action) {
-                  pAVar19 = pAVar18;
-                }
-                if (pAVar19 == (Action *)0x0) {
-                  FUN_?(pAVar18);
-                  pcVar5 = (code *)swi(3);
-                  (*pcVar5)();
-                  return;
-                }
-              }
-              if (iRam_? != 0) {
-                uVar10 = (uint)((ulonglong)&(pFVar1->fields).OnFireObjectCreated >> 0xc);
-                uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
-                do {
-                  uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
-                  puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
-                  LOCK();
-                  bVar9 = uVar12 == *puVar13;
-                  if (bVar9) {
-                    *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
-                  }
-                  UNLOCK();
-                } while (!bVar9);
-              }
-              return;
-            }
-          }
-        }
+          UNLOCK();
+        } while (!bVar9);
       }
+      return;
     }
   }
 code_?:
@@ -1417,7 +1420,17 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetFireHitBoxYOffset
     pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar4 != (GameSessionData *)0x0) {
       if ((pGVar4->fields).gameMode != 0) {
-        return;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+        if ((pGVar4->fields).gameMode != 4) {
+          return;
+        }
       }
       this_01 = (this->fields).rangeVis;
       if ((this_01 != (SphereVolumeIndicator *)0x0) &&
@@ -1432,6 +1445,7 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetFireHitBoxYOffset
       }
     }
   }
+code_?:
   FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -1545,8 +1559,56 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetFireToData(MVFire *this,MethodInfo *
     ParticleSystem_MainModule_set_startColor(&PStackX_20,&PStack_19,(MethodInfo *)0x0);
   }
   pFVar9 = (this->fields).fireObject;
-  if ((pFVar9 != (FireObject *)0x0) &&
-     (pPVar10 = (pFVar9->fields).fireParticleSystem, pPVar10 != (ParticleSystem *)0x0)) {
+  if ((pFVar9 == (FireObject *)0x0) ||
+     (pPVar10 = (pFVar9->fields).fireParticleSystem, pPVar10 == (ParticleSystem *)0x0))
+  goto code_?;
+  if (iRam_? != 0) {
+    uVar11 = (uint)((ulonglong)&pPStackX_18 >> 0xc);
+    uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+    do {
+      uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+      puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+      LOCK();
+      bVar15 = uVar13 == *puVar14;
+      if (bVar15) {
+        *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar15);
+  }
+  pcVar8 = pcRam_?;
+  pPStackX_8 = pPVar10;
+  pPStackX_18 = pPVar10;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar20 = func_?(&UNK_?);
+    FUN_?(uVar20,0);
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pcRam_? = pcVar8;
+  fVar21 = (float)(*pcRam_?)(&pPStackX_8);
+  fVar22 = _UNK_?;
+  MVFire_SetFireHitBoxYOffset
+            (this,(float)((uint)(((fVar21 * _UNK_? * _UNK_?) / _UNK_?) *
+                                _UNK_?) ^ _UNK_?) * _UNK_?,(MethodInfo *)0x0
+            );
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)(this->fields)._._._.data;
+  if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) goto code_?;
+  iVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::StyleComplexSelector+PseudoStateData]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                     (pDVar1,(Object *)StringLiteral_I,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      ->klass->rgctx_data[0x21].method);
+  if (-1 < iVar4) {
+    pFVar9 = (this->fields).fireObject;
+    if ((pFVar9 == (FireObject *)0x0) ||
+       (pPVar10 = (pFVar9->fields).fireParticleSystem, pPVar10 == (ParticleSystem *)0x0))
+    goto code_?;
     if (iRam_? != 0) {
       uVar11 = (uint)((ulonglong)&pPStackX_18 >> 0xc);
       uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
@@ -1561,9 +1623,23 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetFireToData(MVFire *this,MethodInfo *
         UNLOCK();
       } while (!bVar15);
     }
-    pcVar8 = pcRam_?;
-    pPStackX_8 = pPVar10;
+    pDVar5 = (this->fields)._._._.data;
     pPStackX_18 = pPVar10;
+    apPStack_3[0] = pPVar10;
+    if ((pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
+       (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__get_Item
+                            (pDVar5,(Object *)StringLiteral_I,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), pOVar6 == (Object *)0x0)) goto code_?;
+    if ((pOVar6->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+      FUN_?(pOVar6,lRam_?);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    uVar23 = *(undefined4 *)&pOVar6[1].klass;
+    pcVar8 = pcRam_?;
     if ((pcRam_? == (code *)0x0) &&
        (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
       uVar20 = func_?(&UNK_?);
@@ -1573,89 +1649,130 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetFireToData(MVFire *this,MethodInfo *
       return;
     }
     pcRam_? = pcVar8;
-    fVar21 = (float)(*pcRam_?)(&pPStackX_8);
-    fVar22 = _UNK_?;
-    MVFire_SetFireHitBoxYOffset
-              (this,(float)((uint)(((fVar21 * _UNK_? * _UNK_?) / _UNK_?) *
-                                  _UNK_?) ^ _UNK_?) * _UNK_?,
-               (MethodInfo *)0x0);
-    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-              *)(this->fields)._._._.data;
-    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)0x0) {
-      iVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::StyleComplexSelector+PseudoStateData]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
-                         (pDVar1,(Object *)StringLiteral_I,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                          ->klass->rgctx_data[0x21].method);
-      if (-1 < iVar4) {
-        pFVar9 = (this->fields).fireObject;
-        if ((pFVar9 == (FireObject *)0x0) ||
-           (pPVar10 = (pFVar9->fields).fireParticleSystem, pPVar10 == (ParticleSystem *)0x0))
-        goto code_?;
-        if (iRam_? != 0) {
-          uVar11 = (uint)((ulonglong)&pPStackX_18 >> 0xc);
-          uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
-          do {
-            uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
-            puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
-            LOCK();
-            bVar15 = uVar13 == *puVar14;
-            if (bVar15) {
-              *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar15);
-        }
-        pDVar5 = (this->fields)._._._.data;
-        pPStackX_18 = pPVar10;
-        apPStack_3[0] = pPVar10;
-        if ((pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-           (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                (pDVar5,(Object *)StringLiteral_I,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                ), pOVar6 == (Object *)0x0)) goto code_?;
-        if ((pOVar6->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
-          FUN_?(pOVar6,lRam_?);
-          pcVar8 = (code *)swi(3);
-          (*pcVar8)();
-          return;
-        }
-        uVar23 = *(undefined4 *)&pOVar6[1].klass;
-        pcVar8 = pcRam_?;
-        if ((pcRam_? == (code *)0x0) &&
-           (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
-          uVar20 = func_?(&UNK_?);
-          FUN_?(uVar20,0);
-          pcVar8 = (code *)swi(3);
-          (*pcVar8)();
-          return;
-        }
-        pcRam_? = pcVar8;
-        (*pcRam_?)(apPStack_3,uVar23);
+    (*pcRam_?)(apPStack_3,uVar23);
+  }
+  pFVar9 = (this->fields).fireObject;
+  if ((pFVar9 == (FireObject *)0x0) ||
+     (pPVar10 = (pFVar9->fields).fireParticleSystem, pPVar10 == (ParticleSystem *)0x0))
+  goto code_?;
+  if (iRam_? != 0) {
+    uVar11 = (uint)((ulonglong)&pPStackX_18 >> 0xc);
+    uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+    do {
+      uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+      puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+      LOCK();
+      bVar15 = uVar13 == *puVar14;
+      if (bVar15) {
+        *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
       }
-      pFVar9 = (this->fields).fireObject;
-      if ((pFVar9 != (FireObject *)0x0) &&
-         (pPVar10 = (pFVar9->fields).fireParticleSystem, pPVar10 != (ParticleSystem *)0x0)) {
-        if (iRam_? != 0) {
-          uVar11 = (uint)((ulonglong)&pPStackX_18 >> 0xc);
-          uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
-          do {
-            uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
-            puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
-            LOCK();
-            bVar15 = uVar13 == *puVar14;
-            if (bVar15) {
-              *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar15);
+      UNLOCK();
+    } while (!bVar15);
+  }
+  pcVar8 = pcRam_?;
+  pPStackX_8 = pPVar10;
+  pPStackX_18 = pPVar10;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar20 = func_?(&UNK_?);
+    FUN_?(uVar20,0);
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pcRam_? = pcVar8;
+  fVar21 = (float)(*pcRam_?)(&pPStackX_8);
+  cVar24 = cRam_?;
+  (this->fields).damageRadius = fVar21 * fVar22 * _UNK_?;
+  if (cVar24 == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cVar24 = '\x01';
+    cRam_? = '\x01';
+  }
+  pGVar25 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar25 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar25->fields).gameMode == 0) {
+code_?:
+    this_00 = (this->fields).rangeVis;
+    if (this_00 == (SphereVolumeIndicator *)0x0) goto code_?;
+    SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
+              (this_00,(this->fields).damageRadius,(MethodInfo *)0x0);
+  }
+  else {
+    if (cVar24 == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar25 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar25 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar25->fields).gameMode == 4) goto code_?;
+  }
+  fVar22 = ((this->fields).damageRadius / _UNK_?) * _UNK_?;
+  MVFire_SetFireHitBoxYOffset(this,fVar22 * _UNK_?,(MethodInfo *)0x0);
+  MVFire_UpdateScale(this,fVar22,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CullingSubscriberBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pCVar26 = (this->fields)._.cullingSubscriberBase;
+  if (pCVar26 != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar26,(MethodInfo *)0x0);
+    fVar22 = (this->fields).damageRadius;
+    puVar27 = (undefined8 *)
+              (*(this->klass->vtable).get_WorldPosition_1.methodPtr)
+                        (&CStack_16,this,(this->klass->vtable).get_WorldPosition_1.method);
+    uVar20 = *puVar27;
+    fVar28 = *(float *)(puVar27 + 1);
+    callback = (UnityAction_1_UnityEngine_CullingGroupEvent_ *)
+               FUN_?(
+                            TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                            );
+    FUN_?(callback,this);
+    pCVar26 = (CullingSubscriberBase *)FUN_?(TypeInfo__CullingSubscriberBase);
+    CullingSubscriberBase::CullingSubscriberBase__ctor_1(pCVar26,callback,(MethodInfo *)0x0);
+    CStack_16._0_8_ = uVar20;
+    CStack_16.b = fVar28;
+    CullingSubscriberBase::CullingSubscriberBase_Setup
+              (pCVar26,fVar22,(Vector3 *)&CStack_16,(MethodInfo *)0x0);
+    bVar15 = iRam_? != 0;
+    (this->fields)._.cullingSubscriberBase = pCVar26;
+    if (bVar15) {
+      uVar11 = (uint)((ulonglong)&(this->fields)._.cullingSubscriberBase >> 0xc);
+      uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+      do {
+        uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+        puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+        LOCK();
+        bVar15 = uVar13 == *puVar14;
+        if (bVar15) {
+          *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar15);
+    }
+    pFVar9 = (this->fields).fireObject;
+    if (pFVar9 != (FireObject *)0x0) {
+      obj = (pFVar9->fields).soundIntensityScale;
+      this_01 = (pFVar9->fields).audioSource;
+      if (obj != (AnimationCurve *)0x0) {
+        pvVar29 = (obj->fields).m_Ptr;
+        if (pvVar29 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
         }
         pcVar8 = pcRam_?;
-        pPStackX_8 = pPVar10;
-        pPStackX_18 = pPVar10;
         if ((pcRam_? == (code *)0x0) &&
            (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
           uVar20 = func_?(&UNK_?);
@@ -1665,112 +1782,17 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetFireToData(MVFire *this,MethodInfo *
           return;
         }
         pcRam_? = pcVar8;
-        fVar21 = (float)(*pcRam_?)(&pPStackX_8);
-        bVar15 = cRam_? == '\0';
-        (this->fields).damageRadius = fVar21 * fVar22 * _UNK_?;
-        if (bVar15) {
-          FUN_?(&TypeInfo__MVGameControllerBase);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pGVar24 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if (pGVar24 != (GameSessionData *)0x0) {
-          if ((pGVar24->fields).gameMode == 0) {
-            this_00 = (this->fields).rangeVis;
-            if (this_00 == (SphereVolumeIndicator *)0x0) goto code_?;
-            SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
-                      (this_00,(this->fields).damageRadius,(MethodInfo *)0x0);
+        fVar22 = (float)(*pcRam_?)(pvVar29,fVar21);
+        if (this_01 != (AudioSource *)0x0) {
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
+                    (this_01,fVar22,(MethodInfo *)0x0);
+          if (fVar21 < _UNK_?) {
+            MVFire_SetCandleAnimation(this,(MethodInfo *)0x0);
           }
-          fVar22 = ((this->fields).damageRadius / _UNK_?) * _UNK_?;
-          MVFire_SetFireHitBoxYOffset(this,fVar22 * _UNK_?,(MethodInfo *)0x0);
-          MVFire_UpdateScale(this,fVar22,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__CullingSubscriberBase);
-            LOCK();
-            UNLOCK();
-            FUN_?(&
-                          TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
-                         );
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
+          else {
+            MVFire_SetOriginalAnimation(this,(MethodInfo *)0x0);
           }
-          pCVar25 = (this->fields)._.cullingSubscriberBase;
-          if (pCVar25 != (CullingSubscriberBase *)0x0) {
-            CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar25,(MethodInfo *)0x0);
-            fVar22 = (this->fields).damageRadius;
-            puVar26 = (undefined8 *)
-                      (*(this->klass->vtable).get_WorldPosition_1.methodPtr)
-                                (&CStack_16,this,(this->klass->vtable).get_WorldPosition_1.method);
-            uVar20 = *puVar26;
-            fVar27 = *(float *)(puVar26 + 1);
-            callback = (UnityAction_1_UnityEngine_CullingGroupEvent_ *)
-                       FUN_?(
-                                    TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
-                                    );
-            FUN_?(callback,this);
-            pCVar25 = (CullingSubscriberBase *)FUN_?(TypeInfo__CullingSubscriberBase);
-            CullingSubscriberBase::CullingSubscriberBase__ctor_1(pCVar25,callback,(MethodInfo *)0x0)
-            ;
-            CStack_16._0_8_ = uVar20;
-            CStack_16.b = fVar27;
-            CullingSubscriberBase::CullingSubscriberBase_Setup
-                      (pCVar25,fVar22,(Vector3 *)&CStack_16,(MethodInfo *)0x0);
-            bVar15 = iRam_? != 0;
-            (this->fields)._.cullingSubscriberBase = pCVar25;
-            if (bVar15) {
-              uVar11 = (uint)((ulonglong)&(this->fields)._.cullingSubscriberBase >> 0xc);
-              uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
-              do {
-                uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
-                puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
-                LOCK();
-                bVar15 = uVar13 == *puVar14;
-                if (bVar15) {
-                  *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
-                }
-                UNLOCK();
-              } while (!bVar15);
-            }
-            pFVar9 = (this->fields).fireObject;
-            if (pFVar9 != (FireObject *)0x0) {
-              obj = (pFVar9->fields).soundIntensityScale;
-              this_01 = (pFVar9->fields).audioSource;
-              if (obj != (AnimationCurve *)0x0) {
-                pvVar28 = (obj->fields).m_Ptr;
-                if (pvVar28 == (void *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                  ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
-                  return;
-                }
-                pcVar8 = pcRam_?;
-                if ((pcRam_? == (code *)0x0) &&
-                   (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
-                  uVar20 = func_?(&UNK_?);
-                  FUN_?(uVar20,0);
-                  pcVar8 = (code *)swi(3);
-                  (*pcVar8)();
-                  return;
-                }
-                pcRam_? = pcVar8;
-                fVar22 = (float)(*pcRam_?)(pvVar28,fVar21);
-                if (this_01 != (AudioSource *)0x0) {
-                  UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
-                            (this_01,fVar22,(MethodInfo *)0x0);
-                  if (fVar21 < _UNK_?) {
-                    MVFire_SetCandleAnimation(this,(MethodInfo *)0x0);
-                  }
-                  else {
-                    MVFire_SetOriginalAnimation(this,(MethodInfo *)0x0);
-                  }
-                  return;
-                }
-              }
-            }
-          }
+          return;
         }
       }
     }
@@ -2200,18 +2222,29 @@ void Assembly-CSharp.dll::MVFire::MVFire_UpdateDamageRadius
                (MVFire *this,float intensity,MethodInfo *method)
 
 {
-  bVar1 = cRam_? == '\0';
+  cVar1 = cRam_?;
   (this->fields).damageRadius = intensity * _UNK_? * _UNK_?;
-  if (bVar1) {
+  if (cVar1 == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
     UNLOCK();
+    cVar1 = '\x01';
     cRam_? = '\x01';
   }
   pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar2 != (GameSessionData *)0x0) {
     if ((pGVar2->fields).gameMode != 0) {
-      return;
+      if (cVar1 == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar2->fields).gameMode != 4) {
+        return;
+      }
     }
     pSVar3 = (this->fields).rangeVis;
     if (pSVar3 != (SphereVolumeIndicator *)0x0) {
@@ -2544,6 +2577,7 @@ DAT_?:
       return;
     }
   }
+code_?:
   FUN_?();
   pcVar15 = (code *)swi(3);
   (*pcVar15)();

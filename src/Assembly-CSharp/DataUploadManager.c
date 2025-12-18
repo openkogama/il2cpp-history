@@ -214,7 +214,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
                 uVar15 = (undefined7)((ulonglong)method_00 >> 8);
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                 Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                          (this,0xbf,value_00,(InsertionBehavior__Enum)uVar14,method_00);
+                          (this,0xc1,value_00,(InsertionBehavior__Enum)uVar14,method_00);
                 uVar16 = CONCAT71(uVar15,0xf5);
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                 Object]::Dictionary_2_System_Byte_System_Object__TryInsert
@@ -229,7 +229,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
                 }
                 if (pPVar17 != (PhotonPeer *)0x0) {
                   (*(pPVar17->klass->vtable).SendOperation.methodPtr)
-                            (pPVar17,CONCAT71((int7)((ulonglong)uVar16 >> 8),0x3e),this,
+                            (pPVar17,CONCAT71((int7)((ulonglong)uVar16 >> 8),0x3f),this,
                              TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                              SendReliable,(pPVar17->klass->vtable).SendOperation.method);
                   return;
@@ -393,7 +393,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
               uVar9 = (undefined7)((ulonglong)method_00 >> 8);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__TryInsert
-                        (this,0xbf,value_00,(InsertionBehavior__Enum)uVar8,method_00);
+                        (this,0xc1,value_00,(InsertionBehavior__Enum)uVar8,method_00);
               uVar10 = CONCAT71(uVar9,0xf5);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__TryInsert
@@ -407,7 +407,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
               }
               if (pPVar11 != (PhotonPeer *)0x0) {
                 (*(pPVar11->klass->vtable).SendOperation.methodPtr)
-                          (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x3e),this,
+                          (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x3f),this,
                            TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                            SendReliable,(pPVar11->klass->vtable).SendOperation.method);
                 return;

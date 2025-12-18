@@ -538,10 +538,10 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode::MaterialsControllerEditMo
           if (this_03 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                         ->klass->rgctx_data[0x22].method;
-            uVar14 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x67);
+            uVar14 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x6a);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_03,0x67,value_00,
+                      (this_03,0x6a,value_00,
                        (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar9 >> 8),2),
                        method_00);
             pPVar15 = (pMVar13->fields).peer;

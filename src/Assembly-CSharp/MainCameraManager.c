@@ -165,19 +165,13 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_EnableScreenOptim
 }
 
 
-/* ICameraSettings GetSettings(MVGameType) */
+/* ICameraSettings GetSettings() */
 
 ICameraSettings *
-Assembly-CSharp.dll::MainCameraManager::MainCameraManager_GetSettings
-          (MVGameType__Enum gameType,MethodInfo *method)
+Assembly-CSharp.dll::MainCameraManager::MainCameraManager_GetSettings(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__get_Item_MV__Common__MVGameType_
-                 );
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
@@ -186,61 +180,16 @@ Assembly-CSharp.dll::MainCameraManager::MainCameraManager_GetSettings
   if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__MainCameraManager);
   }
-  pMVar1 = 
-  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__get_Item_MV__Common__MVGameType_
-  ;
-  this = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
-         TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (this == (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    pIVar3 = (ICameraSettings *)(*pcVar2)();
-    return pIVar3;
-  }
-  uVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine::
-          Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
-                    (this,gameType,
-                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__get_Item_MV__Common__MVGameType_
-                     ->klass->rgctx_data[0x21].method);
-  if ((int)uVar4 < 0) {
-    uVar5 = func_?(pMVar1->klass->rgctx_data,0xe);
-    key = (Object *)func_?(uVar5);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
-              (key,(MethodInfo *)0x0);
-    pcVar2 = (code *)swi(3);
-    pIVar3 = (ICameraSettings *)(*pcVar2)();
-    return pIVar3;
-  }
-  pDVar6 = (this->fields)._entries;
-  if (pDVar6 != (Dictionary_2_TKey_TValue_Entry_System_Int32Enum_UnityEngine_Vector3___Array *)0x0)
-  {
-    if (uVar4 < (uint)pDVar6->max_length) {
-      return *(ICameraSettings **)&pDVar6->vector[(int)uVar4].value.y;
-    }
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    pIVar3 = (ICameraSettings *)(*pcVar2)();
-    return pIVar3;
-  }
-  FUN_?();
-  pcVar2 = (code *)swi(3);
-  pIVar3 = (ICameraSettings *)(*pcVar2)();
-  return pIVar3;
+  return TypeInfo__MainCameraManager->static_fields->cameraSettings;
 }
 
 
-/* Boolean HasSetting(MVGameType) */
+/* Boolean HasSetting() */
 
-bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_HasSetting
-               (MVGameType__Enum gameType,MethodInfo *method)
+bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_HasSetting(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__ContainsKey_MV__Common__MVGameType_
-                 );
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
@@ -249,20 +198,7 @@ bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_HasSetting
   if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__MainCameraManager);
   }
-  this = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
-         TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (this != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
-    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine::
-            Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
-                      (this,gameType,
-                       MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__ContainsKey_MV__Common__MVGameType_
-                       ->klass->rgctx_data[0x21].method);
-    return (byte)((uint)iVar1 >> 0x1f) ^ 1;
-  }
-  FUN_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  return TypeInfo__MainCameraManager->static_fields->cameraSettings != (ICameraSettings *)0x0;
 }
 
 
@@ -334,10 +270,65 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_Init
                     (StringLiteral_Hidden,(MethodInfo *)0x0);
   uVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_UXElementSecondary,(MethodInfo *)0x0);
-  if (pCVar1 != (Camera *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-              (pCVar1,~(1 << ((byte)iVar2 & 0x1f) | 1 << (uVar3 & 0x1f) | 1 << (uVar4 & 0x1f) |
-                       1 << (uVar5 & 0x1f)),(MethodInfo *)0x0);
+  if (pCVar1 == (Camera *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+            (pCVar1,~(1 << ((byte)iVar2 & 0x1f) | 1 << (uVar3 & 0x1f) | 1 << (uVar4 & 0x1f) |
+                     1 << (uVar5 & 0x1f)),(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar6->fields).gameMode == 1) {
+code_?:
+    pCVar1 = (this->fields).mainCamera;
+    if (pCVar1 == (Camera *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar7 = (pCVar1->fields)._._._.m_CachedPtr;
+    if (pvVar7 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar1,(MethodInfo *)0x0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcRam_? = pcVar8;
+    uVar3 = (*pcRam_?)(pvVar7);
+    uVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                      (StringLiteral_Logic,(MethodInfo *)0x0);
+    uVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                      (StringLiteral_Logic,(MethodInfo *)0x0);
+    if ((uVar4 & uVar3) == uVar5) {
+      pCVar1 = (this->fields).mainCamera;
+      if (pCVar1 == (Camera *)0x0) goto code_?;
+      iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
+                        (pCVar1,(MethodInfo *)0x0);
+      iVar10 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                        (StringLiteral_Logic,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                (pCVar1,iVar2 - (1 << ((byte)iVar10 & 0x1f)),(MethodInfo *)0x0);
+    }
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -345,90 +336,70 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_Init
       cRam_? = '\x01';
     }
     pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar6 != (GameSessionData *)0x0) {
-      if ((pGVar6->fields).gameMode == 1) {
-        pCVar1 = (this->fields).mainCamera;
-        if (pCVar1 == (Camera *)0x0) goto code_?;
+    if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar6->fields).gameMode == 3) goto code_?;
+  }
+  pCVar1 = (this->fields).mainCamera;
+  if (pCVar1 != (Camera *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar7 = (pCVar1->fields)._._._.m_CachedPtr;
+    if (pvVar7 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar1,(MethodInfo *)0x0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcRam_? = pcVar8;
+    iVar2 = (*pcRam_?)(pvVar7);
+    bVar11 = cRam_? == '\0';
+    (this->fields).cullingMask = iVar2;
+    if (bVar11) {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) ||
+       ((this->fields).blueModeEnabled == 0)) {
+      return;
+    }
+    pCVar1 = (this->fields).mainCamera;
+    if (pCVar1 != (Camera *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                (pCVar1,0,(MethodInfo *)0x0);
+      pCVar1 = (this->fields).mainCamera;
+      if (pCVar1 != (Camera *)0x0) {
         uVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
                           (pCVar1,(MethodInfo *)0x0);
         uVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                          (StringLiteral_Logic,(MethodInfo *)0x0);
-        uVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                          (StringLiteral_Logic,(MethodInfo *)0x0);
-        if ((uVar4 & uVar3) == uVar5) {
-          pCVar1 = (this->fields).mainCamera;
-          if (pCVar1 == (Camera *)0x0) goto code_?;
-          iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
-                            (pCVar1,(MethodInfo *)0x0);
-          iVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                            (StringLiteral_Logic,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-                    (pCVar1,iVar2 - (1 << ((byte)iVar7 & 0x1f)),(MethodInfo *)0x0);
-        }
-      }
-      pCVar1 = (this->fields).mainCamera;
-      if (pCVar1 != (Camera *)0x0) {
-        if (cRam_? == '\0') {
-          FUN_?(&
-                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
-                       );
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pvVar8 = (pCVar1->fields)._._._.m_CachedPtr;
-        if (pvVar8 == (void *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-          ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar1,(MethodInfo *)0x0);
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
-          return;
-        }
-        pcVar9 = pcRam_?;
-        if ((pcRam_? == (code *)0x0) &&
-           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
-          uVar10 = func_?(&UNK_?);
-          FUN_?(uVar10,0);
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
-          return;
-        }
-        pcRam_? = pcVar9;
-        iVar2 = (*pcRam_?)(pvVar8);
-        bVar11 = cRam_? == '\0';
-        (this->fields).cullingMask = iVar2;
-        if (bVar11) {
-          FUN_?(&TypeInfo__MVGameControllerBase);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) ||
-           ((this->fields).blueModeEnabled == 0)) {
-          return;
-        }
-        pCVar1 = (this->fields).mainCamera;
-        if (pCVar1 != (Camera *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-                    (pCVar1,0,(MethodInfo *)0x0);
-          pCVar1 = (this->fields).mainCamera;
-          if (pCVar1 != (Camera *)0x0) {
-            uVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
-                              (pCVar1,(MethodInfo *)0x0);
-            uVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                              (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
-            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-                      (pCVar1,uVar3 | 1 << (uVar4 & 0x1f),(MethodInfo *)0x0);
-            return;
-          }
-        }
+                          (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                  (pCVar1,uVar3 | 1 << (uVar4 & 0x1f),(MethodInfo *)0x0);
+        return;
       }
     }
   }
 code_?:
   FUN_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -450,11 +421,6 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Clear__
-                 );
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
@@ -463,29 +429,20 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_OnDestroy
   if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__MainCameraManager);
   }
-  pDVar1 = TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (pDVar1 != (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)0x0) {
-    length = (pDVar1->fields)._count;
-    if (0 < length) {
-      pIVar2 = (pDVar1->fields)._buckets;
-      if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-      mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(pDVar1->fields)._buckets,0,(int32_t)pIVar2->max_length,(MethodInfo *)0x0)
-      ;
-      (pDVar1->fields)._count = 0;
-      (pDVar1->fields)._freeCount = 0;
-      (pDVar1->fields)._freeList = -1;
-      mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(pDVar1->fields)._entries,0,length,(MethodInfo *)0x0);
-    }
-    piVar3 = &(pDVar1->fields)._version;
-    *piVar3 = *piVar3 + 1;
-    return;
+  TypeInfo__MainCameraManager->static_fields->cameraSettings = (ICameraSettings *)0x0;
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->cameraSettings >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
   }
-code_?:
-  FUN_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
   return;
 }
 
@@ -546,18 +503,13 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_PlayPlingSound
 }
 
 
-/* Void RegisterCameraWithSettings(MVGameType, ICameraSettings) */
+/* Void RegisterCameraWithSettings(ICameraSettings) */
 
 void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_RegisterCameraWithSettings
-               (MVGameType__Enum gameType,ICameraSettings *camSettings,MethodInfo *method)
+               (ICameraSettings *camSettings,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Add_MV__Common__MVGameType__ICameraSettings_
-                 );
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
@@ -566,24 +518,27 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_RegisterCameraWit
   if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__MainCameraManager);
   }
-  this = (Dictionary_2_System_Int32Enum_System_Object_ *)
-         TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (this != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__TryInsert
-              (this,gameType,(Object *)camSettings,CONCAT31((int3)((uint)in_R9D >> 8),2),
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Add_MV__Common__MVGameType__ICameraSettings_
-               ->klass->rgctx_data[0x22].method);
-    pAVar1 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
-    if (pAVar1 != (Action *)0x0) {
-      (*(pAVar1->fields)._._.invoke_impl)
-                ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
-    }
+  TypeInfo__MainCameraManager->static_fields->cameraSettings = camSettings;
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->cameraSettings >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
+  }
+  pAVar5 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
+  if (pAVar5 == (Action *)0x0) {
     return;
   }
-  FUN_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pAVar5->fields)._._.invoke_impl)((pAVar5->fields)._._.method_code,(pAVar5->fields)._._.method);
   return;
 }
 
@@ -916,18 +871,13 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_TemporaryMute
 }
 
 
-/* Void UnRegisterCameraWithSettings(MVGameType) */
+/* Void UnRegisterCameraWithSettings() */
 
 void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_UnRegisterCameraWithSettings
-               (MVGameType__Enum gameType,MethodInfo *method)
+               (MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Remove_MV__Common__MVGameType_
-                 );
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
@@ -936,95 +886,19 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_UnRegisterCameraW
   if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__MainCameraManager);
   }
-  pMVar1 = 
-  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Remove_MV__Common__MVGameType_
-  ;
-  pDVar2 = TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (pDVar2 == (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)0x0) {
-    FUN_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  if ((pDVar2->fields)._buckets != (Int32__Array *)0x0) {
-    pIVar4 = (pDVar2->fields)._comparer;
-    MVar5 = gameType;
-    if (pIVar4 != (IEqualityComparer_1_MV_Common_MVGameType_ *)0x0) {
-      pvVar6 = MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Remove_MV__Common__MVGameType_
-                ->klass->rgctx_data[1].rgctxDataDummy;
-      if ((*(byte *)((longlong)pvVar6 + 0x135) & 1) == 0) {
-        pvVar6 = (void *)FUN_?(pvVar6);
+  TypeInfo__MainCameraManager->static_fields->cameraSettings = (ICameraSettings *)0x0;
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->cameraSettings >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
       }
-      MVar5 = FUN_?(1,pvVar6,pIVar4,gameType);
-    }
-    pIVar7 = (pDVar2->fields)._buckets;
-    if (pIVar7 == (Int32__Array *)0x0) {
-code_?:
-      FUN_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    uVar8 = (int)(MVar5 & 0x7fffffff) % (int)pIVar7->max_length;
-    if ((uint)pIVar7->max_length <= uVar8) {
-code_?:
-      FUN_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    uVar9 = pIVar7->vector[(int)uVar8] - 1;
-    uVar10 = 0xffffffff;
-    while (uVar11 = uVar9, -1 < (int)uVar11) {
-      pDVar12 = (pDVar2->fields)._entries;
-      if (pDVar12 == (Dictionary_2_TKey_TValue_Entry_MV_Common_MVGameType_ICameraSettings___Array *)
-                    0x0) goto code_?;
-      if ((uint)pDVar12->max_length <= uVar11) goto code_?;
-      if (pDVar12->vector[(int)uVar11].hashCode == (MVar5 & 0x7fffffff)) {
-        pIVar13 = pMVar1->klass->rgctx_data;
-        if ((pDVar2->fields)._comparer == (IEqualityComparer_1_MV_Common_MVGameType_ *)0x0) {
-          pEVar14 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::
-                    Int32Enum]::EqualityComparer_1_System_Int32Enum__get_Default(pIVar13[3].method);
-          if (pEVar14 == (EqualityComparer_1_System_Int32Enum_ *)0x0) goto code_?;
-          cVar15 = (*(pEVar14->klass->vtable).__unknown.methodPtr)
-                             (pEVar14,(ulonglong)(uint)pDVar12->vector[(int)uVar11].key,
-                              (ulonglong)gameType,(pEVar14->klass->vtable).__unknown.method);
-        }
-        else {
-          pvVar6 = pIVar13[1].rgctxDataDummy;
-          if ((*(byte *)((longlong)pvVar6 + 0x135) & 1) == 0) {
-            FUN_?(pvVar6);
-          }
-          cVar15 = FUN_?();
-        }
-        if (cVar15 != '\0') {
-          if ((int)uVar10 < 0) {
-            pIVar7 = (pDVar2->fields)._buckets;
-            if (pIVar7 == (Int32__Array *)0x0) goto code_?;
-            if ((uint)pIVar7->max_length <= uVar8) goto code_?;
-            pIVar7->vector[(int)uVar8] = pDVar12->vector[(int)uVar11].next + 1;
-          }
-          else {
-            pDVar16 = (pDVar2->fields)._entries;
-            if (pDVar16 == (Dictionary_2_TKey_TValue_Entry_MV_Common_MVGameType_ICameraSettings___Array
-                           *)0x0) goto code_?;
-            if ((uint)pDVar16->max_length <= uVar10) goto code_?;
-            pDVar16->vector[(int)uVar10].next = pDVar12->vector[(int)uVar11].next;
-          }
-          pDVar12->vector[(int)uVar11].hashCode = -1;
-          pDVar12->vector[(int)uVar11].next = (pDVar2->fields)._freeList;
-          pDVar12->vector[(int)uVar11].value = (ICameraSettings *)0x0;
-          piVar17 = &(pDVar2->fields)._freeCount;
-          *piVar17 = *piVar17 + 1;
-          piVar17 = &(pDVar2->fields)._version;
-          *piVar17 = *piVar17 + 1;
-          (pDVar2->fields)._freeList = uVar11;
-          return;
-        }
-      }
-      uVar10 = uVar11;
-      uVar9 = pDVar12->vector[(int)uVar11].next;
-    }
+      UNLOCK();
+    } while (uVar3 != uVar4);
   }
   return;
 }
@@ -1176,16 +1050,6 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager__cctor(MethodInfo
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Dictionary__
-                 );
-    LOCK();
-    UNLOCK();
-    FUN_?(&
-                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>
-                 );
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
@@ -1194,18 +1058,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager__cctor(MethodInfo
   TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase = 5.0;
   TypeInfo__MainCameraManager->static_fields->DefaultCameraType = 0;
   TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson = 0;
-  this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-         FUN_?(
-                      TypeInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>
-                      );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
-            (this,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Dictionary__
-            );
-  TypeInfo__MainCameraManager->static_fields->cameraSettings =
-       (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)this;
+  TypeInfo__MainCameraManager->static_fields->cameraSettings = (ICameraSettings *)0x0;
   if (iRam_? != 0) {
     uVar1 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->cameraSettings >> 0xc);
     uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);

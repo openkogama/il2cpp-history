@@ -2209,7 +2209,9 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Start
     }
     TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate = pAVar1;
     pAVar3 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
-    lVar5 = FUN_?(pDVar2);
+    lVar5 = FUN_?(pDVar2,
+                           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
+                          );
     if (lVar5 == 0) {
       FUN_?(pDVar2,pAVar3);
       pcVar4 = (code *)swi(3);
@@ -2238,105 +2240,112 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Start
     cRam_? = '\x01';
   }
   pGVar10 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar10 != (GameSessionData *)0x0) {
-    if ((pGVar10->fields).gameMode == 0) {
-      GamePassesHighScoreList_SetToTopPlayerHighScore(this,(MethodInfo *)0x0);
+  if (pGVar10 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar10->fields).gameMode == 0) {
+code_?:
+    GamePassesHighScoreList_SetToTopPlayerHighScore(this,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar10 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar10 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar10->fields).gameMode == 4) goto code_?;
+    GamePassesHighScoreList_SetToLocalPlayerHighScore(this,(MethodInfo *)0x0);
+  }
+  pEVar11 = (this->fields).embeddedPlayerConfig;
+  if (pEVar11 != (EmbeddedPlayerConfig *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_Embedded_site_data_not_initializ);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((pEVar11->fields).initialized == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_Embedded_site_data_not_initializ,(MethodInfo *)0x0);
+      bVar12 = (pEVar11->fields).kogamaDefaultData.allowsOpenInNewTab;
+      bVar13 = (pEVar11->fields).kogamaDefaultData.allowsRedirectToWebpage;
+      bVar14 = (pEVar11->fields).kogamaDefaultData.allowsModals;
+      uVar15 = (pEVar11->fields).kogamaDefaultData.hideSignUp;
+      cVar16 = uVar15;
     }
     else {
-      GamePassesHighScoreList_SetToLocalPlayerHighScore(this,(MethodInfo *)0x0);
+      bVar12 = (pEVar11->fields).currentSite.allowsOpenInNewTab;
+      bVar13 = (pEVar11->fields).currentSite.allowsRedirectToWebpage;
+      bVar14 = (pEVar11->fields).currentSite.allowsModals;
+      cVar16 = (pEVar11->fields).currentSite.hideSignUp;
     }
-    pEVar11 = (this->fields).embeddedPlayerConfig;
-    if (pEVar11 != (EmbeddedPlayerConfig *)0x0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__UnityEngine__Debug);
-        LOCK();
-        UNLOCK();
-        FUN_?(&StringLiteral_Embedded_site_data_not_initializ);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      if ((pEVar11->fields).initialized == 0) {
-        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    bVar17 = 0;
+    if ((cVar16 == '\0') && ((bVar14 != 0 || (bVar17 = bVar13, bVar12 != 0)))) {
+      bVar17 = 1;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar10 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar10 != (GameSessionData *)0x0) {
+      if (bVar17 != 0 && (pGVar10->fields).profileID < 1) {
+        object = (Object *)FUN_?(TypeInfo__GamePassesHighScoreList____c__DisplayClass15_0);
+        original = (this->fields).touristInformationPopup;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
           FUN_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)StringLiteral_Embedded_site_data_not_initializ,(MethodInfo *)0x0);
-        bVar12 = (pEVar11->fields).kogamaDefaultData.allowsOpenInNewTab;
-        bVar13 = (pEVar11->fields).kogamaDefaultData.allowsRedirectToWebpage;
-        bVar14 = (pEVar11->fields).kogamaDefaultData.allowsModals;
-        uVar15 = (pEVar11->fields).kogamaDefaultData.hideSignUp;
-        cVar16 = uVar15;
-      }
-      else {
-        bVar12 = (pEVar11->fields).currentSite.allowsOpenInNewTab;
-        bVar13 = (pEVar11->fields).currentSite.allowsRedirectToWebpage;
-        bVar14 = (pEVar11->fields).currentSite.allowsModals;
-        cVar16 = (pEVar11->fields).currentSite.hideSignUp;
-      }
-      bVar17 = 0;
-      if ((cVar16 == '\0') && ((bVar14 != 0 || (bVar17 = bVar13, bVar12 != 0)))) {
-        bVar17 = 1;
-      }
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pGVar10 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar10 != (GameSessionData *)0x0) {
-        if (bVar17 != 0 && (pGVar10->fields).profileID < 1) {
-          object = (Object *)FUN_?(TypeInfo__GamePassesHighScoreList____c__DisplayClass15_0)
-          ;
-          original = (this->fields).touristInformationPopup;
-          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          pOVar18 = (Object__Class *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              ((Object *)original,
-                               GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
-                              );
-          if (object == (Object *)0x0) goto code_?;
-          bVar9 = iRam_? != 0;
-          object[1].klass = pOVar18;
-          if (bVar9) {
-            uVar6 = (uint)((ulonglong)(object + 1) >> 0xc);
-            lVar5 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-            do {
-              uVar7 = *(ulonglong *)(lVar5 + 0xADDR);
-              puVar8 = (ulonglong *)(lVar5 + 0xADDR);
-              LOCK();
-              bVar9 = uVar7 == *puVar8;
-              if (bVar9) {
-                *puVar8 = uVar7 | 1L << (uVar6 & 0x3f);
-              }
-              UNLOCK();
-            } while (!bVar9);
-          }
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-          this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                    FUN_?(
-                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                 );
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
-          Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
-                    (this_01,object,
-                     MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,this_01,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
+        pOVar18 = (Object__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)original,
+                             GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
+                            );
+        if (object == (Object *)0x0) goto code_?;
+        bVar9 = iRam_? != 0;
+        object[1].klass = pOVar18;
+        if (bVar9) {
+          uVar6 = (uint)((ulonglong)(object + 1) >> 0xc);
+          lVar5 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar7 = *(ulonglong *)(lVar5 + 0xADDR);
+            puVar8 = (ulonglong *)(lVar5 + 0xADDR);
+            LOCK();
+            bVar9 = uVar7 == *puVar8;
+            if (bVar9) {
+              *puVar8 = uVar7 | 1L << (uVar6 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar9);
         }
-        return;
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+        this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                  FUN_?(
+                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                               );
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]
+        ::ExecuteEvents_EventFunction_1_System_Object___ctor
+                  (this_01,object,
+                   MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,this_01,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
       }
+      return;
     }
   }
 code_?:

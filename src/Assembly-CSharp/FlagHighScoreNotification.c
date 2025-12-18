@@ -78,11 +78,11 @@ void Assembly-CSharp.dll::FlagHighScoreNotification::FlagHighScoreNotification_I
         if (pTVar8 != (Text *)0x0) {
           pAVar10 = pAVar1;
           if (pAVar9 != (Action *)0x0) {
-            if (pAVar9->klass == pARam0000000182dbdde0) {
+            if (pAVar9->klass == pARam0000000182dc50c0) {
               pAVar10 = pAVar9;
             }
             if (pAVar10 == (Action *)0x0) {
-              FUN_?(pAVar9,pARam0000000182dbdde0);
+              FUN_?(pAVar9,pARam0000000182dc50c0);
               pcVar3 = (code *)swi(3);
               (*pcVar3)();
               return;

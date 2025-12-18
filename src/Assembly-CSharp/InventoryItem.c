@@ -1969,7 +1969,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
   (this->fields).hasData = 1;
   (this->fields).purchased = 1;
   if ((data != (Dictionary_2_System_Byte_System_Object_ *)0x0) &&
-     (plVar1 = (longlong *)FUN_?(data,0x28), plVar1 != (longlong *)0x0)) {
+     (plVar1 = (longlong *)FUN_?(data,0x29), plVar1 != (longlong *)0x0)) {
     if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
       FUN_?(plVar1);
       pcVar2 = (code *)swi(3);
@@ -1977,7 +1977,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
       return;
     }
     (this->fields).itemID = (int32_t)plVar1[2];
-    plVar1 = (longlong *)FUN_?(data,0x96);
+    plVar1 = (longlong *)FUN_?(data,0x99);
     if (plVar1 != (longlong *)0x0) {
       if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
         FUN_?(plVar1);
@@ -1986,7 +1986,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
         return;
       }
       (this->fields).itemCategoryID = (int32_t)plVar1[2];
-      plVar1 = (longlong *)FUN_?(data,0x29);
+      plVar1 = (longlong *)FUN_?(data,0x2a);
       if (plVar1 != (longlong *)0x0) {
         if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
           FUN_?(plVar1);
@@ -1995,13 +1995,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
           return;
         }
         (this->fields).itemTypeID = (int32_t)plVar1[2];
-        pSVar3 = (String *)FUN_?(data,0x2a);
+        pSVar3 = (String *)FUN_?(data,0x2b);
         if (pSVar3 == (String *)0x0) {
           (this->fields).name = (String *)0x0;
         }
         else {
           pSVar4 = (String *)0x0;
-          if (pSVar3->klass == pSRam0000000182dbdde0) {
+          if (pSVar3->klass == pSRam0000000182dc50c0) {
             pSVar4 = pSVar3;
           }
           if (pSVar4 == (String *)0x0) {
@@ -2012,7 +2012,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
           }
           (this->fields).name = pSVar4;
           pSVar4 = (String *)0x0;
-          if (pSVar3->klass == pSRam0000000182dbdde0) {
+          if (pSVar3->klass == pSRam0000000182dc50c0) {
             pSVar4 = pSVar3;
           }
           if (pSVar4 == (String *)0x0) {
@@ -2037,7 +2037,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
           } while (!bVar9);
         }
         (this->fields).isDeleted = 0;
-        lVar6 = FUN_?(data,0x2b);
+        lVar6 = FUN_?(data,0x2c);
         pBVar10 = TypeInfo__System__Byte;
         if (lVar6 == 0) {
           (this->fields).data = (Byte__Array *)0x0;
@@ -2074,7 +2074,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
             UNLOCK();
           } while (!bVar9);
         }
-        plVar1 = (longlong *)FUN_?(data,0x2d);
+        plVar1 = (longlong *)FUN_?(data,0x2e);
         if (plVar1 != (longlong *)0x0) {
           lVar6 = *plVar1;
           if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
@@ -2084,7 +2084,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
             return;
           }
           (this->fields).slotPosition = (int32_t)plVar1[2];
-          plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x8a));
+          plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x8d));
           if (plVar1 != (longlong *)0x0) {
             lVar6 = *plVar1;
             if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
@@ -2094,7 +2094,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
               return;
             }
             (this->fields).resellable = *(bool *)(plVar1 + 2);
-            plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x45));
+            plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x48));
             if (plVar1 != (longlong *)0x0) {
               lVar6 = *plVar1;
               if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
@@ -2104,7 +2104,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
                 return;
               }
               (this->fields).priceGold = (int32_t)plVar1[2];
-              plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x89));
+              plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x8c));
               if (plVar1 != (longlong *)0x0) {
                 lVar6 = *plVar1;
                 if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
@@ -2115,7 +2115,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
                 }
                 (this->fields).authorProfileID = (int32_t)plVar1[2];
                 plVar1 = (longlong *)
-                         FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x8b));
+                         FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x8e));
                 if (plVar1 != (longlong *)0x0) {
                   if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
                     FUN_?(plVar1,lRam_?);
@@ -2168,7 +2168,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
   (this->fields).hasData = 1;
   (this->fields).purchased = 1;
   (this->fields).itemID = itemID;
-  auStackX_10[0] = 0x70;
+  auStackX_10[0] = 0x74;
   pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
   if ((itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
      (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
@@ -2183,7 +2183,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
       return;
     }
     (this->fields).itemCategoryID = *(int32_t *)&pOVar1[1].klass;
-    auStackX_10[0] = 0xf;
+    auStackX_10[0] = 0x11;
     pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
     pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
              ::Dictionary_2_System_Object_System_Object__get_Item
@@ -2198,7 +2198,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
         return;
       }
       (this->fields).itemTypeID = *(int32_t *)&pOVar1[1].klass;
-      auStackX_10[0] = 10;
+      auStackX_10[0] = 0xc;
       pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
       pSVar3 = (String *)
                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
@@ -2212,7 +2212,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
       }
       else {
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dbdde0) {
+        if (pSVar3->klass == pSRam0000000182dc50c0) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -2223,7 +2223,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
         }
         (this->fields).name = pSVar5;
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dbdde0) {
+        if (pSVar3->klass == pSRam0000000182dc50c0) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -2247,7 +2247,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
           UNLOCK();
         } while (!bVar10);
       }
-      auStackX_10[0] = 0x67;
+      auStackX_10[0] = 0x6b;
       pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
       pSVar3 = (String *)
                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
@@ -2260,7 +2260,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
       }
       else {
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dbdde0) {
+        if (pSVar3->klass == pSRam0000000182dc50c0) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -2271,7 +2271,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
         }
         (this->fields).description = pSVar5;
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dbdde0) {
+        if (pSVar3->klass == pSRam0000000182dc50c0) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -2295,7 +2295,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
           UNLOCK();
         } while (!bVar10);
       }
-      auStackX_10[0] = 0x69;
+      auStackX_10[0] = 0x6d;
       pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
       pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2312,7 +2312,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
         bVar11 = *(bool *)&pOVar1[1].klass;
         (this->fields).isDeleted = bVar11;
         if (bVar11 == 0) {
-          auStackX_10[0] = 0xb;
+          auStackX_10[0] = 0xd;
           pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
           pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                    Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2355,7 +2355,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
               UNLOCK();
             } while (!bVar10);
           }
-          auStackX_10[0] = 0x26;
+          auStackX_10[0] = 0x28;
           pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
           pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                    Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2371,7 +2371,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
           }
           (this->fields).hasData = *(bool *)&pOVar1[1].klass;
         }
-        auStackX_10[0] = 100;
+        auStackX_10[0] = 0x68;
         pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
         pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                  Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2386,7 +2386,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
             return;
           }
           (this->fields).resellable = *(bool *)&pOVar1[1].klass;
-          auStackX_10[0] = 0x4b;
+          auStackX_10[0] = 0x4f;
           pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
           pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                    Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2402,7 +2402,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
               return;
             }
             (this->fields).priceGold = *(int32_t *)&pOVar1[1].klass;
-            auStackX_10[0] = 0x68;
+            auStackX_10[0] = 0x6c;
             pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
             pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
                      ::Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2418,7 +2418,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                 return;
               }
               (this->fields).shopInventoryID = *(int32_t *)&pOVar1[1].klass;
-              auStackX_10[0] = 0x66;
+              auStackX_10[0] = 0x6a;
               pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
               pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2434,7 +2434,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                   return;
                 }
                 (this->fields).authorProfileID = *(int32_t *)&pOVar1[1].klass;
-                auStackX_10[0] = 0x6a;
+                auStackX_10[0] = 0x6e;
                 pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
                 pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                          Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -2450,7 +2450,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                     return;
                   }
                   (this->fields).originalItemID = *(int32_t *)&pOVar1[1].klass;
-                  auStackX_10[0] = 0x22;
+                  auStackX_10[0] = 0x24;
                   pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
                   iVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
@@ -2460,7 +2460,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                      ->klass->rgctx_data[0x21].method);
                   if (-1 < iVar14) {
-                    auStackX_10[0] = 0x22;
+                    auStackX_10[0] = 0x24;
                     pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
                     pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                              Object,System::Object]::
@@ -2478,7 +2478,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                     }
                     (this->fields).purchased = *(bool *)&pOVar1[1].klass;
                   }
-                  auStackX_10[0] = 0x89;
+                  auStackX_10[0] = 0x8d;
                   pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
                   pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                            Object,System::Object]::
@@ -2495,7 +2495,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                       return;
                     }
                     (this->fields).isDefaultInvItem = *(bool *)&pOVar1[1].klass;
-                    auStackX_10[0] = 0xc;
+                    auStackX_10[0] = 0xe;
                     pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
                     iVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
@@ -2505,7 +2505,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                        ->klass->rgctx_data[0x21].method);
                     if (-1 < iVar14) {
-                      auStackX_10[0] = 0xc;
+                      auStackX_10[0] = 0xe;
                       pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
                       pSVar3 = (String *)
                                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -2519,7 +2519,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                       }
                       else {
                         pSVar5 = pSVar4;
-                        if (pSVar3->klass == pSRam0000000182dbdde0) {
+                        if (pSVar3->klass == pSRam0000000182dc50c0) {
                           pSVar5 = pSVar3;
                         }
                         if (pSVar5 == (String *)0x0) {
@@ -2529,7 +2529,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                           return;
                         }
                         (this->fields).imagePath = pSVar5;
-                        if (pSVar3->klass == pSRam0000000182dbdde0) {
+                        if (pSVar3->klass == pSRam0000000182dc50c0) {
                           pSVar4 = pSVar3;
                         }
                         if (pSVar4 == (String *)0x0) {

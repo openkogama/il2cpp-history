@@ -96,10 +96,10 @@ code_?:
       if (pDVar7 == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
       pMVar9 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method;
-      uVar10 = CONCAT71((int7)((ulonglong)pMVar9 >> 8),0x3a);
+      uVar10 = CONCAT71((int7)((ulonglong)pMVar9 >> 8),0x3d);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (pDVar7,0x3a,pOVar8,
+                (pDVar7,0x3d,pOVar8,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),pMVar9);
       pPVar11 = (pMVar4->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -168,10 +168,10 @@ code_?:
       if (pDVar7 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         pMVar9 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method;
-        uVar10 = CONCAT71((int7)((ulonglong)pMVar9 >> 8),0x3a);
+        uVar10 = CONCAT71((int7)((ulonglong)pMVar9 >> 8),0x3d);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (pDVar7,0x3a,pOVar8,
+                  (pDVar7,0x3d,pOVar8,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),pMVar9);
         pPVar11 = (pMVar4->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -179,7 +179,7 @@ code_?:
         }
         if (pPVar11 != (PhotonPeer *)0x0) {
           (*(pPVar11->klass->vtable).SendOperation.methodPtr)
-                    (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x1f),pDVar7,
+                    (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x20),pDVar7,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                      (pPVar11->klass->vtable).SendOperation.method);
           goto code_?;

@@ -727,12 +727,24 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_SetLaserRange
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      this_00 = (this->fields).rangeVisualization;
-      if (this_00 == (SphereVolumeIndicator *)0x0) goto code_?;
-      SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(this_00,range,(MethodInfo *)0x0);
+    if ((pGVar1->fields).gameMode != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        return;
+      }
     }
-    return;
+    this_00 = (this->fields).rangeVisualization;
+    if (this_00 != (SphereVolumeIndicator *)0x0) {
+      SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(this_00,range,(MethodInfo *)0x0);
+      return;
+    }
   }
 code_?:
   FUN_?();

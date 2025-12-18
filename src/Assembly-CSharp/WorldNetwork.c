@@ -295,8 +295,12 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_AddLink
                     FUN_?(pOStackX_10[2].klass,link);
                     (link->fields).outputWOID = *(int32_t *)&pOVar3[1].klass;
                     if (pOVar3[9].klass != (Object__Class *)0x0) {
-                      (*(code *)((pOVar3[9].klass)->_0).namespaze)
-                                (((pOVar3[9].klass)->_0).element_class,pOVar3[2].klass);
+                      pOVar15 = pOVar3[9].klass;
+                      uVar16._0_2_ = (pOVar15->_0).byval_arg.attrs;
+                      uVar16._2_1_ = (pOVar15->_0).byval_arg.type;
+                      uVar16._3_5_ = *(undefined5 *)&(pOVar15->_0).byval_arg.field_0xb;
+                      (*(code *)(pOVar15->_0).namespaze)
+                                ((pOVar15->_0).element_class,pOVar3[2].klass,uVar16);
                     }
                     if (pOStackX_20 != (Object *)0x0) {
                       if (cRam_? == '\0') {
@@ -312,8 +316,10 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_AddLink
                         FUN_?(pOStackX_20[2].monitor,link);
                         (link->fields).inputWOID = *(int32_t *)&pOVar3[1].klass;
                         if (pOVar3[8].monitor != (MonitorData *)0x0) {
-                          (**(code **)(pOVar3[8].monitor + 0x18))
-                                    (*(undefined8 *)(pOVar3[8].monitor + 0x40),pOVar3[2].monitor);
+                          pMVar17 = pOVar3[8].monitor;
+                          (**(code **)(pMVar17 + 0x18))
+                                    (*(undefined8 *)(pMVar17 + 0x40),pOVar3[2].monitor,
+                                     *(undefined8 *)(pMVar17 + 0x28));
                         }
                         if (cRam_? == '\0') {
                           FUN_?(&TypeInfo__MVGameControllerBase);
@@ -321,11 +327,22 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_AddLink
                           UNLOCK();
                           cRam_? = '\x01';
                         }
-                        pGVar15 = TypeInfo__MVGameControllerBase->static_fields->
-                                 _GameSessionData_k__BackingField;
-                        if (pGVar15 != (GameSessionData *)0x0) {
-                          if ((pGVar15->fields).gameMode != 0) {
-                            return;
+                        pGVar18 = TypeInfo__MVGameControllerBase->static_fields->
+                                  _GameSessionData_k__BackingField;
+                        if (pGVar18 != (GameSessionData *)0x0) {
+                          if ((pGVar18->fields).gameMode != 0) {
+                            if (cRam_? == '\0') {
+                              FUN_?(&TypeInfo__MVGameControllerBase);
+                              LOCK();
+                              UNLOCK();
+                              cRam_? = '\x01';
+                            }
+                            pGVar18 = TypeInfo__MVGameControllerBase->static_fields->
+                                      _GameSessionData_k__BackingField;
+                            if (pGVar18 == (GameSessionData *)0x0) goto code_?;
+                            if ((pGVar18->fields).gameMode != 4) {
+                              return;
+                            }
                           }
                           if (cRam_? == '\0') {
                             FUN_?(&TypeInfo__PrefabPool);
@@ -333,30 +350,30 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_AddLink
                             UNLOCK();
                             cRam_? = '\x01';
                           }
-                          pPVar16 = TypeInfo__PrefabPool->static_fields->instance;
-                          if (pPVar16 != (PrefabPool *)0x0) {
-                            pLVar17 = (pPVar16->fields).linkObject;
+                          pPVar19 = TypeInfo__PrefabPool->static_fields->instance;
+                          if (pPVar19 != (PrefabPool *)0x0) {
+                            pLVar20 = (pPVar19->fields).linkObject;
                             if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
                               FUN_?();
                             }
-                            pLVar17 = (LinkObjectScript *)
+                            pLVar20 = (LinkObjectScript *)
                                       UnityEngine.CoreModule.dll::UnityEngine::Object::
                                       Object_1_Instantiate_4
-                                                ((Object *)pLVar17,
+                                                ((Object *)pLVar20,
                                                  LinkObjectScript_MethodInfo__UnityEngine__Object__Instantiate<LinkObjectScript>_LinkObjectScript_
                                                 );
-                            if (pLVar17 != (LinkObjectScript *)0x0) {
-                              (pLVar17->fields)._.isObjectLink = 0;
-                              (pLVar17->fields)._.linkID = (link->fields).id;
+                            if (pLVar20 != (LinkObjectScript *)0x0) {
+                              (pLVar20->fields)._.isObjectLink = 0;
+                              (pLVar20->fields)._.linkID = (link->fields).id;
                               LinkObjectScript::LinkObjectScript_UpdateLinkVisual
-                                        (pLVar17,link,(MethodInfo *)0x0);
+                                        (pLVar20,link,(MethodInfo *)0x0);
                               this_01 = (pLVar13->fields).linkObjects;
                               if (this_01 != (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0) {
                                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                 Int32,System::Object]::
                                 Dictionary_2_System_Int32_System_Object__TryInsert
                                           ((Dictionary_2_System_Int32_System_Object_ *)this_01,
-                                           (link->fields).id,(Object *)pLVar17,
+                                           (link->fields).id,(Object *)pLVar20,
                                            (InsertionBehavior__Enum)
                                            CONCAT71((int7)((ulonglong)uVar14 >> 8),2),
                                            MethodInfo__System__Collections__Generic__Dictionary<int,_LinkObjectScript>__Add_int__LinkObjectScript_
@@ -377,6 +394,7 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_AddLink
       }
     }
   }
+code_?:
   FUN_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
@@ -616,7 +634,18 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_AddObjectLink
                            _GameSessionData_k__BackingField;
                   if (pGVar16 != (GameSessionData *)0x0) {
                     if ((pGVar16->fields).gameMode != 0) {
-                      return;
+                      if (cRam_? == '\0') {
+                        FUN_?(&TypeInfo__MVGameControllerBase);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      pGVar16 = TypeInfo__MVGameControllerBase->static_fields->
+                               _GameSessionData_k__BackingField;
+                      if (pGVar16 == (GameSessionData *)0x0) goto code_?;
+                      if ((pGVar16->fields).gameMode != 4) {
+                        return;
+                      }
                     }
                     if (cRam_? == '\0') {
                       FUN_?(&TypeInfo__PrefabPool);
@@ -677,6 +706,7 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_AddObjectLink
       }
     }
   }
+code_?:
   FUN_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
@@ -2726,7 +2756,17 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_Update
       pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar2 != (GameSessionData *)0x0) {
         if ((pGVar2->fields).gameMode != 0) {
-          return;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+          if ((pGVar2->fields).gameMode != 4) {
+            return;
+          }
         }
         pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
         ;
@@ -2853,6 +2893,7 @@ code_?:
           }
         }
       }
+code_?:
       FUN_?();
       pcVar12 = (code *)swi(3);
       (*pcVar12)();

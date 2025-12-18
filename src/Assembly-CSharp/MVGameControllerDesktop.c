@@ -520,51 +520,61 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
     }
     pGVar7 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar7 != (GameSessionData *)0x0) {
-      if ((pGVar7->fields).gameMode == 1) {
-        pMVar1 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
-        if (pMVar1 != (MVGameControllerDesktop *)0x0) {
-          bVar2 = iRam_? == 0;
-          (pMVar1->fields)._.modeController = (ModeControllerBase *)playModeController;
-          if (bVar2) {
+      if ((pGVar7->fields).gameMode != 1) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pGVar7 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar7 == (GameSessionData *)0x0) goto code_?;
+        if ((pGVar7->fields).gameMode != 3) {
+          pMVar1 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
+          if ((pMVar1 != (MVGameControllerDesktop *)0x0) &&
+             (this = (DesktopEditModeController *)(pMVar1->fields)._.modeController,
+             this != (DesktopEditModeController *)0x0)) {
+            bVar8 = (TypeInfo__DesktopEditModeController->_1).naturalAligment;
+            if ((bVar8 <= (this->klass->_1).naturalAligment) &&
+               ((DesktopEditModeController__Class *)
+                (this->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] ==
+                TypeInfo__DesktopEditModeController)) {
+              DesktopEditModeController::DesktopEditModeController_RegisterPlayModeController
+                        (this,playModeController,(MethodInfo *)0x0);
+              return;
+            }
+            FUN_?(this);
+            pcVar9 = (code *)swi(3);
+            (*pcVar9)();
             return;
           }
-          uVar3 = (uint)((ulonglong)&(pMVar1->fields)._.modeController >> 0xc);
-          lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
-          do {
-            uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
-            puVar6 = (ulonglong *)(lVar4 + 0xADDR);
-            LOCK();
-            bVar2 = uVar5 == *puVar6;
-            if (bVar2) {
-              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar2);
-          return;
+          goto code_?;
         }
       }
-      else {
-        pMVar1 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
-        if ((pMVar1 != (MVGameControllerDesktop *)0x0) &&
-           (this = (DesktopEditModeController *)(pMVar1->fields)._.modeController,
-           this != (DesktopEditModeController *)0x0)) {
-          bVar8 = (TypeInfo__DesktopEditModeController->_1).naturalAligment;
-          if ((bVar8 <= (this->klass->_1).naturalAligment) &&
-             ((DesktopEditModeController__Class *)
-              (this->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] ==
-              TypeInfo__DesktopEditModeController)) {
-            DesktopEditModeController::DesktopEditModeController_RegisterPlayModeController
-                      (this,playModeController,(MethodInfo *)0x0);
-            return;
-          }
-          FUN_?(this);
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
+      pMVar1 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
+      if (pMVar1 != (MVGameControllerDesktop *)0x0) {
+        bVar2 = iRam_? == 0;
+        (pMVar1->fields)._.modeController = (ModeControllerBase *)playModeController;
+        if (bVar2) {
           return;
         }
+        uVar3 = (uint)((ulonglong)&(pMVar1->fields)._.modeController >> 0xc);
+        lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+          LOCK();
+          bVar2 = uVar5 == *puVar6;
+          if (bVar2) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar2);
+        return;
       }
     }
   }
+code_?:
   FUN_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
@@ -1375,39 +1385,50 @@ bool Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_get_I
       }
       pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar2 != (GameSessionData *)0x0) {
-        if ((pGVar2->fields).gameMode != 0) {
-          return 0;
+        if ((pGVar2->fields).gameMode == 3) {
+          return 1;
         }
-        plVar3 = (longlong *)FUN_?();
-        if (plVar3 != (longlong *)0x0) {
-          uVar4 = 0;
-          lVar5 = *plVar3;
-          if (*(ushort *)(lVar5 + 0x12e) != 0) {
-            do {
-              if (*(IEditModeUI__Class **)(*(longlong *)(lVar5 + 0xb0) + (ulonglong)uVar4 * 0x10) ==
-                  TypeInfo__IEditModeUI) {
-                puVar6 = (undefined8 *)
-                         ((longlong)
-                          (*(int *)(*(longlong *)(lVar5 + 0xb0) + 8 + (ulonglong)uVar4 * 0x10) + 1)
-                          * 0x10 + 0x138 + lVar5);
-                UNRECOVERED_JUMPTABLE = (code *)*puVar6;
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                bVar7 = (*UNRECOVERED_JUMPTABLE)(plVar3,puVar6[1],UNRECOVERED_JUMPTABLE);
-                return bVar7;
-              }
-              uVar4 = uVar4 + 1;
-            } while (uVar4 < *(ushort *)(lVar5 + 0x12e));
+        lVar3 = FUN_?();
+        if (lVar3 != 0) {
+          if (*(int *)(lVar3 + 0x20) != 0) {
+            lVar3 = FUN_?();
+            if (lVar3 == 0) goto code_?;
+            if (*(int *)(lVar3 + 0x20) != 4) {
+              return 0;
+            }
           }
-          puVar6 = (undefined8 *)FUN_?(plVar3);
+          plVar4 = (longlong *)FUN_?();
+          if (plVar4 != (longlong *)0x0) {
+            uVar5 = 0;
+            lVar3 = *plVar4;
+            if (*(ushort *)(lVar3 + 0x12e) != 0) {
+              do {
+                if (*(IEditModeUI__Class **)(*(longlong *)(lVar3 + 0xb0) + (ulonglong)uVar5 * 0x10)
+                    == TypeInfo__IEditModeUI) {
+                  puVar6 = (undefined8 *)
+                           ((longlong)
+                            (*(int *)(*(longlong *)(lVar3 + 0xb0) + 8 + (ulonglong)uVar5 * 0x10) + 1
+                            ) * 0x10 + 0x138 + lVar3);
+                  UNRECOVERED_JUMPTABLE = (code *)*puVar6;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-          bVar7 = (*(code *)*puVar6)(plVar3,puVar6[1],(code *)*puVar6);
-          return bVar7;
+                  bVar7 = (*UNRECOVERED_JUMPTABLE)(plVar4,puVar6[1],UNRECOVERED_JUMPTABLE);
+                  return bVar7;
+                }
+                uVar5 = uVar5 + 1;
+              } while (uVar5 < *(ushort *)(lVar3 + 0x12e));
+            }
+            puVar6 = (undefined8 *)FUN_?(plVar4);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            bVar7 = (*(code *)*puVar6)(plVar4,puVar6[1],(code *)*puVar6);
+            return bVar7;
+          }
         }
       }
     }
   }
+code_?:
   FUN_?();
   UNRECOVERED_JUMPTABLE = (code *)swi(3);
   bVar7 = (*UNRECOVERED_JUMPTABLE)();

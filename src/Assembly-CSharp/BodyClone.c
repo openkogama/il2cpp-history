@@ -582,7 +582,7 @@ code_?:
                 pOVar23 = pOVar6;
                 if ((Object__Class *)DStack_5._current.key != (Object__Class *)0x0) {
                   if (((Il2CppClass_0 *)&(DStack_5._current.key)->klass)->image ==
-                      pIRam0000000182dbdde0) {
+                      pIRam0000000182dc50c0) {
                     pOVar23 = (Object__Class *)DStack_5._current.key;
                   }
                   if (pOVar23 == (Object__Class *)0x0) goto code_?;
@@ -660,7 +660,7 @@ code_?:
                                   );
               url = pOVar6;
               if (pOVar29 != (Object__Class *)0x0) {
-                if ((pOVar29->_0).image == pIRam0000000182dbdde0) {
+                if ((pOVar29->_0).image == pIRam0000000182dc50c0) {
                   url = pOVar29;
                 }
                 if (url != (Object__Class *)0x0) goto code_?;
@@ -745,11 +745,11 @@ code_?:
                                          (Object *)pSVar28,
                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                         );
-                    pOVar20 = pORam0000000182dbddc8;
+                    pOVar20 = pORam0000000182dc50a8;
                     if (pOVar33 == (Object *)0x0) goto code_?;
                     if ((pOVar33->klass->_0).element_class !=
                         (Il2CppClass *)
-                        ((_union_155 *)&(pORam0000000182dbddc8->_0).element_class)->genericMethod)
+                        ((_union_155 *)&(pORam0000000182dc50a8->_0).element_class)->genericMethod)
                     goto code_?;
                     BodyAccessoriesController::BodyAccessoriesController_ApplyAccessoryOffset
                               (this_01,*(float *)&pOVar33[1].klass,
@@ -766,11 +766,11 @@ code_?:
                                          (Object *)pSVar28,
                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                         );
-                    pOVar20 = pORam0000000182dbddc8;
+                    pOVar20 = pORam0000000182dc50a8;
                     if (pOVar33 == (Object *)0x0) goto code_?;
                     if ((pOVar33->klass->_0).element_class !=
                         (Il2CppClass *)
-                        ((_union_155 *)&(pORam0000000182dbddc8->_0).element_class)->genericMethod)
+                        ((_union_155 *)&(pORam0000000182dc50a8->_0).element_class)->genericMethod)
                     goto code_?;
                     BodyAccessoriesController::BodyAccessoriesController_ApplySizeChange
                               (this_01,*(float *)&pOVar33[1].klass,

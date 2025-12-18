@@ -442,7 +442,7 @@ void Assembly-CSharp.dll::Theme::Theme_Purchase(Theme *this,int32_t id,MethodInf
                 (this_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      aiStackX_20[0]._0_1_ = 0xbf;
+      aiStackX_20[0]._0_1_ = 0xc1;
       pOVar5 = (Object *)FUN_?(uRam_?,aiStackX_20);
       aiStackX_20[0] = id;
       value_00 = (Object *)FUN_?(uRam_?,aiStackX_20);
@@ -455,7 +455,7 @@ void Assembly-CSharp.dll::Theme::Theme_Purchase(Theme *this,int32_t id,MethodInf
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                    ->klass->rgctx_data[0x22].method);
-        aiStackX_20[0]._0_1_ = 0xcf;
+        aiStackX_20[0]._0_1_ = 0xd1;
         pOVar5 = (Object *)FUN_?(uRam_?,aiStackX_20);
         pMVar6 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                  ->klass->rgctx_data[0x22].method;
@@ -502,11 +502,11 @@ void Assembly-CSharp.dll::Theme::Theme_Purchase(Theme *this,int32_t id,MethodInf
           uVar9 = (undefined7)((ulonglong)pMVar6 >> 8);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0x5e,pOVar5,(InsertionBehavior__Enum)uVar8,pMVar6);
-          uVar7 = CONCAT71(uVar9,0x5f);
+                    (this_01,0x61,pOVar5,(InsertionBehavior__Enum)uVar8,pMVar6);
+          uVar7 = CONCAT71(uVar9,0x62);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0x5f,(Object *)this_00,
+                    (this_01,0x62,(Object *)this_00,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar8 >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);
@@ -516,7 +516,7 @@ void Assembly-CSharp.dll::Theme::Theme_Purchase(Theme *this,int32_t id,MethodInf
           }
           if (pPVar10 != (PhotonPeer *)0x0) {
             (*(pPVar10->klass->vtable).SendOperation.methodPtr)
-                      (pPVar10,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x23),this_01,
+                      (pPVar10,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x24),this_01,
                        TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable
                        ,(pPVar10->klass->vtable).SendOperation.method);
             return;

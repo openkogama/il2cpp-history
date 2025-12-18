@@ -1,9 +1,9 @@
 
-/* Void <OnDeleteConfirmation>b__1(IModalPopupCreator, BaseEventData) */
+/* Void <OnConfirmation>b__1(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::InventoryItemCubeModelHandler+<>c__DisplayClass7_0::
-     InventoryItemCubeModelHandler_c_DisplayClass7_0__OnDeleteConfirmation_b__1
-               (InventoryItemCubeModelHandler_c_DisplayClass7_0 *this,IModalPopupCreator *x,
+void Assembly-CSharp.dll::ItemInventoryDeleteTab+<>c__DisplayClass6_0::
+     ItemInventoryDeleteTab_c_DisplayClass6_0__OnConfirmation_b__1
+               (ItemInventoryDeleteTab_c_DisplayClass6_0 *this,IModalPopupCreator *x,
                BaseEventData *y,MethodInfo *method)
 
 {

@@ -831,88 +831,83 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_OnUpdatePrototypeEv
       pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar1 != (GameSessionData *)0x0) {
         if ((pGVar1->fields).gameMode != 1) {
-          pHStack_2 = (rpcm->fields).instances;
-          if (pHStack_2 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
-          if (iRam_? != 0) {
-            uVar3 = (uint)((ulonglong)&pHStack_2 >> 0xc);
-            uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
-            do {
-              uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
-              puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
-              LOCK();
-              bVar7 = uVar5 == *puVar6;
-              if (bVar7) {
-                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
-              }
-              UNLOCK();
-            } while (!bVar7);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
-          lStack_8 = (ulonglong)(uint)(pHStack_2->fields)._version << 0x20;
-          uStack_9 = 0;
-          puStack_10 = (undefined *)lStack_8;
-          uStack_11 = 0;
-          pHStack_12 = pHStack_2;
-          cVar13 = FUN_?(&pHStack_12,
-                                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
-                               );
-          if (cVar13 != '\0') {
-            key = (int32_t)uStack_9;
-            if (cRam_? == '\0') {
-              FUN_?(&TypeInfo__MVGameControllerBase);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
+          pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+          if ((pGVar1->fields).gameMode != 3) {
+            pHStack_2 = (rpcm->fields).instances;
+            if (pHStack_2 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
+            if (iRam_? != 0) {
+              uVar3 = (uint)((ulonglong)&pHStack_2 >> 0xc);
+              uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+              do {
+                uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                LOCK();
+                bVar7 = uVar5 == *puVar6;
+                if (bVar7) {
+                  *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar7);
             }
-            pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
-            if (pMVar14 != (MVGameControllerBase *)0x0) {
-              pMVar15 = (pMVar14->fields).game;
-              if (pMVar15 != (MVNetworkGame *)0x0) {
-                if (((pMVar15->fields).worldNetwork != (WorldNetwork *)0x0) &&
-                   (pMVar16 = (((pMVar15->fields).worldNetwork)->fields)._.worldObjectClientManager,
-                   pMVar16 != (MVWorldObjectClientManagerNetwork *)0x0)) {
-                  if (cRam_? == '\0') {
-                    FUN_?(&
-                                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+            lStack_8 = (ulonglong)(uint)(pHStack_2->fields)._version << 0x20;
+            uStack_9 = 0;
+            puStack_10 = (undefined *)lStack_8;
+            uStack_11 = 0;
+            pHStack_12 = pHStack_2;
+            cVar13 = FUN_?(&pHStack_12,
+                                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                                  );
-                    LOCK();
-                    UNLOCK();
-                    cRam_? = '\x01';
-                  }
-                  this_01 = (pMVar16->fields)._.worldObjects;
-                  if (this_01 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                    Object]::Dictionary_2_System_Int32_System_Object__TryGetValue
-                              ((Dictionary_2_System_Int32_System_Object_ *)this_01,key,
-                               (Object **)&stack0x00000010,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                              );
-                    FUN_?();
-                  }
+            if (cVar13 != '\0') {
+              key = (int32_t)uStack_9;
+              pMVar14 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+              if (pMVar14 != (MVWorldObjectClientManager *)0x0) {
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                this_01 = (pMVar14->fields).worldObjects;
+                if (this_01 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                  Object]::Dictionary_2_System_Int32_System_Object__TryGetValue
+                            ((Dictionary_2_System_Int32_System_Object_ *)this_01,key,
+                             (Object **)&stack0x00000010,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                            );
                   FUN_?();
                 }
                 FUN_?();
               }
               FUN_?();
+              FUN_?();
+              pcVar15 = (code *)swi(3);
+              (*pcVar15)();
+              return;
             }
-            FUN_?();
-            FUN_?();
-            pcVar17 = (code *)swi(3);
-            (*pcVar17)();
-            return;
           }
         }
         return;
       }
 code_?:
       FUN_?();
-      pcVar17 = (code *)swi(3);
-      (*pcVar17)();
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
       return;
     }
   }
   FUN_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1662,10 +1657,10 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_RequestWoMakeUnique
                 if (this_03 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                   method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                               ->klass->rgctx_data[0x22].method;
-                  uVar11 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+                  uVar11 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                            (this_03,0x16,pOVar7,
+                            (this_03,0x17,pOVar7,
                              (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar2 >> 8),2),
                              method_00);
                   pPVar12 = (pMVar10->fields).peer;
@@ -1675,7 +1670,7 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_RequestWoMakeUnique
                   }
                   if (pPVar12 != (PhotonPeer *)0x0) {
                     (*(pPVar12->klass->vtable).SendOperation.methodPtr)
-                              (pPVar12,CONCAT71((int7)((ulonglong)uVar11 >> 8),0x16),this_03,
+                              (pPVar12,CONCAT71((int7)((ulonglong)uVar11 >> 8),0x17),this_03,
                                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                                SendReliable,(pPVar12->klass->vtable).SendOperation.method);
                     return;

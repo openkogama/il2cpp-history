@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::MVTextMsgObject+<TimeoutRoutine>d__31::
-     MVTextMsgObject_TimeoutRoutine_d_31_MoveNext
-               (MVTextMsgObject_TimeoutRoutine_d_31 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::MVTextMsgObject+<TimeoutRoutine>d__33::
+     MVTextMsgObject_TimeoutRoutine_d_33_MoveNext
+               (MVTextMsgObject_TimeoutRoutine_d_33 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -58,9 +58,9 @@ bool Assembly-CSharp.dll::MVTextMsgObject+<TimeoutRoutine>d__31::
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::MVTextMsgObject+<TimeoutRoutine>d__31::
-     MVTextMsgObject_TimeoutRoutine_d_31_System_Collections_IEnumerator_Reset
-               (MVTextMsgObject_TimeoutRoutine_d_31 *this,MethodInfo *method)
+void Assembly-CSharp.dll::MVTextMsgObject+<TimeoutRoutine>d__33::
+     MVTextMsgObject_TimeoutRoutine_d_33_System_Collections_IEnumerator_Reset
+               (MVTextMsgObject_TimeoutRoutine_d_33 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -68,7 +68,7 @@ void Assembly-CSharp.dll::MVTextMsgObject+<TimeoutRoutine>d__31::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   uVar1 = func_?(&
-                              MethodInfo__MVTextMsgObject___TimeoutRoutine_d__31__System_Collections_IEnumerator_Reset__
+                              MethodInfo__MVTextMsgObject___TimeoutRoutine_d__33__System_Collections_IEnumerator_Reset__
                              );
   FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);

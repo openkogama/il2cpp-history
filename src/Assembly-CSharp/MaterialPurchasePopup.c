@@ -391,7 +391,7 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup_OnConfirm
                 (this_04,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      auStackX_10[0] = CONCAT31(auStackX_10[0]._1_3_,0x67);
+      auStackX_10[0] = CONCAT31(auStackX_10[0]._1_3_,0x6a);
       key = (Object *)FUN_?(uRam_?,auStackX_10);
       auStackX_10[0] = (uint)bVar15;
       value = (Object *)FUN_?(uRam_?,auStackX_10);

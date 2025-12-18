@@ -384,7 +384,7 @@ code_?:
   fVar8 = (float)(*pcRam_?)();
   MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)method,in_R8);
   if (extraout_RAX == 0) goto code_?;
-  fVar9 = *(float *)(extraout_RAX + 0xf4);
+  fVar9 = *(float *)(extraout_RAX + 0xfc);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__FirstTimePressPlayController);
     LOCK();
@@ -642,7 +642,7 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_Update
         fVar7 = (float)(pMVar3->fields).timeLeft / (float)(pMVar3->fields).duration;
       }
       else {
-        if (*(float *)(extraout_RAX + 0xf4) <= fVar7) {
+        if (*(float *)(extraout_RAX + 0xfc) <= fVar7) {
           pIVar8 = (this->fields).countdownFill;
           if (pIVar8 != (Image *)0x0) {
             bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
@@ -672,7 +672,7 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_Update
         }
         MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
         if (extraout_RAX_00 == 0) goto code_?;
-        fVar7 = *(float *)(extraout_RAX_00 + 0xf4);
+        fVar7 = *(float *)(extraout_RAX_00 + 0xfc);
         pcVar5 = pcRam_?;
         if ((pcRam_? == (code *)0x0) &&
            (pcVar5 = (code *)FUN_?(), pcVar5 == (code *)0x0)) {

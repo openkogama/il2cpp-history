@@ -2500,13 +2500,25 @@ void Assembly-CSharp.dll::Assets::Scripts::ProfileSettings::ProfileSettingsManag
                                _GameSessionData_k__BackingField;
                       if (pGVar15 != (GameSessionData *)0x0) {
                         if ((pGVar15->fields).gameMode != 1) {
-                          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game
-                                              ((MethodInfo *)0x0);
-                          if ((pMVar2 == (MVNetworkGame *)0x0) ||
-                             (this_01 = (pMVar2->fields)._MaterialRepository_k__BackingField,
-                             this_01 == (MVMaterialRepository *)0x0)) goto code_?;
-                          MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextures
-                                    (this_01,(MethodInfo *)0x0);
+                          if (cRam_? == '\0') {
+                            FUN_?(&TypeInfo__MVGameControllerBase);
+                            LOCK();
+                            UNLOCK();
+                            cRam_? = '\x01';
+                          }
+                          pGVar15 = TypeInfo__MVGameControllerBase->static_fields->
+                                   _GameSessionData_k__BackingField;
+                          if (pGVar15 == (GameSessionData *)0x0) goto code_?;
+                          if ((pGVar15->fields).gameMode != 3) {
+                            pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                                ((MethodInfo *)0x0);
+                            if ((pMVar2 == (MVNetworkGame *)0x0) ||
+                               (this_01 = (pMVar2->fields)._MaterialRepository_k__BackingField,
+                               this_01 == (MVMaterialRepository *)0x0)) goto code_?;
+                            MVMaterialRepository::
+                            MVMaterialRepository_GenerateMaterialButtonTextures
+                                      (this_01,(MethodInfo *)0x0);
+                          }
                         }
                         return;
                       }

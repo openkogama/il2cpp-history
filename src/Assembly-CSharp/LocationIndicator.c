@@ -1131,50 +1131,27 @@ bool Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetIndicatorPosit
 }
 
 
-/* Void SetOwnership(PlanetOwnershipType) */
+/* Void SetPermisisons(List`1[MV.Common.PlanetPermissionType]) */
 
-void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetOwnership
-               (LocationIndicator *this,PlanetOwnershipType__Enum ownershipType,MethodInfo *method)
+void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetPermisisons
+               (LocationIndicator *this,List_1_MV_Common_PlanetPermissionType_ *permissions,
+               MethodInfo *method)
 
 {
-  PVar1 = ownershipType & 0xff;
-  if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_Editor);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_Play_Tester);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_Owner);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_Spectator);
-    LOCK();
-    UNLOCK();
-    FUN_?(&::StringLiteral__);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  pTVar2 = (this->fields).ownershipText;
-  key = StringLiteral_Editor;
-  if ((((PVar1 == PlanetOwnershipType__Enum_Editor) ||
-       (key = StringLiteral_Owner, PVar1 == PlanetOwnershipType__Enum_Owner)) ||
-      (key = StringLiteral_Play_Tester, PVar1 == PlanetOwnershipType__Enum_Playtester)) ||
-     ((pSVar3 = ::StringLiteral__, PVar1 != PlanetOwnershipType__Enum_Pending &&
-      (key = StringLiteral_Spectator, PVar1 == PlanetOwnershipType__Enum_Spectator)))) {
-    pSVar3 = TM::TM__(key,(MethodInfo *)0x0);
-  }
-  if (pTVar2 == (Text *)0x0) {
-    FUN_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
-  }
+  pTVar1 = (this->fields).ownershipText;
+  pSVar2 = MVCommon.dll::MV::Common::MVEnumsExtensions::MVEnumsExtensions_ToTitle
+                     (permissions,(MethodInfo *)0x0);
+  if (pTVar1 != (Text *)0x0) {
+    UNRECOVERED_JUMPTABLE = (pTVar1->klass->vtable).set_text.methodPtr;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*(pTVar2->klass->vtable).set_text.methodPtr)
-            (pTVar2,pSVar3,(pTVar2->klass->vtable).set_text.method);
+    (*UNRECOVERED_JUMPTABLE)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

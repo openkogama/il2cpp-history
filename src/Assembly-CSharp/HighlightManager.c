@@ -312,10 +312,10 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager_SetHighlightToSeen
       if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                     ->klass->rgctx_data[0x22].method;
-        uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+        uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0xbf,value,
+                  (this_00,0xc1,value,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
         pPVar5 = (pMVar3->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {

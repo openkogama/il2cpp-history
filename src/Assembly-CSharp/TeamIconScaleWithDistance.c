@@ -308,7 +308,7 @@ code_?:
             if (pMVar15 != (MethodInfo *)0x0) {
               if ((*pMVar15->name == '.') && ((pMVar15->flags & 0x800) != 0)) {
                 ppMVar16 = ppMVar4;
-                while (ppMVar17 = ppMVar16 + 0x3052a1b1,
+                while (ppMVar17 = ppMVar16 + 0x3052af3c,
                       ppMVar16 = (MethodInfo **)((longlong)ppMVar16 + 1),
                       *(char *)ppMVar17 == (pMVar15->name + -1)[(longlong)ppMVar16]) {
                   if (ppMVar16 == (MethodInfo **)0x7) {

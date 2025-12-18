@@ -280,11 +280,11 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler_OnGameMessa
                        );
     if (pOVar1 != (Object *)0x0) {
       pOVar2 = (Object *)0x0;
-      if (pOVar1->klass == pORam0000000182dbdde0) {
+      if (pOVar1->klass == pORam0000000182dc50c0) {
         pOVar2 = pOVar1;
       }
       if (pOVar2 == (Object *)0x0) {
-        FUN_?(pOVar1,pORam0000000182dbdde0);
+        FUN_?(pOVar1,pORam0000000182dc50c0);
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
         return;
@@ -950,13 +950,27 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler__ctor
   uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
   Dictionary_2_System_Int32Enum_System_Int32__TryInsert
-            ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,0,0x11,
+            ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,3,7,
+             (InsertionBehavior__Enum)uVar2,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameMode,_int>__Add_MV__Common__MVGameMode__int_
+             ->klass->rgctx_data[0x22].method);
+  uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),2);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
+  Dictionary_2_System_Int32Enum_System_Int32__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,0,0x10,
+             (InsertionBehavior__Enum)uVar2,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameMode,_int>__Add_MV__Common__MVGameMode__int_
+             ->klass->rgctx_data[0x22].method);
+  uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),2);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
+  Dictionary_2_System_Int32Enum_System_Int32__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,4,0x10,
              (InsertionBehavior__Enum)uVar2,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameMode,_int>__Add_MV__Common__MVGameMode__int_
              ->klass->rgctx_data[0x22].method);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
   Dictionary_2_System_Int32Enum_System_Int32__TryInsert
-            ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,2,7,
+            ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,2,0xe,
              (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameMode,_int>__Add_MV__Common__MVGameMode__int_
              ->klass->rgctx_data[0x22].method);

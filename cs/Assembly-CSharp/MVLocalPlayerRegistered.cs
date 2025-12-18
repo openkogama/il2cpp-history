@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject.MetaData;
@@ -13,7 +14,7 @@ using UnityEngine.Networking;
 public class MVLocalPlayerRegistered : MVLocalPlayer
 {
 	// Constructors
-	public MVLocalPlayerRegistered(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeId, UserProfileData userProfileData);
+	public MVLocalPlayerRegistered(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeId, List<int> planetPermissionIDs, UserProfileData userProfileData);
 
 	// Methods
 	public override void InitializeLeveling(InitialLevelData initialLevelData);

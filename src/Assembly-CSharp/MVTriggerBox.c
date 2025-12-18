@@ -703,10 +703,10 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_triggerBoxEvents_TriggerEnt
       }
       *(int32_t *)((longlong)&value[2].klass + 4) = iVar5;
       if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-        uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),0x16);
+        uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),0x17);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x16,value,
+                  (this_00,0x17,value,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -716,7 +716,7 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_triggerBoxEvents_TriggerEnt
         }
         if (pPVar9 != (PhotonPeer *)0x0) {
           (*(pPVar9->klass->vtable).SendOperation.methodPtr)
-                    (pPVar9,CONCAT71((int7)((ulonglong)uVar8 >> 8),0x12),this_00,
+                    (pPVar9,CONCAT71((int7)((ulonglong)uVar8 >> 8),0x13),this_00,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                      (pPVar9->klass->vtable).SendOperation.method);
           return;
@@ -812,10 +812,10 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_triggerBoxEvents_TriggerExi
       }
       *(int32_t *)((longlong)&value[2].klass + 4) = iVar5;
       if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-        uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),0x16);
+        uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),0x17);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x16,value,
+                  (this_00,0x17,value,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -825,7 +825,7 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_triggerBoxEvents_TriggerExi
         }
         if (pPVar9 != (PhotonPeer *)0x0) {
           (*(pPVar9->klass->vtable).SendOperation.methodPtr)
-                    (pPVar9,CONCAT71((int7)((ulonglong)uVar8 >> 8),0x13),this_00,
+                    (pPVar9,CONCAT71((int7)((ulonglong)uVar8 >> 8),0x14),this_00,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                      (pPVar9->klass->vtable).SendOperation.method);
           return;

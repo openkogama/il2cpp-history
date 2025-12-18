@@ -30,6 +30,8 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
       UNLOCK();
       cRam_? = '\x01';
     }
+    bVar3 = 0;
+    bVar4 = false;
     if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
          (IEditModeUI *)0x0) && (0 < iVar2)) {
       if (cRam_? == '\0') {
@@ -40,19 +42,21 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
       }
       pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar1 == (GameSessionData *)0x0) goto code_?;
-      bVar3 = (pGVar1->fields).gameMode == 1;
+      if ((pGVar1->fields).gameMode == 1) {
+        bVar4 = true;
+      }
+      else {
+        MVar5 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        bVar4 = MVar5 == MVGameMode__Enum_SpacePlay;
+      }
     }
-    else {
-      bVar3 = false;
-    }
-    bVar4 = 0;
-    pTVar5 = (this->fields).playReward;
-    if ((pTVar5 != (TimedPlayReward *)0x0) &&
-       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)pTVar5,(MethodInfo *)0x0), pGVar6 != (GameObject *)0x0))
+    pTVar6 = (this->fields).playReward;
+    if ((pTVar6 != (TimedPlayReward *)0x0) &&
+       (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pTVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0))
     {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar6,0,(MethodInfo *)0x0);
+                (pGVar7,0,(MethodInfo *)0x0);
       if (iVar2 < 1) {
         if (cRam_? == '\0') {
           FUN_?(&TypeInfo__MVClientSettings);
@@ -60,10 +64,10 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
           UNLOCK();
           cRam_? = '\x01';
         }
-        bVar4 = (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 2);
+        bVar3 = (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 2);
       }
-      pEVar7 = (this->fields).embeddedPlayerConfig;
-      if (pEVar7 != (EmbeddedPlayerConfig *)0x0) {
+      pEVar8 = (this->fields).embeddedPlayerConfig;
+      if (pEVar8 != (EmbeddedPlayerConfig *)0x0) {
         if (cRam_? == '\0') {
           FUN_?(&TypeInfo__UnityEngine__Debug);
           LOCK();
@@ -73,42 +77,42 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
           UNLOCK();
           cRam_? = '\x01';
         }
-        if ((pEVar7->fields).initialized == 0) {
+        if ((pEVar8->fields).initialized == 0) {
           if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
             FUN_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                     ((Object *)StringLiteral_Embedded_site_data_not_initializ,(MethodInfo *)0x0);
-          auVar8._0_8_ = (pEVar7->fields).kogamaDefaultData.sites;
-          auVar8._8_4_ = (pEVar7->fields).kogamaDefaultData.siteEnum;
-          auVar8[0xc] = (pEVar7->fields).kogamaDefaultData.showTouristPromotion;
-          auVar8[0xd] = (pEVar7->fields).kogamaDefaultData.allowsOpenInNewTab;
-          auVar8[0xe] = (pEVar7->fields).kogamaDefaultData.allowsRedirectToWebpage;
-          auVar8[0xf] = (pEVar7->fields).kogamaDefaultData.allowsModals;
-          uVar9 = (pEVar7->fields).kogamaDefaultData.hideGoldShop;
-          cVar10 = uVar9;
+          auVar9._0_8_ = (pEVar8->fields).kogamaDefaultData.sites;
+          auVar9._8_4_ = (pEVar8->fields).kogamaDefaultData.siteEnum;
+          auVar9[0xc] = (pEVar8->fields).kogamaDefaultData.showTouristPromotion;
+          auVar9[0xd] = (pEVar8->fields).kogamaDefaultData.allowsOpenInNewTab;
+          auVar9[0xe] = (pEVar8->fields).kogamaDefaultData.allowsRedirectToWebpage;
+          auVar9[0xf] = (pEVar8->fields).kogamaDefaultData.allowsModals;
+          uVar10 = (pEVar8->fields).kogamaDefaultData.hideGoldShop;
+          cVar11 = uVar10;
         }
         else {
-          auVar8._0_8_ = (pEVar7->fields).currentSite.sites;
-          auVar8._8_4_ = (pEVar7->fields).currentSite.siteEnum;
-          auVar8[0xc] = (pEVar7->fields).currentSite.showTouristPromotion;
-          auVar8[0xd] = (pEVar7->fields).currentSite.allowsOpenInNewTab;
-          auVar8[0xe] = (pEVar7->fields).currentSite.allowsRedirectToWebpage;
-          auVar8[0xf] = (pEVar7->fields).currentSite.allowsModals;
-          cVar10 = (pEVar7->fields).currentSite.hideGoldShop;
+          auVar9._0_8_ = (pEVar8->fields).currentSite.sites;
+          auVar9._8_4_ = (pEVar8->fields).currentSite.siteEnum;
+          auVar9[0xc] = (pEVar8->fields).currentSite.showTouristPromotion;
+          auVar9[0xd] = (pEVar8->fields).currentSite.allowsOpenInNewTab;
+          auVar9[0xe] = (pEVar8->fields).currentSite.allowsRedirectToWebpage;
+          auVar9[0xf] = (pEVar8->fields).currentSite.allowsModals;
+          cVar11 = (pEVar8->fields).currentSite.hideGoldShop;
         }
-        if ((auVar8[0xf] == '\0') && (auVar8[0xd] == '\0')) {
-          uVar11 = auVar8._14_2_ & 0xff;
+        if ((auVar9[0xf] == '\0') && (auVar9[0xd] == '\0')) {
+          uVar12 = auVar9._14_2_ & 0xff;
         }
         else {
-          uVar11 = 1;
+          uVar12 = 1;
         }
-        pGVar6 = (this->fields).touristRegisterButton;
-        value = uVar11 != 0;
-        if (pGVar6 != (GameObject *)0x0) {
+        pGVar7 = (this->fields).touristRegisterButton;
+        value = uVar12 != 0;
+        if (pGVar7 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar6,bVar4 & value,(MethodInfo *)0x0);
-          if (cVar10 == '\0') {
+                    (pGVar7,bVar3 & value,(MethodInfo *)0x0);
+          if (cVar11 == '\0') {
             if (0 < iVar2) {
               value = true;
             }
@@ -116,39 +120,39 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
           else {
             value = false;
           }
-          pGVar6 = (this->fields).accessoryShopButton;
-          if (pGVar6 != (GameObject *)0x0) {
+          pGVar7 = (this->fields).accessoryShopButton;
+          if (pGVar7 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar6,value,(MethodInfo *)0x0);
-            pGVar6 = (this->fields).adminObserveButton;
+                      (pGVar7,value,(MethodInfo *)0x0);
+            pGVar7 = (this->fields).adminObserveButton;
             if (cRam_? == '\0') {
               FUN_?(&TypeInfo__MVGameControllerBase);
               LOCK();
               UNLOCK();
               cRam_? = '\x01';
             }
-            pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
-            if ((((pMVar12 != (MVGameControllerBase *)0x0) &&
-                 (pMVar13 = (pMVar12->fields).game, pMVar13 != (MVNetworkGame *)0x0)) &&
-                (this_00 = (pMVar13->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0))
-               && (pMVar14 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
-                                       (this_00,(MethodInfo *)0x0), pMVar14 != (MVLocalPlayer *)0x0)
+            pMVar13 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if ((((pMVar13 != (MVGameControllerBase *)0x0) &&
+                 (pMVar14 = (pMVar13->fields).game, pMVar14 != (MVNetworkGame *)0x0)) &&
+                (this_00 = (pMVar14->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0))
+               && (pMVar15 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                       (this_00,(MethodInfo *)0x0), pMVar15 != (MVLocalPlayer *)0x0)
                ) {
-              if ((pMVar14->fields)._._ProfileID_k__BackingField < 1) {
-                bVar15 = 0;
+              if ((pMVar15->fields)._._ProfileID_k__BackingField < 1) {
+                bVar16 = 0;
               }
               else {
-                pUVar16 = (pMVar14->fields)._._UserProfileData_k__BackingField;
-                if (pUVar16 == (UserProfileData *)0x0) goto code_?;
-                bVar15 = (pUVar16->fields).IsAdmin;
+                pUVar17 = (pMVar15->fields)._._UserProfileData_k__BackingField;
+                if (pUVar17 == (UserProfileData *)0x0) goto code_?;
+                bVar16 = (pUVar17->fields).IsAdmin;
               }
-              if (pGVar6 != (GameObject *)0x0) {
+              if (pGVar7 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar6,bVar15,(MethodInfo *)0x0);
-                if (bVar3) {
-                  pTVar5 = (this->fields).playReward;
-                  if (pTVar5 == (TimedPlayReward *)0x0) goto code_?;
-                  TimedPlayReward::TimedPlayReward_Initialize(pTVar5,(MethodInfo *)0x0);
+                          (pGVar7,bVar16,(MethodInfo *)0x0);
+                if (bVar4) {
+                  pTVar6 = (this->fields).playReward;
+                  if (pTVar6 == (TimedPlayReward *)0x0) goto code_?;
+                  TimedPlayReward::TimedPlayReward_Initialize(pTVar6,(MethodInfo *)0x0);
                 }
                 if (cRam_? == '\0') {
                   FUN_?(&TypeInfo__GamePassesManager);
@@ -158,53 +162,53 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
                 }
                 if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField !=
                     0) {
-                  pGVar17 = (this->fields).gamePassesUIPrefab;
-                  pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                  pGVar18 = (this->fields).gamePassesUIPrefab;
+                  pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_transform((Component *)this,(MethodInfo *)0x0);
                   if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
                     FUN_?();
                   }
-                  pGVar17 = (GamePassesUI *)
+                  pGVar18 = (GamePassesUI *)
                             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                                      ((Object *)pGVar17,pTVar18,0,
+                                      ((Object *)pGVar18,pTVar19,0,
                                        GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
                                       );
-                  bVar3 = iRam_? != 0;
-                  (this->fields).gamePassesUI = pGVar17;
-                  if (bVar3) {
-                    uVar19 = (uint)((ulonglong)&(this->fields).gamePassesUI >> 0xc);
-                    puVar20 = (ulonglong *)((ulonglong)((uVar19 & 0x1fffff) >> 6) * 8 + 0xADDR);
+                  bVar4 = iRam_? != 0;
+                  (this->fields).gamePassesUI = pGVar18;
+                  if (bVar4) {
+                    uVar20 = (uint)((ulonglong)&(this->fields).gamePassesUI >> 0xc);
+                    puVar21 = (ulonglong *)((ulonglong)((uVar20 & 0x1fffff) >> 6) * 8 + 0xADDR);
                     do {
-                      uVar21 = *puVar20;
+                      uVar22 = *puVar21;
                       LOCK();
-                      uVar22 = *puVar20;
-                      if (uVar21 == uVar22) {
-                        *puVar20 = uVar21 | 1L << (uVar19 & 0x3f);
+                      uVar23 = *puVar21;
+                      if (uVar22 == uVar23) {
+                        *puVar21 = uVar22 | 1L << (uVar20 & 0x3f);
                       }
                       UNLOCK();
-                    } while (uVar21 != uVar22);
+                    } while (uVar22 != uVar23);
                   }
-                  pGVar17 = (this->fields).gamePassesUI;
-                  if (pGVar17 == (GamePassesUI *)0x0) goto code_?;
-                  GamePassesUI::GamePassesUI_Initialize(pGVar17,(MethodInfo *)0x0);
-                  bVar15 = GamePassProgressionController::
+                  pGVar18 = (this->fields).gamePassesUI;
+                  if (pGVar18 == (GamePassesUI *)0x0) goto code_?;
+                  GamePassesUI::GamePassesUI_Initialize(pGVar18,(MethodInfo *)0x0);
+                  bVar16 = GamePassProgressionController::
                            GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0)
                   ;
-                  if (bVar15 == 0) {
-                    pGVar17 = (this->fields).gamePassesUI;
-                    if ((pGVar17 == (GamePassesUI *)0x0) ||
-                       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                  Component_get_gameObject((Component *)pGVar17,(MethodInfo *)0x0),
-                       pGVar6 == (GameObject *)0x0)) goto code_?;
+                  if (bVar16 == 0) {
+                    pGVar18 = (this->fields).gamePassesUI;
+                    if ((pGVar18 == (GamePassesUI *)0x0) ||
+                       (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_gameObject((Component *)pGVar18,(MethodInfo *)0x0),
+                       pGVar7 == (GameObject *)0x0)) goto code_?;
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar6,0,(MethodInfo *)0x0);
+                              (pGVar7,0,(MethodInfo *)0x0);
                   }
                 }
-                pGVar6 = (this->fields).winningConditionDebriefing;
-                if ((pGVar6 != (GameObject *)0x0) &&
-                   (pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_get_transform(pGVar6,(MethodInfo *)0x0),
-                   pTVar18 != (Transform *)0x0)) {
+                pGVar7 = (this->fields).winningConditionDebriefing;
+                if ((pGVar7 != (GameObject *)0x0) &&
+                   (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                              GameObject_get_transform(pGVar7,(MethodInfo *)0x0),
+                   pTVar19 != (Transform *)0x0)) {
                   if (cRam_? == '\0') {
                     FUN_?(&
                                   void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
@@ -213,27 +217,27 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
                     UNLOCK();
                     cRam_? = '\x01';
                   }
-                  pvVar23 = (pTVar18->fields)._._.m_CachedPtr;
-                  if (pvVar23 == (void *)0x0) {
+                  pvVar24 = (pTVar19->fields)._._.m_CachedPtr;
+                  if (pvVar24 == (void *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar18,(MethodInfo *)0x0);
-                    pcVar24 = (code *)swi(3);
-                    (*pcVar24)();
+                    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar19,(MethodInfo *)0x0);
+                    pcVar25 = (code *)swi(3);
+                    (*pcVar25)();
                     return;
                   }
-                  pcVar24 = pcRam_?;
+                  pcVar25 = pcRam_?;
                   if ((pcRam_? == (code *)0x0) &&
-                     (pcVar24 = (code *)FUN_?(&UNK_?), pcVar24 == (code *)0x0)) {
-                    uVar25 = func_?(&UNK_?);
-                    FUN_?(uVar25,0);
-                    pcVar24 = (code *)swi(3);
-                    (*pcVar24)();
+                     (pcVar25 = (code *)FUN_?(&UNK_?), pcVar25 == (code *)0x0)) {
+                    uVar26 = func_?(&UNK_?);
+                    FUN_?(uVar26,0);
+                    pcVar25 = (code *)swi(3);
+                    (*pcVar25)();
                     return;
                   }
-                  pcRam_? = pcVar24;
+                  pcRam_? = pcVar25;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                  (*pcRam_?)(pvVar23);
+                  (*pcRam_?)(pvVar24);
                   return;
                 }
               }
@@ -245,8 +249,8 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
   }
 code_?:
   FUN_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

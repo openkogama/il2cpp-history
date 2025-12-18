@@ -16,7 +16,7 @@ void Assembly-CSharp.dll::MVNetworkGame+<>c__DisplayClass258_0::
   }
   pDVar1 = (this->fields).returnValues;
   if (pDVar1 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-    plVar2 = (longlong *)FUN_?(pDVar1,0x28);
+    plVar2 = (longlong *)FUN_?(pDVar1,0x29);
     if ((wo != (MVWorldObjectClient *)0x0) && (plVar2 != (longlong *)0x0)) {
       if (*(longlong *)(*plVar2 + 0x40) == *(longlong *)(lRam_? + 0x40)) {
         (wo->fields)._.itemId = (int32_t)plVar2[2];

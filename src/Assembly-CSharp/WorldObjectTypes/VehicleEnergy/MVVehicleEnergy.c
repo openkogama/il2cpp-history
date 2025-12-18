@@ -325,7 +325,7 @@ MVVehicleEnergy_ReadWorldObjectData
                       );
     if ((bVar13 != 0) && (pSStackX_8 != (String *)0x0)) {
       pSVar4 = pSVar1;
-      if (pSStackX_8->klass == pSRam0000000182dbdde0) {
+      if (pSStackX_8->klass == pSRam0000000182dc50c0) {
         pSVar4 = pSStackX_8;
       }
       if ((pSVar4 != (String *)0x0) &&
@@ -353,11 +353,11 @@ MVVehicleEnergy_ReadWorldObjectData
                         );
       if ((bVar13 != 0) && (pSStackX_10 != (String *)0x0)) {
         pSVar4 = pSVar1;
-        if (pSStackX_10->klass == pSRam0000000182dbdd98) {
+        if (pSStackX_10->klass == pSRam0000000182dc5078) {
           pSVar4 = pSStackX_10;
         }
         if (pSVar4 != (String *)0x0) {
-          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182dbdd98->_0).element_class) {
+          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182dc5078->_0).element_class) {
             FUN_?(pSStackX_10);
             pcVar14 = (code *)swi(3);
             pMVar15 = (MVVehicleEnergy_VehicleEnergyConfiguration *)(*pcVar14)();
@@ -375,11 +375,11 @@ MVVehicleEnergy_ReadWorldObjectData
                           );
         if ((bVar13 != 0) && (pSStackX_20 != (String *)0x0)) {
           pSVar4 = pSVar1;
-          if (pSStackX_20->klass == pSRam0000000182dbdd98) {
+          if (pSStackX_20->klass == pSRam0000000182dc5078) {
             pSVar4 = pSStackX_20;
           }
           if (pSVar4 != (String *)0x0) {
-            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182dbdd98->_0).element_class)
+            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182dc5078->_0).element_class)
             {
               FUN_?(pSStackX_20);
               pcVar14 = (code *)swi(3);
@@ -398,11 +398,11 @@ MVVehicleEnergy_ReadWorldObjectData
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                             );
           if ((bVar13 != 0) && (pSStack_3 != (String *)0x0)) {
-            if (pSStack_3->klass == pSRam0000000182dbdd98) {
+            if (pSStack_3->klass == pSRam0000000182dc5078) {
               pSVar1 = pSStack_3;
             }
             if (pSVar1 != (String *)0x0) {
-              if ((pSStack_3->klass->_0).element_class != (pSRam0000000182dbdd98->_0).element_class
+              if ((pSStack_3->klass->_0).element_class != (pSRam0000000182dc5078->_0).element_class
                  ) {
                 FUN_?(pSStack_3);
                 pcVar14 = (code *)swi(3);

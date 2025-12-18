@@ -171,7 +171,7 @@ code_?:
                   goto code_?;
                 }
                 if ((pOVar5->klass->_0).element_class !=
-                    (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
+                    (Il2CppClass *)pORam0000000182dc50a8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -222,7 +222,7 @@ code_?:
                   goto code_?;
                 }
                 if ((pOVar5->klass->_0).element_class !=
-                    (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
+                    (Il2CppClass *)pORam0000000182dc50a8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -273,7 +273,7 @@ code_?:
                   goto code_?;
                 }
                 if ((pOVar5->klass->_0).element_class !=
-                    (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
+                    (Il2CppClass *)pORam0000000182dc50a8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -324,7 +324,7 @@ code_?:
                   goto code_?;
                 }
                 if ((pOVar5->klass->_0).element_class !=
-                    (Il2CppClass *)pORam0000000182dbddc8[4].klass) {
+                    (Il2CppClass *)pORam0000000182dc50a8[4].klass) {
 code_?:
                   FUN_?(pOVar5);
                   goto code_?;
@@ -425,10 +425,10 @@ code_?:
                                     (dict,(Object *)pSVar3,
                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                     );
-                pOVar5 = pORam0000000182dbddc8;
+                pOVar5 = pORam0000000182dc50a8;
                 if (pOVar24 == (Object *)0x0) break;
                 if ((pOVar24->klass->_0).element_class !=
-                    (Il2CppClass *)pORam0000000182dbddc8[4].klass) goto code_?;
+                    (Il2CppClass *)pORam0000000182dc50a8[4].klass) goto code_?;
                 fVar12 = *(float *)&pOVar24[1].klass;
                 if (cRam_? == '\0') {
                   FUN_?(&TypeInfo__System__Number);
@@ -469,10 +469,10 @@ code_?:
                                     (dict,(Object *)pSVar3,
                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                     );
-                pOVar5 = pORam0000000182dbddc8;
+                pOVar5 = pORam0000000182dc50a8;
                 if (pOVar24 == (Object *)0x0) goto code_?;
                 if ((pOVar24->klass->_0).element_class !=
-                    (Il2CppClass *)pORam0000000182dbddc8[4].klass) goto code_?;
+                    (Il2CppClass *)pORam0000000182dc50a8[4].klass) goto code_?;
                 fVar13 = *(float *)&pOVar24[1].klass;
                 if (pTVar6 == (ThrustersColorAlphaKey__Array *)0x0) goto code_?;
                 if ((uint)pTVar6->max_length <= uVar4) goto code_?;

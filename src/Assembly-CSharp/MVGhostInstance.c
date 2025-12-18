@@ -735,7 +735,8 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_Initialize
     cRam_? = '\x01';
   }
   if ((this->fields)._._.previewOwnerProfileId != 0) {
-    (*(this->klass->vtable).AddPreviewBox.methodPtr)(this);
+    (*(this->klass->vtable).AddPreviewBox.methodPtr)
+              (this,(this->klass->vtable).AddPreviewBox.method);
     piVar1 = &(this->fields)._.interactionFlags;
     *piVar1 = *piVar1 | 0x20000;
   }
@@ -748,6 +749,7 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_Initialize
   pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar2 == (GameSessionData *)0x0) goto code_?;
   if ((pGVar2->fields).gameMode == 0) {
+code_?:
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__PrefabPool);
       LOCK();
@@ -840,6 +842,17 @@ code_?:
     if (pSVar4 == (SphereVolumeIndicator *)0x0) goto code_?;
     SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
               (pSVar4,(this->fields).distance,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar2->fields).gameMode == 4) goto code_?;
   }
   if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
     FUN_?();
@@ -3877,13 +3890,25 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_set_Distance
       }
       pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
       if (pGVar2 != (GameSessionData *)0x0) {
-        if ((pGVar2->fields).gameMode == 0) {
-          this_01 = (this->fields).rangeVis;
-          if (this_01 == (SphereVolumeIndicator *)0x0) goto DAT_?;
+        if ((pGVar2->fields).gameMode != 0) {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if (pGVar2 == (GameSessionData *)0x0) goto DAT_?;
+          if ((pGVar2->fields).gameMode != 4) {
+            return;
+          }
+        }
+        this_01 = (this->fields).rangeVis;
+        if (this_01 != (SphereVolumeIndicator *)0x0) {
           SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
                     (this_01,(this->fields).distance,(MethodInfo *)0x0);
+          return;
         }
-        return;
       }
     }
   }

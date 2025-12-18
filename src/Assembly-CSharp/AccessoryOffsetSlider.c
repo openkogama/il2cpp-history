@@ -365,23 +365,23 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_SyncPosit
       uVar4 = CONCAT71((int7)((ulonglong)uVar4 >> 8),1);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x7e,pOVar6,(InsertionBehavior__Enum)uVar4,
+                (this_00,0x81,pOVar6,(InsertionBehavior__Enum)uVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       pOVar6 = (Object *)FUN_?(uRam_?,&stack0x00000008);
       uVar7 = CONCAT71((int7)((ulonglong)uVar4 >> 8),1);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x71,pOVar6,(InsertionBehavior__Enum)uVar7,
+                (this_00,0x74,pOVar6,(InsertionBehavior__Enum)uVar7,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       pOVar6 = (Object *)FUN_?(uRam_?,&stack0x00000008);
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x72);
+      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x75);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x72,pOVar6,
+                (this_00,0x75,pOVar6,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),1),method_00);
       pPVar8 = (pMVar5->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -389,7 +389,7 @@ void Assembly-CSharp.dll::AccessoryOffsetSlider::AccessoryOffsetSlider_SyncPosit
       }
       if (pPVar8 != (PhotonPeer *)0x0) {
         (*(pPVar8->klass->vtable).SendOperation.methodPtr)
-                  (pPVar8,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x33),this_00,
+                  (pPVar8,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x34),this_00,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar8->klass->vtable).SendOperation.method);
         return;

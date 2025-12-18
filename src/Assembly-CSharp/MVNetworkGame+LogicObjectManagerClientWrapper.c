@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::
     }
     if (eventData != (EventData *)0x0) {
       pOVar2 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                         (eventData,0x23,(MethodInfo *)0x0);
+                         (eventData,0x24,(MethodInfo *)0x0);
       if (pOVar2 != (Object *)0x0) {
         if ((pOVar2->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
           FUN_?(pOVar2,lRam_?);

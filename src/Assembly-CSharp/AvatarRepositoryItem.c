@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::AvatarRepositoryItem::AvatarRepositoryItem__ctor
                        (outData,pOVar1,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x59);
+    aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x5d);
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
     if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       bVar3 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
@@ -120,7 +120,7 @@ void Assembly-CSharp.dll::AvatarRepositoryItem::AvatarRepositoryItem__ctor
                          (outData,pOVar1,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      aIStackX_18[0].m_value._0_1_ = 0x4b;
+      aIStackX_18[0].m_value._0_1_ = 0x4f;
       pOVar1 = (Object *)FUN_?(uRam_?,aIStackX_18);
       if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
         bVar3 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
@@ -157,7 +157,7 @@ void Assembly-CSharp.dll::AvatarRepositoryItem::AvatarRepositoryItem__ctor
                              (outData,pOVar1,
                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                              );
-          aIStackX_18[0].m_value._0_1_ = 0x62;
+          aIStackX_18[0].m_value._0_1_ = 0x66;
           pOVar1 = (Object *)FUN_?(uRam_?,aIStackX_18);
           if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
             bVar3 = (

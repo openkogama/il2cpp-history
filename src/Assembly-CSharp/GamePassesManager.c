@@ -20,68 +20,78 @@ void Assembly-CSharp.dll::GamePassesManager::GamePassesManager_HandleNewTierUnlo
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     if ((pGVar1->fields).gameMode != 0) {
-      if ((newPlayerPlanetData == (PlayerPlanetData *)0x0) ||
-         (pPVar2 = TypeInfo__GamePassesManager->static_fields->playerPlanetData,
-         pPVar2 == (PlayerPlanetData *)0x0)) goto code_?;
-      bVar3 = (newPlayerPlanetData->fields).gamePassTier;
-      if ((pPVar2->fields).gamePassTier < bVar3) {
-        if (cRam_? == '\0') {
-          FUN_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                       );
-          LOCK();
-          UNLOCK();
-          FUN_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                       );
-          LOCK();
-          UNLOCK();
-          FUN_?(&
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                       );
-          LOCK();
-          UNLOCK();
-          FUN_?(&TypeInfo__NotificationController);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__GamePassesManager);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
-          this = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-                  *)FUN_?(
-                                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                 );
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
-                    (this,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
-          auStackX_18[0] = CONCAT31(auStackX_18[0]._1_3_,4);
-          key = (Object *)FUN_?(uRam_?,auStackX_18);
-          auStackX_18[0] = (uint)bVar3;
-          value = (Object *)FUN_?(uRam_?,auStackX_18);
-          if (this == (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-                       *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__TryInsert
-                    ((Dictionary_2_System_Object_System_Object_ *)this,key,value,
-                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                     ->klass->rgctx_data[0x22].method);
-          if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
-            FUN_?();
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar2->fields).gameMode != 4) {
+        if ((newPlayerPlanetData == (PlayerPlanetData *)0x0) ||
+           (pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData,
+           pPVar3 == (PlayerPlanetData *)0x0)) goto code_?;
+        bVar4 = (newPlayerPlanetData->fields).gamePassTier;
+        if ((pPVar3->fields).gamePassTier < bVar4) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__NotificationController);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
-          NotificationController::NotificationController_PushNotification_2
-                    (NotificationType__Enum_TierUnlocked,
-                     (Dictionary_2_System_Object_System_Object_ *)this,
-                     NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__GamePassesManager);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
+            this = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                    *)FUN_?(
+                                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                   );
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                      (this,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                      );
+            auStackX_18[0] = CONCAT31(auStackX_18[0]._1_3_,4);
+            key = (Object *)FUN_?(uRam_?,auStackX_18);
+            auStackX_18[0] = (uint)bVar4;
+            value = (Object *)FUN_?(uRam_?,auStackX_18);
+            if (this == (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                         *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryInsert
+                      ((Dictionary_2_System_Object_System_Object_ *)this,key,value,
+                       (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pGVar1 >> 8),2),
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                       ->klass->rgctx_data[0x22].method);
+            if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            NotificationController::NotificationController_PushNotification_2
+                      (NotificationType__Enum_TierUnlocked,
+                       (Dictionary_2_System_Object_System_Object_ *)this,
+                       NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+          }
         }
       }
     }
@@ -89,8 +99,8 @@ void Assembly-CSharp.dll::GamePassesManager::GamePassesManager_HandleNewTierUnlo
   }
 code_?:
   FUN_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

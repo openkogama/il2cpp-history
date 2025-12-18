@@ -861,18 +861,356 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_I
   }
   pGVar10 = (this->fields).playModeState;
   pRVar11 = (this->fields).lobbyState;
-  if (pGVar10 != (GameObject *)0x0) {
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (pGVar10,(MethodInfo *)0x0);
-    pRVar11 = (RectTransform *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                        ((Object *)pRVar11,pTVar4,0,
-                         UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
-                        );
-    bVar5 = iRam_? != 0;
-    (this->fields).lobbyStateRect = pRVar11;
-    if (bVar5) {
-      uVar6 = (uint)((ulonglong)&(this->fields).lobbyStateRect >> 0xc);
+  if (pGVar10 == (GameObject *)0x0) goto code_?;
+  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar10,(MethodInfo *)0x0);
+  pRVar11 = (RectTransform *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                      ((Object *)pRVar11,pTVar4,0,
+                       UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
+                      );
+  bVar5 = iRam_? != 0;
+  (this->fields).lobbyStateRect = pRVar11;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields).lobbyStateRect >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  pGVar10 = (this->fields).playModeState;
+  pIVar12 = (this->fields).inGameMenuPrefab;
+  if (pGVar10 == (GameObject *)0x0) goto code_?;
+  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar10,(MethodInfo *)0x0);
+  pIVar12 = (InGameMenu *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                      ((Object *)pIVar12,pTVar4,0,
+                       InGameMenu_MethodInfo__UnityEngine__Object__Instantiate<InGameMenu>_InGameMenu__UnityEngine__Transform__bool_
+                      );
+  bVar5 = iRam_? != 0;
+  (this->fields).inGameMenu = pIVar12;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields).inGameMenu >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  pIVar12 = (this->fields).inGameMenu;
+  if ((pIVar12 == (InGameMenu *)0x0) ||
+     (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pIVar12,(MethodInfo *)0x0), pGVar10 == (GameObject *)0x0))
+  goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+            (pGVar10,0,(MethodInfo *)0x0);
+  pIVar12 = (this->fields).inGameMenu;
+  if (pIVar12 == (InGameMenu *)0x0) goto code_?;
+  InGameMenu::InGameMenu_Initialize(pIVar12,(MethodInfo *)0x0);
+  pGVar10 = (this->fields).playModeState;
+  pTVar13 = (this->fields).timeAttackFlagDebriefing;
+  if (pGVar10 == (GameObject *)0x0) goto code_?;
+  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar10,(MethodInfo *)0x0);
+  pTVar13 = (TimeAttackFlagDebriefing *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                      ((Object *)pTVar13,pTVar4,0,
+                       TimeAttackFlagDebriefing_MethodInfo__UnityEngine__Object__Instantiate<TimeAttackFlagDebriefing>_TimeAttackFlagDebriefing__UnityEngine__Transform__bool_
+                      );
+  bVar5 = iRam_? != 0;
+  (this->fields).timeAttackFlagDebriefing = pTVar13;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields).timeAttackFlagDebriefing >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar14 == (MVGameControllerBase *)0x0) ||
+     (pFVar15 = (pMVar14->fields).flagDebriefingControl, pFVar15 == (FlagDebriefingControl *)0x0))
+  goto code_?;
+  pAVar16 = (pFVar15->fields).OnFlagDebriefing;
+  pDVar17 = (Delegate *)FUN_?(TypeInfo__System__Action<int>);
+  FUN_?(pDVar17,this);
+  pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar16,pDVar17,(MethodInfo *)0x0);
+  pAVar18 = TypeInfo__System__Action<int>;
+  value = (Action *)0x0;
+  if (pDVar17 == (Delegate *)0x0) {
+    (pFVar15->fields).OnFlagDebriefing = (Action_1_Int32_ *)0x0;
+  }
+  else {
+    pAVar16 = (Action_1_Int32_ *)FUN_?(pDVar17,TypeInfo__System__Action<int>);
+    if (pAVar16 == (Action_1_Int32_ *)0x0) {
+      FUN_?(pDVar17,pAVar18);
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+    (pFVar15->fields).OnFlagDebriefing = pAVar16;
+    pAVar18 = TypeInfo__System__Action<int>;
+    lVar7 = FUN_?(pDVar17,TypeInfo__System__Action<int>);
+    if (lVar7 == 0) {
+      FUN_?(pDVar17,pAVar18);
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&(pFVar15->fields).OnFlagDebriefing >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar14 == (MVGameControllerBase *)0x0) ||
+     (pFVar15 = (pMVar14->fields).flagDebriefingControl, pFVar15 == (FlagDebriefingControl *)0x0))
+  goto code_?;
+  pAVar20 = (pFVar15->fields).OnFlagCountDown;
+  pNVar21 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar21,(Object *)this,
+             MethodInfo__DesktopPlayModeController__OnShowTimeAttackFlagCountDown__,
+             (MethodInfo *)0x0);
+  pAVar20 = (Action *)
+            mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar20,(Delegate *)pNVar21,(MethodInfo *)0x0);
+  if (pAVar20 == (Action *)0x0) {
+    (pFVar15->fields).OnFlagCountDown = (Action *)0x0;
+  }
+  else {
+    pAVar22 = value;
+    if (pAVar20->klass == TypeInfo__System__Action) {
+      pAVar22 = pAVar20;
+    }
+    if (pAVar22 == (Action *)0x0) {
+      FUN_?();
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+    (pFVar15->fields).OnFlagCountDown = pAVar22;
+    pAVar22 = value;
+    if (pAVar20->klass == TypeInfo__System__Action) {
+      pAVar22 = pAVar20;
+    }
+    if (pAVar22 == (Action *)0x0) {
+      FUN_?();
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&(pFVar15->fields).OnFlagCountDown >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar14 == (MVGameControllerBase *)0x0) ||
+     (pFVar15 = (pMVar14->fields).flagDebriefingControl, pFVar15 == (FlagDebriefingControl *)0x0))
+  goto code_?;
+  pAVar20 = (pFVar15->fields).OnFlagCountDownEnd;
+  pNVar21 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar21,(Object *)this,
+             MethodInfo__DesktopPlayModeController__OnHideTimeAttackFlagCountDown__,
+             (MethodInfo *)0x0);
+  pAVar20 = (Action *)
+            mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar20,(Delegate *)pNVar21,(MethodInfo *)0x0);
+  if (pAVar20 == (Action *)0x0) {
+    (pFVar15->fields).OnFlagCountDownEnd = (Action *)0x0;
+  }
+  else {
+    pAVar22 = value;
+    if (pAVar20->klass == TypeInfo__System__Action) {
+      pAVar22 = pAVar20;
+    }
+    if (pAVar22 == (Action *)0x0) {
+      FUN_?();
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+    (pFVar15->fields).OnFlagCountDownEnd = pAVar22;
+    pAVar22 = value;
+    if (pAVar20->klass == TypeInfo__System__Action) {
+      pAVar22 = pAVar20;
+    }
+    if (pAVar22 == (Action *)0x0) {
+      FUN_?();
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&(pFVar15->fields).OnFlagCountDownEnd >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar14 == (MVGameControllerBase *)0x0) ||
+     (pMVar23 = (pMVar14->fields).game, pMVar23 == (MVNetworkGame *)0x0)) goto code_?;
+  pAVar24 = (pMVar23->fields).OnWinningConditionFulfilled;
+  this_07 = (UnityAction_1_System_Object_ *)
+            FUN_?(TypeInfo__System__Action<IWinningCondition>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (this_07,(Object *)this,
+             MethodInfo__DesktopPlayModeController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0)
+  ;
+  pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar24,(Delegate *)this_07,(MethodInfo *)0x0);
+  pAVar25 = TypeInfo__System__Action<IWinningCondition>;
+  if (pDVar17 == (Delegate *)0x0) {
+    (pMVar23->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+  }
+  else {
+    pAVar24 = (Action_1_IWinningCondition_ *)
+              FUN_?(pDVar17,TypeInfo__System__Action<IWinningCondition>);
+    if (pAVar24 == (Action_1_IWinningCondition_ *)0x0) {
+      FUN_?(pDVar17,pAVar25);
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+    (pMVar23->fields).OnWinningConditionFulfilled = pAVar24;
+    pAVar25 = TypeInfo__System__Action<IWinningCondition>;
+    lVar7 = FUN_?();
+    if (lVar7 == 0) {
+      FUN_?(pDVar17,pAVar25);
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&(pMVar23->fields).OnWinningConditionFulfilled >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  this_01 = (this->fields).goldPurchasedTracker;
+  if (this_01 == (GoldPurchasedTracker *)0x0) goto code_?;
+  GoldPurchasedTracker::GoldPurchasedTracker_Initialize(this_01,(MethodInfo *)0x0);
+  this_02 = (this->fields).deathPromotionController;
+  if (this_02 == (DeathPromotionController *)0x0) goto code_?;
+  DeathPromotionController::DeathPromotionController_Initialize(this_02,(MethodInfo *)0x0);
+  this_08 = (DesktopPlayMode *)FUN_?(TypeInfo__DesktopPlayMode);
+  DesktopPlayMode::DesktopPlayMode__ctor(this_08,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  FUN_?(this_08);
+  pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__DesktopPlayModeController____c->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__DesktopPlayModeController____c);
+  }
+  this_09 = TypeInfo__DesktopPlayModeController____c->static_fields->__9__36_0;
+  if (this_09 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if (*(int *)&(TypeInfo__DesktopPlayModeController____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__DesktopPlayModeController____c);
+    }
+    object = TypeInfo__DesktopPlayModeController____c->static_fields->__9;
+    this_09 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+              FUN_?(
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                           );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+    ExecuteEvents_EventFunction_1_System_Object___ctor
+              ((ExecuteEvents_EventFunction_1_System_Object_ *)this_09,(Object *)object,
+               MethodInfo__DesktopPlayModeController____c___Initialize_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__DesktopPlayModeController____c->static_fields->__9__36_0 = this_09;
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)&TypeInfo__DesktopPlayModeController____c->static_fields->__9__36_0
+                     >> 0xc);
       lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
       do {
         uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
@@ -885,501 +1223,130 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_I
         UNLOCK();
       } while (!bVar5);
     }
-    pGVar10 = (this->fields).playModeState;
-    pIVar12 = (this->fields).inGameMenuPrefab;
-    if (pGVar10 != (GameObject *)0x0) {
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (pGVar10,(MethodInfo *)0x0);
-      pIVar12 = (InGameMenu *)
-                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                          ((Object *)pIVar12,pTVar4,0,
-                           InGameMenu_MethodInfo__UnityEngine__Object__Instantiate<InGameMenu>_InGameMenu__UnityEngine__Transform__bool_
-                          );
-      bVar5 = iRam_? != 0;
-      (this->fields).inGameMenu = pIVar12;
-      if (bVar5) {
-        uVar6 = (uint)((ulonglong)&(this->fields).inGameMenu >> 0xc);
-        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-        do {
-          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
-          LOCK();
-          bVar5 = uVar8 == *puVar9;
-          if (bVar5) {
-            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
-          }
-          UNLOCK();
-        } while (!bVar5);
-      }
-      pIVar12 = (this->fields).inGameMenu;
-      if ((pIVar12 != (InGameMenu *)0x0) &&
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar10,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_09,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+            );
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar26 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar26 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar26->fields).gameMode == 1) {
+code_?:
+    pDVar27 = this->klass;
+    uVar8 = (ulonglong)TypeInfo__MVGameControllerBase >> 8;
+    (this->fields)._._IsInLobby_k__BackingField = 1;
+    (*(pDVar27->vtable).set_IsInPauseMenu_1.methodPtr)
+              (this,CONCAT71((int7)uVar8,1),(pDVar27->vtable).set_IsInPauseMenu_1.method);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar26 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar26 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar26->fields).gameMode == 3) goto code_?;
+  }
+  this_03 = (this->fields).lobbyStatePlayModeController;
+  if (this_03 != (InGameMenuStatePlayModeController *)0x0) {
+    InGameMenuStatePlayModeController::InGameMenuStatePlayModeController_Initialize
+              (this_03,(this->fields).inGameController,(this->fields).lobbyStateRect,
+               (this->fields).inGameMenu,(this->fields).chatController,(MethodInfo *)0x0);
+    this_04 = (this->fields).chatController;
+    if (this_04 != (ChatControllerUGUI *)0x0) {
+      ChatControllerUGUI::ChatControllerUGUI_Initialize(this_04,(MethodInfo *)0x0);
+      pRVar11 = (this->fields).playerListButton;
+      if ((pRVar11 != (RectTransform *)0x0) &&
          (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pIVar12,(MethodInfo *)0x0), pGVar10 != (GameObject *)0x0
+                              ((Component *)pRVar11,(MethodInfo *)0x0), pGVar10 != (GameObject *)0x0
          )) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar10,0,(MethodInfo *)0x0);
-        pIVar12 = (this->fields).inGameMenu;
-        if (pIVar12 != (InGameMenu *)0x0) {
-          InGameMenu::InGameMenu_Initialize(pIVar12,(MethodInfo *)0x0);
-          pGVar10 = (this->fields).playModeState;
-          pTVar13 = (this->fields).timeAttackFlagDebriefing;
-          if (pGVar10 != (GameObject *)0x0) {
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar10,(MethodInfo *)0x0);
-            pTVar13 = (TimeAttackFlagDebriefing *)
-                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                                ((Object *)pTVar13,pTVar4,0,
-                                 TimeAttackFlagDebriefing_MethodInfo__UnityEngine__Object__Instantiate<TimeAttackFlagDebriefing>_TimeAttackFlagDebriefing__UnityEngine__Transform__bool_
-                                );
-            bVar5 = iRam_? != 0;
-            (this->fields).timeAttackFlagDebriefing = pTVar13;
-            if (bVar5) {
-              uVar6 = (uint)((ulonglong)&(this->fields).timeAttackFlagDebriefing >> 0xc);
-              lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-              do {
-                uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-                puVar9 = (ulonglong *)(lVar7 + 0xADDR);
-                LOCK();
-                bVar5 = uVar8 == *puVar9;
-                if (bVar5) {
-                  *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
-                }
-                UNLOCK();
-              } while (!bVar5);
-            }
-            if (cRam_? == '\0') {
-              FUN_?(&TypeInfo__MVGameControllerBase);
-              LOCK();
-              UNLOCK();
-              cRam_? = '\x01';
-            }
-            pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
-            if ((pMVar14 != (MVGameControllerBase *)0x0) &&
-               (pFVar15 = (pMVar14->fields).flagDebriefingControl,
-               pFVar15 != (FlagDebriefingControl *)0x0)) {
-              pAVar16 = (pFVar15->fields).OnFlagDebriefing;
-              pDVar17 = (Delegate *)FUN_?(TypeInfo__System__Action<int>);
-              FUN_?(pDVar17,this);
-              pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                  ((Delegate *)pAVar16,pDVar17,(MethodInfo *)0x0);
-              pAVar18 = TypeInfo__System__Action<int>;
-              value = (Action *)0x0;
-              if (pDVar17 == (Delegate *)0x0) {
-                (pFVar15->fields).OnFlagDebriefing = (Action_1_Int32_ *)0x0;
-              }
-              else {
-                pAVar16 = (Action_1_Int32_ *)FUN_?(pDVar17,TypeInfo__System__Action<int>);
-                if (pAVar16 == (Action_1_Int32_ *)0x0) {
-                  FUN_?(pDVar17,pAVar18);
-                  pcVar19 = (code *)swi(3);
-                  (*pcVar19)();
-                  return;
-                }
-                (pFVar15->fields).OnFlagDebriefing = pAVar16;
-                pAVar18 = TypeInfo__System__Action<int>;
-                lVar7 = FUN_?(pDVar17,TypeInfo__System__Action<int>);
-                if (lVar7 == 0) {
-                  FUN_?(pDVar17,pAVar18);
-                  pcVar19 = (code *)swi(3);
-                  (*pcVar19)();
-                  return;
-                }
-              }
-              if (iRam_? != 0) {
-                uVar6 = (uint)((ulonglong)&(pFVar15->fields).OnFlagDebriefing >> 0xc);
-                lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-                do {
-                  uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-                  puVar9 = (ulonglong *)(lVar7 + 0xADDR);
-                  LOCK();
-                  bVar5 = uVar8 == *puVar9;
-                  if (bVar5) {
-                    *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
-                  }
-                  UNLOCK();
-                } while (!bVar5);
-              }
-              if (cRam_? == '\0') {
-                FUN_?(&TypeInfo__MVGameControllerBase);
-                LOCK();
-                UNLOCK();
-                cRam_? = '\x01';
-              }
-              pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
-              if ((pMVar14 != (MVGameControllerBase *)0x0) &&
-                 (pFVar15 = (pMVar14->fields).flagDebriefingControl,
-                 pFVar15 != (FlagDebriefingControl *)0x0)) {
-                pAVar20 = (pFVar15->fields).OnFlagCountDown;
-                pNVar21 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
-                UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                NavMesh_OnNavMeshPreUpdate__ctor
-                          (pNVar21,(Object *)this,
-                           MethodInfo__DesktopPlayModeController__OnShowTimeAttackFlagCountDown__,
-                           (MethodInfo *)0x0);
-                pAVar20 = (Action *)
-                          mscorlib.dll::System::Delegate::Delegate_Combine
-                                    ((Delegate *)pAVar20,(Delegate *)pNVar21,(MethodInfo *)0x0);
-                if (pAVar20 == (Action *)0x0) {
-                  (pFVar15->fields).OnFlagCountDown = (Action *)0x0;
-                }
-                else {
-                  pAVar22 = value;
-                  if (pAVar20->klass == TypeInfo__System__Action) {
-                    pAVar22 = pAVar20;
-                  }
-                  if (pAVar22 == (Action *)0x0) {
-                    FUN_?();
-                    pcVar19 = (code *)swi(3);
-                    (*pcVar19)();
-                    return;
-                  }
-                  (pFVar15->fields).OnFlagCountDown = pAVar22;
-                  pAVar22 = value;
-                  if (pAVar20->klass == TypeInfo__System__Action) {
-                    pAVar22 = pAVar20;
-                  }
-                  if (pAVar22 == (Action *)0x0) {
-                    FUN_?();
-                    pcVar19 = (code *)swi(3);
-                    (*pcVar19)();
-                    return;
-                  }
-                }
-                if (iRam_? != 0) {
-                  uVar6 = (uint)((ulonglong)&(pFVar15->fields).OnFlagCountDown >> 0xc);
-                  lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-                  do {
-                    uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-                    puVar9 = (ulonglong *)(lVar7 + 0xADDR);
-                    LOCK();
-                    bVar5 = uVar8 == *puVar9;
-                    if (bVar5) {
-                      *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
-                    }
-                    UNLOCK();
-                  } while (!bVar5);
-                }
-                if (cRam_? == '\0') {
-                  FUN_?(&TypeInfo__MVGameControllerBase);
-                  LOCK();
-                  UNLOCK();
-                  cRam_? = '\x01';
-                }
-                pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                if ((pMVar14 != (MVGameControllerBase *)0x0) &&
-                   (pFVar15 = (pMVar14->fields).flagDebriefingControl,
-                   pFVar15 != (FlagDebriefingControl *)0x0)) {
-                  pAVar20 = (pFVar15->fields).OnFlagCountDownEnd;
-                  pNVar21 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
-                  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                  NavMesh_OnNavMeshPreUpdate__ctor
-                            (pNVar21,(Object *)this,
-                             MethodInfo__DesktopPlayModeController__OnHideTimeAttackFlagCountDown__,
-                             (MethodInfo *)0x0);
-                  pAVar20 = (Action *)
-                            mscorlib.dll::System::Delegate::Delegate_Combine
-                                      ((Delegate *)pAVar20,(Delegate *)pNVar21,(MethodInfo *)0x0);
-                  if (pAVar20 == (Action *)0x0) {
-                    (pFVar15->fields).OnFlagCountDownEnd = (Action *)0x0;
-                  }
-                  else {
-                    pAVar22 = value;
-                    if (pAVar20->klass == TypeInfo__System__Action) {
-                      pAVar22 = pAVar20;
-                    }
-                    if (pAVar22 == (Action *)0x0) {
-                      FUN_?();
-                      pcVar19 = (code *)swi(3);
-                      (*pcVar19)();
-                      return;
-                    }
-                    (pFVar15->fields).OnFlagCountDownEnd = pAVar22;
-                    pAVar22 = value;
-                    if (pAVar20->klass == TypeInfo__System__Action) {
-                      pAVar22 = pAVar20;
-                    }
-                    if (pAVar22 == (Action *)0x0) {
-                      FUN_?();
-                      pcVar19 = (code *)swi(3);
-                      (*pcVar19)();
-                      return;
-                    }
-                  }
-                  if (iRam_? != 0) {
-                    uVar6 = (uint)((ulonglong)&(pFVar15->fields).OnFlagCountDownEnd >> 0xc);
-                    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-                    do {
-                      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-                      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
-                      LOCK();
-                      bVar5 = uVar8 == *puVar9;
-                      if (bVar5) {
-                        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
-                      }
-                      UNLOCK();
-                    } while (!bVar5);
-                  }
-                  if (cRam_? == '\0') {
-                    FUN_?(&TypeInfo__MVGameControllerBase);
-                    LOCK();
-                    UNLOCK();
-                    cRam_? = '\x01';
-                  }
-                  pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                  if ((pMVar14 != (MVGameControllerBase *)0x0) &&
-                     (pMVar23 = (pMVar14->fields).game, pMVar23 != (MVNetworkGame *)0x0)) {
-                    pAVar24 = (pMVar23->fields).OnWinningConditionFulfilled;
-                    this_07 = (UnityAction_1_System_Object_ *)
-                              FUN_?(TypeInfo__System__Action<IWinningCondition>);
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-                    UnityAction_1_System_Object___ctor
-                              (this_07,(Object *)this,
-                               MethodInfo__DesktopPlayModeController__OnRoundEnd_IWinningCondition_,
-                               (MethodInfo *)0x0);
-                    pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                        ((Delegate *)pAVar24,(Delegate *)this_07,(MethodInfo *)0x0);
-                    pAVar25 = TypeInfo__System__Action<IWinningCondition>;
-                    if (pDVar17 == (Delegate *)0x0) {
-                      (pMVar23->fields).OnWinningConditionFulfilled =
-                           (Action_1_IWinningCondition_ *)0x0;
-                    }
-                    else {
-                      pAVar24 = (Action_1_IWinningCondition_ *)
-                                FUN_?(pDVar17,TypeInfo__System__Action<IWinningCondition>);
-                      if (pAVar24 == (Action_1_IWinningCondition_ *)0x0) {
-                        FUN_?(pDVar17,pAVar25);
-                        pcVar19 = (code *)swi(3);
-                        (*pcVar19)();
-                        return;
-                      }
-                      (pMVar23->fields).OnWinningConditionFulfilled = pAVar24;
-                      pAVar25 = TypeInfo__System__Action<IWinningCondition>;
-                      lVar7 = FUN_?();
-                      if (lVar7 == 0) {
-                        FUN_?(pDVar17,pAVar25);
-                        pcVar19 = (code *)swi(3);
-                        (*pcVar19)();
-                        return;
-                      }
-                    }
-                    if (iRam_? != 0) {
-                      uVar6 = (uint)((ulonglong)&(pMVar23->fields).OnWinningConditionFulfilled >>
-                                     0xc);
-                      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-                      do {
-                        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-                        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
-                        LOCK();
-                        bVar5 = uVar8 == *puVar9;
-                        if (bVar5) {
-                          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
-                        }
-                        UNLOCK();
-                      } while (!bVar5);
-                    }
-                    this_01 = (this->fields).goldPurchasedTracker;
-                    if (this_01 != (GoldPurchasedTracker *)0x0) {
-                      GoldPurchasedTracker::GoldPurchasedTracker_Initialize
-                                (this_01,(MethodInfo *)0x0);
-                      this_02 = (this->fields).deathPromotionController;
-                      if (this_02 != (DeathPromotionController *)0x0) {
-                        DeathPromotionController::DeathPromotionController_Initialize
-                                  (this_02,(MethodInfo *)0x0);
-                        this_08 = (DesktopPlayMode *)FUN_?(TypeInfo__DesktopPlayMode);
-                        DesktopPlayMode::DesktopPlayMode__ctor(this_08,(MethodInfo *)0x0);
-                        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
-                          FUN_?();
-                        }
-                        FUN_?(this_08);
-                        pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                  Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                        if (*(int *)&(TypeInfo__DesktopPlayModeController____c->_1).field_0x1c == 0)
-                        {
-                          FUN_?(TypeInfo__DesktopPlayModeController____c);
-                        }
-                        this_09 = TypeInfo__DesktopPlayModeController____c->static_fields->__9__36_0
-                        ;
-                        if (this_09 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-                          if (*(int *)&(TypeInfo__DesktopPlayModeController____c->_1).field_0x1c ==
-                              0) {
-                            FUN_?(TypeInfo__DesktopPlayModeController____c);
-                          }
-                          object = TypeInfo__DesktopPlayModeController____c->static_fields->__9;
-                          this_09 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
-                                    FUN_?(
-                                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                                 );
-                          UnityEngine.UI.dll::UnityEngine::EventSystems::
-                          ExecuteEvents+EventFunction`1[System::Object]::
-                          ExecuteEvents_EventFunction_1_System_Object___ctor
-                                    ((ExecuteEvents_EventFunction_1_System_Object_ *)this_09,
-                                     (Object *)object,
-                                     MethodInfo__DesktopPlayModeController____c___Initialize_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                                     ,(MethodInfo *)0x0);
-                          TypeInfo__DesktopPlayModeController____c->static_fields->__9__36_0 =
-                               this_09;
-                          if (iRam_? != 0) {
-                            uVar6 = (uint)((ulonglong)
-                                            &TypeInfo__DesktopPlayModeController____c->static_fields
-                                             ->__9__36_0 >> 0xc);
-                            lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
-                            do {
-                              uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
-                              puVar9 = (ulonglong *)(lVar7 + 0xADDR);
-                              LOCK();
-                              bVar5 = uVar8 == *puVar9;
-                              if (bVar5) {
-                                *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
-                              }
-                              UNLOCK();
-                            } while (!bVar5);
-                          }
-                        }
-                        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                                     field_0x1c == 0) {
-                          FUN_?();
-                        }
-                        uVar26 = 0;
-                        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                        ExecuteEvents_ExecuteHierarchy
-                                  (pGVar10,(BaseEventData *)0x0,
-                                   (ExecuteEvents_EventFunction_1_System_Object_ *)this_09,
-                                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                                  );
-                        if (cRam_? == '\0') {
-                          FUN_?(&TypeInfo__MVGameControllerBase);
-                          LOCK();
-                          UNLOCK();
-                          cRam_? = '\x01';
-                        }
-                        pGVar27 = TypeInfo__MVGameControllerBase->static_fields->
-                                 _GameSessionData_k__BackingField;
-                        if (pGVar27 != (GameSessionData *)0x0) {
-                          if ((pGVar27->fields).gameMode == 1) {
-                            pDVar28 = this->klass;
-                            (this->fields)._._IsInLobby_k__BackingField = 1;
-                            (*(pDVar28->vtable).set_IsInPauseMenu_1.methodPtr)
-                                      (this,CONCAT71((int7)((ulonglong)uVar26 >> 8),1),
-                                       (pDVar28->vtable).set_IsInPauseMenu_1.method);
-                          }
-                          this_03 = (this->fields).lobbyStatePlayModeController;
-                          if (this_03 != (InGameMenuStatePlayModeController *)0x0) {
-                            InGameMenuStatePlayModeController::
-                            InGameMenuStatePlayModeController_Initialize
-                                      (this_03,(this->fields).inGameController,
-                                       (this->fields).lobbyStateRect,(this->fields).inGameMenu,
-                                       (this->fields).chatController,(MethodInfo *)0x0);
-                            this_04 = (this->fields).chatController;
-                            if (this_04 != (ChatControllerUGUI *)0x0) {
-                              ChatControllerUGUI::ChatControllerUGUI_Initialize
-                                        (this_04,(MethodInfo *)0x0);
-                              pRVar11 = (this->fields).playerListButton;
-                              if ((pRVar11 != (RectTransform *)0x0) &&
-                                 (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                            Component_get_gameObject
-                                                      ((Component *)pRVar11,(MethodInfo *)0x0),
-                                 pGVar10 != (GameObject *)0x0)) {
-                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                GameObject_SetActive(pGVar10,1,(MethodInfo *)0x0);
-                                DesktopPlayModeController_ActivateAdminButton
-                                          (this,1,(MethodInfo *)0x0);
-                                if (*(int *)&(TypeInfo__ChatCommandManager->_1).field_0x1c == 0) {
-                                  FUN_?();
-                                }
-                                pAVar20 = ChatCommandManager::
-                                          ChatCommandManager_GetChatCommandCallback
-                                                    (ChatCommand__Enum_HideAllUI,(MethodInfo *)0x0);
-                                pNVar21 = (NavMesh_OnNavMeshPreUpdate *)
-                                          FUN_?(TypeInfo__System__Action);
-                                uVar26 = 0;
-                                UnityEngine.AIModule.dll::UnityEngine::AI::
-                                NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor
-                                          (pNVar21,(Object *)this,
-                                           MethodInfo__DesktopPlayModeController__HideUI__,
-                                           (MethodInfo *)0x0);
-                                pAVar20 = (Action *)
-                                          mscorlib.dll::System::Delegate::Delegate_Combine
-                                                    ((Delegate *)pAVar20,(Delegate *)pNVar21,
-                                                     (MethodInfo *)0x0);
-                                if (pAVar20 != (Action *)0x0) {
-                                  if (pAVar20->klass == TypeInfo__System__Action) {
-                                    value = pAVar20;
-                                  }
-                                  if (value == (Action *)0x0) {
-                                    FUN_?(pAVar20);
-                                    pcVar19 = (code *)swi(3);
-                                    (*pcVar19)();
-                                    return;
-                                  }
-                                }
-                                if (cRam_? == '\0') {
-                                  FUN_?(&TypeInfo__ChatCommandManager,value,0);
-                                  LOCK();
-                                  UNLOCK();
-                                  FUN_?(&
-                                                MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__ContainsKey_ChatCommand_
-                                               );
-                                  LOCK();
-                                  UNLOCK();
-                                  FUN_?(&
-                                                MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__set_Item_ChatCommand__System__Action_
-                                               );
-                                  LOCK();
-                                  UNLOCK();
-                                  cRam_? = '\x01';
-                                }
-                                if (*(int *)&(TypeInfo__ChatCommandManager->_1).field_0x1c == 0) {
-                                  FUN_?(TypeInfo__ChatCommandManager);
-                                }
-                                this_05 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
-                                          TypeInfo__ChatCommandManager->static_fields->
-                                          chatCommandCallBackDictionary;
-                                if (this_05 ==
-                                    (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
-code_?:
-                                  FUN_?();
-                                  pcVar19 = (code *)swi(3);
-                                  (*pcVar19)();
-                                  return;
-                                }
-                                iVar2 = mscorlib.dll::System::Collections::Generic::
-                                         Dictionary`2[System::Int32Enum,UnityEngine::Vector3]::
-                                         Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
-                                                   (this_05,3,
-                                                                                                        
-                                                  MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__ContainsKey_ChatCommand_
-                                                  ->klass->rgctx_data[0x21].method);
-                                if (-1 < iVar2) {
-                                  if (*(int *)&(TypeInfo__ChatCommandManager->_1).field_0x1c == 0) {
-                                    FUN_?(TypeInfo__ChatCommandManager);
-                                  }
-                                  this_06 = TypeInfo__ChatCommandManager->static_fields->
-                                            chatCommandCallBackDictionary;
-                                  if (this_06 == (Dictionary_2_ChatCommand_System_Action_ *)0x0)
-                                  goto code_?;
-                                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Int32Enum,System::Object]::
-                                  Dictionary_2_System_Int32Enum_System_Object__TryInsert
-                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_06
-                                             ,3,(Object *)value,
-                                             (InsertionBehavior__Enum)
-                                             CONCAT71((int7)((ulonglong)uVar26 >> 8),1),
-                                             MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__set_Item_ChatCommand__System__Action_
-                                             ->klass->rgctx_data[0x22].method);
-                                }
-                                return;
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+                  (pGVar10,1,(MethodInfo *)0x0);
+        DesktopPlayModeController_ActivateAdminButton(this,1,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__ChatCommandManager->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pAVar20 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
+                            (ChatCommand__Enum_HideAllUI,(MethodInfo *)0x0);
+        pNVar21 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+        uVar28 = 0;
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar21,(Object *)this,MethodInfo__DesktopPlayModeController__HideUI__,
+                   (MethodInfo *)0x0);
+        pAVar20 = (Action *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pAVar20,(Delegate *)pNVar21,(MethodInfo *)0x0);
+        if (pAVar20 != (Action *)0x0) {
+          if (pAVar20->klass == TypeInfo__System__Action) {
+            value = pAVar20;
+          }
+          if (value == (Action *)0x0) {
+            FUN_?(pAVar20);
+            pcVar19 = (code *)swi(3);
+            (*pcVar19)();
+            return;
           }
         }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__ChatCommandManager,value,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__ContainsKey_ChatCommand_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__set_Item_ChatCommand__System__Action_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__ChatCommandManager->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__ChatCommandManager);
+        }
+        this_05 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+                  TypeInfo__ChatCommandManager->static_fields->chatCommandCallBackDictionary;
+        if (this_05 == (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
+code_?:
+          FUN_?();
+          pcVar19 = (code *)swi(3);
+          (*pcVar19)();
+          return;
+        }
+        iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                 Int32Enum,UnityEngine::Vector3]::
+                 Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
+                           (this_05,3,
+                            MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__ContainsKey_ChatCommand_
+                            ->klass->rgctx_data[0x21].method);
+        if (-1 < iVar2) {
+          if (*(int *)&(TypeInfo__ChatCommandManager->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__ChatCommandManager);
+          }
+          this_06 = TypeInfo__ChatCommandManager->static_fields->chatCommandCallBackDictionary;
+          if (this_06 == (Dictionary_2_ChatCommand_System_Action_ *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
+          ::Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this_06,3,(Object *)value,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar28 >> 8),1),
+                     MethodInfo__System__Collections__Generic__Dictionary<ChatCommand,_System::Action>__set_Item_ChatCommand__System__Action_
+                     ->klass->rgctx_data[0x22].method);
+        }
+        return;
       }
     }
   }

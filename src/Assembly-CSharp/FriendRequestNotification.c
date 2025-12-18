@@ -102,7 +102,7 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_I
                        );
     pOVar1 = (Object *)0x0;
     if (pOVar2 != (Object *)0x0) {
-      if (pOVar2->klass == pORam0000000182dbdde0) {
+      if (pOVar2->klass == pORam0000000182dc50c0) {
         pOVar1 = pOVar2;
       }
       if (pOVar1 == (Object *)0x0) {

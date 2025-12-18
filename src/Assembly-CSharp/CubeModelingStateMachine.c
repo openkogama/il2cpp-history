@@ -1624,10 +1624,10 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_set
     if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       pMVar7 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method;
-      uVar8 = CONCAT71((int7)((ulonglong)pMVar7 >> 8),0x67);
+      uVar8 = CONCAT71((int7)((ulonglong)pMVar7 >> 8),0x6a);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x67,value_00,
+                (this_01,0x6a,value_00,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),pMVar7);
       pPVar9 = (pMVar5->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {

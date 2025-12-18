@@ -291,77 +291,29 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
     UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                      ((MethodInfo *)0x0);
-  if (pSVar1 != (SpawnRoleDataMediator *)0x0) {
-    pSVar2 = (pSVar1->fields).spawnRoleMode;
-    value = (Delegate *)
-            FUN_?(
+  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return;
+  }
+  pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                     ((MethodInfo *)0x0);
+  if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
+    pSVar3 = (pSVar2->fields).spawnRoleMode;
+    uVar4 = FUN_?(
                          TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
                          );
-    FUN_?(value,this);
-    pMVar3 = 
-    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-    ;
-    if (pSVar2 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_MV_Common_SpawnRoleModeType_ *)
+    FUN_?(uVar4,this,
+                  MethodInfo__RegisteredPromotionController__OnChangeMode_MV__Common__SpawnRoleModeType_
+                 );
+    if (pSVar3 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_MV_Common_SpawnRoleModeType_ *)
                   0x0) {
-      ppSVar4 = &(pSVar2->fields)._.OnChange;
-      source = (pSVar2->fields)._.OnChange;
-      do {
-        pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
-                           ((Delegate *)source,value,(MethodInfo *)0x0);
-        pvVar6 = pMVar3->klass->rgctx_data[6].rgctxDataDummy;
-        if ((*(byte *)((longlong)pvVar6 + 0x135) & 1) == 0) {
-          pvVar6 = (void *)FUN_?();
-        }
-        if (pDVar5 == (Delegate *)0x0) {
-          pSVar7 = (SpawnRoleVariable_1_T_SubDelegate_MV_Common_SpawnRoleModeType_ *)0x0;
-        }
-        else {
-          pSVar7 = (SpawnRoleVariable_1_T_SubDelegate_MV_Common_SpawnRoleModeType_ *)
-                   FUN_?(pDVar5,pvVar6);
-          if (pSVar7 == (SpawnRoleVariable_1_T_SubDelegate_MV_Common_SpawnRoleModeType_ *)0x0) {
-            FUN_?(pDVar5,pvVar6);
-            pcVar8 = (code *)swi(3);
-            (*pcVar8)();
-            return;
-          }
-        }
-        LOCK();
-        pSVar9 = *ppSVar4;
-        bVar10 = source == pSVar9;
-        if (bVar10) {
-          *ppSVar4 = pSVar7;
-          pSVar9 = source;
-        }
-        UNLOCK();
-        pSVar7 = source;
-        if (!bVar10) {
-          pSVar7 = pSVar9;
-        }
-        if (iRam_? != 0) {
-          uVar11 = (uint)((ulonglong)ppSVar4 >> 0xc);
-          uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
-          do {
-            uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
-            puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
-            LOCK();
-            bVar10 = uVar13 == *puVar14;
-            if (bVar10) {
-              *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
-            }
-            UNLOCK();
-          } while (!bVar10);
-        }
-        bVar10 = pSVar7 != source;
-        source = pSVar7;
-      } while (bVar10);
+      FUN_?(pSVar3,uVar4);
       return;
     }
   }
   FUN_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1275,7 +1227,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
+                while (ppMVar16 = ppMVar15 + 0x3052af3c,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

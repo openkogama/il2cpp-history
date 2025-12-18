@@ -26,7 +26,21 @@ bool Assembly-CSharp.dll::GoldRewardManager::GoldRewardManager_CanGetGoldReward
   }
   pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar3 != (GameSessionData *)0x0) {
-    iVar4 = (pGVar3->fields).gameMode;
+    bVar4 = false;
+    if ((pGVar3->fields).gameMode == 1) {
+      bVar5 = true;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar3 == (GameSessionData *)0x0) goto code_?;
+      bVar5 = (pGVar3->fields).gameMode == 3;
+    }
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -35,16 +49,22 @@ bool Assembly-CSharp.dll::GoldRewardManager::GoldRewardManager_CanGetGoldReward
     }
     pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar3 != (GameSessionData *)0x0) {
-      if (((bVar1 != 0) && ((this->fields).isGoldRewardGame != 0)) &&
-         (iVar4 == 1 && (this->fields).isGoldRewardDone == 0)) {
-        return 0 < (pGVar3->fields).profileID;
+      if ((bVar1 != 0) && ((this->fields).isGoldRewardGame != 0)) {
+        bVar4 = (this->fields).isGoldRewardDone == 0;
       }
-      return 0;
+      if ((bool)(bVar5 & bVar4)) {
+        bVar4 = 0 < (pGVar3->fields).profileID;
+      }
+      else {
+        bVar4 = false;
+      }
+      return bVar4;
     }
   }
+code_?:
   FUN_?();
-  pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  bVar2 = (*pcVar6)();
   return bVar2;
 }
 

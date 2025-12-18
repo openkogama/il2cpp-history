@@ -558,14 +558,20 @@ code_?:
   bVar6 = MVNetworkGame::MVNetworkGame_get_IsPlaying((MVNetworkGame *)0x0,method_00);
   if (bVar6 == 0) {
     if (iVar5 == 0) {
+code_?:
       pSVar4 = TM::TM__(StringLiteral_u000A_Right_mouse__Hold_to_looku000A_WAS,(MethodInfo *)0x0);
       goto code_?;
     }
     if (iVar5 != 1) {
-      if (iVar5 != 2) {
-        return pSVar1;
+      if (iVar5 == 2) {
+        return ::StringLiteral__;
       }
-      return ::StringLiteral__;
+      if (iVar5 != 3) {
+        if (iVar5 != 4) {
+          return pSVar1;
+        }
+        goto code_?;
+      }
     }
   }
   pSVar4 = TM::TM__(StringLiteral__M__Menu,(MethodInfo *)0x0);
@@ -2062,21 +2068,21 @@ code_?:
     }
     pSVar5 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral__3_5_13_0);
+      FUN_?(&StringLiteral__3_5_14_0);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pSVar41 = StringLiteral__3_5_13_0;
+    pSVar41 = StringLiteral__3_5_14_0;
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral_release_2025_12_11Maintenance);
+      FUN_?(&StringLiteral_release_2025_12_17Maintenance);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
     pSVar5 = mscorlib.dll::System::String::String_Format_1
                         (pSVar5,(Object *)pSVar41,
-                         (Object *)StringLiteral_release_2025_12_11Maintenance,(MethodInfo *)0x0);
+                         (Object *)StringLiteral_release_2025_12_17Maintenance,(MethodInfo *)0x0);
     goto code_?;
   }
   if (chatMsg == StringLiteral__region) {
@@ -3842,11 +3848,11 @@ DAT_?:
       uVar15 = (undefined7)((ulonglong)method_00 >> 8);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_02,0x57,pOVar8,(InsertionBehavior__Enum)uVar14,method_00);
-      uVar3 = CONCAT71(uVar15,0x58);
+                (this_02,0x5a,pOVar8,(InsertionBehavior__Enum)uVar14,method_00);
+      uVar3 = CONCAT71(uVar15,0x5b);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_02,0x58,(Object *)this_01,
+                (this_02,0x5b,(Object *)this_01,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar14 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
@@ -4285,14 +4291,14 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ShowBuildInform
   }
   pSVar1 = TM::TM__(StringLiteral_Version___0_u000ABranch___1_,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_5_13_0);
+    FUN_?(&StringLiteral__3_5_14_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  arg0 = StringLiteral__3_5_13_0;
+  arg0 = StringLiteral__3_5_14_0;
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_release_2025_12_11Maintenance);
+    FUN_?(&StringLiteral_release_2025_12_17Maintenance);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -4302,7 +4308,7 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ShowBuildInform
   PStack_2._arg2 = (Object *)0x0;
   PStack_2._args = (Object__Array *)0x0;
   mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1
-            (&PStack_2,(Object *)arg0,(Object *)StringLiteral_release_2025_12_11Maintenance,
+            (&PStack_2,(Object *)arg0,(Object *)StringLiteral_release_2025_12_17Maintenance,
              (MethodInfo *)0x0);
   PStack_3._arg0 = PStack_2._arg0;
   PStack_3._arg1 = PStack_2._arg1;

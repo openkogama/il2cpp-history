@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::TierUnlockedAccessItemsRewardInfo::
       UNLOCK();
     } while (uVar4 != uVar5);
   }
-  uStack_6 = 0x8069eb80;
+  uStack_6 = 0x806a0ae0;
   iStack_7 = 1;
   TierUnlockedItemsRewardInfo::TierUnlockedItemsRewardInfo_ChangeBackground
             ((TierUnlockedItemsRewardInfo *)this,tier & 0xff,(MethodInfo *)0x0);

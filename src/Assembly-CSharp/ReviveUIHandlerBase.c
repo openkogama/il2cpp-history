@@ -38,139 +38,154 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_Initialize
           cRam_? = '\x01';
         }
         pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if ((pGVar5 != (GameSessionData *)0x0) && (pGVar4 != (GameObject *)0x0)) {
-          bVar6 = (pGVar5->fields).gameMode != 0;
-          player = (MVPlayer *)
-                   CONCAT71((int7)((ulonglong)TypeInfo__MVGameControllerBase->static_fields >> 8),
-                            bVar6);
-          method_00 = (MethodInfo *)0x0;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,bVar6,(MethodInfo *)0x0);
-          pcVar7 = pcRam_?;
-          if ((pcRam_? == (code *)0x0) &&
-             (pcVar7 = (code *)FUN_?(), pcVar7 == (code *)0x0)) {
-            uVar8 = func_?(&UNK_?);
-            FUN_?(uVar8,0);
-            pcVar7 = (code *)swi(3);
-            (*pcVar7)();
-            return;
+        if (pGVar5 != (GameSessionData *)0x0) {
+          if ((pGVar5->fields).gameMode == 0) {
+            player = (MVPlayer *)0x0;
           }
-          pcRam_? = pcVar7;
-          fVar9 = (float)(*pcRam_?)();
-          (this->fields).started = fVar9;
-          MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,method_00);
-          if (extraout_RAX != 0) {
-            bVar6 = cRam_? == '\0';
-            (this->fields).duration = 10.0;
-            if (bVar6) {
+          else {
+            if (cRam_? == '\0') {
               FUN_?(&TypeInfo__MVGameControllerBase);
               LOCK();
               UNLOCK();
               cRam_? = '\x01';
             }
-            pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
-            if (((pMVar10 != (MVGameControllerBase *)0x0) &&
-                (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) &&
-               (pGVar12 = (pMVar11->fields).GameEventManager, pGVar12 != (GameEventManager *)0x0)) {
-              pGVar13 = (pGVar12->fields).AvatarCommandsPlayMode;
-              this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
-              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-              NavMesh_OnNavMeshPreUpdate__ctor
-                        (this_00,(Object *)this,MethodInfo__ReviveUIHandlerBase__ReviveTimeElapsed__
-                         ,(MethodInfo *)0x0);
-              if (pGVar13 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
-                if (cRam_? == '\0') {
-                  FUN_?(&TypeInfo__System__Action);
-                  LOCK();
-                  UNLOCK();
-                  cRam_? = '\x01';
-                }
-                ppAVar14 = &(pGVar13->fields).OnReviveTimeElapsed;
-                a = (pGVar13->fields).OnReviveTimeElapsed;
-                do {
-                  pAVar15 = (Action *)
-                            mscorlib.dll::System::Delegate::Delegate_Combine
-                                      ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-                  pAVar16 = (Action *)0x0;
-                  if (pAVar15 != (Action *)0x0) {
-                    if (pAVar15->klass == TypeInfo__System__Action) {
-                      pAVar16 = pAVar15;
-                    }
-                    if (pAVar16 == (Action *)0x0) {
-                      FUN_?(pAVar15);
-                      pcVar7 = (code *)swi(3);
-                      (*pcVar7)();
-                      return;
-                    }
-                  }
-                  LOCK();
-                  pAVar15 = *ppAVar14;
-                  bVar6 = a == pAVar15;
-                  if (bVar6) {
-                    *ppAVar14 = pAVar16;
-                    pAVar15 = a;
-                  }
-                  UNLOCK();
-                  pAVar16 = a;
-                  if (!bVar6) {
-                    pAVar16 = pAVar15;
-                  }
-                  if (iRam_? != 0) {
-                    uVar17 = (uint)((ulonglong)ppAVar14 >> 0xc);
-                    uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
-                    do {
-                      uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
-                      puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
-                      LOCK();
-                      bVar6 = uVar19 == *puVar20;
-                      if (bVar6) {
-                        *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
-                      }
-                      UNLOCK();
-                    } while (!bVar6);
-                  }
-                  bVar6 = pAVar16 != a;
-                  a = pAVar16;
-                } while (bVar6);
-                pGVar4 = (this->fields).countdown;
-                if (pGVar4 != (GameObject *)0x0) {
-                  bVar6 = (this->fields).isSubscriber == 0;
+            pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
+            ;
+            if (pGVar5 == (GameSessionData *)0x0) goto code_?;
+            player = (MVPlayer *)
+                     CONCAT71((int7)((ulonglong)TypeInfo__MVGameControllerBase >> 8),
+                              (pGVar5->fields).gameMode != 4);
+          }
+          if (pGVar4 != (GameObject *)0x0) {
+            method_00 = (MethodInfo *)0x0;
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      (pGVar4,(bool)player,(MethodInfo *)0x0);
+            pcVar6 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar6 = (code *)FUN_?(), pcVar6 == (code *)0x0)) {
+              uVar7 = func_?(&UNK_?);
+              FUN_?(uVar7,0);
+              pcVar6 = (code *)swi(3);
+              (*pcVar6)();
+              return;
+            }
+            pcRam_? = pcVar6;
+            fVar8 = (float)(*pcRam_?)();
+            (this->fields).started = fVar8;
+            MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,method_00);
+            if (extraout_RAX != 0) {
+              bVar9 = cRam_? == '\0';
+              (this->fields).duration = 10.0;
+              if (bVar9) {
+                FUN_?(&TypeInfo__MVGameControllerBase);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+              if (((pMVar10 != (MVGameControllerBase *)0x0) &&
+                  (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) &&
+                 (pGVar12 = (pMVar11->fields).GameEventManager, pGVar12 != (GameEventManager *)0x0)) {
+                pGVar13 = (pGVar12->fields).AvatarCommandsPlayMode;
+                this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+                UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                NavMesh_OnNavMeshPreUpdate__ctor
+                          (this_00,(Object *)this,
+                           MethodInfo__ReviveUIHandlerBase__ReviveTimeElapsed__,(MethodInfo *)0x0);
+                if (pGVar13 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
                   if (cRam_? == '\0') {
-                    FUN_?(&
-                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
-                                  ,bVar6,0);
+                    FUN_?(&TypeInfo__System__Action);
                     LOCK();
                     UNLOCK();
                     cRam_? = '\x01';
                   }
-                  if (pGVar4 == (GameObject *)0x0) {
-                    FUN_?();
-                    pcVar7 = (code *)swi(3);
-                    (*pcVar7)();
-                    return;
-                  }
-                  pvVar21 = (pGVar4->fields)._.m_CachedPtr;
-                  if (pvVar21 == (void *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-                    ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar4,(MethodInfo *)0x0);
-                    pcVar7 = (code *)swi(3);
-                    (*pcVar7)();
-                    return;
-                  }
-                  pcVar7 = pcRam_?;
-                  if ((pcRam_? == (code *)0x0) &&
-                     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
-                    uVar8 = func_?(&UNK_?);
-                    FUN_?(uVar8,0);
-                    pcVar7 = (code *)swi(3);
-                    (*pcVar7)();
-                    return;
-                  }
-                  pcRam_? = pcVar7;
+                  ppAVar14 = &(pGVar13->fields).OnReviveTimeElapsed;
+                  a = (pGVar13->fields).OnReviveTimeElapsed;
+                  do {
+                    pAVar15 = (Action *)
+                              mscorlib.dll::System::Delegate::Delegate_Combine
+                                        ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
+                    pAVar16 = (Action *)0x0;
+                    if (pAVar15 != (Action *)0x0) {
+                      if (pAVar15->klass == TypeInfo__System__Action) {
+                        pAVar16 = pAVar15;
+                      }
+                      if (pAVar16 == (Action *)0x0) {
+                        FUN_?(pAVar15);
+                        pcVar6 = (code *)swi(3);
+                        (*pcVar6)();
+                        return;
+                      }
+                    }
+                    LOCK();
+                    pAVar15 = *ppAVar14;
+                    bVar9 = a == pAVar15;
+                    if (bVar9) {
+                      *ppAVar14 = pAVar16;
+                      pAVar15 = a;
+                    }
+                    UNLOCK();
+                    pAVar16 = a;
+                    if (!bVar9) {
+                      pAVar16 = pAVar15;
+                    }
+                    if (iRam_? != 0) {
+                      uVar17 = (uint)((ulonglong)ppAVar14 >> 0xc);
+                      uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+                      do {
+                        uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
+                        puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
+                        LOCK();
+                        bVar9 = uVar19 == *puVar20;
+                        if (bVar9) {
+                          *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar9);
+                    }
+                    bVar9 = pAVar16 != a;
+                    a = pAVar16;
+                  } while (bVar9);
+                  pGVar4 = (this->fields).countdown;
+                  if (pGVar4 != (GameObject *)0x0) {
+                    bVar9 = (this->fields).isSubscriber == 0;
+                    if (cRam_? == '\0') {
+                      FUN_?(&
+                                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                                    ,bVar9,0);
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    if (pGVar4 == (GameObject *)0x0) {
+                      FUN_?();
+                      pcVar6 = (code *)swi(3);
+                      (*pcVar6)();
+                      return;
+                    }
+                    pvVar21 = (pGVar4->fields)._.m_CachedPtr;
+                    if (pvVar21 == (void *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar4,(MethodInfo *)0x0);
+                      pcVar6 = (code *)swi(3);
+                      (*pcVar6)();
+                      return;
+                    }
+                    pcVar6 = pcRam_?;
+                    if ((pcRam_? == (code *)0x0) &&
+                       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+                      uVar7 = func_?(&UNK_?);
+                      FUN_?(uVar7,0);
+                      pcVar6 = (code *)swi(3);
+                      (*pcVar6)();
+                      return;
+                    }
+                    pcRam_? = pcVar6;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                  (*pcRam_?)(pvVar21,bVar6);
-                  return;
+                    (*pcRam_?)(pvVar21,bVar9);
+                    return;
+                  }
                 }
               }
             }
@@ -179,9 +194,10 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_Initialize
       }
     }
   }
+code_?:
   FUN_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

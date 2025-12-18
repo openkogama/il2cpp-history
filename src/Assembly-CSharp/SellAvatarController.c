@@ -676,11 +676,11 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnImageUplo
             uVar8 = (undefined7)((ulonglong)method_00 >> 8);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_01,0x16,value_00,(InsertionBehavior__Enum)uVar7,method_00);
-            uVar9 = CONCAT71(uVar8,0xa6);
+                      (this_01,0x17,value_00,(InsertionBehavior__Enum)uVar7,method_00);
+            uVar9 = CONCAT71(uVar8,0xa9);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_01,0xa6,(Object *)value,
+                      (this_01,0xa9,(Object *)value,
                        (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                        ->klass->rgctx_data[0x22].method);
@@ -690,7 +690,7 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnImageUplo
             }
             if (pPVar10 != (PhotonPeer *)0x0) {
               (*(pPVar10->klass->vtable).SendOperation.methodPtr)
-                        (pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x36),this_01,
+                        (pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x37),this_01,
                          TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                          SendReliable,(pPVar10->klass->vtable).SendOperation.method);
               return;
@@ -1386,10 +1386,10 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnRemovePre
         if (this_02 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                       ->klass->rgctx_data[0x22].method;
-          uVar14 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+          uVar14 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_02,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)(uVar3 >> 8),2),
+                    (this_02,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)(uVar3 >> 8),2),
                      method_00);
           pPVar15 = (pMVar12->fields).peer;
           if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1397,7 +1397,7 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnRemovePre
           }
           if (pPVar15 != (PhotonPeer *)0x0) {
             (*(pPVar15->klass->vtable).SendOperation.methodPtr)
-                      (pPVar15,CONCAT71((int7)((ulonglong)uVar14 >> 8),0x37),this_02,
+                      (pPVar15,CONCAT71((int7)((ulonglong)uVar14 >> 8),0x38),this_02,
                        TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable
                        ,(pPVar15->klass->vtable).SendOperation.method);
             return;
@@ -1669,11 +1669,11 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_ScreenShotC
           uVar16 = (undefined7)((ulonglong)pMVar11 >> 8);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_03,0x16,value_00,(InsertionBehavior__Enum)uVar15,pMVar11);
-          uVar17 = CONCAT71(uVar16,0xa6);
+                    (this_03,0x17,value_00,(InsertionBehavior__Enum)uVar15,pMVar11);
+          uVar17 = CONCAT71(uVar16,0xa9);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_03,0xa6,(Object *)value,
+                    (this_03,0xa9,(Object *)value,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar15 >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);
@@ -1683,7 +1683,7 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_ScreenShotC
           }
           if (pPVar18 != (PhotonPeer *)0x0) {
             (*(pPVar18->klass->vtable).SendOperation.methodPtr)
-                      (pPVar18,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x36),this_03,
+                      (pPVar18,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x37),this_03,
                        TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable
                        ,(pPVar18->klass->vtable).SendOperation.method);
             return;
@@ -1875,7 +1875,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
+                while (ppMVar16 = ppMVar15 + 0x3052af3c,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

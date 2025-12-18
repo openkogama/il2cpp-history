@@ -1193,49 +1193,62 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_HandleStandaloneDis
     if ((pGVar1->fields).gameMode == 0) {
       return;
     }
-    pMVar2 = (this->fields).chestObject;
-    (this->fields).state = 2;
-    if ((pMVar2 != (MVGamePointChestObject *)0x0) &&
-       (pGVar3 = (pMVar2->fields).modelSelector, pGVar3 != (GamePointChestModelController *)0x0)) {
-      if (cRam_? == '\0') {
-        FUN_?(&StringLiteral__MainColor);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      if ((pGVar1->fields).gameMode == 4) {
+        return;
       }
-      pRVar4 = (pGVar3->fields).openingRenderer;
-      if ((pRVar4 != (Renderer *)0x0) &&
-         (pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                             (pRVar4,(MethodInfo *)0x0), pMVar5 != (Material *)0x0)) {
-        pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
-                            (aCStack_7,pMVar5,StringLiteral__MainColor,(MethodInfo *)0x0);
+      pMVar2 = (this->fields).chestObject;
+      (this->fields).state = 2;
+      if ((pMVar2 != (MVGamePointChestObject *)0x0) &&
+         (pGVar3 = (pMVar2->fields).modelSelector, pGVar3 != (GamePointChestModelController *)0x0))
+      {
+        if (cRam_? == '\0') {
+          FUN_?(&StringLiteral__MainColor);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
         pRVar4 = (pGVar3->fields).openingRenderer;
-        uVar8._0_4_ = pCVar6->r;
-        uVar8._4_4_ = pCVar6->g;
-        fVar9 = pCVar6->b;
-        if (pRVar4 != (Renderer *)0x0) {
-          pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                             (pRVar4,(MethodInfo *)0x0);
-          aCStack_7[0].a = 0.0;
-          aCStack_7[0].b = fVar9;
-          aCStack_7[0]._0_8_ = uVar8;
-          if (pMVar5 != (Material *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
-                      (pMVar5,StringLiteral__MainColor,aCStack_7,(MethodInfo *)0x0);
-            pGVar10 = (pGVar3->fields).openMesh;
-            (pGVar3->fields).isOpening = 0;
-            if (pGVar10 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar10,0,(MethodInfo *)0x0);
-              pGVar10 = (pGVar3->fields).closedMesh;
+        if ((pRVar4 != (Renderer *)0x0) &&
+           (pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                               (pRVar4,(MethodInfo *)0x0), pMVar5 != (Material *)0x0)) {
+          pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
+                              (aCStack_7,pMVar5,StringLiteral__MainColor,(MethodInfo *)0x0);
+          pRVar4 = (pGVar3->fields).openingRenderer;
+          uVar8._0_4_ = pCVar6->r;
+          uVar8._4_4_ = pCVar6->g;
+          fVar9 = pCVar6->b;
+          if (pRVar4 != (Renderer *)0x0) {
+            pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                               (pRVar4,(MethodInfo *)0x0);
+            aCStack_7[0].a = 0.0;
+            aCStack_7[0].b = fVar9;
+            aCStack_7[0]._0_8_ = uVar8;
+            if (pMVar5 != (Material *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                        (pMVar5,StringLiteral__MainColor,aCStack_7,(MethodInfo *)0x0);
+              pGVar10 = (pGVar3->fields).openMesh;
+              (pGVar3->fields).isOpening = 0;
               if (pGVar10 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar10,0,(MethodInfo *)0x0);
-                this_00 = (pGVar3->fields).greyOutScript;
-                if (this_00 != (GreyOutObjectScript *)0x0) {
-                  GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
-                  (this->fields).canRespawn = 0;
-                  return;
+                pGVar10 = (pGVar3->fields).closedMesh;
+                if (pGVar10 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (pGVar10,0,(MethodInfo *)0x0);
+                  this_00 = (pGVar3->fields).greyOutScript;
+                  if (this_00 != (GreyOutObjectScript *)0x0) {
+                    GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
+                    (this->fields).canRespawn = 0;
+                    return;
+                  }
                 }
               }
             }
@@ -1784,7 +1797,7 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_Reset
     (this->fields).state = 0;
   }
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVGameControllerBase,0);
+    FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -1794,49 +1807,62 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_Reset
     if ((pGVar4->fields).gameMode == 0) {
       return;
     }
-    pMVar1 = (this->fields).chestObject;
-    (this->fields).state = 2;
-    if ((pMVar1 != (MVGamePointChestObject *)0x0) &&
-       (pGVar2 = (pMVar1->fields).modelSelector, pGVar2 != (GamePointChestModelController *)0x0)) {
-      if (cRam_? == '\0') {
-        FUN_?(&StringLiteral__MainColor);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar4 != (GameSessionData *)0x0) {
+      if ((pGVar4->fields).gameMode == 4) {
+        return;
       }
-      pRVar5 = (pGVar2->fields).openingRenderer;
-      if ((pRVar5 != (Renderer *)0x0) &&
-         (pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                             (pRVar5,(MethodInfo *)0x0), pMVar6 != (Material *)0x0)) {
-        pCVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
-                            (aCStack_8,pMVar6,StringLiteral__MainColor,(MethodInfo *)0x0);
+      pMVar1 = (this->fields).chestObject;
+      (this->fields).state = 2;
+      if ((pMVar1 != (MVGamePointChestObject *)0x0) &&
+         (pGVar2 = (pMVar1->fields).modelSelector, pGVar2 != (GamePointChestModelController *)0x0))
+      {
+        if (cRam_? == '\0') {
+          FUN_?(&StringLiteral__MainColor);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
         pRVar5 = (pGVar2->fields).openingRenderer;
-        uVar9._0_4_ = pCVar7->r;
-        uVar9._4_4_ = pCVar7->g;
-        fVar10 = pCVar7->b;
-        if (pRVar5 != (Renderer *)0x0) {
-          pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                             (pRVar5,(MethodInfo *)0x0);
-          aCStack_8[0].a = 0.0;
-          aCStack_8[0].b = fVar10;
-          aCStack_8[0]._0_8_ = uVar9;
-          if (pMVar6 != (Material *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
-                      (pMVar6,StringLiteral__MainColor,aCStack_8,(MethodInfo *)0x0);
-            pGVar11 = (pGVar2->fields).openMesh;
-            (pGVar2->fields).isOpening = 0;
-            if (pGVar11 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar11,0,(MethodInfo *)0x0);
-              pGVar11 = (pGVar2->fields).closedMesh;
+        if ((pRVar5 != (Renderer *)0x0) &&
+           (pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                               (pRVar5,(MethodInfo *)0x0), pMVar6 != (Material *)0x0)) {
+          pCVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
+                              (aCStack_8,pMVar6,StringLiteral__MainColor,(MethodInfo *)0x0);
+          pRVar5 = (pGVar2->fields).openingRenderer;
+          uVar9._0_4_ = pCVar7->r;
+          uVar9._4_4_ = pCVar7->g;
+          fVar10 = pCVar7->b;
+          if (pRVar5 != (Renderer *)0x0) {
+            pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                               (pRVar5,(MethodInfo *)0x0);
+            aCStack_8[0].a = 0.0;
+            aCStack_8[0].b = fVar10;
+            aCStack_8[0]._0_8_ = uVar9;
+            if (pMVar6 != (Material *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                        (pMVar6,StringLiteral__MainColor,aCStack_8,(MethodInfo *)0x0);
+              pGVar11 = (pGVar2->fields).openMesh;
+              (pGVar2->fields).isOpening = 0;
               if (pGVar11 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar11,0,(MethodInfo *)0x0);
-                this_00 = (pGVar2->fields).greyOutScript;
-                if (this_00 != (GreyOutObjectScript *)0x0) {
-                  GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
-                  (this->fields).canRespawn = 0;
-                  return;
+                pGVar11 = (pGVar2->fields).closedMesh;
+                if (pGVar11 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (pGVar11,0,(MethodInfo *)0x0);
+                  this_00 = (pGVar2->fields).greyOutScript;
+                  if (this_00 != (GreyOutObjectScript *)0x0) {
+                    GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
+                    (this->fields).canRespawn = 0;
+                    return;
+                  }
                 }
               }
             }

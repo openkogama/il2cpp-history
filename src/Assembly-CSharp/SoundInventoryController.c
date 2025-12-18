@@ -351,7 +351,7 @@ void Assembly-CSharp.dll::SoundInventoryController::SoundInventoryController_Ini
         }
         else {
           pSVar8 = pSVar2;
-          if (pSVar7->klass == pSRam0000000182dbdde0) {
+          if (pSVar7->klass == pSRam0000000182dc50c0) {
             pSVar8 = pSVar7;
           }
           if (pSVar8 == (String *)0x0) {
@@ -362,7 +362,7 @@ void Assembly-CSharp.dll::SoundInventoryController::SoundInventoryController_Ini
           }
           (this->fields).originalURL = pSVar8;
           pSVar8 = pSVar2;
-          if (pSVar7->klass == pSRam0000000182dbdde0) {
+          if (pSVar7->klass == pSRam0000000182dc50c0) {
             pSVar8 = pSVar7;
           }
           if (pSVar8 == (String *)0x0) {

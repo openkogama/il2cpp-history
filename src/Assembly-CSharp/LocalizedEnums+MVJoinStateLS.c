@@ -199,136 +199,129 @@ void Assembly-CSharp.dll::LocalizedEnums+MVJoinStateLS::LocalizedEnums_MVJoinSta
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3a,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3b,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Item_Types,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3c,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3d,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Ownership_Types,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3b,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3c,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Inventory,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x41,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x42,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_BuiltIn_Items,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x43,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x44,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Shop_Inventory,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x42,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x43,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Avatar_Shop_Inventory,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x44,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x45,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Game_Snapshot,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3e,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3f,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Setup_User_Play_mode,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3d,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3e,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Friends,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x40,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x41,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Setting_Actor_Ready,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x3f,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x40,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Fetching_Active_Avatar,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x46,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x47,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Initialize_Avatar_Edit,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x45,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x46,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Getting_Profile_Meta_Data,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x57,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x58,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Getting_Planet_Profile_Data,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x5a,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x5b,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Getting_Project_Earnings,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x61,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x62,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Getting_Top_High_Scores,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x62,(Object *)pSVar1,IVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,99,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Getting_KoGaMa_VAT,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,99,(Object *)pSVar1,IVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
-               ->klass->rgctx_data[0x22].method);
-    pSVar1 = TM::TM__(StringLiteral_Getting_Subscription_Perk_Data,(MethodInfo *)0x0);
-    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-    Dictionary_2_System_Int32_System_Object__TryInsert
               ((Dictionary_2_System_Int32_System_Object_ *)map,100,(Object *)pSVar1,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
-    pSVar1 = TM::TM__(StringLiteral_Setting_Up_User,(MethodInfo *)0x0);
+    pSVar1 = TM::TM__(StringLiteral_Getting_Subscription_Perk_Data,(MethodInfo *)0x0);
     IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
@@ -336,9 +329,16 @@ void Assembly-CSharp.dll::LocalizedEnums+MVJoinStateLS::LocalizedEnums_MVJoinSta
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);
     pSVar1 = TM::TM__(StringLiteral_Setting_Up_User,(MethodInfo *)0x0);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__TryInsert
-              ((Dictionary_2_System_Int32_System_Object_ *)map,0x66,(Object *)pSVar1,
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x66,(Object *)pSVar1,IVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
+               ->klass->rgctx_data[0x22].method);
+    pSVar1 = TM::TM__(StringLiteral_Setting_Up_User,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__TryInsert
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0x67,(Object *)pSVar1,
                CONCAT31((int3)(IVar2 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                ->klass->rgctx_data[0x22].method);

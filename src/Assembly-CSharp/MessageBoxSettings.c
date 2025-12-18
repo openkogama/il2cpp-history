@@ -144,7 +144,7 @@ void Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_Initialize
                             ), this_01 != (SettingsInputField *)0x0)) {
       value_01 = pSVar1;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dbdde0) {
+        if (pSVar8->klass == pSRam0000000182dc50c0) {
           value_01 = pSVar8;
         }
         if (value_01 == (String *)0x0) {
@@ -2026,7 +2026,7 @@ Object * Assembly-CSharp.dll::MessageBoxSettings::MessageBoxSettings_RemoveQuadF
                            (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 != 0)
        ))) && (val != (Object *)0x0)) {
     pSVar2 = (String *)0x0;
-    if (val->klass == pORam0000000182dbdde0) {
+    if (val->klass == pORam0000000182dc50c0) {
       pSVar2 = (String *)val;
     }
     if (pSVar2 != (String *)0x0) {

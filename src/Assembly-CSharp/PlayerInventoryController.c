@@ -1361,6 +1361,20 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_I
                (PlayerInventoryController *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayerInventoryController__Inven);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+            ((Object *)StringLiteral_PlayerInventoryController__Inven,(MethodInfo *)0x0);
   PlayerInventoryController_UpdatePageCount(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&
@@ -2573,7 +2587,7 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_S
     FUN_?(&MethodInfo__System__Collections__Generic__List<InventoryItem>__get_Item_int_);
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral_destination_isDefaultInvItem);
+    FUN_?();
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -2582,53 +2596,78 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_S
     return;
   }
   pLVar2 = (this->fields).items;
-  uVar3 = 0;
+  lVar3 = 0;
+  lVar4 = 0;
+  uVar5 = 0;
   if (pLVar2 != (List_1_InventoryItem_ *)0x0) {
-    lVar4 = 0x20;
-    uVar5 = uVar3;
-    uVar6 = uVar3;
+    lVar6 = 0x20;
     do {
-      uVar7 = (uint)uVar3;
-      if ((pLVar2->fields)._size <= (int)uVar7) {
-        if (uVar5 == 0) {
-          if (uVar6 == 0) break;
-          *(int32_t *)(uVar6 + 0x54) = to;
-          this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-                     *)FUN_?(
-                                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                    );
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
-                    (this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
-          aiStackX_10[0] = *(int32_t *)(uVar6 + 0x10);
-          pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_10);
-          aiStackX_10[0] = to;
-          pOVar9 = (Object *)FUN_?(uRam_?,aiStackX_10);
-          if (this_01 ==
-              (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-               *)0x0) break;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__TryInsert
-                    ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar8,pOVar9,
-                     CONCAT31((int3)((uint)uVar1 >> 8),2),
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                     ->klass->rgctx_data[0x22].method);
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__MVGameControllerBase);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
+      if ((pLVar2->fields)._size <= (int)uVar5) {
+        if (lVar4 == 0) {
+          if (lVar3 != 0) {
+            *(int32_t *)(lVar3 + 0x54) = to;
+            pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                       *)FUN_?(
+                                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                      );
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                      (pDVar7,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                      );
+            aiStackX_10[0] = *(int32_t *)(lVar3 + 0x10);
+            pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_10);
+            aiStackX_10[0] = to;
+            pOVar9 = (Object *)FUN_?(uRam_?,aiStackX_10);
+            if (pDVar7 !=
+                (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                 *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)pDVar7,pOVar8,pOVar9,
+                         CONCAT31((int3)((uint)uVar1 >> 8),2),
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__MVGameControllerBase);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+              if (((pMVar10 != (MVGameControllerBase *)0x0) &&
+                  (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) &&
+                 (pMVar12 = (pMVar11->fields).operationRequests,
+                 pMVar12 != (MVNetworkGame_OperationRequests *)0x0)) {
+                MVNetworkGame+OperationRequests::
+                MVNetworkGame_OperationRequests_UpdateInventorySlots
+                          (pMVar12,(Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                           (MethodInfo *)0x0);
+                bVar13 = iRam_? == 0;
+                (this->fields).draggedPreviewItem = (PlayerInventoryPreviewItem *)0x0;
+                if (bVar13) {
+                  return;
+                }
+                uVar5 = (uint)((ulonglong)&(this->fields).draggedPreviewItem >> 0xc);
+                lVar4 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar14 = *(ulonglong *)(lVar4 + 0xADDR);
+                  puVar15 = (ulonglong *)(lVar4 + 0xADDR);
+                  LOCK();
+                  bVar13 = uVar14 == *puVar15;
+                  if (bVar13) {
+                    *puVar15 = uVar14 | 1L << (uVar5 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar13);
+                return;
+              }
+            }
           }
-          pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
-          if ((pMVar10 == (MVGameControllerBase *)0x0) ||
-             (pMVar11 = (pMVar10->fields).game, pMVar11 == (MVNetworkGame *)0x0)) break;
-          this_00 = (pMVar11->fields).operationRequests;
         }
         else {
-          if (*(char *)(uVar5 + 0x4d) != '\0') {
+          if (*(char *)(lVar4 + 0x4d) != '\0') {
             if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
               FUN_?();
             }
@@ -2637,104 +2676,124 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_S
             TypeInfo__InventoryItemDragHandler->static_fields->dragRejected = 1;
             return;
           }
-          pPVar12 = (this->fields).repository;
-          if (((pPVar12 == (PlayerShopInventoryRepository *)0x0) ||
-              ((pPVar12->fields)._playerInventoryRepository_k__BackingField ==
-               (PlayerInventoryRepository *)0x0)) || (uVar6 == 0)) break;
-          uVar13 = *(undefined4 *)(uVar6 + 0x54);
-          *(undefined4 *)(uVar6 + 0x54) = *(undefined4 *)(uVar5 + 0x54);
-          *(undefined4 *)(uVar5 + 0x54) = uVar13;
-          this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-                     *)FUN_?(
-                                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                    );
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
-                    (this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
-          aiStackX_10[0] = *(int32_t *)(uVar6 + 0x10);
-          pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_10);
-          aiStackX_10[0] = to;
-          pOVar9 = (Object *)FUN_?(uRam_?,aiStackX_10);
-          if (this_01 ==
-              (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-               *)0x0) break;
-          behavior = CONCAT31((int3)((uint)uVar1 >> 8),2);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__TryInsert
-                    ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar8,pOVar9,behavior,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                     ->klass->rgctx_data[0x22].method);
-          aiStackX_10[0] = *(int32_t *)(uVar5 + 0x10);
-          pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_10);
-          aiStackX_10[0] = from;
-          pOVar9 = (Object *)FUN_?(uRam_?,aiStackX_10);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__TryInsert
-                    ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar8,pOVar9,
-                     CONCAT31((int3)(behavior >> 8),2),
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                     ->klass->rgctx_data[0x22].method);
-          if (cRam_? == '\0') {
-            FUN_?(&TypeInfo__MVGameControllerBase);
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
+          pPVar16 = (this->fields).repository;
+          if (((pPVar16 != (PlayerShopInventoryRepository *)0x0) &&
+              ((pPVar16->fields)._playerInventoryRepository_k__BackingField !=
+               (PlayerInventoryRepository *)0x0)) && (lVar3 != 0)) {
+            uVar17 = *(undefined4 *)(lVar3 + 0x54);
+            *(undefined4 *)(lVar3 + 0x54) = *(undefined4 *)(lVar4 + 0x54);
+            *(undefined4 *)(lVar4 + 0x54) = uVar17;
+            pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                       *)FUN_?(
+                                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                      );
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                      (pDVar7,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                      );
+            aiStackX_10[0] = *(int32_t *)(lVar3 + 0x10);
+            pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_10);
+            aiStackX_10[0] = to;
+            pOVar9 = (Object *)FUN_?(uRam_?,aiStackX_10);
+            if (pDVar7 !=
+                (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                 *)0x0) {
+              behavior = CONCAT31((int3)((uint)uVar1 >> 8),2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)pDVar7,pOVar8,pOVar9,
+                         behavior,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                                  ->klass->rgctx_data[0x22].method);
+              aiStackX_10[0] = *(int32_t *)(lVar4 + 0x10);
+              pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_10);
+              aiStackX_10[0] = from;
+              pOVar9 = (Object *)FUN_?(uRam_?,aiStackX_10);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)pDVar7,pOVar8,pOVar9,
+                         CONCAT31((int3)(behavior >> 8),2),
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__MVGameControllerBase);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+              if (((pMVar10 != (MVGameControllerBase *)0x0) &&
+                  (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) &&
+                 (pMVar12 = (pMVar11->fields).operationRequests,
+                 pMVar12 != (MVNetworkGame_OperationRequests *)0x0)) {
+                MVNetworkGame+OperationRequests::
+                MVNetworkGame_OperationRequests_UpdateInventorySlots
+                          (pMVar12,(Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                           (MethodInfo *)0x0);
+                bVar13 = iRam_? == 0;
+                (this->fields).draggedPreviewItem = (PlayerInventoryPreviewItem *)0x0;
+                if (bVar13) {
+                  return;
+                }
+                uVar5 = (uint)((ulonglong)&(this->fields).draggedPreviewItem >> 0xc);
+                lVar4 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar14 = *(ulonglong *)(lVar4 + 0xADDR);
+                  puVar15 = (ulonglong *)(lVar4 + 0xADDR);
+                  LOCK();
+                  bVar13 = uVar14 == *puVar15;
+                  if (bVar13) {
+                    *puVar15 = uVar14 | 1L << (uVar5 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar13);
+                return;
+              }
+            }
           }
-          pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
-          if ((pMVar10 == (MVGameControllerBase *)0x0) ||
-             (pMVar11 = (pMVar10->fields).game, pMVar11 == (MVNetworkGame *)0x0)) break;
-          this_00 = (pMVar11->fields).operationRequests;
-        }
-        if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateInventorySlots
-                    (this_00,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0)
-          ;
-          return;
         }
         break;
       }
       pLVar2 = (this->fields).items;
       if (pLVar2 == (List_1_InventoryItem_ *)0x0) break;
-      if ((uint)(pLVar2->fields)._size <= uVar7) {
+      if ((uint)(pLVar2->fields)._size <= uVar5) {
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
                   ((MethodInfo *)0x0);
-        pcVar14 = (code *)swi(3);
-        (*pcVar14)();
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
         return;
       }
-      pIVar15 = (pLVar2->fields)._items;
-      if (pIVar15 == (InventoryItem__Array *)0x0) break;
-      if ((uint)pIVar15->max_length <= uVar7) {
+      pIVar19 = (pLVar2->fields)._items;
+      if (pIVar19 == (InventoryItem__Array *)0x0) break;
+      if ((uint)pIVar19->max_length <= uVar5) {
         FUN_?();
-        pcVar14 = (code *)swi(3);
-        (*pcVar14)();
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
         return;
       }
-      lVar16 = *(longlong *)((longlong)pIVar15->vector + lVar4 + -0x20);
-      if (lVar16 == 0) break;
+      lVar20 = *(longlong *)((longlong)pIVar19->vector + lVar6 + -0x20);
+      if (lVar20 == 0) break;
       pLVar2 = (this->fields).items;
-      if (*(int *)(lVar16 + 0x54) == from) {
-        uVar6 = FUN_?(pLVar2);
+      if (*(int *)(lVar20 + 0x54) == from) {
+        lVar3 = FUN_?(pLVar2);
       }
       else {
-        lVar16 = FUN_?(pLVar2);
-        if (lVar16 == 0) break;
-        if (*(int *)(lVar16 + 0x54) == to) {
+        lVar20 = FUN_?(pLVar2);
+        if (lVar20 == 0) break;
+        if (*(int *)(lVar20 + 0x54) == to) {
           if ((this->fields).items == (List_1_InventoryItem_ *)0x0) break;
-          uVar5 = FUN_?();
+          lVar4 = FUN_?();
         }
       }
       pLVar2 = (this->fields).items;
-      uVar3 = (ulonglong)(uVar7 + 1);
-      lVar4 = lVar4 + 8;
+      uVar5 = uVar5 + 1;
+      lVar6 = lVar6 + 8;
     } while (pLVar2 != (List_1_InventoryItem_ *)0x0);
   }
   FUN_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

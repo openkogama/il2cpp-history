@@ -470,14 +470,24 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_HandleStandaloneDisabling
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     if ((pGVar1->fields).gameMode != 0) {
-      pMVar2 = (this->fields).gamePointObject;
-      (this->fields).state = 1;
-      (this->fields).isVisible = 0;
-      if ((pMVar2 == (MVGamePointObject *)0x0) ||
-         (this_00 = (pMVar2->fields).pickupItem, this_00 == (GreyOutObjectScript *)0x0))
-      goto code_?;
-      GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
-      (this->fields).canRespawn = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        pMVar2 = (this->fields).gamePointObject;
+        (this->fields).state = 1;
+        (this->fields).isVisible = 0;
+        if ((pMVar2 == (MVGamePointObject *)0x0) ||
+           (this_00 = (pMVar2->fields).pickupItem, this_00 == (GreyOutObjectScript *)0x0))
+        goto code_?;
+        GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
+        (this->fields).canRespawn = 0;
+      }
     }
     return;
   }
@@ -734,7 +744,7 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Reset(MVGamePoint *this,Metho
 {
   MVGamePoint_SetVisible(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVGameControllerBase,0,in_R8,in_R9,unaff_RBX);
+    FUN_?(&TypeInfo__MVGameControllerBase,0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -742,14 +752,24 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Reset(MVGamePoint *this,Metho
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     if ((pGVar1->fields).gameMode != 0) {
-      pMVar2 = (this->fields).gamePointObject;
-      (this->fields).state = 1;
-      (this->fields).isVisible = 0;
-      if ((pMVar2 == (MVGamePointObject *)0x0) ||
-         (this_00 = (pMVar2->fields).pickupItem, this_00 == (GreyOutObjectScript *)0x0))
-      goto code_?;
-      GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
-      (this->fields).canRespawn = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        pMVar2 = (this->fields).gamePointObject;
+        (this->fields).state = 1;
+        (this->fields).isVisible = 0;
+        if ((pMVar2 == (MVGamePointObject *)0x0) ||
+           (this_00 = (pMVar2->fields).pickupItem, this_00 == (GreyOutObjectScript *)0x0))
+        goto code_?;
+        GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
+        (this->fields).canRespawn = 0;
+      }
     }
     return;
   }

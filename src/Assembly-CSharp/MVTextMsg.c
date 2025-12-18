@@ -75,16 +75,16 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_Initialize(MVTextMsg *this,Method
     if ((pMVar7 != (MVTextMsgObject *)0x0) &&
        (pTVar8 = (pMVar7->fields).textMesh, pTVar8 != (TextMeshProUGUI *)0x0)) {
       (*(pTVar8->klass->vtable).ForceMeshUpdate.methodPtr)(pTVar8,0,0);
-      this_00 = (Action_2_Int32Enum_Object_ *)
+      this_01 = (Action_2_Int32Enum_Object_ *)
                 FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
       mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                (this_00,(Object *)this,
+                (this_01,(Object *)this,
                  MethodInfo__MVTextMsg__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
                  ,(MethodInfo *)0x0);
       pIVar9 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                          ((MVWorldObject *)this,1,
                           (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                          (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0)
+                          (Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0)
       ;
       bVar2 = iRam_? != 0;
       (this->fields)._InputSignalReceiver_k__BackingField = pIVar9;
@@ -103,10 +103,12 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_Initialize(MVTextMsg *this,Method
         } while (!bVar2);
       }
       if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
-        uVar10 = FUN_?(1,TypeInfo__IInputSignalReceiver);
+        uVar10 = FUN_?(1);
         pMVar7 = (this->fields).msgObject;
-        if ((pMVar7 != (MVTextMsgObject *)0x0) &&
-           (obj = (pMVar7->fields).visualObject, obj != (GameObject *)0x0)) {
+        if (((pMVar7 != (MVTextMsgObject *)0x0) &&
+            (this_00 = (pMVar7->fields).canvas, this_00 != (Canvas *)0x0)) &&
+           (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this_00,(MethodInfo *)0x0), obj != (GameObject *)0x0)) {
           if (cRam_? == '\0') {
             FUN_?(&
                           void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
@@ -251,60 +253,66 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_InputStateUpdateCallback
 {
   if (logicInputState == LogicInputState__Enum_FromColdToHot) {
     pMVar1 = (this->fields).msgObject;
-    if ((pMVar1 == (MVTextMsgObject *)0x0) ||
-       (obj = (pMVar1->fields).visualObject, obj == (GameObject *)0x0)) {
-code_?:
-      FUN_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+    if (((pMVar1 != (MVTextMsgObject *)0x0) &&
+        (pCVar2 = (pMVar1->fields).canvas, pCVar2 != (Canvas *)0x0)) &&
+       (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pCVar2,(MethodInfo *)0x0), obj != (GameObject *)0x0)) {
+      uVar3 = 1;
+UnityEngine_CoreModule_dll_UnityEngine_GameObject_GameObject_SetActive:
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                      ,uVar3,0);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (obj == (GameObject *)0x0) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pvVar5 = (obj->fields)._.m_CachedPtr;
+      if (pvVar5 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar5,uVar3);
       return;
     }
-    uVar3 = CONCAT71((int7)(CONCAT44(in_register_00000014,logicInputState) >> 8),1);
   }
   else {
     if (logicInputState != LogicInputState__Enum_FromHotToCold) {
       return;
     }
     pMVar1 = (this->fields).msgObject;
-    if ((pMVar1 == (MVTextMsgObject *)0x0) ||
-       (obj = (pMVar1->fields).visualObject, obj == (GameObject *)0x0)) goto code_?;
-    uVar3 = 0;
+    if (((pMVar1 != (MVTextMsgObject *)0x0) &&
+        (pCVar2 = (pMVar1->fields).canvas, pCVar2 != (Canvas *)0x0)) &&
+       (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pCVar2,(MethodInfo *)0x0), obj != (GameObject *)0x0)) {
+      uVar3 = 0;
+      goto UnityEngine_CoreModule_dll_UnityEngine_GameObject_GameObject_SetActive;
+    }
   }
-  if (cRam_? == '\0') {
-    FUN_?(&
-                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
-                  ,uVar3,0);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if (obj == (GameObject *)0x0) {
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pvVar4 = (obj->fields)._.m_CachedPtr;
-  if (pvVar4 == (void *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar5 = func_?(&UNK_?);
-    FUN_?(uVar5,0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (*pcRam_?)(pvVar4,uVar3 & 0xff);
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -341,59 +349,6 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_OnDataUpdate(MVTextMsg *this,Meth
   FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
-  return;
-}
-
-
-/* Void ToggleText(Boolean) */
-
-void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_ToggleText
-               (MVTextMsg *this,bool visible,MethodInfo *method)
-
-{
-  pMVar1 = (this->fields).msgObject;
-  if ((pMVar1 == (MVTextMsgObject *)0x0) ||
-     (obj = (pMVar1->fields).visualObject, obj == (GameObject *)0x0)) {
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  if (cRam_? == '\0') {
-    FUN_?(&
-                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
-                  ,CONCAT71(in_register_00000011,visible),0);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if (obj == (GameObject *)0x0) {
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pvVar3 = (obj->fields)._.m_CachedPtr;
-  if (pvVar3 == (void *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar4 = func_?(&UNK_?);
-    FUN_?(uVar4,0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (*pcRam_?)(pvVar3,visible);
   return;
 }
 
@@ -900,7 +855,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateText(MVTextMsg *this,Method
       }
       defaultValue = (Object *)0x0;
       if (pOVar3 != (Object *)0x0) {
-        if (pOVar3->klass == pORam0000000182dbdde0) {
+        if (pOVar3->klass == pORam0000000182dc50c0) {
           defaultValue = pOVar3;
         }
         if (defaultValue == (Object *)0x0) {
@@ -1498,7 +1453,7 @@ code_?:
   }
   defaultValue = (Object *)0x0;
   if (pOVar6 != (Object *)0x0) {
-    if (pOVar6->klass == pORam0000000182dbdde0) {
+    if (pOVar6->klass == pORam0000000182dc50c0) {
       defaultValue = pOVar6;
     }
     if (defaultValue == (Object *)0x0) {

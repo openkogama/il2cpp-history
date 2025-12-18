@@ -129,7 +129,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                        (outData,pOVar1,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x70);
+    aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x74);
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
     if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       bVar3 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
@@ -166,7 +166,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                            (outData,pOVar1,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xf);
+        aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x11);
         pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
         if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           bVar3 = (
@@ -205,7 +205,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                                (outData,pOVar1,
                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                );
-            aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,10);
+            aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xc);
             pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
             if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
               bVar3 = (
@@ -235,7 +235,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
               }
               else {
                 pSVar7 = pSVar6;
-                if (pSVar5->klass == pSRam0000000182dbdde0) {
+                if (pSVar5->klass == pSRam0000000182dc50c0) {
                   pSVar7 = pSVar5;
                 }
                 if (pSVar7 == (String *)0x0) {
@@ -246,7 +246,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                 }
                 (this->fields).name = pSVar7;
                 pSVar7 = pSVar6;
-                if (pSVar5->klass == pSRam0000000182dbdde0) {
+                if (pSVar5->klass == pSRam0000000182dc50c0) {
                   pSVar7 = pSVar5;
                 }
                 if (pSVar7 == (String *)0x0) {
@@ -278,7 +278,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                                  (outData,pOVar1,
                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                  );
-              aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x67);
+              aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x6b);
               pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
               if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                 bVar3 = (
@@ -307,7 +307,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                 }
                 else {
                   pSVar7 = pSVar6;
-                  if (pSVar5->klass == pSRam0000000182dbdde0) {
+                  if (pSVar5->klass == pSRam0000000182dc50c0) {
                     pSVar7 = pSVar5;
                   }
                   if (pSVar7 == (String *)0x0) {
@@ -317,7 +317,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                     return;
                   }
                   (this->fields).description = pSVar7;
-                  if (pSVar5->klass == pSRam0000000182dbdde0) {
+                  if (pSVar5->klass == pSRam0000000182dc50c0) {
                     pSVar6 = pSVar5;
                   }
                   if (pSVar6 == (String *)0x0) {
@@ -349,7 +349,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                                    (outData,pOVar1,
                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                    );
-                aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xb);
+                aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xd);
                 pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
                 if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                   bVar3 = (
@@ -418,7 +418,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                                      (outData,pOVar1,
                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                      );
-                  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,100);
+                  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x68);
                   pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
                   if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                     bVar3 = (
@@ -460,7 +460,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                                          (outData,pOVar1,
                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                          );
-                      aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x4b);
+                      aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x4f);
                       pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
                       if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                         bVar3 = (
@@ -502,7 +502,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
                                              (outData,pOVar1,
                                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                              );
-                          aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x62);
+                          aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x66);
                           pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
                           if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                             bVar3 = (

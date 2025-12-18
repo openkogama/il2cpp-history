@@ -1,8 +1,8 @@
 
-/* Void <OnConfirmation>b__5_0(IUIStack, BaseEventData) */
+/* Void <OnConfirmation>b__6_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::ItemInventoryDeleteTab+<>c::
-     ItemInventoryDeleteTab_c__OnConfirmation_b__5_0
+     ItemInventoryDeleteTab_c__OnConfirmation_b__6_0
                (ItemInventoryDeleteTab_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {

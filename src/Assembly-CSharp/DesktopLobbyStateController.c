@@ -242,7 +242,11 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
         pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
         if (pGVar8 == (GameSessionData *)0x0) goto code_?;
         if ((pGVar8->fields).gameMode != 0) {
-          return;
+          lVar9 = FUN_?();
+          if (lVar9 == 0) goto code_?;
+          if (*(int *)(lVar9 + 0x20) != 4) {
+            return;
+          }
         }
       }
       pGVar1 = (this->fields).gamePassesUI;
@@ -259,39 +263,39 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
         }
         if (obj == (GameObject *)0x0) {
           FUN_?();
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
           return;
         }
-        pvVar10 = (obj->fields)._.m_CachedPtr;
-        if (pvVar10 == (void *)0x0) {
+        pvVar11 = (obj->fields)._.m_CachedPtr;
+        if (pvVar11 == (void *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
           ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
           return;
         }
-        pcVar9 = pcRam_?;
+        pcVar10 = pcRam_?;
         if ((pcRam_? == (code *)0x0) &&
-           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
-          uVar11 = func_?(&UNK_?);
-          FUN_?(uVar11,0);
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
+           (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+          uVar12 = func_?(&UNK_?);
+          FUN_?(uVar12,0);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
           return;
         }
-        pcRam_? = pcVar9;
+        pcRam_? = pcVar10;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (*pcRam_?)(pvVar10,0);
+        (*pcRam_?)(pvVar11,0);
         return;
       }
     }
   }
 code_?:
   FUN_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

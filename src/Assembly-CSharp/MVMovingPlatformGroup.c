@@ -759,10 +759,10 @@ code_?:
           FUN_?();
         }
         uVar3 = mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar20,(MethodInfo *)0x0);
-        pDVar2 = pDRam0000000182dbdd98;
+        pDVar2 = pDRam0000000182dc5078;
         if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
         if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->
-            _0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values)
+            _0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values)
         goto code_?;
         aIStackX_18[0].m_value =
              (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)
@@ -896,9 +896,9 @@ code_?:
                            (pSVar20,(IFormatProvider *)provider,(MethodInfo *)0x0);
       }
       if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
-      pDVar2 = pDRam0000000182dbdd98;
+      pDVar2 = pDRam0000000182dc5078;
       if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0
-          ).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values)
+          ).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values)
       goto code_?;
       key = (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)
             ->_).id;
@@ -974,7 +974,7 @@ code_?:
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             ), pMVar18 != (MVWorldObjectClient__Class *)0x0)) {
       if ((((MVWorldObjectClient__Class *)(pMVar18->_0).image)->_0).element_class !=
-          (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) {
+          (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) {
         FUN_?(pMVar18);
 code_?:
         FUN_?();
@@ -1531,10 +1531,10 @@ code_?:
           FUN_?();
         }
         uVar3 = mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar20,(MethodInfo *)0x0);
-        pDVar2 = pDRam0000000182dbdd98;
+        pDVar2 = pDRam0000000182dc5078;
         if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
         if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->
-            _0).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values)
+            _0).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values)
         goto code_?;
         aIStackX_18[0].m_value =
              (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)
@@ -1668,9 +1668,9 @@ code_?:
                            (pSVar20,(IFormatProvider *)provider,(MethodInfo *)0x0);
       }
       if (pMVar18 == (MVWorldObjectClient__Class *)0x0) goto code_?;
-      pDVar2 = pDRam0000000182dbdd98;
+      pDVar2 = pDRam0000000182dc5078;
       if ((((MVWorldObjectClient__Class *)((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->image)->_0
-          ).element_class != (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values)
+          ).element_class != (Il2CppClass *)(pDRam0000000182dc5078->fields)._values)
       goto code_?;
       key = (((MVWorldObjectClient__Fields *)&((Il2CppClass_0 *)&((Object *)pMVar18)->klass)->name)
             ->_).id;
@@ -1746,7 +1746,7 @@ code_?:
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             ), pMVar18 != (MVWorldObjectClient__Class *)0x0)) {
       if ((((MVWorldObjectClient__Class *)(pMVar18->_0).image)->_0).element_class !=
-          (Il2CppClass *)(pDRam0000000182dbdd98->fields)._values) {
+          (Il2CppClass *)(pDRam0000000182dc5078->fields)._values) {
         FUN_?(pMVar18);
 code_?:
         FUN_?();
@@ -2678,7 +2678,7 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::
     (*pcVar1)();
     return;
   }
-  uStack_2._0_4_ = 0x804b949c;
+  uStack_2._0_4_ = 0x804b9d3c;
   uStack_2._4_4_ = 1;
   MVMovingPlatform::MVMovingPlatform_RecalculateMovement(this_00,(MethodInfo *)0x0);
   if (cRam_? == '\0') {

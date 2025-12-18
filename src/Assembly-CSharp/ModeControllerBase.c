@@ -263,10 +263,65 @@ void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_Initialize
                     (StringLiteral_Hidden,(MethodInfo *)0x0);
   uVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_UXElementSecondary,(MethodInfo *)0x0);
-  if (pCVar3 != (Camera *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-              (pCVar3,~(1 << ((byte)iVar4 & 0x1f) | 1 << (uVar5 & 0x1f) | 1 << (uVar6 & 0x1f) |
-                       1 << (uVar7 & 0x1f)),(MethodInfo *)0x0);
+  if (pCVar3 == (Camera *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+            (pCVar3,~(1 << ((byte)iVar4 & 0x1f) | 1 << (uVar5 & 0x1f) | 1 << (uVar6 & 0x1f) |
+                     1 << (uVar7 & 0x1f)),(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar8->fields).gameMode == 1) {
+code_?:
+    pCVar3 = (pMVar1->fields).mainCamera;
+    if (pCVar3 == (Camera *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar9 = (pCVar3->fields)._._._.m_CachedPtr;
+    if (pvVar9 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar3,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar10 = func_?(&UNK_?);
+      FUN_?(uVar10,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    uVar5 = (*pcRam_?)(pvVar9);
+    uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                      (StringLiteral_Logic,(MethodInfo *)0x0);
+    uVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                      (StringLiteral_Logic,(MethodInfo *)0x0);
+    if ((uVar6 & uVar5) == uVar7) {
+      pCVar3 = (pMVar1->fields).mainCamera;
+      if (pCVar3 == (Camera *)0x0) goto code_?;
+      iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
+                        (pCVar3,(MethodInfo *)0x0);
+      iVar11 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                        (StringLiteral_Logic,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                (pCVar3,iVar4 - (1 << ((byte)iVar11 & 0x1f)),(MethodInfo *)0x0);
+    }
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -274,83 +329,63 @@ void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_Initialize
       cRam_? = '\x01';
     }
     pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar8 != (GameSessionData *)0x0) {
-      if ((pGVar8->fields).gameMode == 1) {
-        pCVar3 = (pMVar1->fields).mainCamera;
-        if (pCVar3 == (Camera *)0x0) goto code_?;
+    if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar8->fields).gameMode == 3) goto code_?;
+  }
+  pCVar3 = (pMVar1->fields).mainCamera;
+  if (pCVar3 != (Camera *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar9 = (pCVar3->fields)._._._.m_CachedPtr;
+    if (pvVar9 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar3,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar10 = func_?(&UNK_?);
+      FUN_?(uVar10,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    iVar4 = (*pcRam_?)(pvVar9);
+    bVar12 = cRam_? == '\0';
+    (pMVar1->fields).cullingMask = iVar4;
+    if (bVar12) {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) ||
+       ((pMVar1->fields).blueModeEnabled == 0)) {
+      return;
+    }
+    pCVar3 = (pMVar1->fields).mainCamera;
+    if (pCVar3 != (Camera *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                (pCVar3,0,(MethodInfo *)0x0);
+      pCVar3 = (pMVar1->fields).mainCamera;
+      if (pCVar3 != (Camera *)0x0) {
         uVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
                           (pCVar3,(MethodInfo *)0x0);
         uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                          (StringLiteral_Logic,(MethodInfo *)0x0);
-        uVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                          (StringLiteral_Logic,(MethodInfo *)0x0);
-        if ((uVar6 & uVar5) == uVar7) {
-          pCVar3 = (pMVar1->fields).mainCamera;
-          if (pCVar3 == (Camera *)0x0) goto code_?;
-          iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
-                            (pCVar3,(MethodInfo *)0x0);
-          iVar9 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                            (StringLiteral_Logic,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-                    (pCVar3,iVar4 - (1 << ((byte)iVar9 & 0x1f)),(MethodInfo *)0x0);
-        }
-      }
-      pCVar3 = (pMVar1->fields).mainCamera;
-      if (pCVar3 != (Camera *)0x0) {
-        if (cRam_? == '\0') {
-          FUN_?(&
-                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
-                       );
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pvVar10 = (pCVar3->fields)._._._.m_CachedPtr;
-        if (pvVar10 == (void *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-          ThrowHelper_2_ThrowNullReferenceException((Object *)pCVar3,(MethodInfo *)0x0);
-          pcVar2 = (code *)swi(3);
-          (*pcVar2)();
-          return;
-        }
-        pcVar2 = pcRam_?;
-        if ((pcRam_? == (code *)0x0) &&
-           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-          uVar11 = func_?(&UNK_?);
-          FUN_?(uVar11,0);
-          pcVar2 = (code *)swi(3);
-          (*pcVar2)();
-          return;
-        }
-        pcRam_? = pcVar2;
-        iVar4 = (*pcRam_?)(pvVar10);
-        bVar12 = cRam_? == '\0';
-        (pMVar1->fields).cullingMask = iVar4;
-        if (bVar12) {
-          FUN_?(&TypeInfo__MVGameControllerBase);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) ||
-           ((pMVar1->fields).blueModeEnabled == 0)) {
-          return;
-        }
-        pCVar3 = (pMVar1->fields).mainCamera;
-        if (pCVar3 != (Camera *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-                    (pCVar3,0,(MethodInfo *)0x0);
-          pCVar3 = (pMVar1->fields).mainCamera;
-          if (pCVar3 != (Camera *)0x0) {
-            uVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
-                              (pCVar3,(MethodInfo *)0x0);
-            uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                              (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
-            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-                      (pCVar3,uVar5 | 1 << (uVar6 & 0x1f),(MethodInfo *)0x0);
-            return;
-          }
-        }
+                          (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                  (pCVar3,uVar5 | 1 << (uVar6 & 0x1f),(MethodInfo *)0x0);
+        return;
       }
     }
   }

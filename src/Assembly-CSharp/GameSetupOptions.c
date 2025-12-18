@@ -25,183 +25,134 @@ code_?:
       (*pcVar3)();
       return;
     }
-    if ((pTVar2->fields).isToggleOn == 0) {
-      return;
+    if (((pTVar2->fields).isToggleOn != 0) &&
+       ((pTVar2->fields)._IsInteractable_k__BackingField != 0)) {
+      (pTVar2->fields).isToggleOn = 0;
+code_?:
+      ToggleButtonAnimation::ToggleButtonAnimation_HandleToggle(pTVar2,(MethodInfo *)0x0);
     }
-    (pTVar2->fields).isToggleOn = 0;
   }
   else {
     if (pTVar2 == (ToggleButtonAnimation *)0x0) goto code_?;
-    if ((pTVar2->fields).isToggleOn != 0) {
-      return;
+    if (((pTVar2->fields).isToggleOn == 0) &&
+       ((pTVar2->fields)._IsInteractable_k__BackingField != 0)) {
+      (pTVar2->fields).isToggleOn = 1;
+      goto code_?;
     }
-    (pTVar2->fields).isToggleOn = 1;
   }
-  pcVar3 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
-    uVar4 = func_?(&UNK_?);
-    FUN_?(uVar4,0);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_CanEditSettings__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar4 != (MVGameControllerBase *)0x0) &&
+       (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+      (this_00 = (pMVar5->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+     ((this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+      this_01 != (MVLocalPlayer *)0x0 &&
+      (pLVar6 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_01,(MethodInfo *)0x0),
+      pLVar6 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) {
+    if ((pLVar6->fields)._size == 0) {
+      value = false;
+    }
+    else {
+      iVar7 = FUN_?(pLVar6,0xf);
+      value = iVar7 != -1;
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral_False);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_True);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pSVar8 = StringLiteral_False;
+    if (value != false) {
+      pSVar8 = StringLiteral_True;
+    }
+    pSVar8 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_CanEditSettings__,pSVar8,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar8,(MethodInfo *)0x0);
+    pTVar2 = (this->fields).reviveToggleButton;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pTVar2 != (ToggleButtonAnimation *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pTVar2->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        pTVar2 = (this->fields).reviveToggleButton;
+        if (pTVar2 != (ToggleButtonAnimation *)0x0) {
+          (pTVar2->fields)._IsInteractable_k__BackingField = value;
+          pTVar2 = (this->fields).reviveToggleButton;
+          if ((pTVar2 != (ToggleButtonAnimation *)0x0) &&
+             (this_02 = (Selectable *)
+                        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                                  ((Component *)pTVar2,
+                                   UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                                  ), this_02 != (Selectable *)0x0)) {
+            UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
+                      (this_02,value,(MethodInfo *)0x0);
+            return;
+          }
+        }
+        goto code_?;
+      }
+    }
     return;
   }
-  pcRam_? = pcVar3;
-  fVar5 = (float)(*pcRam_?)();
-  fVar6 = (pTVar2->fields).toggleOffOriginalPositionX;
-  pRVar7 = (pTVar2->fields).toggleOffMaskTransform;
-  (pTVar2->fields).interpolateToggleMaskStartPositionX = fVar6;
-  (pTVar2->fields).interpolateToggleMaskNewPositionX = (pTVar2->fields).toggleOffOriginalPositionX;
-  (pTVar2->fields).interpolationStartTime = fVar5;
-  if ((pTVar2->fields).isToggleOn == 0) {
-    if (pRVar7 == (RectTransform *)0x0) goto code_?;
-    if (cRam_? == '\0') {
-      FUN_?(&
-                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
-                   );
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pvVar8 = (pRVar7->fields)._._._.m_CachedPtr;
-    if (pvVar8 == (void *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar7,(MethodInfo *)0x0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcVar3 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) &&
-       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
-      uVar4 = func_?(&UNK_?);
-      FUN_?(uVar4,0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcRam_? = pcVar3;
-    (*pcRam_?)(pvVar8);
-    (pTVar2->fields).interpolateToggleMaskStartPositionX = fVar6 + 0.0;
-  }
-  else {
-    if (pRVar7 == (RectTransform *)0x0) goto code_?;
-    if (cRam_? == '\0') {
-      FUN_?(&
-                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
-                   );
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pvVar8 = (pRVar7->fields)._._._.m_CachedPtr;
-    if (pvVar8 == (void *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar7,(MethodInfo *)0x0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcVar3 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) &&
-       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
-      uVar4 = func_?(&UNK_?);
-      FUN_?(uVar4,0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcRam_? = pcVar3;
-    (*pcRam_?)(pvVar8);
-    (pTVar2->fields).interpolateToggleMaskNewPositionX = fVar6 + 0.0;
-  }
-  fVar6 = (pTVar2->fields).toggleOffOriginalPositionX;
-  pRVar7 = (pTVar2->fields).toggleOffMaskTransform;
-  (pTVar2->fields).interpolateToggleContentStartPositionX = fVar6;
-  (pTVar2->fields).interpolateToggleContentNewPositionX =
-       (pTVar2->fields).toggleOffOriginalPositionX;
-  if ((pTVar2->fields).isToggleOn == 0) {
-    if (pRVar7 == (RectTransform *)0x0) {
 code_?:
-      FUN_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    if (cRam_? == '\0') {
-      FUN_?(&
-                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
-                   );
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    uStack_9 = 0;
-    puStack_10 = (undefined *)0x0;
-    pvVar8 = (pRVar7->fields)._._._.m_CachedPtr;
-    if (pvVar8 == (void *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar7,(MethodInfo *)0x0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcVar3 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) &&
-       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
-      uVar4 = func_?(&UNK_?);
-      FUN_?(uVar4,0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcRam_? = pcVar3;
-    (*pcRam_?)(pvVar8,&uStack_9);
-    (pTVar2->fields).interpolateToggleContentStartPositionX = fVar6 - puStack_10._0_4_;
-  }
-  else {
-    if (pRVar7 == (RectTransform *)0x0) goto code_?;
-    if (cRam_? == '\0') {
-      FUN_?(&
-                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
-                   );
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    uStack_9 = 0;
-    puStack_10 = (undefined *)0x0;
-    pvVar8 = (pRVar7->fields)._._._.m_CachedPtr;
-    if (pvVar8 == (void *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar7,(MethodInfo *)0x0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcVar3 = pcRam_?;
-    if ((pcRam_? == (code *)0x0) &&
-       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
-      uVar4 = func_?(&UNK_?);
-      FUN_?(uVar4,0);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    pcRam_? = pcVar3;
-    (*pcRam_?)(pvVar8,&uStack_9);
-    (pTVar2->fields).interpolateToggleContentNewPositionX = fVar6 - puStack_10._0_4_;
-  }
-  fVar6 = (pTVar2->fields).toggleButtonOriginalPositionX;
-  (pTVar2->fields).interpolateToggleButtonNewPositionX = fVar6;
-  (pTVar2->fields).interpolateToggleButtonStartPositionX = fVar6;
-  fVar6 = (pTVar2->fields).toggleButtonMoveAmount + (pTVar2->fields).toggleButtonOriginalPositionX;
-  if ((pTVar2->fields).isToggleOn == 0) {
-    (pTVar2->fields).interpolateToggleButtonStartPositionX = fVar6;
-  }
-  else {
-    (pTVar2->fields).interpolateToggleButtonNewPositionX = fVar6;
-  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -400,6 +351,129 @@ code_?:
   FUN_?();
   pcVar17 = (code *)swi(3);
   (*pcVar17)();
+  return;
+}
+
+
+/* Void UpdateToggleInteractability() */
+
+void Assembly-CSharp.dll::GameSetupOptions::GameSetupOptions_UpdateToggleInteractability
+               (GameSetupOptions *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_CanEditSettings__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+      (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+     ((this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+      this_01 != (MVLocalPlayer *)0x0 &&
+      (pLVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_01,(MethodInfo *)0x0),
+      pLVar3 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) {
+    if ((pLVar3->fields)._size == 0) {
+      value = false;
+    }
+    else {
+      iVar4 = FUN_?(pLVar3,0xf);
+      value = iVar4 != -1;
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral_False);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_True);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pSVar5 = StringLiteral_False;
+    if (value != false) {
+      pSVar5 = StringLiteral_True;
+    }
+    pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_CanEditSettings__,pSVar5,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar5,(MethodInfo *)0x0);
+    pTVar6 = (this->fields).reviveToggleButton;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pTVar6 != (ToggleButtonAnimation *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pTVar6->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        pTVar6 = (this->fields).reviveToggleButton;
+        if (pTVar6 != (ToggleButtonAnimation *)0x0) {
+          (pTVar6->fields)._IsInteractable_k__BackingField = value;
+          pTVar6 = (this->fields).reviveToggleButton;
+          if ((pTVar6 != (ToggleButtonAnimation *)0x0) &&
+             (this_02 = (Selectable *)
+                        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                                  ((Component *)pTVar6,
+                                   UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                                  ), this_02 != (Selectable *)0x0)) {
+            UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
+                      (this_02,value,(MethodInfo *)0x0);
+            return;
+          }
+        }
+        goto code_?;
+      }
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

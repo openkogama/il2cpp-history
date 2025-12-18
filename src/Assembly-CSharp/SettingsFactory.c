@@ -1060,7 +1060,7 @@ code_?:
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             ), this_01 != (SettingsInputField *)0x0)) {
       if (pSVar23 != (String *)0x0) {
-        if (pSVar23->klass == pSRam0000000182dbdde0) {
+        if (pSVar23->klass == pSRam0000000182dc50c0) {
           pSVar13 = pSVar23;
         }
         if (pSVar13 == (String *)0x0) {
@@ -2335,7 +2335,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateGlobalSoundsInv
         }
         else {
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbdde0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -2346,7 +2346,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateGlobalSoundsInv
           }
           this_11[5].klass = pCVar9;
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbdde0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -7577,7 +7577,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSoundsInventory
         }
         else {
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbdde0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -7588,7 +7588,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSoundsInventory
           }
           this_11[5].klass = pCVar9;
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dbdde0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {

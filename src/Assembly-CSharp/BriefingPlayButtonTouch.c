@@ -31,7 +31,7 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCon
     fVar7 = (float)(*pcRam_?)();
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
     if (extraout_RAX != 0) {
-      if ((iVar4 != 2) && (*(float *)(extraout_RAX + 0xf4) <= fVar7)) {
+      if ((iVar4 != 2) && (*(float *)(extraout_RAX + 0xfc) <= fVar7)) {
         pAVar8 = (this->fields)._.OnPlayButtonPressed;
         if (pAVar8 != (Action *)0x0) {
           (*(pAVar8->fields)._._.invoke_impl)

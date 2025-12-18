@@ -54,7 +54,8 @@ void Assembly-CSharp.dll::Links::Links_AddLink
             (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0) {
           pAVar3 = (outputWo->fields)._.OnOutputLinkChanged;
           (*(pAVar3->fields)._._.invoke_impl)
-                    ((pAVar3->fields)._._.method_code,(outputWo->fields)._.outputLinkRefs);
+                    ((pAVar3->fields)._._.method_code,(outputWo->fields)._.outputLinkRefs,
+                     (pAVar3->fields)._._.method);
         }
         if (inputWo != (MVWorldObjectClient *)0x0) {
           if (cRam_? == '\0') {
@@ -73,7 +74,8 @@ void Assembly-CSharp.dll::Links::Links_AddLink
                 (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0) {
               pAVar3 = (inputWo->fields)._.OnInputLinkChanged;
               (*(pAVar3->fields)._._.invoke_impl)
-                        ((pAVar3->fields)._._.method_code,(inputWo->fields)._.inputLinkRefs);
+                        ((pAVar3->fields)._._.method_code,(inputWo->fields)._.inputLinkRefs,
+                         (pAVar3->fields)._._.method);
             }
             if (cRam_? == '\0') {
               FUN_?(&TypeInfo__MVGameControllerBase);
@@ -85,7 +87,18 @@ void Assembly-CSharp.dll::Links::Links_AddLink
             ;
             if (pGVar4 != (GameSessionData *)0x0) {
               if ((pGVar4->fields).gameMode != 0) {
-                return;
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__MVGameControllerBase);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                pGVar4 = TypeInfo__MVGameControllerBase->static_fields->
+                         _GameSessionData_k__BackingField;
+                if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+                if ((pGVar4->fields).gameMode != 4) {
+                  return;
+                }
               }
               if (cRam_? == '\0') {
                 FUN_?(&TypeInfo__PrefabPool);
@@ -127,6 +140,7 @@ void Assembly-CSharp.dll::Links::Links_AddLink
       }
     }
   }
+code_?:
   FUN_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
@@ -378,7 +392,18 @@ bool Assembly-CSharp.dll::Links::Links_RemoveLink
                        _GameSessionData_k__BackingField;
               if (pGVar6 != (GameSessionData *)0x0) {
                 if ((pGVar6->fields).gameMode != 0) {
-                  return 1;
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__MVGameControllerBase);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pGVar6 = TypeInfo__MVGameControllerBase->static_fields->
+                           _GameSessionData_k__BackingField;
+                  if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+                  if ((pGVar6->fields).gameMode != 4) {
+                    return 1;
+                  }
                 }
                 pDVar7 = (this->fields).linkObjects;
                 if ((pDVar7 != (Dictionary_2_System_Int32_LinkObjectScript_ *)0x0) &&
@@ -424,6 +449,7 @@ bool Assembly-CSharp.dll::Links::Links_RemoveLink
       }
     }
   }
+code_?:
   FUN_?();
   pcVar8 = (code *)swi(3);
   bVar9 = (*pcVar8)();
@@ -478,7 +504,17 @@ void Assembly-CSharp.dll::Links::Links_Update(Links *this,MethodInfo *method)
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     if ((pGVar1->fields).gameMode != 0) {
-      return;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        return;
+      }
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (pMVar2 != (MainCameraManager *)0x0) {
@@ -601,6 +637,7 @@ code_?:
       }
     }
   }
+code_?:
   FUN_?();
   pcVar11 = (code *)swi(3);
   (*pcVar11)();

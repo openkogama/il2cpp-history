@@ -7,9 +7,22 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_LoadScenes
 
 {
   if (gameMode == MVGameMode__Enum_Edit) {
+code_?:
     key = 3;
   }
-  else if (gameMode == MVGameMode__Enum_Play) {
+  else {
+    if (gameMode != MVGameMode__Enum_Play) {
+      if (gameMode == MVGameMode__Enum_CharacterEditor) {
+        key = 4;
+        goto Assembly_CSharp_dll_LevelLoader_LevelLoader_LoadScenes_1;
+      }
+      if (gameMode != MVGameMode__Enum_SpacePlay) {
+        if (gameMode != MVGameMode__Enum_SpaceEdit) {
+          return;
+        }
+        goto code_?;
+      }
+    }
     if (this == (LevelLoader *)0x0) {
       FUN_?();
       pcVar1 = (code *)swi(3);
@@ -18,12 +31,7 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_LoadScenes
     }
     key = (uint)tourist * 2;
   }
-  else {
-    if (gameMode != MVGameMode__Enum_CharacterEditor) {
-      return;
-    }
-    key = 4;
-  }
+Assembly_CSharp_dll_LevelLoader_LevelLoader_LoadScenes_1:
   if (cRam_? == '\0') {
     FUN_?(&
                   MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__get_Item_ScenesForMode_

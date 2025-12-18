@@ -158,37 +158,13 @@ bool Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_C
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                 );
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
-      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
-     (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-    this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      PVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-      if ((char)PVar3 == '\x02') {
-        return 1;
-      }
-      return (char)PVar3 == '\x01';
-    }
-  }
-  FUN_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
-}
-
-
-/* Boolean CanEnterPlayMode() */
-
-bool Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_CanEnterPlayMode
-               (DesktopEditModeController *this,MethodInfo *method)
-
-{
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
@@ -201,17 +177,67 @@ bool Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_C
      (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
     this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
     if (this_01 != (MVLocalPlayer *)0x0) {
-      PVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-      if ((byte)((char)PVar3 - 1U) < 2) {
-        return 1;
+      pLVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_01,(MethodInfo *)0x0);
+      if (pLVar3 != (List_1_MV_Common_PlanetPermissionType_ *)0x0) {
+        if ((pLVar3->fields)._size == 0) {
+          return 0;
+        }
+        iVar4 = FUN_?(pLVar3,0x12,
+                              MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                              ->klass->rgctx_data[0x17].rgctxDataDummy);
+        return iVar4 != -1;
       }
-      return (char)PVar3 == '\x03';
     }
   }
   FUN_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
+}
+
+
+/* Boolean CanEnterPlayMode() */
+
+bool Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_CanEnterPlayMode
+               (DesktopEditModeController *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+    this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if (this_01 != (MVLocalPlayer *)0x0) {
+      pLVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_01,(MethodInfo *)0x0);
+      if (pLVar3 != (List_1_MV_Common_PlanetPermissionType_ *)0x0) {
+        if ((pLVar3->fields)._size == 0) {
+          return 0;
+        }
+        iVar4 = FUN_?(pLVar3,0x11,
+                              MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                              ->klass->rgctx_data[0x17].rgctxDataDummy);
+        return iVar4 != -1;
+      }
+    }
+  }
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -1093,6 +1119,14 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
           ModeControllerBase::ModeControllerBase_TogglePlayerIndicators
                     ((ModeControllerBase *)this,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (cRam_? == '\0') {
             FUN_?(&TypeInfo__MVGameControllerBase);
             LOCK();
             UNLOCK();
@@ -1102,12 +1136,34 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
           if ((((pMVar12 != (MVGameControllerBase *)0x0) &&
                (pMVar13 = (pMVar12->fields).game, pMVar13 != (MVNetworkGame *)0x0)) &&
               (pMVar14 = (pMVar13->fields).playerContainer, pMVar14 != (MVPlayerContainer *)0x0)) &&
-             (pMVar15 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
-                                  (pMVar14,(MethodInfo *)0x0), pMVar15 != (MVLocalPlayer *)0x0)) {
-            PVar16 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(pMVar15,(MethodInfo *)0x0);
-            bVar5 = cRam_? == '\0';
-            (this->fields).canEdit = (char)PVar16 == '\x02' || (char)PVar16 == '\x01';
-            if (bVar5) {
+             ((pMVar15 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                   (pMVar14,(MethodInfo *)0x0), pMVar15 != (MVLocalPlayer *)0x0 &&
+              (pLVar16 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions
+                                   (pMVar15,(MethodInfo *)0x0),
+              pLVar16 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) {
+            if ((pLVar16->fields)._size == 0) {
+              bVar5 = false;
+            }
+            else {
+              iVar17 = FUN_?(pLVar16,CONCAT71((int7)((ulonglong)
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                                                  ->klass >> 8),0x12),
+                                     MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                                     ->klass->rgctx_data[0x17].rgctxDataDummy);
+              bVar5 = iVar17 != -1;
+            }
+            bVar18 = cRam_? == '\0';
+            (this->fields).canEdit = bVar5;
+            if (bVar18) {
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (cRam_? == '\0') {
               FUN_?(&TypeInfo__MVGameControllerBase);
               LOCK();
               UNLOCK();
@@ -1117,12 +1173,21 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
             if (((pMVar12 != (MVGameControllerBase *)0x0) &&
                 (pMVar13 = (pMVar12->fields).game, pMVar13 != (MVNetworkGame *)0x0)) &&
                ((pMVar14 = (pMVar13->fields).playerContainer, pMVar14 != (MVPlayerContainer *)0x0 &&
-                (pMVar15 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
-                                     (pMVar14,(MethodInfo *)0x0), pMVar15 != (MVLocalPlayer *)0x0))))
-            {
-              PVar16 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(pMVar15,(MethodInfo *)0x0);
-              (this->fields).canEnterPlayMode =
-                   (byte)((char)PVar16 - 1U) < 2 || (char)PVar16 == '\x03';
+                ((pMVar15 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                      (pMVar14,(MethodInfo *)0x0), pMVar15 != (MVLocalPlayer *)0x0 &&
+                 (pLVar16 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions
+                                      (pMVar15,(MethodInfo *)0x0),
+                 pLVar16 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)))))) {
+              if ((pLVar16->fields)._size == 0) {
+                bVar5 = false;
+              }
+              else {
+                iVar17 = FUN_?(pLVar16,0x11,
+                                       MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                                       ->klass->rgctx_data[0x17].rgctxDataDummy);
+                bVar5 = iVar17 != -1;
+              }
+              (this->fields).canEnterPlayMode = bVar5;
               if ((this->fields).canEdit == 0) {
                 DesktopEditModeController_DestroyFirstTimeEditTutorials(this,(MethodInfo *)0x0);
               }
@@ -3086,7 +3151,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
+                while (ppMVar16 = ppMVar15 + 0x3052af3c,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

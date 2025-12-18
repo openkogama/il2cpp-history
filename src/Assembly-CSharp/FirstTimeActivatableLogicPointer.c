@@ -406,10 +406,10 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
         if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                       ->klass->rgctx_data[0x22].method;
-          uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+          uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_00,0xbf,value,
+                    (this_00,0xc1,value,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar3 >> 8),2),method_00)
           ;
           pPVar10 = (pMVar8->fields).peer;
@@ -745,10 +745,10 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
             if (this_02 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
               pMVar1 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                         ->klass->rgctx_data[0x22].method;
-              uVar23 = CONCAT71((int7)((ulonglong)pMVar1 >> 8),0xbf);
+              uVar23 = CONCAT71((int7)((ulonglong)pMVar1 >> 8),0xc1);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__TryInsert
-                        (this_02,0xbf,pOVar13,
+                        (this_02,0xc1,pOVar13,
                          (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar17 >> 8),2),
                          pMVar1);
               pPVar24 = (pMVar22->fields).peer;
@@ -1182,7 +1182,7 @@ code_?:
             if (pMVar15 != (MethodInfo *)0x0) {
               if ((*pMVar15->name == '.') && ((pMVar15->flags & 0x800) != 0)) {
                 ppMVar16 = ppMVar4;
-                while (ppMVar17 = ppMVar16 + 0x3052a1b1,
+                while (ppMVar17 = ppMVar16 + 0x3052af3c,
                       ppMVar16 = (MethodInfo **)((longlong)ppMVar16 + 1),
                       *(char *)ppMVar17 == (pMVar15->name + -1)[(longlong)ppMVar16]) {
                   if (ppMVar16 == (MethodInfo **)0x7) {

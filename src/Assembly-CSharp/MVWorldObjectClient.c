@@ -2245,7 +2245,7 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetBoundsCornersWo
       FUN_?(selector,lVar1,
                     MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
                    );
-      source = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5
+      source = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_6
                          ((IEnumerable_1_UnityEngine_Vector3_ *)pVVar12,selector,
                           System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_MethodInfo__System__Linq__Enumerable__Select<UnityEngine::Vector3,_UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>_
                          );
@@ -5171,11 +5171,11 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SendPackage
         uVar6 = (undefined7)((ulonglong)method_00 >> 8);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x16,value,(InsertionBehavior__Enum)uVar5,method_00);
-        uVar7 = CONCAT71(uVar6,0x53);
+                  (this_00,0x17,value,(InsertionBehavior__Enum)uVar5,method_00);
+        uVar7 = CONCAT71(uVar6,0x56);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x53,(Object *)package,
+                  (this_00,0x56,(Object *)package,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -5185,7 +5185,7 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SendPackage
         }
         if (pPVar8 != (PhotonPeer *)0x0) {
           (*(pPVar8->klass->vtable).SendOperation.methodPtr)
-                    (pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x1b),this_00,
+                    (pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x1c),this_00,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                      (pPVar8->klass->vtable).SendOperation.method);
           return;

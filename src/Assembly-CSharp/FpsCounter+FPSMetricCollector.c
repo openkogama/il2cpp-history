@@ -153,19 +153,19 @@ code_?:
         uVar11 = CONCAT71((int7)((ulonglong)uVar9 >> 8),2);
         pMVar12 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method;
-        uVar9 = CONCAT71((int7)((ulonglong)pMVar12 >> 8),0xbf);
+        uVar9 = CONCAT71((int7)((ulonglong)pMVar12 >> 8),0xc1);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0xbf,pOVar10,(InsertionBehavior__Enum)uVar11,pMVar12);
+                  (this_00,0xc1,pOVar10,(InsertionBehavior__Enum)uVar11,pMVar12);
         if (iVar8 != 0) {
           aiStackX_10[0] = iVar8;
           pOVar10 = (Object *)FUN_?(uRam_?,aiStackX_10);
           pMVar12 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method;
-          uVar9 = CONCAT71((int7)((ulonglong)pMVar12 >> 8),0xa0);
+          uVar9 = CONCAT71((int7)((ulonglong)pMVar12 >> 8),0xa3);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_00,0xa0,pOVar10,
+                    (this_00,0xa3,pOVar10,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar11 >> 8),2),pMVar12);
         }
         pPVar5 = (pMVar7->fields).peer;

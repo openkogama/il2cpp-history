@@ -15,12 +15,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Act
     FUN_?();
   }
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Add_MV__Common__MVGameType__ICameraSettings_
-                  ,this,0);
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__MainCameraManager);
+    FUN_?(&TypeInfo__MainCameraManager,0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -28,24 +23,27 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Act
   if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__MainCameraManager);
   }
-  this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-            TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__TryInsert
-              (this_00,1,(Object *)this,CONCAT31((int3)((uint)in_R9D >> 8),2),
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Add_MV__Common__MVGameType__ICameraSettings_
-               ->klass->rgctx_data[0x22].method);
-    pAVar1 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
-    if (pAVar1 != (Action *)0x0) {
-      (*(pAVar1->fields)._._.invoke_impl)
-                ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
-    }
+  TypeInfo__MainCameraManager->static_fields->cameraSettings = (ICameraSettings *)this;
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->cameraSettings >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
+  }
+  pAVar5 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
+  if (pAVar5 == (Action *)0x0) {
     return;
   }
-  FUN_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pAVar5->fields)._._.invoke_impl)((pAVar5->fields)._._.method_code,(pAVar5->fields)._._.method);
   return;
 }
 
@@ -90,11 +88,6 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Dea
     FUN_?();
   }
   if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Remove_MV__Common__MVGameType_
-                  ,0);
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__MainCameraManager);
     LOCK();
     UNLOCK();
@@ -103,97 +96,19 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Dea
   if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__MainCameraManager);
   }
-  pMVar1 = 
-  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Remove_MV__Common__MVGameType_
-  ;
-  pDVar2 = TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (pDVar2 == (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)0x0) {
-    FUN_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  if ((pDVar2->fields)._buckets != (Int32__Array *)0x0) {
-    pIVar4 = (pDVar2->fields)._comparer;
-    if (pIVar4 == (IEqualityComparer_1_MV_Common_MVGameType_ *)0x0) {
-      uVar5 = 1;
-    }
-    else {
-      pvVar6 = MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Remove_MV__Common__MVGameType_
-                ->klass->rgctx_data[1].rgctxDataDummy;
-      if ((*(byte *)((longlong)pvVar6 + 0x135) & 1) == 0) {
-        pvVar6 = (void *)FUN_?(pvVar6);
+  TypeInfo__MainCameraManager->static_fields->cameraSettings = (ICameraSettings *)0x0;
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->cameraSettings >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
       }
-      uVar5 = FUN_?(1,pvVar6,pIVar4,1);
-    }
-    pIVar7 = (pDVar2->fields)._buckets;
-    if (pIVar7 == (Int32__Array *)0x0) {
-code_?:
-      FUN_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    uVar8 = (int)(uVar5 & 0x7fffffff) % (int)pIVar7->max_length;
-    if ((uint)pIVar7->max_length <= uVar8) {
-code_?:
-      FUN_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    uVar9 = pIVar7->vector[(int)uVar8] - 1;
-    uVar10 = 0xffffffff;
-    while (uVar11 = uVar9, -1 < (int)uVar11) {
-      pDVar12 = (pDVar2->fields)._entries;
-      if (pDVar12 == (Dictionary_2_TKey_TValue_Entry_MV_Common_MVGameType_ICameraSettings___Array *)
-                    0x0) goto code_?;
-      if ((uint)pDVar12->max_length <= uVar11) goto code_?;
-      if (pDVar12->vector[(int)uVar11].hashCode == (uVar5 & 0x7fffffff)) {
-        pIVar13 = pMVar1->klass->rgctx_data;
-        if ((pDVar2->fields)._comparer == (IEqualityComparer_1_MV_Common_MVGameType_ *)0x0) {
-          pEVar14 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::
-                    Int32Enum]::EqualityComparer_1_System_Int32Enum__get_Default(pIVar13[3].method);
-          if (pEVar14 == (EqualityComparer_1_System_Int32Enum_ *)0x0) goto code_?;
-          cVar15 = (*(pEVar14->klass->vtable).__unknown.methodPtr)
-                             (pEVar14,(ulonglong)(uint)pDVar12->vector[(int)uVar11].key,1,
-                              (pEVar14->klass->vtable).__unknown.method);
-        }
-        else {
-          pvVar6 = pIVar13[1].rgctxDataDummy;
-          if ((*(byte *)((longlong)pvVar6 + 0x135) & 1) == 0) {
-            FUN_?(pvVar6);
-          }
-          cVar15 = FUN_?();
-        }
-        if (cVar15 != '\0') {
-          if ((int)uVar10 < 0) {
-            pIVar7 = (pDVar2->fields)._buckets;
-            if (pIVar7 == (Int32__Array *)0x0) goto code_?;
-            if ((uint)pIVar7->max_length <= uVar8) goto code_?;
-            pIVar7->vector[(int)uVar8] = pDVar12->vector[(int)uVar11].next + 1;
-          }
-          else {
-            pDVar16 = (pDVar2->fields)._entries;
-            if (pDVar16 == (Dictionary_2_TKey_TValue_Entry_MV_Common_MVGameType_ICameraSettings___Array
-                           *)0x0) goto code_?;
-            if ((uint)pDVar16->max_length <= uVar10) goto code_?;
-            pDVar16->vector[(int)uVar10].next = pDVar12->vector[(int)uVar11].next;
-          }
-          pDVar12->vector[(int)uVar11].hashCode = -1;
-          pDVar12->vector[(int)uVar11].next = (pDVar2->fields)._freeList;
-          pDVar12->vector[(int)uVar11].value = (ICameraSettings *)0x0;
-          piVar17 = &(pDVar2->fields)._freeCount;
-          *piVar17 = *piVar17 + 1;
-          piVar17 = &(pDVar2->fields)._version;
-          *piVar17 = *piVar17 + 1;
-          (pDVar2->fields)._freeList = uVar11;
-          return;
-        }
-      }
-      uVar10 = uVar11;
-      uVar9 = pDVar12->vector[(int)uVar11].next;
-    }
+      UNLOCK();
+    } while (uVar3 != uVar4);
   }
   return;
 }

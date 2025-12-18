@@ -58,7 +58,7 @@ bool Assembly-CSharp.dll::PlayButton::PlayButton_HandlePlayAvailable
     fVar8 = (float)(*pcRam_?)();
     MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
     if (extraout_RAX != 0) {
-      if (*(float *)(extraout_RAX + 0xf4) <= fVar8 && iVar4 != 2) {
+      if (*(float *)(extraout_RAX + 0xfc) <= fVar8 && iVar4 != 2) {
         return 0;
       }
       this_00 = (this->fields).button;
@@ -1097,7 +1097,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_Update(PlayButton *this,MethodI
   fVar7 = (float)(*pcRam_?)();
   MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
   if (extraout_RAX == 0) goto code_?;
-  bVar8 = fVar7 < *(float *)(extraout_RAX + 0xf4);
+  bVar8 = fVar7 < *(float *)(extraout_RAX + 0xfc);
   bVar9 = iVar4 == 2;
   if (bVar9) {
     pIVar10 = (this->fields)._.countdownFill;
@@ -1141,7 +1141,7 @@ code_?:
     if (bVar8) {
       MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
       if (extraout_RAX_00 == 0) goto code_?;
-      fVar7 = *(float *)(extraout_RAX_00 + 0xf4);
+      fVar7 = *(float *)(extraout_RAX_00 + 0xfc);
       pcVar5 = pcRam_?;
       if ((pcRam_? == (code *)0x0) &&
          (pcVar5 = (code *)FUN_?(), pcVar5 == (code *)0x0)) {

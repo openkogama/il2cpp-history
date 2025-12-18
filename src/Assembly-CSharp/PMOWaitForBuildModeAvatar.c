@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::PMOWaitForBuildModeAvatar::PMOWaitForBuildModeAvatar_E
       (*pcVar3)();
       return;
     }
-    uVar4 = (undefined4)((ulonglong)extraout_RAX[0x20] >> 0x20);
+    uVar4 = (undefined4)((ulonglong)extraout_RAX[0x21] >> 0x20);
     pMVar5 = TypeInfo__MVLocalPlayerBuilder;
     MVTriggerBox::MVTriggerBox_OnExit
               ((MVTriggerBox *)0x0,pMVar2,(MethodInfo *)TypeInfo__MVLocalPlayerBuilder);
@@ -67,8 +67,8 @@ void Assembly-CSharp.dll::PMOWaitForBuildModeAvatar::PMOWaitForBuildModeAvatar_E
             (*pcVar3)();
             return;
           }
-          extraout_RAX_02[0x20] = CONCAT44((int)((ulonglong)uVar9 >> 0x20),uVar8);
-          *(undefined4 *)(extraout_RAX_02 + 0x21) = uVar7;
+          extraout_RAX_02[0x21] = CONCAT44((int)((ulonglong)uVar9 >> 0x20),uVar8);
+          *(undefined4 *)(extraout_RAX_02 + 0x22) = uVar7;
           (this->fields).defaultBuildModeSpawnRoleReady = 0;
           MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,pMVar2,(MethodInfo *)pMVar5);
           if (extraout_RAX_03 != 0) {
@@ -171,10 +171,10 @@ void Assembly-CSharp.dll::PMOWaitForBuildModeAvatar::PMOWaitForBuildModeAvatar_E
                         if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                           pMVar11 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                     ->klass->rgctx_data[0x22].method;
-                          uVar9 = CONCAT71((int7)((ulonglong)pMVar11 >> 8),0xbf);
+                          uVar9 = CONCAT71((int7)((ulonglong)pMVar11 >> 8),0xc1);
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Byte,System::Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                                    (this_01,0xbf,value,
+                                    (this_01,0xc1,value,
                                      (InsertionBehavior__Enum)
                                      CONCAT71((int7)((ulonglong)lVar6 >> 8),2),pMVar11);
                           pPVar15 = (pMVar14->fields).peer;

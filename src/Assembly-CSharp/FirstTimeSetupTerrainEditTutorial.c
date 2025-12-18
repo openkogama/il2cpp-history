@@ -255,10 +255,10 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::
                   if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                 ->klass->rgctx_data[0x22].method;
-                    uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+                    uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (this_01,0xbf,pOVar1,
+                              (this_01,0xc1,pOVar1,
                                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar13 >> 8),2),
                                method_00);
                     pPVar21 = (pMVar20->fields).peer;

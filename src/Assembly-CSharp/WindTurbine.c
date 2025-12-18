@@ -26,14 +26,9 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_Destroy(WindTurbine *this,Met
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 == (GameSessionData *)0x0) {
-code_?:
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
+  if (pGVar1 == (GameSessionData *)0x0) goto code_?;
   if ((pGVar1->fields).gameMode == 0) {
+code_?:
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -41,7 +36,13 @@ code_?:
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-        (IEditModeUI *)0x0) goto code_?;
+        (IEditModeUI *)0x0) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
     pDVar3 = (Delegate *)FUN_?();
     value = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
     FUN_?(value,this);
@@ -56,6 +57,17 @@ code_?:
       return;
     }
     FUN_?();
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode == 4) goto code_?;
   }
   if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
     FUN_?();
@@ -576,110 +588,119 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_Initialize(WindTurbine *this,
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
+  if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar1->fields).gameMode == 0) {
+code_?:
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+        (IEditModeUI *)0x0) goto code_?;
+    pDVar2 = (Delegate *)FUN_?();
+    b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
+    FUN_?(b,this);
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar2,b,(MethodInfo *)0x0);
+    pAVar3 = TypeInfo__System__Action<EditModeChangeArgs>;
+    if ((pDVar2 != (Delegate *)0x0) &&
+       (lVar4 = FUN_?(pDVar2,TypeInfo__System__Action<EditModeChangeArgs>), lVar4 == 0)) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    FUN_?();
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode == 4) goto code_?;
+  }
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UpdateController::UpdateController_AddFixedUpdateObject
+            ((IUpdatecontrollerSubscriberFixedUpdate *)this,
+             UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
+  WindTurbine_SetData(this,(MethodInfo *)0x0);
+  pWVar6 = (this->fields).windTurbineObject;
+  if ((pWVar6 != (WindTurbineObject *)0x0) &&
+     (this_00 = MVLogicObject::MVLogicObject_SetupCulling
+                          ((MVLogicObject *)this,(pWVar6->fields).visualObject,
+                           TypeRef__System__Activator__T._0_4_,(MethodInfo *)0x0),
+     this_00 != (CullingSubscriberBase *)0x0)) {
+    CullingSubscriberBase::CullingSubscriberBase_set_Radius
+              (this_00,_UNK_?,(MethodInfo *)0x0);
+    this_01 = (Action_2_Int32Enum_Object_ *)
+              FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__WindTurbine__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+               ,(MethodInfo *)0x0);
+    pIVar7 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                       ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                        (Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
+    bVar8 = iRam_? != 0;
+    (this->fields)._InputSignalReceiver_k__BackingField = pIVar7;
+    if (bVar8) {
+      uVar9 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
+      uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+      do {
+        uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+        puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
         LOCK();
+        bVar8 = uVar11 == *puVar12;
+        if (bVar8) {
+          *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+        }
         UNLOCK();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-          (IEditModeUI *)0x0) goto code_?;
-      pDVar2 = (Delegate *)FUN_?();
-      b = (Delegate *)FUN_?(TypeInfo__System__Action<EditModeChangeArgs>);
-      FUN_?(b,this);
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar2,b,(MethodInfo *)0x0);
-      pAVar3 = TypeInfo__System__Action<EditModeChangeArgs>;
-      if ((pDVar2 != (Delegate *)0x0) &&
-         (lVar4 = FUN_?(pDVar2,TypeInfo__System__Action<EditModeChangeArgs>), lVar4 == 0)) {
-        FUN_?(pDVar2,pAVar3);
+      } while (!bVar8);
+    }
+    if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
+      bVar13 = FUN_?(1,TypeInfo__IInputSignalReceiver);
+      pWVar6 = (this->fields).windTurbineObject;
+      (this->fields).isActive = bVar13;
+      if ((pWVar6 == (WindTurbineObject *)0x0) ||
+         (pPStackX_20 = (pWVar6->fields).windParticleSystem, pPStackX_20 == (ParticleSystem *)0x0))
+      {
+        FUN_?(this,bVar13,0);
         pcVar5 = (code *)swi(3);
         (*pcVar5)();
         return;
       }
-      FUN_?();
-    }
-    if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
-      FUN_?();
-    }
-    UpdateController::UpdateController_AddFixedUpdateObject
-              ((IUpdatecontrollerSubscriberFixedUpdate *)this,
-               UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
-    WindTurbine_SetData(this,(MethodInfo *)0x0);
-    pWVar6 = (this->fields).windTurbineObject;
-    if ((pWVar6 != (WindTurbineObject *)0x0) &&
-       (this_00 = MVLogicObject::MVLogicObject_SetupCulling
-                            ((MVLogicObject *)this,(pWVar6->fields).visualObject,
-                             TypeRef__System__Activator__T._0_4_,(MethodInfo *)0x0),
-       this_00 != (CullingSubscriberBase *)0x0)) {
-      CullingSubscriberBase::CullingSubscriberBase_set_Radius
-                (this_00,_UNK_?,(MethodInfo *)0x0);
-      this_01 = (Action_2_Int32Enum_Object_ *)
-                FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__WindTurbine__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-                 ,(MethodInfo *)0x0);
-      pIVar7 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                         ((MVWorldObject *)this,1,
-                          (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                          (Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0)
-      ;
-      bVar8 = iRam_? != 0;
-      (this->fields)._InputSignalReceiver_k__BackingField = pIVar7;
-      if (bVar8) {
-        uVar9 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
-        uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+      if (iRam_? != 0) {
+        uVar9 = (uint)((ulonglong)&stack0x00000008 >> 0xc);
+        puVar12 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
         do {
-          uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
-          puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+          uVar11 = *puVar12;
           LOCK();
-          bVar8 = uVar11 == *puVar12;
-          if (bVar8) {
-            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          uVar10 = *puVar12;
+          if (uVar11 == uVar10) {
+            *puVar12 = uVar11 | 1L << (ulonglong)(uVar9 & 0x3f);
           }
           UNLOCK();
-        } while (!bVar8);
+        } while (uVar11 != uVar10);
       }
-      if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
-        bVar13 = FUN_?(1,TypeInfo__IInputSignalReceiver);
-        pWVar6 = (this->fields).windTurbineObject;
-        (this->fields).isActive = bVar13;
-        if ((pWVar6 == (WindTurbineObject *)0x0) ||
-           (pPStackX_20 = (pWVar6->fields).windParticleSystem, pPStackX_20 == (ParticleSystem *)0x0)
-           ) {
-          FUN_?(this,bVar13,0);
-          pcVar5 = (code *)swi(3);
-          (*pcVar5)();
-          return;
-        }
-        if (iRam_? != 0) {
-          uVar9 = (uint)((ulonglong)&stack0x00000008 >> 0xc);
-          puVar12 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
-          do {
-            uVar11 = *puVar12;
-            LOCK();
-            uVar10 = *puVar12;
-            if (uVar11 == uVar10) {
-              *puVar12 = uVar11 | 1L << (ulonglong)(uVar9 & 0x3f);
-            }
-            UNLOCK();
-          } while (uVar11 != uVar10);
-        }
-        pcVar5 = pcRam_?;
-        if ((pcRam_? == (code *)0x0) &&
-           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
-          uVar14 = func_?(&UNK_?);
-          FUN_?(uVar14,0);
-          pcVar5 = (code *)swi(3);
-          (*pcVar5)();
-          return;
-        }
-        pcRam_? = pcVar5;
-        (*pcRam_?)(&pPStackX_20,bVar13);
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar14 = func_?(&UNK_?);
+        FUN_?(uVar14,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
+      pcRam_? = pcVar5;
+      (*pcRam_?)(&pPStackX_20,bVar13);
+      return;
     }
   }
 code_?:

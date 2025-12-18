@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
@@ -46,7 +47,7 @@ internal class LocationIndicator : MonoBehaviour
 	// Methods
 	public void Awake();
 	public void Initialize(MVPlayer player);
-	public void SetOwnership(PlanetOwnershipType ownershipType);
+	public void SetPermisisons(List<PlanetPermissionType> permissions);
 	private void SetTextRectSize();
 	private void Update();
 	private Vector3 GetAvatarScreenPoint(Vector3 avatarPos, float distance);

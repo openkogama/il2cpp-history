@@ -242,17 +242,17 @@ bool Assembly-CSharp.dll::TimeAttackFlag::TimeAttackFlag_DoReachTimeAttackFlag
             uVar11 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_00,0x23,pOVar10,(InsertionBehavior__Enum)uVar11,
+                      (this_00,0x24,pOVar10,(InsertionBehavior__Enum)uVar11,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                        ->klass->rgctx_data[0x22].method);
             aiStackX_8[0] = iVar9;
             pOVar10 = (Object *)FUN_?(uRam_?,aiStackX_8);
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                         ->klass->rgctx_data[0x22].method;
-            uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+            uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_00,0xbf,pOVar10,
+                      (this_00,0xc1,pOVar10,
                        (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar11 >> 8),2),method_00
                       );
             pPVar12 = (pMVar8->fields).peer;

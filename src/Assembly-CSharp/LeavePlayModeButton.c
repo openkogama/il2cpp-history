@@ -16,45 +16,57 @@ void Assembly-CSharp.dll::LeavePlayModeButton::LeavePlayModeButton_Awake
     if ((pGVar1->fields).gameMode == 0) {
       return;
     }
-    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                    ((Component *)this,(MethodInfo *)0x0);
-    if (obj != (GameObject *)0x0) {
-      if (cRam_? == '\0') {
-        FUN_?(&
-                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
-                      ,0,0);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      if (obj == (GameObject *)0x0) {
-        FUN_?();
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      if ((pGVar1->fields).gameMode == 4) {
         return;
       }
-      pvVar3 = (obj->fields)._.m_CachedPtr;
-      if (pvVar3 == (void *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
-      }
-      pcVar2 = pcRam_?;
-      if ((pcRam_? == (code *)0x0) &&
-         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-        uVar4 = func_?(&UNK_?);
-        FUN_?(uVar4,0);
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
-      }
-      pcRam_? = pcVar2;
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+      if (obj != (GameObject *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                        ,0,0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (obj == (GameObject *)0x0) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pvVar3 = (obj->fields)._.m_CachedPtr;
+        if (pvVar3 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar4 = func_?(&UNK_?);
+          FUN_?(uVar4,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      (*pcRam_?)(pvVar3,0);
-      return;
+        (*pcRam_?)(pvVar3,0);
+        return;
+      }
     }
   }
   FUN_?();

@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
@@ -51,7 +52,7 @@ public class ThemeMenuButton : MonoBehaviour
 
 	// Methods
 	protected void Awake();
-	private void SetButtonAvailability(PlanetOwnershipType planetOwnership);
+	private void SetButtonAvailability(List<PlanetPermissionType> planetPermissions);
 	public void OnClick();
 }
 

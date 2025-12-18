@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.WorldObject;
@@ -29,7 +30,7 @@ public class MVLocalPlayerBuilder : MVLocalPlayerRegistered
 	}
 
 	// Constructors
-	public MVLocalPlayerBuilder(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, UserProfileData userProfileData);
+	public MVLocalPlayerBuilder(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, List<int> planetPermissionIDs, UserProfileData userProfileData);
 
 	// Methods
 	public void SetToDefaultPlayModeSpawnRole();

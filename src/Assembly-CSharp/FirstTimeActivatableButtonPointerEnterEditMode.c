@@ -584,10 +584,10 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
         if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                       ->klass->rgctx_data[0x22].method;
-          uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+          uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_00,0xbf,value,
+                    (this_00,0xc1,value,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar3 >> 8),2),method_00)
           ;
           pPVar10 = (pMVar8->fields).peer;
@@ -1123,7 +1123,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
+                while (ppMVar16 = ppMVar15 + 0x3052af3c,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

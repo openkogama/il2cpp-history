@@ -639,13 +639,17 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
         if ((pGVar3->fields).gameMode == 0) {
           return;
         }
+        MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar4 == MVGameMode__Enum_SpaceEdit) {
+          return;
+        }
       }
-      pMVar4 = (this->fields)._.mvAvatar;
-      if ((pMVar4 != (MVAvatarLocal *)0x0) &&
-         (pMVar5 = (pMVar4->fields)._.Health,
-         pMVar5 != (MVRuntimeDataVariable_1_System_Single_ *)0x0)) {
-        pMVar6 = (pMVar5->klass->vtable).set_Value.method;
-        (*(pMVar5->klass->vtable).set_Value.methodPtr)(pMVar5,0,pMVar6);
+      pMVar5 = (this->fields)._.mvAvatar;
+      if ((pMVar5 != (MVAvatarLocal *)0x0) &&
+         (pMVar6 = (pMVar5->fields)._.Health,
+         pMVar6 != (MVRuntimeDataVariable_1_System_Single_ *)0x0)) {
+        pMVar7 = (pMVar6->klass->vtable).set_Value.method;
+        (*(pMVar6->klass->vtable).set_Value.methodPtr)(pMVar6,0,pMVar7);
         this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                             ((MethodInfo *)0x0);
         if (cRam_? == '\0') {
@@ -656,11 +660,11 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
         }
         pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
         if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
-             (pMVar7 = (pMVar1->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
-            (pMVar8 = (pMVar7->fields).playerContainer, pMVar8 != (MVPlayerContainer *)0x0)) &&
-           (pMVar9 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar8,(MethodInfo *)0x0),
-           pMVar9 != (MVLocalPlayer *)0x0)) {
-          avatarId = (pMVar9->fields)._._ActorNr_k__BackingField;
+             (pMVar8 = (pMVar1->fields).game, pMVar8 != (MVNetworkGame *)0x0)) &&
+            (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 != (MVPlayerContainer *)0x0)) &&
+           (pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar9,(MethodInfo *)0x0)
+           , pMVar10 != (MVLocalPlayer *)0x0)) {
+          avatarId = (pMVar10->fields)._._ActorNr_k__BackingField;
           if (cRam_? == '\0') {
             FUN_?(&TypeInfo__MVGameControllerBase);
             LOCK();
@@ -669,14 +673,14 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
           }
           pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
           if (((pMVar1 != (MVGameControllerBase *)0x0) &&
-              (pMVar7 = (pMVar1->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
-             ((pMVar8 = (pMVar7->fields).playerContainer, pMVar8 != (MVPlayerContainer *)0x0 &&
-              ((pMVar9 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
-                                   (pMVar8,(MethodInfo *)0x0), pMVar9 != (MVLocalPlayer *)0x0 &&
+              (pMVar8 = (pMVar1->fields).game, pMVar8 != (MVNetworkGame *)0x0)) &&
+             ((pMVar9 = (pMVar8->fields).playerContainer, pMVar9 != (MVPlayerContainer *)0x0 &&
+              ((pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                    (pMVar9,(MethodInfo *)0x0), pMVar10 != (MVLocalPlayer *)0x0 &&
                (gameMsgData = GameMessages::GameMessages_MakePlayerKilledMessage
-                                        (avatarId,(pMVar9->fields)._._ActorNr_k__BackingField,
+                                        (avatarId,(pMVar10->fields)._._ActorNr_k__BackingField,
                                          (PlayerKilledByType__Enum)
-                                         CONCAT71((int7)((ulonglong)pMVar6 >> 8),10),
+                                         CONCAT71((int7)((ulonglong)pMVar7 >> 8),10),
                                          (MethodInfo *)0x0),
                this_00 != (MVNetworkGame_OperationRequests *)0x0)))))) {
             MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PostGameMsg
@@ -689,8 +693,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
   }
 code_?:
   FUN_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

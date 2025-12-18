@@ -505,7 +505,7 @@ code_?:
             if (pMVar17 != (MethodInfo *)0x0) {
               if ((*pMVar17->name == '.') && ((pMVar17->flags & 0x800) != 0)) {
                 ppMVar18 = ppMVar6;
-                while (ppMVar19 = ppMVar18 + 0x3052a1b1,
+                while (ppMVar19 = ppMVar18 + 0x3052af3c,
                       ppMVar18 = (MethodInfo **)((longlong)ppMVar18 + 1),
                       *(char *)ppMVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
                   if (ppMVar18 == (MethodInfo **)0x7) {

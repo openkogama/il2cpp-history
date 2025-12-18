@@ -57,11 +57,11 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefingNotification::
       if (pTVar4 != (Text *)0x0) {
         if (pAVar6 != (Action *)0x0) {
           pAVar7 = pAVar1;
-          if (pAVar6->klass == pARam0000000182dbdde0) {
+          if (pAVar6->klass == pARam0000000182dc50c0) {
             pAVar7 = pAVar6;
           }
           if (pAVar7 == (Action *)0x0) {
-            FUN_?(pAVar6,pARam0000000182dbdde0);
+            FUN_?(pAVar6,pARam0000000182dc50c0);
             pcVar3 = (code *)swi(3);
             (*pcVar3)();
             return;

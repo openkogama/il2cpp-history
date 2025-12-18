@@ -1523,7 +1523,7 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::
                       (this_02,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                       );
-            aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xbf);
+            aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xc1);
             pOVar16 = (Object *)FUN_?(uRam_?,aiStackX_10);
             aiStackX_10[0] = iVar14;
             value_00 = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -1536,7 +1536,7 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::
                          (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar9 >> 8),2),
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                          ->klass->rgctx_data[0x22].method);
-              aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xcf);
+              aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xd1);
               pOVar16 = (Object *)FUN_?(uRam_?,aiStackX_10);
               method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                           ->klass->rgctx_data[0x22].method;

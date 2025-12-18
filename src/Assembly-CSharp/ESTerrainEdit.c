@@ -441,7 +441,7 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
               }
               if (pPVar12 != (PhotonPeer *)0x0) {
                 (*(pPVar12->klass->vtable).SendOperation.methodPtr)
-                          (pPVar12,CONCAT71((int7)((ulonglong)pMVar11 >> 8),0x35),this_01,
+                          (pPVar12,CONCAT71((int7)((ulonglong)pMVar11 >> 8),0x36),this_01,
                            TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                            SendReliable,(pPVar12->klass->vtable).SendOperation.method);
                 return 1;

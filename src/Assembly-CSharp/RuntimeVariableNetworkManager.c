@@ -697,11 +697,11 @@ bool Assembly-CSharp.dll::RuntimeVariableNetworkManager::
         uVar4 = (undefined7)((ulonglong)method_00 >> 8);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x16,value_00,(InsertionBehavior__Enum)uVar3,method_00);
-        uVar5 = CONCAT71(uVar4,0x46);
+                  (this_01,0x17,value_00,(InsertionBehavior__Enum)uVar3,method_00);
+        uVar5 = CONCAT71(uVar4,0x49);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x46,(Object *)value,
+                  (this_01,0x49,(Object *)value,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -711,7 +711,7 @@ bool Assembly-CSharp.dll::RuntimeVariableNetworkManager::
         }
         if (pPVar6 != (PhotonPeer *)0x0) {
           (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                    (pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x19),this_01,
+                    (pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x1a),this_01,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                      (pPVar6->klass->vtable).SendOperation.method);
           return 0;

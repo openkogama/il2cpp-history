@@ -1562,7 +1562,7 @@ code_?:
                 if (pMVar26 != (MethodInfo *)0x0) {
                   if ((*pMVar26->name == '.') && ((pMVar26->flags & 0x800) != 0)) {
                     ppMVar27 = ppMVar17;
-                    while (ppMVar28 = ppMVar27 + 0x3052a1b1,
+                    while (ppMVar28 = ppMVar27 + 0x3052af3c,
                           ppMVar27 = (MethodInfo **)((longlong)ppMVar27 + 1),
                           *(char *)ppMVar28 == (pMVar26->name + -1)[(longlong)ppMVar27]) {
                       if (ppMVar27 == (MethodInfo **)0x7) {

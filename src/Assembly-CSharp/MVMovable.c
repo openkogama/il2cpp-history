@@ -1159,10 +1159,10 @@ code_?:
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                 );
             if (pOVar2 == (Object *)0x0) goto code_?;
-            in_R8 = pMRam0000000182dbdd98;
+            in_R8 = pMRam0000000182dc5078;
             if ((pOVar2->klass->_0).element_class !=
                 (Il2CppClass *)
-                ((_union_155 *)&(pMRam0000000182dbdd98->fields)._._._.position)->genericMethod)
+                ((_union_155 *)&(pMRam0000000182dc5078->fields)._._._.position)->genericMethod)
             goto code_?;
             aIStackX_18[0].m_value = *(int32_t *)&pOVar2[1].klass;
             in_R8 = (MVCubeModelInstance *)
@@ -1328,11 +1328,11 @@ code_?:
                           (pDVar1,(Object *)key,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-      in_R8 = pMRam0000000182dbddc8;
+      in_R8 = pMRam0000000182dc50a8;
       if (pOVar2 == (Object *)0x0) goto code_?;
       if ((pOVar2->klass->_0).element_class !=
           (Il2CppClass *)
-          ((_union_155 *)&(pMRam0000000182dbddc8->fields)._._._.position)->genericMethod)
+          ((_union_155 *)&(pMRam0000000182dc50a8->fields)._._._.position)->genericMethod)
       goto code_?;
       (this->fields).angularSpeed = *(float *)&pOVar2[1].klass;
       goto code_?;
@@ -1828,10 +1828,10 @@ code_?:
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                 );
             if (pOVar2 == (Object *)0x0) goto code_?;
-            in_R8 = pMRam0000000182dbdd98;
+            in_R8 = pMRam0000000182dc5078;
             if ((pOVar2->klass->_0).element_class !=
                 (Il2CppClass *)
-                ((_union_155 *)&(pMRam0000000182dbdd98->fields)._._._.position)->genericMethod)
+                ((_union_155 *)&(pMRam0000000182dc5078->fields)._._._.position)->genericMethod)
             goto code_?;
             aIStackX_18[0].m_value = *(int32_t *)&pOVar2[1].klass;
             in_R8 = (MVCubeModelInstance *)
@@ -1997,11 +1997,11 @@ code_?:
                           (pDVar1,(Object *)key,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-      in_R8 = pMRam0000000182dbddc8;
+      in_R8 = pMRam0000000182dc50a8;
       if (pOVar2 == (Object *)0x0) goto code_?;
       if ((pOVar2->klass->_0).element_class !=
           (Il2CppClass *)
-          ((_union_155 *)&(pMRam0000000182dbddc8->fields)._._._.position)->genericMethod)
+          ((_union_155 *)&(pMRam0000000182dc50a8->fields)._._._.position)->genericMethod)
       goto code_?;
       (this->fields).angularSpeed = *(float *)&pOVar2[1].klass;
       goto code_?;
@@ -2900,11 +2900,11 @@ void Assembly-CSharp.dll::MVMovable::MVMovable_SyncProperties(MVMovable *this,Me
         uVar7 = (undefined7)((ulonglong)method_00 >> 8);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x16,value,(InsertionBehavior__Enum)uVar6,method_00);
-        uVar5 = CONCAT71(uVar7,0x12);
+                  (this_01,0x17,value,(InsertionBehavior__Enum)uVar6,method_00);
+        uVar5 = CONCAT71(uVar7,0x13);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x12,(Object *)this_00,
+                  (this_01,0x13,(Object *)this_00,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);

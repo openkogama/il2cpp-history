@@ -1308,7 +1308,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::
           UNLOCK();
           cRam_? = '\x01';
         }
-        auStackX_10[0] = 0x69;
+        auStackX_10[0] = 0x6c;
         pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
         if ((purchaseResponseData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
            (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
@@ -1570,7 +1570,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::AvatarAccessoryPurchaseP
                   (this_02,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        aiStackX_18[0]._0_1_ = 0x69;
+        aiStackX_18[0]._0_1_ = 0x6c;
         pOVar16 = (Object *)FUN_?(uRam_?,aiStackX_18);
         aiStackX_18[0] = iVar15;
         value = (Object *)FUN_?(uRam_?,aiStackX_18);
@@ -1622,11 +1622,11 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::AvatarAccessoryPurchaseP
             uVar19 = (undefined7)((ulonglong)method_00 >> 8);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_03,0x5e,pOVar16,(InsertionBehavior__Enum)uVar18,method_00);
-            uVar17 = CONCAT71(uVar19,0x5f);
+                      (this_03,0x61,pOVar16,(InsertionBehavior__Enum)uVar18,method_00);
+            uVar17 = CONCAT71(uVar19,0x62);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_03,0x5f,(Object *)this_02,
+                      (this_03,0x62,(Object *)this_02,
                        (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar18 >> 8),2),
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                        ->klass->rgctx_data[0x22].method);
@@ -1636,7 +1636,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::AvatarAccessoryPurchaseP
             }
             if (pPVar20 != (PhotonPeer *)0x0) {
               (*(pPVar20->klass->vtable).SendOperation.methodPtr)
-                        (pPVar20,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x23),this_03,
+                        (pPVar20,CONCAT71((int7)((ulonglong)uVar17 >> 8),0x24),this_03,
                          TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                          SendReliable,(pPVar20->klass->vtable).SendOperation.method);
               return;

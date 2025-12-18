@@ -194,7 +194,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Destr
 {
   if (cRam_? == '\0') {
     FUN_?(&
-                  TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
+                  TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>
                  );
     LOCK();
     UNLOCK();
@@ -205,7 +205,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Destr
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
+                  MethodInfo__MVBuildModeAvatarRemote__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_
                  );
     LOCK();
     UNLOCK();
@@ -274,16 +274,16 @@ code_?:
       pPVar2 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
       this_01 = (UnityAction_1_System_Object_ *)
                 FUN_?(
-                             TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
+                             TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>
                              );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
       UnityAction_1_System_Object___ctor
                 (this_01,(Object *)this,
-                 MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
+                 MethodInfo__MVBuildModeAvatarRemote__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_
                  ,(MethodInfo *)0x0);
       if (pPVar2 == (PlanetOwnershipsManager *)0x0) goto code_?;
-      PlanetOwnershipsManager::PlanetOwnershipsManager_remove_OnReceivedPlanetOwnershipData
-                (pPVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+      PlanetOwnershipsManager::PlanetOwnershipsManager_remove_OnReceivedPlanetPermissionsData
+                (pPVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_List_1_System_Int32_
                          *)this_01,(MethodInfo *)0x0);
     }
   }
@@ -622,7 +622,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Initi
                               (this_03,(this->fields)._._._._.id,(MethodInfo *)0x0);
                     if (cRam_? == '\0') {
                       FUN_?(&
-                                    TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
+                                    TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>
                                    );
                       LOCK();
                       UNLOCK();
@@ -635,7 +635,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Initi
                       LOCK();
                       UNLOCK();
                       FUN_?(&
-                                    MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
+                                    MethodInfo__MVBuildModeAvatarRemote__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_
                                    );
                       LOCK();
                       UNLOCK();
@@ -738,17 +738,17 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Initi
                                       _Instance_k__BackingField;
                             this_04 = (UnityAction_1_System_Object_ *)
                                       FUN_?(
-                                                  TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
+                                                  TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>
                                                   );
                             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
                             Object]::UnityAction_1_System_Object___ctor
                                       (this_04,(Object *)this,
-                                       MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
+                                       MethodInfo__MVBuildModeAvatarRemote__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_
                                        ,(MethodInfo *)0x0);
                             if (pPVar22 != (PlanetOwnershipsManager *)0x0) {
                               PlanetOwnershipsManager::
-                              PlanetOwnershipsManager_add_OnReceivedPlanetOwnershipData
-                                        (pPVar22,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+                              PlanetOwnershipsManager_add_OnReceivedPlanetPermissionsData
+                                        (pPVar22,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_List_1_System_Int32_
                                                   *)this_04,(MethodInfo *)0x0);
                               return;
                             }
@@ -763,9 +763,9 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Initi
                             pPVar22 = TypeInfo__PlanetOwnershipsManager->static_fields->
                                       _Instance_k__BackingField;
                             if (pPVar22 != (PlanetOwnershipsManager *)0x0) {
-                              MVBuildModeAvatarRemote_RecievedPlanetOwnershipDataCallback
+                              MVBuildModeAvatarRemote_ReceivedPlanetPermissionsDataCallback
                                         (this,(pPVar22->fields).
-                                              _PlanetOwnershipsEntries_k__BackingField,
+                                              _PlanetPermissionsEntries_k__BackingField,
                                          (MethodInfo *)0x0);
                               return;
                             }
@@ -802,7 +802,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
 {
   if (cRam_? == '\0') {
     FUN_?(&
-                  TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
+                  TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>
                  );
     LOCK();
     UNLOCK();
@@ -813,7 +813,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
+                  MethodInfo__MVBuildModeAvatarRemote__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_
                  );
     LOCK();
     UNLOCK();
@@ -913,16 +913,16 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
           pPVar12 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
           this_00 = (UnityAction_1_System_Object_ *)
                     FUN_?(
-                                 TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
+                                 TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::Collections::Generic::List<int>_>_>
                                  );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
           UnityAction_1_System_Object___ctor
                     (this_00,(Object *)this,
-                     MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
+                     MethodInfo__MVBuildModeAvatarRemote__ReceivedPlanetPermissionsDataCallback_System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>_
                      ,(MethodInfo *)0x0);
           if (pPVar12 != (PlanetOwnershipsManager *)0x0) {
-            PlanetOwnershipsManager::PlanetOwnershipsManager_add_OnReceivedPlanetOwnershipData
-                      (pPVar12,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+            PlanetOwnershipsManager::PlanetOwnershipsManager_add_OnReceivedPlanetPermissionsData
+                      (pPVar12,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_List_1_System_Int32_
                                *)this_00,(MethodInfo *)0x0);
             return;
           }
@@ -936,8 +936,8 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
           }
           pPVar12 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
           if (pPVar12 != (PlanetOwnershipsManager *)0x0) {
-            MVBuildModeAvatarRemote_RecievedPlanetOwnershipDataCallback
-                      (this,(pPVar12->fields)._PlanetOwnershipsEntries_k__BackingField,
+            MVBuildModeAvatarRemote_ReceivedPlanetPermissionsDataCallback
+                      (this,(pPVar12->fields)._PlanetPermissionsEntries_k__BackingField,
                        (MethodInfo *)0x0);
             return;
           }
@@ -952,15 +952,13 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
 }
 
 
-/* Void 
-   RecievedPlanetOwnershipDataCallback(Dictionary`2[System.Int32,MV.WorldObject.OwnershipData.PlanetOwnershipsEntry])
-    */
+/* Void ReceivedPlanetPermissionsDataCallback(Dictionary`2[System.Int32,List`1[System.Int32]]) */
 
 void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
-     MVBuildModeAvatarRemote_RecievedPlanetOwnershipDataCallback
+     MVBuildModeAvatarRemote_ReceivedPlanetPermissionsDataCallback
                (MVBuildModeAvatarRemote *this,
-               Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
-               *planetOwnershipsEntries,MethodInfo *method)
+               Dictionary_2_System_Int32_List_1_System_Int32_ *planetPermissionsEntries,
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -971,19 +969,22 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__ContainsKey_int_
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__ContainsKey_int_
                  );
     LOCK();
     UNLOCK();
     FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__get_Item_int_
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__get_Item_int_
                  );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     LOCK();
     UNLOCK();
     FUN_?(&MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_);
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral__is_not_included_as_planet_owner);
+    FUN_?(&StringLiteral__is_not_included_in_planet_permi);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_Remote_Avatar_);
@@ -1004,20 +1005,19 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
      ((pMVar3 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
                            (this_00,(this->fields)._._._._.ownerActorNr,(MethodInfo *)0x0),
       pMVar3 != (MVPlayer *)0x0 &&
-      (planetOwnershipsEntries !=
-       (Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *)0x0)))) {
+      (planetPermissionsEntries != (Dictionary_2_System_Int32_List_1_System_Int32_ *)0x0)))) {
     iVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
             Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
-                      ((Dictionary_2_System_Int32_UnityEngine_Vector3_ *)planetOwnershipsEntries,
+                      ((Dictionary_2_System_Int32_UnityEngine_Vector3_ *)planetPermissionsEntries,
                        (pMVar3->fields)._ProfileID_k__BackingField,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__ContainsKey_int_
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__ContainsKey_int_
                        ->klass->rgctx_data[0x21].method);
     if (iVar4 < 0) {
       pUVar5 = (pMVar3->fields)._UserProfileData_k__BackingField;
       if (pUVar5 != (UserProfileData *)0x0) {
         message = mscorlib.dll::System::String::String_Concat_5
                             (StringLiteral_Remote_Avatar_,(pUVar5->fields).UserName,
-                             StringLiteral__is_not_included_as_planet_owner,(MethodInfo *)0x0);
+                             StringLiteral__is_not_included_in_planet_permi,(MethodInfo *)0x0);
         if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
           FUN_?();
         }
@@ -1029,13 +1029,12 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
     else {
       pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                          ((Dictionary_2_System_Int32_System_Object_ *)planetOwnershipsEntries,
+                          ((Dictionary_2_System_Int32_System_Object_ *)planetPermissionsEntries,
                            (pMVar3->fields)._ProfileID_k__BackingField,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__get_Item_int_
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<int>_>__get_Item_int_
                           );
       if (pOVar6 != (Object *)0x0) {
-        cVar7 = *(char *)((longlong)&pOVar6[1].klass + 4);
-        if ((cVar7 == '\x02') || (cVar7 == '\x01')) {
+        if ((*(int *)&pOVar6[1].monitor != 0) && (iVar7 = FUN_?(pOVar6), iVar7 != -1)) {
           pLVar8 = MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
                               ((MVBuildModeAvatar *)this,0,(MethodInfo *)0x0);
           bVar9 = iRam_? != 0;

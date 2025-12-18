@@ -173,30 +173,30 @@ void Assembly-CSharp.dll::AccessoryAttacher::AccessoryAttacher_AttachAccessory
         uVar16 = CONCAT71((int7)(in_R9 >> 8),1);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x7e,pOVar15,(InsertionBehavior__Enum)uVar16,
+                  (this_00,0x81,pOVar15,(InsertionBehavior__Enum)uVar16,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         pOVar15 = (Object *)FUN_?(uRam_?,&stack0x00000010);
         uVar16 = CONCAT71((int7)((ulonglong)uVar16 >> 8),1);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x69,pOVar15,(InsertionBehavior__Enum)uVar16,
+                  (this_00,0x6c,pOVar15,(InsertionBehavior__Enum)uVar16,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         pOVar15 = (Object *)FUN_?(uRam_?,&stack0x00000010);
         uVar17 = CONCAT71((int7)((ulonglong)uVar16 >> 8),1);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x72,pOVar15,(InsertionBehavior__Enum)uVar17,
+                  (this_00,0x75,pOVar15,(InsertionBehavior__Enum)uVar17,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         pOVar15 = (Object *)FUN_?(uRam_?,&stack0x00000010);
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                     ->klass->rgctx_data[0x22].method;
-        uVar16 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x22);
+        uVar16 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x23);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x22,pOVar15,
+                  (this_00,0x23,pOVar15,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar17 >> 8),1),method_00);
         pPVar18 = (pMVar14->fields).peer;
         if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -206,7 +206,7 @@ void Assembly-CSharp.dll::AccessoryAttacher::AccessoryAttacher_AttachAccessory
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
           (*(pPVar18->klass->vtable).SendOperation.methodPtr)
-                    (pPVar18,CONCAT71((int7)((ulonglong)uVar16 >> 8),0x2e),this_00,
+                    (pPVar18,CONCAT71((int7)((ulonglong)uVar16 >> 8),0x2f),this_00,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
           return;
         }

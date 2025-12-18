@@ -27,11 +27,11 @@ void Assembly-CSharp.dll::PlayerTipNotification::PlayerTipNotification_Initializ
     if (pTVar1 != (Text *)0x0) {
       if (pOVar2 != (Object *)0x0) {
         pOVar3 = (Object *)0x0;
-        if (pOVar2->klass == pORam0000000182dbdde0) {
+        if (pOVar2->klass == pORam0000000182dc50c0) {
           pOVar3 = pOVar2;
         }
         if (pOVar3 == (Object *)0x0) {
-          FUN_?(pOVar2,pORam0000000182dbdde0);
+          FUN_?(pOVar2,pORam0000000182dc50c0);
           pcVar4 = (code *)swi(3);
           (*pcVar4)();
           return;

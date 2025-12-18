@@ -670,22 +670,22 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
   if (*(int *)&(TypeInfo__WinningConditionDebriefing____c->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__WinningConditionDebriefing____c);
   }
-  this_01 = TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0;
-  if (this_01 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+  this_00 = TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0;
+  if (this_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if (*(int *)&(TypeInfo__WinningConditionDebriefing____c->_1).field_0x1c == 0) {
       FUN_?(TypeInfo__WinningConditionDebriefing____c);
     }
     object = TypeInfo__WinningConditionDebriefing____c->static_fields->__9;
-    this_01 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+    this_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
               FUN_?(
                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                            );
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
     ExecuteEvents_EventFunction_1_System_Object___ctor
-              ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)object,
+              ((ExecuteEvents_EventFunction_1_System_Object_ *)this_00,(Object *)object,
                MethodInfo__WinningConditionDebriefing____c___OnWinningConditionReceived_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0 = this_01;
+    TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0 = this_00;
     if (iRam_? != 0) {
       uVar1 = (uint)((ulonglong)&TypeInfo__WinningConditionDebriefing____c->static_fields->__9__9_0
                      >> 0xc);
@@ -705,7 +705,7 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
     FUN_?();
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
+            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_00,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
   if (cRam_? == '\0') {
@@ -756,28 +756,44 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
         }
         pGVar9 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
         if (pGVar9 == (GameSessionData *)0x0) goto code_?;
-        if ((pGVar9->fields).gameMode != 0) {
-          return;
-        }
-        lVar10 = FUN_?();
-        if (lVar10 == 0) goto code_?;
-        cVar8 = FUN_?(1,TypeInfo__IEditModeUI,lVar10);
-        if (cVar8 == '\0') {
-          return;
+        if ((pGVar9->fields).gameMode != 3) {
+          MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+          if ((MVar10 != MVGameMode__Enum_Edit) &&
+             (MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
+             MVar10 != MVGameMode__Enum_SpaceEdit)) {
+            return;
+          }
+          lVar11 = FUN_?();
+          if (lVar11 == 0) goto code_?;
+          cVar8 = FUN_?(1,TypeInfo__IEditModeUI,lVar11);
+          if (cVar8 == '\0') {
+            return;
+          }
         }
       }
-      bVar11 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
-      if (bVar11 != 0) {
-        pSVar12 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+      bVar12 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
+      if (bVar12 != 0) {
+        pSVar13 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                             ((MethodInfo *)0x0);
-        if ((((pSVar12 == (SpawnRoleDataMediator *)0x0) ||
-             (pSVar13 = (pSVar12->fields).reviveState,
-             pSVar13 == (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_ReviveState_ *)0x0)) ||
-            (pSVar14 = (pSVar13->fields)._.subscribableVariable,
-            pSVar14 == (SubscribableVariable_1_ReviveState_ *)0x0)) ||
-           (this_00 = (pSVar14->fields)._.value, this_00 == (ReviveState *)0x0))
+        if ((((pSVar13 == (SpawnRoleDataMediator *)0x0) ||
+             (pSVar14 = (pSVar13->fields).reviveState,
+             pSVar14 == (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_ReviveState_ *)0x0)) ||
+            (pSVar15 = (pSVar14->fields)._.subscribableVariable,
+            pSVar15 == (SubscribableVariable_1_ReviveState_ *)0x0)) ||
+           (pRVar16 = (pSVar15->fields)._.value, pRVar16 == (ReviveState *)0x0))
         goto code_?;
-        ReviveState::ReviveState_ResetSafePostions(this_00,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&MethodInfo__System__Collections__Generic__List<SafeSpotData>__Clear__);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pLVar17 = (pRVar16->fields).safePositions;
+        (pRVar16->fields).currentPreviewedSafePosition = 0;
+        if (pLVar17 == (List_1_SafeSpotData_ *)0x0) goto code_?;
+        piVar18 = &(pLVar17->fields)._version;
+        *piVar18 = *piVar18 + 1;
+        (pLVar17->fields)._size = 0;
       }
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__IWinningConditionBriefing);
@@ -785,26 +801,26 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
         UNLOCK();
         cRam_? = '\x01';
       }
-      lVar10 = FUN_?(winningCondition,TypeInfo__IWinningConditionBriefing);
-      pIVar15 = TypeInfo__IWinningConditionBriefing;
-      if (lVar10 != 0) {
+      lVar11 = FUN_?(winningCondition,TypeInfo__IWinningConditionBriefing);
+      pIVar19 = TypeInfo__IWinningConditionBriefing;
+      if (lVar11 != 0) {
         if (winningCondition == (IWinningCondition *)0x0) goto code_?;
-        lVar10 = FUN_?(winningCondition,TypeInfo__IWinningConditionBriefing);
-        pIVar16 = TypeInfo__IWinningConditionBriefing;
-        if (lVar10 == 0) {
-          FUN_?(winningCondition,pIVar15);
+        lVar11 = FUN_?(winningCondition,TypeInfo__IWinningConditionBriefing);
+        pIVar20 = TypeInfo__IWinningConditionBriefing;
+        if (lVar11 == 0) {
+          FUN_?(winningCondition,pIVar19);
           pcVar6 = (code *)swi(3);
           (*pcVar6)();
           return;
         }
-        lVar10 = FUN_?(winningCondition,TypeInfo__IWinningConditionBriefing);
-        if (lVar10 == 0) {
-          FUN_?(winningCondition,pIVar16);
+        lVar11 = FUN_?(winningCondition,TypeInfo__IWinningConditionBriefing);
+        if (lVar11 == 0) {
+          FUN_?(winningCondition,pIVar20);
           pcVar6 = (code *)swi(3);
           (*pcVar6)();
           return;
         }
-        FUN_?(1,TypeInfo__IWinningConditionBriefing,lVar10,this);
+        FUN_?(1,TypeInfo__IWinningConditionBriefing,lVar11,this);
       }
       return;
     }

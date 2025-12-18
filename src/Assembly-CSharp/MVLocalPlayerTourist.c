@@ -1984,11 +1984,12 @@ void Assembly-CSharp.dll::MVLocalPlayerTourist::MVLocalPlayerTourist__cctor(Meth
 }
 
 
-/* MVLocalPlayerTourist(Int32, Int32, String, Int32, UserProfileData) */
+/* MVLocalPlayerTourist(Int32, Int32, String, Int32, List`1[System.Int32], UserProfileData) */
 
 void Assembly-CSharp.dll::MVLocalPlayerTourist::MVLocalPlayerTourist__ctor
                (MVLocalPlayerTourist *this,int32_t actorNumber,int32_t profileID,String *regionCode,
-               int32_t planetOwnershipTypeID,UserProfileData *userProfileData,MethodInfo *method)
+               int32_t planetOwnershipTypeID,List_1_System_Int32_ *planetPermissionIDs,
+               UserProfileData *userProfileData,MethodInfo *method)
 
 {
   pSVar1 = regionCode;
@@ -2091,8 +2092,9 @@ void Assembly-CSharp.dll::MVLocalPlayerTourist::MVLocalPlayerTourist__ctor
     } while (!bVar2);
   }
   pWVar11 = (WorldObjectUseRequirementTracker *)
-           FUN_?(TypeInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker
-                        );
+            FUN_?(
+                         TypeInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker
+                         );
   if (cRam_? == '\0') {
     FUN_?(&
                   MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__Add_UseRequirementType__float_
@@ -2209,17 +2211,32 @@ void Assembly-CSharp.dll::MVLocalPlayerTourist::MVLocalPlayerTourist__ctor
         UNLOCK();
       } while (!bVar2);
     }
-    bVar2 = cRam_? == '\0';
+    iVar17 = iRam_?;
     (this->fields)._.planetOwnershipTypeID = planetOwnershipTypeID;
-    if (bVar2) {
+    (this->fields)._.planetPermissionIDs = planetPermissionIDs;
+    if (iVar17 != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields)._.planetPermissionIDs >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar17 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((pMVar17 != (MVGameControllerBase *)0x0) &&
-       (this_00 = (pMVar17->fields).game, this_00 != (MVNetworkGame *)0x0)) {
+    pMVar18 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar18 != (MVGameControllerBase *)0x0) &&
+       (this_00 = (pMVar18->fields).game, this_00 != (MVNetworkGame *)0x0)) {
       iVar7 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
       (this->fields)._.joinTime = iVar7;
       return;

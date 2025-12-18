@@ -375,10 +375,10 @@ bool Assembly-CSharp.dll::MVLocalObjectController::
               if (this_02 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                 method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                             ->klass->rgctx_data[0x22].method;
-                uVar20 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+                uVar20 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                 Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                          (this_02,0x16,pOVar11,
+                          (this_02,0x17,pOVar11,
                            (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                            method_00);
                 pPVar21 = (pMVar19->fields).peer;
@@ -388,7 +388,7 @@ bool Assembly-CSharp.dll::MVLocalObjectController::
                 }
                 if (pPVar21 != (PhotonPeer *)0x0) {
                   (*(pPVar21->klass->vtable).SendOperation.methodPtr)
-                            (pPVar21,CONCAT71((int7)((ulonglong)uVar20 >> 8),0x30),this_02,
+                            (pPVar21,CONCAT71((int7)((ulonglong)uVar20 >> 8),0x31),this_02,
                              TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                              SendReliable,(pPVar21->klass->vtable).SendOperation.method);
                   goto code_?;
@@ -2408,13 +2408,13 @@ void Assembly-CSharp.dll::MVLocalObjectController::MVLocalObjectController_Vehic
   if (returnValues != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__FindEntry
-                      (returnValues,0x16,
+                      (returnValues,0x17,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__ContainsKey_unsigned_char_
                        ->klass->rgctx_data[0x21].method);
     if (iVar1 < 0) {
       return;
     }
-    plVar2 = (longlong *)FUN_?(returnValues,CONCAT71(in_register_00000011,0x16));
+    plVar2 = (longlong *)FUN_?(returnValues,CONCAT71(in_register_00000011,0x17));
     if (plVar2 != (longlong *)0x0) {
       if (*(longlong *)(*plVar2 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
         FUN_?(plVar2,lRam_?);
@@ -2451,11 +2451,11 @@ void Assembly-CSharp.dll::MVLocalObjectController::MVLocalObjectController_Vehic
         bVar9 = false;
         iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                 Object]::Dictionary_2_System_Byte_System_Object__FindEntry
-                          (returnValues,0xbf,
+                          (returnValues,0xc1,
                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__ContainsKey_unsigned_char_
                            ->klass->rgctx_data[0x21].method);
         if (-1 < iVar1) {
-          plVar2 = (longlong *)FUN_?(returnValues,CONCAT71(uVar10,0xbf));
+          plVar2 = (longlong *)FUN_?(returnValues,CONCAT71(uVar10,0xc1));
           if (plVar2 == (longlong *)0x0) goto code_?;
           if (*(longlong *)(*plVar2 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
             FUN_?(plVar2,lRam_?);

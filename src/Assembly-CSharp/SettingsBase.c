@@ -628,11 +628,11 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_OnPop(SettingsBase *this,Me
           uVar7 = (undefined7)((ulonglong)method_00 >> 8);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0x16,value,(InsertionBehavior__Enum)uVar6,method_00);
-          uVar4 = CONCAT71(uVar7,0x12);
+                    (this_01,0x17,value,(InsertionBehavior__Enum)uVar6,method_00);
+          uVar4 = CONCAT71(uVar7,0x13);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0x12,(Object *)pDVar2,
+                    (this_01,0x13,(Object *)pDVar2,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);

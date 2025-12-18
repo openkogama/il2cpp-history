@@ -17,7 +17,7 @@ public class MVLocalPlayerTourist : MVLocalPlayer
 	public static readonly Dictionary<string, string> Nouns;
 
 	// Constructors
-	public MVLocalPlayerTourist(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, UserProfileData userProfileData);
+	public MVLocalPlayerTourist(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, List<int> planetPermissionIDs, UserProfileData userProfileData);
 	static MVLocalPlayerTourist();
 }
 

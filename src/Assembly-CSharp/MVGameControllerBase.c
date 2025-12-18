@@ -283,12 +283,12 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
               (this_01,MVUtils_MethodInfo__UnityEngine__GameObject__AddComponent<MVUtils>__);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral_Build_Info___Version__3_5_13_0__);
+      FUN_?(&StringLiteral_Build_Info___Version__3_5_14_0__);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    message = StringLiteral_Build_Info___Version__3_5_13_0__;
+    message = StringLiteral_Build_Info___Version__3_5_14_0__;
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
@@ -4243,6 +4243,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_SetGameSess
   }
   if (iVar2 != 0) {
     if (iVar2 == 1) {
+code_?:
       pAVar3 = TypeInfo__AwayMonitor->static_fields->instance;
       pAVar10 = (AwayMonitor_IdleKickTimes *)FUN_?(TypeInfo__AwayMonitor__IdleKickTimes);
       AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__ctor(pAVar10,5,0xf,(MethodInfo *)0x0);
@@ -4269,19 +4270,22 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_SetGameSess
       goto code_?;
     }
     if (iVar2 != 2) {
-      EStack_11.klass = (Enum__Class *)TypeInfo__MV__Common__MVGameMode;
-      EStack_11.monitor = (MonitorData *)0xffffffffffffffff;
-      iStack_12 = iVar2;
-      pSVar13 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_11,(MethodInfo *)0x0);
-      pSVar13 = mscorlib.dll::System::String::String_Concat_5
-                         (StringLiteral_GameMode__,pSVar13,StringLiteral___is_not_accounted,
-                          (MethodInfo *)0x0);
-      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
-        FUN_?();
+      if (iVar2 == 3) goto code_?;
+      if (iVar2 != 4) {
+        EStack_11.klass = (Enum__Class *)TypeInfo__MV__Common__MVGameMode;
+        EStack_11.monitor = (MonitorData *)0xffffffffffffffff;
+        iStack_12 = iVar2;
+        pSVar13 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_11,(MethodInfo *)0x0);
+        pSVar13 = mscorlib.dll::System::String::String_Concat_5
+                           (StringLiteral_GameMode__,pSVar13,StringLiteral___is_not_accounted,
+                            (MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                  ((Object *)pSVar13,(MethodInfo *)0x0);
+        return;
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar13,(MethodInfo *)0x0);
-      return;
     }
   }
   pAVar3 = TypeInfo__AwayMonitor->static_fields->instance;

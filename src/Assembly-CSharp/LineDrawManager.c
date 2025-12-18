@@ -70,6 +70,7 @@ void Assembly-CSharp.dll::LineDrawManager::LineDrawManager_DrawLine
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 == (GameSessionData *)0x0) {
+code_?:
     FUN_?();
 code_?:
     uVar2 = func_?(&UNK_?);
@@ -79,7 +80,17 @@ code_?:
   }
   else {
     if ((pGVar1->fields).gameMode != 0) {
-      return;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        return;
+      }
     }
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {

@@ -66,7 +66,7 @@ void Assembly-CSharp.dll::PlayerInventoryDropToGameHandler::PlayerInventoryDropT
   }
   if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
        (IEditModeUI *)0x0) && (lVar6 = FUN_?(), lVar6 != 0)) {
-    if (_UNK_? <= fVar5 - *(float *)(lVar6 + 0x30)) {
+    if (_UNK_? <= fVar5 - *(float *)(lVar6 + 0x38)) {
       if ((this_01->fields).requiresUnlocking == 0) {
         pIVar7 = (this_01->fields).item;
         if (pIVar7 != (InventoryItem *)0x0) {
@@ -96,10 +96,10 @@ void Assembly-CSharp.dll::PlayerInventoryDropToGameHandler::PlayerInventoryDropT
                          (MethodInfo *)0x0);
               lVar6 = FUN_?();
               if ((lVar6 != 0) && (lVar6 = FUN_?(), lVar6 != 0)) {
-                *(float *)(lVar6 + 0x30) = fVar5;
+                *(float *)(lVar6 + 0x38) = fVar5;
                 lVar6 = FUN_?();
                 if ((lVar6 != 0) && (lVar6 = FUN_?(), lVar6 != 0)) {
-                  pDVar8 = *(Delegate **)(lVar6 + 0x20);
+                  pDVar8 = *(Delegate **)(lVar6 + 0x28);
                   this_04 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
                   uVar4 = 0;
                   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -110,7 +110,7 @@ void Assembly-CSharp.dll::PlayerInventoryDropToGameHandler::PlayerInventoryDropT
                   pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
                                      (pDVar8,(Delegate *)this_04,(MethodInfo *)0x0);
                   if (pDVar8 == (Delegate *)0x0) {
-                    *(undefined8 *)(lVar6 + 0x20) = 0;
+                    *(undefined8 *)(lVar6 + 0x28) = 0;
                   }
                   else {
                     pDVar9 = (Delegate *)0x0;
@@ -123,7 +123,7 @@ void Assembly-CSharp.dll::PlayerInventoryDropToGameHandler::PlayerInventoryDropT
                       (*pcVar3)();
                       return;
                     }
-                    *(Delegate **)(lVar6 + 0x20) = pDVar9;
+                    *(Delegate **)(lVar6 + 0x28) = pDVar9;
                     pDVar9 = (Delegate *)0x0;
                     if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
                       pDVar9 = pDVar8;
@@ -177,10 +177,10 @@ void Assembly-CSharp.dll::PlayerInventoryDropToGameHandler::PlayerInventoryDropT
                     if (this_05 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                   ->klass->rgctx_data[0x22].method;
-                      uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x28);
+                      uVar12 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x29);
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                       Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                                (this_05,0x28,value,
+                                (this_05,0x29,value,
                                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2)
                                  ,method_00);
                       pPVar13 = (pMVar10->fields).peer;

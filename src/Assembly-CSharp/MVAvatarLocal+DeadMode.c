@@ -72,7 +72,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_Activat
   pcRam_? = pcVar5;
   fVar7 = (float)(*pcRam_?)();
   if (extraout_RAX_00 == 0) goto code_?;
-  *(float *)(extraout_RAX_00 + 0xf4) = fVar7 + (this->fields).deadInterval;
+  *(float *)(extraout_RAX_00 + 0xfc) = fVar7 + (this->fields).deadInterval;
   pMVar1 = (this->fields)._.mvAvatar;
   if (pMVar1 == (MVAvatarLocal *)0x0) goto code_?;
   MVAvatarLocal::MVAvatarLocal_SetAnimation(pMVar1,StringLiteral_Dead,(MethodInfo *)0x0);
@@ -828,7 +828,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_HandleR
     pcRam_? = pcVar1;
     fVar3 = (float)(*pcRam_?)();
     if (extraout_RAX_00 != 0) {
-      *(float *)(extraout_RAX_00 + 0xf4) = fVar3 + (this->fields).deadInterval;
+      *(float *)(extraout_RAX_00 + 0xfc) = fVar3 + (this->fields).deadInterval;
       return;
     }
   }

@@ -86,7 +86,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode_Act
   fVar7 = (float)(*pcRam_?)();
   cVar10 = cRam_?;
   if (extraout_RAX_00 == 0) goto code_?;
-  *(float *)(extraout_RAX_00 + 0xf4) = fVar7 + (this->fields).reviveInterval;
+  *(float *)(extraout_RAX_00 + 0xfc) = fVar7 + (this->fields).reviveInterval;
   if (cVar10 == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();

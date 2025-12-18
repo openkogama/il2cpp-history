@@ -17,11 +17,11 @@ void Assembly-CSharp.dll::JoinUIUpdater::JoinUIUpdater_UpdateJoinStateForUI
     UNLOCK();
     cRam_? = '\x01';
   }
-  if (uVar1 != 0x49) {
+  if (uVar1 != 0x4a) {
     if (*(int *)&(TypeInfo__JoinUIUpdater->_1).field_0x1c == 0) {
       FUN_?();
     }
-    if ((TypeInfo__JoinUIUpdater->static_fields->latestJoinEvent != 0x3e) || (uVar1 == 0x3f)) {
+    if ((TypeInfo__JoinUIUpdater->static_fields->latestJoinEvent != 0x3f) || (uVar1 == 0x40)) {
       if (*(int *)&(TypeInfo__JoinUIUpdater->_1).field_0x1c == 0) {
         FUN_?();
       }
@@ -130,7 +130,7 @@ void Assembly-CSharp.dll::JoinUIUpdater::JoinUIUpdater__cctor(MethodInfo *method
       UNLOCK();
     } while (!bVar3);
   }
-  TypeInfo__JoinUIUpdater->static_fields->latestJoinEvent = 0x3a;
+  TypeInfo__JoinUIUpdater->static_fields->latestJoinEvent = 0x3b;
   return;
 }
 

@@ -437,6 +437,7 @@ code_?:
 int32_t Assembly-CSharp.dll::UpdateController::UpdateController_GetPresentState(MethodInfo *method)
 
 {
+  iVar1 = 1;
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MVGameControllerBase);
     LOCK();
@@ -452,45 +453,82 @@ int32_t Assembly-CSharp.dll::UpdateController::UpdateController_GetPresentState(
     UNLOCK();
     cRam_? = '\x01';
   }
-  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 != (GameSessionData *)0x0) {
-    iVar2 = 5;
-    if ((pGVar1->fields).gameMode != 0) {
-      iVar2 = 1;
-    }
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar2->fields).gameMode == 0) {
+code_?:
+    iVar1 = 5;
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar1 != (GameSessionData *)0x0) {
-      if ((pGVar1->fields).gameMode == 0) {
-        this = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this == (MVNetworkGame *)0x0) goto DAT_?;
-        bVar3 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this,(MethodInfo *)0x0);
-        if (bVar3 != 0) {
-          iVar2 = iVar2 + 8;
-        }
-      }
+    pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar2->fields).gameMode == 4) goto code_?;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar2->fields).gameMode == 0) {
+code_?:
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar3 == (MVGameControllerBase *)0x0) ||
+       (this = (pMVar3->fields).game, this == (MVNetworkGame *)0x0)) goto code_?;
+    bVar4 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      iVar1 = iVar1 + 8;
+    }
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar2->fields).gameMode == 4) goto code_?;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar2 != (GameSessionData *)0x0) {
+    if ((pGVar2->fields).gameMode != 1) {
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__MVGameControllerBase);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar1 != (GameSessionData *)0x0) {
-        iVar4 = iVar2 + 2;
-        if ((pGVar1->fields).gameMode != 1) {
-          iVar4 = iVar2;
-        }
-        return iVar4;
+      pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar2 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar2->fields).gameMode != 3) {
+        return iVar1;
       }
     }
+    return iVar1 + 2;
   }
-DAT_?:
+code_?:
   FUN_?();
   pcVar5 = (code *)swi(3);
   iVar6 = (*pcVar5)();

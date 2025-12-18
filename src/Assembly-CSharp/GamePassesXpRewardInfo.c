@@ -154,13 +154,35 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_Initial
     FUN_?();
   }
   pCVar2 = Styles::Styles_GetTeamColor(&CStack_3,MVTeam__Enum_None,1,(MethodInfo *)0x0);
-  if (pIVar1 != (Image *)0x0) {
-    CStack_3.r = pCVar2->r;
-    CStack_3.g = pCVar2->g;
-    CStack_3.b = pCVar2->b;
-    CStack_3.a = pCVar2->a;
-    (*(pIVar1->klass->vtable).set_color.methodPtr)
-              (pIVar1,&CStack_3,(pIVar1->klass->vtable).set_color.method);
+  if (pIVar1 == (Image *)0x0) goto code_?;
+  CStack_3.r = pCVar2->r;
+  CStack_3.g = pCVar2->g;
+  CStack_3.b = pCVar2->b;
+  CStack_3.a = pCVar2->a;
+  (*(pIVar1->klass->vtable).set_color.methodPtr)
+            (pIVar1,&CStack_3,(pIVar1->klass->vtable).set_color.method);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar4->fields).gameMode == 0) {
+code_?:
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+        (IEditModeUI *)0x0) goto code_?;
+    cVar5 = FUN_?(1);
+    if (cVar5 == '\0') goto code_?;
+  }
+  else {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -169,81 +191,68 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_Initial
     }
     pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar4 == (GameSessionData *)0x0) goto code_?;
-    if ((pGVar4->fields).gameMode == 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-          (IEditModeUI *)0x0) goto code_?;
-      cVar5 = FUN_?(1);
-      if (cVar5 == '\0') goto code_?;
-    }
-    this_00 = (this->fields).optionsButton;
-    if (this_00 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_00,0,(MethodInfo *)0x0);
+    if ((pGVar4->fields).gameMode == 4) goto code_?;
+  }
+  this_00 = (this->fields).optionsButton;
+  if (this_00 != (GameObject *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (this_00,0,(MethodInfo *)0x0);
 code_?:
-      GamePassesXpRewardInfo_UpdateXPText(this,(MethodInfo *)0x0);
-      GamePassesXpRewardInfo_UpdateXPTextVisibility(this,(MethodInfo *)0x0);
-      pAVar6 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate
-      ;
-      this_01 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,
-                 MethodInfo__GamePassesXpRewardInfo__OnGameProgressionDataUpdate__,(MethodInfo *)0x0
-                );
-      pAVar6 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar6,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pAVar6 == (Action *)0x0) {
-        TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
-             (Action *)0x0;
-      }
-      else {
-        pAVar7 = (Action *)0x0;
-        if (pAVar6->klass == TypeInfo__System__Action) {
-          pAVar7 = pAVar6;
-        }
-        if (pAVar7 == (Action *)0x0) {
-          FUN_?(pAVar6,TypeInfo__System__Action);
-          pcVar8 = (code *)swi(3);
-          (*pcVar8)();
-          return;
-        }
-        TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
-             pAVar7;
-        pAVar7 = (Action *)0x0;
-        if (pAVar6->klass == TypeInfo__System__Action) {
-          pAVar7 = pAVar6;
-        }
-        if (pAVar7 == (Action *)0x0) {
-          FUN_?(pAVar6,TypeInfo__System__Action);
-          pcVar8 = (code *)swi(3);
-          (*pcVar8)();
-          return;
-        }
-      }
-      if (iRam_? != 0) {
-        uVar9 = (uint)((ulonglong)
-                        &TypeInfo__GamePassProgressionController->static_fields->
-                         OnGamePassesProgressionUpdate >> 0xc);
-        puVar10 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
-        do {
-          uVar11 = *puVar10;
-          LOCK();
-          uVar12 = *puVar10;
-          if (uVar11 == uVar12) {
-            *puVar10 = uVar11 | 1L << (uVar9 & 0x3f);
-          }
-          UNLOCK();
-        } while (uVar11 != uVar12);
-      }
-      return;
+    GamePassesXpRewardInfo_UpdateXPText(this,(MethodInfo *)0x0);
+    GamePassesXpRewardInfo_UpdateXPTextVisibility(this,(MethodInfo *)0x0);
+    pAVar6 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,
+               MethodInfo__GamePassesXpRewardInfo__OnGameProgressionDataUpdate__,(MethodInfo *)0x0);
+    pAVar6 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar6,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pAVar6 == (Action *)0x0) {
+      TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
+           (Action *)0x0;
     }
+    else {
+      pAVar7 = (Action *)0x0;
+      if (pAVar6->klass == TypeInfo__System__Action) {
+        pAVar7 = pAVar6;
+      }
+      if (pAVar7 == (Action *)0x0) {
+        FUN_?(pAVar6,TypeInfo__System__Action);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
+           pAVar7;
+      pAVar7 = (Action *)0x0;
+      if (pAVar6->klass == TypeInfo__System__Action) {
+        pAVar7 = pAVar6;
+      }
+      if (pAVar7 == (Action *)0x0) {
+        FUN_?(pAVar6,TypeInfo__System__Action);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar9 = (uint)((ulonglong)
+                      &TypeInfo__GamePassProgressionController->static_fields->
+                       OnGamePassesProgressionUpdate >> 0xc);
+      puVar10 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar11 = *puVar10;
+        LOCK();
+        uVar12 = *puVar10;
+        if (uVar11 == uVar12) {
+          *puVar10 = uVar11 | 1L << (uVar9 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar11 != uVar12);
+    }
+    return;
   }
 code_?:
   FUN_?();
@@ -344,54 +353,66 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_OnGameP
     if ((pGVar1->fields).gameMode == 0) {
       return;
     }
-    bVar2 = (this->fields).tier;
     if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__GamePassesManager);
+      FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar3 != (PlayerPlanetData *)0x0) {
-      bVar4 = (pPVar3->fields).gamePassTier;
-      pTVar5 = (this->fields).xPAmountText;
-      value = bVar2 <= bVar4;
-      if ((pTVar5 != (Text *)0x0) &&
-         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pTVar5,(MethodInfo *)0x0), pGVar6 != (GameObject *)0x0))
-      {
-        bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar6,(MethodInfo *)0x0);
-        if ((bool)bVar7 == value) {
-          pTVar5 = (this->fields).xPAmountText;
-          if ((pTVar5 == (Text *)0x0) ||
-             (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pTVar5,(MethodInfo *)0x0),
-             pGVar6 == (GameObject *)0x0)) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar6,bVar4 < bVar2,(MethodInfo *)0x0);
-        }
-        pGVar6 = (this->fields).subscriberUI;
-        if (pGVar6 != (GameObject *)0x0) {
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      if ((pGVar1->fields).gameMode == 4) {
+        return;
+      }
+      bVar2 = (this->fields).tier;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__GamePassesManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+      if (pPVar3 != (PlayerPlanetData *)0x0) {
+        bVar4 = (pPVar3->fields).gamePassTier;
+        pTVar5 = (this->fields).xPAmountText;
+        value = bVar2 <= bVar4;
+        if ((pTVar5 != (Text *)0x0) &&
+           (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar5,(MethodInfo *)0x0), pGVar6 != (GameObject *)0x0)
+           ) {
           bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                             (pGVar6,(MethodInfo *)0x0);
           if ((bool)bVar7 == value) {
-            pGVar6 = (this->fields).subscriberUI;
-            if (pGVar6 == (GameObject *)0x0) goto code_?;
+            pTVar5 = (this->fields).xPAmountText;
+            if ((pTVar5 == (Text *)0x0) ||
+               (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pTVar5,(MethodInfo *)0x0),
+               pGVar6 == (GameObject *)0x0)) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar6,bVar4 < bVar2,(MethodInfo *)0x0);
           }
-          pGVar6 = (this->fields).claimedText;
+          pGVar6 = (this->fields).subscriberUI;
           if (pGVar6 != (GameObject *)0x0) {
             bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                               (pGVar6,(MethodInfo *)0x0);
-            if ((bool)bVar7 != value) {
-              pGVar6 = (this->fields).claimedText;
+            if ((bool)bVar7 == value) {
+              pGVar6 = (this->fields).subscriberUI;
               if (pGVar6 == (GameObject *)0x0) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar6,value,(MethodInfo *)0x0);
+                        (pGVar6,bVar4 < bVar2,(MethodInfo *)0x0);
             }
-            return;
+            pGVar6 = (this->fields).claimedText;
+            if (pGVar6 != (GameObject *)0x0) {
+              bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                                (pGVar6,(MethodInfo *)0x0);
+              if ((bool)bVar7 != value) {
+                pGVar6 = (this->fields).claimedText;
+                if (pGVar6 == (GameObject *)0x0) goto code_?;
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar6,value,(MethodInfo *)0x0);
+              }
+              return;
+            }
           }
         }
       }
@@ -751,54 +772,66 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_UpdateX
     if ((pGVar1->fields).gameMode == 0) {
       return;
     }
-    bVar2 = (this->fields).tier;
     if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__GamePassesManager);
+      FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar3 != (PlayerPlanetData *)0x0) {
-      bVar4 = (pPVar3->fields).gamePassTier;
-      pTVar5 = (this->fields).xPAmountText;
-      value = bVar2 <= bVar4;
-      if ((pTVar5 != (Text *)0x0) &&
-         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pTVar5,(MethodInfo *)0x0), pGVar6 != (GameObject *)0x0))
-      {
-        bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar6,(MethodInfo *)0x0);
-        if ((bool)bVar7 == value) {
-          pTVar5 = (this->fields).xPAmountText;
-          if ((pTVar5 == (Text *)0x0) ||
-             (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pTVar5,(MethodInfo *)0x0),
-             pGVar6 == (GameObject *)0x0)) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar6,bVar4 < bVar2,(MethodInfo *)0x0);
-        }
-        pGVar6 = (this->fields).subscriberUI;
-        if (pGVar6 != (GameObject *)0x0) {
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      if ((pGVar1->fields).gameMode == 4) {
+        return;
+      }
+      bVar2 = (this->fields).tier;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__GamePassesManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+      if (pPVar3 != (PlayerPlanetData *)0x0) {
+        bVar4 = (pPVar3->fields).gamePassTier;
+        pTVar5 = (this->fields).xPAmountText;
+        value = bVar2 <= bVar4;
+        if ((pTVar5 != (Text *)0x0) &&
+           (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar5,(MethodInfo *)0x0), pGVar6 != (GameObject *)0x0)
+           ) {
           bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                             (pGVar6,(MethodInfo *)0x0);
           if ((bool)bVar7 == value) {
-            pGVar6 = (this->fields).subscriberUI;
-            if (pGVar6 == (GameObject *)0x0) goto code_?;
+            pTVar5 = (this->fields).xPAmountText;
+            if ((pTVar5 == (Text *)0x0) ||
+               (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pTVar5,(MethodInfo *)0x0),
+               pGVar6 == (GameObject *)0x0)) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar6,bVar4 < bVar2,(MethodInfo *)0x0);
           }
-          pGVar6 = (this->fields).claimedText;
+          pGVar6 = (this->fields).subscriberUI;
           if (pGVar6 != (GameObject *)0x0) {
             bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                               (pGVar6,(MethodInfo *)0x0);
-            if ((bool)bVar7 != value) {
-              pGVar6 = (this->fields).claimedText;
+            if ((bool)bVar7 == value) {
+              pGVar6 = (this->fields).subscriberUI;
               if (pGVar6 == (GameObject *)0x0) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar6,value,(MethodInfo *)0x0);
+                        (pGVar6,bVar4 < bVar2,(MethodInfo *)0x0);
             }
-            return;
+            pGVar6 = (this->fields).claimedText;
+            if (pGVar6 != (GameObject *)0x0) {
+              bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                                (pGVar6,(MethodInfo *)0x0);
+              if ((bool)bVar7 != value) {
+                pGVar6 = (this->fields).claimedText;
+                if (pGVar6 == (GameObject *)0x0) goto code_?;
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar6,value,(MethodInfo *)0x0);
+              }
+              return;
+            }
           }
         }
       }

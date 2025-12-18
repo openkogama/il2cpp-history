@@ -960,164 +960,175 @@ void Assembly-CSharp.dll::AdvancedGhostIcon::AdvancedGhostIcon_Init
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      if (advancedGhost == (MVAdvancedGhost *)0x0) goto DAT_?;
-      AdvancedGhostIcon_AddSphereVolumeIndicator
-                (this,(advancedGhost->fields)._._._._.id,(MethodInfo *)0x0);
+  if (pGVar1 == (GameSessionData *)0x0) goto DAT_?;
+  if ((pGVar1->fields).gameMode == 0) {
+code_?:
+    if (advancedGhost == (MVAdvancedGhost *)0x0) goto DAT_?;
+    AdvancedGhostIcon_AddSphereVolumeIndicator
+              (this,(advancedGhost->fields)._._._._.id,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    if (body != (MVCubeModelBase *)0x0) {
-      pAVar2 = (body->fields).Changed;
-      this_00 = (UnityAction_1_System_Object_ *)
-                FUN_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-      UnityAction_1_System_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__AdvancedGhostIcon__body_Changed_CubeModelChangedEventArgs_,
-                 (MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto DAT_?;
+    if ((pGVar1->fields).gameMode == 4) goto code_?;
+  }
+  if (body != (MVCubeModelBase *)0x0) {
+    pAVar2 = (body->fields).Changed;
+    this_00 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_00,(Object *)this,
+               MethodInfo__AdvancedGhostIcon__body_Changed_CubeModelChangedEventArgs_,
+               (MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    pAVar4 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
+    if (pDVar3 == (Delegate *)0x0) {
+      (body->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
+    }
+    else {
+      pAVar2 = (Action_1_CubeModelChangedEventArgs_ *)
+                FUN_?(pDVar3,TypeInfo__System__Action<CubeModelChangedEventArgs>);
+      if (pAVar2 == (Action_1_CubeModelChangedEventArgs_ *)0x0) {
+        FUN_?(pDVar3,pAVar4);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      (body->fields).Changed = pAVar2;
       pAVar4 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
-      if (pDVar3 == (Delegate *)0x0) {
-        (body->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
+      lVar6 = FUN_?(pDVar3,TypeInfo__System__Action<CubeModelChangedEventArgs>);
+      if (lVar6 == 0) {
+        FUN_?(pDVar3,pAVar4);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
       }
-      else {
-        pAVar2 = (Action_1_CubeModelChangedEventArgs_ *)
-                  FUN_?(pDVar3,TypeInfo__System__Action<CubeModelChangedEventArgs>);
-        if (pAVar2 == (Action_1_CubeModelChangedEventArgs_ *)0x0) {
-          FUN_?(pDVar3,pAVar4);
-          pcVar5 = (code *)swi(3);
-          (*pcVar5)();
-          return;
-        }
-        (body->fields).Changed = pAVar2;
-        pAVar4 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
-        lVar6 = FUN_?(pDVar3,TypeInfo__System__Action<CubeModelChangedEventArgs>);
-        if (lVar6 == 0) {
-          FUN_?(pDVar3,pAVar4);
-          pcVar5 = (code *)swi(3);
-          (*pcVar5)();
-          return;
-        }
-      }
-      if (iRam_? != 0) {
-        uVar7 = (uint)((ulonglong)&(body->fields).Changed >> 0xc);
-        puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
-        do {
-          uVar9 = *puVar8;
-          LOCK();
-          uVar10 = *puVar8;
-          if (uVar9 == uVar10) {
-            *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
-          }
-          UNLOCK();
-        } while (uVar9 != uVar10);
-      }
-      AdvancedGhostIcon_CloneCubeMeshes(this,body,(MethodInfo *)0x0);
-      if (enabledCulling == 0) {
-        (this->fields).visible = 1;
-        (this->fields).wantsVisible = 1;
-      }
-      else {
-        AdvancedGhostIcon_SetupCulling(this,advancedGhost,(MethodInfo *)0x0);
-      }
-      if (cRam_? == '\0') {
-        FUN_?(&
-                      MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Count__
-                     );
-        LOCK();
-        UNLOCK();
-        FUN_?(&
-                      MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                     );
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pLVar11 = (this->fields).teamIrisObjects;
-      MVar12 = MVTeam__Enum_Server;
-      if (team != MVTeam__Enum_None) {
-        MVar12 = team;
-      }
-      uVar7 = 0;
-      if (pLVar11 != (List_1_OculusTeamGameObject_ *)0x0) {
-        lVar6 = 0x20;
-        while( true ) {
-          if ((pLVar11->fields)._size <= (int)uVar7) {
-            return;
-          }
-          pLVar11 = (this->fields).teamIrisObjects;
-          if (pLVar11 == (List_1_OculusTeamGameObject_ *)0x0) break;
-          if ((uint)(pLVar11->fields)._size <= uVar7) {
-code_?:
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
-                      ((MethodInfo *)0x0);
-            pcVar5 = (code *)swi(3);
-            (*pcVar5)();
-            return;
-          }
-          pOVar13 = (pLVar11->fields)._items;
-          if (pOVar13 == (OculusTeamGameObject__Array *)0x0) break;
-          if ((uint)pOVar13->max_length <= uVar7) {
-code_?:
-            FUN_?();
-            pcVar5 = (code *)swi(3);
-            (*pcVar5)();
-            return;
-          }
-          lVar14 = *(longlong *)((longlong)pOVar13->vector + lVar6 + -0x20);
-          if ((lVar14 == 0) || (obj = *(Object **)(lVar14 + 0x18), obj == (Object *)0x0)) break;
-          if (cRam_? == '\0') {
-            FUN_?(&
-                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
-                         );
-            LOCK();
-            UNLOCK();
-            cRam_? = '\x01';
-          }
-          if (obj[1].klass == (Object__Class *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
-            ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
-            pcVar5 = (code *)swi(3);
-            (*pcVar5)();
-            return;
-          }
-          pcVar5 = pcRam_?;
-          if ((pcRam_? == (code *)0x0) &&
-             (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
-            uVar15 = func_?(&UNK_?);
-            FUN_?(uVar15,0);
-            pcVar5 = (code *)swi(3);
-            (*pcVar5)();
-            return;
-          }
-          pcRam_? = pcVar5;
-          (*pcRam_?)();
-          pLVar11 = (this->fields).teamIrisObjects;
-          if (pLVar11 == (List_1_OculusTeamGameObject_ *)0x0) break;
-          if ((uint)(pLVar11->fields)._size <= uVar7) goto code_?;
-          pOVar13 = (pLVar11->fields)._items;
-          if (pOVar13 == (OculusTeamGameObject__Array *)0x0) break;
-          if ((uint)pOVar13->max_length <= uVar7) goto code_?;
-          lVar14 = *(longlong *)((longlong)pOVar13->vector + lVar6 + -0x20);
-          if (lVar14 == 0) break;
-          if (*(MVTeam__Enum *)(lVar14 + 0x10) == MVar12) {
-            lVar14 = FUN_?((this->fields).teamIrisObjects,uVar7);
-            if ((lVar14 == 0) || (*(GameObject **)(lVar14 + 0x18) == (GameObject *)0x0)) break;
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (*(GameObject **)(lVar14 + 0x18),1,(MethodInfo *)0x0);
-          }
-          pLVar11 = (this->fields).teamIrisObjects;
-          uVar7 = uVar7 + 1;
-          lVar6 = lVar6 + 8;
-          if (pLVar11 == (List_1_OculusTeamGameObject_ *)0x0) break;
-        }
-      }
-      FUN_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
     }
+    if (iRam_? != 0) {
+      uVar7 = (uint)((ulonglong)&(body->fields).Changed >> 0xc);
+      puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar9 = *puVar8;
+        LOCK();
+        uVar10 = *puVar8;
+        if (uVar9 == uVar10) {
+          *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar9 != uVar10);
+    }
+    AdvancedGhostIcon_CloneCubeMeshes(this,body,(MethodInfo *)0x0);
+    if (enabledCulling == 0) {
+      (this->fields).visible = 1;
+      (this->fields).wantsVisible = 1;
+    }
+    else {
+      AdvancedGhostIcon_SetupCulling(this,advancedGhost,(MethodInfo *)0x0);
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Count__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pLVar11 = (this->fields).teamIrisObjects;
+    MVar12 = MVTeam__Enum_Server;
+    if (team != MVTeam__Enum_None) {
+      MVar12 = team;
+    }
+    uVar7 = 0;
+    if (pLVar11 != (List_1_OculusTeamGameObject_ *)0x0) {
+      lVar6 = 0x20;
+      while( true ) {
+        if ((pLVar11->fields)._size <= (int)uVar7) {
+          return;
+        }
+        pLVar11 = (this->fields).teamIrisObjects;
+        if (pLVar11 == (List_1_OculusTeamGameObject_ *)0x0) break;
+        if ((uint)(pLVar11->fields)._size <= uVar7) {
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pOVar13 = (pLVar11->fields)._items;
+        if (pOVar13 == (OculusTeamGameObject__Array *)0x0) break;
+        if ((uint)pOVar13->max_length <= uVar7) {
+code_?:
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        lVar14 = *(longlong *)((longlong)pOVar13->vector + lVar6 + -0x20);
+        if ((lVar14 == 0) || (obj = *(Object **)(lVar14 + 0x18), obj == (Object *)0x0)) break;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (obj[1].klass == (Object__Class *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar15 = func_?(&UNK_?);
+          FUN_?(uVar15,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        (*pcRam_?)();
+        pLVar11 = (this->fields).teamIrisObjects;
+        if (pLVar11 == (List_1_OculusTeamGameObject_ *)0x0) break;
+        if ((uint)(pLVar11->fields)._size <= uVar7) goto code_?;
+        pOVar13 = (pLVar11->fields)._items;
+        if (pOVar13 == (OculusTeamGameObject__Array *)0x0) break;
+        if ((uint)pOVar13->max_length <= uVar7) goto code_?;
+        lVar14 = *(longlong *)((longlong)pOVar13->vector + lVar6 + -0x20);
+        if (lVar14 == 0) break;
+        if (*(MVTeam__Enum *)(lVar14 + 0x10) == MVar12) {
+          lVar14 = FUN_?((this->fields).teamIrisObjects,uVar7);
+          if ((lVar14 == 0) || (*(GameObject **)(lVar14 + 0x18) == (GameObject *)0x0)) break;
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (*(GameObject **)(lVar14 + 0x18),1,(MethodInfo *)0x0);
+        }
+        pLVar11 = (this->fields).teamIrisObjects;
+        uVar7 = uVar7 + 1;
+        lVar6 = lVar6 + 8;
+        if (pLVar11 == (List_1_OculusTeamGameObject_ *)0x0) break;
+      }
+    }
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
   }
 DAT_?:
   FUN_?();
@@ -2332,12 +2343,24 @@ void Assembly-CSharp.dll::AdvancedGhostIcon::AdvancedGhostIcon_set_Radius
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      this_00 = (this->fields).lineRangeIndicator;
-      if (this_00 == (LineRangeIndicator *)0x0) goto code_?;
-      LineRangeIndicator::LineRangeIndicator_SetRange(this_00,value,(MethodInfo *)0x0);
+    if ((pGVar1->fields).gameMode != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 4) {
+        return;
+      }
     }
-    return;
+    this_00 = (this->fields).lineRangeIndicator;
+    if (this_00 != (LineRangeIndicator *)0x0) {
+      LineRangeIndicator::LineRangeIndicator_SetRange(this_00,value,(MethodInfo *)0x0);
+      return;
+    }
   }
 code_?:
   FUN_?();

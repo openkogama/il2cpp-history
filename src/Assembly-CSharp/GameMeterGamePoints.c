@@ -1075,52 +1075,54 @@ void Assembly-CSharp.dll::GameMeterGamePoints::GameMeterGamePoints_OnGainEffects
     UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-  if (pPVar1 == (PlayerPlanetData *)0x0) goto code_?;
-  iVar2 = (pPVar1->fields).highScoreGamePoints;
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__MVGameControllerBase);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar3 == (GameSessionData *)0x0) goto code_?;
-  if ((pGVar3->fields).gameMode == 0) {
-code_?:
-    iVar2 = (this->fields).currentGamePoints;
-  }
-  else {
+  if (TypeInfo__GamePassesManager->static_fields->playerPlanetData != (PlayerPlanetData *)0x0) {
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar3 == (GameSessionData *)0x0) goto code_?;
-    if ((pGVar3->fields).profileID < 1) goto code_?;
-  }
-  pGVar4 = (this->fields).countController;
-  if (pGVar4 != (GamePointGainEffectCountController *)0x0) {
-    pTVar5 = (pGVar4->fields).gamePointAmount;
-    (pGVar4->fields).currentGamePointAmountDisplayed = iVar2;
-    pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&(pGVar4->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0
-                       );
-    if (pTVar5 != (Text *)0x0) {
-      UNRECOVERED_JUMPTABLE = (pTVar5->klass->vtable).set_text.methodPtr;
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      if ((pGVar1->fields).gameMode != 0) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+        if ((pGVar1->fields).gameMode != 4) {
+          bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0)
+          ;
+          if (bVar2 == 0) {
+            return;
+          }
+        }
+      }
+      pGVar3 = (this->fields).countController;
+      if (pGVar3 != (GamePointGainEffectCountController *)0x0) {
+        pTVar4 = (pGVar3->fields).gamePointAmount;
+        (pGVar3->fields).currentGamePointAmountDisplayed = (this->fields).currentGamePoints;
+        pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+                           ((Int32 *)&(pGVar3->fields).currentGamePointAmountDisplayed,
+                            (MethodInfo *)0x0);
+        if (pTVar4 != (Text *)0x0) {
+          UNRECOVERED_JUMPTABLE = (pTVar4->klass->vtable).set_text.methodPtr;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      (*UNRECOVERED_JUMPTABLE)
-                (pTVar5,pSVar6,(pTVar5->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
-      return;
+          (*UNRECOVERED_JUMPTABLE)
+                    (pTVar4,pSVar5,(pTVar4->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+      }
     }
   }
 code_?:
   FUN_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1206,10 +1208,7 @@ void Assembly-CSharp.dll::GameMeterGamePoints::GameMeterGamePoints_OnGamePointRe
       if (pLVar1 == (List_1_GamePointGainEffect_ *)0x0) goto code_?;
     }
     if (pLVar3 != (List_1_GamePointGainEffect_ *)0x0) {
-      if (0 < (pLVar3->fields)._size) {
-        return;
-      }
-      if (0 < (this->fields).gamePointsToInstantiate) {
+      if ((0 < (pLVar3->fields)._size) || (0 < (this->fields).gamePointsToInstantiate)) {
         return;
       }
       if (cRam_? == '\0') {
@@ -1218,43 +1217,41 @@ void Assembly-CSharp.dll::GameMeterGamePoints::GameMeterGamePoints_OnGamePointRe
         UNLOCK();
         cRam_? = '\x01';
       }
-      pPVar8 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-      if (pPVar8 != (PlayerPlanetData *)0x0) {
-        iVar9 = (pPVar8->fields).highScoreGamePoints;
+      if (TypeInfo__GamePassesManager->static_fields->playerPlanetData != (PlayerPlanetData *)0x0) {
         if (cRam_? == '\0') {
           FUN_?(&TypeInfo__MVGameControllerBase);
           LOCK();
           UNLOCK();
           cRam_? = '\x01';
         }
-        pGVar10 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if (pGVar10 != (GameSessionData *)0x0) {
-          if ((pGVar10->fields).gameMode == 0) {
-code_?:
-            iVar9 = (this->fields).currentGamePoints;
-          }
-          else {
+        pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar8 != (GameSessionData *)0x0) {
+          if ((pGVar8->fields).gameMode != 0) {
             if (cRam_? == '\0') {
               FUN_?(&TypeInfo__MVGameControllerBase);
               LOCK();
               UNLOCK();
               cRam_? = '\x01';
             }
-            pGVar10 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
+            pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
             ;
-            if (pGVar10 == (GameSessionData *)0x0) goto code_?;
-            if ((pGVar10->fields).profileID < 1) goto code_?;
+            if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+            if (((pGVar8->fields).gameMode != 4) &&
+               (bVar9 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession
+                                  ((MethodInfo *)0x0), bVar9 == 0)) {
+              return;
+            }
           }
           pGVar7 = (this->fields).countController;
           if (pGVar7 != (GamePointGainEffectCountController *)0x0) {
-            (pGVar7->fields).currentGamePointAmountDisplayed = iVar9;
-            pTVar11 = (pGVar7->fields).gamePointAmount;
-            pSVar12 = mscorlib.dll::System::Int32::Int32_ToString
+            pTVar10 = (pGVar7->fields).gamePointAmount;
+            (pGVar7->fields).currentGamePointAmountDisplayed = (this->fields).currentGamePoints;
+            pSVar11 = mscorlib.dll::System::Int32::Int32_ToString
                                ((Int32 *)&(pGVar7->fields).currentGamePointAmountDisplayed,
                                 (MethodInfo *)0x0);
-            if (pTVar11 != (Text *)0x0) {
-              (*(pTVar11->klass->vtable).set_text.methodPtr)
-                        (pTVar11,pSVar12,(pTVar11->klass->vtable).set_text.method);
+            if (pTVar10 != (Text *)0x0) {
+              (*(pTVar10->klass->vtable).set_text.methodPtr)
+                        (pTVar10,pSVar11,(pTVar10->klass->vtable).set_text.method);
               return;
             }
           }

@@ -954,7 +954,7 @@ code_?:
                 if (pMVar19 != (MethodInfo *)0x0) {
                   if ((*pMVar19->name == '.') && ((pMVar19->flags & 0x800) != 0)) {
                     ppMVar20 = ppMVar11;
-                    while (ppMVar21 = ppMVar20 + 0x3052a1b1,
+                    while (ppMVar21 = ppMVar20 + 0x3052af3c,
                           ppMVar20 = (MethodInfo **)((longlong)ppMVar20 + 1),
                           *(char *)ppMVar21 == (pMVar19->name + -1)[(longlong)ppMVar20]) {
                       if (ppMVar20 == (MethodInfo **)0x7) {

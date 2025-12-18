@@ -1594,19 +1594,18 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnFadeFinished
                         _GameSessionData_k__BackingField;
               if (pGVar8 == (GameSessionData *)0x0) goto code_?;
               if ((pGVar8->fields).gameMode != 0) {
-                bVar9 = TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown
-                ;
                 if (cRam_? == '\0') {
-                  FUN_?(&TypeInfo__GamePassesManager);
+                  FUN_?(&TypeInfo__MVGameControllerBase);
                   LOCK();
                   UNLOCK();
                   cRam_? = '\x01';
                 }
-                pPVar6 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-                if (pPVar6 == (PlayerPlanetData *)0x0) goto code_?;
-                if ((bVar9 < (pPVar6->fields).gamePassTier) &&
-                   (TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown <
-                    bVar7)) {
+                pGVar8 = TypeInfo__MVGameControllerBase->static_fields->
+                          _GameSessionData_k__BackingField;
+                if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+                if ((pGVar8->fields).gameMode != 4) {
+                  bVar9 = TypeInfo__TierUnlockedPopupController->static_fields->
+                          HighestTierRewardShown;
                   if (cRam_? == '\0') {
                     FUN_?(&TypeInfo__GamePassesManager);
                     LOCK();
@@ -1615,9 +1614,21 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnFadeFinished
                   }
                   pPVar6 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
                   if (pPVar6 == (PlayerPlanetData *)0x0) goto code_?;
-                  if (bVar7 <= (pPVar6->fields).gamePassTier) {
-                    DeathUIController_ShowTierUnlockedPopup(this,0,0,(MethodInfo *)0x0);
-                    return;
+                  if ((bVar9 < (pPVar6->fields).gamePassTier) &&
+                     (TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown <
+                      bVar7)) {
+                    if (cRam_? == '\0') {
+                      FUN_?(&TypeInfo__GamePassesManager);
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pPVar6 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+                    if (pPVar6 == (PlayerPlanetData *)0x0) goto code_?;
+                    if (bVar7 <= (pPVar6->fields).gamePassTier) {
+                      DeathUIController_ShowTierUnlockedPopup(this,0,0,(MethodInfo *)0x0);
+                      return;
+                    }
                   }
                 }
               }
@@ -4541,22 +4552,18 @@ bool Assembly-CSharp.dll::DeathUIController::DeathUIController_ShouldShowTierRew
     if ((pGVar1->fields).gameMode == 0) {
       return 0;
     }
-    bVar2 = TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown;
     if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__GamePassesManager);
+      FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar3 != (PlayerPlanetData *)0x0) {
-      if ((pPVar3->fields).gamePassTier <= bVar2) {
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      if ((pGVar1->fields).gameMode == 4) {
         return 0;
       }
-      if ((byte)tierToShow <=
-          TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown) {
-        return 0;
-      }
+      bVar2 = TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown;
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__GamePassesManager);
         LOCK();
@@ -4565,7 +4572,23 @@ bool Assembly-CSharp.dll::DeathUIController::DeathUIController_ShouldShowTierRew
       }
       pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
       if (pPVar3 != (PlayerPlanetData *)0x0) {
-        return (byte)tierToShow <= (pPVar3->fields).gamePassTier;
+        if ((pPVar3->fields).gamePassTier <= bVar2) {
+          return 0;
+        }
+        if ((byte)tierToShow <=
+            TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown) {
+          return 0;
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__GamePassesManager);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+        if (pPVar3 != (PlayerPlanetData *)0x0) {
+          return (byte)tierToShow <= (pPVar3->fields).gamePassTier;
+        }
       }
     }
   }

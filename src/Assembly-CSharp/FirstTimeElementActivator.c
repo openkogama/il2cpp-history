@@ -850,123 +850,134 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 == (GameSessionData *)0x0) {
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  if ((pGVar1->fields).gameMode == 1) {
-    return;
-  }
-  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  value = StringLiteral_Great_job__XP_rewarded_;
-  if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  ,2,0);
-    LOCK();
-    UNLOCK();
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                 );
-    LOCK();
-    UNLOCK();
-    FUN_?(&
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 );
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__NotificationController);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-             *)FUN_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                            );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  UIR::UIRenderDevice+DisableForceGammaMaterial]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-            );
-  auStackX_8[0] = 1;
-  pOVar3 = (Object *)FUN_?(uRam_?,auStackX_8);
-  if (this_01 ==
-      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-       *)0x0) {
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__TryInsert
-            ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar3,(Object *)value,
-             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-             ->klass->rgctx_data[0x22].method);
-  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  uVar4 = 0;
-  if (cRam_? == '\0') {
-    FUN_?(&
-                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  ,this_01,2,0);
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__NotificationController);
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__NotificationLifetime);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  pOVar3 = (Object *)FUN_?(uRam_?,&stack0x00000018);
-  value_00 = (Object *)FUN_?(TypeInfo__NotificationLifetime,&stack0x00000018);
-  if (this_01 !=
-      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
-       *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryInsert
-              ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar3,value_00,
-               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-               ->klass->rgctx_data[0x22].method);
-    if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__NotificationsManager);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
-      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
-        FUN_?();
-      }
+  if (pGVar1 != (GameSessionData *)0x0) {
+    if ((pGVar1->fields).gameMode != 1) {
       if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__NotificationsManager);
+        FUN_?(&TypeInfo__MVGameControllerBase);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
-      if (this_00 == (NotificationsManager *)0x0) goto code_?;
-      NotificationsManager::NotificationsManager_InstantiateNotification
-                (this_00,NotificationType__Enum_FirstTimeXPRewarded,
-                 (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+      if ((pGVar1->fields).gameMode != 3) {
+        if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        value = StringLiteral_Great_job__XP_rewarded_;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                        ,2,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__NotificationController);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        auStackX_8[0] = 1;
+        pOVar2 = (Object *)FUN_?(uRam_?,auStackX_8);
+        if (this_01 ==
+            (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)0x0) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar2,(Object *)value,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+        if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        uVar4 = 0;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                        ,this_01,2,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__NotificationController);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__NotificationLifetime);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pOVar2 = (Object *)FUN_?(uRam_?,&stack0x00000018);
+        value_00 = (Object *)FUN_?(TypeInfo__NotificationLifetime,&stack0x00000018);
+        if (this_01 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar2,value_00,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__NotificationsManager);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
+            if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__NotificationsManager);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
+            if (this_00 == (NotificationsManager *)0x0) goto code_?;
+            NotificationsManager::NotificationsManager_InstantiateNotification
+                      (this_00,NotificationType__Enum_FirstTimeXPRewarded,
+                       (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+          }
+          return;
+        }
+code_?:
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
     }
     return;
   }
 code_?:
   FUN_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

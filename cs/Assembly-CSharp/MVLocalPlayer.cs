@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Assets.Scripts.Network.Player.SpawnRoles.SpawnRoleData.Mediator;
@@ -30,6 +31,7 @@ public abstract class MVLocalPlayer : MVPlayer
 	private WorldObjectUseRequirementTracker _WorldObjectUseRequirementTracker_k__BackingField;
 	protected XPProgress xpProgress;
 	private int planetOwnershipTypeID;
+	private List<int> planetPermissionIDs;
 	public XPProgress.OnXPProgressDataDelegate OnXPProgressData;
 	protected int joinTime;
 	protected const float respawnDuration = 4f;
@@ -47,6 +49,7 @@ public abstract class MVLocalPlayer : MVPlayer
 	public int DefaultBodyWoId { get; }
 	public int PlanetOwnershipTypeID { get; private set; }
 	public PlanetOwnershipType PlanetOwnership { get; }
+	public List<PlanetPermissionType> PlanetPermissions { get; }
 	public XPProgressData XPProgressData { get; }
 	public int JoinTime { get; }
 	public bool CanGetXPProgressData { get; }
@@ -57,8 +60,25 @@ public abstract class MVLocalPlayer : MVPlayer
 	public bool IsAdmin { get; }
 	public bool IsChatLocked { get; }
 
+	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<int, PlanetPermissionType> __9__35_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal PlanetPermissionType _get_PlanetPermissions_b__35_0(int x);
+	}
+
 	// Constructors
-	public MVLocalPlayer(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, UserProfileData userProfileData);
+	public MVLocalPlayer(int actorNumber, int profileID, string regionCode, int planetOwnershipTypeID, List<int> planetPermissionIDs, UserProfileData userProfileData);
 
 	// Methods
 	private void SpawnRoleModeOnOnChange(SpawnRoleModeType value);

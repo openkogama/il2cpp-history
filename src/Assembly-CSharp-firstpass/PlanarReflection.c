@@ -2364,7 +2364,7 @@ code_?:
             if (pMVar23 != (MethodInfo *)0x0) {
               if ((*pMVar23->name == '.') && ((pMVar23->flags & 0x800) != 0)) {
                 ppMVar24 = ppMVar13;
-                while (ppMVar25 = ppMVar24 + 0x3052a1b1,
+                while (ppMVar25 = ppMVar24 + 0x3052af3c,
                       ppMVar24 = (MethodInfo **)((longlong)ppMVar24 + 1),
                       *(char *)ppMVar25 == (pMVar23->name + -1)[(longlong)ppMVar24]) {
                   if (ppMVar24 == (MethodInfo **)0x7) {

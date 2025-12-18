@@ -58,7 +58,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     uVar6 = CONCAT71((int7)(uVar1 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_02,0x29,pOVar5,(InsertionBehavior__Enum)uVar6,
+              (this_02,0x2a,pOVar5,(InsertionBehavior__Enum)uVar6,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aAStackX_18[0] = actionType;
@@ -66,17 +66,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     uVar7 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_02,0xde,pOVar5,(InsertionBehavior__Enum)uVar7,
+              (this_02,0xe0,pOVar5,(InsertionBehavior__Enum)uVar7,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aAStackX_18[0] = adContext;
     pOVar5 = (Object *)FUN_?(uRam_?,aAStackX_18);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar6 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar6 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_02,0xbf,pOVar5,
+              (this_02,0xc1,pOVar5,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),method_00);
     pPVar8 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -150,11 +150,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       uVar4 = (undefined7)((ulonglong)method_00 >> 8);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x16,value,(InsertionBehavior__Enum)uVar3,method_00);
-      uVar5 = CONCAT71(uVar4,0xa6);
+                (this_01,0x17,value,(InsertionBehavior__Enum)uVar3,method_00);
+      uVar5 = CONCAT71(uVar4,0xa9);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0xa6,(Object *)name,
+                (this_01,0xa9,(Object *)name,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
@@ -164,7 +164,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar6 != (PhotonPeer *)0x0) {
         (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                  (pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x36),this_01,
+                  (pPVar6,CONCAT71((int7)((ulonglong)uVar5 >> 8),0x37),this_01,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar6->klass->vtable).SendOperation.method);
         return;
@@ -223,7 +223,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)pVVar1 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x28,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x29,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   aiStackX_10[0] = groupId;
@@ -231,7 +231,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x17,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x18,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   if (localOwner == 0) {
@@ -250,7 +250,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x14,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x15,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   aiStackX_10[0]._0_1_ = transferOwnershipToServerOnLeave;
@@ -258,7 +258,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar6 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x27,pOVar2,(InsertionBehavior__Enum)uVar6,
+            (this_01,0x28,pOVar2,(InsertionBehavior__Enum)uVar6,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   QStack_7.x = position->x;
@@ -276,10 +276,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_10);
   method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
               ->klass->rgctx_data[0x22].method;
-  uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x7d);
+  uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x80);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x7d,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
+            (this_01,0x80,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
              method_00);
   pPVar8 = (this->fields).peer;
   if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -289,7 +289,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(pPVar8->klass->vtable).SendOperation.methodPtr)
-              (pPVar8,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x26),this_01,
+              (pPVar8,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x27),this_01,
                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
     return;
   }
@@ -498,17 +498,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     uVar8 = CONCAT71((int7)(uVar4 >> 8),2);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (this_00,0x39,pOVar7,(InsertionBehavior__Enum)uVar8,
+                              (this_00,0x3c,pOVar7,(InsertionBehavior__Enum)uVar8,
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                ->klass->rgctx_data[0x22].method);
                     apMStackX_10[0]._0_4_ = (link->fields).objectWOID;
                     pOVar7 = (Object *)FUN_?(uRam_?,apMStackX_10);
                     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                 ->klass->rgctx_data[0x22].method;
-                    uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x38);
+                    uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x3b);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (this_00,0x38,pOVar7,
+                              (this_00,0x3b,pOVar7,
                                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar8 >> 8),2),
                                method_00);
                     pPVar10 = (this->fields).peer;
@@ -518,7 +518,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     }
                     if (pPVar10 != (PhotonPeer *)0x0) {
                       (*(pPVar10->klass->vtable).SendOperation.methodPtr)
-                                (pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x1e),this_00,
+                                (pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x1f),this_00,
                                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                                  SendReliable,(pPVar10->klass->vtable).SendOperation.method);
                       return;
@@ -645,17 +645,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x56,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x59,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aiStackX_10[0] = subtreeId;
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,pOVar1,
+              (this_00,0x17,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -663,7 +663,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x22),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -723,10 +723,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+      uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x16,value,
+                (this_01,0x17,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
       pPVar3 = (this->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -734,7 +734,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar3 != (PhotonPeer *)0x0) {
         (*(pPVar3->klass->vtable).SendOperation.methodPtr)
-                  (pPVar3,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x27),this_01,
+                  (pPVar3,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x28),this_01,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar3->klass->vtable).SendOperation.method);
         return;
@@ -823,7 +823,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           uVar9 = CONCAT71((int7)(uVar1 >> 8),2);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0xde,pOVar8,(InsertionBehavior__Enum)uVar9,
+                    (this_01,0xe0,pOVar8,(InsertionBehavior__Enum)uVar9,
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);
           aiStack_10[0] = amount;
@@ -831,7 +831,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           uVar9 = CONCAT71((int7)((ulonglong)uVar9 >> 8),2);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0x8f,pOVar8,(InsertionBehavior__Enum)uVar9,
+                    (this_01,0x92,pOVar8,(InsertionBehavior__Enum)uVar9,
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);
           aiStack_10[0] = profileId;
@@ -843,10 +843,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
                     (this_01,0xb,pOVar8,(InsertionBehavior__Enum)uVar11,method_00);
-          uVar9 = CONCAT71(uVar12,0x58);
+          uVar9 = CONCAT71(uVar12,0x5b);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0x58,(Object *)msg,
+                    (this_01,0x5b,(Object *)msg,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar11 >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);
@@ -856,7 +856,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           }
           if (pPVar13 != (PhotonPeer *)0x0) {
             (*(pPVar13->klass->vtable).SendOperation.methodPtr)
-                      (pPVar13,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x43),this_01,
+                      (pPVar13,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x44),this_01,
                        TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable
                        ,(pPVar13->klass->vtable).SendOperation.method);
             return;
@@ -974,10 +974,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                  ->klass->rgctx_data[0x22].method);
       if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-        uVar10 = CONCAT71((int7)((ulonglong)pOVar2 >> 8),0x48);
+        uVar10 = CONCAT71((int7)((ulonglong)pOVar2 >> 8),0x4b);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x48,(Object *)this_02,
+                  (this_01,0x4b,(Object *)this_02,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -989,7 +989,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
           (*(pPVar11->klass->vtable).SendOperation.methodPtr)
-                    (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x2f),this_01,
+                    (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x30),this_01,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
           return;
         }
@@ -1046,17 +1046,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x2f,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x30,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aiStackX_18[0] = woId;
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_18);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,pOVar1,
+              (this_00,0x17,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1064,7 +1064,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x16),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x17),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -1128,10 +1128,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb2);
+      uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb4);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0xb2,value,
+                (this_00,0xb4,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
       pPVar3 = (this->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1139,7 +1139,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
       }
       if (pPVar3 != (PhotonPeer *)0x0) {
         (*(pPVar3->klass->vtable).SendOperation.methodPtr)
-                  (pPVar3,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x39),this_00,
+                  (pPVar3,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x3a),this_00,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar3->klass->vtable).SendOperation.method);
         pPVar3 = (this->fields).peer;
@@ -1237,10 +1237,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x67);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x6a);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x67,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x6a,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1448,10 +1448,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xd0);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xd2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xd0,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0xd2,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1501,7 +1501,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xcb,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2)
+              (this_00,0xcd,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2)
                ,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method);
     QStack_2.x = position->x;
@@ -1524,7 +1524,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)pDVar3 >> 8),0x41),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)pDVar3 >> 8),0x42),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
       return;
     }
@@ -1560,7 +1560,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-              (pPVar2,CONCAT71((int7)((ulonglong)root >> 8),0x21),pDVar1,
+              (pPVar2,CONCAT71((int7)((ulonglong)root >> 8),0x22),pDVar1,
                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
     return;
   }
@@ -1605,7 +1605,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-              (pPVar4,CONCAT71((int7)((ulonglong)root >> 8),0x40),pDVar3,
+              (pPVar4,CONCAT71((int7)((ulonglong)root >> 8),0x41),pDVar3,
                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
     return;
   }
@@ -1659,7 +1659,7 @@ MVNetworkGame_OperationRequests_CreateBasicCloneData
       IVar3 = CONCAT31(in_register_00000089,2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (pDVar1,0x16,pOVar2,IVar3,
+                (pDVar1,0x17,pOVar2,IVar3,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       if (localOwner == 0) {
@@ -1669,7 +1669,7 @@ code_?:
         IVar3 = CONCAT31((int3)(IVar3 >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (pDVar1,0x14,pOVar2,IVar3,
+                  (pDVar1,0x15,pOVar2,IVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         aiStackX_10[0]._0_1_ = cloneToRootGroup;
@@ -1677,14 +1677,14 @@ code_?:
         IVar3 = CONCAT31((int3)(IVar3 >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (pDVar1,0x65,pOVar2,IVar3,
+                  (pDVar1,0x68,pOVar2,IVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,setAsPreviewItem);
         pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_10);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (pDVar1,0x7f,pOVar2,CONCAT31((int3)(IVar3 >> 8),2),
+                  (pDVar1,0x82,pOVar2,CONCAT31((int3)(IVar3 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         return pDVar1;
@@ -1748,10 +1748,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1799,7 +1799,7 @@ MVNetworkGame_OperationRequests_CreateWithPositionCloneData
   if (pDVar2 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (pDVar2,0xcb,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
+              (pDVar2,0xcd,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     QStack_3.x = position->x;
@@ -1914,10 +1914,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1925,7 +1925,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x37),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x38),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -1979,10 +1979,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -1990,7 +1990,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x30),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x31),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -2075,6 +2075,71 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
                 (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x59),this_00,
+                 TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
+                 (pPVar2->klass->vtable).SendOperation.method);
+      return;
+    }
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
+/* Void GetAllPlanetPermissions(Int32) */
+
+void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
+     MVNetworkGame_OperationRequests_GetAllPlanetPermissions
+               (MVNetworkGame_OperationRequests *this,int32_t profileID,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_System_Byte_System_Object_ *)
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                         );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+  Dictionary_2_System_Byte_System_Object___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+            );
+  aiStackX_10[0] = profileID;
+  value = (Object *)FUN_?(uRam_?,aiStackX_10);
+  if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+    method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                ->klass->rgctx_data[0x22].method;
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xb);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+    Dictionary_2_System_Byte_System_Object__TryInsert
+              (this_00,0xb,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
+               method_00);
+    pPVar2 = (this->fields).peer;
+    if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+    }
+    if (pPVar2 != (PhotonPeer *)0x0) {
+      (*(pPVar2->klass->vtable).SendOperation.methodPtr)
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x5a),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -2230,10 +2295,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x28);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x29);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x28,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x29,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -2295,10 +2360,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -2430,7 +2495,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
 {
   if (cRam_? == '\0') {
     FUN_?(&
-                  MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__26_0__
+                  MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__27_0__
                  );
     LOCK();
     UNLOCK();
@@ -2445,7 +2510,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,
-             MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__26_0__,
+             MethodInfo__MVNetworkGame__OperationRequests___HandleUploadScreenShotData_b__27_0__,
              (MethodInfo *)0x0);
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__MV__WorldObject__BytePacker,this_00,0);
@@ -2572,19 +2637,19 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     pMVar3 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method;
-    uVar4 = CONCAT71((int7)((ulonglong)pMVar3 >> 8),0xbf);
+    uVar4 = CONCAT71((int7)((ulonglong)pMVar3 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,pOVar1,(InsertionBehavior__Enum)uVar2,pMVar3);
+              (this_00,0xc1,pOVar1,(InsertionBehavior__Enum)uVar2,pMVar3);
     if (value != 0) {
       aiStackX_10[0] = value;
       pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
       pMVar3 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method;
-      uVar4 = CONCAT71((int7)((ulonglong)pMVar3 >> 8),0xa0);
+      uVar4 = CONCAT71((int7)((ulonglong)pMVar3 >> 8),0xa3);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0xa0,pOVar1,
+                (this_00,0xa3,pOVar1,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),pMVar3);
     }
     pPVar5 = (this->fields).peer;
@@ -2770,7 +2835,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
         uVar6 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x56,pOVar5,(InsertionBehavior__Enum)uVar6,
+                  (this_01,0x59,pOVar5,(InsertionBehavior__Enum)uVar6,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         if (cRam_? == '\0') {
@@ -2786,7 +2851,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
           uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_01,0x74,pOVar5,(InsertionBehavior__Enum)uVar6,
+                    (this_01,0x77,pOVar5,(InsertionBehavior__Enum)uVar6,
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);
           if (cRam_? == '\0') {
@@ -2800,7 +2865,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
             uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_01,0x9a,(Object *)(pGVar4->fields).language,
+                      (this_01,0x9d,(Object *)(pGVar4->fields).language,
                        (InsertionBehavior__Enum)uVar6,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                        ->klass->rgctx_data[0x22].method);
@@ -2816,7 +2881,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
               uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__TryInsert
-                        (this_01,0xa7,(Object *)(pGVar4->fields).token,
+                        (this_01,0xaa,(Object *)(pGVar4->fields).token,
                          (InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                          ->klass->rgctx_data[0x22].method);
@@ -2832,7 +2897,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                 uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                 Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                          (this_01,0x37,(Object *)(pGVar4->fields).sessionToken,
+                          (this_01,0x3a,(Object *)(pGVar4->fields).sessionToken,
                            (InsertionBehavior__Enum)uVar6,
                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                            ->klass->rgctx_data[0x22].method);
@@ -2848,7 +2913,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                   uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                            (this_01,0xac,(Object *)(pGVar4->fields).newPlanetName,
+                            (this_01,0xae,(Object *)(pGVar4->fields).newPlanetName,
                              (InsertionBehavior__Enum)uVar6,
                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                              ->klass->rgctx_data[0x22].method);
@@ -2857,7 +2922,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                   uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                            (this_01,0xbc,pOVar5,(InsertionBehavior__Enum)uVar6,
+                            (this_01,0xbe,pOVar5,(InsertionBehavior__Enum)uVar6,
                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                              ->klass->rgctx_data[0x22].method);
                   if (cRam_? == '\0') {
@@ -2873,11 +2938,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                     uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (this_01,0xd1,pOVar5,(InsertionBehavior__Enum)uVar6,
+                              (this_01,0xd3,pOVar5,(InsertionBehavior__Enum)uVar6,
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                ->klass->rgctx_data[0x22].method);
                     if (cRam_? == '\0') {
-                      FUN_?(&StringLiteral__3_5_13_0);
+                      FUN_?(&StringLiteral__3_5_14_0);
                       LOCK();
                       UNLOCK();
                       cRam_? = '\x01';
@@ -2885,7 +2950,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                     uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (this_01,0xd9,(Object *)StringLiteral__3_5_13_0,
+                              (this_01,0xdb,(Object *)StringLiteral__3_5_14_0,
                                (InsertionBehavior__Enum)uVar6,
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                ->klass->rgctx_data[0x22].method);
@@ -2894,7 +2959,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                     uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (this_01,0xcf,pOVar5,(InsertionBehavior__Enum)uVar6,
+                              (this_01,0xd1,pOVar5,(InsertionBehavior__Enum)uVar6,
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                ->klass->rgctx_data[0x22].method);
                     this_02 = (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
@@ -2970,7 +3035,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                       uVar13 = (undefined7)((ulonglong)method_00 >> 8);
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                       Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                                (this_01,0xda,(Object *)pSVar11,(InsertionBehavior__Enum)uVar12,
+                                (this_01,0xdc,(Object *)pSVar11,(InsertionBehavior__Enum)uVar12,
                                  method_00);
                       uVar6 = CONCAT71(uVar13,10);
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
@@ -3143,12 +3208,12 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
               uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__TryInsert
-                        (pDVar7,199,pOVar5,(InsertionBehavior__Enum)uVar6,
+                        (pDVar7,0xc9,pOVar5,(InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                          ->klass->rgctx_data[0x22].method);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
               ::Dictionary_2_System_Byte_System_Object__TryInsert
-                        (pDVar7,200,(Object *)this_01,
+                        (pDVar7,0xca,(Object *)this_01,
                          (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                          ->klass->rgctx_data[0x22].method);
@@ -3193,11 +3258,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     uVar12 = (undefined7)((ulonglong)method_00 >> 8);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (pDVar7,199,pOVar5,(InsertionBehavior__Enum)uVar11,method_00);
-                    uVar6 = CONCAT71(uVar12,200);
+                              (pDVar7,0xc9,pOVar5,(InsertionBehavior__Enum)uVar11,method_00);
+                    uVar6 = CONCAT71(uVar12,0xca);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                              (pDVar7,200,(Object *)this_01,
+                              (pDVar7,0xca,(Object *)this_01,
                                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar11 >> 8),2),
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                ->klass->rgctx_data[0x22].method);
@@ -3208,7 +3273,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     }
                     if (pPVar8 != (PhotonPeer *)0x0) {
                       (*(pPVar8->klass->vtable).SendOperation.methodPtr)
-                                (pPVar8,CONCAT71((int7)((ulonglong)uVar6 >> 8),0x3f),pDVar7,
+                                (pPVar8,CONCAT71((int7)((ulonglong)uVar6 >> 8),0x40),pDVar7,
                                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                                  SendReliable,(pPVar8->klass->vtable).SendOperation.method);
                       return;
@@ -3289,10 +3354,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xa9);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xac);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xa9,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0xac,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -3300,7 +3365,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x38),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x39),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -3356,17 +3421,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x17,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,lockHierarchy);
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x3f);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x42);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x3f,pOVar1,
+              (this_00,0x42,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -3374,7 +3439,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x14),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x15),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -3429,17 +3494,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x17,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,activate);
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xcc);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xce);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xcc,pOVar1,
+              (this_00,0xce,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -3447,7 +3512,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x42),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x43),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -3527,17 +3592,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0xc1,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aFStackX_10[0] = CONCAT31(aFStackX_10[0]._1_3_,overrideValue);
     pOVar1 = (Object *)FUN_?(uRam_?,aFStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xd0);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xd2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xd0,pOVar1,
+              (this_00,0xd2,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -3605,11 +3670,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x57,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x58);
+              (this_00,0x5a,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x5b);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x58,(Object *)gameMsgData,
+              (this_00,0x5b,(Object *)gameMsgData,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -3678,11 +3743,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x57,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x58);
+              (this_00,0x5a,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x5b);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x58,(Object *)gameMsgData,
+              (this_00,0x5b,(Object *)gameMsgData,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -3692,7 +3757,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x1c),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x1d),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -3769,11 +3834,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       uVar6 = (undefined7)((ulonglong)method_00 >> 8);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,199,value,(InsertionBehavior__Enum)uVar5,method_00);
-      uVar7 = CONCAT71(uVar6,200);
+                (this_01,0xc9,value,(InsertionBehavior__Enum)uVar5,method_00);
+      uVar7 = CONCAT71(uVar6,0xca);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,200,(Object *)notificationData,
+                (this_01,0xca,(Object *)notificationData,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
@@ -3783,7 +3848,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar8 != (PhotonPeer *)0x0) {
         (*(pPVar8->klass->vtable).SendOperation.methodPtr)
-                  (pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x3f),this_01,
+                  (pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x40),this_01,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar8->klass->vtable).SendOperation.method);
         return;
@@ -3809,6 +3874,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     FUN_?(&TypeInfo__UnityEngine__Debug);
     LOCK();
     UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                 );
+    LOCK();
+    UNLOCK();
     FUN_?(&TypeInfo__NotificationController);
     LOCK();
     UNLOCK();
@@ -3822,6 +3892,9 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_Error_publishing_game__try_again);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_are_not_authorized_to_publis);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_Remember_that_you_need_to_play_i);
@@ -3839,31 +3912,46 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if (pMVar1 == (MVGameControllerBase *)0x0) goto code_?;
-  pSVar2 = StringLiteral_Error_publishing_game__try_again;
-  if ((pMVar1->fields).game != (MVNetworkGame *)0x0) {
-    if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__MVGameControllerBase);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (pMVar1 == (MVGameControllerBase *)0x0) goto code_?;
-    pSVar2 = StringLiteral_Error_publishing_game__try_again;
-    if ((pMVar1->fields)._joinState == 3) {
+  if ((((pMVar1 == (MVGameControllerBase *)0x0) ||
+       (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+      (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) ||
+     ((pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+      pMVar4 == (MVLocalPlayer *)0x0 ||
+      (pLVar5 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(pMVar4,(MethodInfo *)0x0),
+      pLVar5 == (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) goto code_?;
+  pSVar6 = StringLiteral_You_are_not_authorized_to_publis;
+  if ((pLVar5->fields)._size != 0) {
+    uVar7 = CONCAT71((int7)((ulonglong)
+                             MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                            >> 8),0x14);
+    iVar8 = FUN_?(pLVar5,uVar7,
+                          MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                          ->klass->rgctx_data[0x17].rgctxDataDummy);
+    pSVar6 = StringLiteral_You_are_not_authorized_to_publis;
+    if (iVar8 != -1) {
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__MVGameControllerBase);
         LOCK();
         UNLOCK();
         cRam_? = '\x01';
       }
-      pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar3 == (GameSessionData *)0x0) goto code_?;
-      pSVar2 = StringLiteral_Error_publishing_game__try_again;
-      if ((pGVar3->fields).gameMode == 0) {
-        pOVar4 = (this->fields).operationResponsePendingManager;
-        if (pOVar4 == (OperationResponsePendingManager *)0x0) goto code_?;
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (pMVar1 == (MVGameControllerBase *)0x0) goto code_?;
+      pSVar6 = StringLiteral_Error_publishing_game__try_again;
+      if (((pMVar1->fields).game != (MVNetworkGame *)0x0) &&
+         (MVar9 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0),
+         pSVar6 = StringLiteral_Error_publishing_game__try_again,
+         MVar9 == MVJoinState__Enum_Playing)) {
+        lVar10 = FUN_?();
+        if (lVar10 == 0) goto code_?;
+        if (*(int *)(lVar10 + 0x20) != 0) {
+          lVar10 = FUN_?();
+          if (lVar10 == 0) goto code_?;
+          pSVar6 = StringLiteral_Error_publishing_game__try_again;
+          if (*(int *)(lVar10 + 0x20) != 4) goto code_?;
+        }
+        pOVar11 = (this->fields).operationResponsePendingManager;
+        if (pOVar11 == (OperationResponsePendingManager *)0x0) goto code_?;
         if (cRam_? == '\0') {
           FUN_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
@@ -3872,44 +3960,44 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           UNLOCK();
           cRam_? = '\x01';
         }
-        this_01 = (HashSet_1_System_ByteEnum_ *)(pOVar4->fields).pendingOperations;
+        this_01 = (HashSet_1_System_ByteEnum_ *)(pOVar11->fields).pendingOperations;
         if (this_01 == (HashSet_1_System_ByteEnum_ *)0x0) goto code_?;
-        bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+        bVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
                 HashSet_1_System_ByteEnum__Contains
-                          (this_01,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)pMVar1 >> 8),0xb),
+                          (this_01,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),0xb),
                            MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
                           );
-        if (bVar5 == 0) {
-          pMVar6 = (this->fields).networkGame;
-          if ((((pMVar6 == (MVNetworkGame *)0x0) ||
-               (this_02 = (pMVar6->fields).playerContainer, this_02 == (MVPlayerContainer *)0x0)) ||
-              (pMVar7 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
-                                  (this_02,(MethodInfo *)0x0), pMVar7 == (MVLocalPlayer *)0x0)) ||
-             (pMVar6 = (this->fields).networkGame, pMVar6 == (MVNetworkGame *)0x0))
+        if (bVar12 == 0) {
+          pMVar2 = (this->fields).networkGame;
+          if ((((pMVar2 == (MVNetworkGame *)0x0) ||
+               (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) ||
+              (pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                   (pMVar3,(MethodInfo *)0x0), pMVar4 == (MVLocalPlayer *)0x0)) ||
+             (pMVar2 = (this->fields).networkGame, pMVar2 == (MVNetworkGame *)0x0))
           goto code_?;
-          if ((pMVar7->fields)._.level < (pMVar6->fields)._PublishLevel_k__BackingField) {
-            uStackX_20 = CONCAT44(uStackX_20._4_4_,(pMVar6->fields)._PublishLevel_k__BackingField);
-            pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                               ((Int32 *)&uStackX_20,(MethodInfo *)0x0);
-            pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                               (StringLiteral_You_can_not_publish_game_before_,pSVar2,
-                                (MethodInfo *)0x0);
+          if ((pMVar4->fields)._.level < (pMVar2->fields)._PublishLevel_k__BackingField) {
+            uStackX_20 = CONCAT44(uStackX_20._4_4_,(pMVar2->fields)._PublishLevel_k__BackingField);
+            pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
+                                ((Int32 *)&uStackX_20,(MethodInfo *)0x0);
+            pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                                (StringLiteral_You_can_not_publish_game_before_,pSVar6,
+                                 (MethodInfo *)0x0);
           }
           else {
-            if ((pMVar6->fields).isPublished != 0) {
+            if ((pMVar2->fields).isPublished != 0) {
               MVNetworkGame_OperationRequests_PublishPlanet_1(this,0,errorHandler,(MethodInfo *)0x0)
               ;
               return;
             }
-            cVar8 = FUN_?();
-            if (cVar8 == '\0') {
-              uVar9 = 0;
-              bVar5 = MVNetworkGame_OperationRequests_PublishPlanet_1
+            cVar13 = FUN_?();
+            if (cVar13 == '\0') {
+              uVar7 = 0;
+              bVar12 = MVNetworkGame_OperationRequests_PublishPlanet_1
                                 (this,0,errorHandler,(MethodInfo *)0x0);
-              if (bVar5 == 0) {
+              if (bVar12 == 0) {
                 return;
               }
-              pSVar2 = TM::TM__(StringLiteral_Remember_that_you_need_to_play_i,(MethodInfo *)0x0);
+              pSVar6 = TM::TM__(StringLiteral_Remember_that_you_need_to_play_i,(MethodInfo *)0x0);
               if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
                 FUN_?();
               }
@@ -3935,18 +4023,18 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                 UNLOCK();
                 cRam_? = '\x01';
               }
-              this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+              this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                          *)FUN_?(
                                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                         );
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
               Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
-                        (this_03,
+                        (this_02,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                         );
-              pOVar10 = (Object *)FUN_?(uRam_?,&stack0x00000008);
-              if (this_03 ==
+              pOVar14 = (Object *)FUN_?(uRam_?,&stack0x00000008);
+              if (this_02 ==
                   (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                    *)0x0) {
                 FUN_?();
@@ -3956,20 +4044,20 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
               }
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
               Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                        ((Dictionary_2_System_Object_System_Object_ *)this_03,pOVar10,
-                         (Object *)pSVar2,
-                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar9 >> 8),2),
+                        ((Dictionary_2_System_Object_System_Object_ *)this_02,pOVar14,
+                         (Object *)pSVar6,
+                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                          ->klass->rgctx_data[0x22].method);
               if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
                 FUN_?();
               }
-              uVar9 = 0;
+              uVar7 = 0;
               uStackX_20 = uStackX_18;
               if (cRam_? == '\0') {
                 FUN_?(&
                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                              ,this_03,8,0);
+                              ,this_02,8,0);
                 LOCK();
                 UNLOCK();
                 FUN_?(&TypeInfo__NotificationController);
@@ -3981,16 +4069,16 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                 cRam_? = '\x01';
               }
               uStackX_18 = CONCAT71(uStackX_18._1_7_,2);
-              pOVar10 = (Object *)FUN_?(uRam_?,&uStackX_18);
+              pOVar14 = (Object *)FUN_?(uRam_?,&uStackX_18);
               uStackX_18 = CONCAT44(uStackX_18._4_4_,8);
               value = (Object *)FUN_?(TypeInfo__NotificationLifetime,&uStackX_18);
-              if (this_03 !=
+              if (this_02 !=
                   (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                    *)0x0) {
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                 Object]::Dictionary_2_System_Object_System_Object__TryInsert
-                          ((Dictionary_2_System_Object_System_Object_ *)this_03,pOVar10,value,
-                           (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar9 >> 8),2),
+                          ((Dictionary_2_System_Object_System_Object_ *)this_02,pOVar14,value,
+                           (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                            ->klass->rgctx_data[0x22].method);
                 if (cRam_? == '\0') {
@@ -4014,7 +4102,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                   if (this_00 == (NotificationsManager *)0x0) goto code_?;
                   NotificationsManager::NotificationsManager_InstantiateNotification
                             (this_00,NotificationType__Enum_FirstTimeXPRewarded,
-                             (Dictionary_2_System_Object_System_Object_ *)this_03,(MethodInfo *)0x0)
+                             (Dictionary_2_System_Object_System_Object_ *)this_02,(MethodInfo *)0x0)
                   ;
                 }
                 return;
@@ -4030,7 +4118,7 @@ code_?:
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                       ((Object *)StringLiteral_Texture_is_already_being_generat,(MethodInfo *)0x0);
-            pSVar2 = StringLiteral_You_are_already_publishing_plane;
+            pSVar6 = StringLiteral_You_are_already_publishing_plane;
           }
         }
         else {
@@ -4039,18 +4127,19 @@ code_?:
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                     ((Object *)StringLiteral_Publish_planet_operation_is_pend,(MethodInfo *)0x0);
-          pSVar2 = StringLiteral_You_are_already_publishing_plane;
+          pSVar6 = StringLiteral_You_are_already_publishing_plane;
         }
       }
     }
   }
-  pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
+code_?:
+  pSVar6 = TM::TM__(pSVar6,(MethodInfo *)0x0);
   if (errorHandler != (Action_1_String_ *)0x0) {
     UNRECOVERED_JUMPTABLE = (errorHandler->fields)._._.invoke_impl;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*UNRECOVERED_JUMPTABLE)
-              ((errorHandler->fields)._._.method_code,pSVar2,(errorHandler->fields)._._.method,
+              ((errorHandler->fields)._._.method_code,pSVar6,(errorHandler->fields)._._.method,
                UNRECOVERED_JUMPTABLE);
     return;
   }
@@ -4109,10 +4198,10 @@ code_?:
     if (this_01 == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x40);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x43);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x40,value,
+              (this_01,0x43,value,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),method_00);
     pOVar2 = (this->fields).operationResponsePendingManager;
     if (pOVar2 == (OperationResponsePendingManager *)0x0) goto code_?;
@@ -4236,7 +4325,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x7e);
+  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x81);
   pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
   aiStackX_10[0] = avatarId;
   value = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -4293,11 +4382,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar5 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5e,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
-    uVar3 = CONCAT71(uVar5,0x5f);
+              (this_01,0x61,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
+    uVar3 = CONCAT71(uVar5,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5f,(Object *)this_00,
+              (this_01,0x62,(Object *)this_00,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -4307,7 +4396,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar6 != (PhotonPeer *)0x0) {
       (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar6->klass->vtable).SendOperation.method);
       return;
@@ -4355,7 +4444,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x69);
+  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x6c);
   pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
   aiStackX_10[0] = streamingAssetID;
   value = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -4412,11 +4501,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar5 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5e,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
-    uVar3 = CONCAT71(uVar5,0x5f);
+              (this_01,0x61,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
+    uVar3 = CONCAT71(uVar5,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5f,(Object *)this_00,
+              (this_01,0x62,(Object *)this_00,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -4426,7 +4515,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar6 != (PhotonPeer *)0x0) {
       (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar6->klass->vtable).SendOperation.method);
       return;
@@ -4474,7 +4563,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xbf);
+  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xc1);
   pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
   aiStackX_10[0] = bundleId;
   value = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -4531,11 +4620,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar5 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5e,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
-    uVar3 = CONCAT71(uVar5,0x5f);
+              (this_01,0x61,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
+    uVar3 = CONCAT71(uVar5,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5f,(Object *)this_00,
+              (this_01,0x62,(Object *)this_00,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -4545,7 +4634,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar6 != (PhotonPeer *)0x0) {
       (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar6->klass->vtable).SendOperation.method);
       return;
@@ -4648,11 +4737,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar5 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5e,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
-    uVar3 = CONCAT71(uVar5,0x5f);
+              (this_01,0x61,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
+    uVar3 = CONCAT71(uVar5,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5f,(Object *)this_00,
+              (this_01,0x62,(Object *)this_00,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -4662,7 +4751,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar6 != (PhotonPeer *)0x0) {
       (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar6->klass->vtable).SendOperation.method);
       return;
@@ -4721,11 +4810,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x5e,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x5f);
+              (this_00,0x61,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x5f,(Object *)productData,
+              (this_00,0x62,(Object *)productData,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -4735,7 +4824,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -4784,7 +4873,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xbf);
+  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xc1);
   pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
   aiStackX_10[0] = themeId;
   value = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -4803,7 +4892,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
              (InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
              ->klass->rgctx_data[0x22].method);
-  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xcf);
+  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0xd1);
   pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
   Dictionary_2_System_Object_System_Object__TryInsert
@@ -4850,11 +4939,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar5 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5e,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
-    uVar3 = CONCAT71(uVar5,0x5f);
+              (this_01,0x61,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
+    uVar3 = CONCAT71(uVar5,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5f,(Object *)this_00,
+              (this_01,0x62,(Object *)this_00,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -4864,7 +4953,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar6 != (PhotonPeer *)0x0) {
       (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar6->klass->vtable).SendOperation.method);
       return;
@@ -4970,11 +5059,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar5 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5e,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
-    uVar3 = CONCAT71(uVar5,0x5f);
+              (this_01,0x61,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
+    uVar3 = CONCAT71(uVar5,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5f,(Object *)this_00,
+              (this_01,0x62,(Object *)this_00,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -4984,7 +5073,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar6 != (PhotonPeer *)0x0) {
       (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar6->klass->vtable).SendOperation.method);
       return;
@@ -5047,7 +5136,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)pDVar1 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x11,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x12,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   aWStackX_10[0] = groupId;
@@ -5055,13 +5144,13 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x17,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x18,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x12,(Object *)woData,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x13,(Object *)woData,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   if (localOwner == 0) {
@@ -5080,14 +5169,14 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x14,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x15,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   aWStackX_10[0] = CONCAT31(aWStackX_10[0]._1_3_,transferOwnershipToServerOnLeave);
   pOVar2 = (Object *)FUN_?(uRam_?,aWStackX_10);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x27,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
+            (this_01,0x28,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   QStack_6.x = position->x;
@@ -5167,10 +5256,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x28);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x29);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x28,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x29,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -5279,10 +5368,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x3a);
+      uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x3d);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x3a,value,
+                (this_01,0x3d,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
       pPVar8 = (this->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -5392,10 +5481,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x3a);
+      uVar7 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x3d);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x3a,value,
+                (this_01,0x3d,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
       pPVar8 = (this->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -5403,7 +5492,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar8 != (PhotonPeer *)0x0) {
         (*(pPVar8->klass->vtable).SendOperation.methodPtr)
-                  (pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x1f),this_01,
+                  (pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x20),this_01,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar8->klass->vtable).SendOperation.method);
         return;
@@ -5582,11 +5671,11 @@ code_?:
           uVar9 = (undefined7)((ulonglong)method_00 >> 8);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_02,0x16,value,(InsertionBehavior__Enum)uVar8,method_00);
-          uVar5 = CONCAT71(uVar9,0x13);
+                    (this_02,0x17,value,(InsertionBehavior__Enum)uVar8,method_00);
+          uVar5 = CONCAT71(uVar9,0x14);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object__TryInsert
-                    (this_02,0x13,(Object *)this_00,
+                    (this_02,0x14,(Object *)this_00,
                      (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar8 >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      ->klass->rgctx_data[0x22].method);
@@ -5659,11 +5748,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x13);
+              (this_00,0x17,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x14);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x13,(Object *)woDataToRemove,
+              (this_00,0x14,(Object *)woDataToRemove,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -5727,10 +5816,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -5738,7 +5827,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x17),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x18),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -5794,17 +5883,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x23,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x24,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aiStackX_10[0] = woid;
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,pOVar1,
+              (this_00,0xc1,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -5876,10 +5965,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x34);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x37);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x34,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x37,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -5887,7 +5976,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x10),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x11),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -6077,17 +6166,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x28,value,(InsertionBehavior__Enum)uVar2,method_00);
+              (this_00,0x29,value,(InsertionBehavior__Enum)uVar2,method_00);
     uVar4 = CONCAT71((int7)((ulonglong)uVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x2a,(Object *)itemName,(InsertionBehavior__Enum)uVar4,
+              (this_00,0x2b,(Object *)itemName,(InsertionBehavior__Enum)uVar4,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
-    uVar2 = CONCAT71(uVar3,0x86);
+    uVar2 = CONCAT71(uVar3,0x89);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x86,(Object *)itemDescription,
+              (this_00,0x89,(Object *)itemDescription,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -6099,7 +6188,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*(pPVar5->klass->vtable).SendOperation.methodPtr)
-                (pPVar5,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x2c),this_00,
+                (pPVar5,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x2d),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
       return;
     }
@@ -6161,7 +6250,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)pDVar1 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x73,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x76,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   aiStackX_10[0] = groupId;
@@ -6169,7 +6258,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x17,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x18,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
@@ -6194,14 +6283,14 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x14,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_01,0x15,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,transferOwnershipToServerOnLeave);
   pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_10);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_01,0x27,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
+            (this_01,0x28,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   QStack_6.x = position->x;
@@ -6229,7 +6318,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(pPVar8->klass->vtable).SendOperation.methodPtr)
-              (pPVar8,CONCAT71((int7)((ulonglong)pDVar7 >> 8),0x25),this_01,
+              (pPVar8,CONCAT71((int7)((ulonglong)pDVar7 >> 8),0x26),this_01,
                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
     return;
   }
@@ -6320,10 +6409,10 @@ bool Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x35);
+      uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x38);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x35,value,
+                (this_01,0x38,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),method_00);
       pPVar10 = (this->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -6331,7 +6420,7 @@ bool Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar10 != (PhotonPeer *)0x0) {
         (*(pPVar10->klass->vtable).SendOperation.methodPtr)
-                  (pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0xf),this_01,
+                  (pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x10),this_01,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar10->klass->vtable).SendOperation.method);
         return 1;
@@ -6479,10 +6568,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x28);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x29);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x28,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x29,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -6490,7 +6579,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x2b),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x2c),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -6544,10 +6633,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x34);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x37);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x34,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x37,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -6555,7 +6644,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x11),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x12),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -6609,10 +6698,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x28);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x29);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x28,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x29,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -6620,7 +6709,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x2d),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x2e),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -6672,7 +6761,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   }
   if (pPVar2 != (PhotonPeer *)0x0) {
     (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-              (pPVar2,CONCAT71((int7)((ulonglong)pMVar1 >> 8),0x35),this_00,
+              (pPVar2,CONCAT71((int7)((ulonglong)pMVar1 >> 8),0x36),this_00,
                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                (pPVar2->klass->vtable).SendOperation.method);
     return;
@@ -6776,10 +6865,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -6787,7 +6876,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x16),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x17),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -6852,10 +6941,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x7e);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x81);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x7e,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x81,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -6863,7 +6952,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x2a),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x2b),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -6917,10 +7006,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xd0);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xd2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xd0,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0xd2,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -7033,10 +7122,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -7044,7 +7133,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x18),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x19),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -7177,7 +7266,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar7 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xde,pOVar3,(InsertionBehavior__Enum)uVar7,
+              (this_00,0xe0,pOVar3,(InsertionBehavior__Enum)uVar7,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     if (target != (MVPlayer *)0x0) {
@@ -7196,7 +7285,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar9 != (PhotonPeer *)0x0) {
         (*(pPVar9->klass->vtable).SendOperation.methodPtr)
-                  (pPVar9,CONCAT71((int7)((ulonglong)uVar8 >> 8),0x44),this_00,
+                  (pPVar9,CONCAT71((int7)((ulonglong)uVar8 >> 8),0x45),this_00,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar9->klass->vtable).SendOperation.method);
         return;
@@ -7254,13 +7343,13 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)(uVar1 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x92,(Object *)logString,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x95,(Object *)logString,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x93,(Object *)stackTrace,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x96,(Object *)stackTrace,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     auStackX_10[0] = (char)type;
@@ -7271,17 +7360,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x94,value,(InsertionBehavior__Enum)uVar2,method_00);
+              (this_00,0x97,value,(InsertionBehavior__Enum)uVar2,method_00);
     uVar4 = CONCAT71((int7)((ulonglong)uVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x99,(Object *)extraSentryData,(InsertionBehavior__Enum)uVar4,
+              (this_00,0x9c,(Object *)extraSentryData,(InsertionBehavior__Enum)uVar4,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
-    uVar2 = CONCAT71(uVar3,0xbb);
+    uVar2 = CONCAT71(uVar3,0xbd);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbb,(Object *)tags,
+              (this_00,0xbd,(Object *)tags,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -7291,7 +7380,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar5 != (PhotonPeer *)0x0) {
       (*(pPVar5->klass->vtable).SendOperation.methodPtr)
-                (pPVar5,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x32),this_00,
+                (pPVar5,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x33),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar5->klass->vtable).SendOperation.method);
       pPVar5 = (this->fields).peer;
@@ -7365,7 +7454,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar2 != (PhotonPeer *)0x0) {
         (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                  (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x34),this_00,
+                  (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x35),this_00,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar2->klass->vtable).SendOperation.method);
         return;
@@ -7420,10 +7509,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x7e);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x81);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x7e,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x81,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -7431,7 +7520,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar2 != (PhotonPeer *)0x0) {
       (*(pPVar2->klass->vtable).SendOperation.methodPtr)
-                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x29),this_00,
+                (pPVar2,CONCAT71((int7)((ulonglong)uVar1 >> 8),0x2a),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar2->klass->vtable).SendOperation.method);
       return;
@@ -7485,10 +7574,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -7563,7 +7652,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)in_R9 >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x7e,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x81,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = (float)streamingAssetId;
@@ -7571,7 +7660,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x69,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x6c,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = offset;
@@ -7579,17 +7668,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)uVar2 >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x72,pOVar1,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x75,pOVar1,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = scale;
     pOVar1 = (Object *)FUN_?(uRam_?,afStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x22);
+    uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x23);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x22,pOVar1,
+              (this_00,0x23,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),1),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -7599,7 +7688,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x2e),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x2f),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
       return;
     }
@@ -7704,10 +7793,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -7835,10 +7924,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0xc1,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -7945,7 +8034,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar11 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,pOVar2,(InsertionBehavior__Enum)uVar11,
+              (this_00,0xc1,pOVar2,(InsertionBehavior__Enum)uVar11,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     PStack_3 = key;
@@ -7957,11 +8046,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar13 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x29,pOVar2,(InsertionBehavior__Enum)uVar12,method_00);
-    uVar11 = CONCAT71(uVar13,0xd8);
+              (this_00,0x2a,pOVar2,(InsertionBehavior__Enum)uVar12,method_00);
+    uVar11 = CONCAT71(uVar13,0xda);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xd8,value,
+              (this_00,0xda,value,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar12 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -8131,17 +8220,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x17,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aiStackX_10[0] = avatarBodyDbId;
     pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,pOVar1,
+              (this_00,0xc1,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -8216,10 +8305,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                   ->klass->rgctx_data[0x22].method;
-      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x59);
+      uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x5c);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x59,value,
+                (this_01,0x5c,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
       pPVar5 = (this->fields).peer;
       if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -8227,7 +8316,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
       }
       if (pPVar5 != (PhotonPeer *)0x0) {
         (*(pPVar5->klass->vtable).SendOperation.methodPtr)
-                  (pPVar5,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x1d),this_01,
+                  (pPVar5,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x1e),this_01,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar5->klass->vtable).SendOperation.method);
         return;
@@ -8426,10 +8515,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                  ->klass->rgctx_data[0x22].method);
       if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-        uVar10 = CONCAT71((int7)((ulonglong)pOVar2 >> 8),0x48);
+        uVar10 = CONCAT71((int7)((ulonglong)pOVar2 >> 8),0x4b);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x48,(Object *)this_02,
+                  (this_01,0x4b,(Object *)this_02,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -8441,7 +8530,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
           (*(pPVar11->klass->vtable).SendOperation.methodPtr)
-                    (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x31),this_01,
+                    (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x32),this_01,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
           return;
         }
@@ -8545,7 +8634,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   }
   if (pPVar1 != (PhotonPeer *)0x0) {
     (*(pPVar1->klass->vtable).SendOperation.methodPtr)
-              (pPVar1,CONCAT71((int7)((ulonglong)pMVar2 >> 8),0x3a),this_00,
+              (pPVar1,CONCAT71((int7)((ulonglong)pMVar2 >> 8),0x3b),this_00,
                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                (pPVar1->klass->vtable).SendOperation.method);
     return;
@@ -8596,7 +8685,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   }
   if (pPVar1 != (PhotonPeer *)0x0) {
     (*(pPVar1->klass->vtable).SendOperation.methodPtr)
-              (pPVar1,CONCAT71((int7)((ulonglong)pMVar2 >> 8),0x3c),this_00,
+              (pPVar1,CONCAT71((int7)((ulonglong)pMVar2 >> 8),0x3d),this_00,
                TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                (pPVar1->klass->vtable).SendOperation.method);
     return;
@@ -8706,7 +8795,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar3 = CONCAT71((int7)((ulonglong)pTVar1 >> 8),2);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_00,0x16,pOVar2,(InsertionBehavior__Enum)uVar3,
+            (this_00,0x17,pOVar2,(InsertionBehavior__Enum)uVar3,
              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
              ->klass->rgctx_data[0x22].method);
   uStackX_10 = ownerActorNr;
@@ -8714,10 +8803,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   uVar4 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
   method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
               ->klass->rgctx_data[0x22].method;
-  puVar5 = (ulonglong *)CONCAT71((int7)((ulonglong)method_00 >> 8),0x14);
+  puVar5 = (ulonglong *)CONCAT71((int7)((ulonglong)method_00 >> 8),0x15);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
   Dictionary_2_System_Byte_System_Object__TryInsert
-            (this_00,0x14,pOVar2,(InsertionBehavior__Enum)uVar4,method_00);
+            (this_00,0x15,pOVar2,(InsertionBehavior__Enum)uVar4,method_00);
   if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
     FUN_?();
   }
@@ -8770,10 +8859,10 @@ code_?:
       pOVar2 = (Object *)(CONCAT44(uStackX_14,uVar6) & 0xffffffffffffff00);
     }
     pDVar10 = (Dictionary_2_System_Byte_System_Object_ *)
-              CONCAT71((int7)((ulonglong)puVar5 >> 8),0x54);
+              CONCAT71((int7)((ulonglong)puVar5 >> 8),0x57);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x54,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)(uVar4 >> 8),2),
+              (this_00,0x57,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)(uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
   }
@@ -8786,7 +8875,7 @@ code_?:
     pOVar2 = (Object *)FUN_?(lRam_?,&uStackX_10);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x54,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)(uVar4 >> 8),2),
+              (this_00,0x57,pOVar2,(InsertionBehavior__Enum)CONCAT71((int7)(uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     if (cRam_? == '\0') {
@@ -8942,11 +9031,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       uVar3 = (undefined7)((ulonglong)method_00 >> 8);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x16,value,(InsertionBehavior__Enum)uVar2,method_00);
-      uVar4 = CONCAT71(uVar3,0x48);
+                (this_00,0x17,value,(InsertionBehavior__Enum)uVar2,method_00);
+      uVar4 = CONCAT71(uVar3,0x4b);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x48,(Object *)worldObjects,
+                (this_00,0x4b,(Object *)worldObjects,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
@@ -8956,7 +9045,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar5 != (PhotonPeer *)0x0) {
         (*(pPVar5->klass->vtable).SendOperation.methodPtr)
-                  (pPVar5,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x20),this_00,
+                  (pPVar5,CONCAT71((int7)((ulonglong)uVar4 >> 8),0x21),this_00,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar5->klass->vtable).SendOperation.method);
         return;
@@ -9070,10 +9159,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       *(int32_t *)((longlong)&value[2].klass + 4) = triggerInstigatorId;
       if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-        uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),0x16);
+        uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),0x17);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x16,value,
+                  (this_00,0x17,value,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -9083,7 +9172,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
         }
         if (pPVar4 != (PhotonPeer *)0x0) {
           (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                    (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x12),this_00,
+                    (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x13),this_00,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                      (pPVar4->klass->vtable).SendOperation.method);
           return;
@@ -9161,10 +9250,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       *(int32_t *)((longlong)&value[2].klass + 4) = triggerInstigatorId;
       if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-        uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),0x16);
+        uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),0x17);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_00,0x16,value,
+                  (this_00,0x17,value,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
@@ -9174,7 +9263,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
         }
         if (pPVar4 != (PhotonPeer *)0x0) {
           (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                    (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x13),this_00,
+                    (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x14),this_00,
                      TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                      (pPVar4->klass->vtable).SendOperation.method);
           return;
@@ -9282,17 +9371,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x7e,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x81,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     aAStackX_10[0] = accessorySlotType;
     pOVar1 = (Object *)FUN_?(uRam_?,aAStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xc1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,pOVar1,
+              (this_00,0xc1,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),1),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -9362,7 +9451,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  aIStackX_10[0].m_value._0_1_ = 9;
+  aIStackX_10[0].m_value._0_1_ = 0xb;
   pOVar2 = (Object *)FUN_?(uRam_?,aIStackX_10);
   aIStackX_10[0].m_value = itemId;
   value = (Object *)FUN_?(uRam_?,aIStackX_10);
@@ -9415,11 +9504,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       uVar5 = (undefined7)((ulonglong)method_00 >> 8);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x5e,pOVar2,(InsertionBehavior__Enum)uVar4,method_00);
-      uVar3 = CONCAT71(uVar5,0x5f);
+                (this_01,0x61,pOVar2,(InsertionBehavior__Enum)uVar4,method_00);
+      uVar3 = CONCAT71(uVar5,0x62);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x5f,(Object *)this_00,
+                (this_01,0x62,(Object *)this_00,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
@@ -9429,7 +9518,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       }
       if (pPVar6 != (PhotonPeer *)0x0) {
         (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                  (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                  (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                    (pPVar6->klass->vtable).SendOperation.method);
         return;
@@ -9482,7 +9571,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x67);
+  aiStackX_10[0] = CONCAT31(aiStackX_10[0]._1_3_,0x6a);
   pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_10);
   aiStackX_10[0] = materialID;
   value = (Object *)FUN_?(uRam_?,aiStackX_10);
@@ -9539,11 +9628,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar5 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5e,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
-    uVar3 = CONCAT71(uVar5,0x5f);
+              (this_01,0x61,pOVar1,(InsertionBehavior__Enum)uVar4,method_00);
+    uVar3 = CONCAT71(uVar5,0x62);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_01,0x5f,(Object *)this_00,
+              (this_01,0x62,(Object *)this_00,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -9553,7 +9642,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar6 != (PhotonPeer *)0x0) {
       (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x23),this_01,
+                (pPVar6,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x24),this_01,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar6->klass->vtable).SendOperation.method);
       return;
@@ -9607,10 +9696,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x16);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x17);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
+              (this_00,0x17,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2)
                ,method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -9674,7 +9763,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)in_R9 >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x7e,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x81,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = (float)slot;
@@ -9682,17 +9771,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)uVar2 >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x71,pOVar1,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x74,pOVar1,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = offset;
     pOVar1 = (Object *)FUN_?(uRam_?,afStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x72);
+    uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x75);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x72,pOVar1,
+              (this_00,0x75,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),1),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -9702,7 +9791,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x33),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar2 >> 8),0x34),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable);
       return;
     }
@@ -9757,7 +9846,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)in_R9 >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x7e,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x81,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = (float)slot;
@@ -9765,17 +9854,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)uVar2 >> 8),1);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x71,pOVar1,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x74,pOVar1,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = scale;
     pOVar1 = (Object *)FUN_?(uRam_?,afStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__set_Item_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x22);
+    uVar2 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x23);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x22,pOVar1,
+              (this_00,0x23,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),1),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -9837,10 +9926,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x2e);
+    uVar1 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x2f);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x2e,(Object *)itemIdToSlotIndexTable,
+              (this_00,0x2f,(Object *)itemIdToSlotIndexTable,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),method_00);
     pPVar2 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -9905,7 +9994,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)pVVar1 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,pOVar2,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x17,pOVar2,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = camOrigin->x;
@@ -9913,7 +10002,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x4a,pOVar2,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x4d,pOVar2,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = camOrigin->y;
@@ -9921,7 +10010,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x4b,pOVar2,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x4e,pOVar2,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = camOrigin->z;
@@ -9929,7 +10018,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x4c,pOVar2,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x4f,pOVar2,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = camDir->x;
@@ -9937,7 +10026,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x4d,pOVar2,(InsertionBehavior__Enum)uVar3,
+              (this_00,0x50,pOVar2,(InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = camDir->y;
@@ -9945,17 +10034,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar4 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x4e,pOVar2,(InsertionBehavior__Enum)uVar4,
+              (this_00,0x51,pOVar2,(InsertionBehavior__Enum)uVar4,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = camDir->z;
     pOVar2 = (Object *)FUN_?(uRam_?,afStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x4f);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x52);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x4f,pOVar2,
+              (this_00,0x52,pOVar2,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),method_00);
     pPVar5 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -9965,7 +10054,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*(pPVar5->klass->vtable).SendOperation.methodPtr)
-                (pPVar5,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x1a),this_00,
+                (pPVar5,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x1b),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendUnreliable);
       return;
     }
@@ -10023,11 +10112,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x2f,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x31);
+              (this_00,0x30,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x32);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x31,(Object *)prototypeData,
+              (this_00,0x32,(Object *)prototypeData,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -10093,17 +10182,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x2f,pOVar1,(InsertionBehavior__Enum)uVar2,
+              (this_00,0x30,pOVar1,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
     afStackX_10[0] = scale;
     pOVar1 = (Object *)FUN_?(uRam_?,afStackX_10);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 ->klass->rgctx_data[0x22].method;
-    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x22);
+    uVar3 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x23);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x22,pOVar1,
+              (this_00,0x23,pOVar1,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),method_00);
     pPVar4 = (this->fields).peer;
     if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
@@ -10179,7 +10268,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       uVar5 = CONCAT71((int7)((ulonglong)pBVar1 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_01,0x16,pOVar4,(InsertionBehavior__Enum)uVar5,
+                (this_01,0x17,pOVar4,(InsertionBehavior__Enum)uVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
       this_00 = (this->fields).networkGame;
@@ -10191,7 +10280,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
         uVar5 = CONCAT71((int7)((ulonglong)uVar5 >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x23,pOVar4,(InsertionBehavior__Enum)uVar5,
+                  (this_01,0x24,pOVar4,(InsertionBehavior__Enum)uVar5,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         VStack_3.x = position->x;
@@ -10202,17 +10291,17 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
         uVar7 = CONCAT71((int7)((ulonglong)uVar5 >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x9d,(Object *)rotation,(InsertionBehavior__Enum)uVar7,
+                  (this_01,0xa0,(Object *)rotation,(InsertionBehavior__Enum)uVar7,
                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                    ->klass->rgctx_data[0x22].method);
         auStack_8[0] = (undefined1)packageType;
         pOVar4 = (Object *)FUN_?(uRam_?,auStack_8);
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                     ->klass->rgctx_data[0x22].method;
-        uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x24);
+        uVar5 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x25);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
         Dictionary_2_System_Byte_System_Object__TryInsert
-                  (this_01,0x24,pOVar4,
+                  (this_01,0x25,pOVar4,
                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),method_00);
         VStack_3.x = 0.0;
         VStack_3.y = 0.0;
@@ -10404,11 +10493,11 @@ code_?:
             uVar10 = (undefined7)((ulonglong)method_00 >> 8);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_01,0x16,value_00,(InsertionBehavior__Enum)uVar9,method_00);
-            uVar4 = CONCAT71(uVar10,0x12);
+                      (this_01,0x17,value_00,(InsertionBehavior__Enum)uVar9,method_00);
+            uVar4 = CONCAT71(uVar10,0x13);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_01,0x12,(Object *)this_00,
+                      (this_01,0x13,(Object *)this_00,
                        (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar9 >> 8),2),
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                        ->klass->rgctx_data[0x22].method);
@@ -10484,11 +10573,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x12);
+              (this_00,0x17,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x13);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x12,(Object *)woData,
+              (this_00,0x13,(Object *)woData,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -10557,11 +10646,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x46);
+              (this_00,0x17,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x49);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x46,(Object *)worldObjectRunTimeData,
+              (this_00,0x49,(Object *)worldObjectRunTimeData,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -10571,7 +10660,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x19),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x1a),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -10630,7 +10719,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0xbf,value,(InsertionBehavior__Enum)uVar1,method_00);
+              (this_00,0xc1,value,(InsertionBehavior__Enum)uVar1,method_00);
     uVar3 = CONCAT71(uVar2,0xf5);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
@@ -10644,7 +10733,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x3e),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x3f),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;
@@ -10672,11 +10761,16 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     LOCK();
     UNLOCK();
     FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
                   MethodInfo__MVNetworkGame__OperationRequests__HandleUploadScreenShotData_System__Byte____
                  );
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral_No_screen_shot_when_not_planet_o);
+    FUN_?(&StringLiteral_No_screen_shot_when_no_photo_edi);
     LOCK();
     UNLOCK();
     FUN_?(&StringLiteral_Texture_is_already_being_generat);
@@ -10694,10 +10788,24 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
   if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
        (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
       (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
-     (this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-     this_01 != (MVLocalPlayer *)0x0)) {
-    PVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-    if ((char)PVar3 == '\x02') {
+     ((this_01 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+      this_01 != (MVLocalPlayer *)0x0 &&
+      (pLVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions(this_01,(MethodInfo *)0x0),
+      pLVar3 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)))) {
+    if (((pLVar3->fields)._size == 0) ||
+       (iVar4 = FUN_?(pLVar3,CONCAT71((int7)((ulonglong)
+                                                                                                            
+                                                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                                                  ->klass >> 8),0xe),
+                              MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                              ->klass->rgctx_data[0x17].rgctxDataDummy), iVar4 == -1)) {
+      pSVar5 = StringLiteral_No_screen_shot_when_no_photo_edi;
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+        pSVar5 = StringLiteral_No_screen_shot_when_no_photo_edi;
+      }
+    }
+    else {
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__GenerateTextureData);
         LOCK();
@@ -10727,7 +10835,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           UNLOCK();
           cRam_? = '\x01';
         }
-        pGVar4 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+        pGVar6 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
         pSVar5 = StringLiteral_GenerateTexture;
         if (cRam_? == '\0') {
           FUN_?(&TypeInfo__UnityEngine__Object);
@@ -10739,11 +10847,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject
-                  (pGVar4,pSVar5,(MethodInfo *)0x0);
-        if ((pGVar4 != (GameObject *)0x0) &&
+                  (pGVar6,pSVar5,(MethodInfo *)0x0);
+        if ((pGVar6 != (GameObject *)0x0) &&
            (this_03 = (Component *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                                (pGVar4,
+                                (pGVar6,
                                  GenerateTextureData_MethodInfo__UnityEngine__GameObject__AddComponent<GenerateTextureData>__
                                 ), this_03 != (Component *)0x0)) {
           if (cRam_? == '\0') {
@@ -10766,7 +10874,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           }
           if (TypeInfo__GenerateTextureData->static_fields->_IsCreatingScreenShot_k__BackingField !=
               0) {
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+            pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                 (this_03,(MethodInfo *)0x0);
             if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
               FUN_?();
@@ -10781,7 +10889,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
               FUN_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
-                      ((Object_1 *)pGVar4,0.0,(MethodInfo *)0x0);
+                      ((Object_1 *)pGVar6,0.0,(MethodInfo *)0x0);
             if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
               FUN_?();
             }
@@ -10807,14 +10915,14 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
               FUN_?();
             }
-            pIVar6 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-            if (pIVar6 == (ILogger_1 *)0x0) {
+            pIVar7 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+            if (pIVar7 == (ILogger_1 *)0x0) {
               FUN_?();
-              pcVar7 = (code *)swi(3);
-              (*pcVar7)();
+              pcVar8 = (code *)swi(3);
+              (*pcVar8)();
               return;
             }
-            FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar6,0,pSVar5);
+            FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar7,0,pSVar5);
             return;
           }
           if (cRam_? == '\0') {
@@ -10823,40 +10931,40 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
             UNLOCK();
             cRam_? = '\x01';
           }
-          lVar8 = FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
-          *(undefined4 *)(lVar8 + 0x10) = 0;
-          *(Component **)(lVar8 + 0x28) = this_03;
+          lVar9 = FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+          *(undefined4 *)(lVar9 + 0x10) = 0;
+          *(Component **)(lVar9 + 0x28) = this_03;
           if (iRam_? != 0) {
-            uVar9 = (uint)(lVar8 + 0x28U >> 0xc);
-            uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+            uVar10 = (uint)(lVar9 + 0x28U >> 0xc);
+            uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
             do {
-              uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
-              puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+              uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+              puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
               LOCK();
-              bVar13 = uVar11 == *puVar12;
-              if (bVar13) {
-                *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+              bVar14 = uVar12 == *puVar13;
+              if (bVar14) {
+                *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
               }
               UNLOCK();
-            } while (!bVar13);
+            } while (!bVar14);
           }
-          iVar14 = iRam_?;
-          *(UnityAction_1_System_Object_ **)(lVar8 + 0x20) = this_02;
-          if (iVar14 != 0) {
-            uVar9 = (uint)(lVar8 + 0x20U >> 0xc);
-            uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+          iVar4 = iRam_?;
+          *(UnityAction_1_System_Object_ **)(lVar9 + 0x20) = this_02;
+          if (iVar4 != 0) {
+            uVar10 = (uint)(lVar9 + 0x20U >> 0xc);
+            uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
             do {
-              uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
-              puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+              uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+              puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
               LOCK();
-              bVar13 = uVar11 == *puVar12;
-              if (bVar13) {
-                *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+              bVar14 = uVar12 == *puVar13;
+              if (bVar14) {
+                *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
               }
               UNLOCK();
-            } while (!bVar13);
+            } while (!bVar14);
           }
-          if (lVar8 == 0) {
+          if (lVar9 == 0) {
             uVar15 = func_?(&TypeInfo__System__NullReferenceException,0,0,0,unaff_RSI);
             this_04 = (NullReferenceException *)func_?(uVar15);
             pSVar5 = (String *)func_?(&StringLiteral_routine_is_null);
@@ -10866,8 +10974,8 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                                          MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_
                                         );
             FUN_?(this_04,uVar15);
-            pcVar7 = (code *)swi(3);
-            (*pcVar7)();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
             return;
           }
           bVar16 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
@@ -10883,8 +10991,8 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                                          MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_
                                         );
             FUN_?(this_05,uVar15);
-            pcVar7 = (code *)swi(3);
-            (*pcVar7)();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
             return;
           }
           if (cRam_? == '\0') {
@@ -10897,31 +11005,31 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
           }
           if (this_03 == (Component *)0x0) {
             FUN_?();
-            pcVar7 = (code *)swi(3);
-            (*pcVar7)();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
             return;
           }
           pvVar17 = (this_03->fields)._.m_CachedPtr;
           if (pvVar17 == (void *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
             ThrowHelper_2_ThrowNullReferenceException((Object *)this_03,(MethodInfo *)0x0);
-            pcVar7 = (code *)swi(3);
-            (*pcVar7)();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
             return;
           }
-          pcVar7 = pcRam_?;
+          pcVar8 = pcRam_?;
           if ((pcRam_? == (code *)0x0) &&
-             (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+             (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
             uVar15 = func_?(&UNK_?);
             FUN_?(uVar15,0);
-            pcVar7 = (code *)swi(3);
-            (*pcVar7)();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
             return;
           }
-          pcRam_? = pcVar7;
+          pcRam_? = pcVar8;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-          (*pcRam_?)(pvVar17,lVar8);
+          (*pcRam_?)(pvVar17,lVar9);
           return;
         }
         goto code_?;
@@ -10930,13 +11038,6 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
       if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
         FUN_?();
         pSVar5 = StringLiteral_Texture_is_already_being_generat;
-      }
-    }
-    else {
-      pSVar5 = StringLiteral_No_screen_shot_when_not_planet_o;
-      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
-        FUN_?();
-        pSVar5 = StringLiteral_No_screen_shot_when_not_planet_o;
       }
     }
     if (cRam_? == '\0') {
@@ -10960,20 +11061,20 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
-    pIVar6 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-    if (pIVar6 == (ILogger_1 *)0x0) {
+    pIVar7 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar7 == (ILogger_1 *)0x0) {
       FUN_?();
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar6,2,pSVar5);
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar7,2,pSVar5);
     return;
   }
 code_?:
   FUN_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -11093,10 +11194,10 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                ->klass->rgctx_data[0x22].method);
     if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-      uVar9 = CONCAT71((int7)((ulonglong)pOVar1 >> 8),0x48);
+      uVar9 = CONCAT71((int7)((ulonglong)pOVar1 >> 8),0x4b);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
       Dictionary_2_System_Byte_System_Object__TryInsert
-                (this_00,0x48,(Object *)this_01,
+                (this_00,0x4b,(Object *)this_01,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                  ->klass->rgctx_data[0x22].method);
@@ -11166,11 +11267,11 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     uVar2 = (undefined7)((ulonglong)method_00 >> 8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x16,value,(InsertionBehavior__Enum)uVar1,method_00);
-    uVar3 = CONCAT71(uVar2,0x53);
+              (this_00,0x17,value,(InsertionBehavior__Enum)uVar1,method_00);
+    uVar3 = CONCAT71(uVar2,0x56);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
     Dictionary_2_System_Byte_System_Object__TryInsert
-              (this_00,0x53,(Object *)dataPackage,
+              (this_00,0x56,(Object *)dataPackage,
                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                ->klass->rgctx_data[0x22].method);
@@ -11180,7 +11281,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
     }
     if (pPVar4 != (PhotonPeer *)0x0) {
       (*(pPVar4->klass->vtable).SendOperation.methodPtr)
-                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x1b),this_00,
+                (pPVar4,CONCAT71((int7)((ulonglong)uVar3 >> 8),0x1c),this_00,
                  TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
                  (pPVar4->klass->vtable).SendOperation.method);
       return;

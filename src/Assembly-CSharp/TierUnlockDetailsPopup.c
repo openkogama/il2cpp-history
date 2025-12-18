@@ -1507,110 +1507,47 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).gameMode == 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__GamePassesManager);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pPVar2 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-      if (pPVar2 != (PlayerPlanetData *)0x0) {
-        if ((pPVar2->fields).gamePassTier != (this->fields).tierToPurchase) {
-          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                              ((MethodInfo *)0x0);
-          if (pMVar3 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetTier
-                    (pMVar3,(uint)(this->fields).tierToPurchase,(MethodInfo *)0x0);
-          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)this,(MethodInfo *)0x0);
-          if (*(int *)&(TypeInfo__TierUnlockDetailsPopup____c->_1).field_0x1c == 0) {
-            FUN_?(TypeInfo__TierUnlockDetailsPopup____c);
-          }
-          this_01 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_2;
-          if (this_01 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-            if (*(int *)&(TypeInfo__TierUnlockDetailsPopup____c->_1).field_0x1c == 0) {
-              FUN_?(TypeInfo__TierUnlockDetailsPopup____c);
-            }
-            pTVar5 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9;
-            this_01 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
-                      FUN_?(
-                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                   );
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
-            Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
-                      ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)pTVar5,
-                       MethodInfo__TierUnlockDetailsPopup____c___Purchase_b__17_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_2 = this_01;
-            func_?(&TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_2);
-          }
-          if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
-            FUN_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (pGVar4,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-        }
-        return;
-      }
+  if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar1->fields).gameMode != 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    else {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerBase);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if ((((pMVar6 != (MVGameControllerBase *)0x0) &&
-           (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
-          (this_00 = (pMVar7->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
-         ((pMVar8 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0)
-          , pMVar8 != (MVLocalPlayer *)0x0 &&
-          (pUVar9 = (pMVar8->fields)._._UserProfileData_k__BackingField,
-          pUVar9 != (UserProfileData *)0x0)))) {
-        if ((pUVar9->fields).Gold < (this->fields).price) {
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar1->fields).gameMode != 4) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((((pMVar2 != (MVNetworkGame *)0x0) &&
+           (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+          (pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0)
+          , pMVar3 != (MVLocalPlayer *)0x0)) &&
+         (pUVar4 = (pMVar3->fields)._._UserProfileData_k__BackingField,
+         pUVar4 != (UserProfileData *)0x0)) {
+        if ((pUVar4->fields).Gold < (this->fields).price) {
           object = (Object *)FUN_?(TypeInfo__TierUnlockDetailsPopup____c__DisplayClass17_0);
           original = (this->fields).tierPurchaseGoldErrorPopupPrefab;
           if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
             FUN_?();
           }
-          pOVar10 = (Object__Class *)
+          pOVar5 = (Object__Class *)
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                               ((Object *)original,
                                TierPurchaseNotEnoughGoldErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchaseNotEnoughGoldErrorPopup>_TierPurchaseNotEnoughGoldErrorPopup_
                               );
           if (object != (Object *)0x0) {
-            bVar11 = iRam_? != 0;
-            object[1].klass = pOVar10;
-            if (bVar11) {
-              uVar12 = (uint)((ulonglong)(object + 1) >> 0xc);
-              lVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6) * 8;
-              do {
-                uVar14 = *(ulonglong *)(lVar13 + 0xADDR);
-                puVar15 = (ulonglong *)(lVar13 + 0xADDR);
-                LOCK();
-                bVar11 = uVar14 == *puVar15;
-                if (bVar11) {
-                  *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
-                }
-                UNLOCK();
-              } while (!bVar11);
-            }
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+            object[1].klass = pOVar5;
+            func_?(object + 1);
+            pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                 ((Component *)this,(MethodInfo *)0x0);
-            this_02 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                       FUN_?(
                                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                                    );
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
             Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
-                      (this_02,object,
+                      (this_01,object,
                        MethodInfo__TierUnlockDetailsPopup____c__DisplayClass17_0___Purchase_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
@@ -1618,7 +1555,7 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      (pGVar4,(BaseEventData *)0x0,this_02,
+                      (pGVar6,(BaseEventData *)0x0,this_01,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
             if (object[1].klass != (Object__Class *)0x0) {
@@ -1630,27 +1567,27 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
           }
         }
         else {
-          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this,(MethodInfo *)0x0);
           if (*(int *)&(TypeInfo__TierUnlockDetailsPopup____c->_1).field_0x1c == 0) {
             FUN_?(TypeInfo__TierUnlockDetailsPopup____c);
           }
-          this_03 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_0;
-          if (this_03 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+          this_02 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_0;
+          if (this_02 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
             if (*(int *)&(TypeInfo__TierUnlockDetailsPopup____c->_1).field_0x1c == 0) {
               FUN_?(TypeInfo__TierUnlockDetailsPopup____c);
             }
-            pTVar5 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9;
-            this_03 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+            pTVar7 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9;
+            this_02 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
                       FUN_?(
                                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                                    );
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
             Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
-                      ((ExecuteEvents_EventFunction_1_System_Object_ *)this_03,(Object *)pTVar5,
+                      ((ExecuteEvents_EventFunction_1_System_Object_ *)this_02,(Object *)pTVar7,
                        MethodInfo__TierUnlockDetailsPopup____c___Purchase_b__17_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
-            TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_0 = this_03;
+            TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_0 = this_02;
             func_?(&TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_0);
           }
           if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
@@ -1658,88 +1595,136 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_Purchas
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar4,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_System_Object_ *)this_03,
+                    (pGVar6,(BaseEventData *)0x0,
+                     (ExecuteEvents_EventFunction_1_System_Object_ *)this_02,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                     );
-          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar7 != (MVNetworkGame *)0x0) {
-            pAVar16 = (pMVar7->fields).PurchaseProductResponseHandler;
-            this_04 = (Action_2_Int32Enum_Object_ *)
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 != (MVNetworkGame *)0x0) {
+            pAVar8 = (pMVar2->fields).PurchaseProductResponseHandler;
+            this_03 = (Action_2_Int32Enum_Object_ *)
                       FUN_?(
                                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                                    );
             mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                      (this_04,(Object *)this,
+                      (this_03,(Object *)this,
                        MethodInfo__TierUnlockDetailsPopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                        ,(MethodInfo *)0x0);
-            pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                ((Delegate *)pAVar16,(Delegate *)this_04,(MethodInfo *)0x0);
-            pAVar18 = 
+            pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)pAVar8,(Delegate *)this_03,(MethodInfo *)0x0);
+            pAVar10 = 
             TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
             ;
-            if (pDVar17 == (Delegate *)0x0) {
-              (pMVar7->fields).PurchaseProductResponseHandler =
+            if (pDVar9 == (Delegate *)0x0) {
+              (pMVar2->fields).PurchaseProductResponseHandler =
                    (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                     *)0x0;
             }
             else {
-              pAVar16 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                         *)FUN_?(pDVar17,
+              pAVar8 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                         *)FUN_?(pDVar9,
                                          TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                                         );
-              if (pAVar16 ==
+              if (pAVar8 ==
                   (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                    *)0x0) {
-                FUN_?(pDVar17,pAVar18);
-                pcVar19 = (code *)swi(3);
-                (*pcVar19)();
+                FUN_?(pDVar9,pAVar10);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
                 return;
               }
-              (pMVar7->fields).PurchaseProductResponseHandler = pAVar16;
-              pAVar18 = 
+              (pMVar2->fields).PurchaseProductResponseHandler = pAVar8;
+              pAVar10 = 
               TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
               ;
-              lVar13 = FUN_?(pDVar17,
+              lVar12 = FUN_?(pDVar9,
                                      TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                                     );
-              if (lVar13 == 0) {
-                FUN_?(pDVar17,pAVar18);
-                pcVar19 = (code *)swi(3);
-                (*pcVar19)();
+              if (lVar12 == 0) {
+                FUN_?(pDVar9,pAVar10);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
                 return;
               }
             }
-            if (iRam_? != 0) {
-              uVar12 = (uint)((ulonglong)&(pMVar7->fields).PurchaseProductResponseHandler >> 0xc);
-              lVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6) * 8;
-              do {
-                uVar14 = *(ulonglong *)(lVar13 + 0xADDR);
-                puVar15 = (ulonglong *)(lVar13 + 0xADDR);
-                LOCK();
-                bVar11 = uVar14 == *puVar15;
-                if (bVar11) {
-                  *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
-                }
-                UNLOCK();
-              } while (!bVar11);
-            }
-            pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+            func_?();
+            pMVar13 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                                 ((MethodInfo *)0x0);
-            if (pMVar3 != (MVNetworkGame_OperationRequests *)0x0) {
+            if (pMVar13 != (MVNetworkGame_OperationRequests *)0x0) {
               MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PurchaseTier
-                        (pMVar3,(uint)(this->fields).tierToPurchase,(MethodInfo *)0x0);
+                        (pMVar13,(uint)(this->fields).tierToPurchase,(MethodInfo *)0x0);
               return;
             }
           }
         }
       }
+      goto code_?;
     }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__GamePassesManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pPVar14 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+  if (pPVar14 != (PlayerPlanetData *)0x0) {
+    if ((pPVar14->fields).gamePassTier != (this->fields).tierToPurchase) {
+      pMVar13 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (pMVar13 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetTier
+                (pMVar13,(uint)(this->fields).tierToPurchase,(MethodInfo *)0x0);
+      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__TierUnlockDetailsPopup____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__TierUnlockDetailsPopup____c);
+      }
+      this_04 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_2;
+      if (this_04 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if (*(int *)&(TypeInfo__TierUnlockDetailsPopup____c->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__TierUnlockDetailsPopup____c);
+        }
+        pTVar7 = TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9;
+        this_04 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                  FUN_?(
+                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                               );
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]
+        ::ExecuteEvents_EventFunction_1_System_Object___ctor
+                  ((ExecuteEvents_EventFunction_1_System_Object_ *)this_04,(Object *)pTVar7,
+                   MethodInfo__TierUnlockDetailsPopup____c___Purchase_b__17_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_2 = this_04;
+        if (iRam_? != 0) {
+          uVar15 = (uint)((ulonglong)
+                          &TypeInfo__TierUnlockDetailsPopup____c->static_fields->__9__17_2 >> 0xc);
+          puVar16 = (ulonglong *)((ulonglong)((uVar15 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar17 = *puVar16;
+            LOCK();
+            uVar18 = *puVar16;
+            if (uVar17 == uVar18) {
+              *puVar16 = uVar17 | 1L << (uVar15 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar17 != uVar18);
+        }
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar6,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)this_04,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+    }
+    return;
   }
 code_?:
   FUN_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

@@ -1675,12 +1675,23 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_SetMainTexture
           pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
           if (pGVar4 == (GameSessionData *)0x0) goto code_?;
           if ((pGVar4->fields).gameMode != 1) {
-            pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar5 == (MVNetworkGame *)0x0) ||
-               (this_00 = (pMVar5->fields)._MaterialRepository_k__BackingField,
-               this_00 == (MVMaterialRepository *)0x0)) goto code_?;
-            MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextures
-                      (this_00,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
+            ;
+            if (pGVar4 == (GameSessionData *)0x0) goto code_?;
+            if ((pGVar4->fields).gameMode != 3) {
+              pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar5 == (MVNetworkGame *)0x0) ||
+                 (this_00 = (pMVar5->fields)._MaterialRepository_k__BackingField,
+                 this_00 == (MVMaterialRepository *)0x0)) goto code_?;
+              MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextures
+                        (this_00,(MethodInfo *)0x0);
+            }
           }
         }
         return;
@@ -1849,13 +1860,24 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_SetTextureQuality
                          _GameSessionData_k__BackingField;
                 if (pGVar6 != (GameSessionData *)0x0) {
                   if ((pGVar6->fields).gameMode != 1) {
-                    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
-                    ;
-                    if ((pMVar7 == (MVNetworkGame *)0x0) ||
-                       (this_00 = (pMVar7->fields)._MaterialRepository_k__BackingField,
-                       this_00 == (MVMaterialRepository *)0x0)) goto code_?;
-                    MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextures
-                              (this_00,(MethodInfo *)0x0);
+                    if (cRam_? == '\0') {
+                      FUN_?(&TypeInfo__MVGameControllerBase);
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pGVar6 = TypeInfo__MVGameControllerBase->static_fields->
+                             _GameSessionData_k__BackingField;
+                    if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+                    if ((pGVar6->fields).gameMode != 3) {
+                      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                          ((MethodInfo *)0x0);
+                      if ((pMVar7 == (MVNetworkGame *)0x0) ||
+                         (this_00 = (pMVar7->fields)._MaterialRepository_k__BackingField,
+                         this_00 == (MVMaterialRepository *)0x0)) goto code_?;
+                      MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextures
+                                (this_00,(MethodInfo *)0x0);
+                    }
                   }
                   return;
                 }

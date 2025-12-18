@@ -800,11 +800,16 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
           LOCK();
           UNLOCK();
           FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
                         MethodInfo__MVNetworkGame__OperationRequests__HandleUploadScreenShotData_System__Byte____
                        );
           LOCK();
           UNLOCK();
-          FUN_?(&StringLiteral_No_screen_shot_when_not_planet_o);
+          FUN_?(&StringLiteral_No_screen_shot_when_no_photo_edi);
           LOCK();
           UNLOCK();
           FUN_?(&StringLiteral_Texture_is_already_being_generat);
@@ -822,10 +827,25 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
         if (((pMVar6 != (MVGameControllerBase *)0x0) &&
             (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
            ((this_00 = (pMVar7->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0 &&
-            (this_03 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
-                                 (this_00,(MethodInfo *)0x0), this_03 != (MVLocalPlayer *)0x0)))) {
-          PVar8 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_03,(MethodInfo *)0x0);
-          if ((char)PVar8 == '\x02') {
+            ((this_03 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                  (this_00,(MethodInfo *)0x0), this_03 != (MVLocalPlayer *)0x0 &&
+             (pLVar8 = MVLocalPlayer::MVLocalPlayer_get_PlanetPermissions
+                                  (this_03,(MethodInfo *)0x0),
+             pLVar8 != (List_1_MV_Common_PlanetPermissionType_ *)0x0)))))) {
+          if (((pLVar8->fields)._size == 0) ||
+             (iVar9 = FUN_?(pLVar8,CONCAT71((int7)((ulonglong)
+                                                                                                                        
+                                                  MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                                                  ->klass >> 8),0xe),
+                                    MethodInfo__System__Collections__Generic__List<MV::Common::PlanetPermissionType>__Contains_MV__Common__PlanetPermissionType_
+                                    ->klass->rgctx_data[0x17].rgctxDataDummy), iVar9 == -1)) {
+            pSVar10 = StringLiteral_No_screen_shot_when_no_photo_edi;
+            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+              FUN_?();
+              pSVar10 = StringLiteral_No_screen_shot_when_no_photo_edi;
+            }
+          }
+          else {
             if (cRam_? == '\0') {
               FUN_?(&TypeInfo__GenerateTextureData);
               LOCK();
@@ -856,7 +876,7 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                 cRam_? = '\x01';
               }
               pGVar1 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
-              pSVar9 = StringLiteral_GenerateTexture;
+              pSVar10 = StringLiteral_GenerateTexture;
               if (cRam_? == '\0') {
                 FUN_?(&TypeInfo__UnityEngine__Object);
                 LOCK();
@@ -867,7 +887,7 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                 FUN_?();
               }
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-              GameObject_Internal_CreateGameObject(pGVar1,pSVar9,(MethodInfo *)0x0);
+              GameObject_Internal_CreateGameObject(pGVar1,pSVar10,(MethodInfo *)0x0);
               if ((pGVar1 != (GameObject *)0x0) &&
                  (this_05 = (Component *)
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
@@ -914,7 +934,7 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                   if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
                     FUN_?();
                   }
-                  pSVar9 = StringLiteral_Texture_is_being_generated;
+                  pSVar10 = StringLiteral_Texture_is_being_generated;
                   if (cRam_? == '\0') {
                     FUN_?(&TypeInfo__UnityEngine__Debug,0);
                     LOCK();
@@ -936,14 +956,14 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                   if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
                     FUN_?();
                   }
-                  pIVar10 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-                  if (pIVar10 == (ILogger_1 *)0x0) {
+                  pIVar11 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+                  if (pIVar11 == (ILogger_1 *)0x0) {
                     FUN_?();
-                    pcVar11 = (code *)swi(3);
-                    (*pcVar11)();
+                    pcVar12 = (code *)swi(3);
+                    (*pcVar12)();
                     return;
                   }
-                  FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar10,0,pSVar9);
+                  FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar11,0,pSVar10);
                   return;
                 }
                 if (cRam_? == '\0') {
@@ -952,52 +972,52 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                   UNLOCK();
                   cRam_? = '\x01';
                 }
-                lVar12 = FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
-                *(undefined4 *)(lVar12 + 0x10) = 0;
-                *(Component **)(lVar12 + 0x28) = this_05;
+                lVar13 = FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+                *(undefined4 *)(lVar13 + 0x10) = 0;
+                *(Component **)(lVar13 + 0x28) = this_05;
                 if (iRam_? != 0) {
-                  uVar2 = (uint)(lVar12 + 0x28U >> 0xc);
+                  uVar2 = (uint)(lVar13 + 0x28U >> 0xc);
                   uVar5 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
                   do {
                     uVar4 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
                     puVar3 = (ulonglong *)(uVar5 * 8 + 0xADDR);
                     LOCK();
-                    bVar13 = uVar4 == *puVar3;
-                    if (bVar13) {
+                    bVar14 = uVar4 == *puVar3;
+                    if (bVar14) {
                       *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
                     }
                     UNLOCK();
-                  } while (!bVar13);
+                  } while (!bVar14);
                 }
-                iVar14 = iRam_?;
-                *(UnityAction_1_System_Object_ **)(lVar12 + 0x20) = this_04;
-                if (iVar14 != 0) {
-                  uVar2 = (uint)(lVar12 + 0x20U >> 0xc);
+                iVar9 = iRam_?;
+                *(UnityAction_1_System_Object_ **)(lVar13 + 0x20) = this_04;
+                if (iVar9 != 0) {
+                  uVar2 = (uint)(lVar13 + 0x20U >> 0xc);
                   uVar5 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
                   do {
                     uVar4 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
                     puVar3 = (ulonglong *)(uVar5 * 8 + 0xADDR);
                     LOCK();
-                    bVar13 = uVar4 == *puVar3;
-                    if (bVar13) {
+                    bVar14 = uVar4 == *puVar3;
+                    if (bVar14) {
                       *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
                     }
                     UNLOCK();
-                  } while (!bVar13);
+                  } while (!bVar14);
                 }
-                if (lVar12 == 0) {
+                if (lVar13 == 0) {
                   uVar15 = func_?(&TypeInfo__System__NullReferenceException,0,0,0,
                                                unaff_RSI);
                   this_06 = (NullReferenceException *)func_?(uVar15);
-                  pSVar9 = (String *)func_?(&StringLiteral_routine_is_null);
+                  pSVar10 = (String *)func_?(&StringLiteral_routine_is_null);
                   mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1
-                            (this_06,pSVar9,(MethodInfo *)0x0);
+                            (this_06,pSVar10,(MethodInfo *)0x0);
                   uVar15 = func_?(&
                                                MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_
                                               );
                   FUN_?(this_06,uVar15);
-                  pcVar11 = (code *)swi(3);
-                  (*pcVar11)();
+                  pcVar12 = (code *)swi(3);
+                  (*pcVar12)();
                   return;
                 }
                 bVar16 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
@@ -1005,16 +1025,16 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                 if (bVar16 == 0) {
                   uVar15 = func_?(&TypeInfo__System__ArgumentException);
                   this_07 = (InvalidEnumArgumentException *)func_?(uVar15);
-                  pSVar9 = (String *)
+                  pSVar10 = (String *)
                             func_?(&StringLiteral_Coroutines_can_only_be_stopped_o);
                   System.dll::System::ComponentModel::InvalidEnumArgumentException::
-                  InvalidEnumArgumentException__ctor_1(this_07,pSVar9,(MethodInfo *)0x0);
+                  InvalidEnumArgumentException__ctor_1(this_07,pSVar10,(MethodInfo *)0x0);
                   uVar15 = func_?(&
                                                MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_
                                               );
                   FUN_?(this_07,uVar15);
-                  pcVar11 = (code *)swi(3);
-                  (*pcVar11)();
+                  pcVar12 = (code *)swi(3);
+                  (*pcVar12)();
                   return;
                 }
                 if (cRam_? == '\0') {
@@ -1027,46 +1047,39 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                 }
                 if (this_05 == (Component *)0x0) {
                   FUN_?();
-                  pcVar11 = (code *)swi(3);
-                  (*pcVar11)();
+                  pcVar12 = (code *)swi(3);
+                  (*pcVar12)();
                   return;
                 }
                 pvVar17 = (this_05->fields)._.m_CachedPtr;
                 if (pvVar17 == (void *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
                   ThrowHelper_2_ThrowNullReferenceException((Object *)this_05,(MethodInfo *)0x0);
-                  pcVar11 = (code *)swi(3);
-                  (*pcVar11)();
+                  pcVar12 = (code *)swi(3);
+                  (*pcVar12)();
                   return;
                 }
-                pcVar11 = pcRam_?;
+                pcVar12 = pcRam_?;
                 if ((pcRam_? == (code *)0x0) &&
-                   (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+                   (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
                   uVar15 = func_?(&UNK_?);
                   FUN_?(uVar15,0);
-                  pcVar11 = (code *)swi(3);
-                  (*pcVar11)();
+                  pcVar12 = (code *)swi(3);
+                  (*pcVar12)();
                   return;
                 }
-                pcRam_? = pcVar11;
+                pcRam_? = pcVar12;
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                (*pcRam_?)(pvVar17,lVar12);
+                (*pcRam_?)(pvVar17,lVar13);
                 return;
               }
               goto code_?;
             }
-            pSVar9 = StringLiteral_Texture_is_already_being_generat;
+            pSVar10 = StringLiteral_Texture_is_already_being_generat;
             if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
               FUN_?();
-              pSVar9 = StringLiteral_Texture_is_already_being_generat;
-            }
-          }
-          else {
-            pSVar9 = StringLiteral_No_screen_shot_when_not_planet_o;
-            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
-              FUN_?();
-              pSVar9 = StringLiteral_No_screen_shot_when_not_planet_o;
+              pSVar10 = StringLiteral_Texture_is_already_being_generat;
             }
           }
           if (cRam_? == '\0') {
@@ -1090,27 +1103,27 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
           if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
             FUN_?();
           }
-          pIVar10 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-          if (pIVar10 == (ILogger_1 *)0x0) {
+          pIVar11 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+          if (pIVar11 == (ILogger_1 *)0x0) {
             FUN_?();
-            pcVar11 = (code *)swi(3);
-            (*pcVar11)();
+            pcVar12 = (code *)swi(3);
+            (*pcVar12)();
             return;
           }
-          FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar10,2,pSVar9);
+          FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar11,2,pSVar10);
           return;
         }
 code_?:
         FUN_?();
-        pcVar11 = (code *)swi(3);
-        (*pcVar11)();
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
         return;
       }
     }
   }
   FUN_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

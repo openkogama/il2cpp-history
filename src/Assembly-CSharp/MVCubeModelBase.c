@@ -2654,16 +2654,16 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_UpdatePrototypeScale
             uVar6 = CONCAT71((int7)((ulonglong)uVar4 >> 8),2);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_01,0x2f,pOVar5,(InsertionBehavior__Enum)uVar6,
+                      (this_01,0x30,pOVar5,(InsertionBehavior__Enum)uVar6,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                        ->klass->rgctx_data[0x22].method);
             pOVar5 = (Object *)FUN_?(uRam_?,&stack0x00000010);
             method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                         ->klass->rgctx_data[0x22].method;
-            uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x22);
+            uVar4 = CONCAT71((int7)((ulonglong)method_00 >> 8),0x23);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__TryInsert
-                      (this_01,0x22,pOVar5,
+                      (this_01,0x23,pOVar5,
                        (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),method_00
                       );
             pPVar7 = (pMVar3->fields).peer;

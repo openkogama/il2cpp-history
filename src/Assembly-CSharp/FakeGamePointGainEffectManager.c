@@ -23,16 +23,32 @@ void Assembly-CSharp.dll::FakeGamePointGainEffectManager::
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    iVar2 = (pGVar1->fields).gameMode;
+    if ((pGVar1->fields).gameMode == 0) {
+      bVar2 = true;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto DAT_?;
+      bVar2 = (pGVar1->fields).gameMode == 4;
+    }
     if (cRam_? == '\0') {
-      FUN_?();
+      FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
     pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar1 != (GameSessionData *)0x0) {
-      if ((pGVar1->fields).profileID < 1 || iVar2 == 0) {
+      if ((pGVar1->fields).profileID < 1) {
+        bVar2 = true;
+      }
+      if (bVar2) {
         pAVar3 = TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect;
         if (pAVar3 == (Action_1_Int32_ *)0x0) goto DAT_?;
         (*(pAVar3->fields)._._.invoke_impl)
@@ -63,7 +79,20 @@ bool Assembly-CSharp.dll::FakeGamePointGainEffectManager::
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    iVar2 = (pGVar1->fields).gameMode;
+    if ((pGVar1->fields).gameMode == 0) {
+      bVar2 = true;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 == (GameSessionData *)0x0) goto DAT_?;
+      bVar2 = (pGVar1->fields).gameMode == 4;
+    }
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
@@ -72,9 +101,13 @@ bool Assembly-CSharp.dll::FakeGamePointGainEffectManager::
     }
     pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar1 != (GameSessionData *)0x0) {
-      return (pGVar1->fields).profileID < 1 || iVar2 == 0;
+      if ((pGVar1->fields).profileID < 1) {
+        bVar2 = true;
+      }
+      return bVar2;
     }
   }
+DAT_?:
   FUN_?();
   pcVar3 = (code *)swi(3);
   bVar4 = (*pcVar3)();

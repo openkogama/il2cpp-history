@@ -521,7 +521,7 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
             (this_01,(ByteEnum__Enum)
                      CONCAT71((int7)((ulonglong)
                                      MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
-                                     ->klass >> 8),0x6a),
+                                     ->klass >> 8),0x6b),
              MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
              ->klass->rgctx_data[0x15].method);
   bVar1 = iRam_? != 0;

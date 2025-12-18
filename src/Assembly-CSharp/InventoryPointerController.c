@@ -867,7 +867,7 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
     (*pcVar2)();
     return;
   }
-  pDVar3 = *(Delegate **)(lVar1 + 0x28);
+  pDVar3 = *(Delegate **)(lVar1 + 0x30);
   b = (Delegate *)FUN_?(TypeInfo__System__Action<int,_int,_bool>);
   pMVar4 = MethodInfo__InventoryPointerController__CreateBubble_int__int__bool_;
   bVar5 = iRam_? != 0;
@@ -912,7 +912,7 @@ code_?:
   pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar3,b,(MethodInfo *)0x0);
   pAVar12 = TypeInfo__System__Action<int,_int,_bool>;
   if (pDVar3 == (Delegate *)0x0) {
-    *(undefined8 *)(lVar1 + 0x28) = 0;
+    *(undefined8 *)(lVar1 + 0x30) = 0;
   }
   else {
     lVar7 = FUN_?(pDVar3,TypeInfo__System__Action<int,_int,_bool>);
@@ -922,7 +922,7 @@ code_?:
       (*pcVar2)();
       return;
     }
-    *(longlong *)(lVar1 + 0x28) = lVar7;
+    *(longlong *)(lVar1 + 0x30) = lVar7;
     pAVar12 = TypeInfo__System__Action<int,_int,_bool>;
     lVar7 = FUN_?(pDVar3,TypeInfo__System__Action<int,_int,_bool>);
     if (lVar7 == 0) {
@@ -933,7 +933,7 @@ code_?:
     }
   }
   if (iRam_? != 0) {
-    uVar6 = (uint)(lVar1 + 0x28U >> 0xc);
+    uVar6 = (uint)(lVar1 + 0x30U >> 0xc);
     lVar1 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
     do {
       uVar8 = *(ulonglong *)(lVar1 + 0xADDR);
@@ -1497,7 +1497,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052a1b1,
+                while (ppMVar16 = ppMVar15 + 0x3052af3c,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

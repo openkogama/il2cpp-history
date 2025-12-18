@@ -119,7 +119,7 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicEventQueue::MVNetworkGame_LogicEven
   }
   if (eventData != (EventData *)0x0) {
     pOVar1 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                       (eventData,0x23,(MethodInfo *)0x0);
+                       (eventData,0x24,(MethodInfo *)0x0);
     if (pOVar1 != (Object *)0x0) {
       if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
         FUN_?(pOVar1,lRam_?);
@@ -243,10 +243,10 @@ code_?:
     return;
   }
   uVar2 = (photonEvent->fields).Code;
-  if (uVar2 == 0x50) {
+  if (uVar2 == 0x51) {
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     pOVar4 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                        (photonEvent,0x16,(MethodInfo *)0x0);
+                        (photonEvent,0x17,(MethodInfo *)0x0);
     if ((pMVar3 != (MVWorldObjectClientManager *)0x0) && (pOVar4 != (Object *)0x0)) {
       if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
         FUN_?(pOVar4,lRam_?);
@@ -257,7 +257,7 @@ code_?:
       pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
                           (pMVar3,*(int32_t *)&pOVar4[1].klass,(MethodInfo *)0x0);
       pOVar4 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                          (photonEvent,0xcc,(MethodInfo *)0x0);
+                          (photonEvent,0xce,(MethodInfo *)0x0);
       pIVar6 = TypeInfo__IIsLogicObjectFiringEventHandler;
       if (pMVar5 != (MVWorldObjectClient *)0x0) {
         lVar7 = FUN_?(pMVar5,TypeInfo__IIsLogicObjectFiringEventHandler);
@@ -312,7 +312,7 @@ code_?:
     }
     goto code_?;
   }
-  if (uVar2 != 0x52) {
+  if (uVar2 != 0x53) {
     pEStack_14 = (Enum__Class *)CONCAT71(pEStack_14._1_7_,uVar2);
     auStack_15 = (undefined1  [8])TypeInfo__MV__Common__MVEventCodes;
     pMStack_16 = (MonitorData *)0xffffffffffffffff;
@@ -355,7 +355,7 @@ code_?:
     return;
   }
   pOVar4 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
-                      (photonEvent,0x48,(MethodInfo *)0x0);
+                      (photonEvent,0x4b,(MethodInfo *)0x0);
   pIVar19 = TypeInfo__System__Int32;
   if (pOVar4 == (Object *)0x0) goto code_?;
   lVar7 = FUN_?(pOVar4,TypeInfo__System__Int32);

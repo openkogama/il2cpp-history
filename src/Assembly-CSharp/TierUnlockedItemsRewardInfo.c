@@ -148,7 +148,7 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::TierUnlockedItemsRewardIn
       UNLOCK();
     } while (uVar4 != uVar5);
   }
-  uStack_6 = 0x806a0f80;
+  uStack_6 = 0x806a2ee0;
   iStack_7 = 1;
   TierUnlockedItemsRewardInfo_ChangeBackground(this,tier & 0xff,(MethodInfo *)0x0);
   if (cRam_? == '\0') {

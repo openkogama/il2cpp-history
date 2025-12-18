@@ -543,43 +543,54 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_3
   }
   pGVar11 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar11 == (GameSessionData *)0x0) {
+code_?:
     FUN_?();
     pcVar12 = (code *)swi(3);
     (*pcVar12)();
     return;
   }
   if ((pGVar11->fields).gameMode != 1) {
-    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-      FUN_?();
-    }
     if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__UnityEngine__Object);
+      FUN_?(&TypeInfo__MVGameControllerBase);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
-      FUN_?();
-    }
-    if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__UnityEngine__Object);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    if (materialButtonTextureGenerator != (MaterialButtonTextureGenerator *)0x0) {
+    pGVar11 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar11 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar11->fields).gameMode != 3) {
       if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
         FUN_?();
       }
-      if ((materialButtonTextureGenerator->fields)._._._._.m_CachedPtr != (void *)0x0) {
-        method_00 = (MethodInfo *)0x0;
-        value = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                 *)MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
-                             (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
-                              (MethodInfo *)0x0);
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-        ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__set_valueUpdated
-                  ((ValueAnimation_1_StyleValues_ *)this,value,method_00);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (materialButtonTextureGenerator != (MaterialButtonTextureGenerator *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((materialButtonTextureGenerator->fields)._._._._.m_CachedPtr != (void *)0x0) {
+          method_00 = (MethodInfo *)0x0;
+          value = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
+                   *)MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
+                               (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
+                                (MethodInfo *)0x0);
+          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+          ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__set_valueUpdated
+                    ((ValueAnimation_1_StyleValues_ *)this,value,method_00);
+        }
       }
     }
   }

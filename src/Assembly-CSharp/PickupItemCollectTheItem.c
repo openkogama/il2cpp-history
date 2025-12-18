@@ -1323,7 +1323,7 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::PickupItemCollectTheItem_OnU
                     if (this_04 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                       Object]::Dictionary_2_System_Byte_System_Object__TryInsert
-                                (this_04,0xcb,value,
+                                (this_04,0xcd,value,
                                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar13 >> 8),2)
                                  ,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                                   ->klass->rgctx_data[0x22].method);
@@ -1346,7 +1346,7 @@ void Assembly-CSharp.dll::PickupItemCollectTheItem::PickupItemCollectTheItem_OnU
                       }
                       if (pPVar18 != (PhotonPeer *)0x0) {
                         (*(pPVar18->klass->vtable).SendOperation.methodPtr)
-                                  (pPVar18,CONCAT71((int7)((ulonglong)pDVar17 >> 8),0x41),this_04,
+                                  (pPVar18,CONCAT71((int7)((ulonglong)pDVar17 >> 8),0x42),this_04,
                                    TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
                                    SendReliable,(pPVar18->klass->vtable).SendOperation.method);
                         return;
@@ -2232,7 +2232,7 @@ code_?:
             if (pMVar18 != (MethodInfo *)0x0) {
               if ((*pMVar18->name == '.') && ((pMVar18->flags & 0x800) != 0)) {
                 ppMVar19 = ppMVar8;
-                while (ppMVar20 = ppMVar19 + 0x3052a1b1,
+                while (ppMVar20 = ppMVar19 + 0x3052af3c,
                       ppMVar19 = (MethodInfo **)((longlong)ppMVar19 + 1),
                       *(char *)ppMVar20 == (pMVar18->name + -1)[(longlong)ppMVar19]) {
                   if (ppMVar19 == (MethodInfo **)0x7) {
