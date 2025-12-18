@@ -89,6 +89,6 @@ public class PostProcessingManager : MonoBehaviour
 	private void HandlePostProcessCubeAddedRemoved(bool cubeAddedRemoved);
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _OnRenderImage_g__RunPassThenSwitchTextures_26_0(Pass pass, ref __c__DisplayClass26_0 param_00000217);
+	private void _OnRenderImage_g__RunPassThenSwitchTextures_26_0(Pass pass, ref __c__DisplayClass26_0 param_00000213);
 }
 

@@ -16,6 +16,7 @@ namespace UGUI.Desktop.Scripts.EditMode.Inventories
 	public class PlayerShopInventoryRepository
 	{
 		// Fields
+		private long lastKnownInventoryVersion;
 		public Action OnFailedToAddItem;
 		public Action OnInventoryChanged;
 		public Action OnFailedToLoadItem;
@@ -55,5 +56,6 @@ namespace UGUI.Desktop.Scripts.EditMode.Inventories
 		public bool GetInventoryItemByWorldObjectTypeInCategory(InventoryCategoryType pickups, WorldObjectType worldObjectType, out InventoryItem item);
 		public bool GetShopItemByWorldObjectTypeInCategory(InventoryCategoryType pickups, WorldObjectType woType, out ShopItem item);
 		public void UpdateItemData(int itemID, int itemCategoryID, byte[] data);
+		public void RefreshInventory(Dictionary<object, object> inventoryData, long inventoryVersion);
 	}
 }

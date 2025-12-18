@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -13,13 +14,9 @@ using System.Runtime.Versioning;
 
 namespace MV.Common
 {
-	public enum MVGameMode
+	public static class MVEnumsExtensions
 	{
-		Edit = 0,
-		Play = 1,
-		CharacterEditor = 2,
-		SpacePlay = 3,
-		SpaceEdit = 4,
-		None = 5
+		// Extension methods
+		public static string ToTitle(this List<PlanetPermissionType> planetPermissionTypes);
 	}
 }

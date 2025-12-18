@@ -18,6 +18,8 @@ public class ItemInventoryDeleteTab : ManageItemPage
 	private UnityEngine.UI.Text itemName;
 	[SerializeField]
 	private RawImage preview;
+	[SerializeField]
+	private UnityEngine.UI.Button deleteButton;
 	private InventoryItem previewedItem;
 
 	// Nested types
@@ -27,24 +29,24 @@ public class ItemInventoryDeleteTab : ManageItemPage
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__5_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__6_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _OnConfirmation_b__5_0(IUIStack x, BaseEventData y);
+		internal void _OnConfirmation_b__6_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass5_0
+	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
 		public string text;
 
 		// Constructors
-		public __c__DisplayClass5_0();
+		public __c__DisplayClass6_0();
 
 		// Methods
 		internal void _OnConfirmation_b__1(IModalPopupCreator x, BaseEventData y);
@@ -58,6 +60,6 @@ public class ItemInventoryDeleteTab : ManageItemPage
 	public void OnRemoveFromInventory();
 	public void OnConfirmation(bool affirmative, ConfirmationPopup popup);
 	[CompilerGenerated]
-	private void _OnRemoveFromInventory_b__4_0(IModalPopupCreator x, BaseEventData y);
+	private void _OnRemoveFromInventory_b__5_0(IModalPopupCreator x, BaseEventData y);
 }
 
