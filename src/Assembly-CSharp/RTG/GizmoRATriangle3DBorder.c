@@ -140,7 +140,7 @@ code_?:
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-                    (**ppIVar15)(pIVar11,*ppIVar15,(MethodInfo *)ppIVar15[1]);
+                    (**ppIVar15)(pIVar11,fVar7,(MethodInfo *)ppIVar15[1]);
                     return;
                   }
                 }
@@ -185,11 +185,10 @@ void Assembly-CSharp.dll::RTG::GizmoRATriangle3DBorder::
       }
       lVar4 = *(longlong *)((longlong)&pGVar2->klass + lVar4);
       if (lVar4 != 0) {
-        fVar5 = _UNK_?;
         if (*(char *)(lVar4 + 0x18) != '\0') {
           pGVar1 = (pGVar2->fields)._._handle;
           if (pGVar1 == (GizmoHandle *)0x0) goto code_?;
-          fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(pGVar1,camera,(MethodInfo *)0x0);
+          GizmoHandle::GizmoHandle_GetZoomFactor(pGVar1,camera,(MethodInfo *)0x0);
         }
         pGVar2 = (this->fields)._planeSlider;
         if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
@@ -198,39 +197,39 @@ void Assembly-CSharp.dll::RTG::GizmoRATriangle3DBorder::
           }
           lVar4 = *(longlong *)((longlong)&pGVar2->klass + lVar3);
           if ((lVar4 != 0) &&
-             (pIVar6 = (this->fields)._controllers,
-             pIVar6 != (IGizmoRATriangle3DBorderController__Array *)0x0)) {
-            uVar7 = *(uint *)(lVar4 + 0x9c);
-            if ((uint)pIVar6->max_length <= uVar7) {
+             (pIVar5 = (this->fields)._controllers,
+             pIVar5 != (IGizmoRATriangle3DBorderController__Array *)0x0)) {
+            uVar6 = *(uint *)(lVar4 + 0x9c);
+            if ((uint)pIVar5->max_length <= uVar6) {
               FUN_?();
-              pcVar8 = (code *)swi(3);
-              (*pcVar8)();
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
               return;
             }
-            pIVar9 = pIVar6->vector[(int)uVar7];
-            if (pIVar9 != (IGizmoRATriangle3DBorderController *)0x0) {
-              pIVar10 = pIVar9->klass;
-              uVar11 = 0;
-              uVar12._0_1_ = (pIVar10->_1).rank;
-              uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
-              if (uVar12 != 0) {
+            pIVar8 = pIVar5->vector[(int)uVar6];
+            if (pIVar8 != (IGizmoRATriangle3DBorderController *)0x0) {
+              pIVar9 = pIVar8->klass;
+              uVar10 = 0;
+              uVar11._0_1_ = (pIVar9->_1).rank;
+              uVar11._1_1_ = (pIVar9->_1).minimumAlignment;
+              if (uVar11 != 0) {
                 do {
-                  if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
+                  if (pIVar9->interfaceOffsets[uVar10].interfaceType ==
                       (Il2CppClass *)TypeInfo__RTG__IGizmoRATriangle3DBorderController) {
-                    ppIVar13 = &(&(pIVar10->vtable).UpdateHandles)
-                               [pIVar10->interfaceOffsets[uVar11].offset + 2].methodPtr;
+                    ppIVar12 = &(&(pIVar9->vtable).UpdateHandles)
+                               [pIVar9->interfaceOffsets[uVar10].offset + 2].methodPtr;
                     goto code_?;
                   }
-                  uVar14 = (short)uVar11 + 1;
-                  uVar11 = (ulonglong)uVar14;
-                } while (uVar14 < uVar12);
+                  uVar13 = (short)uVar10 + 1;
+                  uVar10 = (ulonglong)uVar13;
+                } while (uVar13 < uVar11);
               }
-              ppIVar13 = (Il2CppMethodPointer *)
-                        FUN_?(pIVar9,TypeInfo__RTG__IGizmoRATriangle3DBorderController,2);
+              ppIVar12 = (Il2CppMethodPointer *)
+                        FUN_?(pIVar8,TypeInfo__RTG__IGizmoRATriangle3DBorderController,2);
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-              (**ppIVar13)(pIVar9,fVar5,(MethodInfo *)ppIVar13[1]);
+              (**ppIVar12)(pIVar8,*ppIVar12,(MethodInfo *)ppIVar12[1]);
               return;
             }
           }
@@ -240,8 +239,8 @@ code_?:
   }
 code_?:
   FUN_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
