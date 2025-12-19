@@ -1574,14 +1574,14 @@ Dictionary_2_System_String_System_String_ * Assembly-CSharp.dll::DebugLogHandler
   this = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_5_14_0);
+    FUN_?(&StringLiteral__3_5_16_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
   if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_ *)0x0) {
     IVar1 = CONCAT31((int3)((uint)in_R9D >> 8),2);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_Version,(Object *)StringLiteral__3_5_14_0,IVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_->klass->rgctx_data[0x22].method);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryInsert((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_Version,(Object *)StringLiteral__3_5_16_0,IVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_->klass->rgctx_data[0x22].method);
     if (cRam_? == '\0') {
       FUN_?(&StringLiteral_Maintenance);
       LOCK();
