@@ -823,7 +823,7 @@ code_?:
             if (pMVar24 != (MethodInfo *)0x0) {
               if ((*pMVar24->name == '.') && ((pMVar24->flags & 0x800) != 0)) {
                 ppMVar25 = ppMVar14;
-                while (ppMVar26 = ppMVar25 + 0x3052af3c,
+                while (ppMVar26 = ppMVar25 + 0x3052af36,
                       ppMVar25 = (MethodInfo **)((longlong)ppMVar25 + 1),
                       *(char *)ppMVar26 == (pMVar24->name + -1)[(longlong)ppMVar25]) {
                   if (ppMVar25 == (MethodInfo **)0x7) {

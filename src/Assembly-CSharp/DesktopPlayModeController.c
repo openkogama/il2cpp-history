@@ -1874,22 +1874,29 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_O
     if ((pCVar1->fields)._._._._._.m_CachedPtr != (void *)0x0) {
       pCVar1 = (this->fields).chatController;
       if ((pCVar1 != (ChatControllerUGUI *)0x0) &&
-         (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pCVar1,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)
+         (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pCVar1,(MethodInfo *)0x0), this_01 != (GameObject *)0x0)
          ) {
         bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (this_00,(MethodInfo *)0x0);
+                          (this_01,(MethodInfo *)0x0);
         if (bVar2 == 0) {
           return;
         }
-        pCVar1 = (this->fields).chatController;
-        if ((pCVar1 != (ChatControllerUGUI *)0x0) &&
-           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pCVar1,(MethodInfo *)0x0), this_01 != (Transform *)0x0
-           )) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                    (this_01,(MethodInfo *)0x0);
-          return;
+        this_00 = (this->fields).uiStack;
+        if (this_00 != (UIStack *)0x0) {
+          bVar2 = UIStack::UIStack_PeakAllowsChatOverlay(this_00,(MethodInfo *)0x0);
+          if (bVar2 == 0) {
+            return;
+          }
+          pCVar1 = (this->fields).chatController;
+          if ((pCVar1 != (ChatControllerUGUI *)0x0) &&
+             (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pCVar1,(MethodInfo *)0x0),
+             this_02 != (Transform *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                      (this_02,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
       FUN_?();

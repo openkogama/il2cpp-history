@@ -88,8 +88,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar3,(MethodInfo *)0x0);
-      message = StringLiteral_Fallback_ads_not_allowed__finish;
-      pSVar3 = StringLiteral_Allowing_fallback_ads__requestin;
+      message = StringLiteral_Allowing_fallback_ads__requestin;
+      pSVar3 = StringLiteral_Fallback_ads_not_allowed__finish;
       pWVar1 = (this->fields).__4__this;
       if (pWVar1 != (WebAdManager *)0x0) {
         if ((pWVar1->fields).siteData.allowsFallbackAds == 0) {
@@ -103,7 +103,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
             FUN_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)message,(MethodInfo *)0x0);
+                    ((Object *)pSVar3,(MethodInfo *)0x0);
           this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
           if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
@@ -129,7 +129,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
             FUN_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)pSVar3,(MethodInfo *)0x0);
+                    ((Object *)message,(MethodInfo *)0x0);
           pWVar1 = (this->fields).__4__this;
           if (pWVar1 != (WebAdManager *)0x0) {
             WebAdManager::WebAdManager_RequestNonEmbeddedRewardedAd(pWVar1,(MethodInfo *)0x0);

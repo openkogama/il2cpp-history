@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::AdUIWithTimeout+<>c__DisplayClass11_0::
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pGVar1 = (GameObject *)FUN_?(7,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
+    pGVar1 = (GameObject *)FUN_?(8,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
     pAVar2 = (this->fields).__4__this;
     if (pAVar2 != (AdUIWithTimeout *)0x0) {
       pGVar3 = (pAVar2->fields).overlayPushedToStack;

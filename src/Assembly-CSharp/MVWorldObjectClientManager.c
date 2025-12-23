@@ -2112,17 +2112,17 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager::
                          );
       pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
                          (pDVar4,(Delegate *)woCreatedEventHandler,(MethodInfo *)0x0);
-      pMVar5 = 
+      pAVar5 = TypeInfo__System__Action<System::Object,_WorldObjectCreatedEventArgs>;
+      pMVar6 = 
       MethodInfo__System__Collections__Generic__Dictionary<System::Type,_System::Action<System::Object,_WorldObjectCreatedEventArgs>_>__set_Item_System__Type__System__Action<System::Object,_WorldObjectCreatedEventArgs>_
       ;
-      pAVar6 = TypeInfo__System__Action<System::Object,_WorldObjectCreatedEventArgs>;
       if (pDVar4 != (Delegate *)0x0) {
         value = (Object *)
                 FUN_?(pDVar4,
                               TypeInfo__System__Action<System::Object,_WorldObjectCreatedEventArgs>)
         ;
         if (value == (Object *)0x0) {
-          FUN_?(pDVar4,pAVar6);
+          FUN_?(pDVar4,pAVar5);
           pcVar7 = (code *)swi(3);
           (*pcVar7)();
           return;
@@ -2132,7 +2132,7 @@ void Assembly-CSharp.dll::MVWorldObjectClientManager::
       Dictionary_2_System_Object_System_Object__TryInsert
                 ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)type,value,
                  (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar2 >> 8),1),
-                 pMVar5->klass->rgctx_data[0x22].method);
+                 pMVar6->klass->rgctx_data[0x22].method);
       return;
     }
   }

@@ -5124,27 +5124,28 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_OnCameraScale
     (*pcVar2)();
     return;
   }
-  pIVar3 = pIVar1->klass;
-  uVar4 = 0;
-  uVar5._0_1_ = (pIVar3->_1).rank;
-  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-  if (uVar5 != 0) {
+  fVar3 = (args->fields).scale;
+  pIVar4 = pIVar1->klass;
+  uVar5 = 0;
+  uVar6._0_1_ = (pIVar4->_1).rank;
+  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+  if (uVar6 != 0) {
     do {
-      if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__ICameraSettings)
+      if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ICameraSettings)
       {
-        pVVar6 = &(pIVar3->vtable).UpdateFromCameraSettings +
-                 (pIVar3->interfaceOffsets[uVar4].offset + 2);
+        pVVar7 = &(pIVar4->vtable).UpdateFromCameraSettings +
+                 (pIVar4->interfaceOffsets[uVar5].offset + 2);
         goto code_?;
       }
-      uVar7 = (short)uVar4 + 1;
-      uVar4 = (ulonglong)uVar7;
-    } while (uVar7 < uVar5);
+      uVar8 = (short)uVar5 + 1;
+      uVar5 = (ulonglong)uVar8;
+    } while (uVar8 < uVar6);
   }
-  pVVar6 = (VirtualInvokeData *)FUN_?(pIVar1,TypeInfo__ICameraSettings,2);
+  pVVar7 = (VirtualInvokeData *)FUN_?(pIVar1,TypeInfo__ICameraSettings,2);
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*pVVar6->methodPtr)(pIVar1,pVVar6->methodPtr,pVVar6->method);
+  (*pVVar7->methodPtr)(pIVar1,fVar3,pVVar7->method);
   return;
 }
 

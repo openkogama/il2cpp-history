@@ -906,6 +906,65 @@ GameObject * Assembly-CSharp.dll::UIStack::UIStack_Peak(UIStack *this,MethodInfo
 }
 
 
+/* Boolean PeakAllowsChatOverlay() */
+
+bool Assembly-CSharp.dll::UIStack::UIStack_PeakAllowsChatOverlay(UIStack *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+    if ((pLVar1->fields)._size < 3) {
+      return 0;
+    }
+    uVar2 = (pLVar1->fields)._size;
+    if ((uint)(pLVar1->fields)._size <= uVar2 - 1) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
+    }
+    pUVar5 = (pLVar1->fields)._items;
+    if (pUVar5 != (UIStack_StackElement__Array *)0x0) {
+      if ((uint)pUVar5->max_length <= uVar2 - 1) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        bVar4 = (*pcVar3)();
+        return bVar4;
+      }
+      if (pUVar5->vector[(ulonglong)uVar2 - 1] != (UIStack_StackElement *)0x0) {
+        return (pUVar5->vector[(ulonglong)uVar2 - 1]->fields).allowChatOverlay;
+      }
+    }
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
+}
+
+
 /* Void Pop() */
 
 void Assembly-CSharp.dll::UIStack::UIStack_Pop(UIStack *this,MethodInfo *method)

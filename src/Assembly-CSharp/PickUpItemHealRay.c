@@ -5592,7 +5592,7 @@ code_?:
             if (pMVar21 != (MethodInfo *)0x0) {
               if ((*pMVar21->name == '.') && ((pMVar21->flags & 0x800) != 0)) {
                 ppMVar22 = ppMVar12;
-                while (ppMVar23 = ppMVar22 + 0x3052af3c,
+                while (ppMVar23 = ppMVar22 + 0x3052af36,
                       ppMVar22 = (MethodInfo **)((longlong)ppMVar22 + 1),
                       *(char *)ppMVar23 == (pMVar21->name + -1)[(longlong)ppMVar22]) {
                   if (ppMVar22 == (MethodInfo **)0x7) {

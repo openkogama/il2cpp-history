@@ -54,6 +54,8 @@ void Assembly-CSharp.dll::UIStack+StackElement::UIStack_StackElement__ctor
          (pushOption & UIPushOption__Enum_HideAllExceptStackBottom) != UIPushOption__Enum_None;
     (this->fields).suppressInput =
          (pushOption & UIPushOption__Enum_SuppressInput) != UIPushOption__Enum_None;
+    (this->fields).allowChatOverlay =
+         (pushOption & UIPushOption__Enum_AllowChatOverlay) != UIPushOption__Enum_None;
     if (iVar8 != 0) {
       uVar3 = (uint)((ulonglong)&(this->fields).onPop >> 0xc);
       lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;

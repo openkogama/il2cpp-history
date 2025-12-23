@@ -1185,7 +1185,7 @@ code_?:
             if (pMVar25 != (MethodInfo *)0x0) {
               if ((*pMVar25->name == '.') && ((pMVar25->flags & 0x800) != 0)) {
                 ppMVar26 = ppMVar15;
-                while (ppMVar27 = ppMVar26 + 0x3052af3c,
+                while (ppMVar27 = ppMVar26 + 0x3052af36,
                       ppMVar26 = (MethodInfo **)((longlong)ppMVar26 + 1),
                       *(char *)ppMVar27 == (pMVar25->name + -1)[(longlong)ppMVar26]) {
                   if (ppMVar26 == (MethodInfo **)0x7) {

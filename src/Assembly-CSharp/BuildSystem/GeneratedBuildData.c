@@ -21,7 +21,7 @@ DateTime Assembly-CSharp.dll::BuildSystem::GeneratedBuildData::GeneratedBuildDat
     FUN_?(&MethodInfo__System__Nullable<System::DateTime>__get_Value__);
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral__2025_12_18T17_12_43_0000000);
+    FUN_?(&StringLiteral__2025_12_22T22_08_03_0000000);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -30,7 +30,7 @@ DateTime Assembly-CSharp.dll::BuildSystem::GeneratedBuildData::GeneratedBuildDat
     if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
       FUN_?();
     }
-    pSVar1 = StringLiteral__2025_12_18T17_12_43_0000000;
+    pSVar1 = StringLiteral__2025_12_22T22_08_03_0000000;
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__System__Globalization__DateTimeFormatInfo);
       LOCK();

@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup+<>c__DisplayClass11_
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pGVar1 = (GameObject *)FUN_?(7,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
+    pGVar1 = (GameObject *)FUN_?(8,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
     pFVar2 = (this->fields).__4__this;
     if (pFVar2 != (FirstTimeActivatableEditToolPopup *)0x0) {
       pGVar3 = (pFVar2->fields).stackParent;
