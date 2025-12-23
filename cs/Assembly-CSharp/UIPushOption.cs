@@ -16,6 +16,7 @@ public enum UIPushOption
 	HideAll = 2,
 	InvisibleBlocker = 4,
 	HideAllExceptStackBottom = 8,
-	SuppressInput = 16
+	SuppressInput = 16,
+	AllowChatOverlay = 32
 }
 

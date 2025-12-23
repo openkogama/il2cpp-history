@@ -737,7 +737,7 @@ code_?:
             if (pMVar20 != (MethodInfo *)0x0) {
               if ((*pMVar20->name == '.') && ((pMVar20->flags & 0x800) != 0)) {
                 ppMVar21 = ppMVar10;
-                while (ppMVar22 = ppMVar21 + 0x3052af3c, ppMVar21 = (MethodInfo **)((longlong)ppMVar21 + 1), *(char *)ppMVar22 == (pMVar20->name + -1)[(longlong)ppMVar21]) {
+                while (ppMVar22 = ppMVar21 + 0x3052af36, ppMVar21 = (MethodInfo **)((longlong)ppMVar21 + 1), *(char *)ppMVar22 == (pMVar20->name + -1)[(longlong)ppMVar21]) {
                   if (ppMVar21 == (MethodInfo **)0x7) {
                     FUN_?(pMVar20,0,0,alStackX_10);
                     goto code_?;

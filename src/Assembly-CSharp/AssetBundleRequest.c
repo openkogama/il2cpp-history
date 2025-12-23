@@ -6,14 +6,14 @@ UnityWebRequest * Assembly-CSharp.dll::AssetBundleRequest::AssetBundleRequest_Cr
 {
   pSVar1 = (this->fields)._._.path;
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__version_589632299);
+    FUN_?(&StringLiteral__version_590176771);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = mscorlib.dll::System::String::String_Concat_4(pSVar1,StringLiteral__version_589632299,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_4(pSVar1,StringLiteral__version_590176771,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__UnityEngine__Networking__DownloadHandlerAssetBundle,0x2325132b,0,0);
+    FUN_?(&TypeInfo__UnityEngine__Networking__DownloadHandlerAssetBundle,0x232d6203,0,0);
     LOCK();
     UNLOCK();
     FUN_?(&TypeInfo__UnityEngine__Networking__UnityWebRequest);
@@ -32,7 +32,7 @@ UnityWebRequest * Assembly-CSharp.dll::AssetBundleRequest::AssetBundleRequest_Cr
     cRam_? = '\x01';
   }
   HStack_2.u64_0 = 0;
-  HStack_2.u64_1 = 0x2325132b00000000;
+  HStack_2.u64_1 = 0x232d620300000000;
   pvVar3 = UnityEngine.UnityWebRequestAssetBundleModule.dll::UnityEngine::Networking::DownloadHandlerAssetBundle::DownloadHandlerAssetBundle_CreateCached(obj,pSVar1,::StringLiteral__,&HStack_2,0,(MethodInfo *)0x0);
   (obj->fields)._.m_Ptr = pvVar3;
   this_00 = (UnityWebRequest *)FUN_?(TypeInfo__UnityEngine__Networking__UnityWebRequest);
