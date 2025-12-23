@@ -42,6 +42,7 @@ public class UIStack : MonoBehaviour, IUIStack
 		public readonly bool invisibleBlocker;
 		public readonly bool hideAllExceptStackbottom;
 		public readonly bool suppressInput;
+		public readonly bool allowChatOverlay;
 		public readonly UnityAction onPop;
 		public readonly UIGroupFlags group;
 		public readonly string name;
@@ -65,6 +66,7 @@ public class UIStack : MonoBehaviour, IUIStack
 	public void SetStackReady();
 	public void PopToGroup(UIGroupFlags group);
 	public bool IsUIElementBlocked(GameObject uiElement);
+	public bool PeakAllowsChatOverlay();
 	public GameObject Peak();
 	public void DebugStack();
 	public bool IsStackEmpty();
