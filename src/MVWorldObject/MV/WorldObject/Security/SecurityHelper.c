@@ -204,7 +204,9 @@ code_?:
     pCStackX_18 = this_01;
     if (lVar5 == 0) goto code_?;
     if (this_01 != (CryptoStream *)0x0) {
-      (*(this_01->klass->vtable).Write.methodPtr)();
+      (*(this_01->klass->vtable).Write.methodPtr)
+                (this_01,lVar5,0,(ulonglong)*(uint *)(lVar5 + 0x18),
+                 (this_01->klass->vtable).Write.method);
       if (pCStackX_18 != (CryptoStream *)0x0) {
         mscorlib.dll::System::Security::Cryptography::CryptoStream::CryptoStream_FlushFinalBlock
                   (pCStackX_18,(MethodInfo *)0x0);

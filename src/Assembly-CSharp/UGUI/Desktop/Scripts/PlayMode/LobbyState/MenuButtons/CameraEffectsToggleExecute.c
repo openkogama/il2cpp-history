@@ -251,11 +251,6 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
     UNLOCK();
     cRam_? = '\x01';
   }
-  if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  PostProcessingManager::PostProcessingManager_set_IsPostProcessEffectsEnabled
-            (toggleState,(MethodInfo *)0x0);
   (this->fields).ignoreCamEffectCallback = 1;
   textToBeChanged = StringLiteral_Enable_Camera_Effects;
   if (toggleState != 0) {
@@ -268,6 +263,11 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
       (*(toggleCallback->fields)._._.invoke_impl)
                 ((toggleCallback->fields)._._.method_code,toggleState,
                  (toggleCallback->fields)._._.method);
+      if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      PostProcessingManager::PostProcessingManager_set_IsPostProcessEffectsEnabled
+                (toggleState,(MethodInfo *)0x0);
       (this->fields).ignoreCamEffectCallback = 0;
       return;
     }
