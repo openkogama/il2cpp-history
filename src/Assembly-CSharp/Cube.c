@@ -6107,12 +6107,11 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal
               (this,(MethodInfo *)0x0);
     lVar5 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
     uVar4 = FUN_?();
-    *(char *)(unaff_RSI + -1) = *(char *)(unaff_RSI + -1) + (char)this;
-    pcVar6 = (char *)(CONCAT71((int7)((ulonglong)uVar4 >> 8),(char)uVar4 + '\x01') + -1);
+    *(char *)(unaff_RSI + -0xf) = *(char *)(unaff_RSI + -0xf) + (char)this;
+    pcVar6 = (char *)(CONCAT71((int7)((ulonglong)uVar4 >> 8),(char)uVar4 + '\x0f') + -0xf);
     *pcVar6 = *pcVar6 + (char)((ulonglong)lVar5 >> 8);
-    *(char *)(lVar5 + -0x4bff6201) = *(char *)(lVar5 + -0x4bff6201) + (char)lVar5;
-    (*(code *)(unaff_RBP + -0x62004200))();
-    pcVar7 = (code *)swi(3);
+    *(char *)(lVar5 + -0x4bff620f) = *(char *)(lVar5 + -0x4bff620f) + (char)lVar5;
+    pcVar7 = (code *)swi(1);
     pVVar8 = (Vector3 *)(*pcVar7)();
     return pVVar8;
   }

@@ -855,7 +855,7 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateText(MVTextMsg *this,Method
       }
       defaultValue = (Object *)0x0;
       if (pOVar3 != (Object *)0x0) {
-        if (pOVar3->klass == pORam0000000182dc50c0) {
+        if (pOVar3->klass == pORam0000000182dc2f60) {
           defaultValue = pOVar3;
         }
         if (defaultValue == (Object *)0x0) {
@@ -1453,7 +1453,7 @@ code_?:
   }
   defaultValue = (Object *)0x0;
   if (pOVar6 != (Object *)0x0) {
-    if (pOVar6->klass == pORam0000000182dc50c0) {
+    if (pOVar6->klass == pORam0000000182dc2f60) {
       defaultValue = pOVar6;
     }
     if (defaultValue == (Object *)0x0) {

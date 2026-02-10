@@ -14,9 +14,12 @@ public class LockCursorManager3DMode : MonoBehaviour, ILockCursorManager
 	// Fields
 	[CompilerGenerated]
 	private Action<bool> _OnCursorLockChanged_k__BackingField;
+	[CompilerGenerated]
+	private bool _RequestCursorLockAfterLoss_k__BackingField;
 
 	// Properties
 	public Action<bool> OnCursorLockChanged { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public bool RequestCursorLockAfterLoss { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public bool CursorLock { get; set; }
 	public bool CursorLockWithoutCallback { set; }
 
@@ -24,7 +27,7 @@ public class LockCursorManager3DMode : MonoBehaviour, ILockCursorManager
 	public LockCursorManager3DMode();
 
 	// Methods
-	private static void CursorLog(string s);
+	protected static void CursorLog(string s);
 	protected void OnApplicationFocus(bool focus);
 	protected void LockCursor();
 	protected void LockCursorWithoutCallback();

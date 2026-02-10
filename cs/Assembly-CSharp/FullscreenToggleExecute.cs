@@ -18,20 +18,17 @@ public class FullscreenToggleExecute : ToggleHandler
 	private ToggleStateHandler toggleStateHandler;
 
 	// Nested types
-	[Serializable]
 	[CompilerGenerated]
-	private sealed class __c
+	private sealed class __c__DisplayClass3_0
 	{
 		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__3_0;
+		public string message;
 
 		// Constructors
-		static __c();
-		public __c();
+		public __c__DisplayClass3_0();
 
 		// Methods
-		internal void _ExecuteToggleState_b__3_0(IModalPopupCreator x, BaseEventData y);
+		internal void _ExecuteToggleState_b__0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors

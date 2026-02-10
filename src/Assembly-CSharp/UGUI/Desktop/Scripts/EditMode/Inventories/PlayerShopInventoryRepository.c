@@ -1628,11 +1628,11 @@ code_?:
       plStack_10 = *(longlong **)(pcVar14 + lVar15 * 0x18 + 0x28);
       uVar17 = func_?(&plStack_10);
       if (plStack_10 != (longlong *)0x0) {
-        pDVar16 = pDRam0000000182dc5078;
-        if (*(Il2CppClass **)(*plStack_10 + 0x40) == (pDRam0000000182dc5078->_0).element_class) {
+        pDVar16 = pDRam0000000182dc2f18;
+        if (*(Il2CppClass **)(*plStack_10 + 0x40) == (pDRam0000000182dc2f18->_0).element_class) {
           itemID = (int32_t)plStack_10[2];
           aiStackX_18[0] = itemID;
-          pOVar18 = (Object *)FUN_?(pDRam0000000182dc5078,aiStackX_18);
+          pOVar18 = (Object *)FUN_?(pDRam0000000182dc2f18,aiStackX_18);
           pDVar19 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object___Class
                      *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
@@ -1690,9 +1690,9 @@ code_?:
                           ((Dictionary_2_System_Object_System_Object_ *)itemData,pOVar18,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-      pDVar16 = pDRam0000000182dc5078;
+      pDVar16 = pDRam0000000182dc2f18;
       if (pOVar18 != (Object *)0x0) {
-        if ((pOVar18->klass->_0).element_class == (pDRam0000000182dc5078->_0).element_class) {
+        if ((pOVar18->klass->_0).element_class == (pDRam0000000182dc2f18->_0).element_class) {
           (this_00->fields).slotPosition = *(int32_t *)&pOVar18[1].klass;
           pPVar1 = (this->fields)._playerInventoryRepository_k__BackingField;
           if (pPVar1 != (PlayerInventoryRepository *)0x0) {

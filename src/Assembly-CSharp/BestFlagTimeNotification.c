@@ -34,11 +34,11 @@ void Assembly-CSharp.dll::BestFlagTimeNotification::BestFlagTimeNotification_Ini
                          ), pTVar1 != (Text *)0x0)) {
     if (pAVar3 != (Action *)0x0) {
       pAVar4 = pAVar2;
-      if (pAVar3->klass == pARam0000000182dc50c0) {
+      if (pAVar3->klass == pARam0000000182dc2f60) {
         pAVar4 = pAVar3;
       }
       if (pAVar4 == (Action *)0x0) {
-        FUN_?(pAVar3,pARam0000000182dc50c0);
+        FUN_?(pAVar3,pARam0000000182dc2f60);
         pcVar5 = (code *)swi(3);
         (*pcVar5)();
         return;

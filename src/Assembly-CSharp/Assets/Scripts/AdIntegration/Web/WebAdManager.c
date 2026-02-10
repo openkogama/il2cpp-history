@@ -3001,12 +3001,12 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     if (*(int *)&(TypeInfo__BrowserComm__ToJavaScript->_1).field_0x1c == 0) {
       FUN_?();
     }
-    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1
+    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_2
               (StringLiteral_requestVideoAd,pAVar4,(MethodInfo *)0x0);
     pAVar4 = (Action_2_Boolean_String_ *)
              FUN_?(TypeInfo__System__Action<bool,_System::String>);
     FUN_?(pAVar4,this);
-    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1
+    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_2
               (StringLiteral_requestRewardedVideoAd,pAVar4,(MethodInfo *)0x0);
   }
   if (((this->fields).showingAd != 0) && ((this->fields).probablyWatchingAd == 0)) {

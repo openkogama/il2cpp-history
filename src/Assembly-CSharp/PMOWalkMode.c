@@ -497,7 +497,29 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterPlayInObserveMode
     pMVar2 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
     if ((pMVar2 != (MVGameControllerDesktop *)0x0) &&
        (pIVar3 = (pMVar2->fields).lockCursorManager, pIVar3 != (ILockCursorManager *)0x0)) {
-      FUN_?(1,TypeInfo__ILockCursorManager,pIVar3,1);
+      uVar4 = 1;
+FUN_?:
+      pIVar5 = (Il2CppRuntimeInterfaceOffsetPair *)(ulonglong)uVar4;
+      uVar6 = 0;
+      pIVar7 = pIVar3->klass;
+      uVar8._0_1_ = (pIVar7->_1).rank;
+      uVar8._1_1_ = (pIVar7->_1).minimumAlignment;
+      if (uVar8 != 0) {
+        pIVar5 = pIVar7->interfaceOffsets;
+        do {
+          if (pIVar5[uVar6].interfaceType == (Il2CppClass *)TypeInfo__ILockCursorManager) {
+            ppIVar9 = &(&(pIVar7->vtable).get_CursorLock)[pIVar5[uVar6].offset + 1].methodPtr;
+            goto code_?;
+          }
+          uVar6 = uVar6 + 1;
+        } while (uVar6 < uVar8);
+      }
+      ppIVar9 = (Il2CppMethodPointer *)
+                 FUN_?(pIVar3,TypeInfo__ILockCursorManager,1,pIVar5);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**ppIVar9)(pIVar3,(ulonglong)(byte)uVar4,(MethodInfo *)ppIVar9[1],*ppIVar9);
       return;
     }
   }
@@ -509,15 +531,15 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterPlayInObserveMode
         UNLOCK();
         cRam_? = '\x01';
       }
-      pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if ((((pMVar4 == (MVGameControllerBase *)0x0) ||
-           (pMVar5 = (pMVar4->fields).game, pMVar5 == (MVNetworkGame *)0x0)) ||
-          (pGVar6 = (pMVar5->fields).GameEventManager, pGVar6 == (GameEventManager *)0x0)) ||
-         ((pGVar7 = (pGVar6->fields).GameState, pGVar7 == (GameEventManager_GameStateManager *)0x0
-          || (pAVar8 = (pGVar7->fields).OnEnableLobbyState, pAVar8 == (Action *)0x0))))
+      pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((((pMVar10 == (MVGameControllerBase *)0x0) ||
+           (pMVar11 = (pMVar10->fields).game, pMVar11 == (MVNetworkGame *)0x0)) ||
+          (pGVar12 = (pMVar11->fields).GameEventManager, pGVar12 == (GameEventManager *)0x0)) ||
+         ((pGVar13 = (pGVar12->fields).GameState, pGVar13 == (GameEventManager_GameStateManager *)0x0
+          || (pAVar14 = (pGVar13->fields).OnEnableLobbyState, pAVar14 == (Action *)0x0))))
       goto code_?;
-      (*(pAVar8->fields)._._.invoke_impl)
-                ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
+      (*(pAVar14->fields)._._.invoke_impl)
+                ((pAVar14->fields)._._.method_code,(pAVar14->fields)._._.method);
     }
     else if (PVar1 != PMOWalkMode_EnterPlayFromObserveState__Enum_WaitForRoundToStart) {
       return;
@@ -528,16 +550,16 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterPlayInObserveMode
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (((pMVar4 != (MVGameControllerBase *)0x0) &&
-        (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
-       ((pGVar6 = (pMVar5->fields).GameEventManager, pGVar6 != (GameEventManager *)0x0 &&
-        (pGVar9 = (pGVar6->fields).AvatarCommandsPlayMode,
-        pGVar9 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)))) {
-      if ((pGVar9->fields).OnRemoveFromGame != (Action *)0x0) {
-        pAVar8 = (pGVar9->fields).OnRemoveFromGame;
-        (*(pAVar8->fields)._._.invoke_impl)
-                  ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
+    pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar10 != (MVGameControllerBase *)0x0) &&
+        (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) &&
+       ((pGVar12 = (pMVar11->fields).GameEventManager, pGVar12 != (GameEventManager *)0x0 &&
+        (pGVar15 = (pGVar12->fields).AvatarCommandsPlayMode,
+        pGVar15 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)))) {
+      if ((pGVar15->fields).OnRemoveFromGame != (Action *)0x0) {
+        pAVar14 = (pGVar15->fields).OnRemoveFromGame;
+        (*(pAVar14->fields)._._.invoke_impl)
+                  ((pAVar14->fields)._._.method_code,(pAVar14->fields)._._.method);
       }
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__ILockCursorManager);
@@ -551,20 +573,21 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterPlayInObserveMode
         UNLOCK();
         cRam_? = '\x01';
       }
-      if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-        pMVar2 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
-        if ((pMVar2 == (MVGameControllerDesktop *)0x0) ||
-           (pIVar3 = (pMVar2->fields).lockCursorManager, pIVar3 == (ILockCursorManager *)0x0))
-        goto code_?;
-        FUN_?(1,TypeInfo__ILockCursorManager,pIVar3,0);
+      if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+        return;
       }
-      return;
+      pMVar2 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
+      if ((pMVar2 != (MVGameControllerDesktop *)0x0) &&
+         (pIVar3 = (pMVar2->fields).lockCursorManager, pIVar3 != (ILockCursorManager *)0x0)) {
+        uVar4 = 0;
+        goto FUN_?;
+      }
     }
   }
 code_?:
   FUN_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -595,7 +618,29 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterState
     pMVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
     if ((pMVar1 != (MVGameControllerDesktop *)0x0) &&
        (pIVar2 = (pMVar1->fields).lockCursorManager, pIVar2 != (ILockCursorManager *)0x0)) {
-      FUN_?(1,TypeInfo__ILockCursorManager,pIVar2,1);
+      uVar3 = 1;
+FUN_?:
+      pIVar4 = (Il2CppRuntimeInterfaceOffsetPair *)(ulonglong)uVar3;
+      uVar5 = 0;
+      pIVar6 = pIVar2->klass;
+      uVar7._0_1_ = (pIVar6->_1).rank;
+      uVar7._1_1_ = (pIVar6->_1).minimumAlignment;
+      if (uVar7 != 0) {
+        pIVar4 = pIVar6->interfaceOffsets;
+        do {
+          if (pIVar4[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ILockCursorManager) {
+            ppIVar8 = &(&(pIVar6->vtable).get_CursorLock)[pIVar4[uVar5].offset + 1].methodPtr;
+            goto code_?;
+          }
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar7);
+      }
+      ppIVar8 = (Il2CppMethodPointer *)
+                 FUN_?(pIVar2,TypeInfo__ILockCursorManager,1,pIVar4);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**ppIVar8)(pIVar2,(ulonglong)(byte)uVar3,(MethodInfo *)ppIVar8[1],*ppIVar8);
       return;
     }
   }
@@ -607,15 +652,15 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterState
         UNLOCK();
         cRam_? = '\x01';
       }
-      pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if ((((pMVar3 == (MVGameControllerBase *)0x0) ||
-           (pMVar4 = (pMVar3->fields).game, pMVar4 == (MVNetworkGame *)0x0)) ||
-          (pGVar5 = (pMVar4->fields).GameEventManager, pGVar5 == (GameEventManager *)0x0)) ||
-         ((pGVar6 = (pGVar5->fields).GameState, pGVar6 == (GameEventManager_GameStateManager *)0x0
-          || (pAVar7 = (pGVar6->fields).OnEnableLobbyState, pAVar7 == (Action *)0x0))))
+      pMVar9 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((((pMVar9 == (MVGameControllerBase *)0x0) ||
+           (pMVar10 = (pMVar9->fields).game, pMVar10 == (MVNetworkGame *)0x0)) ||
+          (pGVar11 = (pMVar10->fields).GameEventManager, pGVar11 == (GameEventManager *)0x0)) ||
+         ((pGVar12 = (pGVar11->fields).GameState, pGVar12 == (GameEventManager_GameStateManager *)0x0
+          || (pAVar13 = (pGVar12->fields).OnEnableLobbyState, pAVar13 == (Action *)0x0))))
       goto code_?;
-      (*(pAVar7->fields)._._.invoke_impl)
-                ((pAVar7->fields)._._.method_code,(pAVar7->fields)._._.method);
+      (*(pAVar13->fields)._._.invoke_impl)
+                ((pAVar13->fields)._._.method_code,(pAVar13->fields)._._.method);
     }
     else if (enterState != PMOWalkMode_EnterPlayFromObserveState__Enum_WaitForRoundToStart) {
       return;
@@ -626,16 +671,16 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterState
       UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (((pMVar3 != (MVGameControllerBase *)0x0) &&
-        (pMVar4 = (pMVar3->fields).game, pMVar4 != (MVNetworkGame *)0x0)) &&
-       ((pGVar5 = (pMVar4->fields).GameEventManager, pGVar5 != (GameEventManager *)0x0 &&
-        (pGVar8 = (pGVar5->fields).AvatarCommandsPlayMode,
-        pGVar8 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)))) {
-      if ((pGVar8->fields).OnRemoveFromGame != (Action *)0x0) {
-        pAVar7 = (pGVar8->fields).OnRemoveFromGame;
-        (*(pAVar7->fields)._._.invoke_impl)
-                  ((pAVar7->fields)._._.method_code,(pAVar7->fields)._._.method);
+    pMVar9 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar9 != (MVGameControllerBase *)0x0) &&
+        (pMVar10 = (pMVar9->fields).game, pMVar10 != (MVNetworkGame *)0x0)) &&
+       ((pGVar11 = (pMVar10->fields).GameEventManager, pGVar11 != (GameEventManager *)0x0 &&
+        (pGVar14 = (pGVar11->fields).AvatarCommandsPlayMode,
+        pGVar14 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)))) {
+      if ((pGVar14->fields).OnRemoveFromGame != (Action *)0x0) {
+        pAVar13 = (pGVar14->fields).OnRemoveFromGame;
+        (*(pAVar13->fields)._._.invoke_impl)
+                  ((pAVar13->fields)._._.method_code,(pAVar13->fields)._._.method);
       }
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__ILockCursorManager);
@@ -649,20 +694,21 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterState
         UNLOCK();
         cRam_? = '\x01';
       }
-      if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-        pMVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
-        if ((pMVar1 == (MVGameControllerDesktop *)0x0) ||
-           (pIVar2 = (pMVar1->fields).lockCursorManager, pIVar2 == (ILockCursorManager *)0x0))
-        goto code_?;
-        FUN_?(1,TypeInfo__ILockCursorManager,pIVar2,0);
+      if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+        return;
       }
-      return;
+      pMVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
+      if ((pMVar1 != (MVGameControllerDesktop *)0x0) &&
+         (pIVar2 = (pMVar1->fields).lockCursorManager, pIVar2 != (ILockCursorManager *)0x0)) {
+        uVar3 = 0;
+        goto FUN_?;
+      }
     }
   }
 code_?:
   FUN_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -972,17 +1018,37 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_TryLockCursor
     UNLOCK();
     cRam_? = '\x01';
   }
-  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    pMVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
-    if ((pMVar1 == (MVGameControllerDesktop *)0x0) ||
-       (pIVar2 = (pMVar1->fields).lockCursorManager, pIVar2 == (ILockCursorManager *)0x0)) {
-      FUN_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    FUN_?(1,TypeInfo__ILockCursorManager,pIVar2,1);
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
+    return;
   }
+  pMVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
+  if ((pMVar1 == (MVGameControllerDesktop *)0x0) ||
+     (pIVar2 = (pMVar1->fields).lockCursorManager, pIVar2 == (ILockCursorManager *)0x0)) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pIVar4 = (Il2CppRuntimeInterfaceOffsetPair *)0x1;
+  uVar5 = 0;
+  pIVar6 = pIVar2->klass;
+  uVar7._0_1_ = (pIVar6->_1).rank;
+  uVar7._1_1_ = (pIVar6->_1).minimumAlignment;
+  if (uVar7 != 0) {
+    pIVar4 = pIVar6->interfaceOffsets;
+    do {
+      if (pIVar4[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ILockCursorManager) {
+        pVVar8 = &(pIVar6->vtable).get_CursorLock + (pIVar4[uVar5].offset + 1);
+        goto code_?;
+      }
+      uVar5 = uVar5 + 1;
+    } while (uVar5 < uVar7);
+  }
+  pVVar8 = (VirtualInvokeData *)FUN_?(pIVar2,TypeInfo__ILockCursorManager,1,pIVar4);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar8->methodPtr)(pIVar2,1,pVVar8->method,pVVar8->methodPtr);
   return;
 }
 

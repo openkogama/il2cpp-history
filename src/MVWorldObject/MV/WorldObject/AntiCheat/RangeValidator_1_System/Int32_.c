@@ -72,3 +72,16 @@ int32_t MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[System::
   return iVar6;
 }
 
+
+/* RangeValidator`1[System.Int32](Int32, Int32) */
+
+void MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[System::Int32]::
+     RangeValidator_1_System_Int32___ctor_1
+               (RangeValidator_1_System_Int32_ *this,int32_t min,int32_t max,MethodInfo *method)
+
+{
+  (this->fields).min = min;
+  (this->fields).max = max;
+  return;
+}
+

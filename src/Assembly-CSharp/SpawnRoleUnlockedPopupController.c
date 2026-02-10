@@ -910,7 +910,7 @@ code_?:
             if ((pMVar8 == (MVGameControllerDesktop *)0x0) ||
                (pIVar9 = (pMVar8->fields).lockCursorManager, pIVar9 == (ILockCursorManager *)0x0))
             goto code_?;
-            FUN_?(2,TypeInfo__ILockCursorManager,pIVar9,1);
+            FUN_?(4,TypeInfo__ILockCursorManager,pIVar9,1);
           }
           return;
         }

@@ -2137,7 +2137,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_OnAnimationChange
       animationName = (String *)0x0;
       pSVar7 = animationName;
       if (pSVar6 != (String *)0x0) {
-        if (pSVar6->klass == pSRam0000000182dc50c0) {
+        if (pSVar6->klass == pSRam0000000182dc2f60) {
           pSVar7 = pSVar6;
         }
         if (pSVar7 == (String *)0x0) {
@@ -2201,7 +2201,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_OnAnimationChange
                                );
             if (pBVar3 != (BoneAnimation *)0x0) {
               if (pSVar7 != (String *)0x0) {
-                if (pSVar7->klass == pSRam0000000182dc50c0) {
+                if (pSVar7->klass == pSRam0000000182dc2f60) {
                   animationName = pSVar7;
                 }
                 if (animationName == (String *)0x0) {

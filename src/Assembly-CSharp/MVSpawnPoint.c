@@ -426,12 +426,12 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
                           );
       if (pOVar2 != (Object *)0x0) {
         pOVar3 = (Object *)0x0;
-        if (pOVar2->klass == pORam0000000182dc5058) {
+        if (pOVar2->klass == pORam0000000182dc2ef8) {
           pOVar3 = pOVar2;
         }
         if (pOVar3 != (Object *)0x0) {
-          if ((pOVar2->klass->_0).element_class != (pORam0000000182dc5058->_0).element_class) {
-            FUN_?(pOVar2,pORam0000000182dc5058);
+          if ((pOVar2->klass->_0).element_class != (pORam0000000182dc2ef8->_0).element_class) {
+            FUN_?(pOVar2,pORam0000000182dc2ef8);
             pcVar4 = (code *)swi(3);
             (*pcVar4)();
             return;
@@ -716,12 +716,12 @@ code_?:
                          );
       if (pOVar4 != (Object *)0x0) {
         pOVar5 = (Object *)0x0;
-        if (pOVar4->klass == pORam0000000182dc5058) {
+        if (pOVar4->klass == pORam0000000182dc2ef8) {
           pOVar5 = pOVar4;
         }
         if (pOVar5 != (Object *)0x0) {
-          if ((pOVar4->klass->_0).element_class != (pORam0000000182dc5058->_0).element_class) {
-            FUN_?(pOVar4,pORam0000000182dc5058);
+          if ((pOVar4->klass->_0).element_class != (pORam0000000182dc2ef8->_0).element_class) {
+            FUN_?(pOVar4,pORam0000000182dc2ef8);
             pcVar1 = (code *)swi(3);
             bVar2 = (*pcVar1)();
             return bVar2;

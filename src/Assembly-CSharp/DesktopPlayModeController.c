@@ -180,12 +180,13 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_A
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
       if (this_01 != (GameObject *)0x0) {
-        pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+        pIVar3 = (ILockCursorManager *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                            (this_01,
                             LockCursorManager3DMode_MethodInfo__UnityEngine__GameObject__AddComponent<LockCursorManager3DMode>__
                            );
         bVar4 = iRam_? != 0;
-        (this->fields).lockCursorManager = (ILockCursorManager *)pOVar3;
+        (this->fields).lockCursorManager = pIVar3;
         if (bVar4) {
           uVar5 = (uint)((ulonglong)&(this->fields).lockCursorManager >> 0xc);
           puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);

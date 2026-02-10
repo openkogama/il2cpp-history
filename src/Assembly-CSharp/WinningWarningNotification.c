@@ -125,11 +125,11 @@ void Assembly-CSharp.dll::WinningWarningNotification::WinningWarningNotification
             if (pTVar10 != (Text *)0x0) {
               pAVar12 = pAVar1;
               if (pAVar11 != (Action *)0x0) {
-                if (pAVar11->klass == pARam0000000182dc50c0) {
+                if (pAVar11->klass == pARam0000000182dc2f60) {
                   pAVar12 = pAVar11;
                 }
                 if (pAVar12 == (Action *)0x0) {
-                  FUN_?(pAVar11,pARam0000000182dc50c0);
+                  FUN_?(pAVar11,pARam0000000182dc2f60);
                   pcVar3 = (code *)swi(3);
                   (*pcVar3)();
                   return;

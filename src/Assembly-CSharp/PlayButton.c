@@ -84,7 +84,7 @@ bool Assembly-CSharp.dll::PlayButton::PlayButton_HandlePlayAvailable
             if ((pMVar9 == (MVGameControllerDesktop *)0x0) ||
                (pIVar10 = (pMVar9->fields).lockCursorManager, pIVar10 == (ILockCursorManager *)0x0))
             goto code_?;
-            FUN_?(2,TypeInfo__ILockCursorManager,pIVar10,1);
+            FUN_?(4,TypeInfo__ILockCursorManager,pIVar10,1);
           }
         }
         return 1;

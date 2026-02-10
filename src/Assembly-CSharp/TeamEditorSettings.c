@@ -146,7 +146,7 @@ code_?:
                               ), inputField != (SettingsInputField *)0x0)) {
         value = (String *)0x0;
         if (pSVar18 != (String *)0x0) {
-          if (pSVar18->klass == pSRam0000000182dc50c0) {
+          if (pSVar18->klass == pSRam0000000182dc2f60) {
             value = pSVar18;
           }
           if (value == (String *)0x0) {
@@ -290,7 +290,7 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_OnSettingChange
   enumType = (Type *)0x0;
   if (value != (Object *)0x0) {
     pTVar3 = enumType;
-    if (value->klass == pORam0000000182dc50c0) {
+    if (value->klass == pORam0000000182dc2f60) {
       pTVar3 = (Type *)value;
     }
     if (pTVar3 == (Type *)0x0) {
@@ -301,7 +301,7 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_OnSettingChange
     }
     if (((String__Fields *)&pTVar3->fields)->_stringLength != 0) {
       pTVar3 = enumType;
-      if (value->klass == pORam0000000182dc50c0) {
+      if (value->klass == pORam0000000182dc2f60) {
         pTVar3 = (Type *)value;
       }
       pSVar5 = mscorlib.dll::System::String::String_TrimWhiteSpaceHelper
@@ -309,7 +309,7 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_OnSettingChange
       if (pSVar5 == (String *)0x0) goto code_?;
       if ((pSVar5->fields)._stringLength != 0) {
         if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          if (value->klass == pORam0000000182dc50c0) {
+          if (value->klass == pORam0000000182dc2f60) {
             enumType = (Type *)value;
           }
           if (enumType == (Type *)0x0) {
@@ -768,7 +768,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052af36,
+                while (ppMVar16 = ppMVar15 + 0x3052aacd,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

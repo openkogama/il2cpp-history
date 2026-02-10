@@ -1453,7 +1453,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                             worldObjectID = (this->fields)._.vehicleWoID;
                             str1 = (String *)0x0;
                             if (pSVar34 != (String *)0x0) {
-                              if (pSVar34->klass == pSRam0000000182dc50c0) {
+                              if (pSVar34->klass == pSRam0000000182dc2f60) {
                                 str1 = pSVar34;
                               }
                               if (str1 == (String *)0x0) goto code_?;
@@ -2244,7 +2244,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052af36,
+                while (ppMVar16 = ppMVar15 + 0x3052aacd,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

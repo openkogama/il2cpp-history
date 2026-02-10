@@ -1,7 +1,148 @@
 
-/* Void ExternalCall(String, Object[]) */
+/* Void ExternalCall(String) */
 
 void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall
+               (String *functionName,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BrowserComm__ToJavaScript);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object);
+  if (*(int *)&(TypeInfo__BrowserComm__ToJavaScript->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__BrowserComm);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BrowserComm__ToJavaScript);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Would_have_sent_function__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral___to_JSBridge_with_args__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__BrowserComm->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__BrowserComm);
+  }
+  str2 = StringLiteral___to_JSBridge_with_args__;
+  pSVar1 = StringLiteral_Would_have_sent_function__;
+  if (TypeInfo__BrowserComm->static_fields->enableExternalCall == 0) {
+    if (args == (Object__Array *)0x0) {
+      str3 = (String *)0x0;
+    }
+    else {
+      pOVar2 = args->klass;
+      uVar3._0_2_ = pOVar2[1]._0.this_arg.attrs;
+      uVar3._2_1_ = pOVar2[1]._0.this_arg.type;
+      uVar3._3_5_ = *(undefined5 *)&pOVar2[1]._0.this_arg.field_0xb;
+      str3 = (String *)(*(code *)pOVar2[1]._0.this_arg.data)(args,uVar3);
+    }
+    pSVar1 = mscorlib.dll::System::String::String_Concat_6
+                       (pSVar1,functionName,str2,str3,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__ILogger);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pIVar4 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar4 != (ILogger_1 *)0x0) {
+      FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar4,3,pSVar1);
+      return;
+    }
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  if (*(int *)&(TypeInfo__BrowserComm__ToJavaScript->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar1 = BrowserComm_ToJavaScript_ToNameSpace(functionName,(MethodInfo *)0x0);
+  pSVar1 = JSBridge::JSBridge_BuildInvocationForArguments(pSVar1,args,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Attempting_to_use_js_eval_in_non);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  pSVar1 = StringLiteral_Attempting_to_use_js_eval_in_non;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar4 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar4 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar4,2,pSVar1);
+    return;
+  }
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void ExternalCall(String, Object[]) */
+
+void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1
                (String *functionName,Object__Array *args,MethodInfo *method)
 
 {
@@ -26,8 +167,8 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
   if (*(int *)&(TypeInfo__BrowserComm->_1).field_0x1c == 0) {
     FUN_?(TypeInfo__BrowserComm);
   }
-  str0 = StringLiteral_Would_have_sent_function__;
-  pSVar1 = StringLiteral___to_JSBridge_with_args__;
+  str2 = StringLiteral___to_JSBridge_with_args__;
+  pSVar1 = StringLiteral_Would_have_sent_function__;
   if (TypeInfo__BrowserComm->static_fields->enableExternalCall == 0) {
     if (args == (Object__Array *)0x0) {
       str3 = (String *)0x0;
@@ -40,7 +181,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
       str3 = (String *)(*(code *)pOVar2[1]._0.this_arg.data)(args,uVar3);
     }
     pSVar1 = mscorlib.dll::System::String::String_Concat_6
-                       (str0,functionName,pSVar1,str3,(MethodInfo *)0x0);
+                       (pSVar1,functionName,str2,str3,(MethodInfo *)0x0);
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
@@ -129,7 +270,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
 
 /* Void ExternalCall(String, Action`2[Boolean,String]) */
 
-void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1
+void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_2
                (String *functionName,Action_2_Boolean_String_ *callback,MethodInfo *method)
 
 {

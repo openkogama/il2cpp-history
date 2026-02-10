@@ -210,7 +210,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButton::SpawnRoleSelectionButton_OnP
                             if ((pMVar16 == (MVGameControllerDesktop *)0x0) ||
                                (pIVar17 = (pMVar16->fields).lockCursorManager,
                                pIVar17 == (ILockCursorManager *)0x0)) goto code_?;
-                            FUN_?(2,TypeInfo__ILockCursorManager,pIVar17,1);
+                            FUN_?(4,TypeInfo__ILockCursorManager,pIVar17,1);
                           }
                           return;
                         }

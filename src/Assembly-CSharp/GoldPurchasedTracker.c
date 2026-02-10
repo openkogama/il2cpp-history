@@ -87,9 +87,6 @@ void Assembly-CSharp.dll::GoldPurchasedTracker::GoldPurchasedTracker_GoldUpdated
     FUN_?(&TypeInfo__System__Action);
     LOCK();
     UNLOCK();
-    FUN_?(&System__Object__MethodInfo__System__Array__Empty<System::Object>______);
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__UnityEngine__Debug);
     LOCK();
     UNLOCK();
@@ -176,9 +173,9 @@ void Assembly-CSharp.dll::GoldPurchasedTracker::GoldPurchasedTracker_GoldUpdated
                             ((Int32 *)&(this->fields).goldGainedTotal,(MethodInfo *)0x0);
         FUN_?(values,3,pSVar10);
         FUN_?(values,4,StringLiteral___Expecting_a_total_of__);
-        mscorlib.dll::System::Int32::Int32_ToString
-                  ((Int32 *)&(this->fields).goldDeltaExpected,(MethodInfo *)0x0);
-        FUN_?(values);
+        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString
+                            ((Int32 *)&(this->fields).goldDeltaExpected,(MethodInfo *)0x0);
+        FUN_?(values,5,pSVar10);
         pSVar10 = mscorlib.dll::System::String::String_Concat_7(values,(MethodInfo *)0x0);
         if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
           FUN_?();
@@ -190,14 +187,11 @@ void Assembly-CSharp.dll::GoldPurchasedTracker::GoldPurchasedTracker_GoldUpdated
         }
         (this->fields).goldGainedTotal = 0;
         (this->fields).goldDeltaExpected = 0;
-        args = (Object__Array *)
-               System.Core.dll::System::Linq::Enumerable::Enumerable_Empty_2
-                         (System__Object__MethodInfo__System__Array__Empty<System::Object>______);
         if (*(int *)&(TypeInfo__BrowserComm__ToJavaScript->_1).field_0x1c == 0) {
           FUN_?();
         }
         BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall
-                  (StringLiteral_refreshCredentials,args,(MethodInfo *)0x0);
+                  (StringLiteral_refreshCredentials,(MethodInfo *)0x0);
         pSVar10 = TM::TM__(StringLiteral_Thank_you_for_waiting__Your_purc,(MethodInfo *)0x0);
         if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
           FUN_?();

@@ -535,7 +535,7 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Submit
             if (this_02 == (List_1_System_Object_ *)0x0) goto code_?;
             if (pOVar15 != (Object *)0x0) {
               pOVar18 = (Object *)0x0;
-              if (pOVar15->klass == pORam0000000182dc50c0) {
+              if (pOVar15->klass == pORam0000000182dc2f60) {
                 pOVar18 = pOVar15;
               }
               if (pOVar18 == (Object *)0x0) goto code_?;

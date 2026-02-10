@@ -801,7 +801,7 @@ code_?:
             if (pMVar22 != (MethodInfo *)0x0) {
               if ((*pMVar22->name == '.') && ((pMVar22->flags & 0x800) != 0)) {
                 ppMVar23 = ppMVar11;
-                while (ppMVar24 = ppMVar23 + 0x3052af36,
+                while (ppMVar24 = ppMVar23 + 0x3052aacd,
                       ppMVar23 = (MethodInfo **)((longlong)ppMVar23 + 1),
                       *(char *)ppMVar24 == (pMVar22->name + -1)[(longlong)ppMVar23]) {
                   if (ppMVar23 == (MethodInfo **)0x7) {

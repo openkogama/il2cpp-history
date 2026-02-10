@@ -2862,7 +2862,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnSelectButtonPressed
                         if ((pMVar16 == (MVGameControllerDesktop *)0x0) ||
                            (pIVar17 = (pMVar16->fields).lockCursorManager,
                            pIVar17 == (ILockCursorManager *)0x0)) goto code_?;
-                        FUN_?(2,TypeInfo__ILockCursorManager,pIVar17,1);
+                        FUN_?(4,TypeInfo__ILockCursorManager,pIVar17,1);
                       }
                       return;
                     }
@@ -3172,7 +3172,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnSpawnRoleActivated
                                      pIVar21 == (ILockCursorManager *)0x0))
                                   goto code_?;
                                   puStackY_30 = &UNK_?;
-                                  FUN_?(2,TypeInfo__ILockCursorManager,pIVar21,1);
+                                  FUN_?(4,TypeInfo__ILockCursorManager,pIVar21,1);
                                 }
                                 return;
                               }
@@ -4571,13 +4571,13 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_PrepareForSpawnRoleActiva
     pIVar4 = pIVar6->interfaceOffsets;
     do {
       if (pIVar4[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ILockCursorManager) {
-        pVVar8 = &(pIVar6->vtable).get_CursorLock + (pIVar4[uVar5].offset + 2);
+        pVVar8 = &(pIVar6->vtable).get_CursorLock + (pIVar4[uVar5].offset + 4);
         goto code_?;
       }
       uVar5 = uVar5 + 1;
     } while (uVar5 < uVar7);
   }
-  pVVar8 = (VirtualInvokeData *)FUN_?(pIVar2,TypeInfo__ILockCursorManager,2,pIVar4);
+  pVVar8 = (VirtualInvokeData *)FUN_?(pIVar2,TypeInfo__ILockCursorManager,4,pIVar4);
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */

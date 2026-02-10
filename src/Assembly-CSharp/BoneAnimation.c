@@ -51,7 +51,7 @@ code_?:
                       );
   pOVar4 = (Object__Class *)0x0;
   if (pOVar3 != (Object__Class *)0x0) {
-    if ((Object__Class *)(pOVar3->_0).image == pORam0000000182dc50c0) {
+    if ((Object__Class *)(pOVar3->_0).image == pORam0000000182dc2f60) {
       pOVar4 = pOVar3;
     }
     if (pOVar4 == (Object__Class *)0x0) {
@@ -817,7 +817,7 @@ void Assembly-CSharp.dll::BoneAnimation::BoneAnimation_ComputeBlendAnimation
                        );
     pSVar2 = (String *)0x0;
     if (pSVar1 != (String *)0x0) {
-      if (pSVar1->klass == pSRam0000000182dc50c0) {
+      if (pSVar1->klass == pSRam0000000182dc2f60) {
         pSVar2 = pSVar1;
       }
       if (pSVar2 == (String *)0x0) {

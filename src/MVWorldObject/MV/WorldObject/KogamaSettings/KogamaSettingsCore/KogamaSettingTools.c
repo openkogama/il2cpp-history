@@ -85,11 +85,11 @@ code_?:
       pSVar16 = (source->fields).key;
       pSVar17 = (String *)0x0;
       if ((String *)auStack_13._16_8_ != (String *)0x0) {
-        if (*(String__Class **)auStack_13._16_8_ == pSRam0000000182dc50c0) {
+        if (*(String__Class **)auStack_13._16_8_ == pSRam0000000182dc2f60) {
           pSVar17 = (String *)auStack_13._16_8_;
         }
         pSVar3 = (String *)auStack_13._16_8_;
-        pSVar2 = pSRam0000000182dc50c0;
+        pSVar2 = pSRam0000000182dc2f60;
         if (pSVar17 == (String *)0x0) goto code_?;
       }
       if ((pSVar17 == pSVar16) ||
@@ -204,11 +204,11 @@ code_?:
       pSVar14 = (prototypeRoot->fields).key;
       pSVar15 = (String *)0x0;
       if ((String *)DStack_12._current.key != (String *)0x0) {
-        if ((String__Class *)(DStack_12._current.key)->klass == pSRam0000000182dc50c0) {
+        if ((String__Class *)(DStack_12._current.key)->klass == pSRam0000000182dc2f60) {
           pSVar15 = (String *)DStack_12._current.key;
         }
         pSVar2 = (String *)DStack_12._current.key;
-        pSVar1 = pSRam0000000182dc50c0;
+        pSVar1 = pSRam0000000182dc2f60;
         if (pSVar15 == (String *)0x0) goto code_?;
       }
       if ((pSVar15 == pSVar14) ||
@@ -407,7 +407,7 @@ KogamaSettingTools_CreateFromValues_1
           if (prototype[1].klass == (KogamaSettingWrapperBase__Class *)0x0) break;
           key = (Object *)0x0;
           if (DStack_15._current.key != (Object *)0x0) {
-            if ((DStack_15._current.key)->klass == pORam0000000182dc50c0) {
+            if ((DStack_15._current.key)->klass == pORam0000000182dc2f60) {
               key = DStack_15._current.key;
             }
             if (key == (Object *)0x0) goto code_?;

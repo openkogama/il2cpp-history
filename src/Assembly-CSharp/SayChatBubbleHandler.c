@@ -482,7 +482,7 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnSayChatMe
                          );
       text = (String *)0x0;
       if (pSVar2 != (String *)0x0) {
-        if (pSVar2->klass == pSRam0000000182dc50c0) {
+        if (pSVar2->klass == pSRam0000000182dc2f60) {
           text = pSVar2;
         }
         if (text == (String *)0x0) {

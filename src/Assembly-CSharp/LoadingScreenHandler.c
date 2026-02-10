@@ -280,11 +280,11 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler_OnGameMessa
                        );
     if (pOVar1 != (Object *)0x0) {
       pOVar2 = (Object *)0x0;
-      if (pOVar1->klass == pORam0000000182dc50c0) {
+      if (pOVar1->klass == pORam0000000182dc2f60) {
         pOVar2 = pOVar1;
       }
       if (pOVar2 == (Object *)0x0) {
-        FUN_?(pOVar1,pORam0000000182dc50c0);
+        FUN_?(pOVar1,pORam0000000182dc2f60);
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
         return;

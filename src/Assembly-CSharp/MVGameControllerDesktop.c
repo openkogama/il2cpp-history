@@ -237,7 +237,7 @@ code_?:
       if ((pMVar1 == (MVGameControllerDesktop *)0x0) ||
          (pIVar2 = (pMVar1->fields).lockCursorManager, pIVar2 == (ILockCursorManager *)0x0))
       goto code_?;
-      uVar4 = 2;
+      uVar4 = 4;
     }
     FUN_?(uVar4,TypeInfo__ILockCursorManager,pIVar2,val);
   }
@@ -300,34 +300,7 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_OnApp
 {
   if ((this->fields).applicationHasFocus != focus) {
     (this->fields).applicationHasFocus = focus;
-    if (focus != 0) {
-      if (cRam_? == '\0') {
-        FUN_?(&TypeInfo__MVGameControllerDesktop);
-        LOCK();
-        UNLOCK();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__MVGameControllerDesktop->static_fields->
-          _OnApplicationRegainedFocus_k__BackingField != (UnityAction *)0x0) {
-        if (cRam_? == '\0') {
-          FUN_?(&TypeInfo__MVGameControllerDesktop);
-          LOCK();
-          UNLOCK();
-          cRam_? = '\x01';
-        }
-        pUVar1 = TypeInfo__MVGameControllerDesktop->static_fields->
-                 _OnApplicationRegainedFocus_k__BackingField;
-        goto code_?;
-      }
-    }
-    if (cRam_? == '\0') {
-      FUN_?(&TypeInfo__MVGameControllerDesktop);
-      LOCK();
-      UNLOCK();
-      cRam_? = '\x01';
-    }
-    if (TypeInfo__MVGameControllerDesktop->static_fields->_OnApplicationLostFocus_k__BackingField !=
-        (UnityAction *)0x0) {
+    if (focus == 0) {
       if (cRam_? == '\0') {
         FUN_?(&TypeInfo__MVGameControllerDesktop);
         LOCK();
@@ -336,17 +309,22 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_OnApp
       }
       pUVar1 = TypeInfo__MVGameControllerDesktop->static_fields->
                _OnApplicationLostFocus_k__BackingField;
-code_?:
-      if (pUVar1 != (UnityAction *)0x0) {
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerDesktop);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pUVar1 = TypeInfo__MVGameControllerDesktop->static_fields->
+               _OnApplicationRegainedFocus_k__BackingField;
+    }
+    if (pUVar1 != (UnityAction *)0x0) {
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (*(pUVar1->fields)._._.invoke_impl)
-                  ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
-        return;
-      }
-      FUN_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      (*(pUVar1->fields)._._.invoke_impl)
+                ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
       return;
     }
   }
@@ -616,31 +594,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Start
   FullScreenController::FullScreenController_set_FullScreen(0,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_SetResolution_2
             (0x3ac,0x1e2,0,(MethodInfo *)0x0);
-  aIStackX_10[0].m_value = 0x1e2;
-  aIStackX_8[0].m_value = 0x3ac;
   if (cRam_? == '\0') {
     FUN_?(&TypeInfo__FullScreenController);
-    LOCK();
-    UNLOCK();
-    FUN_?(&TypeInfo__System__String);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_init);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_CurrentResolution__w_);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_Screen__w_);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral__init_);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_Init__w_);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral___h_);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -665,180 +620,9 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Start
   }
   pcRam_? = pcVar2;
   (*pcRam_?)(1);
-  values = (String__Array *)FUN_?(TypeInfo__System__String);
-  if (values == (String__Array *)0x0) {
-    FUN_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  FUN_?(values,0,StringLiteral_Init__w_);
-  pSVar4 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_8,(MethodInfo *)0x0);
-  FUN_?(values,1,pSVar4);
-  FUN_?(values,2,StringLiteral___h_);
-  pSVar4 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_10,(MethodInfo *)0x0);
-  FUN_?(values,3,pSVar4);
-  FUN_?(values,4,StringLiteral__init_);
-  if (*(int *)(lRam_? + 0xe4) == 0) {
-    FUN_?();
-  }
-  if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_False);
-    LOCK();
-    UNLOCK();
-    FUN_?(&StringLiteral_True);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  FUN_?(values);
-  mscorlib.dll::System::String::String_Concat_7(values,(MethodInfo *)0x0);
   if (*(int *)&(TypeInfo__FullScreenController->_1).field_0x1c == 0) {
-    FUN_?();
+    FUN_?(TypeInfo__FullScreenController);
   }
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar3 = func_?(&UNK_?);
-    FUN_?(uVar3,0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-  iVar5 = (*pcRam_?)();
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__System__Number);
-    LOCK();
-    UNLOCK();
-    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135 &
-      1) == 0) {
-    FUN_?();
-  }
-  if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  RStack_6._pointer._value = (void *)0x0;
-  RStack_6._length = 0;
-  RStack_6._12_4_ = 0;
-  pSVar4 = mscorlib.dll::System::Number::Number_FormatInt32
-                     (iVar5,&RStack_6,(IFormatProvider *)0x0,(MethodInfo *)0x0);
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar3 = func_?(&UNK_?);
-    FUN_?(uVar3,0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-  iVar5 = (*pcRam_?)();
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__System__Number);
-    LOCK();
-    UNLOCK();
-    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135 &
-      1) == 0) {
-    FUN_?();
-  }
-  if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  RStack_6._pointer._value = (void *)0x0;
-  RStack_6._length = 0;
-  RStack_6._12_4_ = 0;
-  pSVar7 = mscorlib.dll::System::Number::Number_FormatInt32
-                     (iVar5,&RStack_6,(IFormatProvider *)0x0,(MethodInfo *)0x0);
-  mscorlib.dll::System::String::String_Concat_6
-            (StringLiteral_Screen__w_,pSVar4,StringLiteral___h_,pSVar7,(MethodInfo *)0x0);
-  RStack_6._pointer._value = (void *)0x0;
-  RStack_6._length = 0;
-  RStack_6._12_4_ = 0;
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar3 = func_?(&UNK_?);
-    FUN_?(uVar3,0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-  (*pcRam_?)(&RStack_6);
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__System__Number);
-    LOCK();
-    UNLOCK();
-    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135 &
-      1) == 0) {
-    FUN_?();
-  }
-  if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  auStack_8 = (undefined1  [8])0x0;
-  uStack_9._0_4_ = 0;
-  uStack_9._4_4_ = 0;
-  pSVar4 = mscorlib.dll::System::Number::Number_FormatInt32
-                     ((int32_t)RStack_6._pointer._value,(ReadOnlySpan_1_Char_ *)auStack_8,
-                      (IFormatProvider *)0x0,(MethodInfo *)0x0);
-  RStack_6._pointer._value = (void *)0x0;
-  RStack_6._length = 0;
-  RStack_6._12_4_ = 0;
-  pcVar2 = pcRam_?;
-  if ((pcRam_? == (code *)0x0) &&
-     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
-    uVar3 = func_?(&UNK_?);
-    FUN_?(uVar3,0);
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pcRam_? = pcVar2;
-  (*pcRam_?)(&RStack_6);
-  BVar10._value = RStack_6._pointer._value;
-  if (cRam_? == '\0') {
-    FUN_?(&TypeInfo__System__Number);
-    LOCK();
-    UNLOCK();
-    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
-    LOCK();
-    UNLOCK();
-    cRam_? = '\x01';
-  }
-  if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135 &
-      1) == 0) {
-    FUN_?();
-  }
-  if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
-    FUN_?();
-  }
-  auStack_8 = (undefined1  [8])0x0;
-  uStack_9._0_4_ = 0;
-  uStack_9._4_4_ = 0;
-  pSVar7 = mscorlib.dll::System::Number::Number_FormatInt32
-                     ((int32_t)((ulonglong)BVar10._value >> 0x20),(ReadOnlySpan_1_Char_ *)auStack_8,
-                      (IFormatProvider *)0x0,(MethodInfo *)0x0);
-  mscorlib.dll::System::String::String_Concat_6
-            (StringLiteral_CurrentResolution__w_,pSVar4,StringLiteral___h_,pSVar7,(MethodInfo *)0x0)
-  ;
-  FullScreenController::FullScreenController_PrintMeasures(StringLiteral_init,(MethodInfo *)0x0);
   TypeInfo__FullScreenController->static_fields->initialized = 1;
   TypeInfo__FullScreenController->static_fields->screenWidthBeforeFullscreen = 0x3ac;
   TypeInfo__FullScreenController->static_fields->screenHeightBeforeFullscreen = 0x1e2;

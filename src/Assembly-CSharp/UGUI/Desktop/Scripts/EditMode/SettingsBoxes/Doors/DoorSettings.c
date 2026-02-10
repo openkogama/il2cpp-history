@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors
                           );
       if (this_01 != (SettingsInputField *)0x0) {
         if (pSVar5 != (String *)0x0) {
-          if (pSVar5->klass == pSRam0000000182dc50c0) {
+          if (pSVar5->klass == pSRam0000000182dc2f60) {
             value_00 = pSVar5;
           }
           if (value_00 == (String *)0x0) {

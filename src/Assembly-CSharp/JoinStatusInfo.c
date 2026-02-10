@@ -127,13 +127,13 @@ code_?:
                   return;
                 }
                 if (cRam_? == '\0') {
-                  FUN_?(&StringLiteral__3_5_20_0);
+                  FUN_?(&StringLiteral__3_5_25_0);
                   LOCK();
                   UNLOCK();
                   cRam_? = '\x01';
                 }
                 pSVar4 = mscorlib.dll::System::String::String_Concat_5
-                                    (StringLiteral_u000Au000A,StringLiteral__3_5_20_0,
+                                    (StringLiteral_u000Au000A,StringLiteral__3_5_25_0,
                                      StringLiteral_u000Au000A,(MethodInfo *)0x0);
                 MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
                           (MVGameMsgType__Enum_JoinFlowStatus,pSVar4,(MethodInfo *)0x0);
@@ -520,7 +520,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052af36,
+                while (ppMVar16 = ppMVar15 + 0x3052aacd,
                       ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
                       *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {

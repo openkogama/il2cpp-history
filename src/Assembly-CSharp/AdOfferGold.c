@@ -444,9 +444,6 @@ void Assembly-CSharp.dll::AdOfferGold::AdOfferGold_OnShownGoldAd
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&System__Object__MethodInfo__System__Array__Empty<System::Object>______);
-    LOCK();
-    UNLOCK();
     FUN_?(&TypeInfo__UnityEngine__Debug);
     LOCK();
     UNLOCK();
@@ -473,14 +470,11 @@ void Assembly-CSharp.dll::AdOfferGold::AdOfferGold_OnShownGoldAd
   if (shouldReward == 0) {
     return;
   }
-  args = (Object__Array *)
-         System.Core.dll::System::Linq::Enumerable::Enumerable_Empty_2
-                   (System__Object__MethodInfo__System__Array__Empty<System::Object>______);
   if (*(int *)&(TypeInfo__BrowserComm__ToJavaScript->_1).field_0x1c == 0) {
     FUN_?();
   }
   BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall
-            (StringLiteral_refreshCredentials,args,(MethodInfo *)0x0);
+            (StringLiteral_refreshCredentials,(MethodInfo *)0x0);
   pSVar1 = TM::TM__(StringLiteral_Thank_you_for_watching__Enjoy_yo,(MethodInfo *)0x0);
   if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
     FUN_?();

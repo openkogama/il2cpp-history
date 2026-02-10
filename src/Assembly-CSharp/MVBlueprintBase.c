@@ -651,7 +651,7 @@ code_?:
         }
         pSVar17 = (String *)0x0;
         if ((String *)DStack_14._current.key != (String *)0x0) {
-          if ((String__Class *)(DStack_14._current.key)->klass == pSRam0000000182dc50c0) {
+          if ((String__Class *)(DStack_14._current.key)->klass == pSRam0000000182dc2f60) {
             pSVar17 = (String *)DStack_14._current.key;
           }
           if (pSVar17 == (String *)0x0) goto code_?;
@@ -659,7 +659,7 @@ code_?:
         pMVar18 = MVBlueprintBase_GetChild(this,pSVar17,(MethodInfo *)0x0);
         pSVar17 = (String *)0x0;
         if ((String *)pOVar16 == (String *)0x0) goto code_?;
-        if ((String__Class *)pOVar16->klass == pSRam0000000182dc50c0) {
+        if ((String__Class *)pOVar16->klass == pSRam0000000182dc2f60) {
           pSVar17 = (String *)pOVar16;
         }
         if (pSVar17 != (String *)0x0) goto code_?;
@@ -844,7 +844,7 @@ code_?:
       pMVar15 = MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_;
       item = (Object *)0x0;
       if (pOStack_13 != (Object *)0x0) {
-        if (pOStack_13->klass == pORam0000000182dc50c0) {
+        if (pOStack_13->klass == pORam0000000182dc2f60) {
           item = pOStack_13;
         }
         if (item == (Object *)0x0) goto code_?;

@@ -429,7 +429,7 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
       FUN_?();
     }
   }
-  pSVar2 = pSRam0000000182dc50c0;
+  pSVar2 = pSRam0000000182dc2f60;
   pSVar3 = (String *)FUN_?(0x1c,0);
   pSVar3->klass = pSVar2;
   pSVar3->monitor = (MonitorData *)0x0;
@@ -440,7 +440,7 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
   (pSVar3->fields)._stringLength = 1;
   *(undefined2 *)&(pSVar3->fields).field_0x6 = 0;
   if (bVar4 != 0) {
-    FUN_?(pSVar3,pSRam0000000182dc50c0);
+    FUN_?(pSVar3,pSRam0000000182dc2f60);
   }
   if (pSVar3 != (String *)0x0) {
     (pSVar3->fields)._firstChar = uVar1;
@@ -475,7 +475,7 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
       FUN_?();
     }
   }
-  pSVar2 = pSRam0000000182dc50c0;
+  pSVar2 = pSRam0000000182dc2f60;
   pSVar3 = (String *)FUN_?(0x1c,0);
   pSVar3->klass = pSVar2;
   pSVar3->monitor = (MonitorData *)0x0;
@@ -486,7 +486,7 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
   (pSVar3->fields)._stringLength = 1;
   *(undefined2 *)&(pSVar3->fields).field_0x6 = 0;
   if (bVar4 != 0) {
-    FUN_?(pSVar3,pSRam0000000182dc50c0);
+    FUN_?(pSVar3,pSRam0000000182dc2f60);
   }
   if (pSVar3 != (String *)0x0) {
     (pSVar3->fields)._firstChar = uVar1;
