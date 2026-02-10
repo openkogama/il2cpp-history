@@ -1077,7 +1077,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
     }
     else {
       pSVar10 = pSVar9;
-      if (pSVar8->klass == pSRam0000000182dc50c0) {
+      if (pSVar8->klass == pSRam0000000182dc2f60) {
         pSVar10 = pSVar8;
       }
       if (pSVar10 == (String *)0x0) {
@@ -1088,7 +1088,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
       }
       (this->fields).serverIP = pSVar10;
       pSVar10 = pSVar9;
-      if (pSVar8->klass == pSRam0000000182dc50c0) {
+      if (pSVar8->klass == pSRam0000000182dc2f60) {
         pSVar10 = pSVar8;
       }
       if (pSVar10 == (String *)0x0) {
@@ -1145,7 +1145,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
           }
           else {
             pSVar10 = pSVar9;
-            if (pSVar8->klass == pSRam0000000182dc50c0) {
+            if (pSVar8->klass == pSRam0000000182dc2f60) {
               pSVar10 = pSVar8;
             }
             if (pSVar10 == (String *)0x0) {
@@ -1156,7 +1156,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
             }
             (this->fields).language = pSVar10;
             pSVar10 = pSVar9;
-            if (pSVar8->klass == pSRam0000000182dc50c0) {
+            if (pSVar8->klass == pSRam0000000182dc2f60) {
               pSVar10 = pSVar8;
             }
             if (pSVar10 == (String *)0x0) {
@@ -1195,7 +1195,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
             }
             else {
               pSVar10 = pSVar9;
-              if (pSVar8->klass == pSRam0000000182dc50c0) {
+              if (pSVar8->klass == pSRam0000000182dc2f60) {
                 pSVar10 = pSVar8;
               }
               if (pSVar10 == (String *)0x0) {
@@ -1206,7 +1206,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
               }
               (this->fields).embeddedSite = pSVar10;
               pSVar10 = pSVar9;
-              if (pSVar8->klass == pSRam0000000182dc50c0) {
+              if (pSVar8->klass == pSRam0000000182dc2f60) {
                 pSVar10 = pSVar8;
               }
               if (pSVar10 == (String *)0x0) {
@@ -1236,7 +1236,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
             }
             else {
               pSVar10 = pSVar9;
-              if (pSVar8->klass == pSRam0000000182dc50c0) {
+              if (pSVar8->klass == pSRam0000000182dc2f60) {
                 pSVar10 = pSVar8;
               }
               if (pSVar10 == (String *)0x0) {
@@ -1247,7 +1247,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
               }
               (this->fields).token = pSVar10;
               pSVar10 = pSVar9;
-              if (pSVar8->klass == pSRam0000000182dc50c0) {
+              if (pSVar8->klass == pSRam0000000182dc2f60) {
                 pSVar10 = pSVar8;
               }
               if (pSVar10 == (String *)0x0) {
@@ -1277,7 +1277,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
             }
             else {
               pSVar10 = pSVar9;
-              if (pSVar8->klass == pSRam0000000182dc50c0) {
+              if (pSVar8->klass == pSRam0000000182dc2f60) {
                 pSVar10 = pSVar8;
               }
               if (pSVar10 == (String *)0x0) {
@@ -1288,7 +1288,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
               }
               (this->fields).sessionToken = pSVar10;
               pSVar10 = pSVar9;
-              if (pSVar8->klass == pSRam0000000182dc50c0) {
+              if (pSVar8->klass == pSRam0000000182dc2f60) {
                 pSVar10 = pSVar8;
               }
               if (pSVar10 == (String *)0x0) {
@@ -1454,7 +1454,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
                     }
                     else {
                       pSVar10 = pSVar9;
-                      if (pSVar8->klass == pSRam0000000182dc50c0) {
+                      if (pSVar8->klass == pSRam0000000182dc2f60) {
                         pSVar10 = pSVar8;
                       }
                       if (pSVar10 == (String *)0x0) {
@@ -1465,7 +1465,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
                       }
                       (this->fields).newPlanetName = pSVar10;
                       pSVar10 = pSVar9;
-                      if (pSVar8->klass == pSRam0000000182dc50c0) {
+                      if (pSVar8->klass == pSRam0000000182dc2f60) {
                         pSVar10 = pSVar8;
                       }
                       if (pSVar10 == (String *)0x0) {
@@ -1495,7 +1495,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
                     }
                     else {
                       pSVar10 = pSVar9;
-                      if (pSVar8->klass == pSRam0000000182dc50c0) {
+                      if (pSVar8->klass == pSRam0000000182dc2f60) {
                         pSVar10 = pSVar8;
                       }
                       if (pSVar10 == (String *)0x0) {
@@ -1506,7 +1506,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
                       }
                       (this->fields).planetName = pSVar10;
                       pSVar10 = pSVar9;
-                      if (pSVar8->klass == pSRam0000000182dc50c0) {
+                      if (pSVar8->klass == pSRam0000000182dc2f60) {
                         pSVar10 = pSVar8;
                       }
                       if (pSVar10 == (String *)0x0) {
@@ -1536,7 +1536,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
                     }
                     else {
                       pSVar10 = pSVar9;
-                      if (pSVar8->klass == pSRam0000000182dc50c0) {
+                      if (pSVar8->klass == pSRam0000000182dc2f60) {
                         pSVar10 = pSVar8;
                       }
                       if (pSVar10 == (String *)0x0) {
@@ -1546,7 +1546,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1(GameSessionDa
                         return;
                       }
                       (this->fields).planetImageURL = pSVar10;
-                      if (pSVar8->klass == pSRam0000000182dc50c0) {
+                      if (pSVar8->klass == pSRam0000000182dc2f60) {
                         pSVar9 = pSVar8;
                       }
                       if (pSVar9 == (String *)0x0) {

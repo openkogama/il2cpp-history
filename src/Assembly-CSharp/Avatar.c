@@ -848,7 +848,7 @@ code_?:
       }
       pSVar22 = (String *)0x0;
       if (pSStack_3 != (String *)0x0) {
-        if (pSStack_3->klass == pSRam0000000182dc50c0) {
+        if (pSStack_3->klass == pSRam0000000182dc2f60) {
           pSVar22 = pSStack_3;
         }
         if (pSVar22 == (String *)0x0) goto code_?;
@@ -956,9 +956,9 @@ code_?:
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar28,IVar27,(Object *)this_04,(InsertionBehavior__Enum)uVar40,MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Add_AvatarModifierPackageType__AvatarModifier_->klass->rgctx_data[0x22].method);
             pDVar48 = (this->fields).currentModifierByteState;
             if (pDVar48 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-            method = (MethodInfo *)pDRam0000000182dc5048;
+            method = (MethodInfo *)pDRam0000000182dc2ee8;
             if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
+            if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc2ee8->vector + 1))->genericMethod) goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar48,IVar27,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar40 >> 8),2),MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Add_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method);
             *(undefined1 *)&this_04->vector[0].next = 1;
             (**(code **)&((Il2CppClass_0 *)&this_04->klass)->image[5].token)(this_04,this);
@@ -986,9 +986,9 @@ code_?:
         pDVar48 = (this->fields).currentModifierByteState;
         if (pDVar48 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
         cVar45 = FUN_?(pDVar48,IVar27);
-        method = (MethodInfo *)pDRam0000000182dc5048;
+        method = (MethodInfo *)pDRam0000000182dc2ee8;
         if (value == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
-        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
+        if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc2ee8->vector + 1))->genericMethod) goto code_?;
         if (*(char *)&(value->fields)._items != cVar45) {
           pDVar28 = (this->fields).modifiers;
           if (pDVar28 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) goto code_?;
@@ -999,7 +999,7 @@ code_?:
           (*(code *)method)(pOVar29,pOVar29->klass[1]._0.namespaze);
           pDVar48 = (this->fields).currentModifierByteState;
           if (pDVar48 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) goto code_?;
-          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc5048->vector + 1))->genericMethod) goto code_?;
+          if ((value->klass->_0).element_class != (Il2CppClass *)((_union_155 *)(pDRam0000000182dc2ee8->vector + 1))->genericMethod) goto code_?;
           method_00 = MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__set_Item_AvatarModifierPackageType__unsigned_char_->klass->rgctx_data[0x22].method;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__TryInsert((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar48,IVar27,*(uint8_t *)&(value->fields)._items,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),method_00);
         }

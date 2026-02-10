@@ -73,7 +73,7 @@ bool Assembly-CSharp.dll::PlayButton::PlayButton_HandlePlayAvailable(PlayButton 
           if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
             pMVar9 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
             if ((pMVar9 == (MVGameControllerDesktop *)0x0) || (pIVar10 = (pMVar9->fields).lockCursorManager, pIVar10 == (ILockCursorManager *)0x0)) goto code_?;
-            FUN_?(2,TypeInfo__ILockCursorManager,pIVar10,1);
+            FUN_?(4,TypeInfo__ILockCursorManager,pIVar10,1);
           }
         }
         return 1;

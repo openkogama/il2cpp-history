@@ -1654,7 +1654,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_O
               if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
                 pMVar6 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
                 if ((pMVar6 == (MVGameControllerDesktop *)0x0) || (pIVar7 = (pMVar6->fields).lockCursorManager, pIVar7 == (ILockCursorManager *)0x0)) goto code_?;
-                FUN_?(2,TypeInfo__ILockCursorManager,pIVar7,1);
+                FUN_?(4,TypeInfo__ILockCursorManager,pIVar7,1);
               }
               return;
             }

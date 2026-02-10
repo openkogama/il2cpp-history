@@ -5705,12 +5705,11 @@ Vector3 * Assembly-CSharp.dll::Cube::Cube_GetDefaultNormal(Vector3 *__return_sto
     mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this,(MethodInfo *)0x0);
     lVar3 = func_?(&MethodInfo__Cube__GetDefaultNormal_MV__WorldObject__Face_);
     uVar2 = FUN_?();
-    *(char *)(unaff_RSI + -1) = *(char *)(unaff_RSI + -1) + (char)this;
-    pcVar4 = (char *)(CONCAT71((int7)((ulonglong)uVar2 >> 8),(char)uVar2 + '\x01') + -1);
+    *(char *)(unaff_RSI + -0xf) = *(char *)(unaff_RSI + -0xf) + (char)this;
+    pcVar4 = (char *)(CONCAT71((int7)((ulonglong)uVar2 >> 8),(char)uVar2 + '\x0f') + -0xf);
     *pcVar4 = *pcVar4 + (char)((ulonglong)lVar3 >> 8);
-    *(char *)(lVar3 + -0x4bff6201) = *(char *)(lVar3 + -0x4bff6201) + (char)lVar3;
-    (*(code *)(unaff_RBP + -0x62004200))();
-    pcVar5 = (code *)swi(3);
+    *(char *)(lVar3 + -0x4bff620f) = *(char *)(lVar3 + -0x4bff620f) + (char)lVar3;
+    pcVar5 = (code *)swi(1);
     pVVar6 = (Vector3 *)(*pcVar5)();
     return pVVar6;
   }

@@ -802,7 +802,7 @@ code_?:
       }
       pMVar7 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
       if ((pMVar7 != (MVGameControllerDesktop *)0x0) && (pIVar8 = (IPlayModeUI *)(pMVar7->fields).lockCursorManager, pIVar8 != (IPlayModeUI *)0x0)) {
-        uVar9 = 2;
+        uVar9 = 4;
         pIVar10 = (Il2CppRuntimeInterfaceOffsetPair *)0x1;
         pIVar11 = (Il2CppClass *)TypeInfo__ILockCursorManager;
         goto code_?;
@@ -852,13 +852,13 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_LockCursor(LobbySta
     pIVar4 = pIVar6->interfaceOffsets;
     do {
       if (pIVar4[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ILockCursorManager) {
-        pVVar8 = &(pIVar6->vtable).get_CursorLock + (pIVar4[uVar5].offset + 2);
+        pVVar8 = &(pIVar6->vtable).get_CursorLock + (pIVar4[uVar5].offset + 4);
         goto code_?;
       }
       uVar5 = uVar5 + 1;
     } while (uVar5 < uVar7);
   }
-  pVVar8 = (VirtualInvokeData *)FUN_?(pIVar2,TypeInfo__ILockCursorManager,2,pIVar4);
+  pVVar8 = (VirtualInvokeData *)FUN_?(pIVar2,TypeInfo__ILockCursorManager,4,pIVar4);
 code_?:
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
@@ -1968,7 +1968,7 @@ code_?:
       }
       pMVar7 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
       if ((pMVar7 != (MVGameControllerDesktop *)0x0) && (pIVar8 = (IPlayModeUI *)(pMVar7->fields).lockCursorManager, pIVar8 != (IPlayModeUI *)0x0)) {
-        uVar9 = 2;
+        uVar9 = 4;
         pIVar10 = (Il2CppRuntimeInterfaceOffsetPair *)0x1;
         pIVar11 = (Il2CppClass *)TypeInfo__ILockCursorManager;
         goto code_?;
@@ -2515,7 +2515,7 @@ code_?:
       }
       pMVar11 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
       if ((pMVar11 != (MVGameControllerDesktop *)0x0) && (pIVar12 = (IPlayModeUI *)(pMVar11->fields).lockCursorManager, pIVar12 != (IPlayModeUI *)0x0)) {
-        uVar13 = 2;
+        uVar13 = 4;
         pIVar14 = (Il2CppRuntimeInterfaceOffsetPair *)0x1;
         pIVar15 = (Il2CppClass *)TypeInfo__ILockCursorManager;
         goto code_?;

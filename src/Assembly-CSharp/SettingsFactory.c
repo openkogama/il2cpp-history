@@ -820,7 +820,7 @@ code_?:
     this_01 = (pCVar11->fields).nameInputField;
     if ((pDVar14 != (Dictionary_2_System_Object_System_Object_ *)0x0) && (pSVar23 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar14,(Object *)StringLiteral_Name,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), this_01 != (SettingsInputField *)0x0)) {
       if (pSVar23 != (String *)0x0) {
-        if (pSVar23->klass == pSRam0000000182dc50c0) {
+        if (pSVar23->klass == pSRam0000000182dc2f60) {
           pSVar13 = pSVar23;
         }
         if (pSVar13 == (String *)0x0) {
@@ -1792,7 +1792,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateGlobalSoundsInv
         }
         else {
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc2f60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -1803,7 +1803,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateGlobalSoundsInv
           }
           this_11[5].klass = pCVar9;
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc2f60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -5553,7 +5553,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSoundsInventory
         }
         else {
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc2f60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {
@@ -5564,7 +5564,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSoundsInventory
           }
           this_11[5].klass = pCVar9;
           pCVar9 = pCVar4;
-          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc50c0) {
+          if ((Object__Class *)(pCVar8->_0).image == pORam0000000182dc2f60) {
             pCVar9 = pCVar8;
           }
           if (pCVar9 == (Component__Class *)0x0) {

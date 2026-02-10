@@ -16,14 +16,13 @@ public class MVGameControllerDesktop : MVGameControllerBase
 	// Fields
 	[SerializeField]
 	private GameObject eventSystem;
-	private IEditModeObjectPicker editModeObjectPicker;
 	private bool applicationHasFocus;
 	private ILockCursorManager lockCursorManager;
+	private IAdManager adManager;
 	[CompilerGenerated]
 	private static UnityAction _OnApplicationLostFocus_k__BackingField;
 	[CompilerGenerated]
 	private static UnityAction _OnApplicationRegainedFocus_k__BackingField;
-	private IAdManager adManager;
 
 	// Properties
 	private static MVGameControllerDesktop Instance { get; }

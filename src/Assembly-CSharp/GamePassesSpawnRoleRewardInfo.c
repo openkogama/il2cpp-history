@@ -1806,7 +1806,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
                 if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
                   pMVar13 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
                   if ((pMVar13 == (MVGameControllerDesktop *)0x0) || (pIVar14 = (pMVar13->fields).lockCursorManager, pIVar14 == (ILockCursorManager *)0x0)) goto code_?;
-                  FUN_?(2,TypeInfo__ILockCursorManager,pIVar14,1);
+                  FUN_?(4,TypeInfo__ILockCursorManager,pIVar14,1);
                 }
                 return;
               }
@@ -3531,7 +3531,7 @@ code_?:
             if (pMVar14 != (MethodInfo *)0x0) {
               if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
                 ppMVar15 = ppMVar3;
-                while (ppMVar16 = ppMVar15 + 0x3052af36, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                while (ppMVar16 = ppMVar15 + 0x3052aacd, ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1), *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
                   if (ppMVar15 == (MethodInfo **)0x7) {
                     FUN_?(pMVar14,0,0,&lStackX_10);
                     goto code_?;

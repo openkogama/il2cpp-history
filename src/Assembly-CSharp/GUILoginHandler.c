@@ -2998,7 +2998,7 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_Update(GUILoginHandle
       pSVar8 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_serverIP,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_);
       pSVar3 = (String *)0x0;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dc50c0) {
+        if (pSVar8->klass == pSRam0000000182dc2f60) {
           pSVar3 = pSVar8;
         }
         if (pSVar3 == (String *)0x0) {
@@ -3186,7 +3186,7 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_UpdatePrefValuesIfCha
       pSVar8 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_serverIP,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_);
       pSVar3 = (String *)0x0;
       if (pSVar8 != (String *)0x0) {
-        if (pSVar8->klass == pSRam0000000182dc50c0) {
+        if (pSVar8->klass == pSRam0000000182dc2f60) {
           pSVar3 = pSVar8;
         }
         if (pSVar3 == (String *)0x0) {

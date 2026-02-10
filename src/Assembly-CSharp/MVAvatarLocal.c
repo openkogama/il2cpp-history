@@ -9452,11 +9452,11 @@ code_?:
       pSVar17 = (pKVar2->fields).key;
       pSVar18 = (String *)0x0;
       if ((String *)auStack_14._16_8_ != (String *)0x0) {
-        if (*(String__Class **)auStack_14._16_8_ == pSRam0000000182dc50c0) {
+        if (*(String__Class **)auStack_14._16_8_ == pSRam0000000182dc2f60) {
           pSVar18 = (String *)auStack_14._16_8_;
         }
         pSVar4 = (String *)auStack_14._16_8_;
-        pSVar3 = pSRam0000000182dc50c0;
+        pSVar3 = pSRam0000000182dc2f60;
         if (pSVar18 == (String *)0x0) goto code_?;
       }
       if ((pSVar18 == pSVar17) || ((((pSVar18 != (String *)0x0 && (pSVar17 != (String *)0x0)) && ((pSVar18->fields)._stringLength == (pSVar17->fields)._stringLength)) && (bVar16 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual((uint8_t *)&(pSVar18->fields)._firstChar,(uint8_t *)&(pSVar17->fields)._firstChar,(longlong)(pSVar18->fields)._stringLength * 2,(MethodInfo *)0x0), bVar16 != 0)))) {

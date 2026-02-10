@@ -325,18 +325,18 @@ MVDoor_DoorConfiguration * Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor
   }
   else {
     pSVar2 = (String *)0x0;
-    if (pSVar1->klass == pSRam0000000182dc50c0) {
+    if (pSVar1->klass == pSRam0000000182dc2f60) {
       pSVar2 = pSVar1;
     }
     if (pSVar2 == (String *)0x0) {
-      FUN_?(pSVar1,pSRam0000000182dc50c0);
+      FUN_?(pSVar1,pSRam0000000182dc2f60);
       pcVar3 = (code *)swi(3);
       pMVar4 = (MVDoor_DoorConfiguration *)(*pcVar3)();
       return pMVar4;
     }
     __return_storage_ptr__->name = pSVar2;
     pSVar2 = (String *)0x0;
-    if (pSVar1->klass == pSRam0000000182dc50c0) {
+    if (pSVar1->klass == pSRam0000000182dc2f60) {
       pSVar2 = pSVar1;
     }
     if (pSVar2 == (String *)0x0) {
@@ -1914,7 +1914,7 @@ MVDoor_DoorConfiguration * Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor
     bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar15,(Object *)TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->Name,(Object **)&pSStackX_8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
     if ((bVar6 != 0) && (pSStackX_8 != (String *)0x0)) {
       pSVar16 = pSVar1;
-      if (pSStackX_8->klass == pSRam0000000182dc50c0) {
+      if (pSStackX_8->klass == pSRam0000000182dc2f60) {
         pSVar16 = pSStackX_8;
       }
       if ((pSVar16 != (String *)0x0) && (bVar17 = iRam_? != 0, __return_storage_ptr__->name = pSVar16, bVar17)) {
@@ -1939,11 +1939,11 @@ MVDoor_DoorConfiguration * Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor
       bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar15,(Object *)TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->BeginOpen,(Object **)&pSStackX_10,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
       if ((bVar6 != 0) && (pSStackX_10 != (String *)0x0)) {
         pSVar16 = pSVar1;
-        if (pSStackX_10->klass == pSRam0000000182dc5058) {
+        if (pSStackX_10->klass == pSRam0000000182dc2ef8) {
           pSVar16 = pSStackX_10;
         }
         if (pSVar16 != (String *)0x0) {
-          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182dc5058->_0).element_class) {
+          if ((pSStackX_10->klass->_0).element_class != (pSRam0000000182dc2ef8->_0).element_class) {
             FUN_?(pSStackX_10);
             pcVar22 = (code *)swi(3);
             pMVar3 = (MVDoor_DoorConfiguration *)(*pcVar22)();
@@ -1960,11 +1960,11 @@ MVDoor_DoorConfiguration * Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor
         bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar15,(Object *)TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->PlayersCanOpen,(Object **)&pSStackX_20,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
         if ((bVar6 != 0) && (pSStackX_20 != (String *)0x0)) {
           pSVar16 = pSVar1;
-          if (pSStackX_20->klass == pSRam0000000182dc5058) {
+          if (pSStackX_20->klass == pSRam0000000182dc2ef8) {
             pSVar16 = pSStackX_20;
           }
           if (pSVar16 != (String *)0x0) {
-            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182dc5058->_0).element_class) {
+            if ((pSStackX_20->klass->_0).element_class != (pSRam0000000182dc2ef8->_0).element_class) {
               FUN_?(pSStackX_20);
               pcVar22 = (code *)swi(3);
               pMVar3 = (MVDoor_DoorConfiguration *)(*pcVar22)();
@@ -1980,11 +1980,11 @@ MVDoor_DoorConfiguration * Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor
         if (pDVar15 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar15,(Object *)TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->ReverseOpenDirection,(Object **)&pSStack_2,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
           if ((bVar6 != 0) && (pSStack_2 != (String *)0x0)) {
-            if (pSStack_2->klass == pSRam0000000182dc5058) {
+            if (pSStack_2->klass == pSRam0000000182dc2ef8) {
               pSVar1 = pSStack_2;
             }
             if (pSVar1 != (String *)0x0) {
-              if ((pSStack_2->klass->_0).element_class != (pSRam0000000182dc5058->_0).element_class) {
+              if ((pSStack_2->klass->_0).element_class != (pSRam0000000182dc2ef8->_0).element_class) {
                 FUN_?(pSStack_2);
                 pcVar22 = (code *)swi(3);
                 pMVar3 = (MVDoor_DoorConfiguration *)(*pcVar22)();

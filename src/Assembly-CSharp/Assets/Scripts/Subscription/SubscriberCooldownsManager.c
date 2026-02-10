@@ -517,7 +517,7 @@ code_?:
             if (pMVar18 != (MethodInfo *)0x0) {
               if ((*pMVar18->name == '.') && ((pMVar18->flags & 0x800) != 0)) {
                 ppMVar19 = ppMVar8;
-                while (ppMVar20 = ppMVar19 + 0x3052af36, ppMVar19 = (MethodInfo **)((longlong)ppMVar19 + 1), *(char *)ppMVar20 == (pMVar18->name + -1)[(longlong)ppMVar19]) {
+                while (ppMVar20 = ppMVar19 + 0x3052aacd, ppMVar19 = (MethodInfo **)((longlong)ppMVar19 + 1), *(char *)ppMVar20 == (pMVar18->name + -1)[(longlong)ppMVar19]) {
                   if (ppMVar19 == (MethodInfo **)0x7) {
                     FUN_?(pMVar18,0,0,alStackX_10);
                     goto code_?;

@@ -5,15 +5,18 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityEngine.EventSystems;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class ToggleStateHandlerFullscreen : ToggleStateHandler
+public class ToggleStateHandlerFullscreen : ToggleStateHandler, IPointerDownHandler
 {
 	// Constructors
 	public ToggleStateHandlerFullscreen();
 
 	// Methods
+	protected override void Start();
+	public void OnPointerDown(PointerEventData eventData);
 	public override bool CurrentToggleState();
 }
 

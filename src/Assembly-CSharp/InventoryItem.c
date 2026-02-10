@@ -1399,7 +1399,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1(InventoryItem *th
         }
         else {
           pSVar4 = (String *)0x0;
-          if (pSVar3->klass == pSRam0000000182dc50c0) {
+          if (pSVar3->klass == pSRam0000000182dc2f60) {
             pSVar4 = pSVar3;
           }
           if (pSVar4 == (String *)0x0) {
@@ -1410,7 +1410,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1(InventoryItem *th
           }
           (this->fields).name = pSVar4;
           pSVar4 = (String *)0x0;
-          if (pSVar3->klass == pSRam0000000182dc50c0) {
+          if (pSVar3->klass == pSRam0000000182dc2f60) {
             pSVar4 = pSVar3;
           }
           if (pSVar4 == (String *)0x0) {
@@ -1589,7 +1589,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2(InventoryItem *th
       }
       else {
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dc50c0) {
+        if (pSVar3->klass == pSRam0000000182dc2f60) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -1600,7 +1600,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2(InventoryItem *th
         }
         (this->fields).name = pSVar5;
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dc50c0) {
+        if (pSVar3->klass == pSRam0000000182dc2f60) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -1632,7 +1632,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2(InventoryItem *th
       }
       else {
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dc50c0) {
+        if (pSVar3->klass == pSRam0000000182dc2f60) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -1643,7 +1643,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2(InventoryItem *th
         }
         (this->fields).description = pSVar5;
         pSVar5 = pSVar4;
-        if (pSVar3->klass == pSRam0000000182dc50c0) {
+        if (pSVar3->klass == pSRam0000000182dc2f60) {
           pSVar5 = pSVar3;
         }
         if (pSVar5 == (String *)0x0) {
@@ -1825,7 +1825,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2(InventoryItem *th
                       }
                       else {
                         pSVar5 = pSVar4;
-                        if (pSVar3->klass == pSRam0000000182dc50c0) {
+                        if (pSVar3->klass == pSRam0000000182dc2f60) {
                           pSVar5 = pSVar3;
                         }
                         if (pSVar5 == (String *)0x0) {
@@ -1835,7 +1835,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2(InventoryItem *th
                           return;
                         }
                         (this->fields).imagePath = pSVar5;
-                        if (pSVar3->klass == pSRam0000000182dc50c0) {
+                        if (pSVar3->klass == pSRam0000000182dc2f60) {
                           pSVar4 = pSVar3;
                         }
                         if (pSVar4 == (String *)0x0) {

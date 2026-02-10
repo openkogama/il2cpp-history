@@ -536,6 +536,8 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_C
         }
       }
       pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
       (*pcRam_?)(1);
       return;
     }
@@ -577,7 +579,10 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_C
         return;
       }
       pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
       (*pcRam_?)(0);
+      return;
     }
   }
   return;

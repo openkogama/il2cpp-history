@@ -5,12 +5,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_Build_Info___Version__3_5_20_0__);
+    FUN_?(&StringLiteral_Build_Info___Version__3_5_25_0__);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral_Build_Info___Version__3_5_20_0__;
+  return StringLiteral_Build_Info___Version__3_5_25_0__;
 }
 
 
@@ -71,12 +71,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_bugfix_maintenance_fixes);
+    FUN_?(&StringLiteral_release_2026_02_10Maintenance);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral_bugfix_maintenance_fixes;
+  return StringLiteral_release_2026_02_10Maintenance;
 }
 
 
@@ -86,12 +86,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__1_6_2026_2_27_39_PM);
+    FUN_?(&StringLiteral__2_10_2026_10_41_17_AM);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral__1_6_2026_2_27_39_PM;
+  return StringLiteral__2_10_2026_10_41_17_AM;
 }
 
 
@@ -116,7 +116,7 @@ DateTime Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
     FUN_?(&MethodInfo__System__Nullable<System::DateTime>__get_Value__);
     LOCK();
     UNLOCK();
-    FUN_?(&StringLiteral__2026_01_06T14_27_39_0000000);
+    FUN_?(&StringLiteral__2026_02_10T10_41_17_0000000);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
@@ -125,7 +125,7 @@ DateTime Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
     if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
       FUN_?();
     }
-    pSVar1 = StringLiteral__2026_01_06T14_27_39_0000000;
+    pSVar1 = StringLiteral__2026_02_10T10_41_17_0000000;
     if (cRam_? == '\0') {
       FUN_?(&TypeInfo__System__Globalization__DateTimeFormatInfo);
       LOCK();
@@ -177,7 +177,7 @@ DateTime Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 int32_t Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_get_LocalDiscCacheAssetVersion(MethodInfo *method)
 
 {
-  return 0x244ce6e7;
+  return 0x2494aa51;
 }
 
 
@@ -202,12 +202,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__version_609019623);
+    FUN_?(&StringLiteral__version_613722705);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral__version_609019623;
+  return StringLiteral__version_613722705;
 }
 
 
@@ -216,7 +216,7 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 int32_t Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_get_VersionCode(MethodInfo *method)
 
 {
-  return 0x4a77c;
+  return 0x4a781;
 }
 
 
@@ -226,12 +226,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral_c8a7da44_3032_4369_94cb_3c628a9f);
+    FUN_?(&StringLiteral__5518bfb2_ad37_49bb_883f_9712d2ad);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral_c8a7da44_3032_4369_94cb_3c628a9f;
+  return StringLiteral__5518bfb2_ad37_49bb_883f_9712d2ad;
 }
 
 
@@ -241,12 +241,12 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_5_20_0);
+    FUN_?(&StringLiteral__3_5_25_0);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral__3_5_20_0;
+  return StringLiteral__3_5_25_0;
 }
 
 
@@ -256,11 +256,11 @@ String * Assembly-CSharp.dll::BuildSystem::GameBuildSettings::GameBuildSettings_
 
 {
   if (cRam_? == '\0') {
-    FUN_?(&StringLiteral__3_5_20);
+    FUN_?(&StringLiteral__3_5_25);
     LOCK();
     UNLOCK();
     cRam_? = '\x01';
   }
-  return StringLiteral__3_5_20;
+  return StringLiteral__3_5_25;
 }
 

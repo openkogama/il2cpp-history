@@ -73,6 +73,7 @@ public class BrowserComm : MonoBehaviour
 
 		// Methods
 		public static void GetBrowserVersion();
+		public static void ExternalCall(string functionName);
 		public static void ExternalCall(string functionName, params object[] args);
 		public static void ExternalCall(string functionName, Action<bool, string> callback);
 		private static string ToNameSpace(string functionName);

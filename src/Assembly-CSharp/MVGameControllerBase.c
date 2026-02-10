@@ -256,12 +256,12 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_Awake(MVGam
   if (this_01 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_01,MVUtils_MethodInfo__UnityEngine__GameObject__AddComponent<MVUtils>__);
     if (cRam_? == '\0') {
-      FUN_?(&StringLiteral_Build_Info___Version__3_5_20_0__);
+      FUN_?(&StringLiteral_Build_Info___Version__3_5_25_0__);
       LOCK();
       UNLOCK();
       cRam_? = '\x01';
     }
-    message = StringLiteral_Build_Info___Version__3_5_20_0__;
+    message = StringLiteral_Build_Info___Version__3_5_25_0__;
     if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
       FUN_?();
     }
@@ -2005,7 +2005,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_InitWebGL(M
   }
   callback = (Action_2_Boolean_String_ *)FUN_?(TypeInfo__System__Action<bool,_System::String>);
   FUN_?(callback,this);
-  BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_sendPlayerParams,callback,(MethodInfo *)0x0);
+  BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_2(StringLiteral_sendPlayerParams,callback,(MethodInfo *)0x0);
   pOVar3 = (Object__Class *)FUN_?(TypeInfo__System__Action<bool,_System::String>);
   FUN_?(pOVar3,this,MethodInfo__MVGameControllerBase__ReceivedLoadStatsCallback_bool__System__String_);
   pSVar2 = StringLiteral_sendLoadStats;

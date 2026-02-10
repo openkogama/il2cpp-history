@@ -246,7 +246,7 @@ code_?:
             }
             pSVar13 = (String *)0x0;
             if (pSVar12 != (String *)0x0) {
-              if (pSVar12->klass == pSRam0000000182dc50c0) {
+              if (pSVar12->klass == pSRam0000000182dc2f60) {
                 pSVar13 = pSVar12;
               }
               if (pSVar13 == (String *)0x0) {
@@ -283,7 +283,7 @@ code_?:
             }
             pSVar13 = (String *)0x0;
             if (pSVar12 != (String *)0x0) {
-              if (pSVar12->klass == pSRam0000000182dc50c0) {
+              if (pSVar12->klass == pSRam0000000182dc2f60) {
                 pSVar13 = pSVar12;
               }
               if (pSVar13 == (String *)0x0) {
@@ -327,7 +327,7 @@ code_?:
           }
           pSVar13 = (String *)0x0;
           if (pSVar12 != (String *)0x0) {
-            if (pSVar12->klass == pSRam0000000182dc50c0) {
+            if (pSVar12->klass == pSRam0000000182dc2f60) {
               pSVar13 = pSVar12;
             }
             if (pSVar13 == (String *)0x0) {
@@ -839,9 +839,6 @@ code_?:
       pMVar4 = (this->fields).networkGame;
       if (pMVar4 == (MVNetworkGame *)0x0) break;
       if (cRam_? == '\0') {
-        FUN_?(&System__Object__MethodInfo__System__Array__Empty<System::Object>______);
-        LOCK();
-        UNLOCK();
         FUN_?(&TypeInfo__BrowserComm__ToJavaScript);
         LOCK();
         UNLOCK();
@@ -853,11 +850,10 @@ code_?:
       if ((pMVar4->fields).PurchaseProductResponseHandler != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
         pAVar35 = (pMVar4->fields).PurchaseProductResponseHandler;
         (*(pAVar35->fields)._._.invoke_impl)((pAVar35->fields)._._.method_code,returnCode_00,uVar34,(pAVar35->fields)._._.method);
-        args = (Object__Array *)System.Core.dll::System::Linq::Enumerable::Enumerable_Empty_2(System__Object__MethodInfo__System__Array__Empty<System::Object>______);
         if (*(int *)&(TypeInfo__BrowserComm__ToJavaScript->_1).field_0x1c == 0) {
           FUN_?();
         }
-        BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall(StringLiteral_refreshCredentials,args,(MethodInfo *)0x0);
+        BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall(StringLiteral_refreshCredentials,(MethodInfo *)0x0);
       }
       if (returnCode != 0) {
         return;

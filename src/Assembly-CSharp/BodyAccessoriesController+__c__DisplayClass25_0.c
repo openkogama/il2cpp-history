@@ -98,11 +98,11 @@ void Assembly-CSharp.dll::BodyAccessoriesController+<>c__DisplayClass25_0::BodyA
           pSVar8 = (String *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar3,(Object *)pSVar5,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
           pSVar5 = (String *)0x0;
           if (pSVar8 != (String *)0x0) {
-            if (pSVar8->klass == pSRam0000000182dc50c0) {
+            if (pSVar8->klass == pSRam0000000182dc2f60) {
               pSVar5 = pSVar8;
             }
             if (pSVar5 == (String *)0x0) {
-              FUN_?(pSVar8,pSRam0000000182dc50c0);
+              FUN_?(pSVar8,pSRam0000000182dc2f60);
               pcVar1 = (code *)swi(3);
               (*pcVar1)();
               return;
