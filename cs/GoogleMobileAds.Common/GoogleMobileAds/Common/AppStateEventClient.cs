@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
  */
 
@@ -35,6 +35,6 @@ namespace GoogleMobileAds.Common
 		// Methods
 		private void OnApplicationPause(bool isPaused);
 		[CompilerGenerated]
-		private static void _AppStateChanged_m__0(AppState param_0001479a);
+		private static void _AppStateChanged_m__0(AppState param_0001479d);
 	}
 }

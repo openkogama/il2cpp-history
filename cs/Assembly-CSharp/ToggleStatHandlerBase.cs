@@ -14,7 +14,6 @@ using UnityEngine.UI;
 public abstract class ToggleStatHandlerBase : MonoBehaviour
 {
 	// Fields
-	private bool waitingForToggleCallback;
 	[SerializeField]
 	protected UnityEngine.UI.Button button;
 	[SerializeField]
@@ -28,6 +27,7 @@ public abstract class ToggleStatHandlerBase : MonoBehaviour
 	[SerializeField]
 	protected Image imageComponent;
 	public ToggleStateHandlerOnStartSetValue OnStartSetValue;
+	private bool waitingForToggleCallback;
 
 	// Properties
 	protected Image CurrentImage { get; }
@@ -38,7 +38,7 @@ public abstract class ToggleStatHandlerBase : MonoBehaviour
 
 	// Methods
 	protected abstract void UpdateToggleState();
-	private void Start();
+	protected virtual void Start();
 	private void Reset();
 	private void OnValidate();
 	public virtual bool CurrentToggleState();

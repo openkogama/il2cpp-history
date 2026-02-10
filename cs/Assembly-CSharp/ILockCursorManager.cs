@@ -12,6 +12,7 @@ public interface ILockCursorManager
 {
 	// Properties
 	bool CursorLock { get; set; }
+	bool RequestCursorLockAfterLoss { get; set; }
 	bool CursorLockWithoutCallback { set; }
 }
 

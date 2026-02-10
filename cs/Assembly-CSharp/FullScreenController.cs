@@ -27,19 +27,19 @@ public static class FullScreenController
 
 	// Properties
 	public static bool WaitingForFullscreenChange { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	public static bool FullScreen { get; set; }
 	public static bool ShouldHideOrientationWarning { get; }
+	public static bool FullScreen { get; set; }
 
 	// Constructors
 	static FullScreenController();
 
 	// Methods
 	public static void Init(int width, int height, bool init);
-	private static void PrintLog(string s);
+	private static void HandleSupportedFullscreenStateChange();
+	private static void HandleFakeFullscreenStateChange();
 	public static void InitSupports(bool fsSupport, bool fake);
 	private static void UpdateFullscreenIfApplicable();
-	public static Tuple<int, int> GetWidthHeight(MVOrientation orientation, int widthInput, int heightInput);
-	public static void PrintMeasures(string prefix);
+	public static ValueTuple<int, int> GetWidthHeight(MVOrientation orientation, int widthInput, int heightInput);
 	public static void LateUpdate();
 	public static bool AllowFullscreenChange();
 	private static bool IsFullscreenSupported();
