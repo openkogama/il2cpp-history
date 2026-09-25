@@ -7,7 +7,11 @@ from ghidra.util.task import ConsoleTaskMonitor
 
 script, out, sample = list(getScriptArgs())
 t = time.time()
-exec(compile(open(script).read(), script, "exec"), {**globals(), "__file__": script, "__name__": "__main__"})
+g = globals()
+saved = {k: g.get(k) for k in ("__file__", "__name__")}
+g.update(__file__=script, __name__="__main__")
+exec(compile(open(script).read(), script, "exec"), g)
+g.update(saved)
 print(f"redux script: {time.time() - t:.0f}s")
 
 functions = list(currentProgram.getFunctionManager().getFunctions(True))
