@@ -1,23 +1,22 @@
-name: probe
+name: test
 
 on:
   workflow_dispatch:
 
 jobs:
-  probe:
+  decompile:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 350
     strategy:
       fail-fast: false
       matrix:
         build:
-          - 8f1df9ebe6ffea7a872cbb5bbd1efae306d3eea78a0c779fade074e0aaafcba6
-          - b98f6772b1da3e1698dcd2239928a2c992f2a002244e9239fd91661e46c82775
-          - 24018d1358c41540b349847ba038d3441d657c773a5a6336abbb7a022fee9c8d
-          - f9bdd686888f66197752ec3d97335274f897e3e0a94d6c562b22a10928ff6e6c
-          - 1af46831847a906ced85060f828f891b0c0831e68d80859f3128c55c8ff2001d
+          - 3d4af3cc13199af62e17b9a730da182bfdf985af9efe464577c5f5042f326a5d
+          - b90a4253216e8d6d539efa4da99f3a38a668c62c9045c6cce165c0a13515929b
+          - 2e6f2bf1268a5d93bffe487c174a95a4c7a0b17b28ba492d75f3073e24dccab8
     env:
       GHIDRA_INSTALL_DIR: ${{ github.workspace }}/tools/ghidra_12.1.4_PUBLIC
+      DECOMPILE_WORKERS: "4"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,18 +36,17 @@ jobs:
       - run: python fetch.py ${{ matrix.build }} in
       - run: |
           unity=$(python -c "import json;print(json.load(open('in/build.json'))['unityVersion'])")
-          timeout 900 /usr/bin/time -v tools/inspector/*/Il2CppInspector -i in/GameAssembly.dll -m in/global-metadata.dat \
+          timeout 900 tools/inspector/*/Il2CppInspector -i in/GameAssembly.dll -m in/global-metadata.dat \
             --select-outputs -c out/cs -l tree -n -p out/il2cpp.py -t Ghidra -o out/metadata.json -h out/cpp \
-            --unity-version "$unity" < /dev/null 2>&1
-          find out -maxdepth 3 | head -40
-          du -sh out/*
+            --unity-version "$unity" < /dev/null 2>&1 | tail -5
       - run: |
-          timeout 3600 /usr/bin/time -v python -c "import os, pyghidra; w=os.getcwd(); pyghidra.run_script(w+'/in/GameAssembly.dll', w+'/decompile.py', project_location='/tmp/proj', project_name='p', script_args=[w+'/out/il2cpp.py', w+'/out/ghidra', 'MVNetworkGame'], verbose=True, analyze=False)" < /dev/null 2>&1
-          head -c 8000 out/ghidra/sample.c
+          timeout 19800 /usr/bin/time -v python -c "import os, pyghidra; w=os.getcwd(); pyghidra.run_script(w+'/in/GameAssembly.dll', w+'/decompile.py', project_location='/tmp/proj', project_name='p', script_args=[w+'/out/il2cpp.py', w+'/out/src'], analyze=False)" < /dev/null 2>&1
+          cp in/build.json out/src/
+          du -sh out/src; find out/src -name '*.c' | wc -l
       - if: always()
-        run: tar czf probe.tar.gz out/ghidra out/cs || true
+        run: tar czf src.tar.gz -C out src cs || true
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: probe-${{ matrix.build }}
-          path: probe.tar.gz
+          name: src-${{ matrix.build }}
+          path: src.tar.gz
