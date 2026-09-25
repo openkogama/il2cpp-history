@@ -6,6 +6,7 @@ import time
 from ghidra.app.decompiler import DecompInterface
 from ghidra.app.util.cparser.C import CParserUtils
 from ghidra.util.task import ConsoleTaskMonitor
+from java.io import File
 
 script, out, sample = list(getScriptArgs())
 PRELUDE = """
@@ -45,8 +46,8 @@ finally:
     currentProgram.endTransaction(tx, True)
 t = time.time()
 g = globals()
-saved = {k: g.get(k) for k in ("__file__", "__name__")}
-g.update(__file__=script, __name__="__main__")
+saved = {k: g.get(k) for k in ("__file__", "__name__", "getSourceFile")}
+g.update(__file__=script, __name__="__main__", getSourceFile=lambda: File(script))
 exec(compile(open(script).read(), script, "exec"), g)
 g.update(saved)
 print(f"redux script: {time.time() - t:.0f}s")
