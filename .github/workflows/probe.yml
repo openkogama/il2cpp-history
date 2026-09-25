@@ -6,12 +6,16 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 120
     strategy:
       fail-fast: false
       matrix:
         build:
           - 8f1df9ebe6ffea7a872cbb5bbd1efae306d3eea78a0c779fade074e0aaafcba6
+          - b98f6772b1da3e1698dcd2239928a2c992f2a002244e9239fd91661e46c82775
+          - 24018d1358c41540b349847ba038d3441d657c773a5a6336abbb7a022fee9c8d
+          - f9bdd686888f66197752ec3d97335274f897e3e0a94d6c562b22a10928ff6e6c
+          - 1af46831847a906ced85060f828f891b0c0831e68d80859f3128c55c8ff2001d
     env:
       GHIDRA_INSTALL_DIR: ${{ github.workspace }}/tools/ghidra_12.1.4_PUBLIC
     steps:
@@ -24,31 +28,27 @@ jobs:
           distribution: temurin
           java-version: "21"
       - run: |
-          nproc; free -h
           curl -sL -o ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip
-          curl -sL -o redux.zip https://github.com/LukeFZ/Il2CppInspectorRedux/releases/download/2026.2/Il2CppInspectorRedux.CLI-linux-x64.zip
+          curl -sL -o inspector.zip https://github.com/LukeFZ/Il2CppInspectorRedux/releases/download/2026.2/Il2CppInspectorRedux.Legacy.CLI-linux-x64.zip
           unzip -q ghidra.zip -d tools
-          unzip -q redux.zip -d tools/redux
-          chmod +x tools/redux/*/Il2CppInspector.Redux.CLI
+          unzip -q inspector.zip -d tools/inspector
+          chmod +x tools/inspector/*/Il2CppInspector
           pip install --find-links "$GHIDRA_INSTALL_DIR"/Ghidra/Features/PyGhidra/pypkg/dist pyghidra
       - run: python fetch.py ${{ matrix.build }} in
       - run: |
           unity=$(python -c "import json;print(json.load(open('in/build.json'))['unityVersion'])")
-          timeout 600 /usr/bin/time -v tools/redux/*/Il2CppInspector.Redux.CLI process in/GameAssembly.dll in/global-metadata.dat \
-            -o out -s --layout class -m --disassembler Ghidra --unity-version "$unity" < /dev/null 2>&1 \
-            | sed 's/\x1b\[[0-9;]*m//g' || echo "redux exit $?"
-          find out -maxdepth 3 | head -60 || true
-          du -sh out/* || true
+          timeout 900 /usr/bin/time -v tools/inspector/*/Il2CppInspector -i in/GameAssembly.dll -m in/global-metadata.dat \
+            --select-outputs -c out/cs -l tree -n -p out/il2cpp.py -t Ghidra -o out/metadata.json -h out/cpp \
+            --unity-version "$unity" < /dev/null 2>&1
+          find out -maxdepth 3 | head -40
+          du -sh out/*
       - run: |
-          py=$(find out -maxdepth 2 -name '*.py' | head -1)
-          echo "script: $py"
-          timeout 3600 /usr/bin/time -v python -c "import pyghidra; pyghidra.run_script('in/GameAssembly.dll', 'ghidra.py', project_location='/tmp/proj', project_name='p', script_args=['$py', 'out/ghidra', 'MVNetworkGame'], analyze=False)" < /dev/null 2>&1
-          head -c 6000 out/ghidra/sample.c || true
+          timeout 3600 /usr/bin/time -v python -c "import pyghidra; pyghidra.run_script('in/GameAssembly.dll', 'ghidra.py', project_location='/tmp/proj', project_name='p', script_args=['out/il2cpp.py', 'out/ghidra', 'MVNetworkGame'], analyze=False)" < /dev/null 2>&1
+          head -c 8000 out/ghidra/sample.c
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: probe-${{ matrix.build }}
           path: |
             out/ghidra/
-            out/**/*.py
-            out/**/*.json
+            out/cs/
