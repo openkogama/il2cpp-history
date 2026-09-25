@@ -1,0 +1,58 @@
+name: probe
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        build:
+          - 8f1df9ebe6ffea7a872cbb5bbd1efae306d3eea78a0c779fade074e0aaafcba6
+          - b98f6772b1da3e1698dcd2239928a2c992f2a002244e9239fd91661e46c82775
+          - 24018d1358c41540b349847ba038d3441d657c773a5a6336abbb7a022fee9c8d
+          - f9bdd686888f66197752ec3d97335274f897e3e0a94d6c562b22a10928ff6e6c
+          - 1af46831847a906ced85060f828f891b0c0831e68d80859f3128c55c8ff2001d
+    env:
+      GHIDRA_INSTALL_DIR: ${{ github.workspace }}/tools/ghidra_12.1.4_PUBLIC
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: |
+          nproc; free -h
+          curl -sL -o ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip
+          curl -sL -o redux.zip https://github.com/LukeFZ/Il2CppInspectorRedux/releases/download/2026.2/Il2CppInspectorRedux.CLI-linux-x64.zip
+          unzip -q ghidra.zip -d tools
+          unzip -q redux.zip -d tools/redux
+          chmod +x tools/redux/*/Il2CppInspector.Redux.CLI
+          pip install "$GHIDRA_INSTALL_DIR"/Ghidra/Features/PyGhidra/pypkg/dist/*.whl
+      - run: python fetch.py ${{ matrix.build }} in
+      - run: |
+          unity=$(python -c "import json;print(json.load(open('in/build.json'))['unityVersion'])")
+          /usr/bin/time -v tools/redux/*/Il2CppInspector.Redux.CLI process in/GameAssembly.dll in/global-metadata.dat \
+            -o out -s --layout class -m --disassembler Ghidra --output-cpp-scaffolding --unity-version "$unity" 2>&1 \
+            | sed 's/\x1b\[[0-9;]*m//g' | tail -40
+          find out -maxdepth 3 | head -60
+          du -sh out/*
+      - run: |
+          py=$(find out -maxdepth 2 -name '*.py' | head -1)
+          echo "script: $py"
+          /usr/bin/time -v python -c "import pyghidra; pyghidra.run_script('in/GameAssembly.dll', 'ghidra.py', project_location='/tmp/proj', project_name='p', script_args=['$py', 'out/ghidra', 'MVNetworkGame'], analyze=False)" 2>&1 | tail -80
+          head -c 6000 out/ghidra/sample.c || true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe-${{ matrix.build }}
+          path: |
+            out/ghidra/
+            out/**/*.py
+            out/**/*.json
