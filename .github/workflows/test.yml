@@ -10,10 +10,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        build:
-          - 3d4af3cc13199af62e17b9a730da182bfdf985af9efe464577c5f5042f326a5d
-          - b90a4253216e8d6d539efa4da99f3a38a668c62c9045c6cce165c0a13515929b
-          - 2e6f2bf1268a5d93bffe487c174a95a4c7a0b17b28ba492d75f3073e24dccab8
+        include:
+          - build: 3d4af3cc13199af62e17b9a730da182bfdf985af9efe464577c5f5042f326a5d
+            copy: 1
+          - build: 3d4af3cc13199af62e17b9a730da182bfdf985af9efe464577c5f5042f326a5d
+            copy: 2
+          - build: b90a4253216e8d6d539efa4da99f3a38a668c62c9045c6cce165c0a13515929b
+            copy: 1
     env:
       GHIDRA_INSTALL_DIR: ${{ github.workspace }}/tools/ghidra_12.1.4_PUBLIC
       DECOMPILE_WORKERS: "4"
@@ -48,5 +51,5 @@ jobs:
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: src-${{ matrix.build }}
+          name: src-${{ matrix.build }}-${{ matrix.copy }}
           path: src.tar.gz

@@ -42,6 +42,7 @@ NOISE = [
 ]
 HEX = re.compile(r"\b0x([0-9a-fA-F]{6,16})\b")
 UNSAFE = re.compile(r'[<>:"|?*\\`\[\], ]')
+AUTO = re.compile(r"\b([a-zA-Z]{1,4}Var|local_|in_stack_|[a-zA-Z]{1,4}Stack_?)([0-9a-fA-F]+)\b")
 STATEMENT = re.compile(r"[(){}=]|\b(return|goto|break|continue)\b")
 WORKERS = int(os.environ.get("DECOMPILE_WORKERS", os.cpu_count() or 2))
 KEEP_LOCALS = os.environ.get("KEEP_LOCALS") == "1"
@@ -81,7 +82,18 @@ def normalize(code, lo, hi):
     for pattern, repl in NOISE:
         code = pattern.sub(repl, code)
     code = HEX.sub(lambda m: "0xADDR" if lo <= int(m.group(1), 16) <= hi else m.group(0), code)
-    return code if KEEP_LOCALS else strip_locals(code)
+    return renumber(code if KEEP_LOCALS else strip_locals(code))
+
+
+def renumber(code):
+    names = {}
+
+    def sub(m):
+        if m.group(0) not in names:
+            names[m.group(0)] = f"{m.group(1)}{len(names) + 1}"
+        return names[m.group(0)]
+
+    return AUTO.sub(sub, code)
 
 
 def strip_locals(code):
