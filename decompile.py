@@ -1,3 +1,4 @@
+print("decompile.py started", flush=True)
 import os
 import time
 

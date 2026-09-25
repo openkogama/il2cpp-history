@@ -43,12 +43,12 @@ jobs:
           find out -maxdepth 3 | head -40
           du -sh out/*
       - run: |
-          timeout 3600 /usr/bin/time -v python -c "import pyghidra; pyghidra.run_script('in/GameAssembly.dll', 'decompile.py', project_location='/tmp/proj', project_name='p', script_args=['out/il2cpp.py', 'out/ghidra', 'MVNetworkGame'], analyze=False)" < /dev/null 2>&1
+          timeout 3600 /usr/bin/time -v python -c "import os, pyghidra; w=os.getcwd(); pyghidra.run_script(w+'/in/GameAssembly.dll', w+'/decompile.py', project_location='/tmp/proj', project_name='p', script_args=[w+'/out/il2cpp.py', w+'/out/ghidra', 'MVNetworkGame'], verbose=True, analyze=False)" < /dev/null 2>&1
           head -c 8000 out/ghidra/sample.c
+      - if: always()
+        run: tar czf probe.tar.gz out/ghidra out/cs || true
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: probe-${{ matrix.build }}
-          path: |
-            out/ghidra/
-            out/cs/
+          path: probe.tar.gz
