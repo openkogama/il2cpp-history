@@ -34,7 +34,7 @@ with open(combined, "w") as fh:
 t = time.time()
 tx = currentProgram.startTransaction("il2cpp types")
 try:
-    parsed = CParserUtils.parseHeaderFiles(None, [combined], [], [], currentProgram.getDataTypeManager(), monitor)
+    parsed = CParserUtils.parseHeaderFiles(None, [combined], [], ["-D_GHIDRA_"], currentProgram.getDataTypeManager(), monitor)
     print(f"header: {time.time() - t:.0f}s, ok={parsed.successful()}, types={currentProgram.getDataTypeManager().getDataTypeCount(True)}", flush=True)
     if not parsed.successful():
         print(parsed.getFormattedParseMessage(None)[:4000], flush=True)
