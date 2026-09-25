@@ -43,7 +43,7 @@ jobs:
           find out -maxdepth 3 | head -40
           du -sh out/*
       - run: |
-          timeout 3600 /usr/bin/time -v python -c "import pyghidra; pyghidra.run_script('in/GameAssembly.dll', 'ghidra.py', project_location='/tmp/proj', project_name='p', script_args=['out/il2cpp.py', 'out/ghidra', 'MVNetworkGame'], analyze=False)" < /dev/null 2>&1
+          timeout 3600 /usr/bin/time -v python -c "import pyghidra; pyghidra.run_script('in/GameAssembly.dll', 'decompile.py', project_location='/tmp/proj', project_name='p', script_args=['out/il2cpp.py', 'out/ghidra', 'MVNetworkGame'], analyze=False)" < /dev/null 2>&1
           head -c 8000 out/ghidra/sample.c
       - if: always()
         uses: actions/upload-artifact@v4
