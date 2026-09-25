@@ -34,7 +34,7 @@ jobs:
           unzip -q ghidra.zip -d tools
           unzip -q redux.zip -d tools/redux
           chmod +x tools/redux/*/Il2CppInspector.Redux.CLI
-          pip install "$GHIDRA_INSTALL_DIR"/Ghidra/Features/PyGhidra/pypkg/dist/*.whl
+          pip install --find-links "$GHIDRA_INSTALL_DIR"/Ghidra/Features/PyGhidra/pypkg/dist pyghidra
       - run: python fetch.py ${{ matrix.build }} in
       - run: |
           unity=$(python -c "import json;print(json.load(open('in/build.json'))['unityVersion'])")
