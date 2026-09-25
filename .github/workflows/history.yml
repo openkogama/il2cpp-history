@@ -1,0 +1,121 @@
+name: history
+
+on:
+  workflow_dispatch:
+    inputs:
+      rebuild:
+        description: "throw the history branch away and build it from scratch"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  GIT_AUTHOR_NAME: kogama-history
+  GIT_AUTHOR_EMAIL: kogama-history@openkogama.invalid
+  GIT_COMMITTER_NAME: kogama-history
+  GIT_COMMITTER_EMAIL: kogama-history@openkogama.invalid
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      builds: ${{ steps.list.outputs.builds }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: list
+        env:
+          REBUILD: ${{ inputs.rebuild }}
+        run: |
+          remote="https://github.com/${GITHUB_REPOSITORY}.git"
+          if [ "$REBUILD" != "true" ] && git ls-remote --exit-code --heads "$remote" history; then
+            git clone --quiet --filter=blob:none --no-checkout --branch history --single-branch "$remote" hist
+            builds=$(python assemble.py list --repo hist)
+          else
+            builds=$(python assemble.py list)
+          fi
+          echo "builds=$builds" >> "$GITHUB_OUTPUT"
+          echo "$builds" | python -c "import json,sys;print(len(json.load(sys.stdin)),'builds to decompile')"
+
+  decompile:
+    needs: list
+    if: needs.list.outputs.builds != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        build: ${{ fromJSON(needs.list.outputs.builds) }}
+    env:
+      GHIDRA_INSTALL_DIR: ${{ github.workspace }}/tools/ghidra_12.1.4_PUBLIC
+      DECOMPILE_WORKERS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - id: tools
+        uses: actions/cache@v4
+        with:
+          path: tools
+          key: tools-ghidra-12.1.4-inspector-2026.2
+      - if: steps.tools.outputs.cache-hit != 'true'
+        run: |
+          curl -sL -o ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip
+          curl -sL -o inspector.zip https://github.com/LukeFZ/Il2CppInspectorRedux/releases/download/2026.2/Il2CppInspectorRedux.Legacy.CLI-linux-x64.zip
+          unzip -q ghidra.zip -d tools
+          unzip -q inspector.zip -d tools/inspector
+      - run: |
+          chmod +x tools/inspector/*/Il2CppInspector
+          pip install --find-links "$GHIDRA_INSTALL_DIR"/Ghidra/Features/PyGhidra/pypkg/dist pyghidra
+      - run: python fetch.py ${{ matrix.build }} in
+      - run: |
+          unity=$(python -c "import json;print(json.load(open('in/build.json'))['unityVersion'])")
+          timeout 900 tools/inspector/*/Il2CppInspector -i in/GameAssembly.dll -m in/global-metadata.dat \
+            --select-outputs -c out/cs -l tree -n -p out/il2cpp.py -t Ghidra -o out/metadata.json -h out/cpp \
+            --unity-version "$unity" < /dev/null 2>&1 | tail -5
+      - run: |
+          timeout 19800 python -c "import os, pyghidra; w=os.getcwd(); pyghidra.run_script(w+'/in/GameAssembly.dll', w+'/decompile.py', project_location='/tmp/proj', project_name='p', script_args=[w+'/out/il2cpp.py', w+'/out/src'], analyze=False)" < /dev/null 2>&1
+          mv out/src/stats.json out/stats.json
+          cp in/build.json out/build.json
+          tar czf ${{ matrix.build }}.tar.gz -C out src cs build.json stats.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: src-${{ matrix.build }}
+          path: ${{ matrix.build }}.tar.gz
+          retention-days: 3
+
+  assemble:
+    needs: [list, decompile]
+    if: always() && needs.list.outputs.builds != '[]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          path: src
+          pattern: src-*
+          merge-multiple: true
+      - env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REBUILD: ${{ inputs.rebuild }}
+        run: |
+          remote="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if [ "$REBUILD" != "true" ] && git ls-remote --exit-code --heads "$remote" history; then
+            git clone --quiet --branch history --single-branch "$remote" hist
+          fi
+          python assemble.py assemble --src src --repo hist
+          git -C hist push --force "$remote" HEAD:refs/heads/history
+          git -C hist push --force --tags "$remote"
