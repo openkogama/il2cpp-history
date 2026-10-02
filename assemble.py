@@ -10,6 +10,8 @@ import urllib.request
 
 SOURCE = "https://cdn.openkogama.org/versions.json"
 UNSAFE = re.compile(r'[<>:"|?*\\`]')
+ATTRIBUTES = re.compile(r"^\[assembly: .*\]\n", re.M)
+PRIVATE = re.compile(r"_PrivateImplementationDetails_[_{]?[0-9A-Fa-f]{8}[-_][0-9A-Fa-f]{4}[-_][0-9A-Fa-f]{4}[-_][0-9A-Fa-f]{4}[-_][0-9A-Fa-f]{12}[_}]?")
 
 
 def versions():
@@ -35,6 +37,24 @@ def sanitize(root):
             clean = UNSAFE.sub("_", name)
             if clean != name:
                 os.replace(os.path.join(d, name), os.path.join(d, clean))
+
+
+def normalize(root):
+    for d, _, files in os.walk(os.path.join(root, "cs")):
+        for name in files:
+            path = os.path.join(d, name)
+            text = open(path, encoding="utf-8-sig", errors="replace").read()
+            clean = PRIVATE.sub("_PrivateImplementationDetails_", ATTRIBUTES.sub("", text))
+            target = os.path.join(d, PRIVATE.sub("_PrivateImplementationDetails_", name))
+            if clean != text or target != path:
+                os.remove(path)
+                with open(target, "w", encoding="utf-8") as fh:
+                    fh.write(clean)
+    stats = os.path.join(root, "stats.json")
+    if os.path.exists(stats):
+        data = json.load(open(stats))
+        with open(stats, "w") as fh:
+            json.dump({key: data[key] for key in ("game_functions", "failed", "files") if key in data}, fh, indent=4)
 
 
 def run_list(args):
@@ -64,6 +84,7 @@ def run_assemble(args):
         with tarfile.open(archive) as t:
             t.extractall(args.repo, filter="data")
         sanitize(args.repo)
+        normalize(args.repo)
         when = datetime.datetime.fromtimestamp(e["timestamp"], datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
         env = {**os.environ, "GIT_AUTHOR_DATE": when, "GIT_COMMITTER_DATE": when}
         git(args.repo, "add", "-A")

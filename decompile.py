@@ -5,7 +5,7 @@ import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 
-from ghidra.app.decompiler import DecompInterface
+from ghidra.app.decompiler import DecompInterface, DecompileOptions
 from ghidra.app.util.cparser.C import CParserUtils
 from ghidra.util.task import ConsoleTaskMonitor
 from java.io import File
@@ -47,6 +47,8 @@ AUTO = re.compile(r"\b([a-zA-Z]{1,4}Var|local_|in_stack_|[a-zA-Z]{1,4}Stack_?)([
 STATEMENT = re.compile(r"[(){}=]|\b(return|goto|break|continue)\b")
 WORKERS = int(os.environ.get("DECOMPILE_WORKERS", os.cpu_count() or 2))
 KEEP_LOCALS = os.environ.get("KEEP_LOCALS") == "1"
+TIMEOUTS = (120, 1200)
+LINE_WIDTH = 100000
 
 
 def parse_header(script):
@@ -123,9 +125,16 @@ def decompile(item):
     di = getattr(local, "di", None)
     if di is None:
         di = local.di = DecompInterface()
+        options = DecompileOptions()
+        options.grabFromProgram(currentProgram)
+        options.setMaxWidth(LINE_WIDTH)
+        di.setOptions(options)
         di.toggleSyntaxTree(False)
         di.openProgram(currentProgram)
-    res = di.decompileFunction(f, 120, ConsoleTaskMonitor())
+    for timeout in TIMEOUTS:
+        res = di.decompileFunction(f, timeout, ConsoleTaskMonitor())
+        if res.decompileCompleted() or "timeout" not in (res.getErrorMessage() or ""):
+            break
     if res.decompileCompleted():
         body = res.getDecompiledFunction().getC()
     else:
@@ -172,7 +181,7 @@ def main():
             for name, body in sorted(funcs):
                 fh.write(body.rstrip() + "\n\n")
     with open(os.path.join(out, "stats.json"), "w") as fh:
-        json.dump(stats, fh, indent=4)
+        json.dump({key: stats[key] for key in ("game_functions", "failed", "files")}, fh, indent=4)
     print(json.dumps(stats), flush=True)
 
 
