@@ -118,4 +118,4 @@ jobs:
           fi
           python assemble.py assemble --src src --repo hist
           git -C hist push --force "$remote" HEAD:refs/heads/history
-          git -C hist push --force --tags "$remote"
+          git -C hist tag | xargs -n 20 sh -c 'git -C hist push --force --no-thin "$0" $(printf "refs/tags/%s " "$@")' "$remote"
