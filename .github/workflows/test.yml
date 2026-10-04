@@ -44,6 +44,7 @@ jobs:
             --unity-version "$unity" < /dev/null 2>&1 | tail -5
       - run: |
           timeout 19800 /usr/bin/time -v python -c "import os, pyghidra; w=os.getcwd(); pyghidra.run_script(w+'/in/GameAssembly.dll', w+'/decompile.py', project_location='/tmp/proj', project_name='p', script_args=[w+'/out/il2cpp.py', w+'/out/src'], analyze=False)" < /dev/null 2>&1
+          python -c "import json, sys; s = json.load(open('out/src/stats.json')); print(s); sys.exit(f\"{s['failed']} of {s['game_functions']} functions failed to decompile\" if s['failed'] * 2 > s['game_functions'] else 0)"
           cp in/build.json out/src/
           du -sh out/src; find out/src -name '*.c' | wc -l
       - if: always()

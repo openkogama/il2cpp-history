@@ -48,7 +48,7 @@ STATEMENT = re.compile(r"[(){}=]|\b(return|goto|break|continue)\b")
 WORKERS = int(os.environ.get("DECOMPILE_WORKERS", os.cpu_count() or 2))
 KEEP_LOCALS = os.environ.get("KEEP_LOCALS") == "1"
 TIMEOUTS = (120, 1200)
-LINE_WIDTH = 100000
+LINE_WIDTH = 10000
 
 
 def parse_header(script):
